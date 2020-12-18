@@ -1,0 +1,1852 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://miladmahyar.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1677713*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[16]='1';commentCnt[17]='2';commentCnt[18]='7';commentCnt[19]='2';commentCnt[20]='2';commentCnt[21]='1';commentCnt[22]='0';commentCnt[23]='2';commentCnt[24]='1';commentCnt[26]='0';commentCnt[27]='0';commentCnt[29]='2';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[16]='1';
+mihanblogDisLikeArrCnt[16]='0';
+mihanblogLikeArrCnt[17]='1';
+mihanblogDisLikeArrCnt[17]='0';
+mihanblogLikeArrCnt[18]='8';
+mihanblogDisLikeArrCnt[18]='0';
+mihanblogLikeArrCnt[19]='2';
+mihanblogDisLikeArrCnt[19]='0';
+mihanblogLikeArrCnt[20]='3';
+mihanblogDisLikeArrCnt[20]='0';
+mihanblogLikeArrCnt[21]='1';
+mihanblogDisLikeArrCnt[21]='0';
+mihanblogLikeArrCnt[22]='2';
+mihanblogDisLikeArrCnt[22]='0';
+mihanblogLikeArrCnt[23]='2';
+mihanblogDisLikeArrCnt[23]='0';
+mihanblogLikeArrCnt[24]='2';
+mihanblogDisLikeArrCnt[24]='0';
+mihanblogLikeArrCnt[26]='1';
+mihanblogDisLikeArrCnt[26]='0';
+mihanblogLikeArrCnt[27]='3';
+mihanblogDisLikeArrCnt[27]='0';
+mihanblogLikeArrCnt[29]='1';
+mihanblogDisLikeArrCnt[29]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://miladmahyar.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://miladmahyar.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','21');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','سه شنبه 5 شهریور 1398');
+	
+	setStatVar('today_view','6');
+	setStatVar('yesterday_view','30');
+	
+	setStatVar('this_month_view','330');
+	setStatVar('last_month_view','271');
+
+	setStatVar('total_view','42471');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (13:22)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://miladmahyar.mihanblog.com/statupdate/?data[refereruri]=http://timemachine.mihanblog.com/post/145&data[postid]=&data[requesturi]=/&data[sdate]=1607772403&data[hash]=77fede0015e3f7d0e15ec2484ad4adbb&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://miladmahyar.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://miladmahyar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://miladmahyar.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme-Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content=""/>
+    <meta name="keywords" content="میلاد ماهیار - milad mahyar - شعر - داستان - رمان - ترانه - سپید - غزل - مثنوی - نو - آزاد - poem - poet -k- نویسنده - writer -story "/>
+    <link rel="alternate" type="application/rss+xml" title="وبگاه رسمی میلاد ماهیار" href="http://miladmahyar.mihanblog.com/post/rss/" />
+    <link rel="alternate" type="application/atom+xml" title="وبگاه رسمی میلاد ماهیار" href="http://miladmahyar.mihanblog.com/post/atom/" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099997/style.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://mihanblog.com/public/public/user_data/template/2099997/nivo-slider.css" type="text/css">
+    <link rel="stylesheet" href="http://mihanblog.com/public/public/user_data/template/2099997/skin.css" type="text/css">
+
+    <script type="text/javascript" src="http://mihanblog.com/public/public/user_data/template/2099997/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="http://mihanblog.com/public/public/user_data/template/2099997/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript">
+        var jq=jQuery.noConflict();
+        jq(window).load(function() {
+            jq('#slider').nivoSlider();
+        });
+    </script>
+
+    <script type="text/javascript" src="http://mihanblog.com/public/public/user_data/template/2099997/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript">
+        var jq2=jQuery.noConflict();
+        function mycarousel_initCallback(carousel) {
+            jq2('.jcarousel-control a').bind('click', function() {
+                carousel.scroll(jq2.jcarousel.intval(jq2(this).text()));
+                return false;
+            });
+            jq2('.jcarousel-scroll select').bind('change', function() {
+                carousel.options.scroll = jq2.jcarousel.intval(1);
+                return false;
+            });
+            jq2('#mycarousel-next').bind('click', function() {
+                carousel.next();
+                return false;
+            });
+            jq2('#mycarousel-prev').bind('click', function() {
+                carousel.prev();
+                return false;
+            });
+        };
+
+        jq2(document).ready(function() {
+            jq2('#mycarousel1').jcarousel({
+                auto: 2,
+                vertical: true,
+                scroll: 1,
+                wrap: 'circular'
+            });
+            jq2('#mycarousel2').jcarousel({
+                auto: 2,
+                vertical: true,
+                scroll: 1,
+                wrap: 'circular'
+            });
+            jq2('#mycarousel3').jcarousel({
+                auto: 2,
+                vertical: true,
+                scroll: 1,
+                wrap: 'circular'
+            });
+        });
+
+    </script>
+
+    <title>وبگاه رسمی میلاد ماهیار</title>
+</head>
+google-site-verification=rEL2MIL4LFat3372VZX_Fdi7Jm5W7tLpqUYR8Y8I4lg
+<body>
+<div align="center">
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td class="div2">
+<div class="div00">
+<div class="div0">
+<div class="div000">
+
+<div class="div60">
+    <div class="div101">
+        <div class="div10 , title">وبگاه رسمی میلاد ماهیار</div></div>
+    <div class="div11">
+        <div class="div12 , des">امروز اگر ما قدمی برداریم فردا پی ردپایمان می آیند</div></div>
+</div>
+
+<div id="wrapper">
+    <div class="hsl"></div>
+    <div id="slider-wrapper">
+        <div id="slider" class="nivoSlider">
+
+            <!-- Start Slide Images -->
+
+            <img src="../file.mihanblog.com/public/user_data/user_files/560/1677713/1.jpg" alt="جادوی کتاب " width="780" height="220" border="0">
+            <img src="../file.mihanblog.com/public/user_data/user_files/560/1677713/2.png" alt="از کلمات شروع می شود" width="780" height="220" border="0">
+            <img src="../file.mihanblog.com/public/user_data/user_files/560/1677713/3.jpg" alt="در زندگی جاری می گردد" width="780" height="220" border="0">
+            <img src="../file.mihanblog.com/public/user_data/user_files/560/1677713/4.jpg" alt="در روان بازی می کند" width="780" height="220" border="0">
+            <img src="../file.mihanblog.com/public/user_data/user_files/560/1677713/5.jpg" alt="و در ذهن می رقصد" width="780" height="220" border="0">
+
+            <!-- End Slide Images -->
+
+        </div>
+    </div>
+</div>
+
+<div class="ss">
+    <div class="s1"><form id="frm-16076165345fd248164c72c" method="get" action="http://miladmahyar.mihanblog.com/post/search/fid/16076165345fd248164c72c"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+        <div class="s2">
+            <input type="text" name="search_text" size="32" style="border: 0px none; color:#FFF; background: none; font-family:Tahoma; font-size:9pt; direction:ltr"></div>
+        <div class="s3"><input type="image" src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width=25 height=22 value="جستجو"></div>
+    <input type="hidden" name="frm-id" value="16076165345fd248164c72c" id="frm-id" /></form></div>
+
+    <div class="s5">
+        <div class="s4 , text10"><a href="index.html">صفحه نخست</a></div>
+        <div class="s4 , text10"><a href="mailto:1n3visandeh@gmail.com">پست الکترونیک</a></div>
+        <div class="s4 , text10"><a href="javascript:messageForm()">تماس با من</a></div>
+        <div class="s4 , text10"><a href="http://miladmahyar.mihanblog.com/post/atom/">ATOM</a></div>
+        <div class="s4 , text10"><a href="http://www.mytheme.ir" target="_blank">طراح قالب</a></div>
+    </div>
+
+    <div class="mytheme">
+        <div class="mytheme4">
+            <g:plusone size="medium"></g:plusone>
+            <script type="text/javascript">
+                window.___gcfg = {lang: 'fa'};
+                (function() {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                })();
+            </script></div>
+    </div>
+
+</div>
+
+<div class="div170">
+
+    <div class="div24">
+        <div class="div35">
+            <div class="div25 , text5">درباره وبلاگ</div></div>
+        <div class="div341">
+            <div class="sm"></div>
+            <div class="div32 , text1"><center><img src="../static.mihanblog.com/public/user_data/web_photo/560/1677713.jpg@9584"  /><br><br>
+                هر روز نوشتم که نوشتن سخت است<br />
+از من به شما ساده نوشتن سخت است<br />
+تعریف کسی را که شما می خوانید<br />
+با جمله آماده نوشتن سخت است<br />
+<br />
+استفاده از مطالب و اشعار این پایگاه بدون ذکر نام نویسنده و یا منبع موجب پیگرد قانونی است.</center><br>
+                مدیر وبلاگ : <a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a></div>
+        </div><div class="div30"></div>
+    </div>
+
+    <div class="div24">
+        <div class="div35">
+            <div class="div25 , text5">نویسندگان</div></div>
+        <div class="div341 , text1"><ul>
+            <li><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار (21)</a></li>        </ul></font></div><div class="div30"></div>
+    </div>
+    
+		
+    <div class="div24">
+        <div class="div35">
+            <div class="div25 , text5">برچسبها</div></div>
+        <div class="div341 , text1"><ul>
+            <li><a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AE%D9%84%D9%82%D8%AA">خلقت</a></li><li><a href="http://miladmahyar.mihanblog.com/post/tag/%D9%87%D9%85%D8%B3%D8%A7%DB%8C%D9%87">همسایه</a></li><li><a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AA%D8%B1%D8%A7%D9%86%D9%87">ترانه</a></li><li><a href="http://miladmahyar.mihanblog.com/post/tag/%D9%84%D8%A8%D8%AE%D9%86%D8%AF">لبخند</a></li><li><a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AE%D9%86%D8%AF%D9%87">خنده</a></li><li><a href="http://miladmahyar.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82">عشق</a></li><li><a href="http://miladmahyar.mihanblog.com/post/tag/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86">ایران</a></li><li><a href="http://miladmahyar.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA">انتخابات</a></li><li><a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AA%D8%A6%D9%88%D8%B1%DB%8C+%D9%BE%DB%8C%D8%AF%D8%A7%DB%8C%D8%B4+%D8%AC%D9%87%D8%A7%D9%86">تئوری پیدایش جهان</a></li><li><a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AF%D8%B1%D9%85%D8%A7%D9%86">درمان</a></li>        </ul></font></div><div class="div30"></div>
+    </div>
+</div>
+
+<div class="div20">
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/29">همسایه</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4"><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<div style="text-align: center;"><b><font face="Mihan-IransansLight">همسایه‌ام را خوب می‌فهمم</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">با ظرف آبی جشن می‌گیرد</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">هرشب کنار خانه‌اش دریا</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">در فکر ماهی‌ها نمی‌میرد</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">همسایه‌ام را درک کردم من</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">مرغی ندارد غاز من باشد</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">او برق را از خانه بیرون کرد</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">فکر پلنگان وطن باشد</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">همسایه‌ام درگیر رویا بود</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">یک سفره با خاکستر نانی</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">از واقعیت شعرها می‌گفت</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">هر چند تو، آن را نمی‌خوانی</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">همسایه در مرز جنون و عقل</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">آجر به آجر خانه را بخشید</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">من فکر می‌کردم که دیوار است</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">اسطوره از افسانه را بخشید</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">همسایه‌ام با کوله می‌گردد</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">در کوله‌اش دردی پر از شرم است</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">هر شب کنار قبر می‌خوابد</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">قبری که با خاکسترم گرم است</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">همسایه‌ام درگیر رویا بود</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">یک سفره با خاکستر نانی</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">از واقعیت شعرها می‌گفت</font></b></div><div style="text-align: center;"><b><font face="Mihan-IransansLight">هر چند تو، آن را نمی‌خوانی</font></b></div>
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;<a href="http://miladmahyar.mihanblog.com/post/category/2" class=text4>ترانه</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/tag/%D9%87%D9%85%D8%B3%D8%A7%DB%8C%D9%87" class=text4>همسایه</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" class=text4>ایران</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AA%D8%B1%D8%A7%D9%86%D9%87" class=text4>ترانه</a>،                 <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/29&title=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/29&t=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/29&title=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/29&title=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/29&title=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/29&title=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/29&t=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/29&title=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/29&amp;title=%D9%87%D9%85%D8%B3%D8%A7%DB%8C%D9%87" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/29&title=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/29&title=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/29&title=همسایه" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/29#commentlist">نظرات (<script>setCommentCnt(29)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('29','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">سه شنبه 5 شهریور 1398</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/27">درمان</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4"><p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">درد این دیوانه درمان می شود<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">صبر کن این خانه درمان می شود<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">کار را کارآفرینی لازم است<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">مست هم رندانه درمان می شود<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">تا نموداری سقوطش واضح است<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">با عدد رایانه درمان می شود<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">یخ تورم را اگر درمان نکرد<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">بی گمان یارانه درمان می شود<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">روی کاغذ حرفها دارم ببین<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">کاغذم مردانه درمان می شود<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">مرغ هم از سفره ها پرواز کرد<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">گشنه با مرغانه درمان می شود<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">گر نباشد ساندیسی در بساط<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">رای با تکدانه درمان می شود<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">خنده بر هر درد بی درمان دواست<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">لاجرم دیوانه درمان می شود<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">یک هجا درمان شدن را لنگ کرد<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center;"><span lang="FA"><font face="Mihan-Iransans">غم نخور جانانه درمان می شود</font><font face="Arial, sans-serif"><o:p></o:p></font></span></p><p class="MsoNormal" dir="RTL" style="text-align: center;"><font face="Mihan-Iransans">میلاد ماهیار</font></p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;<a href="http://miladmahyar.mihanblog.com/post/category/4" class=text4>دل نوشته</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA" class=text4>انتخابات</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AF%D8%B1%D9%85%D8%A7%D9%86" class=text4>درمان</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AE%D9%86%D8%AF%D9%87" class=text4>خنده</a>،                 <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/27&title=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/27&t=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/27&title=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/27&title=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/27&title=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/27&title=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/27&t=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/27&title=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/27&amp;title=%D8%AF%D8%B1%D9%85%D8%A7%D9%86" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/27&title=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/27&title=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/27&title=درمان" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/27#commentlist">نظرات (<script>setCommentCnt(27)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('27','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">چهارشنبه 13 اردیبهشت 1396</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/26">لبخند بزن</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4"><div style="text-align: center;"><font face="Mihan-Iransans">پلکی بزنی رنگ عوض خواهد شد</font></div><div style="text-align: center; "><font face="Mihan-Iransans">مفهوم دل و سنگ عوض خواهد شد</font></div><div style="text-align: center; "><font face="Mihan-Iransans">در فاصله پلک تو حالا جنگی است</font></div><div style="text-align: center; "><font face="Mihan-Iransans">معشوقه در این جنگ عوض خواهد شد</font></div><div style="text-align: center; "><font face="Mihan-Iransans">مرزی است میان لب یار و دینم</font></div><div style="text-align: center; "><font face="Mihan-Iransans">جایی است که فرهنگ عوض خواهد شد</font></div><div style="text-align: center; "><font face="Mihan-Iransans">در نقشه تو مرز فرو خواهد ریخت</font></div><div style="text-align: center; "><font face="Mihan-Iransans">این مرز که بی ننگ عوض خواهد شد</font></div><div style="text-align: center; "><font face="Mihan-Iransans">لبخند بزن جهان عوض خواهد شد</font></div><div style="text-align: center; "><font face="Mihan-Iransans">جای سیب و بالنگ عوض خواهد شد</font></div><div style="text-align: center; "><font face="Mihan-Iransans">خالق به لبانت آفرین خواهد گفت</font></div><div style="text-align: center; "><font face="Mihan-Iransans">افسانه بیگ بنگ عوض خواهد شد</font></div><div style="text-align: center; "><font face="Mihan-Iransans">بی هیچ دلیلی لب من را تو ببوس</font></div><div style="text-align: center; "><font face="Mihan-Iransans">آدم سر نیرنگ عوض خواهد شد</font></div><div style="text-align: center; "><font face="Mihan-Iransans"><br></font></div><div style="text-align: center; "><font face="Mihan-Iransans">میلاد ماهیار</font></div>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/tag/%D9%84%D8%A8%D8%AE%D9%86%D8%AF" class=text4>لبخند</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AE%D9%84%D9%82%D8%AA" class=text4>خلقت</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AA%D8%A6%D9%88%D8%B1%DB%8C%20%D9%BE%DB%8C%D8%AF%D8%A7%DB%8C%D8%B4%20%D8%AC%D9%87%D8%A7%D9%86" class=text4>تئوری پیدایش جهان</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" class=text4>عشق</a>،                 <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/26&title=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/26&t=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/26&title=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/26&title=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/26&title=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/26&title=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/26&t=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/26&title=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/26&amp;title=%D9%84%D8%A8%D8%AE%D9%86%D8%AF%20%D8%A8%D8%B2%D9%86" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/26&title=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/26&title=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/26&title=لبخند بزن" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/26#commentlist">نظرات (<script>setCommentCnt(26)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('26','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">چهارشنبه 2 فروردین 1396</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/24">آه ای عشق نگفتی که پشیمان شده ای؟</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4">
+<div style="text-align: center;"><font face="Mihan-Iransans" size="2">آه ای عشق نگفتی که پشیمان شده ای</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">تا دل خاطره رفتی و مسلمان شده ای</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">توبه کردی که دلی را نبری سمت جنون</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">پس چرا شمع به دستی و پریشان شده ای</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">گرگ را مرگ ولی مرگ که ابزار تو بود</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">پر پروانه چه می گفت که لرزان شده ای</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">تو به خاکستر پروانه که آری گفتی</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">درک کردم ملک الموت هراسان شده ای</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">ترس در قامت معشوق نگنجد هرگز</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">این خطا بود گمانم که تو انسان شده ای</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">من که انسان و تو انسان کپرم در باد است</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">چه کسی گفت به من بی سر و سامان شده ای</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">کفر در چشم تو با آتش جان می رقصد</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">کعبه پبدا شده اما تو که پنهان شده ای</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">عاقبت دست مرا دست جنون خواهی داد</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">من دیوانه چه&nbsp;کردم که تو&nbsp;زندان شده ای</font></div><div style="text-align: center; "><font face="Mihan-Iransans" size="2">میلاد ماهیار</font></div>
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" class=text4>عشق</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D9%85%D9%84%DA%A9%20%D8%A7%D9%84%D9%85%D9%88%D8%AA" class=text4>ملک الموت</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%AA%D8%B1%D8%B3" class=text4>ترس</a>، <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%A7%D9%86%D8%B3%D8%A7%D9%86" class=text4>انسان</a>،                 <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/24&title=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/24&t=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/24&title=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/24&title=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/24&title=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/24&title=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/24&t=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/24&title=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/24&amp;title=%D8%A2%D9%87%20%D8%A7%DB%8C%20%D8%B9%D8%B4%D9%82%20%D9%86%DA%AF%D9%81%D8%AA%DB%8C%20%DA%A9%D9%87%20%D9%BE%D8%B4%DB%8C%D9%85%D8%A7%D9%86%20%D8%B4%D8%AF%D9%87%20%D8%A7%DB%8C%D8%9F" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/24&title=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/24&title=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/24&title=آه ای عشق نگفتی که پشیمان شده ای؟" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/24#commentlist">نظرات (<script>setCommentCnt(24)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('24','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">دوشنبه 23 اسفند 1395</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/23">تفاوت</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4">
+<div align="center"><font face="Mihan-Iransans" size="2">هست و نه هست بودن دل در کتاب نیست</font></div><div align="center"><font face="Mihan-Iransans" size="2">گفت و نگفت بودن من را حساب نیست</font></div><div align="center"><font face="Mihan-Iransans" size="2">بی تو تفاوتی که تو را برد می رود</font></div><div align="center"><font face="Mihan-Iransans" size="2">مست و نه مست بودن ما بی جواب نیست</font></div><div align="center"><font face="Mihan-Iransans" size="2">(میلاد ماهیار)</font></div><div align="center"><font face="Times New Roman"><br></font></div><div align="center"><font face="Times New Roman"><br></font></div><div align="center"><font face="Times New Roman"><br></font></div><div align="center"><font face="Times New Roman"><br></font></div><div align="center"><font face="Times New Roman"><br></font></div><div align="center"><br></div><div align="center"><font face="Times New Roman"><span style="text-align: right; color: rgb(29, 33, 41); text-transform: none; line-height: 19.32px; text-indent: 0px; letter-spacing: normal; font-size: 14px; font-style: normal; font-weight: normal; word-spacing: 0px; display: inline !important; white-space: normal; orphans: 2; widows: 2; float: none; background-color: rgb(255, 255, 255);"><br></span></font></div>
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/23&title=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/23&t=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/23&title=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/23&title=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/23&title=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/23&title=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/23&t=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/23&title=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/23&amp;title=%D8%AA%D9%81%D8%A7%D9%88%D8%AA" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/23&title=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/23&title=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/23&title=تفاوت" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/23#commentlist">نظرات (<script>setCommentCnt(23)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('23','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">پنجشنبه 21 مرداد 1395</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/22">مرز خاطرات</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4">
+<div align="center"><font face="Mihan-Nassim" size="3">به این فکر کردم ازت دور شم</font></div><div align="center"><font face="Mihan-Nassim" size="3"> کنارت نباشم که مجبور شم</font></div><div align="center"><font face="Mihan-Nassim" size="3">کنارم نمونی و عادت کنم</font></div><div align="center"><font face="Mihan-Nassim" size="3">به عکسای کهنم حسادت کنم</font></div><div align="center"><font face="Mihan-Nassim"></font><font size="3"></font><br></div><div align="center"><font face="Mihan-Nassim" size="3">نگاهت به پاهام زنجیر شد</font></div><div align="center"><font face="Mihan-Nassim" size="3">تو رفتی و من رفتنم دیر شد</font></div><div align="center"><font face="Mihan-Nassim" size="3">به عکسات گفتم که تنها شدم</font></div><div align="center"><font face="Mihan-Nassim" size="3">که مجموعشون مثل من پیر شد</font></div><div align="center"><font face="Mihan-Nassim"></font><font size="3"></font><br></div><div align="center"><font face="Mihan-Nassim" size="3">سفر کرد لبخند از صورتم</font></div><div align="center"><font face="Mihan-Nassim" size="3">که با اشک پر کردم این خونه رو</font></div><div align="center"><font face="Mihan-Nassim" size="3">فراموش کردم بگم عاشقم</font></div><div align="center"><font face="Mihan-Nassim" size="3">رها کن، تو این مرد دیوونه رو</font></div><div align="center"><font face="Mihan-Nassim"></font><font size="3"></font><br></div><div align="center"><font face="Mihan-Nassim" size="3">جهانم که قبل از تو بی مرز بود</font></div><div align="center"><font face="Mihan-Nassim" size="3">با چشمات مرزاش تعریف شد</font></div><div align="center"><font face="Mihan-Nassim" size="3">رسیدی وطن دستهای تو شد</font></div><div align="center"><font face="Mihan-Nassim" size="3">تو رفتی و دنیام تحریف شد</font></div><div align="center"><font face="Mihan-Nassim"></font><font size="3"></font><br></div><div align="center"><font face="Mihan-Nassim" size="3">به عکسی که داریم زل می زنم</font></div><div align="center"><font face="Mihan-Nassim" size="3">با این عکس من بی وطن نیستم</font></div><div align="center"><font face="Mihan-Nassim" size="3">به مردی که می خنده شک می کنم</font></div><div align="center"><font face="Mihan-Nassim" size="3">شباهت به من داره من نیستم</font></div><div align="center"><font face="Mihan-Nassim"></font><font size="3"></font><br></div><div align="center"><font face="Mihan-Nassim" size="3">سفر کرد لبخند از صورتم</font></div><div align="center"><font face="Mihan-Nassim" size="3">که با اشک پر کردم این خونه رو</font></div><div align="center"><font face="Mihan-Nassim" size="3">فراموش کردم بگم عاشقم</font></div><div align="center"><font face="Mihan-Nassim" size="3">رها کن تو این مرد دیوونه رو</font></div>
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/2" class=text4>ترانه</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/22&title=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/22&t=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/22&title=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/22&title=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/22&title=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/22&title=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/22&t=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/22&title=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/22&amp;title=%D9%85%D8%B1%D8%B2%20%D8%AE%D8%A7%D8%B7%D8%B1%D8%A7%D8%AA" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/22&title=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/22&title=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/22&title=مرز خاطرات" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/22#commentlist">نظرات (<script>setCommentCnt(22)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('22','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">پنجشنبه 26 فروردین 1395</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/21">چه کنم</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4">
+
+
+
+<div style="text-align: center;"><font face="Mihan-Nassim" size="3">گم شدن مثل طبیبی&nbsp;</font><font face="Mihan-Nassim" size="3">است خدایا چه کنم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">بندگی حس غریبی است خدایا چه کنم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">شاهدم باش که می میرم و جان می گیرم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">زندگی اسم فریبی است خدایا چه کنم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">در تلاشم که به درکی بی نگاهت برسم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">سادگی جرم مهیبی است خدایا چه کنم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">پیش دنیا به اسارت بارها معترفم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">بردگی رسم عجیبی است خدایا چه کنم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">صبح هر روز به فکرم رنگ شک بی تو زدم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">تازگی سنگ رقیبی است خدایا چه کنم</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">من که با خاک عجینم پاسخی هم ندهی</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">خستگی را چه نصیبی است خدایا چه کنم</font></div><div style="text-align: center;"><font face="Mihan-Nassim"></font><font size="3"></font><br></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">میلاد ماهیار</font></div><div style="text-align: center;"><font face="Mihan-Nassim"></font><font size="3"></font><br></div><div style="text-align: center;"><font face="Mihan-Nassim"></font><font size="3"></font><br></div>
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/4" class=text4>دل نوشته</a>،&nbsp;<a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/21&title=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/21&t=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/21&title=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/21&title=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/21&title=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/21&title=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/21&t=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/21&title=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/21&amp;title=%DA%86%D9%87%20%DA%A9%D9%86%D9%85" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/21&title=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/21&title=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/21&title=چه کنم" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/21#commentlist">نظرات (<script>setCommentCnt(21)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('21','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">چهارشنبه 4 آذر 1394</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/20">قدر</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4">
+<div style="text-align: center;"><font face="Mihan-Nassim" size="3">نمای خانه را بی خانه می فهمد</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">و قدر خاک را بیگانه می فهمد</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">بدن احوال موها را نمی داند</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">ولی چین و شکن را شانه می فهمد</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">خدا! عاقل برای ایده می جنگد</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">و حال فکر را دیوانه می فهمد!</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">شرابی خوب در میخانه حاضر شد</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">شکستن را فقط پیمانه می فهمد</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">که هر کس درد روزش را نمی داند</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">کجا زجر دو صد سالانه می فهمد</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">به من گفتی که حرفم را نفهمیدی</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">که گفتم آتشی پروانه می فهمد</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3"><br></font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">میلاد ماهیار</font></div>
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/tag/%D8%A8%D9%82%D9%87%D9%85%20%D8%AC%D8%A7%D9%86%20%D9%85%D8%A7%D8%AF%D8%B1%D8%AA!" class=text4>بقهم جان مادرت!</a>،                 <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/20&title=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/20&t=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/20&title=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/20&title=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/20&title=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/20&title=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/20&t=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/20&title=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/20&amp;title=%D9%82%D8%AF%D8%B1" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/20&title=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/20&title=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/20&title=قدر" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/20#commentlist">نظرات (<script>setCommentCnt(20)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('20','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">دوشنبه 18 آبان 1394</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/19">نیازمند</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4">
+<p style="margin: 0px 0px 6px; color: rgb(20, 24, 35); font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 14px; line-height: 19.32px; text-align: right;"></p><div style="text-align: center;"><span style="line-height: 19.32px;">لیست نیازمندی های همشهری</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">به دوست احتیاج نداشت!</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">ننوشته بود</span><span style="line-height: 19.32px;">&nbsp;</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">می خواهم</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">حرف بزنم</span></div><span class="text_exposed_show" style="display: inline;"><div style="text-align: center;"><span style="line-height: 19.32px;">گوش کنم</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">داد بکشم</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">لبخند بزنم</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">شاید ...</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">گریه کنم</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">روزنامه را بستم</span></div><div style="text-align: center;"><span style="line-height: 19.32px;">خیلی بی نیاز تر از من بود!</span></div></span><p></p><div class="text_exposed_show" style="display: inline; color: rgb(20, 24, 35); font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 14px; line-height: 19.32px; text-align: right;"><p style="text-align: center; margin: 0px 0px 6px;">(میلاد ماهیار)</p></div>
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/19&title=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/19&t=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/19&title=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/19&title=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/19&title=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/19&title=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/19&t=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/19&title=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/19&amp;title=%D9%86%DB%8C%D8%A7%D8%B2%D9%85%D9%86%D8%AF" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/19&title=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/19&title=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/19&title=نیازمند" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/19#commentlist">نظرات (<script>setCommentCnt(19)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('19','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">یکشنبه 29 شهریور 1394</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/18">من امروز ، 10 سال قبل- متنی که هیچکس نخواند!</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4">
+
+
+<p class="MsoNormal" dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">رویداد من امروز، 10 سال قبل، از دیدگاه من
+امروز <o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:
+embed"><br></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">سکانس اول <o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">چند روز قبل از مسابقه بود که برای ورود به
+وبلاگم در صفحه ورودی میهن بلاگ با عنوان جالبی مواجه شدم،با دیدن عنوان &nbsp;خاطرات ده سال پیشم برایم زنده شد، روزهای خوب و
+بد ، ترس و نگرانی، شجاعت و آرامش ، تلاش و درماندگی...چیزی در دلم تکان خورد،
+موضوع من را اسیر کرده بود، فهمیدم که باید شرکت کنم.<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">سکانس دوم<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">سوم مرداد بود، مسابقه شروع شد؛ صفحه را باز کردم و بدون فکر قبلی و بدون زدن عنوان، در صفحه ای که برای مسابقه نوشته شده بود شروع
+به نوشتن متنم کردم، همانطور که مینوشتم رشته های داستانی در ذهنم شکل می گرفت و
+رشته ها را می بافتم تا داستانم را شکل دهم ، تجربه رمانم ، شناختن المان های
+نویسندگی بدون شک کمک بزرگی بود اما اعتراف می کنم موضوع من امروز ، ده سال قبل کمک
+بزرگی بود با خودم گفتم ، بازگشت به گذشته ، لزوما چیز خوبی نیست، حتی اگر بدانی
+چه اتفاقی خواهد افتاد تلاش در تغییر آنها می تواند تو را به آینده ای نامعلوم و
+یا حتی بدترین اتفاق های ممکن ببرد، هر چقدر هم که بدانی ، دانای کل نیستی و بعضی
+از اتفاقات از حیطه اختیارات تو خارج است، چه کسی تو را باور خواهد کرد؟، درباره
+جایی که نبوده ای چه میدانی؟، و از این قبیل سوالات مرتب در ذهنم شکل می گرفت،
+بالاخره به پاسخی که میخواستم رسیدم، اثر پروانه ای، یک تصادف چیزی که از دست من
+آگاه خارج بود، می توانست تمام نقشه هایم را بهم بزند، و نوشتم ...با رسیدن به
+جایی که میخواستم مثل همیشه دنبال ضربه ای گشتم تا داستان کوتاهم را کامل کند ،
+چیزی که بتوانم از آن به عنوان نقطه ثقل داستان رویش حساب کنم ، پایانی مناسب ،
+فکری به ذهنم رسید داستان کوتاه من هرچند جذاب و هرچند با تعریف های داستان کوتاه
+سازگار، به عنوان یک پست وبلاگی بلند بود، با خودم فکر کردم "کسی این رو نمی
+خونه" ایده به ذهنم رسید...پس باید دیگران را ترقیب به خواندن می کردم ، ایده
+شکل گرفت چه عنوانی بهتر از " متنی که هیچکس نخواند!" دیگران را ترقیب
+به خواندن می کرد،چون خودم زیاد کتاب میخوانم، مطمئن بودم داستان را طوری نوشته ام
+که وقتی مخاطب شروع به خواندن کند روال داستانی او را تا انتهای داستان خواهد
+برد.پاراگراف آخر را از اول نوشتم و با نوشتن جمله آخر در عنوان مطلبم نوشتم &nbsp;"متنی که هیچکس نخواند".<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">خیلی خوشحال بودم؛ مطمئن بودم که برنده می
+شوم!...داستان خوبی شده بود چون حداقل خودم به عنوان یک مخاطب جدی کتاب و یک
+نویسنده از آن لذت برده بودم.<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">سکانس سوم<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">پانزدهم مرداد تعداد متن ها بیشتر و بیشتر شده
+بود و متن من تنها بیست لایک خورده بود، باورم را به برنده شدن کاملا از دست داده
+بودم، متن های دیگران را با خودم مقایسه کردم، کوتاه و بدون داستان، فکر کردم با
+داستان من خیلی فرق دارند.بدون ویرایش داستانم را ارسال کرده بودم و اشتباه تایپی
+داشتم ، بی خیال مسابقه شدم و صفحه را بستم.<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">سکانس چهارم<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">خیلی ها می گویند که سیزدهم نحس است مخصوصا جمعه
+هم باشد! برای من که اینطور نبود، ایمیلم را باز کردم و ناگهان چشمهایم گشاد شد،
+از میهن بلاگ(آقای اعتضادی) ایمیلی با عنوان آقای میلاد ماهیار شما برنده داوری
+شده اید به من رسید، با خوشحالی ایمیل را باز کردم ، و با متنی جالب مواجه
+شدم،شماره شما اشتباه است، به شماره ای که در متن ایمیل بود نگاه کردم، به جای 3
+عدد 2 را اشتباهی زده بودم.<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">سریعا &nbsp;پیامکی به شماره آقای اعضادی که در متن ایمیل
+بود زدم، و بعد از چند دقیقه ایشان از دفتر با من تماس گرفته و گفتند که برنده شده
+ام و شانزدهم شهریور مراسم اهدای جوایز و اختتامیه است.<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">با شنیدن شانزدهم روزی که سمینار داشتم ناگهان
+بهم ریختم اما خوشبختانه با کمک استادم ،ساعت سمینار را از ساعت دو به پنج تغییر
+دادم.<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">&nbsp;</font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">سکانس پنجم<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">روز خوبی بود ، ساعت ده صبح طبق برنامه به هتل
+طوبی رسیدم، ضبط و عکس برداری و آشنا شدن با میهن بلاگی ها و دوستان برنده دیگر
+بهترین اتفاق روز بود، تا ساعت سه هیچکدام به جز دوست اصفهانی و گیلانی ما که از
+راه دور آمده بودند نمی دانستند که چندم شده اند و جایزه اشان چیست فقط فهمیدیم که
+متن ها بین 3 داور تقسیم شده و هر داور یک متن را به عنوان متن برتر از متن هایش
+انتخاب کرده است.دیدم مراسم خیلی بیشتر از آنکه باید طول می کشد؛ پس با تماس با
+استادم و همکاری ایشان موفق شدم سمینارم را به روز دیگری موکول کنم.<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">ساعت سه با کامل شدن جمع داور ها برای مراسم
+اختتامیه به سالن رفتیم، از کتابچه میهن بلاگ فهمیده بودم که یکی از سه نفر منتخب
+هستم، خانم آب برین توسط استاد امرایی انتخاب شده بود، آقای رضا بیات برنده خانم لیلی
+رشیدی عزیز بود، و من انتخاب آقای سروش صحت، خیلی خوشحال بودم که عنوان نفر
+برگزیده انتخاب شدم، دو مورد که بیشتر از حتی برنده شدن در هنگام مراسم اعلام
+برندگان من را خوشحال کرد اول صحبت آقای صحت درباره داستانم و پس از آن جوابی که
+به یکی از خبرنگاران درباره انتخاب متن بلند من به ایشان داد بود، که لازم می دانم
+حتما جهت انتخاب من و حمایتی که از داستانم و من کردند در همینجا از ایشان تشکر
+کنم.<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">در ادامه میهن بلاگ از امکان جدید و کاربردی
+جالب خود توسط آقای شکورمقدم رونمایی کرد.<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">سکانس آخر<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">عکس ها گرفته شد، هر چند در چند عکس بنده خیلی فانتزی
+هستم ، اما خاطره های خوبی رقم خورد.خوشحالم که دوستان جدیدی پیدا کرده ام و در
+امروز هستم نه در ده سال قبل!<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">&nbsp;</font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><span lang="FA"><font face="Mihan-Iransans">موخره<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align:justify;direction:rtl;unicode-bidi:
+embed"><font face="Mihan-Iransans"><span lang="FA">از سال 1384 که در وبلاگم به نام</span><span dir="LTR">www.recyclebin.mihanblog.com </span><span dir="RTL"></span><span dir="RTL"></span></font><span lang="FA"><font face="Mihan-Iransans"><span dir="RTL"></span><span dir="RTL"></span>&nbsp;با میهن بلاگ شروع به کار کردم، تا امروز که با
+وبلاگ جدیدم در سال 1394 با میهن بلاگ هستم، پیشرفت ها و سرویس دهی های مناسب&nbsp; و عمل به وعده ها را در سرلوحه کار میهن بلاگی
+ها دیدم، از آقای اعتضادی به دلیل زحمتی که برای پیدا کردن من کشیدند ، و از دیگر
+دوستان میهن بلاگی برای برگزاری این رویداد تشکر می کنم.</font><font face="Arial, sans-serif"><o:p></o:p></font></span></p>
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/4" class=text4>دل نوشته</a>،&nbsp;<a href="http://miladmahyar.mihanblog.com/post/category/5" class=text4>خبر</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/18&title=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/18&t=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/18&title=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/18&title=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/18&title=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/18&title=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/18&t=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/18&title=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/18&amp;title=%D9%85%D9%86%20%D8%A7%D9%85%D8%B1%D9%88%D8%B2%20%D8%8C%2010%20%D8%B3%D8%A7%D9%84%20%D9%82%D8%A8%D9%84-%20%D9%85%D8%AA%D9%86%DB%8C%20%DA%A9%D9%87%20%D9%87%DB%8C%DA%86%DA%A9%D8%B3%20%D9%86%D8%AE%D9%88%D8%A7%D9%86%D8%AF!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/18&title=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/18&title=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/18&title=من امروز ، 10 سال قبل- متنی که هیچکس نخواند!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/18#commentlist">نظرات (<script>setCommentCnt(18)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('18','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">چهارشنبه 18 شهریور 1394</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/17">از دست من!</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4"><p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">وقتی که صد هستی و می خواهی نود باشی<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">یعنی مثال پنجره با نور بد باشی<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">یا مثل یک زنبور بی کندوی هر جائی <o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">باید برای عشق نفرت را بلد باشی<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">واحد به واحد شمع را اندازه گیری کن<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">پروانه یا حتی مگس یا بی جسد باشی<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">شاید که باور داشتی تنها خودت هستی<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">باید برای ذهن خود فکر خرد باشی<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">حوا به حوا آرمانت را عوض کردی<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">حالا برای سیب ها فکر سبد باشی<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: center; direction: rtl; unicode-bidi: embed;"><span lang="FA"><font face="Mihan-Iransans" size="2">از ترس افکارت قلم را دفن خواهم کرد<o:p></o:p></font></span></p>
+
+<span lang="FA" dir="RTL" style="line-height: 107%;"><div style="text-align: center;"><span style="line-height: 107%;"><font face="Mihan-Iransans" size="2">شاید
+برای بیت بعدی در صدد باشی</font></span></div><div style="font-size: 11pt; text-align: center;"><span style="font-size: 11pt; line-height: 107%;"><font face="Mihan-Iransans"><br></font></span></div><div style="font-size: 11pt; text-align: center;"><span style="font-size: 11pt; line-height: 107%;"><font face="Mihan-Iransans"><br></font></span></div><div style="font-size: 11pt; text-align: center;"><span style="font-size: 11pt; line-height: 107%;"><font face="Mihan-Iransans">میلاد ماهیار</font></span></div><div style="font-size: 11pt; text-align: center;"><span style="font-size: 11pt; line-height: 107%;"><font face="Mihan-Iransans"><br></font></span></div><div style="font-size: 11pt; text-align: center;"><span style="font-size: 11pt; line-height: 107%;"><font face="Mihan-Iransans"><br></font></span></div><div style="font-size: 11pt; text-align: center;"><span style="font-size: 11pt; line-height: 107%;"><font face="Mihan-Iransans"><br></font></span></div><div style="font-size: 11pt; text-align: center;"><span style="font-size: 11pt; line-height: 107%;"><font face="Mihan-Iransans"><br></font></span></div></span>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/17&title=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/17&t=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/17&title=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/17&title=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/17&title=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/17&title=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/17&t=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/17&title=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/17&amp;title=%D8%A7%D8%B2%20%D8%AF%D8%B3%D8%AA%20%D9%85%D9%86!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/17&title=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/17&title=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/17&title=از دست من!" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/17#commentlist">نظرات (<script>setCommentCnt(17)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('17','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">سه شنبه 17 شهریور 1394</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div><div class="div54">
+        <div class="div15">
+            <div class="div015"></div>
+            <div class="div18 , text6"><h2><a href="http://miladmahyar.mihanblog.com/post/16">طرح (2)</a></h2></div>
+        </div>
+        <div class="div21">
+            <div class="div55"></div>
+            <div class="div56 , text4">
+<div style="text-align: right;"><span style="font-family: Mihan-Iransans;">کابوس ها در چشمان دیوار به دار کشیده شده</span></div><div style="text-align: right;"><font face="Mihan-Iransans">آجر به آجر</font></div><div style="text-align: right;"><font face="Mihan-Iransans">در تعفن دیوار</font></div><div style="text-align: right;"><font face="Mihan-Iransans">موش ها جیغ می کشند</font></div><div style="text-align: right;"><font face="Mihan-Iransans">می لرزد</font></div><div style="text-align: right;"><font face="Mihan-Iransans">فرو می ریزد</font></div><div style="text-align: right;"><font face="Mihan-Iransans">در مخروبه</font></div><div style="text-align: right;"><font face="Mihan-Iransans">تنها دیو باقی مانده</font></div><div style="text-align: right;"><font face="Mihan-Iransans">فاصله بگیرید!</font></div><div style="text-align: right;"><br></div><div style="text-align: right;"><font face="Mihan-Iransans">میلاد ماهیار</font></div>
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#9a3b02">نوع مطلب :</font>
+                <a href="http://miladmahyar.mihanblog.com/post/category/1" class=text4>شعر</a>،&nbsp;                <br><font color="#9a3b02">برچسب ها :</font>
+                                <br><font color="#9a3b02">لینک های مرتبط :</font>
+                
+            </div></div>
+        <div class="div26">
+            <div class="div270">
+                <div class="s27"></div>
+                <div class="m20"><a href="http://reddit.com/submit?url=http://miladmahyar.mihanblog.com/post/16&title=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m21"><a href="http://www.myspace.com/Modules/PostTo/Pages/?u=http://miladmahyar.mihanblog.com/post/16&t=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m22"><a href="http://digg.com/submit?phase=2&url=http://miladmahyar.mihanblog.com/post/16&title=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m23"><a href="http://blogger.com/?url=http://miladmahyar.mihanblog.com/post/16&title=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m24"><a href="http://www.stumbleupon.com/submit?url=http://miladmahyar.mihanblog.com/post/16&title=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m25"><a href="http://www.youtube.com/?url=http://miladmahyar.mihanblog.com/post/16&title=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m26"><a href="http://www.facebook.com/share.php?u=http://miladmahyar.mihanblog.com/post/16&t=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m27"><a href="http://delicious.com/post?url=http://miladmahyar.mihanblog.com/post/16&title=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m28"><a href="http://miladmahyar.mihanblog.com/www.flickr.com/?url=http://miladmahyar.mihanblog.com/post/16&amp;title=%D8%B7%D8%B1%D8%AD%20(2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m29"><a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://miladmahyar.mihanblog.com/post/16&title=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m30"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://miladmahyar.mihanblog.com/post/16&title=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+                <div class="m31"><a href="http://twitter.com/home?status=Reading+this:+http://miladmahyar.mihanblog.com/post/16&title=طرح (2)" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width="20" height="20" border="0" alt="" title="این مطلب را به اشتراک بگذارید"></a></div>
+            </div>
+            <div class="div27 , text8"><a href="http://miladmahyar.mihanblog.com/post/16#commentlist">نظرات (<script>setCommentCnt(16)</script>)</a></div>
+            <div class="div58 , text7"><a href="http://miladmahyar.mihanblog.com/post/author/1361879">میلاد ماهیار</a>
+
+
+                <div style="margin-top: -20px;margin-left: 5px;"><script>mihanblogPostLike('16','like')</script></div>
+
+
+            </div>
+            <div class="div581 , text7">یکشنبه 15 شهریور 1394</div>
+        </div>
+        <style>
+
+            img{
+                max-width: 505px;
+            }
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:535px; float:left; background:#e5e5e5; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0 7px 0 5px; padding:0 0 10px 0;}
+            .com1{ width:517px; float:left; background:#c24028; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:290px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:497px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:497px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:507px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+
+        
+    </div>
+    <div class="div29"></div>
+    <div class="div28 , text7">
+                <br><br>
+        ( کل صفحات : 2 )&nbsp;&nbsp;&nbsp;
+            <a href="http://miladmahyar.mihanblog.com/page/1" class=text4><b>1</b></a>&nbsp;&nbsp;&nbsp;<a href="http://miladmahyar.mihanblog.com/page/2" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;<br><br>
+    </div>
+</div>
+
+<div class="mdiv170">
+
+    <div class="mdiv24">
+        <div class="mdiv35">
+            <div class="mdiv25 , text5">موضوعات</div></div>
+        <div class="mdiv341 , text1"><ul>
+            <li><a href="http://miladmahyar.mihanblog.com/post/category/4">دل نوشته (4)</a></li><li><a href="http://miladmahyar.mihanblog.com/post/category/1">شعر (17)</a></li><li><a href="http://miladmahyar.mihanblog.com/post/category/2">ترانه (3)</a></li><li><a href="http://miladmahyar.mihanblog.com/post/category/3">داستان (1)</a></li><li><a href="http://miladmahyar.mihanblog.com/post/category/5">خبر (1)</a></li>        </ul></font></div><div class="mdiv30"></div>
+    </div>
+    
+    
+    <div class="mdiv24">
+        <div class="mdiv35">
+            <div class="mdiv25 , text5">آمار وبلاگ</div></div>
+        <div class="mdiv341 , text1"><ul>
+            <li>کل بازدید : <script>getStatVar('total_view');</script></li>
+            <li>بازدید امروز :<script>getStatVar('today_view');</script></li>
+            <li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li>
+            <li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+            <li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+            <li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+            <li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+            <li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+            <li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li>
+        </ul></div><div class="mdiv30"></div>
+    </div>
+    <div class="mdiv24">
+        <div class="mdiv35">
+            <div class="mdiv25 , text5">امکانات جانبی</div></div>
+        <div class="mdiv341">
+            <div class="msm"></div>
+            <div class="mdiv32 , text1"><center></center>
+<div></div>
+<a href="http://telegram.me/miladmahyarcha" target="_blank" rel="nofollow"><img src="../file.mihanblog.com/public/user_data/user_files/560/1677713/telelogo.png" width="150" height="150" "alt=" کانال رسمی تلگرام من ">
+<a href="http://www.facebook.com/pages/Milad-Mahyar " target="_blank"><img src="../file.mihanblog.com/public/user_data/user_files/560/1677713/facebook.png" width="150" height="150" alt=" کانال رسمی فیسبوک من "></a>
+
+            </div>
+        </div>
+        <div class="mdiv30"></div>
+    </div>
+
+
+</div></div>
+
+</div></div>
+</td>
+</tr>
+<tr>
+    <td class="b2" valign="top">
+        <div class="div00">
+            <div class="divm">
+
+                <div class="d6">
+                    <div class="div600 , text13">
+                        <marquee width="650" height="30" scrollamount="3" scrolldelay="0" direction="right" behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()">نگاه زیبا حاصل تفکر زیباست</marquee></div></div>
+
+                <div class="fft">
+                    <div class="ft1">
+                        <form action="http://mihanblog.com/public/public/user_data/template/2099997/send-mail.php" method="post">
+                            <input type="hidden" name="to" value="1n3visandeh@gmail.com">
+
+                            <div class="pm1"><input type="text" name="nm" size="26" style="border: 0px none; color:#c7c7c7; background: none; font-family:Tahoma; font-size:9pt; direction:rtl"></div>
+                            <div class="pm2 , text1">نام و نام خانوادگی &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+                            <div class="pm1"><input type="text" name="ma" size="26" style="border: 0px none; color:#c7c7c7; background: none; font-family:Tahoma; font-size:9pt; direction:ltr"></div>
+                            <div class="pm2 , text1">آدرس ایمیل &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+                            <div class="pm3"><textarea name="txt" cols="35" rows="2" style="border: 0px none; color:#c7c7c7; background: none; font-family:Tahoma; font-size:9pt; direction:rtl" onFocus="if(this.value=='پیام خود را اینجا بنویسید')this.value='';" onBlur="if(this.value=='')this.value='پیام خود را اینجا بنویسید';" type="text" value="پیام خود را اینجا بنویسید">پیام خود را اینجا بنویسید</textarea></div>
+
+                            <div class="pm4"><input type="image" src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" width=100 height=35></div>
+
+                        </form>
+                    </div>
+
+                    <div class="ft2">
+                                                    <ul id="mycarousel1" class="jcarousel jcarousel-skin-tango , text11">
+                                <li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1398/6"> شهریور 1398</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1396/2"> اردیبهشت 1396</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1396/1"> فروردین 1396</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1395/12"> اسفند 1395</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1395/5"> مرداد 1395</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1395/1"> فروردین 1395</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1394/9"> آذر 1394</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1394/8"> آبان 1394</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1394/6"> شهریور 1394</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1394/5"> مرداد 1394</a></div></li><li><div class="ic"></div><div class="im"><a href="http://miladmahyar.mihanblog.com/post/archive/1394/4"> تیر 1394</a></div></li>                                <li><div class="ic"></div><div class="im"><b><a href="http://miladmahyar.mihanblog.com/post/archive">آرشیو كل مطالب</a></b></div></li>
+                            </ul>                    </div>
+
+                    <div class="ft2">
+                                                    <ul id="mycarousel2" class="jcarousel jcarousel-skin-tango , text11">
+                                <li><div class="ic"></div><div class="im"><a href="http://www.n3visandeh.mihanblog.com" title="" target="_blank">پایگاه من در داستان نویسی</a></div></li><li><div class="ic"></div><div class="im"><a href="http://www.shereno.com/11230/" title="" target="_blank">دل نوشته های قدیمی من در شعر نو</a></div></li><li><div class="ic"></div><div class="im"><a href="http://www.academytaraneh.com/arcs/author/miladmahyar/" title="" target="_blank">دل نوشته های قدیمی من در آکادمی ترانه</a></div></li>                                <li><div class="ic"></div><div class="im"><a target="_blank" href="http://www.mytheme.ir/domain.php">تبدیل وبلاگ به سایت</a></div></li>
+                                <li><div class="ic"></div><div class="im"><a target="_blank" href="http://www.mytheme.ir">قالب وبلاگ</a></div></li>
+                                <li><div class="ic"></div><div class="im"><b><a href="http://miladmahyar.mihanblog.com/link/">همه پیوندها</a></b></div></li>
+                            </ul>
+                                            </div>
+
+                    <div class="ft2">
+                                                    <ul id="mycarousel3" class="jcarousel jcarousel-skin-tango , text11">
+                                <li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/29">همسایه</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/27">درمان</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/26">لبخند بزن</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/24">آه ای عشق نگفتی که پشیمان شده ای؟</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/23">تفاوت</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/22">مرز خاطرات</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/21">چه کنم</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/20">قدر</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/19">نیازمند</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/18">من امروز ، 10 سال قبل- متنی که هیچکس نخواند!</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/17">از دست من!</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/16">طرح (2)</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/14">نگاهی دیگر با حافظ</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/13">لازم است!</a></h2></div></li><li><div class="ic"></div><div class="im"><h2><a href="http://miladmahyar.mihanblog.com/post/11">طرح (1)</a></h2></div></li>                            </ul>
+                                            </div>
+                </div>
+
+                <div class="ft5">
+                    <div class="ft50"><a href="http://www.mytheme.ir" target="_blank"><img src="http://mihanblog.com/public/public/user_data/template/2099997/blank.gif" border=0 width=200 height=40></a></div>
+                    <div class="ft51 , text11">کلیه حقوق این وبلاگ برای <b><a href="index.html">وبگاه رسمی میلاد ماهیار</a></b> محفوظ است</div>
+                </div>
+
+            </div></div>
+    </td>
+</tr>
+</table>
+</div>
+<style>
+    h2,h1 {
+        margin: 0;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'miladmahyar.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

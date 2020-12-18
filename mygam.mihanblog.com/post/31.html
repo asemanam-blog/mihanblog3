@@ -1,0 +1,2316 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1676450*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','364');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','یکشنبه 9 شهریور 1399');
+	
+	setStatVar('today_view','1456');
+	setStatVar('yesterday_view','891');
+	
+	setStatVar('this_month_view','38463');
+	setStatVar('last_month_view','44474');
+
+	setStatVar('total_view','1479804');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (23:09)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://mygam.mihanblog.com/statupdate/?data[refereruri]=http://mygam.mihanblog.com/post/archive/1394/8&data[postid]=31&data[requesturi]=/post/31&data[sdate]=1608234087&data[hash]=63d282064949e993df85af40dca94c61&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[31]='1';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[31]='0';
+mihanblogDisLikeArrCnt[31]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://mygam.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://mygam.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+<meta name="jibisite" content="ACTIVE">
+<head>
+<meta name="jibisite" content="ACTIVE">
+<!-- main meta -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- service meta -->
+<title>بسیج ولایت - بیانات در دیدار دانش آموزان</title>
+<base href="" />
+<meta http-equiv="Content-Language" content="fa">
+<meta name="description" content="بیانات در دیدار دانش آموزان" />
+<meta name="keywords" content="بیانات,دیدار,دانش,آموزان," />
+<link rel="alternate" type="application/rss+xml" title="بسیج ولایت" href="rss/index.html" />
+<link rel="alternate" type="application/atom+xml" title="بسیج ولایت"  href="atom/index.html" />
+<!-- attach css files -->
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/glyphicon.css" rel="stylesheet" type="text/css">
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/social.css" rel="stylesheet" type="text/css">
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/style7.css" rel="stylesheet" type="text/css">
+<!-- attach js files -->
+<script type="text/javascript" src="http://ssup.ir/protemp/seri2/newsplus/js/jquery.js"></script>
+<script type="text/javascript" src="http://ssup.ir/protemp/seri2/newsplus/js/bootstrap.js"></script>
+<script type="text/javascript" src="http://ssup.ir/protemp/seri2/newsplus/js/owl.carousel.js"></script>
+
+<!-- Service script -->
+
+<!--- Style ---->
+<style>
+
+
+.cmnt-list { margin-bottom: 10px; border: 1px solid #ccc;}
+.cmnt-user { border-bottom: 1px dashed #ccc; padding:10px; background-color:#F1F1F1;}
+.cmnt-user i:before {margin-left:5px; font-size: 18px; vertical-align:middle;}
+.cmnt-text {padding:10px;}
+.cmnt-reply { padding:10px; background-color:#DCDCDC;}
+.cmnt-reply i:before {margin-left:5px; font-size: 18px; vertical-align:middle;}
+.cmnt-form { margin: 20px 0px; padding:10px; direction:rtl; }
+.comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;padding: 5px;}
+input.comment_form_textbox { margin-bottom: 10px; width: 300px;}
+textarea.comment_form_textarea { box-sizing:border-box; width:}
+@media (max-width: 768px) {
+input.comment_form_textbox {display: block; margin-bottom: 10px; width: 100%;}
+textarea.comment_form_textarea {display: block; margin-bottom: 10px; width: 90%; float:none;}
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container-fluid topbar">
+<div class="container">
+<div class="row topnavi">
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<span class="sr-only hidden-xs">MENU</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+       
+
+<li><a href="../index.html" id="homeactive">خانه</a></li>
+<li><a href="archive.html">آرشیو</a></li>
+<li><a href="mailto:alikh2202@gmail.com">ایمیل</a></li>
+<li><a href="list.html">عناوین </a></li>
+
+        
+</ul>
+</div>
+</nav>
+</div>
+<!--- end row top navbar --->
+</div>
+</div>
+<!---- end top ---->
+
+<!----------------------- Start mainpagebg ------------------->
+<div class="container-fluid">
+<div class="container">
+<div class="mainpagebg">
+<div class="row header">
+
+<div class="col-md-18">
+<div class="site-title">
+
+<h1><a href="../index.html">بسیج ولایت</a></h1>
+<h3>به امید دنیایی بهترو سرزمینی آبادتر</h3>
+
+</div>
+</div>
+            
+<div class="col-md-18">
+<div class="agahi">
+<a href="http://mygam.ir/extrapage/tab" target="_blank"><img src="http://ssup.ir/protemp/seri2/newsplus/image/agahi.jpg" alt="آگهی"/></a>
+<a href="http://mygam.ir/extrapage/tab" target="_blank"><img src="http://ssup.ir/protemp/seri2/newsplus/image/agahi.jpg" alt="آگهی"/></a>
+</div>
+</div>
+<!--- e adz --->
+          	
+               
+</div>
+<!----- end row header ---->
+          
+          
+<div class="row catnavi">
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+<span class="sr-only hidden-xs">فهرست</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+<ul class="nav navbar-nav navbar-right">
+       
+<li><a href="category/6.html">سیاسی</a></li>
+<li><a href="category/7.html">داخلی</a></li>
+<li><a href="category/5.html">سخنان رهبر انقلاب</a></li>
+<li><a href="category/4.html">بسیج</a></li>
+<li><a href="../extrapage/profile.html">پروفایل مذهبی</a></li>
+<li><a href="../extrapage/tab.html">تبلیغات</a></li>
+<li><a href="../extrapage/khabarnegar.html">خبرنگار ما باشید</a></li>        
+<li><a href="../linkdaily/new.html">ارسال لینک</a></li>
+        
+</ul>
+</div>
+</nav>
+</div>
+<!--- end row bottom navbar --->
+<!--- end header & bottom navbar --->
+
+<!----- Start Topnews ------->
+<div class="topnews">
+<div class="row">
+<div class="col-md-18">
+<div class="slidebox">
+<div class="slidebox-title"><h3>مهمترین عناوین خبری روز</h3> </div>
+<div class="slidebox-body">
+<!-----   برای تغییر عکس های اسلایدر آدرس عکس های خود را جایگزین عکس های پیشفرض در زیر بکنید
+برای لینک دادن عکس ها به صفحه یا عکس بزرگتر می توانید آدرس مورد نظر را جایگزین
+Likn
+در بخش مربوط به هر عکس بکنید
+-------------------------------------------------------------------------------------------->   
+<div class="tpn-slider">
+<div class="owl-carousel">
+
+<div class="item"><a href="413.html" target="_blank"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/2163629_746.jpg"/><h2>
+بسیج صحنه را ترک نخواهند کرد
+</h2></a></div>
+
+<div class="item"><a href="144.html" target="_blank"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/tye.png"/><h2>
+شهدای مدافع حرم را فراموش نکنیم
+</h2></a></div>
+
+<div class="item"><a href="http://www.mygam.ir/post/335" target="_blank"><img src="https://newsmedia.tasnimnews.com/Tasnim/Uploaded/Image/1394/06/29/139406291930587946132024.jpg"/><h2>
+سپاه باید مرجع اعتماد جامعه باشد
+</h2></a></div>
+
+<div class="item"><a href="212.html" target="_blank"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/rttnt.png"/><h2>
+علت افزایش حملات دشمنان
+</h2></a></div>
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+<!--- e slider topnews --->
+
+<div class="col-md-18 umenu">
+<div class="row">
+<div class="umenu-title">
+<h3>عناوین مطالب منتخب</h3>
+</div>
+</div>
+<!--- e title --->
+<div class="row">
+<div class="umenu-body">
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="337.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+دیپلماسی پنهان غربی ها
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="336.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+راز هسته های مقاومت درمنطقه
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="334.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+تمام مطقه از فساد اسرائیل متاثر شده است
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="335.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+سپاه باید مرجع اعتماد جامعه باشد
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="331.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+نباید در جامعه اسلامی فقیر وجود داشته باشد
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="324.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+برندپرستی در مصرف ممنوع!
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="323.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+تنها کتابی که با همکاری ۶۰۰ نفر تدوین شد
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="322.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+۱۵ دقیقه مشاوره تنها برای شنیدن دلایل طلاق
+</h2>
+</a><div class="story"></div>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<!--- e topnews list box col --->
+</div>
+</div>
+<!----- Start Topnews ------->
+
+
+<div class="row">
+<div class="col-md-20 col-md-push-8">
+        
+
+<div class="mainposts">
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="31.html">بیانات در دیدار دانش آموزان</a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="author/1392940.html">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+چهارشنبه 13 آبان 1394 11:57 ق.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="31.html#commentlist"> نظرات (<script>setCommentCnt(31)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><h3>بیانات در دیدار دانش‌آموزان و دانشجویان</h3><p><a href="http://farsi.khamenei.ir/photo-album?id=24387"><img src="http://farsi.khamenei.ir/ndata/news/24387/smpl.jpg" style="margin: 3px 5px 5px 0px; border: 1px solid rgb(102, 102, 102);" alt="" align="left" height="165" width="220"></a></p><div style="text-align: justify;">
+	<span style="color:#696969;">به مناسبت روز ملّی مبارزه با استکبار جهانی</span><br>
+	<br>
+	بسم‌الله‌الرّحمن‌الرّحیم<br>
+	&nbsp;امروز نَفس گرم شما جوانان عزیز در این حسینیّه یادآور و نشانه‌ی همان 
+حماسه و شوری است که در طول سالهای گوناگون از اوّل انقلاب تا امروز، 
+پشتیبان و حمایت‌کننده و تضمین‌کننده‌ی حرکت انقلابی ملّت ایران بوده است. 
+نعمت بزرگ خدا بر این کشور و بر نظام جمهوری اسلامی، وجود جوانها است؛ با 
+انگیزه‌های روشن، استوار، متّکی به منطق و با دلهای پاک و نیّتهای صاف و 
+خالص.<br>
+	&nbsp;جلسه‌ی امروز ما به مناسبت یادبود حوادث <a href="http://farsi.khamenei.ir/speech-content?id=24297">سیزدهم آبان</a>
+ است که در طول سالهای گوناگون - پیش از انقلاب و پس از پیروزی انقلاب - در
+ کشور اتّفاق افتاده است. سه حادثه است: حادثه‌ی تبعید امام در سال ۴۳، 
+حادثه‌ی کشتار بیرحمانه‌ی دانش‌آموزان در تهران در سال ۵۷، و حادثه‌ی حرکت 
+شجاعانه‌ی دانشجویان در تسخیر لانه‌ی جاسوسی در سال ۵۸؛ هر سه حادثه به 
+نحوی مربوط میشود به دولت ایالات متّحده‌ی آمریکا. در سال ۴۳ امام (رضوان 
+الله تعالی علیه) به خاطر اعتراض علیه کاپیتولاسیون - که به معنای حفظ 
+امنیّت مأموران آمریکایی در ایران و مصونیّت قضایی آنها بود - تبعید شدند؛ 
+پس قضیّه مربوط شد به آمریکا. در سال ۵۷ رژیم وابسته‌ی به آمریکا در 
+خیابانهای تهران دانش‌آموزان را به قتل رساند و آسفالت خیابانهای تهران به 
+خون نوجوانان ما رنگین شد، برای دفاع از رژیم وابسته‌ی به آمریکا؛ این هم 
+مربوط شد به آمریکا. در سال ۵۸ ضربتِ متقابل بود؛ یعنی جوانان شجاع و مؤمن 
+دانشجوی ما به سفارت آمریکا حمله کردند و حقیقت و هویّت این سفارت را که 
+عبارت بود از لانه‌ی جاسوسی کشف کردند و در مقابل چشم مردم دنیا گذاشتند. 
+آن روز جوانهای ما اسم سفارت آمریکا را گذاشتند لانه‌ی جاسوسی، امروز بعد 
+از گذشت سی و چند سال از آن روز، اسم سفارتخانه‌های آمریکا در نزدیکترین 
+کشورها به آمریکا - یعنی کشورهای اروپایی - شده است لانه‌ی جاسوسی؛ یعنی 
+جوانهای ما سی سال از تقویم تاریخ دنیا جلو بودند. این قضیّه هم مربوط به 
+آمریکا بود. سه حادثه، هرکدام [هم‌] به‌نحوی مرتبط با دولت ایالات متّحده‌ی
+ آمریکا و مناسبات آن با ایران. لذا روز سیزدهم آبان را - که مثل فردا است -
+ نامگذاری کردند "روز مبارزه‌ی با استکبار".<br>
+	&nbsp;استکبار یعنی چه؟ استکبار یک تعبیر قرآنی است؛ در قرآن کلمه‌ی استکبار به
+ کار رفته است؛ آدم مستکبر، دولت مستکبر، گروه مستکبر، یعنی آن کسانی و آن 
+دولتی که قصد دخالت در امور انسانها و ملّتهای دیگر را دارد، در همه‌ی 
+کارهای آنها مداخله میکند برای حفظ منافع خود؛ خود را آزاد میداند، حقّ 
+تحمیل بر ملّتها را برای خود قائل است، حقّ دخالت در امور کشورها را برای 
+خود قائل است، پاسخگو هم به هیچ‌کس نیست؛ این معنای مستکبر است. نقطه‌ی 
+مقابل این جبهه‌ی ظالم و ستمگر، گروهی هستند که با استکبار مبارزه میکنند؛ 
+مبارزه‌ی با استکبار یعنی چه؟ یعنی در درجه‌ی اوّل زیر بار این زورگویی 
+نرفتن؛ معنای <a href="http://farsi.khamenei.ir/keyword-content?id=1145">استکبارستیزی</a>
+ یک چیز پیچ‌وخم‌دارِ پیچیده‌ای نیست؛ استکبارستیزی یعنی یک ملّتی زیر بار 
+مداخله‌جویی و تحمیل قدرت استکبارگر یا انسان مستکبر یا دولت مستکبر نرود؛ 
+این معنای استکبارستیزی است. من البتّه ان‌شاءالله در آینده در یک فرصتی با
+ شما جوانها، دانشجوها، دانش‌آموزان درباره‌ی استکبار و استکبارستیزی یک 
+صحبت مفصّلی باید بکنم که الان مجال آن نیست؛ اجمالاً این معنای استکبار و 
+این معنای استکبارستیزی است.<br>
+	&nbsp;ملّت ایران که خود را استکبارستیز میداند، به‌خاطر این است که زیر بار 
+تحمیل دولت آمریکا نرفته است. دولت آمریکا یک دولت استکباری است، حقّ 
+مداخله‌ی در کشورها را برای خود قائل است، جنگ‌افروزی میکند، در امور 
+کشورها مداخله میکند؛ امروز مشاهده میکنید [که‌] این قضیّه دیگر از 
+محدوده‌ی کشورهای آسیا و آفریقا و آمریکای لاتین فراتر رفته است، به اروپا 
+رسیده؛ در امور آنها هم دخالت میکنند. ملّت ایران در مقابل این استکباری که
+ دولت ایالات متّحده داشت و دخالتی که میکرد و زورگوئیای که میکرد و تسلّطی
+ که بر کشور عزیز ما در طول سالها برای خود درست کرده بود، ایستاد. حکومت 
+طاغوتىِ پادشاهی، یک حکومت وابسته‌ی به آمریکا بود بدون پشتوانه‌ی داخلی؛ 
+با تکیه‌ی به آمریکا در ایران هر کاری میخواستند میکردند؛ به مردم ظلم 
+میکردند، حقوق مردم را غصب میکردند، بین مردم تبعیض قائل میشدند، کشور را 
+از رشد و ترقّی و توسعه‌ای که حقّ طبیعی و تاریخی آن بود باز داشته بودند، 
+برای خاطر اینکه منافع آمریکا را در ایران تأمین کنند. ملّت ایران ایستاد، 
+انقلاب کرد، بعد هم ریشه‌های مستکبرین را در کشور قطع کرد؛ مثل بعضی از 
+کشورهای دیگر نبود که مقابله‌ی با استکبار کردند امّا کار را نیمه‌تمام 
+گذاشتند و چوبش [را] هم خوردند.<br>
+	&nbsp;بنده در یک کشوری - که اسم نمیآورم - که با انگلیس‌ها مبارزه کرده بودند و
+ سالها ظلم و جور انگلیس‌ها را با مبارزه‌ی خودشان تمام کرده بودند و 
+استقلال پیدا کرده بودند، دیدم که مجسّمه‌ی یک سردار انگلیسی را در یکی از 
+مراکز مهمّ تفریحی خودشان نصب کردند! گفتیم خب این دیگر چیست؟ اسم آن مرکز 
+را هم، به اسم آن مستکبرِ مستعمری که هزاران جنایت در آنجا کرده بود، 
+گذاشته بودند! البتّه از این ملاحظه‌کاری و مماشات‌کاری هم سودی نبردند؛ 
+یعنی فشار بر آن کشور ادامه داشت، هنوز هم [ادامه‌] دارد؛ مماشات با مستکبر
+ برای هیچ کشوری سود به ارمغان نمیآورد. جمهوری اسلامی ایران و انقلاب عظیم
+ این ملّت با استکبارِ آمریکایی در افتاد و کار را نیمه‌کاره هم رها نکرد؛ 
+چون ضربِ دستِ آمریکا را در طول سالهای متمادی بر روی پوست و گوشت خود 
+احساس کرده بود؛ میفهمید اینها چه کسانی هستند، چه هستند.<br>
+	&nbsp;این رویکرد استکباری که آمریکاییها دارند و از ده‌ها سال پیش تا امروز هم ادامه دارد، موجب شده است که در ملّتهای دنیا یک احساس <a href="http://farsi.khamenei.ir/audio-content?id=24159">بیاعتمادی</a>
+ و بیزاری نسبت به دولت آمریکا به‌وجود بیاید؛ این مخصوص کشور ما نیست؛ هر 
+ملّتی به آمریکا اعتماد کرد، ضربه خورد؛ حتّی آن کسانی که دوست آمریکا 
+بودند. حالا در کشور ما دکتر مصدّق به آمریکاییها اعتماد کرد؛ برای اینکه 
+بتواند خود را از زیر فشار انگلیس‌ها نجات بدهد، به آمریکاییها متوسّل شد؛ 
+آمریکاییها به جای اینکه به دکتر مصدّق که به آنها حسن ظن پیدا کرده بود 
+کمک کنند، با انگلیس‌ها همدست شدند، مأمور خودشان را فرستادند اینجا و 
+کودتای ۲۸ مرداد را راه انداختند. مصدّق اعتماد کرد، کتکش را [هم‌] خورد؛ 
+حتّی کسانی که با آمریکا میانه‌شان هم خوب بود و به آمریکا اعتماد کردند، 
+ضربه‌اش را خوردند. روابط رژیم طاغوتی سابق با آمریکا خیلی صمیمی بود، در 
+عین حال زیاده‌خواهىِ آمریکا آنها را هم به ستوه آورده بود؛ همین 
+کاپیتولاسیونی را که گفتیم - مصونیّت قضائی مأمورین آمریکا - تحمیل کردند 
+بر آنها؛ آنها هم پشتوانه‌ای جز آمریکا نداشتند، مجبور شدند قبول کردند.<br>
+	&nbsp;معنای کاپیتولاسیون این است که اگر چنانچه یک گروهبان آمریکایی بزند توی 
+گوش یک افسر ارشد ایرانی، کسی حق ندارد او را تحت تعقیب قرار بدهد. اگر یک 
+مأمور خُرده‌پای آمریکایی در تهران به یک مرد شریف ایرانی یا به یک زن شریف
+ ایرانی تعدّی بکند، کسی حق ندارد او را تحت تعقیب قرار بدهد؛ آمریکاییها 
+میگویند حق ندارید، خودمان قضیّه را حل میکنیم؛ ذلّت یک ملّت از این بیشتر 
+نمیشود. این را تحمیل کردند، دوستشان هم بود، به دوست خودشان هم رحم 
+نکردند. همین محمّدرضا را بعد از آنکه از ایران فرار کرد و یک مدّت کوتاهی 
+به آمریکا رفت، از آنجا بیرون کردند، او را نگه نداشتند؛ یعنی این‌قدر هم 
+به او وفاداری نکردند؛ این‌جوری هستند.<br>
+	&nbsp;ملّتها و حتّی دولتها به آمریکا بیاعتمادند به خاطر همین رفتار و رویکردی
+ که در سیاست آمریکاییها هست. هرکسی اعتماد کرد به آمریکا، ضربه‌اش را 
+خورد؛ لذا امروز در میان ملّتها شاید بشود گفت منفورترین قدرتهای دنیا 
+آمریکا است. اگر یک نظرسنجی عادلانه و سالمی در دنیا بین ملّتها انجام 
+بگیرد، گمان نمیکنم نمره‌ی منفی هیچ دولتی به پای نمره‌ی منفی دولت آمریکا 
+برسد؛ در دنیا امروز وضع اینها این‌جوری است؛ میشنوید دیگر حرفهایی که 
+اروپاییها امروز دارند علیه آمریکاییها میزنند. خب، بنابراین مسئله‌ی 
+ستیزه‌ی با استکبار و روز ملّی استکبارستیزی یک مسئله‌ی اساسی است، یک 
+مسئله‌ی برخاسته‌ی از تحلیل درست و حرف درست است. و شما جوانهای عزیز و 
+میلیونها جوانی که در سرتاسر کشور هستند، مثل شما دانشجو و دانش‌آموزند، 
+باید تحلیل درستی داشته باشید از این قضایا. خب، جوانِ اوّلِ انقلاب احتیاج
+ به تحلیل نداشت و تحلیل نمیخواست، همه‌چیز برایش روشن بود، چون همه‌چیز را
+ خودش به چشم خود دیده بود؛ حضور آمریکاییها را، قساوت آمریکاییها را، 
+ساواکِ دست‌آموزِ آمریکاییها را، امّا امروز شما باید فکر کنید، تحلیل 
+کنید، دقّت کنید؛ صِرف [گفتن با] زبان نباشد؛ معلوم باشد چرا ملّت ایران با
+ استکبار مخالف است؛ چرا با رویکردهای ایالات‌متّحده‌ی آمریکا مخالف است؛ 
+این بیزاری ناشی از چیست؛ این را جوانِ امروز بایستی بدرستی و با تحقیق 
+بفهمد.<br>
+	&nbsp;خب، درباره‌ی مسائل جاری ما با آمریکا - که این روزها محلّ بحث است - چند
+ نکته را من عرض بکنم؛ سئوال است در ذهنها. اوّلاً یک تذکّر مهم و لازمی را
+ بدهم: هیچ‌کس نباید این مجموعه‌ی <a href="http://farsi.khamenei.ir/keyword-content?id=1045">مذاکره‌کنندگان</a>
+ ما را با مجموعه‌ی شامل آمریکا - همان شش دولت، به‌اصطلاح پنج بعلاوه‌ی یک
+ - سازش‌کار بداند؛ این غلط است؛ اینها مأموران دولت جمهوری اسلامی ایران 
+هستند، اینها بچّه‌های خودمان هستند، بچّه‌های انقلابند؛ یک مأموریّتی را 
+دارند انجام میدهند. کار سختی هم هست [که‌] بر عهده‌ی اینها است؛ دارند با 
+تلاش فراوان آن کاری را که بر عهده‌ی آنها است انجام میدهند. بنابراین 
+نباید مأموری را که مشغول یک کاری است و مسئول یک فرایندی است مورد تضعیف 
+یا توهین یا بعضی از تعبیراتی که گاهی شنیده میشود - که اینها سازش‌کارند، و
+ مانند اینها - قرار داد؛ نه، این حرفها نیست. این را هم توجّه داشته 
+باشید، این مذاکره‌ای که امروز دارد انجام میگیرد با شش کشور - که آمریکا 
+هم جزو این شش کشور است - فقط در مورد مسائل هسته‌ای است و لاغیر. بنده هم 
+اوّلِ <a href="http://farsi.khamenei.ir/speech-content?id=22233#2">امسال در مشهد مقدّس</a>
+ در سخنرانی گفتم [که‌] مذاکره در موضوعات خاص اشکالی ندارد؛ منتها گفتم من
+ اعتماد ندارم، خوشبین نیستم به مذاکره، لکن میخواهند مذاکره کنند، بکنند؛ 
+ما هم به اذن‌الله ضرری نمیکنیم.<br>
+	&nbsp;یک <a href="http://farsi.khamenei.ir/keyword-content?id=1683">تجربه‌ای</a>
+ در اختیار ملّت ایران است - که حالا من مختصراً عرض خواهم کرد - این تجربه
+ ظرفیّت فکری ملّت ما را بالا خواهد برد؛ مثل تجربه‌ای که در سال ۸۲ و ۸۳ 
+در زمینه‌ی تعلیق غنیسازی انجام گرفت، که آن‌وقت تعلیق غنیسازی را در 
+مذاکرات با همین اروپاییها، جمهوری اسلامی برای یک مدّتی پذیرفت. خب ما دو 
+سال عقب افتادیم، لکن به نفع ما تمام شد. چرا؟ چون فهمیدیم که با تعلیق 
+غنیسازی، امید همکاری از طرف شرکای غربی مطلقاً وجود ندارد. اگر ما آن 
+تعلیق اختیاری را - که البتّه به‌نحوی تحمیل شده بود، لکن ما قبول کردیم، 
+مسئولین ما قبول کردند - آن روز قبول نکرده بودیم، ممکن بود کسانی بگویند 
+خب یک ذرّه شما عقب‌نشینی میکردید، همه‌ی مشکلات حل میشد، پرونده‌ی هسته‌ای
+ ایران عادی میشد. آن تعلیق غنیسازی این فایده را برای ما داشت که معلوم شد
+ با عقب‌نشینی، با تعلیق غنیسازی، با عقب افتادن کار، با تعطیل کردن بسیاری
+ از کارها مشکل حل نمیشود؛ طرف مقابل دنبال مطلب دیگری است؛ این را ما 
+فهمیدیم، لذا بعد از آن شروع کردیم غنیسازی را آغاز کردن. امروز وضعیّت 
+جمهوری اسلامی با سال ۸۲، زمین تا آسمان فرق کرده؛ آن روز ما چانه میزدیم 
+سرِ دو، سه سانتریفیوژ، [ در حالی که‌] امروز چندین هزار سانتریفیوژ مشغول 
+کارند. جوانهای ما، دانشمندان ما، محقّقین ما، مسئولین ما همّت کردند، 
+کارها را پیش بردند. بنابراین از مذاکراتی هم که امروز در جریان است، ما 
+ضرری نخواهیم کرد. البتّه بنده همچنان که گفتم خوشبین نیستم؛ من فکر نمیکنم
+ [از] این مذاکرات آن نتیجه‌ای را که ملّت ایران انتظار دارد، به‌دست 
+بیاید، لکن تجربه‌ای است و پشتوانه‌ی تجربی ملّت ایران را افزایش خواهد داد
+ و تقویت خواهد کرد؛ ایرادی ندارد امّا لازم است ملّت بیدار باشد. ما از 
+مسئولین خودمان که دارند در جبهه‌ی دیپلماسی فعّالیّت میکنند، کار میکنند، 
+قرص و محکم حمایت میکنیم، امّا ملّت باید بیدار باشد، بداند چه اتّفاقی 
+دارد میافتد [تا] بعضی از تبلیغاتچیهای مواجب‌بگیر دشمن و بعضی از 
+تبلیغاتچیهای بیمزدومواجب - از روی ساده‌لوحی - نتوانند <a href="http://farsi.khamenei.ir/keyword-content?id=1650">افکار عمومی</a> را گمراه کنند.<br>
+	&nbsp;یکی از ترفندها و خلاف‌گوییها این است که این‌جور القا کنند به افکار 
+عمومی مردم که اگر ما در قضیّه‌ی هسته‌ای، تسلیم طرف مقابل شدیم، همه‌ی 
+مشکلات اقتصادی و معیشتی و غیره حل خواهد شد؛ این را دارند تبلیغ میکنند. 
+البتّه تبلیغاتچیهای خارجی با شیوه‌های کاملاً ماهرانه‌ی تبلیغاتی خط 
+میدهند، در داخل هم بعضی از روی ساده‌لوحی و بدون اینکه نیّت سوئی داشته 
+باشند، بعضی هم واقعاً از روی غرض همین را دارند تبلیغ میکنند که اگر ما در
+ این قضیّه کوتاه آمدیم و تسلیم شدیم در مقابلِ طرف مقابل، همه‌ی مشکلات 
+اقتصادی و مانند اینها حل خواهد شد؛ این خطا است. چرا خطا است؟ چند علّت 
+دارد. من مایلم شما جوانهای عزیزمان - هم شما که در این جلسه تشریف دارید، 
+هم قشر جوان فرهمند ما، قشر جوان آگاه ما، جوان پرانگیزه‌ی ما، دانشجویان 
+ما، دانش‌آموزان ما در سرتاسر کشور که من یکوقت گفتم شماها <a href="http://farsi.khamenei.ir/speech-content?id=7908#1">افسران جنگ نرمید</a> - فکر کنید روی این مسائل.<br>
+	&nbsp;یک مسئله این است که دشمنی آمریکا با ملّت ایران و با جمهوری اسلامی 
+اصلاً حول محور هسته‌ای نیست؛ این خطا است اگر خیال کنیم که دعوای آمریکا 
+با ما سرِ قضیّه‌ی هسته‌ای است؛ نه، قضیّه‌ی هسته‌ای بهانه است؛ قبل از 
+اینکه مسئله‌ی هسته‌ای مطرح باشد، همین دشمنیها، همین مخالفتها از اوّل 
+انقلاب بود؛ اگر یک روزی هم مسئله‌ی هسته‌ای حل شد - فرض کنید جمهوری 
+اسلامی عقب‌نشینی کرد؛ همان‌که آنها میخواهند - خیال نکنید مسئله تمام 
+خواهد شد؛ نه، ده بهانه‌ی دیگر را به‌تدریج پیش میکشند: چرا شما موشک 
+دارید؟ چرا هواپیمای بدون سرنشین دارید؟ چرا با رژیم صهیونیستی بدید؟ چرا 
+رژیم صهیونیستی را به رسمیّت نمیشناسید؟ چرا از مقاومت در منطقه‌ی به قول 
+خودشان خاورمیانه حمایت میکنید؟ و چرا؟ و چرا؟ و چرا؟ مسئله این نیست که 
+اینها سرِ قضیّه‌ی هسته‌ای با جمهوری اسلامی اختلاف پیدا کرده باشند؛ نه، <a href="http://farsi.khamenei.ir/keyword-content?id=1226">تحریم </a>آمریکا
+ از اوّل انقلاب شروع شد، روزبه‌روز هم بیشتر شده است، تا امروز که خب به 
+نقطه‌ی بالایی رسیده. دشمنیهای دیگر [هم ]کردند: اینها هواپیمای جمهوری 
+اسلامی ر ا سرنگون کردند، ۲۹۰ انسان مسافر را کشتند؛ اینها اوایل انقلاب 
+هنوز مردم از هیجان انقلاب بیرون نیامده، کودتای پایگاه شهید نوژه را به 
+راه انداختند، علیه انقلاب کودتا کردند؛ اینها از ضدّانقلابها در هر 
+نقطه‌ای از کشور که بودند حمایت کردند؛ به ضدّانقلاب سلاح دادند و مانند 
+اینها؛ همان کاری که بعدها در بعضی کشورهای دیگر کردند، در اینجا[هم‌] این 
+کارها را کردند. مسئله مسئله‌ی هسته‌ای نیست؛ باید همه به این توجّه داشته 
+باشند. این نیست که ما خیال کنیم دشمنی آمریکا با جمهوری اسلامی ایران 
+به‌خاطر مسئله‌ی هسته‌ای است؛ نه، مسئله مسئله‌ی دیگری است؛[ مسئله این است
+ که‌] ملّت ایران به خواسته‌های آمریکا نه گفت، ملّت ایران گفت آمریکا علیه
+ ما هیچ غلطی نمیتواند بکند. اینها با موجودیّت جمهوری اسلامی مخالفند، با 
+نفوذ و <a href="http://farsi.khamenei.ir/keyword-content?id=1061">اقتدار جمهوری اسلامی</a>
+ مخالفند. همین اواخر یکی از سیاستمداران و از عناصر فکری آمریکا گفت - و 
+گفته‌ی او پخش شد، این مسئله‌ی پنهانی هم نیست - که ایران چه اتمی باشد، چه
+ اتمی نباشد، خطرناک است. این شخص صریحاً گفت نفوذ و اقتدار ایران - به قول
+ خودشان هژمونی ایران - در منطقه خطرناک است؛ ایرانی که امروز از اعتبار 
+برخوردار است، از احترام برخوردار است، از اقتدار برخوردار است. آنها با 
+این دشمنند، با این مخالفند. آن روزی اینها راضی میشوند که ایران یک ملّت 
+ضعیف، کنارمانده، منزوی، بیاعتبار و بیاحترام باشد؛ مسئله مسئله‌ی هسته‌ای 
+نیست. این یک مطلب.<br>
+	&nbsp;مطلب دیگر این است که ما برای مسائل اقتصادی کشور همه‌ی تلاشمان بایستی 
+متمرکز باشد بر روی مسائل داخلی؛ آن پیشرفتی، آن گشایشی ارزش دارد که متّکی
+ باشد به <a href="http://farsi.khamenei.ir/keyword-content?id=3634">قدرت درونی</a>
+ یک ملّت. یک ملّت اگر به قدرت خود، به تواناییهای خود متّکی بود، دیگر از 
+اخم یک کشور، از تحریم یک کشور متلاطم نمیشود؛ این را باید ما حل کنیم. 
+همه‌ی حرف ما با مسئولین - چه مسئولین گذشته، چه مسئولین امروز - همین است 
+که باید برای گشایش مسائل کشور و مشکلات کشور، از جمله مشکلات اقتصادی، 
+نگاه به درون باشد. ما در کشور ظرفیّتهای زیادی داریم؛ از ظرفیّتهای این 
+ملّت که عبارت است از، هم امکانات انسانی، هم امکانات طبیعی، هم امکانات 
+جغرافیایی و موقعیّت منطقه‌ای باید استفاده کرد. البتّه ما از تحرّک 
+دیپلماسی هم حمایت میکنیم. وقتی میگوییم از درون بایستی کارها اصلاح بشود، 
+معنایش این نیست که چشممان را ببندیم، تحرّک دیپلماسی نداشته باشیم، با 
+دنیا کار نکنیم؛ چرا، تحرّک دیپلماسی، حضور دیپلماسی کار بسیار لازمی است -
+ مسئولینی که این کارها را میکنند، بخشی از کارهایند - لکن تکیه بایست بر 
+روی مسائل داخلی باشد. در عرصه‌ی دیپلماسی هم آن کشوری موفّق است که متّکی 
+باشد به نیروی درون‌زا؛ آن دولتی میتواند در پشت میز مذاکره‌ی دیپلماسی حرف
+ خودش را سبز بکند و به مقصود و نتایج مورد نظر خودش دست پیدا بکند که 
+متّکی باشد به یک اقتدار درونی، تواناییهای درونی؛ حساب میبرند از یک چنین 
+دولتی.<br>
+	&nbsp;یک نکته‌ی مهمّی که در اینجا باید مورد توجّه قرار بگیرد این است که ما 
+در مواجهه‌ی با دشمنانمان در طول این سالها هیچ‌وقت دچار استیصال نشدیم، 
+بعد از این هم نخواهیم شد. ما در دهه‌ی اوّل انقلاب، بخصوص در سالهای اوّل،
+ دستمان از اغلب ابزارهای مادّی کوتاه بود؛ پول نداشتیم، سلاح نداشتیم، 
+تجربه نداشتیم، سازماندهی نداشتیم، نیروی مسلّح کارآمد نداشتیم، ابزارهای 
+جنگی نداشتیم؛ و دشمن ما - چه دشمنی که در صحنه‌ی جنگ با ما میجنگید، یعنی 
+رژیم بعثی صدّام؛ و چه دشمنی که پشت سر او قرار داشت، یعنی همین آمریکا و 
+ناتو و شوروىِ آن روز - اینها در اوج قدرت بودند، در اوج توانایی بودند. 
+همین دولت آمریکا آن روز در زمان ریگان یکی از دولتهای محکم و قوی و توانای
+ در عرصه‌های سیاسی و نظامی در دنیا بود، و ما در تهیدستی و فقر و تنگدستی 
+قرار داشتیم، [ امّا] نتوانستند با ما کاری بکنند.<br>
+	&nbsp;امروز وضعیّت فرق کرده است؛ امروز جمهوری اسلامی، هم سلاح دارد، هم پول 
+دارد، هم علم دارد، هم فنّاوری دارد، هم قدرت ساخت دارد، هم اعتبار 
+بین‌المللی دارد، هم میلیونها جوان آماده‌ی به کار دارد، میلیونها استعداد 
+دارد؛ امروز وضع ما این‌جوری است؛ ما اصلاً قابل مقایسه‌ی با سیسال قبل 
+نیستیم. اتّفاقاً در جبهه‌ی مقابل ما وضعیّت به‌عکس است؛ آن روز آمریکاییها
+ در اوج قدرت بودند، امروز نیستند؛ خودِ یکی از این دولتمردان کنونی 
+آمریکا، یک شخصیّت معروفی، چندی پیش یک جمله‌ای گفت - اوگفت، ما نمیگوییم؛ 
+این را خودشان گفتند - که آمریکا امروز وضعش به جایی رسیده که دوستانش 
+احترامش نمیکنند، دشمنانش از او نمیترسند. در این برهه‌ی اخیر دچار مشکلات 
+سیاسیاند؛ دیدید اختلافات سیاسیون آمریکا را بر سر مسائل مربوط به بودجه‌ی 
+دولتشان که موجب شد شانزده هفده روز دولت آمریکا تعطیل بشود، هشتصد هزار 
+کارمند را به مرخصی اجباری بفرستند؛ اینها ضعف است، اینها ناتوانی است. در 
+مسائل اقتصادی و مالی، امروز دچار بزرگ‌ترین مشکلاتند؛ مشکلات ما در مقابل 
+مشکلات آنها صفر است.<br>
+	&nbsp;من به شما بگویم، در سال ۲۰۰۱ یا ۲۰۰۲ میلادی - یعنی ده سال قبل، یازده 
+سال قبل - مسئولین مالی آمریکا پیش‌بینی کردند و گفتند ما در سال ۲۰۱۱ یا 
+۲۰۱۲ چهارده هزار میلیارد دلار اضافه‌ی درآمد خواهیم داشت؛ درست توجّه 
+کنید! سال ۲۰۰۱ پیش‌بینیشان برای سال ۲۰۱۱ و ۲۰۱۲ این بود: گفتند ما در سال
+ ۲۰۱۱ و ۲۰۱۲ چهارده هزار میلیارد دلار اضافه درآمد خواهیم داشت؛ حالا سال 
+۲۰۱۳ است، نزدیک هفده هزار میلیارد [دلار] کمبود دارند، نه اینکه اضافه 
+درآمد ندارند؛ یعنی در محاسباتشان حدود سی هزار میلیارد دلار اشتباه کردند!
+ این وضع اقتصادی آنها است، این وضع محاسبات آنها است. یک چنین وضعی امروز 
+در جبهه‌ی مقابل ما وجود دارد، اختلافات هم که خب زیاد است، ملاحظه میکنید؛
+ منافع مشترکی آنها را - اروپاییهاو آمریکاییها را - به هم وصل کرده است 
+والّا در اعماق با هم بدند. ملّت فرانسه&nbsp; نسبت به آمریکاییها منزجر&nbsp; و 
+متنفّر است. در قضایای گوناگون، در قضیّه‌ی سوریّه که آمریکاییها میخواستند
+ حمله کنند، نتوانستند نزدیکترین دولت به خودشان را هم شریک خودشان کنند در
+ این قضیّه؛ یعنی انگلیس‌ها هم گفتند ما شرکت نمیکنیم. این درحالی است که 
+وقتی به عراق حمله کردند، حدود چهل دولت با اینها همکاری کردند؛ وقتی به 
+افغانستان حمله کردند، سی و چند دولت با اینها همکاری کردند. [ الان 
+]آمریکاییها وضعشان این‌جوری است، [امّا] ما وضعمان خیلی خوب است. ما 
+پیشرفت کردیم، ما مقتدر شدیم، ملّتمان ملّت آگاهی شده؛ البتّه فشار 
+می‌آورند. این فشارها را بایستی با تکیه‌ی بر تواناییهای خودمان در داخل 
+تحمّل کنیم و از آن عبور کنیم؛ این کار عاقلانه‌ای است که انجام میگیرد. 
+البتّه عرض کردیم، باز هم تکرار میکنیم: با تلاشی که دولت محترم و مسئولین 
+کشور دارند انجام میدهند، ما موافقیم. یک کاری است، یک تجربه‌ای است، 
+احتمالاً یک اقدام مفیدی است؛ این کار را انجام بدهند، اگر نتیجه گرفتند که
+ چه بهتر، امّا اگر نتیجه نگرفتند، معنایش این باشد که برای حلّ مشکلات 
+کشور بایستی کشور روی پای خودش بایستد. این توصیه‌ی قبلی خودمان را باز هم 
+تکرار میکنیم: به دشمنی که لبخند میزند، اعتماد نکنید؛ این را ما به 
+مسئولینمان، به بچّه‌های خودمان، فرزندان خودمان - اینهایی که در مسئله‌ی 
+دیپلماسی مشغول کار هستند، بچّه‌های مایند، جوانهای خود مایند - [توصیه 
+میکنیم‌]؛ توصیه‌ی ما به اینها این است: مراقب باشید لبخند فریبگرانه شما 
+را دچار اشتباه نکند، دچار خطا نکند؛ ریزه‌کاریهای کار دشمن را ببینید.<br>
+	&nbsp;آمریکاییها امروز بیشترین رودربایستی را از رژیم منحطّ صهیونیستی دارند؛ 
+بیشترین ملاحظه را از محافل صهیونیست دارند؛ ملاحظه‌ی آنها را میکنند؛ ما 
+داریم میبینیم وضعیّت را. پنجه‌ی قدرتمندان مالی و کمپانیهای صهیونیستی بر 
+دولت آمریکا و کنگره‌ی آمریکا و مسئولین آمریکایی آن‌چنان مسلّط است که 
+اینها مجبورند ملاحظه‌ی آنها را بکنند، ما که مجبور نیستیم ملاحظه‌ی آنها 
+را بکنیم. ما از روز اوّل گفتیم، امروز هم میگوییم، بعد از این هم خواهیم 
+گفت: ما رژیم صهیونیستی را یک رژیم نامشروع و حرام‌زاده میدانیم. یک رژیمی 
+است که بر اساس توطئه به‌وجود آمده است، بر اساس توطئه و سیاستهای 
+توطئه‌آمیز هم دارد حفظ میشود و حراست میشود. آنها ملاحظه دارند؛ حالا چرا 
+ملاحظه دارند، این خودش بحث دیگری است؛ پول و قدرت و سرمایه‌ی صهیونیست‌ها 
+کار خودش را میکند، بالاخره این بیچاره‌ها را دچار میکند؛ مجبورند ملاحظه 
+کنند؛ فقط هم آمریکاییها نیستند، خیلی از سیاستمداران دیگر غربی هم همین 
+مشکل را بیچاره‌ها دارند، آنها هم گرفتارند، [دچار] مشکلند. لذا مسئولین ما
+ توجّه داشته باشند، حرفها را ببینند؛ از آن طرف لبخند میزنند، اظهار علاقه
+ میکنند، اظهار میل به مذاکره میکنند، از این طرف بلافاصله میآیند میگویند:
+ همه‌ی گزینه‌ها روی میز است! خب، که مثلاً چه؟ چه حرکتی، چه غلطی ممکن است
+ نسبت به جمهوری اسلامی انجام بدهند؟ اگر جدّی هستند در کار، بایستی خودشان
+ را کنترل کنند، باید جلوی آن کسانی را که زبان به حرفهای یاوه‌ای از این 
+قبیل میگشایند بگیرند. یک سیاستمدار پولدار آمریکایی یک غلطی میکند که بله،
+ ما بایستی در فلان صحرای ایران بمب اتم بزنیم و تهدید کنیم و فلان؛ باید 
+بزنند دهن یک چنین آدمی را خُرد کنند. دولتی که خودش را به توهّم اینکه 
+نسبت به مسائل جهان مسئولیّت دارد، مسئول میداند که با مسئله‌ی هسته‌اىِ 
+فلان کشور و فلان کشور برخورد کند، دیگر غلط میکند که یک کشوری را در یک 
+چنین وضعی، در یک چنین دور و زمانه‌ای تهدید هسته‌ای بکند. باید جلوی این 
+یاوه‌ها را بگیرند.<br>
+	&nbsp;به‌هرحال ملّت ما بحمدالله ملّت هوشیاری است، مسئولین ما هم مسئولین همین
+ ملّتند، آنها هم هوشیارند، حواسشان جمع است. هر کاری که به مصلحت کشور 
+باشد و مسئولین کشور انجام بدهند، ما از آن کار حمایت میکنیم، کمکشان 
+میکنیم، دعایشان هم میکنیم، لکن توصیه هم میکنیم، هم به آحاد مردم، هم به 
+مسئولین، هم بخصوص به شما جوانهای عزیز که چشم‌وگوش‌ها را باز کنید. هر 
+ملّتی با آگاهی، با هوشیاری، با بیدار ماندن و به خواب نرفتن، میتواند به 
+اهداف والای خود دست پیدا کند.<br>
+	&nbsp;و امیدواریم ان‌شاءالله دعای حضرت بقیّةالله (ارواحنا فداه)، پشتیبان شما
+ باشد. روح مطهّر امام دعاگوی شما باشد. ارواح طیّبه‌ی شهدا ان‌شاءالله 
+دعاگوی شما باشند. و ان‌شاءالله شما جوانها، کشور را با روحیّه‌ی شاداب 
+خودتان تحویل بگیرید، و با ابتکار خودتان نوبت به شما برسد، ان‌شاءالله به 
+قلّه‌ها برسید.<br>
+	والسّلام علیکم و رحمةالله و برکاته‌&nbsp;&nbsp; <br><br><br><br>منبع:http://farsi.khamenei.ir<br></div>
+
+
+
+
+
+<script>mihanblogPostLike('31','like')</script>                    
+</div>
+
+<div class="post-tags">
+<i class="glyphicon glyphicon-tag"></i>
+ برچسب ها:
+ <a href="tag/بیانات.html" > بیانات </a> ،  <a href="tag/جنگ&#32;نرم.html" > جنگ نرم </a> ،  <a href="tag/مذاکره&#32;با&#32;آمریکا.html" > مذاکره با آمریکا </a> ،  <a href="tag/اقتدار&#32;ملی.html" > اقتدار ملی </a> ،  <a href="tag/تجربه&#32;ملت&#32;ایران.html" > تجربه ملت ایران </a> ، 
+</div>
+
+                              
+<div class="post-foot">
+</div>
+</div>
+                         
+</div>
+
+
+<div class="post">
+<div class="post-body">
+
+<a name='commentlist'></a>
+<div class="cmnt-form"><style>
+
+
+#imageCodeWrapper div{
+	float: right;
+}
+#imageCodeWrapper .imageCode_input #imgstr{
+	width:83px;
+	height:34px;
+	font-size:25px;
+}
+#imageCodeWrapper .imageCode_number{
+	margin:1px 5px 0px 0px;
+}
+#imageCodeWrapper .imageCode_number img{
+ 	border: 0px;
+ 	width: 122px;
+ 	height: 37px;
+}
+#imageCodeWrapper .imageCode_refresh{
+	cursor:pointer;
+	margin: 3px 3px 0px 0px;
+
+	width: 16px;
+	height: 16px;
+
+    background:url(http://static.mihanblog.com//public/images/icon/gen/refresh.gif) center right no-repeat;
+}
+
+.clearfix {display: inline-block;}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+
+
+
+.comment_form .err-msg{
+	padding-right: 110px;
+	color: #F00;
+}
+.comment_form{
+	direction: rtl;
+}
+
+.comment_form label{
+	width: 110px;
+	display: block;
+	float: right;
+}
+.comment_form .comment_form_msg{
+	background: none repeat scroll 0 0 #8CDA5C;
+    border: 1px solid #249224;
+    padding: 5px;
+    margin: 5px;
+}
+.comment_form .required{
+	background: url(http://static.mihanblog.com//public/images/icon/require2.gif) no-repeat right top;
+	padding-right: 20px;
+}
+
+.comment_form .required{
+	width: 90px;
+}
+.comment_form .controls{
+	text-align: center;
+}
+.comment_form .btn{
+	font-family: tahoma;
+}
+.smileLayer{
+    position:absolute;
+    display:none;
+    background-color:#fff;
+    border:1px solid #555;
+}
+    .msgbody{
+        float:right;
+        width:260px
+    }
+    .msgtitle{
+        float:right;
+        -width:57px;
+        text-align:right;
+        -padding-right:64px;
+    }
+</style>
+
+<script>
+    var mihanBlog_commentBody_cursorPos=0;
+    function set_mihanBlogCommentBodyCursorPos(textarea_id){
+        mihanBlog_commentBody_cursorPos = c_$(textarea_id).selectionStart;
+    }
+</script>
+
+<form id="frm-16082340875fdbb4678d8b5" method="post" action="http://mygam.mihanblog.com/post/comment/new/31/fromtype/postone/fid/16082340875fdbb4678d8b5/atrty/1608234087/avrvy/0/key/14a8e4560d268cb5e2bfd7fd93123262/#post_form" >
+	<a name="post_form"></a>
+	<div class="comment_form">
+
+					<div class="comment_form_row clearfix">
+				<label for="full_name">نام (فارسی):</label>
+				<input type="text" name="data[full_name]" id="full_name" value="" class="comment_form_textbox" />			</div>
+
+			<div class="comment_form_row clearfix">
+				<label for="email">ایمیل :</label>
+				<input type="text" name="data[email]" id="email" value="" class="comment_form_textbox english" />			</div>
+
+			<!--
+            <div class="comment_form_row clearfix">
+				<label for="web">آدرس وب/وبلاگ :</label>
+				<input type="text" name="data[web]" id="web" value="" class="comment_form_textbox english" />			</div>
+            -->
+
+			<div class="comment_form_row clearfix">
+				<label for="remember">مرا بخاطر بسپار :</label>
+				<input type="checkbox"  name="data[remember]" id="remember" value="1" />			</div>
+
+			<div class="comment_form_row clearfix">
+
+                <div class="msgtitle" for="title">
+                	<label class="required">
+                    	متن نظر (فارسی): 					</label>
+                     <!--   
+                    <div id="showsmile" style="position: relative;">
+                        <img src="http://static.mihanblog.com//public/rte/images_new/smiley.gif" onClick="showMihanBlogSmileBox('body')" style="cursor:pointer" />                    </div>
+                    <div class="smileLayer" id="MihanBlogSmiles_body"><table cellpadding="0"  cellspacing="0"  width="120"><tr><td colspan=2>&nbsp;</td><td style="cursor:pointer;text-align:left;padding:3px 0px 0px 3px;" onclick="showMihanBlogSmileBox('body')"><img src="http://static.mihanblog.com//public/images/icon/close.gif"  /></td></tr>	<tr><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/1.gif" onClick="MihanBlogShowSmile('لبخند','body')" title="لبخند" alt="لبخند" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/2.gif" onClick="MihanBlogShowSmile('ناراحت','body')" title="ناراحت" alt="ناراحت" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/3.gif" onClick="MihanBlogShowSmile('چشمک','body')" title="چشمک" alt="چشمک" style="cursor:pointer" /></td>	</tr>	<tr><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/4.gif" onClick="MihanBlogShowSmile('نیشخند','body')" title="نیشخند" alt="نیشخند" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/6.gif" onClick="MihanBlogShowSmile('بغل','body')" title="بغل" alt="بغل" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/7.gif" onClick="MihanBlogShowSmile('سوال','body')" title="سوال" alt="سوال" style="cursor:pointer" /></td>	</tr>	<tr><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/8.gif" onClick="MihanBlogShowSmile('قلب','body')" title="قلب" alt="قلب" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/9.gif" onClick="MihanBlogShowSmile('خجالت','body')" title="خجالت" alt="خجالت" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/10.gif" onClick="MihanBlogShowSmile('زبان','body')" title="زبان" alt="زبان" style="cursor:pointer" /></td>	</tr>	<tr><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/11.gif" onClick="MihanBlogShowSmile('ماچ','body')" title="ماچ" alt="ماچ" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/13.gif" onClick="MihanBlogShowSmile('تعجب','body')" title="تعجب" alt="تعجب" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/14.gif" onClick="MihanBlogShowSmile('عصبانی','body')" title="عصبانی" alt="عصبانی" style="cursor:pointer" /></td>	</tr>	<tr><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/16.gif" onClick="MihanBlogShowSmile('عینک','body')" title="عینک" alt="عینک" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/19.gif" onClick="MihanBlogShowSmile('شیطان','body')" title="شیطان" alt="شیطان" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/20.gif" onClick="MihanBlogShowSmile('گریه','body')" title="گریه" alt="گریه" style="cursor:pointer" /></td>	</tr>	<tr><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/21.gif" onClick="MihanBlogShowSmile('خنده','body')" title="خنده" alt="خنده" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/24.gif" onClick="MihanBlogShowSmile('قهقهه','body')" title="قهقهه" alt="قهقهه" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/27.gif" onClick="MihanBlogShowSmile('خداحافظ','body')" title="خداحافظ" alt="خداحافظ" style="cursor:pointer" /></td>	</tr>	<tr><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/31.gif" onClick="MihanBlogShowSmile('سبز','body')" title="سبز" alt="سبز" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/33.gif" onClick="MihanBlogShowSmile('قهر','body')" title="قهر" alt="قهر" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/36.gif" onClick="MihanBlogShowSmile('هورا','body')" title="هورا" alt="هورا" style="cursor:pointer" /></td>	</tr>	<tr><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/41.gif" onClick="MihanBlogShowSmile('دست','body')" title="دست" alt="دست" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/53.gif" onClick="MihanBlogShowSmile('گل','body')" title="گل" alt="گل" style="cursor:pointer" /></td><td width="40px" height="30px" align="center"><img src="http://static.mihanblog.com//public/rte/images_new/smiles/39.gif" onClick="MihanBlogShowSmile('تفکر','body')" title="تفکر" alt="تفکر" style="cursor:pointer" /></td>	</tr>	</table></div>                    -->
+                </div>
+                
+                <div class="msgbody">
+				    <textarea name="data[body]" id="body" class="comment_form_textarea" onkeyup="showCaptcha();set_mihanBlogCommentBodyCursorPos('body');" onkeypress="set_mihanBlogCommentBodyCursorPos('body');" onclick="set_mihanBlogCommentBodyCursorPos('body');" rows="8" cols="40"></textarea>                </div>
+
+                <script type="text/javascript">
+
+                                        var showCaptcha = function(){
+                                                    if(c_$('body').value.length>5){
+                                c_$("imageCodeWrapper").style.display="";
+                            }
+                                            }
+                </script>
+			</div>
+
+			<div class="comment_form_row clearfix">
+				<label for="private">ارسال نظر خصوصی :</label>
+				<input type="checkbox"  name="data[private]" id="private" value="1" />			</div>
+        
+							<div class="comment_form_row clearfix">
+					نظرات پس از تایید نشان داده خواهند شد.				</div>
+			
+			<div class="controls clearfix">
+				
+        		<style>
+        		    #imgstr{
+        		        font-size:12px;
+        		    }
+        		</style>
+        		<div id="imageCodeWrapper" class="comment_form_row clearfix">
+	        			<label class="required" for="imgstr">عبارت تصویر :</label>
+	        			
+	        			<div class="imageCode_input">
+	        				<input type="text" name="imgstr" id="imgstr" style="" class="comment_form_textbox">
+	        			</div>
+		        		<div class="imageCode_number">
+	        				<img id="imgcodepage_245136" style="width: auto; height: auto;max-width:140px" src="http://mygam.mihanblog.com/public/public/html/imgcode.php?str=bf24af8043d918f8d0d8b9cd2611a7b0____pieddbire35" >
+	        			</div>
+	        			<div class="imageCode_refresh" title="تعویض عبارت تصویری" onclick="changeImgCode_245136();"></div>	
+	        	</div>
+	        	<input type="hidden" name="imgcode" id="imgcode_245136" value="bf24af8043d918f8d0d8b9cd2611a7b0____pieddbire35">
+        		<script>
+        		var imgCodeChangeNum_245136 = 0 ;
+        		changeImgCode_245136 = function (){
+	        		var ImgCodeArr_245136 = new Array();
+	        		ImgCodeArr_245136[1]="dc023c386e71f9129e1e78c0f56ab4e9____hptfjhju67";
+	        		ImgCodeArr_245136[2]="32fd7aa919865fa715e9b420fb9987ed____ldsizifzd51";
+	        		ImgCodeArr_245136[3]="9d933fbda605e496ada4df10112d0a0f____hhhcrssc75";
+	        		ImgCodeArr_245136[4]="7b32da300f0e7d45dfc3c48d8caf31a2____bjerlrepj35";
+	        		
+	        		
+	        		if(imgCodeChangeNum_245136<4){
+	        			imgCodeChangeNum_245136 ++ ;
+	        		}
+	        		else{
+	        			imgCodeChangeNum_245136 = 1 ;
+	        		}
+	        		
+	        		c_$("imgcode_245136").value = ImgCodeArr_245136[imgCodeChangeNum_245136];
+	        		document.getElementById("imgcodepage_245136").src = "/public/public/html/imgcode.php?str="+ImgCodeArr_245136[imgCodeChangeNum_245136];
+        		}
+        		</script>
+        		<input type="submit" value="ارسال" class="btn" classRow="comment_form_row" onclick="click_send()" />
+			</div>
+	</div>
+
+<input type="hidden" name="frm-id" value="16082340875fdbb4678d8b5" id="frm-id" /></form>
+<script>
+function click_send(){
+
+	Delete_Cookie( 'CMDinfo','/post/', '.mihanblog.com' );
+
+	if(c_$('remember').checked){
+		var cookieStr = c_$('full_name').value +"_____"+c_$('email').value+"_____"+c_$('web').value;
+		Set_Cookie( 'CMDinfo', cookieStr , 1, '/post/', '.mihanblog.com', 0 );
+	}
+}
+
+
+//LOAD
+var CMDinfo = Get_Cookie('CMDinfo');
+
+if(CMDinfo)
+{
+	CMDinfo = CMDinfo.split("_____");
+	c_$('full_name').value = CMDinfo[0];
+	c_$('email').value = CMDinfo[1];
+	c_$('web').value = CMDinfo[2];
+	c_$('remember').checked = true;
+}
+
+</script></div>
+
+</div>
+</div>
+<!--- end comment box ---->
+
+
+
+<!---- end etc page --->
+
+
+</div>
+                    
+                    
+<!---------------------------------------------------- end mainpost ------------------------------------------------->
+
+<!---------------------------------------------------- end pagenavi -------------------------------------------------->
+
+ 
+
+
+
+
+
+
+
+<!-------------------- Start  news Cat box --------------------------------->
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش اول </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox1.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox2.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox3.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox4.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end one cat box --->
+
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش دوم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox11.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox12.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox13.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox14.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end two cat box --->
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش سوم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox21.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox22.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox23.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox24.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end three cat box --->
+
+
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش چهارم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox31.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox32.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox33.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox34.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end four cat box --->
+
+
+
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش پنجم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto1.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto2.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto3.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="../index.html#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto4.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end file cat box --->
+
+<!-------------------- end  news Cat box --------------------------------->
+
+
+
+
+<div class="row">
+
+<div class="col-md-18 listbox">
+<div class="lb-title"><h3>  عنوان بخش فهرست اول   </h3></div>
+<div class="lbb">
+<ul>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+
+<div class="col-md-18 listbox">
+<div class="lb-title"><h3>  عنوان بخش فهرست دوم   </h3></div>
+<div class="lbb">
+<ul>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="../index.html#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+</div>
+<!----- end seri 1 list boxs ------>
+
+
+<div class="row"><div class="gb-title"><h3>گالری تصاویر</h3></div></div>
+<div class="row gallbox">
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-5.jpg" target="_blank" title="تصاویر زیبا از طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-5.jpg" alt="تصاویر زیبا از طبیعت" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-6.jpg"_blank" title="طبیعت رویایی">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-6.jpg" alt="طبیعت رویایی" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-7.jpg" target="_blank" title="رنگین کمان در طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-7.jpg" alt="رنگین کمان در طبیعت" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="ساحل و دریا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="ساحل و دریا" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" target="_blank" title="عکس های زیبا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" alt="عکس های زیبا" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" target="_blank" title="غروب زیبای خورشید">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" alt="غروب زیبای خورشید" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/dream-amazing-nature-images.jpg" target="_blank" title="طبیعت زیبا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/dream-amazing-nature-images.jpg" alt="طبیعت زیبا" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-12.jpg" target="_blank" title="آبشار و طبیعت زیبا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-12.jpg" alt="آبشار و طبیعت زیبا" />
+</a>
+</div>
+
+
+</div>
+<!---- end gallery row ---->
+
+
+
+
+
+                    
+                    
+</div>
+<!--- end center column --->
+
+
+
+
+
+<div class="col-sm-18 col-md-8 col-md-pull-20">
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-user"></i>  درباره وبلاگ</h3>
+</div>
+<div class="menu-body">
+<center><img src="http://static.mihanblog.com//public/user_data/web_photo/559/1676450.jpg?6686"  /></center>
+ <br>
+وبلاگ بسیج ولایت بروزترین وبلاگ برای خواندن مطالب سیاسی ومذهبی بهترین وبلاگ برای دانلود تصاویر مذهبی.<br />
+<br />
+*ممنون از شما که این وبلاگ را انتخاب کردید*</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-folder-open"></i>موضوعات</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="category/9.html">مذهبی&nbsp;(1)</a></li>
+<li><a href="category/8.html">ورزشی&nbsp;(2)</a></li>
+<li><a href="category/6.html">موضوعات سیاسی جهان&nbsp;(91)</a></li>
+<li><a href="category/5.html">سخنان رهبر انقلاب&nbsp;(32)</a></li>
+<li><a href="category/7.html">خبر های مهم ایران&nbsp;(230)</a></li>
+<li><a href="category/4.html">بسیج&nbsp;(61)</a></li>
+<li><a href="category/3.html">تصاویر مذهبی&nbsp;(1)</a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-list"></i>صفحات جانبی</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="../extrapage/ozv.html">نویسنده وبلاگ شوید</a></li>
+<li><a href="../extrapage/khabarnegar.html">خبرنگار ما باشید</a></li>
+<li><a href="../extrapage/tab.html">تبلیغات</a></li>
+<li><a href="../extrapage/profile.html">عکس پروفایل مذهبی</a></li>
+<li><a href="../extrapage/profil2.html">عکس پروفایل مذهبی2</a></li>
+<li><a href="../extrapage/profil3.html">عکس پروفایل مذهبی3</a></li>
+<li><a href="../extrapage/picture.html">تصاویر زیبا امام خامنه ای</a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-edit"></i> نویسندگان</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="author/1392940.html" >
+<span>✔ (مدیر کل) علی خسروانی&nbsp;(325)</span></a></li>
+<li><a href="author/1732190.html" >
+<span>نیما حمیدی&nbsp;(39)</span></a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-tags"></i>برچسب ها</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="tag/دفاع+مقدس.html">دفاع مقدس</a></li>
+<li><a href="tag/سردار+غلامحسین+غیب+پرور.html">سردار غلامحسین غیب پرور</a></li>
+<li><a href="tag/رییس+سازمان+بسیج+مستضعفین.html">رییس سازمان بسیج مستضعفین</a></li>
+<li><a href="tag/زلزله.html">زلزله</a></li>
+<li><a href="tag/زلزله+غرب+کشور.html">زلزله غرب کشور</a></li>
+<li><a href="tag/بسیج.html">بسیج</a></li>
+<li><a href="tag/سردار+سلیمانی.html">سردار سلیمانی</a></li>
+<li><a href="tag/سردار+یعقوب+سلیمانی.html">سردار یعقوب سلیمانی</a></li>
+<li><a href="tag/تلگرام.html">تلگرام</a></li>
+<li><a href="tag/زلزله+کرمانشاه.html">زلزله کرمانشاه</a></li>
+<li><a href="tag/حضرت+آیت+الله+خامنه+ای.html">حضرت آیت الله خامنه ای</a></li>
+<li><a href="tag/جنگ.html">جنگ</a></li>
+<li><a href="tag/ترامپ.html">ترامپ</a></li>
+<li><a href="tag/برجام.html">برجام</a></li>
+<li><a href="tag/محرومیت+زدایی.html">محرومیت زدایی</a></li>
+<li><a href="tag/سردار+غیب+پرور.html">سردار غیب پرور</a></li>
+<li><a href="tag/روحانی.html">روحانی</a></li>
+<li><a href="tag/ایران.html">ایران</a></li>
+<li><a href="tag/قاسم+سلیمانی.html">قاسم سلیمانی</a></li>
+<li><a href="tag/سپاه+پاسداران.html">سپاه پاسداران</a></li>
+<li><a href="tag/امام+خامنه‌ای.html">امام خامنه‌ای</a></li>
+<li><a href="tag/آمریکا.html">آمریکا</a></li>
+<li><a href="tag/نتانیاهو.html">نتانیاهو</a></li>
+<li><a href="tag/افزایش+قیمت.html">افزایش قیمت</a></li>
+<li><a href="tag/مقام+معظم+رهبری.html">مقام معظم رهبری</a></li>
+<li><a href="tag/حضرت+آیت+الله+خامنه‌ای.html">حضرت آیت الله خامنه‌ای</a></li>
+<li><a href="tag/بسیج+ولایت.html">بسیج ولایت</a></li>
+<li><a href="tag/رئیس+سازمان+بسیج+مستضعفین.html">رئیس سازمان بسیج مستضعفین</a></li>
+<li><a href="tag/رژیم+صهیونیستی.html">رژیم صهیونیستی</a></li>
+<li><a href="tag/رهبر+انقلاب.html">رهبر انقلاب</a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-calendar"></i>  آرشیو</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href='archive/1399/6.html' title=' شهریور 1399(2)'> شهریور 1399</a></li>
+<li><a href='archive/1398/10.html' title=' دی 1398(9)'> دی 1398</a></li>
+<li><a href='archive/1398/3.html' title=' خرداد 1398(4)'> خرداد 1398</a></li>
+<li><a href='archive/1398/2.html' title=' اردیبهشت 1398(2)'> اردیبهشت 1398</a></li>
+<li><a href='archive/1398/1.html' title=' فروردین 1398(5)'> فروردین 1398</a></li>
+<li><a href='archive/1397/12.html' title=' اسفند 1397(3)'> اسفند 1397</a></li>
+<li><a href='archive/1397/11.html' title=' بهمن 1397(3)'> بهمن 1397</a></li>
+<li><a href='archive/1397/10.html' title=' دی 1397(6)'> دی 1397</a></li>
+<li><a href='archive/1397/9.html' title=' آذر 1397(3)'> آذر 1397</a></li>
+<li><a href='archive/1397/8.html' title=' آبان 1397(3)'> آبان 1397</a></li>
+<li><a href='archive/1397/6.html' title=' شهریور 1397(2)'> شهریور 1397</a></li>
+<li><a href='archive/1397/4.html' title=' تیر 1397(11)'> تیر 1397</a></li>
+<li><a href='archive/1397/3.html' title=' خرداد 1397(70)'> خرداد 1397</a></li>
+<li><a href='archive/1397/2.html' title=' اردیبهشت 1397(58)'> اردیبهشت 1397</a></li>
+<li><a href='archive/1397/1.html' title=' فروردین 1397(51)'> فروردین 1397</a></li>
+<li><a href='archive/1396/12.html' title=' اسفند 1396(31)'> اسفند 1396</a></li>
+<li><a href='archive/1396/11.html' title=' بهمن 1396(22)'> بهمن 1396</a></li>
+<li><a href='archive/1396/10.html' title=' دی 1396(1)'> دی 1396</a></li>
+<li><a href='archive/1396/9.html' title=' آذر 1396(2)'> آذر 1396</a></li>
+<li><a href="archive.html"><b>لیست آرشیوها</b></a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+
+
+          
+<div class="menu">
+<div class="menu-title">
+<h3> <i class="glyphicon glyphicon-search"></i>جستجو</h3>
+</div>
+<div class="menu-body">
+<form id="frm-16082340875fdbb4678e205" method="get" action="http://mygam.mihanblog.com/post/search/fid/16082340875fdbb4678e205"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+<form method="get" action="../index.html#">
+<input type="text" name="search_text" id="search-text" value="" />
+<input type="submit" id="search-submit" value="جستجو" />
+</form>
+<input type="hidden" name="frm-id" value="16082340875fdbb4678e205" id="frm-id" /></form></div>
+</div>
+<!--- e menu --->
+
+          
+</div>
+<!--- end right column --->
+
+
+
+
+<div class="col-sm-18 col-md-8">
+          
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-align-justify"></i> تازه ترین مطالب</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a  href="462.html">توزیع ۱۰۰۰ بسته معیشتی طی رزمایش کمک‌های مومنانه در کبودراهنگ</a></li>
+<li><a  href="461.html">مروری بر وقایع روز تاسوعا/ مهلت از دشمن برای نماز و راز ونیاز</a></li>
+<li><a  href="459.html"> فوری/تایید‌ وقوع انفجارهای متعدد در پایگاه هوایی عین الاسد در عراق</a></li>
+<li><a  href="458.html">النجباء عراق: موشک‌ها و سلاح‌ها برای پاسخ به آمریکا آماده است</a></li>
+<li><a  href="457.html">اولین تصویر و اخبار گزارش شده از پایگاه آمریکایی ‎عین الاسد نشان از گستردگی و حجم بالای آتش دارد</a></li>
+<li><a  href="456.html">فوری/اولین ضربه حشد الشعبی عراق به آمریکا</a></li>
+<li><a  href="455.html">سردار قاآنی : کمی صبر کنید و با چشمان خود بقایای اجساد شیطان بزرگ را در خاورمیانه خواهید دید</a></li>
+<li><a  href="454.html">پوستر ویژه سایت رهبر انقلاب به‌مناسبت شهادت سپهبد قاسم سلیمانی</a></li>
+<li><a  href="453.html">Statement by the National Security Council of the Islamic Republic of Iran(After the assassination of US President Sardar Qassim Suleimani(</a></li>
+<li><a  href="452.html">بیانیه شورای امنیت ملی جمهوری اسلامی ایران(بعد از ترور سردار قاسم سلیمانی توسط آمریکا)</a></li>
+<li><a  href="450.html">شهادت سردار رشید اسلام حاج قاسم سلیمانی </a></li>
+<li><a  href="424.html">بنیاد فرهنگی روایت فتح علمدار عرصه هنر در انقلاب اسلامی است</a></li>
+<li><a  href="423.html">محکومیت بازداشت دکتر مسعود سلیمانی توسط دولت آمریکا</a></li>
+<li><a  href="422.html">مسئولان راه جوانان انقلابی را بند نیاورند</a></li>
+<li><a  href="421.html">خواهان جنگ نیستیم ، اما مرد جنگیم</a></li>
+<li><a  href="420.html">ناوهای آمریکا در منطقه تحت کنترل کامل ارتش و سپاه هستند</a></li>
+<li><a  href="419.html">ارائه خدمات درمانی به بیش از 29732 نفر به مناطق سیل زده</a></li>
+<li><a  href="418.html">تولید در کشور به هیچ وجه نباید متوقف شود</a></li>
+<li><a  href="417.html">جای دزد و داروغه را عوض کرده اند</a></li>
+<li><a  href="416.html">محرومیت زدایی اولویت نخست سپاه و بسیج</a></li>
+<li><a  href="list.html"><b>لیست آخرین پست ها</b></a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-bookmark"></i> لینکهای روزانه</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://carpetcrm.ir/" title="http://carpetcrm.ir/" target="_blank">قالیشویی</a></li>
+<li><a href="http://salat313.loxblog.com" title="الصلاة" target="_blank">الصلاة</a></li>
+<li><a href="http://nimamovie.ir" title="دانلود فیلم و سریال بروز" target="_blank">نیما مووی</a></li>
+<li><a href="https://abnoosteam.ir/" title="سلام 
+لطفا ما را لینک کنید با تشکر   انجام پایان نامه" target="_blank">انجام پایان نامه</a></li>
+<li><a href="http://www.asayeshbartehran.com" title="عالی بود 
+لطفا از سایت ما هم دیدن نمایید. آسایش بار" target="_blank">آسایش بار</a></li>
+<li><a href="http://www.zarrinhoor.com/" title="سلام
+وبلاگی با محتوای جالبی دارید
+ما هم یه سایت مهندسی داریم که کلی پست جذاب و اختصاصی آماده کردیم(ترفندهای فتوشاپ، ویندوز، آندروید و... +آموزش های برنامه نویسی) که همشون رایگانه
+در کنارشم ممبر واقعی تلگرام برای فروش داریم
+ممنون میشیم بهمون سر بزنید و لینکمون رو تایید کنید.
+http://www.zarrinhoor.com/" target="_blank">مطالب علمی و برنامه نویسی و فروش ممبر</a></li>
+<li><a href="http://spssproje.mihanblog.com/" title="سلام ، وبلاگ من فقط وبلاگ علمی و تحقیق دانشجویی هست به دور از سیاست یا چیز دیگه ی ،لینک ما رو تایید کنید و لینک وبلاگ خود را جهت درج در وبلاگ ارسال فرمایید." target="_blank">پروژه دانشجویی  Spss</a></li>
+<li><a href="http://AMIN2002.mihanblog.com" title="" target="_blank">یک قدم تا قلم</a></li>
+<li><a href="http://hicharter.com/" title="" target="_blank">بلیط چارتر کیش</a></li>
+<li><a href="http://sevensharj.mihanblog.com/" title="" target="_blank">آنی سون</a></li>
+<li><a href="https://blithavapeyma.com" title="" target="_blank">بلیط هواپیما</a></li>
+<li><a href="https://facenama.com/signup/r:1291126" title="کسب درآمد از طریق تبلیغات کلیکی
+در معتبرترین سایت ایران
+با تنها چند کلیک  و ده دقیقه وقت روزانه درامدی فوق العاده داشته باشید
+همین حالا برای درامدی باورنکردنی بر روی لینک زیر کلیک کنید.
+https://facenama.com/signup/r:1291126" target="_blank">کسب درامد فوق العاده</a></li>
+<li><a href="https://nopardazco.com/pages/news" title="طراحی سایت خبری" target="_blank">طراحی سایت خبری</a></li>
+<li><a href="https://botgram.mobi/" title="ربات اینستاگرام با عضویت رایگان و اکانت 7 روز تست" target="_blank">افزایش فالوور اینستاگرام</a></li>
+<li><a href="http://uupload.ir" title="سلام ، وقتتون بخیر
+پیشنهاد میکنم برای آپلود فایل و عکس از سایت یو آپلود استفاده کنید.
+به صورت رایگان ، دائمی و سرعت بالا 
+لطفا لینک رو تایید کنید تا هم آدرس سایت رو داشته باشید و هم یه حمایتی بشه از ما
+خیلی ممنون" target="_blank">آپلود عکس</a></li>
+<li><a href="http://axtext.com" title="عکس پروفایل" target="_blank">عکس پروفایل</a></li>
+<li><a href="http://www.iran-new.ir/" title="ایران نیو" target="_blank">ایران نیو</a></li>
+<li><a href="http://www.azercharge.ir/home.php" title="سامانه آنلاین خرید شارژ مستقیم، خرید کارت شارژ، خرید وایمکس ایرانسل، پرداخت قبوض، پرداخت جرائم رانندگی، خرید گیفت کارت، خرید آنتی ویروس" target="_blank">خرید شارژ</a></li>
+<li><a href="http://moarefii.com/" title="قبول کنید و در سایت ما رایگان لینک شوید" target="_blank">معرفی </a></li>
+<li><a href="https://sainkala.com/news-technology" title="" target="_blank">اخبار تکنولوژی</a></li>
+<li><b><a href="../linkdaily/index.html">همه لینکها</a></b></li>
+<li><b><a href="javascript:linkdailyForm()">ارسال لینک</a></b></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<!--- e menu --->
+
+
+
+
+		<form id="frm-16082340875fdbb4678e3d7" method="post" action="http://mygam.mihanblog.com/poll/new/fid/16082340875fdbb4678e3d7/atrty/1608234087/avrvy/0/key/51c29f10b106c36b79c7553ef9e16c50/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="373376" id="data[pollid]" />		
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-question-sign"></i> نظرسنجی</h3>
+</div>
+<div class="menu-body">
+بازدید کننده محترم: لطفاً نظر خود را راجع به این وبلاگ با انتخاب یکی از گزینه های زیر برای ما ارسال کنید. با تشکر<br>
+<label><input type="radio" name="data[answer]" value="v1">بسیار ضعیف</label><br>
+<label><input type="radio" name="data[answer]" value="v2">ضعیف</label><br>
+<label><input type="radio" name="data[answer]" value="v3">متوسط</label><br>
+<label><input type="radio" name="data[answer]" value="v4">خوب</label><br>
+<label><input type="radio" name="data[answer]" value="v5">بسیار خوب</label><br>
+<label><input type="radio" name="data[answer]" value="v6">عالی </label><br>
+<input type="submit" value="ارسال نظر"/>
+</div>
+</div>
+
+		<input type="hidden" name="frm-id" value="16082340875fdbb4678e3d7" id="frm-id" /></form><!--- e menu --->
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-stats"></i>آمار وبلاگ</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li>کل بازدید: <script>getStatVar('total_view');</script></li>
+<li>بازدید امروز : <script>getStatVar('today_view');</script></li>
+<li> بازدید دیروز :<script>getStatVar('yesterday_view');</script></li>
+<li> بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+<li> بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+<li> تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+<li> تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+<li> آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+<li> آخرین بروز رسانی : <script>getStatVar('modify_date');</script> </li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-cog"></i>ابزارک ها</h3>
+</div>
+<div class="menu-body">
+<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=mihanblog/fVge', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>برای عضویت در خبرنامه ایمیل خود را وارد کنید:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="mihanblog/fVge" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="ثبت ایمیل" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+
+
+<p align='center'><script type='text/javascript' src='http://cafe-webniaz.ir/abzar/link/linkcheshmak.js'></script></p>
+
+
+
+<script type="text/javascript"> window.$crisp=[];window.CRISP_WEBSITE_ID="376525b7-000c-4c7a-999f-9912c31c62b4";(function(){ d=document;s=d.createElement("script"); s.src="https://client.crisp.chat/l.js"; s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})(); </script>
+
+
+<a href="https://zarinp.al/@alikh2202"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/736ce4c9.jpg" alt="mygam.ir" /></a></div>
+</div>
+<!--- e menu --->
+
+
+
+
+
+
+
+          </div>
+<!--- end left column --->
+
+
+</div>
+<!--- end main content & menus bar  --->
+
+
+
+
+</div>
+</div>
+</div>
+<!-------- end mainpagebg --------->
+
+<div class="container-fluid btmbar">
+<div class="container">
+<div class="row">
+<div class="col-md-36">
+<div class="social">
+<div class="social-message">
+
+:: من را در شبکه های اجتماعی دنبال بکنید ::
+
+</div>
+<div class="social-box">
+<a href="../LINK_yahoo.html" title="ایمیل من" target="_blank"><i class="Social-yahoo"></i></a>
+<a href="../LINK_Telegram.html" title="تلگرام من" target="_blank"><i class="Social-telegram"></i></a>
+<a href="../LINK_Facebook.html" title="فیسبوک من" target="_blank"><i class="Social-facebook"></i></a>
+<a href="../LINK_Insta.html" title="اینستاگرام من" target="_blank"><i class="Social-instagram"></i></a>
+<a href="../LINK_Twitter.html" title="توییتر من" target="_blank"><i class="Social-twitter"></i></a>
+<a href="../LINK_Google.html" title="گوگل پلاس من" target="_blank"><i class="Social-google-plus"></i></a>
+<a href="../LINK_Youtube.html" title="کانال یوتیوب من" target="_blank"><i class="Social-youtube"></i></a>
+</div>                        
+</div>
+<div class="copyrights">
+
+تمامی حقوق مطالب سایت متعلق به وبلاگ بسیج ولایت می باشد
+
+</div>
+<div class="designer">
+طراحی و اجرا:<a href="http://sitesetup.ir">سایت ستاپ</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--- end footer --->
+
+
+<script>
+      var owl = $('.owl-carousel');
+      owl.owlCarousel({
+		loop: true,
+        nav: true,
+		autoplay: true,
+		autoplayTimeout:3000,
+		autoplayHoverPause:true,
+        lazyLoad: false,
+		animateOut: 'fadeOut',
+		margin: 10,
+        loop: true,
+		navText: [
+      "<i class='glyphicon glyphicon-menu-left'></i>",
+      "<i class='glyphicon glyphicon-menu-right'></i>"
+    ],
+		responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:1,
+            nav:true
+        },
+        1000:{
+            items:1,
+            nav:true,
+            loop:true
+        	}
+    	}
+      })
+	  
+    </script>
+	
+	
+
+	
+</body>
+</html>
+
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'mygam.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.targetedwebtraffic.com" target="_blank">Buy Website Traffic</a> | <a href="https://www.seo25.com" target="_blank">Buy Targeted Website Traffic</a>
+    </div>
+</center>

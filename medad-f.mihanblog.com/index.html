@@ -1,0 +1,1337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://medad-f.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1447759*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[62]='10';commentCnt[63]='7';commentCnt[66]='4';commentCnt[67]='2';commentCnt[68]='3';commentCnt[69]='3';commentCnt[70]='2';commentCnt[71]='1';commentCnt[72]='3';commentCnt[73]='6';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[62]='0';
+mihanblogDisLikeArrCnt[62]='0';
+mihanblogLikeArrCnt[63]='0';
+mihanblogDisLikeArrCnt[63]='0';
+mihanblogLikeArrCnt[66]='0';
+mihanblogDisLikeArrCnt[66]='0';
+mihanblogLikeArrCnt[67]='0';
+mihanblogDisLikeArrCnt[67]='0';
+mihanblogLikeArrCnt[68]='0';
+mihanblogDisLikeArrCnt[68]='0';
+mihanblogLikeArrCnt[69]='0';
+mihanblogDisLikeArrCnt[69]='0';
+mihanblogLikeArrCnt[70]='0';
+mihanblogDisLikeArrCnt[70]='0';
+mihanblogLikeArrCnt[71]='0';
+mihanblogDisLikeArrCnt[71]='0';
+mihanblogLikeArrCnt[72]='0';
+mihanblogDisLikeArrCnt[72]='0';
+mihanblogLikeArrCnt[73]='0';
+mihanblogDisLikeArrCnt[73]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://medad-f.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://medad-f.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','57');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','پنجشنبه 20 دی 1397');
+	
+	setStatVar('today_view','12');
+	setStatVar('yesterday_view','23');
+	
+	setStatVar('this_month_view','644');
+	setStatVar('last_month_view','3362');
+
+	setStatVar('total_view','119003');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (14:12)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://medad-f.mihanblog.com/statupdate/?data[refereruri]=http://esteva.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607774244&data[hash]=aa799001ba14552a6ac8869dea77ffc6&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://medad-f.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://medad-f.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://medad-f.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>مداد فضول</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="designer" content="Theme - Designer">
+<meta name="designerUrl" content="http://www.theme-designer.com/">
+<meta name="language" content="Farsi">
+<meta name="author" content="آقای فضول">
+<meta name="description" content="مداد فضول - ">
+<meta name="keywords" content="مداد فضول, ">
+<link rel="alternate" type="application/rss+xml" title="مداد فضول" href="http://medad-f.mihanblog.com/post/rss/" />
+<link href="http://themeupload.theme-designer.com/62/c.css" type="text/css" rel="stylesheet">
+</head>
+<!-- template62-mihanblog -->
+<!-- Design By : wWw.Theme-Designer.Com -->
+
+<!---------- background ---------------------------->
+<!---------- address-image --------->
+<body background="http://themeupload.theme-designer.com/62/image/1.jpg">
+<!---------- address-image --------->
+<!---------- background ---------------------------->
+
+<div class="theme-designer-com_background-header">
+<div class="theme-designer-com_block-koli">
+
+<div align="center">
+<table border="0" width="1003" cellspacing="0" cellpadding="0" dir="rtl">
+<tr>
+<td>
+
+
+<!---------- he ---------------------------->
+<!---------- address-image --------->
+<div style="width:1003px; overflow:hidden; height:293px; overflow:hidden;
+background-image:url('http://themeupload.theme-designer.com/62/image/2.jpg');
+background-repeat:no-repeat">
+<!---------- address-image --------->
+
+<div class="theme-designer-com_makan_blogtitle">
+<div class="theme-designer-com_blogtitle"><a href="index.html">مداد فضول</a></div>
+<div class="theme-designer-com_description"></div>
+</div>
+
+<div class="theme-designer-com_makan_menutop">
+<div style="padding:0px 25px 0px 0px;">
+<a href="index.html">صفحه ی نخست</a>
+<a href="javascript:messageForm()">تماس با ما</a>
+<a target="_blank" href="http://medad-f.mihanblog.com/post/rss/">لینك rss</a>
+<a href="http://medad-f.mihanblog.com/post/archive">عناوین مطالب وبلاگ</a>
+</div>
+</div>
+
+</div>
+<!---------- he ---------------------------->
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td width="14" valign="top">&nbsp;</td>
+<td width="162" valign="top">
+
+<div class="theme-designer-com_menurightleft" align="center">
+<div class="theme-designer-com_menurightleft2"></div>
+
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/1.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="vmenu"><a href="http://medad-f.mihanblog.com/post/category/24" title="1" >
+***دفتر خصوصی من و خدا***</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/category/6" title="5" >
+***شعر (از خودم)***</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/category/23" title="3" >
+***شعر***</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/category/4" title="15" >
+***دینی مذهبی***</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/category/21" title="2" >
+***معرفی کتاب***</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/category/1" title="26" >
+***ورزشی***</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/category/22" title="1" >
+***فوتسال***</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/category/2" title="2" >
+***مناسبت ها***</a></div><div class="theme-designer-com_menurightleft-space"></div>
+
+
+		
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/3.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="vmenu"><a target="_blank" title="تم دیزاینر : قالب وبلاگ" href="http://www.theme-designer.com" >قالب وبلاگ</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.avaye-nakhlestan.mihanblog.com" title="" >آوای نخلستان</a></div><div class="vmenu"><a target="_blank" href="http://www.medad-kh.mihanblog.com" title="" >مداد خیالباف</a></div><div class="vmenu"><a target="_blank" href="http://danestani2014.mihanblog.com/" title="" >دانستنی 2014</a></div><div class="vmenu"><a target="_blank" href="http://mahdi7079.mihanblog.com/" title="" >طنز داستان و مطالب آموزشی</a></div><div class="vmenu"><a target="_blank" href="http://bankmaghaleh.ir/" title="" >پایان نامه و پروژه تحقیق</a></div><div class="vmenu"><a target="_blank" href="http://idyahoo-add.rozblog.com/" title="" >افزایش ادلیست یاهو</a></div><div class="theme-designer-com_menurightleft-space"></div>
+
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/18.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="vmenu"><a href="http://medad-f.mihanblog.com/post/73" title="پنجشنبه 20 دی 1397" > گفتیم اگر، امّا؛ تا اگر فاصله هاست... </a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/71" title="جمعه 20 اسفند 1395" > علی ای همان که چشمت به جز از خدا ندیده </a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/72" title="جمعه 15 بهمن 1395" > همش میگن گناه نکنید.خب گناه کنیم مگه چی میشه؟! </a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/67" title="جمعه 28 خرداد 1395" > صفحه اول دفتر خصوصی من و خدا... </a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/70" title="یکشنبه 1 فروردین 1395" > سال نو؛ مبارک یا تسلیت!؟ </a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/69" title="سه شنبه 29 دی 1394" > یکی از سرمایه های ما در دنیا </a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/68" title="جمعه 25 دی 1394" > خداوند همه گناهان را می بخشد اما به یک شرط...!(آیه قرآن) </a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/66" title="پنجشنبه 2 مهر 1394" > (فدیناه به ذبح عظیم) ===&gt; عید قربان را تبریک بگویم یا خیر!!!؟ </a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/63" title="پنجشنبه 12 شهریور 1394" > معرفی کتاب حرمان هور (دست نوشته های شهید احمد رضا احدی، رتبه 1 کنکور تجربی سال 64) </a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/62" title="چهارشنبه 11 شهریور 1394" > شعر: با هر گناهی می کنی، سیلی به مهدی میزنی... </a></div><div class="theme-designer-com_menurightleft-space"></div>
+
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/14.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="vmenu"><a target="_blank" href="../esteva.mihanblog.com/index.html" title="سلام .
+
+شما هم لینک وب سایتتون رو تو این صفحه ثبت کنید.
+http://esteva.mihanblog.com
+
+خیلی زود تایید میکنم
+
+این لینک رو تایید کنید لطفا." >
+مجله اینترنتی استوا</a></div><div class="vmenu"><a target="_blank" title="آموزش و مقالات مربوط به کنکور و فیزیک – محمد گنجی" href="http://m-ganji.ir" >کنکور</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.chatroomiran.com" >چتروم ایرانی</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.cddc.ir/" >طراحی سایت</a></div>
+<div class="vmenu"><a target="_blank" href="http://chatyha.ir/" >چت</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.bestlastsecond.com/torkie/istanbul.html" >تور استانبول</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.bestlastsecond.com/torkie/antalya.html" >تور آنتالیا</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.bestlastsecond.com/kish.html" >تور کیش</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.bestlastsecond.com/mashhad.html" >تور مشهد</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.tbs.ir/mba" >دوره MBA</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.tbs.ir/dba" >دوره DBA</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.tbs.ir/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-%d9%81%d8%b1%d9%88%d8%b4/" >آموزش فروش</a></div>
+<div class="vmenu"><a target="_blank" href="http://www.tbs.ir/%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%da%a9%d8%b3%d8%a8-%d9%88-%da%a9%d8%a7%d8%b1/" >مدیریت کسب و کار</a></div>
+<br>
+<div class="vmenu"><a  target="_blank" href="http://medad-f.mihanblog.com/linkdaily/" >لیست کامل پیوندهای روزانه</a></div>
+<div class="vmenu"><a  href="javascript:linkdailyForm()" >ارسال پیوند</a></div>
+<div class="theme-designer-com_menurightleft-space"></div>
+
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/10.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="theme-designer-com_menurightleft-text">
+<div align="right">
+تعداد مطالب : <script>getStatVar('total_post');</script><br>
+تعداد نویسندگان : <script>getStatVar('total_author');</script><br>
+آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br>
+بازدید امروز : <script>getStatVar('today_view');</script><br>
+بازدید دیروز : <script>getStatVar('yesterday_view');</script><br>
+بازدید این ماه : <script>getStatVar('this_month_view');</script><br>
+بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br>
+بازدید کل : <script>getStatVar('total_view');</script><br>
+آخرین بازدید : <script>getStatVar('last_view_date');</script><br><br>
+</div><!-- Online Support by www.1abzar.com --->
+<script>
+ var offline_text="پیغام بگذارید";
+ var online_text="پشتیبانی آنلاین می باشد";
+ var first_text="کاربر گرامی ، بخش پشتیبانی سایت آماده پاسخگویی به شما می باشد. جهت شروع گفتگو نام خود را وارد کنید :";
+ var rangbg="76BE0E"; var rangtxt="FFFFFF";
+</script><script type="text/javascript" src="http://online.1abzar.com/1abzar-mini.php?admin=2347&poz=right"></script><div style="display:none"><h3><a href="http://www.1abzar.com">&#1662;&#1588;&#1578;&#1740;&#1576;&#1575;&#1606;&#1740;</a></h3></div>
+<!-- Online Support by www.1abzar.com --->
+<script type="text/javascript" src="http://radarurl.com/js/radarurl_widget.js"></script><script type="text/javascript">radarurl_call_radar_widgetv2({edition:"Dynamic",location:"leftcenter"})</script><noscript><a href="http://radarurl.com/">RadarURL</a></noscript>
+<center><script type="text/javascript" src="http://pichak.net/blogcod/clock/06/clock.js"></script></center><br><br><div style="display:none"><h1><a href="http://pichak.net">ساعت فلش</a></h1></div>﻿<!-- Pichak --></div>
+<div class="theme-designer-com_menurightleft-space"></div>
+
+</div>
+
+</td>
+<td width="14" valign="top">&nbsp;</td>
+<td width="6" valign="bottom" class="theme-designer-com_badane-blokha">
+<div class="theme-designer-com_makan_badane-khatbala-right"><img border="0" src="http://themeupload.theme-designer.com/62/image/6.png"></div>
+<img border="0" src="http://themeupload.theme-designer.com/62/image/7.png">
+</td>
+<td width="43" valign="top">&nbsp;</td>
+<td width="525" valign="top">
+
+<div class="theme-designer-com_post-space1"></div>
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/73">گفتیم اگر، امّا؛ تا اگر فاصله هاست...</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : پنجشنبه 20 دی 1397</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/73#commentlist">محبّت <script>setCommentCnt(73)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text"><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><font face="Mihan-Iransans" size="2">گفتیم اگر، امّا؛ تا اگر فاصله هاست...<br>حرف از آمدن و نیامدن شد، امّا؛ حرف است دگر...<br>گفتیم بیا، امّا؛ این تو هستی که بگفته ای بیایید نه ما...<br>گفتیم چرا، امّا؛ تو نگفتی که چرا...<br>هرچند که ما نداریم لیاقت، امّا؛ تو خودت لیاقتی، لیاقتی بده آقا...<br>و در آخر اینکه، ما ندانیم تو در نگاهمان بیایی یا نه، کاش در نگاهت باشیم...<br>در نگاهی که در آن بخشش دنیاست...بخششی اندر سراپای وجود...<br>آن نگاهی که همه خلق بدان محتاجند...محتاج حیات و زندگی...<br>حرف ها بسیار است...،لکن؛<br>حرف در محضر استاد بود نشانه بی ادبی...<br>که تو خود عالم غیبی... امّا چو مَنی غیب نداند استاد...<br>حرف ها بسیارند، پایانش با سکوت...<br>آن سکوتی که در انتظار حرف هایت مانده است...<br>(ثائر الزهراء)</font>
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/23">
+***شعر***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/73" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/71">علی ای همان که چشمت به جز از خدا ندیده</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : جمعه 20 اسفند 1395</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/71#commentlist">محبّت <script>setCommentCnt(71)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text">
+
+علی ای همان که چشمت به جز از خدا ندیده &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;علی ای همان که عالم مثل تو اصلا ندیده<div>علی ای امیرِ مؤمن که جهان بدون بویت &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; به خدا بویی نبرده، به خدا بویی نبرده&nbsp;</div><div>که منم گدای کویَت و تویی فاضل حلقه &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; و منم عاشق خلقت و تویی افوز رفته</div>
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/6">
+***شعر (از خودم)***</a> , <a href="http://medad-f.mihanblog.com/post/category/23">
+***شعر***</a> , <a href="http://medad-f.mihanblog.com/post/category/4">
+***دینی مذهبی***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/71" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/72">همش میگن گناه نکنید.خب گناه کنیم مگه چی میشه؟!</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : جمعه 15 بهمن 1395</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/72#commentlist">محبّت <script>setCommentCnt(72)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text">
+
+
+<div style="text-align: center;"><a href="http://upir.ir/951/hossein3013/Untitled-1.jpg" target="_blank" title=""><img src="http://upir.ir/951/hossein3013/Untitled-1.jpg" height="321" width="456"></a><br><br><font size="2"><span style="background-color: rgb(255, 255, 102);"><font face="Mihan-IransansBold">برای بزرگنمایی تصویر بر روی آن کلیک نمایید.</font></span></font><br></div>
+
+
+
+
+
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/4">
+***دینی مذهبی***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://medad-f.mihanblog.com/post/tag/%DA%AF%D9%86%D8%A7%D9%87%20%D9%86%DA%A9%D9%86%DB%8C%D8%AF">
+گناه نکنید</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%A2%DB%8C%D8%AA%20%D8%A7%D9%84%D9%84%D9%87%20%D8%AE%D9%88%D8%B4%D9%88%D9%82%D8%AA">
+آیت الله خوشوقت</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/72" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/67">صفحه اول دفتر خصوصی من و خدا...</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : جمعه 28 خرداد 1395</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/67#commentlist">محبّت <script>setCommentCnt(67)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text">
+
+
+
+<font size="2" face="Mihan-Iransans"><b>سلام ای تعالی</b></font><div><font size="2" face="Mihan-Iransans"><b>سلام ای بهترین دوست</b></font></div><div><font size="2" face="Mihan-Iransans"><b>همون دوستی که هیچوقت منو تنها نگذاشت.ولی من نه</b></font></div><div><font size="2" face="Mihan-Iransans"><b>همون دوستی که هرچی من ازش خواستم تا جایی که میدونم به نفعم بود بهم داد ولی یه دو تا چیزی که اون ازم خواسته بود که انجام بدم.، ندادم.</b></font></div><div><font size="2" face="Mihan-Iransans"><b>من از همینجا ازت عذر می خوام.من عبد خوبی برات نبودم، قبول دارم.در صورتی که تو بهترین خدا برای من بودی.نمی تونم بگم دوستت دارم.چون اگه واقعاً دوستت داشتم این همه بر خلاف دستوراتت انجام نمی دادم.شاید امروز این جایی که قرار دارم رو مدیون فقط شما هستم.فقط فقط شما.من خیلی راه درازی پیش رو دارم.ولی من بدونت چیکار کنم.من خیلی ضعیفم.تویی که بهم قدرت میدی که حتّی به سمتت بیام.حتّی این بسمتت اومدن رو هم مدیون توام حتّی بهت فکر کردن و درد دل کردنم رو.من میام بسمتت ولی نمی دونم چرا...</b></font></div><div><font size="2" face="Mihan-Iransans"><b>یه چیزی منو به سمتت میکشه.اگر تو رحمان و رحیم نبودی چطور می تونستم امید داشته باشم که منو ببخشی.</b></font></div><div><font size="2" face="Mihan-Iransans"><b>نمیدونم دیگه چی باید بگم ولی خواستم بدونی عاشقتم بیشتر از هر کسی که فکر می کنم.شاید یه وقتایی شیطان منو گول میزنه ولی من یه کم بعدش میام پیشت آخه من کسیو جز تو ندارم.</b></font></div><div><font size="2" face="Mihan-Iransans"><b>منم همراهِ تنها، و تو تنهای تنها....</b></font></div><div style="text-align: center;"><font size="2" face="Mihan-Iransans"><b></b></font><br><img alt="http://upir.ir/951/hossein3013/hrtfhrfdxhd.jpg" src="http://upir.ir/951/hossein3013/hrtfhrfdxhd.jpg" height="291" width="486"><br></div>
+
+
+
+
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/24">
+***دفتر خصوصی من و خدا***</a> , <a href="http://medad-f.mihanblog.com/post/category/4">
+***دینی مذهبی***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://medad-f.mihanblog.com/post/tag/God">
+God</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7">
+خدا</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%AF%D9%84%D9%86%D9%88%D8%B4%D8%AA%D9%87%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%AE%D8%AF%D8%A7">
+دلنوشته برای خدا</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%AF%D9%81%D8%AA%D8%B1%20%D8%AE%D8%B5%D9%88%D8%B5%DB%8C%20%D9%85%D9%86%20%D9%88%20%D8%AE%D8%AF%D8%A7">
+دفتر خصوصی من و خدا</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/67" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/70">سال نو؛ مبارک یا تسلیت!؟</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : یکشنبه 1 فروردین 1395</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/70#commentlist">محبّت <script>setCommentCnt(70)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text">
+
+<font size="3" face="Mihan-Nassim"><b>عید روزی هست که انسان در آن گناه نکند.لذا در حدیثی از امام علی (علیه السلام) هست که&nbsp;<span style="text-align: right;">هر روزِ ما را نوروز سازید.<sup>1</sup></span></b></font><div><font size="3" face="Mihan-Nassim"><b>عید نوروز همان روزی هست که&nbsp;<p align="center" style="text-align: justify; display: inline !important;">خداوند از بندگان پیمان گرفت او را بپرستند و به او شرک نورزند، به پیامبران و حجت هایش بگروند و به امامان ایمان</p><span style="text-align: justify;">&nbsp;آورند.</span><sup style="text-align: justify;">2</sup></b></font></div><div><font size="3" face="Mihan-Nassim"><b>و این روز برای این هست که به این فکر بیفتیم که چقدر از عمرمان گذشته و چه کار هایی انجام داده ایم و چه می خواهیم بکنیم.هرکس که آخرت رو درست کرده باشه براش این روز عید هست.</b></font></div><div><font size="3" face="Mihan-Nassim"><b>و بنده ی حقیر هم امیدوارم که روز نو و جدیدِ خوبی داشته باید که با عطر و بوی خدا معطر شده باشه و بشه.</b></font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img style="-webkit-user-select: none; cursor: zoom-in;" src="http://upir.ir/sh94/hossein3013/80143404071944195430_8a0f4.jpg" width="459" height="643"></div><div><br></div><div><hr></div><div><b><font face="Mihan-Iransans">1-</font>&nbsp;</b><p align="center" style="text-align: justify; display: inline !important;"><font face="Mihan-Iransans">شیخ صدوق در کتاب من لایحضره الفقیه:</font></p></div><p align="center" style="text-align: right;"><font face="Mihan-Iransans">أتى على(علیه السلام) بهدیه النَّیروز، فقال(علیه السلام): «ما هذا؟». قالوا: یا أمیرالمؤمنین! الیوم النَّیروز. فقال(علیه السلام): إصنعوا لنا کلّ یوم نَیروزاً.</font></p><p align="center" style="text-align: right;"><font face="Mihan-Iransans">براى على(علیه السلام) هدیه نوروز آوردند. فرمود: این چیست؟. گفتند: اى امیرمؤمنان! امروز، نوروز است. فرمود: هر روزِ ما را نوروز سازید.</font></p><p align="center" style="text-align: right;"><font face="Mihan-Iransans"><b>2-</b>&nbsp;</font><span style="text-align: justify;"><font face="Mihan-Iransans">بحارالانوار، ج ۵۹، ص ۹۲</font></span></p>
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/4">
+***دینی مذهبی***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://medad-f.mihanblog.com/post/tag/%D9%86%D9%88%D8%B1%D9%88%D8%B2">
+نوروز</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%B3%D8%A7%D9%84%20%D9%86%D9%88">
+سال نو</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/70" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/69">یکی از سرمایه های ما در دنیا</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : سه شنبه 29 دی 1394</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/69#commentlist">محبّت <script>setCommentCnt(69)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text"><div style="text-align: center;"><br></div><div style="text-align: center;"><a href="http://upir.ir/sh94/hossein3013/Wallpaper-177-.jpg" target="_blank" title="بزرگنمایی تصویر"><img style="-webkit-user-select: none; cursor: zoom-in;" src="http://upir.ir/sh94/hossein3013/Wallpaper-177-.jpg" width="480" height="400"></a></div>
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/4">
+***دینی مذهبی***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/69" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/68">خداوند همه گناهان را می بخشد اما به یک شرط...!(آیه قرآن)</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : جمعه 25 دی 1394</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/68#commentlist">محبّت <script>setCommentCnt(68)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text">
+
+
+
+<div style="text-align: right;"><font size="2" face="Mihan-IransansBold">خداوند همه گناهان را می بخشد ولی به شرط اینکه ما توبه کنیم و دیگه گناهمون رو تکرار نکنیم.و توبه، خود قوائدی دارد.که سعی می شود در پست های آینده روش توبه کردن گفته شود.حالا این گناهان هر چقدر می خواهند زیاد و بزرگ باشند.اگر پایه هستی، بسم الله؛ از همین حالا شروع کن.فقط یه نکته رو بگم که یکم سخته ها، این راه سختی های خودشو داره.چون وقتی توبه می کنی تازه مشکلاتت شروع میشه(آزمایش ها) و این راه آدم های قوی رو میطلبه...</font></div><div style="text-align: right;"><font size="2" face="Mihan-IransansBold">فقط چند لحظه به این چند سؤال تفکر کن و بهشون برای خودت جواب بده:</font></div><div style="text-align: right;"><font size="2" face="Mihan-IransansBold">- از کجا اومدی؟</font></div><div style="text-align: right;"><font size="2" face="Mihan-IransansBold">- برای چه چیزی اومدی؟</font></div><div style="text-align: right;"><font size="2" face="Mihan-IransansBold">- در کجا قرار داری؟</font></div><div style="text-align: right;"><font size="2" face="Mihan-IransansBold">می خوای بری به کجا؟</font></div><div style="text-align: center;"><a href="http://upir.ir/sh94/hossein3013/gersgtesyzx.jpg" target="_blank" title="بزرگنمایی تصویر"><img src="http://upir.ir/sh94/hossein3013/gersgtesyzx.jpg" alt="" align="bottom" border="0" height="268" hspace="0" vspace="0" width="483"></a></div>
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/4">
+***دینی مذهبی***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://medad-f.mihanblog.com/post/tag/%D8%AA%D9%88%D8%A8%D9%87">
+توبه</a> , <a href="http://medad-f.mihanblog.com/post/tag/%DA%AF%D9%86%D8%A7%D9%87">
+گناه</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7">
+خدا</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/68" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/66">(فدیناه به ذبح عظیم) ===&gt; عید قربان را تبریک بگویم یا خیر!!!؟</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : پنجشنبه 2 مهر 1394</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/66#commentlist">محبّت <script>setCommentCnt(66)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text">
+<div><div style="text-align: center;"><b style="font-family: Mihan-Iransans; background-color: rgb(51, 255, 51);">"و فدیناه بذبح عظیم."<span style="margin: 0px; padding: 0px;">&nbsp;</span></b></div><div style="text-align: center;"><font face="Mihan-Iransans">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; «و ما قربانی بزرگی را فدای او ساختیم.» &nbsp; &nbsp; &nbsp; &nbsp;</font><span style="text-align: justify;"><font face="Mihan-Koodak"><b>(سوره صافات، آیه 107)</b></font></span><font face="Mihan-Iransans">&nbsp;</font></div></div><div><font face="Mihan-Nassim" size="3"><b>امام رضا علیه‌السلام فرمود:<span style="text-align: right;">&nbsp;</span></b><br style="text-align: right;"><span style="text-align: right;">چون خدای عزیز و شکوهمند ابراهیم علیه‌السلام را امر نمود که جای فرزندش اسماعیل گوسفندی را که خدا برایش فرو فرستاده بود قربانی نماید، ابراهیم درخواست نمود که فرزندش اسماعیل را با دستش ذبح نماید و اگر او به کشتن گوسفند امر نمی‌شد همین کار را می‌کرد تا آن داغی را که به قلب پدری که عزیزترین فرزندانش را با دست خود قربانی نموده وارد شده به دل او هم وارد شود، و به این ترتیب سزاوار بلندترین درجات اهل ثواب بر بلاها گردد.&nbsp;</span><br style="text-align: right;"><br style="text-align: right;"><b>پس خدای بزرگ و بلندمرتبه به او وحی نمود:<span style="margin: 0px; padding: 0px; text-align: right;">&nbsp;</span></b><br style="text-align: right;"><span style="margin: 0px; padding: 0px; text-align: right;">ای ابراهیم چه کسی از آفریدگانم را بیشتر دوست داری؟ گفت: پروردگارا تو کسی را نیافریدی که از دوستت محمد صلی‌الله‌علیه‌و‌آله محبوبتر باشد. خدا بدو وحی نمود: آیا او را بیشتر دوست داری یا نفس خود را؟ گفت: بلکه من او را بیشتر از خود دوست دارم. فرمود: فرزندش نزد تو محبوبتر است یا فرزند خودت؟ گفت:&nbsp;</span><br style="text-align: right;"><span style="margin: 0px; padding: 0px; text-align: right;">بلکه فرزند او. فرمود: کشته شدن فرزند او به ستم و ظلم به دست دشمنانش دل تو را بیشتر به درد می‌آورد یا کشته شدن فرزندت به دست خودت در راه اطاعت از من؟&nbsp;</span><br style="text-align: right;"><span style="margin: 0px; padding: 0px; text-align: right;"><b>پروردگارا بلکه کشته شدن او به دست دشمنانش قلب مرا بیشتر به درد می‌آورد. فرمود:</b>&nbsp;</span><br style="text-align: right;"><span style="margin: 0px; padding: 0px; text-align: right;">ای ابراهیم، پس همانا گروهی که گمان می‌کنند که از امت محمد صلی‌الله‌علیه‌و‌آله هستند بزودی بعد از او دست به خون فرزندش آغشته می‌سازند و او را به ظلم و ستم همچون گوسفندی می‌کشند، و بدین واسطه مستوجب خشم من خواهند شد.&nbsp;</span><br style="text-align: right;"><br style="text-align: right;"><b>پس ابراهیم بخاطر آن بی‌تاب شد و دلش به درد آمد و به گریستن پرداخت. خدای بزرگ و بلند مرتبه بدو وحی فرمود:<span style="margin: 0px; padding: 0px; text-align: right;">&nbsp;</span></b><br style="text-align: right;"><span style="margin: 0px; padding: 0px; text-align: right;">ای ابراهیم به تحقیق فدیة بی‌تابی بر فرزندت اسماعیل یعنی اگر او را ذبح می‌کردی به اندوهگینی‌ات بر حسین علیه‌السلام و کشته شدنش برابر گشت، و برای تو بلندترین درجات اهل ثواب بر مصیبتها خواهد بود، و آن سخن خدای عزوجل است .</span><span style="margin: 0px; padding: 0px; text-align: right;">&nbsp;</span><br style="text-align: right;"><span style="margin: 0px; padding: 0px; text-align: right;">که فرمود: «ما قربانی بزرگی را فدای او ساختیم.»&nbsp;</span></font><br style="font-family: Tahoma; font-size: 12px; text-align: right;"></div><div><font face="Mihan-Nassim" size="3"><span style="margin: 0px; padding: 0px; text-align: right;"><br></span></font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3"><span style="margin: 0px; padding: 0px; text-align: right;">و این است ذبیح عظیمی که در قرآن از آن یاد شده است...</span></font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3">محرم و آن ذبح عظیم نزدیک است حال تبریک بگویم یا...</font></div><div style="text-align: center;"><font face="Mihan-Nassim" size="3"><br></font></div><div style="text-align: center;"><img src="http://upir.ir/sh94/hossein3013/sic0a0N-535_033a4.jpg"></div>
+
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/4">
+***دینی مذهبی***</a> , <a href="http://medad-f.mihanblog.com/post/category/2">
+***مناسبت ها***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/66" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/63">معرفی کتاب حرمان هور (دست نوشته های شهید احمد رضا احدی، رتبه 1 کنکور تجربی سال 64)</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : پنجشنبه 12 شهریور 1394</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/63#commentlist">محبّت <script>setCommentCnt(63)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text">
+
+
+
+
+
+<div><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><font face="Mihan-IransansLight"><b><span class="caption"><span lang="AR-SA" style="font-size: 10pt; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial; background-color: rgb(255, 255, 255);"><font color="#3333ff">تاریخ نشر:</font></span></span><span lang="AR-SA"><span style="font-size: 10pt;">&nbsp;</span><span class="data"><span style="border: 1pt none windowtext; border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; padding: 0cm;"><span style="border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px;" id="ctl00_MainContentPlaceHolder_BookDetailsPublishedDateTimeLabel"><span style="font-size: 10pt;">اردیبهشت
+1392</span><span style="font-size: 11.3333px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></span></span></span></span><span class="caption"><span style="background-size: initial;background-origin: initial;
+background-clip: initial;background-attachment:scroll;background-position-x:
+0px;background-position-y:0px"><span lang="AR-SA" style="font-size: 10pt; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial; background-color: rgb(255, 255, 255);"><font color="#3333ff">تعداد صفحات:</font></span></span></span><span lang="AR-SA" style="font-size: 10pt;">&nbsp;<span class="data"><span style="border:none windowtext 1.0pt;
+mso-border-alt:none windowtext 0cm;padding:0cm"><span style="background-size: initial;
+background-origin: initial;background-clip: initial;background-attachment:scroll;
+background-position-x:0px;background-position-y:0px" id="ctl00_MainContentPlaceHolder_BookDetailsPagesLabel">232 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></span></span></span><span class="caption"><span style="background-size: initial;background-origin: initial;
+background-clip: initial;background-attachment:scroll;background-position-x:
+0px;background-position-y:0px"><span lang="AR-SA" style="font-size: 10pt; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial; background-color: rgb(255, 255, 255);"><font color="#3333ff">قطع:</font></span></span></span><span lang="AR-SA" style="font-size: 10pt;">&nbsp;<span class="data"><span style="border:none windowtext 1.0pt;
+mso-border-alt:none windowtext 0cm;padding:0cm"><span style="background-size: initial;
+background-origin: initial;background-clip: initial;background-attachment:scroll;
+background-position-x:0px;background-position-y:0px" id="ctl00_MainContentPlaceHolder_BookDetailsDimentionLabel">رقعی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></span></span></span><span lang="AR-SA" style="font-size: 10pt;">&nbsp;</span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b style="font-family: Mihan-IransansLight;"><span class="caption"><span style="border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px;"><span lang="AR-SA" style="font-size: 10pt; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><font color="#3333ff"><br></font></span></span></span></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b style="font-family: Mihan-IransansLight;"><span class="caption"><span style="border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px;"><span lang="AR-SA" style="font-size: 10pt; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial; background-color: rgb(255, 255, 255);"><font color="#3333ff">شمارگان:</font></span></span></span><span lang="AR-SA" style="font-size: 10pt;">&nbsp;<span class="data"><span style="border: 1pt none windowtext; padding: 0cm;"><span id="ctl00_MainContentPlaceHolder_BookDetailsPublishedCountLabel" style="border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px;">2500 &nbsp; &nbsp; &nbsp;&nbsp;</span></span></span></span></b><b style="font-family: Mihan-IransansLight;"><span class="caption"><span style="background-size: initial;background-origin: initial;background-clip: initial;
+background-attachment:scroll;background-position-x:0px;background-position-y:
+0px"><span lang="AR-SA" style="font-size: 10pt; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial; background-color: rgb(255, 255, 255);"><font color="#3333ff">شابک:</font></span></span></span><span lang="AR-SA" style="font-size: 10pt;">&nbsp;<span class="data"><span style="border:none windowtext 1.0pt;
+mso-border-alt:none windowtext 0cm;padding:0cm"><span style="background-size: initial;
+background-origin: initial;background-clip: initial;background-attachment:scroll;
+background-position-x:0px;background-position-y:0px" id="ctl00_MainContentPlaceHolder_BookDetailsISBNLabel">8-217-506-964-978 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></span></span></span></b><b style="font-family: Mihan-IransansLight;"><span class="caption"><span style="background-size: initial;background-origin: initial;
+background-clip: initial;background-attachment:scroll;background-position-x:
+0px;background-position-y:0px"><span lang="AR-SA" style="font-size: 10pt; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial; background-color: rgb(255, 255, 255);"><font color="#3333ff">نوبت چاپ:</font></span></span></span><span lang="AR-SA" style="font-size: 10pt;">&nbsp;<span class="data"><span style="border:none windowtext 1.0pt;
+mso-border-alt:none windowtext 0cm;padding:0cm"><span style="background-size: initial;
+background-origin: initial;background-clip: initial;background-attachment:scroll;
+background-position-x:0px;background-position-y:0px" id="ctl00_MainContentPlaceHolder_BookDetailsEditionLabel">پانزدهم &nbsp; &nbsp;&nbsp;</span></span></span></span></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b style="font-family: Mihan-IransansLight;"><span lang="AR-SA" style="font-size: 10pt;"><span class="data"><span style="border:none windowtext 1.0pt;
+mso-border-alt:none windowtext 0cm;padding:0cm"><span style="background-size: initial;
+background-origin: initial;background-clip: initial;background-attachment:scroll;
+background-position-x:0px;background-position-y:0px"><br></span></span></span></span></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span class="caption" style="font-family: Mihan-IransansLight;"><b><span style="background-size: initial;background-origin: initial;
+background-clip: initial;background-attachment:scroll;background-position-x:
+0px;background-position-y:0px"><span lang="AR-SA" style="font-size: 10pt; border: 1pt none windowtext; padding: 0cm; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial; background-color: rgb(255, 255, 255);"><font color="#3333ff">قیمت:</font></span></span></b></span><b style="font-family: Mihan-IransansLight;"><span lang="AR-SA" style="font-size: 10pt;">&nbsp;<span class="data"><span style="border:none windowtext 1.0pt;
+mso-border-alt:none windowtext 0cm;padding:0cm"><span style="background-size: initial;
+background-origin: initial;background-clip: initial;background-attachment:scroll;
+background-position-x:0px;background-position-y:0px" id="ctl00_MainContentPlaceHolder_BookDetailsPriceLabel">89,000 ریال</span></span></span></span></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b style="font-family: Mihan-IransansLight;"><span lang="AR-SA" style="font-size: 10pt;"><span class="data"><span style="border:none windowtext 1.0pt;
+mso-border-alt:none windowtext 0cm;padding:0cm"><span style="background-size: initial;
+background-origin: initial;background-clip: initial;background-attachment:scroll;
+background-position-x:0px;background-position-y:0px"><br></span></span></span></span></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b style="font-family: Mihan-IransansLight;"><span lang="AR-SA" style="font-size: 10pt;"><span class="data"><span style="border:none windowtext 1.0pt;
+mso-border-alt:none windowtext 0cm;padding:0cm"><span style="background-size: initial;
+background-origin: initial;background-clip: initial;background-attachment:scroll;
+background-position-x:0px;background-position-y:0px">این کتاب&nbsp;</span></span></span></span></b><font face="Mihan-IransansLight"><span style="font-size: 13.3333px;"><b>دست نوشته های شهید احمد رضا احدی، رتبه 1 کنکور تجربی سال 64 هست.البته به اهتمام علیرضا کمری در سال 67 منتشر شد.</b></span></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><br></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><font color="#cc33cc" size="2"><b><span style="text-align: justify;"><font face="Mihan-Iransans">علیرضا کمری(پژوهشگر و مؤلف کتاب)&nbsp;</font></span><span style="text-align: justify;"><font face="Mihan-Iransans">درباره اثر خود می گوید</font></span></b></font><b style="text-align: justify;"><font face="Mihan-Iransans"><font color="#cc33cc" size="2">:</font> حرمان هور اثری است که زمان کهنه‌اش نمی‌کند و حیات و تپندگی‌اش را نمی‌گیرد. نمی‌دانم ـ و شاید می‌دانم ـ که چرا حرمان هور مرا به یاد مثنوی مولانا جلال‌الدین می‌اندازد، حرمان هور نسخه‌ای‌ برابر عین اصل است. حرمان هور را نمی‌توان کتابی از جمله‌ کتاب‌های جنگ و دفاع مقدس شمرده و خواند. او، همان تک‌درختی است که در ازدحام تن‌ها، تنها است، دانه‌ برفی؛ مجنونی که شهید احمدرضا احدی توانسته است ترجمان حال مشهودات خود باشد، او ‌‌‌‌‌‌سّر سکوت و شکوه کوه و دشت و ‌آسمان و ستاره را درک کرده است. او سلیمان‌وار با چیزهایی که هست و ما نمی‌بینیم مکالمه و هم‌نشینی داشته است. حرمان هور کتابی نیست که با خواندنش تمام شود، پایان او خود ‌‌‌آغازی دیگر است. می‏توانم بگویم، شهید احدی نیز مانند شهید مرتضی آوینی، به جنگ نگاه اشراقی و خاصی دارد و ما در سراسر کتاب با صحنه‌های عینی رو به رو هستیم.</font></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="text-align: justify;"><b><font face="Mihan-Iransans"><br></font></b></span></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="text-align: justify;"><b><font face="Mihan-Iransans"><br></font></b></span></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="text-align: justify;"><b><font face="Mihan-Iransans"><br></font></b></span></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b><span style="text-align: justify;"><font color="#cc33cc" face="Mihan-IransansBold" size="2">قسمتی از کتاب:</font><font face="Mihan-Iransans">&nbsp;</font></span><span style="font-family: Mihan-Iransans; text-align: justify;">جبهه آمدن کار سختی نیست. جبهه جای شادی و سرور خاطر است. جای آرامش وجدان و آسایش روح است. اما وقتی دلی برایت می‌شکند یا قلبی به راهت تند تند می‌تپد یا خاطری در ورایت می‌دود، محزونت می‌کند، تمام سختی‌ها و ناملایماتش یک سو و این حزن یک سو. تفاوت این سوی و آن سوی از زمین تا آسمان است.&nbsp;</span><span style="font-family: Mihan-Iransans; text-align: justify;"><font color="#ff6600">صفحه ۱۱۹</font></span></b></p><p style="text-align: justify;"><font size="2" face="Mihan-IransansBold"><font color="#cc33cc">در بخش دیگری از كتاب "حرمان هور" آمده است:</font> « گویند كه "نیوتن" از حادثه‌ی افتادن سیب از درخت الهام گرفت و رفت آن همه دردسر برای خودش ایجاد كرد و قانون‌های اول ، دوم و سوم را وضع كرد؛ دردسر از این جهت كه نام خود را بر سر دانش‌آموزان فیزیك نهاد، بیچاره نیوتن! كه هر روز امواج ناسزاهای شاگردان تنبل دبیرستانها می‌شود كه؛ مگر او بیكار بود كه این همه استنتاج‌ها را مطرح كرد؟ آخر اگر شخص دیگری افتادن سیب از درخت را می‌دید، بلند می‌شد بدون این كه كسی او را ببیند به خوردن سیب مشغول می‌شد.</font></p><p style="text-align: justify;"><font size="2" face="Mihan-IransansBold">&nbsp;اما نیوتن می‌گوید: وقتی سیب به طرف زمین كشیده می‌شود، در همان جهت زمین هم به طرف سیب كشانده می‌شود ولی چون جرم زمین بسیار زیاد است، این پدیده محسوس نیست.»</font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><font face="Mihan-Iransans" color="#cc33cc"><b><span style="text-align: justify;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><font face="Mihan-Iransans" color="#cc33cc"><b><span style="text-align: justify;">افتخارات کتاب:</span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><font face="Mihan-Iransans"><b><span style="text-align: justify;">ـ حائز رتبه اول جایزه کتاب دفاع مقدس در سال 1372&nbsp;</span><br style="margin: 0px; padding: 0px; text-align: justify;"><span style="text-align: justify;">ـ ‌رتبه اول در جشنواره ربع قرن کتاب دفاع مقدس</span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b style="text-align: justify;"><font face="Mihan-Iransans" color="#006600"><br></font></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b style="text-align: justify;"><font face="Mihan-Iransans" color="#006600"><br></font></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b style="text-align: justify;"><font face="Mihan-Iransans" color="#006600">و امّا توضیحات بیشتر در مورد کتاب در ادامه مطلب...</font></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><b style="font-family: Mihan-IransansLight;"><span lang="AR-SA" style="font-size: 10pt;"><span class="data"><span style="border:none windowtext 1.0pt;
+mso-border-alt:none windowtext 0cm;padding:0cm"><span style="background-size: initial;
+background-origin: initial;background-clip: initial;background-attachment:scroll;
+background-position-x:0px;background-position-y:0px"><br></span></span></span></span></b></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; text-align: right; vertical-align: baseline; direction: rtl; unicode-bidi: embed; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><img src="http://upir.ir/sh94/hossein3013/20130430101727-book-big-050217013450-032.jpg" style="text-align: center;"></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;"><br></span></b></font></p><p class="coverdetails" dir="RTL" style="margin: 0cm 1.5pt 0.0001pt; vertical-align: baseline; direction: rtl; unicode-bidi: embed; float: right; overflow: hidden; background-image: initial; background-attachment: scroll; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0px 0px; background-repeat: initial;" id="ctl00_MainContentPlaceHolder_BookDetailsPriceParagraph"><font face="Mihan-IransansLight"><b><span lang="AR-SA" style="font-size: 10pt;">&nbsp; &nbsp; &nbsp;&nbsp;</span></b></font></p></div>
+
+
+
+
+
+ </div>
+<a href='http://medad-f.mihanblog.com/post/63'>ادامه مطلب</a><br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/21">
+***معرفی کتاب***</a> , <a href="http://medad-f.mihanblog.com/post/category/4">
+***دینی مذهبی***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://medad-f.mihanblog.com/post/tag/%DA%A9%D8%AA%D8%A7%D8%A8">
+کتاب</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D9%85%D8%B9%D8%B1%D9%81%DB%8C%20%DA%A9%D8%AA%D8%A7%D8%A8">
+معرفی کتاب</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/63" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post3">
+<div class="theme-designer-com_post1">
+<div class="theme-designer-com_post-title" align="right">&nbsp;<a href="http://medad-f.mihanblog.com/post/62">شعر: با هر گناهی می کنی، سیلی به مهدی میزنی...</a></div>
+</div>
+</div>
+<div class="theme-designer-com_post2"></div>
+<div class="theme-designer-com_post3">
+<div align="center"><div class="theme-designer-com_post5"><div align="right">
+<div class="theme-designer-com-post-time1">
+<div class="theme-designer-com-post-time2">نویسنده : آقای فضول</div>
+<div class="theme-designer-com-post-time3">تاریخ : چهارشنبه 11 شهریور 1394</div>
+<div class="theme-designer-com-post-time4"><a target="_self" href="http://medad-f.mihanblog.com/post/62#commentlist">محبّت <script>setCommentCnt(62)</script> </a></div>
+</div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com_clear"></div>
+<div class="theme-designer-com-post-text">
+
+
+
+
+
+<div style="text-align: right;"><b><font face="Mihan-Iransans">با هر گناهی می کنی، سیلی به مهدی میزنی &nbsp; &nbsp; &nbsp;</font></b></div><div style="text-align: right;"><b><font face="Mihan-Iransans"><span style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; با هر دعایی می کنی، قلبش تجلّی میکنی</span></font></b></div><div style="text-align: right;"><b><font face="Mihan-Iransans"><span style="text-align: center;">با هر نگاه با بد حجاب، مهدی کشد از تو عذاب &nbsp;&nbsp;</span></font></b></div><div style="text-align: right;"><b><font face="Mihan-Iransans"><span style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;دین خودت کردی خراب، چوبی به مهدی میزنی</span></font></b></div><div style="text-align: right;"><b><font face="Mihan-Iransans"><span style="text-align: center;">با فاسقان رفتار تو، با ناکسان گفتار تو &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></font></b></div><div style="text-align: right;"><b><font face="Mihan-Iransans"><span style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; با سارقان همکار تو، با تیغ مهدی میزنی</span></font></b></div><div style="text-align: right;"><b><font face="Mihan-Iransans"><span style="text-align: center;">تو شیعه اثنا عشر، از حکم قرآن با خبر &nbsp; &nbsp; &nbsp; &nbsp;</span></font></b></div><div style="text-align: right;"><b><font face="Mihan-Iransans"><span style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;رفتی سوی راه دگر، پس لاف مهدی میزنی</span></font></b></div><div style="text-align: right;"><b><font face="Mihan-Iransans"><span style="text-align: center;">یکدم بیا هوشیار شو، از خواب خود بیدار شو &nbsp; &nbsp; &nbsp;&nbsp;</span></font></b></div><div style="text-align: right;"><b><font face="Mihan-Iransans"><span style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;مشتاق روی یار شو، حبّی ولایی میزنی</span></font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div><div style="text-align: center;"><b style="background-color: rgb(51, 255, 51);"><font face="Mihan-Yekan" size="2">&nbsp;شاعر افغان: سید اَمان الله جعفری</font></b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div><div style="text-align: center;"><br></div><div style="text-align: right;"><font size="2"><img src="http://upir.ir/sh94/hossein3013/RAMAZAN-VIGE-20-1-.jpg" height="292" width="467"></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="http://medad-f.mihanblog.com/post/category/4">
+***دینی مذهبی***</a> , <a href="http://medad-f.mihanblog.com/post/category/23">
+***شعر***</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://medad-f.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1">
+شعر</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div id="theme-designer-com-post-linksabet"><ul>
+<li><center><a href="http://medad-f.mihanblog.com/post/62" ><span class="theme-designer-com_hidden">لینک ثابت</span></a></center></li>
+</ul></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post4"></div>
+<div class="theme-designer-com_post-space2"></div>
+
+<!-- ------------comment------------ -->
+<!-- ------------/comment------------ -->
+
+
+<table border="0" width="100%" id="table3" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<table border="0" width="100%" id="table4" cellspacing="0" cellpadding="0">
+<tr>
+<td align="center">
+<p align="right">
+<div id="styleone2">
+  <ul>
+    <li><a href="index.html"> تعداد کل صفحات: 6 </a></li>
+    <li><a href="http://medad-f.mihanblog.com/page/1"><b>1</b></a></li><li><a href="http://medad-f.mihanblog.com/page/2"><span>2</span></a></li><li><a href="http://medad-f.mihanblog.com/page/3"><span>3</span></a></li><li><a href="http://medad-f.mihanblog.com/page/4"><span>4</span></a></li><li><a href="http://medad-f.mihanblog.com/page/5"><span>5</span></a></li><li><a href="http://medad-f.mihanblog.com/page/6"><span>6</span></a></li>  </ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+</td>
+<td width="43" valign="top">&nbsp;</td>
+<td width="6" valign="bottom" class="theme-designer-com_badane-blokha">
+<div class="theme-designer-com_makan_badane-khatbala-left"><img border="0" src="http://themeupload.theme-designer.com/62/image/6.png"></div>
+<img border="0" src="http://themeupload.theme-designer.com/62/image/7.png">
+</td>
+<td width="14" valign="top">&nbsp;</td>
+<td width="162" valign="top">
+
+<div class="theme-designer-com_menurightleft" align="center">
+<div class="theme-designer-com_menurightleft2"></div>
+
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/19.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="theme-designer-com_menurightleft-text">
+<div align="center" style="margin:10px 0px 10px 0px;"><img src="../static.mihanblog.com/public/user_data/web_photo/483/1447759.jpg@1084"  /></div>
+سلام و عرض ادب<br />
+ممکنه اولین سؤالی که برات پیش بیاد اسم این وبلاگ باشه.<br />
+&quot;مداد فضول&quot; بیانگر آزاد بودن موضوع وبلاگ هست.<br />
+تنها درخواستی که دارم این هست که وقتی از مطالب استفاده کرده فقط مارو دعا کنید.<br><br>
+<a target="_blank" href="http://medad-f.mihanblog.com/post/author/1220009">آقای فضول</a>
+</div>
+<div class="theme-designer-com_menurightleft-space"></div>
+
+<!-- Menu -->
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/16.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="vmenu"><a href="index.html">صفحه ی نخست</a></div>
+<div class="vmenu"><a href="mailto:hossein_1414@yahoo.com">پست الکترونیک</a></div>
+<div class="vmenu"><a href="javascript:messageForm()">تماس با ما</a></div>
+<div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive">آرشیو مطالب</a></div>
+<div class="vmenu"><a target="_blank" href="http://medad-f.mihanblog.com/post/rss/">لینك rss</a></div>
+<div class="vmenu"><a target="_blank" href="http://medad-f.mihanblog.com/m/">نسخه موبایل</a></div>
+<div class="theme-designer-com_menurightleft-space"></div>
+<!--/Menu -->
+
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/20.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="theme-designer-com_menurightleft-text">
+<a href="http://medad-f.mihanblog.com/post/tag/%D8%B3%D8%A7%D9%84+%D9%86%D9%88" style="font-size:1em">
+سال نو</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%AF%D9%84%D9%86%D9%88%D8%B4%D8%AA%D9%87+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AE%D8%AF%D8%A7" style="font-size:1em">
+دلنوشته برای خدا</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1" style="font-size:2em">
+شعر</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D9%86%D9%88%D8%B1%D9%88%D8%B2" style="font-size:1em">
+نوروز</a> , <a href="http://medad-f.mihanblog.com/post/tag/%DA%AF%D9%86%D8%A7%D9%87+%D9%86%DA%A9%D9%86%DB%8C%D8%AF" style="font-size:1em">
+گناه نکنید</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%AF%D9%81%D8%AA%D8%B1+%D8%AE%D8%B5%D9%88%D8%B5%DB%8C+%D9%85%D9%86+%D9%88+%D8%AE%D8%AF%D8%A7" style="font-size:1em">
+دفتر خصوصی من و خدا</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" style="font-size:2em">
+خدا</a> , <a href="http://medad-f.mihanblog.com/post/tag/%D8%A2%DB%8C%D8%AA+%D8%A7%D9%84%D9%84%D9%87+%D8%AE%D9%88%D8%B4%D9%88%D9%82%D8%AA" style="font-size:1em">
+آیت الله خوشوقت</a> , <a href="http://medad-f.mihanblog.com/post/tag/God" style="font-size:1em">
+God</a> , <a href="http://medad-f.mihanblog.com/post/tag/%DA%AF%D9%86%D8%A7%D9%87" style="font-size:1em">
+گناه</a> , </div>
+<div class="theme-designer-com_menurightleft-space"></div>
+
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/2.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="vmenu"><a href="http://medad-f.mihanblog.com/post/author/1220009" title="57" >آقای فضول</a></div><div class="theme-designer-com_menurightleft-space"></div>
+
+
+<div class="theme-designer-com_menurightleft-title1"><img border="0" src="http://themeupload.theme-designer.com/62/image/title/4.png"></div>
+<div class="theme-designer-com_menurightleft3"></div>
+<div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1397/10" title="1">
+ دی 1397</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1395/12" title="1">
+ اسفند 1395</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1395/11" title="1">
+ بهمن 1395</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1395/3" title="1">
+ خرداد 1395</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1395/1" title="1">
+ فروردین 1395</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1394/10" title="2">
+ دی 1394</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1394/7" title="1">
+ مهر 1394</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1394/6" title="2">
+ شهریور 1394</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1394/5" title="2">
+ مرداد 1394</a></div><div class="vmenu"><a href="http://medad-f.mihanblog.com/post/archive/1394/3" title="1">
+ خرداد 1394</a></div><div class="theme-designer-com_menurightleft-space"></div>
+
+</div>
+
+</td>
+<td width="14" valign="top">&nbsp;</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<div class="theme-designer-com_footer1">
+<div align="center">
+<div class="theme-designer-com_footer2"></div>
+</div>
+</div>
+
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'medad-f.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

@@ -1,0 +1,1270 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://najvaye-zolf.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*978338*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[18]='308';commentCnt[933]='2';commentCnt[934]='1';commentCnt[935]='1';commentCnt[936]='1';commentCnt[937]='3';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[18]='29';
+mihanblogDisLikeArrCnt[18]='11';
+mihanblogLikeArrCnt[933]='0';
+mihanblogDisLikeArrCnt[933]='0';
+mihanblogLikeArrCnt[934]='0';
+mihanblogDisLikeArrCnt[934]='0';
+mihanblogLikeArrCnt[935]='0';
+mihanblogDisLikeArrCnt[935]='0';
+mihanblogLikeArrCnt[936]='0';
+mihanblogDisLikeArrCnt[936]='0';
+mihanblogLikeArrCnt[937]='0';
+mihanblogDisLikeArrCnt[937]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://najvaye-zolf.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://najvaye-zolf.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','85');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','دوشنبه 4 اردیبهشت 1396');
+	
+	setStatVar('today_view','17');
+	setStatVar('yesterday_view','13');
+	
+	setStatVar('this_month_view','416');
+	setStatVar('last_month_view','518');
+
+	setStatVar('total_view','438529');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (16:22)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://najvaye-zolf.mihanblog.com/statupdate/?data[refereruri]=http://savisa.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607778622&data[hash]=55359a192753ba1a74ef13bf493e98d4&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://najvaye-zolf.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://najvaye-zolf.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://najvaye-zolf.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META NAME="description" CONTENT="ولایت فقیه و عصر ظهور و آموزشی و علمی و داستان و شعر و...">
+<META NAME="keywords" CONTENT="آموزشی      علمی           ایران               ورزش                  احسان           بهشت  زلزله        خدا     ولایت فقیه       امام زمان      مهدی      خامنه ای       خمینی       hpshk         najvaye-zolf.mihanblog.com       hdvhk      ندا      ایران          شعر       مادر      پدر    نجوا زلف   زلزله      شهید      كد های نود 32                  نود 32                       جهاد سایبری                    ">
+<META NAME="DesignerUrl" CONTENT="http://Avazak.ir">
+<META NAME="Designer" CONTENT="AVAZAK">
+<link rel="alternate" type="application/rss+xml" title="نجوای زلف" href="http://najvaye-zolf.mihanblog.com/post/rss/" />
+<title>نجوای زلف</title>
+<link href="http://avazak.ir/Theme/style/787.css" type="text/css" rel="stylesheet">
+</style>
+
+
+</head>
+
+<body>
+
+<div align="center"><div style="width:1000px"><div id="avazak">
+
+<div id="header">
+<h1 class="h1">نجوای زلف</h1>
+<div class="desc">یک دانشجوی بیسواد دلواپس هستم...</div>
+<div class="navbar">
+<a href="index.html">صفحه اصلی</a> | 
+<a href="http://najvaye-zolf.mihanblog.com/post/list">عناوین مطالب</a> | 
+<a href="javascript:messageForm()">تماس با من</a> | 
+<a title="قالب وبلاگ رایگان" href="http://avazak.ir/">قالب وبلاگ</a>
+</div>
+
+</div>
+	<!-- end header -->
+	
+<!--Design By : Avazak.ir-->
+
+<div id="content">
+<div id="bodyposts">
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<h2 class="title"><a title="به نام تنها خالق هستی( پست ثابت )" href="http://najvaye-zolf.mihanblog.com/post/18">به نام تنها خالق هستی( پست ثابت )</a></h2>
+<div class="context">
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+<p align="center"><img src="data:image/gif;base64,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" alt=""></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b></b><br/>
+<br><br>
+موضوع: <a title="سیاسی" href="http://najvaye-zolf.mihanblog.com/post/category/10">سیاسی</a>، <a title="شهیدان" href="http://najvaye-zolf.mihanblog.com/post/category/16">شهیدان</a>، <br/>
+برچسب ها:
+<a title="دکتر سلام" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AF%DA%A9%D8%AA%D8%B1%20%D8%B3%D9%84%D8%A7%D9%85">دکتر سلام</a>، <a title="دانلود قسمت های فیلم دکتر سلام" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D9%82%D8%B3%D9%85%D8%AA%20%D9%87%D8%A7%DB%8C%20%D9%81%DB%8C%D9%84%D9%85%20%D8%AF%DA%A9%D8%AA%D8%B1%20%D8%B3%D9%84%D8%A7%D9%85">دانلود قسمت های فیلم دکتر سلام</a>، <a title="شهید اکبر رضازاده" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF%20%D8%A7%DA%A9%D8%A8%D8%B1%20%D8%B1%D8%B6%D8%A7%D8%B2%D8%A7%D8%AF%D9%87">شهید اکبر رضازاده</a>، <a title="شهید" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF">شهید</a>، <a title="سیاسی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C">سیاسی</a>، <a title="فیلم سیاسی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%81%DB%8C%D9%84%D9%85%20%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C">فیلم سیاسی</a>، <a title="ویدئو سایسی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%88%DB%8C%D8%AF%D8%A6%D9%88%20%D8%B3%D8%A7%DB%8C%D8%B3%DB%8C">ویدئو سایسی</a>، </br>
+</div>
+<div class="date">
+<div class="right">[ جمعه 6 مرداد 1391 ]  [ 00:52 ]  [ دانشجوی بی اعصابم  ]</div>
+<div class="left"><a target="_self" href="javascript:newComment(18)">[ برای معرفی وبلاگ خود به این قسمت مراجعه کنید(<script>setCommentCnt(18)</script>) ]</div>
+</div></div>
+<div class="post">
+<h2 class="title"><a title="وعده‌ای پوچ به نامِ «بازگشت عزت به پاسپورت ایرانی» " href="http://najvaye-zolf.mihanblog.com/post/937">وعده‌ای پوچ به نامِ «بازگشت عزت به پاسپورت ایرانی» </a></h2>
+<div class="context">
+<div class="moduleContentContentLead"><font size="2" face="Mihan-Iransans"><br></font><div align="center"><font size="2" face="Mihan-Iransans"><img src="http://www.anaj.ir/Upload/Image/2017/02/300_400/3a7b78ed_d0f7_4560_ad13_d38a75a6fd65.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br><br></font></div><font size="2" face="Mihan-Iransans">با توجه به ماهیت استکباری و ضد 
+اسلامی کشورهای غربی و عربی علیه جمهوری اسلامی آیا دادن وعده غیرعملی 
+برگشت عزت به پاسپورت ایرانی عقلانی بوده و یا صرفا جنبه انتخاباتی برای 
+کسب رای داشته است؟</font></div><font size="2" face="Mihan-Iransans"> </font><p><font size="2" face="Mihan-Iransans">&nbsp;<span style="color:#0000CD">"به
+ نامزدهای گوناگون عرض میکنم ،جوری حرف بزنید که اگر در خرداد سال آینده 
+نوار امروز شما را جلوی خودتان گذاشتند یا پخش کردند، شرمنده نشوید؛ جوری 
+وعده بدهید که اگر چنانچه آن وعده را بعداً به رخ شما کشیدند، مجبور نباشید
+ تقصیر را گردن این و آن بگذارید که نگذاشتند، نشد.</span>"</font></p><p><font size="2" face="Mihan-Iransans">&nbsp;این جملات، رهبر انقلاب خطاب به نامزدهای ریاست جمهوری در هشت روز مانده 
+به انتخابات سال 92 بود. سخنانی که در آن زمان به دلیل حساسیت رقابت‌های 
+انتخاباتی چندان در خاطر نماند و به فراموشی سپرده شد؛ امروز پس از گذشت 
+4سال از آخرین انتخابات ریاست جمهوری، نه‌تنها بازخوانی این وعده‌ها ایرادی
+ ندارد بلکه در تشخیص و انتخاب فرد شایسته برای آینده&nbsp;بسیار حائز اهمیت 
+است.</font></p><p><font size="3" color="#FFFFCC"><span style="background-color: rgb(153, 0, 0);"><font face="Mihan-Iransans">ادامه در ....&nbsp;</font></span></font></p><div align="center"><font size="2"><font face="Mihan-Iransans"><a href="https://t.me/najvaye_zolf_channel" target="" title="">کانال نجوای زلف </a></font></font></div><p><font size="2" face="Mihan-Iransans"><br></font></p><font size="2" face="Mihan-Iransans">
+
+
+</font><br/>
+<b><a href='http://najvaye-zolf.mihanblog.com/post/937'>ادامه مطلب</a></b><br/>
+<br><br>
+موضوع: <a title="امام خامنه ای (مدظله العالی)" href="http://najvaye-zolf.mihanblog.com/post/category/36">امام خامنه ای (مدظله العالی)</a>، <a title="نظام جمهوری اسلامی ایران" href="http://najvaye-zolf.mihanblog.com/post/category/21">نظام جمهوری اسلامی ایران</a>، <a title="سیاسی" href="http://najvaye-zolf.mihanblog.com/post/category/10">سیاسی</a>، <a title="اخبار" href="http://najvaye-zolf.mihanblog.com/post/category/30">اخبار</a>، <br/>
+برچسب ها:
+<a title="پاسپورت ایران" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%BE%D8%A7%D8%B3%D9%BE%D9%88%D8%B1%D8%AA%20%D8%A7%DB%8C%D8%B1%D8%A7%D9%86">پاسپورت ایران</a>، <a title="عزت" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B9%D8%B2%D8%AA">عزت</a>، <a title="دولت وعده" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AF%D9%88%D9%84%D8%AA%20%D9%88%D8%B9%D8%AF%D9%87">دولت وعده</a>، <a title="دولت پوچ" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AF%D9%88%D9%84%D8%AA%20%D9%BE%D9%88%DA%86">دولت پوچ</a>، <a title="روحانی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C">روحانی</a>، <a title="آمریکا" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7">آمریکا</a>، <a title="اروپا" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%A7%D8%B1%D9%88%D9%BE%D8%A7">اروپا</a>، </br>
+دنبالک ها:
+<a title="کانال نجوای زلف" href="http://https://t.me/najvaye_zolf_channel" target="_blank">کانال نجوای زلف</a>،	 <br/>
+</div>
+<div class="date">
+<div class="right">[ سه شنبه 19 بهمن 1395 ]  [ 02:45 ]  [ دانشجوی بی اعصابم  ]</div>
+<div class="left"><a target="_self" href="javascript:newComment(937)">[ نظرات(<script>setCommentCnt(937)</script>) ]</div>
+</div></div>
+<div class="post">
+<h2 class="title"><a title=" با ترامپ چه کنیم؟" href="http://najvaye-zolf.mihanblog.com/post/936"> با ترامپ چه کنیم؟</a></h2>
+<div class="context">
+<font size="2"><br>این ایام، این پرسش که<font size="3"> "با ترامپ چه کنیم؟"</font> ذهن بسیاری از نخبگان ایرانی را به خود مشغول کرده است.<br><br>پاسخ روشن است: آنها که اقتصاد و سیاست و امنیت ایران را تابعی از مذاکرات و سیاست خارجی و اراده کدخدا می‌دانند، یعنی هم بقای سیاسی خود در داخل و هم پیشرفت و امنیت کشور را به روی کار بودن این یا آن حزب و فرد در آمریکا گره زده‌اند، برای چنین دورانی مناسب نیستند. اینها که با لبخند اوباما وحشت می‌کردند و می گفتند صنعت هسته‌ای را تقدیم کنیم تا جنگ نشود، تردید نکنیم با اخم ترامپ قباله کشور را آماده می‌کنند که به نام آمریکا بزنند.<br><br>ترامپ به ساختن آمریکا مشغول خواهد شد و جهان را رها خواهد کرد؛ آمریکا چاره‌ای هم جز این ندارد. ترامپ یک انتخاب عقلانی برای خروج آبرومندانه آمریکا از جهان و بازگشت به درون است. کسانی باید در ایران روی کار بیایند که آمریکا را رها کنند!<br><br>دکتر #علیرضا_زاکانی امروز سخن از یک راهبرد بسیار مهم به زبان آورد: نه جنگ، نه تسلیم؛ بلکه تدبیر و بهره‌برداری از فرصت ترامپ برای شکل دهی به یک نظم بدون آمریکا.<br><br>&nbsp;#سید_یاسر_جبرائیلے<br><br><br></font><div align="center"><font size="2"><font size="3" face="Mihan-IransansBold"><a href="https://t.me/najvaye_zolf_channel" target="" title="">کانال نجوای زلف</a></font> </font><br></div><font size="2"><br></font><br/>
+<b></b><br/>
+<br><br>
+موضوع: <a title="نظام جمهوری اسلامی ایران" href="http://najvaye-zolf.mihanblog.com/post/category/21">نظام جمهوری اسلامی ایران</a>، <a title="سیاسی" href="http://najvaye-zolf.mihanblog.com/post/category/10">سیاسی</a>، <br/>
+برچسب ها:
+<a title="ترامپ" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AA%D8%B1%D8%A7%D9%85%D9%BE">ترامپ</a>، <a title="آمریکا" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7">آمریکا</a>، <a title="کدخدا" href="http://najvaye-zolf.mihanblog.com/post/tag/%DA%A9%D8%AF%D8%AE%D8%AF%D8%A7">کدخدا</a>، <a title="حسن روحانی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AD%D8%B3%D9%86%20%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C">حسن روحانی</a>، <a title="یاسر جبرائیلی" href="http://najvaye-zolf.mihanblog.com/post/tag/%DB%8C%D8%A7%D8%B3%D8%B1%20%D8%AC%D8%A8%D8%B1%D8%A7%D8%A6%DB%8C%D9%84%DB%8C">یاسر جبرائیلی</a>، <a title="زاکانی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B2%D8%A7%DA%A9%D8%A7%D9%86%DB%8C">زاکانی</a>، <a title="ترامپ دیوانه" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AA%D8%B1%D8%A7%D9%85%D9%BE%20%D8%AF%DB%8C%D9%88%D8%A7%D9%86%D9%87">ترامپ دیوانه</a>، </br>
+دنبالک ها:
+<a title="کانال نجوای زلف" href="http://https://t.me/najvaye_zolf_channel" target="_blank">کانال نجوای زلف</a>،	 <br/>
+</div>
+<div class="date">
+<div class="right">[ دوشنبه 18 بهمن 1395 ]  [ 01:39 ]  [ دانشجوی بی اعصابم  ]</div>
+<div class="left"><a target="_self" href="javascript:newComment(936)">[ نظرات(<script>setCommentCnt(936)</script>) ]</div>
+</div></div>
+<div class="post">
+<h2 class="title"><a title="فریدون محاکمه شود..." href="http://najvaye-zolf.mihanblog.com/post/935">فریدون محاکمه شود...</a></h2>
+<div class="context">
+<div align="center"><img src="../file.mihanblog.com/public/user_data/user_files/327/978338/photo.jpg" alt="" hspace="0" height="380" width="380" vspace="0" border="0" align="bottom"><br><br><font face="Mihan-IransansBold" size="4">&nbsp;#فریدون_محاکمه_شود<br><br><a href="https://t.me/najvaye_zolf_channel" target="" title="">کانال نجوای زلف </a><br></font><br></div>
+
+
+<br/>
+<b></b><br/>
+<br><br>
+موضوع: <a title="عكس" href="http://najvaye-zolf.mihanblog.com/post/category/6">عكس</a>، <a title="سیاسی" href="http://najvaye-zolf.mihanblog.com/post/category/10">سیاسی</a>، <br/>
+برچسب ها:
+<a title="فریدون محاکمه شود" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%81%D8%B1%DB%8C%D8%AF%D9%88%D9%86%20%D9%85%D8%AD%D8%A7%DA%A9%D9%85%D9%87%20%D8%B4%D9%88%D8%AF">فریدون محاکمه شود</a>، <a title="برادر روحانی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%A8%D8%B1%D8%A7%D8%AF%D8%B1%20%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C">برادر روحانی</a>، <a title="محاکمه فریدون" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%85%D8%AD%D8%A7%DA%A9%D9%85%D9%87%20%D9%81%D8%B1%DB%8C%D8%AF%D9%88%D9%86">محاکمه فریدون</a>، <a title="مفسد اقتصادی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%85%D9%81%D8%B3%D8%AF%20%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C">مفسد اقتصادی</a>، <a title="مفسد" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%85%D9%81%D8%B3%D8%AF">مفسد</a>، <a title="فردون" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%81%D8%B1%D8%AF%D9%88%D9%86">فردون</a>، </br>
+</div>
+<div class="date">
+<div class="right">[ چهارشنبه 6 بهمن 1395 ]  [ 09:35 ]  [ دانشجوی بی اعصابم  ]</div>
+<div class="left"><a target="_self" href="javascript:newComment(935)">[ نظرات(<script>setCommentCnt(935)</script>) ]</div>
+</div></div>
+<div class="post">
+<h2 class="title"><a title="دفاع بَد یا بِدعت انحرافی ؟؟" href="http://najvaye-zolf.mihanblog.com/post/934">دفاع بَد یا بِدعت انحرافی ؟؟</a></h2>
+<div class="context">
+<font face="Mihan-Iransans" size="3">اخیراً #روحانی محترمی که دو دوره نماینده مجلس از تهران بوده و در انتخابات اخیر از طرف شورای محترم نگهبان #رد_صلاحیت شدند،در تبریز سخنرانی داشته و سایت خبری تحلیلی زیتون از قول ایشان نوشته است که در توجیه ورود به شبکه های اجتماعی گفته:<br><br>&nbsp;حضرت آقا هم #توییتر دارند، هم اینستاگرام و هم کانال تلگرامی. #فعل ولیّ #مقدم بر #قانون است و بچه‌های حزب‌اللهی باید به شبکه‌های اجتماعی فعلی ورود کرده و به صورت جهادی کار کنند."<br><font color="#CC0000"><br>ادامه در ...</font></font><br><br><div align="center"><font size="3"><font face="Mihan-Iransans"><a href="https://t.me/najvaye_zolf_channel" target="" title="">کانال نجوای زلف</a>&nbsp;&nbsp; </font></font></div><br/>
+<b><a href='http://najvaye-zolf.mihanblog.com/post/934'>ادامه مطلب</a></b><br/>
+<br><br>
+موضوع: <a title="امام خامنه ای (مدظله العالی)" href="http://najvaye-zolf.mihanblog.com/post/category/36">امام خامنه ای (مدظله العالی)</a>، <a title="ولایت فقیه" href="http://najvaye-zolf.mihanblog.com/post/category/12">ولایت فقیه</a>، <a title="نظام جمهوری اسلامی ایران" href="http://najvaye-zolf.mihanblog.com/post/category/21">نظام جمهوری اسلامی ایران</a>، <a title="سیاسی" href="http://najvaye-zolf.mihanblog.com/post/category/10">سیاسی</a>، <a title="اخبار" href="http://najvaye-zolf.mihanblog.com/post/category/30">اخبار</a>، <br/>
+برچسب ها:
+<a title="امام خامنه ای" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%AE%D8%A7%D9%85%D9%86%D9%87%20%D8%A7%DB%8C">امام خامنه ای</a>، <a title="توییتر" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AA%D9%88%DB%8C%DB%8C%D8%AA%D8%B1">توییتر</a>، <a title="اینستاگرام" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85">اینستاگرام</a>، <a title="تلگرام" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85">تلگرام</a>، <a title="روحانی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C">روحانی</a>، <a title="ولی فقیه" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%88%D9%84%DB%8C%20%D9%81%D9%82%DB%8C%D9%87">ولی فقیه</a>، <a title="قانون" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%82%D8%A7%D9%86%D9%88%D9%86">قانون</a>، </br>
+دنبالک ها:
+<a title="کانال یک از هشتاد میلیون نفر" href="http://https://t.me/yekaz80" target="_blank">کانال یک از هشتاد میلیون نفر</a>،	 <a title="کانال نجوای زلف" href="http://https://t.me/najvaye_zolf_channel" target="_blank">کانال نجوای زلف</a>،	 <br/>
+</div>
+<div class="date">
+<div class="right">[ چهارشنبه 6 بهمن 1395 ]  [ 08:45 ]  [ دانشجوی بی اعصابم  ]</div>
+<div class="left"><a target="_self" href="javascript:newComment(934)">[ نظرات(<script>setCommentCnt(934)</script>) ]</div>
+</div></div>
+<div class="post">
+<h2 class="title"><a title="پیش بینی های ولیّ امر را #بدون_عینک هم می شود دید آقای #روحانی !!!" href="http://najvaye-zolf.mihanblog.com/post/933">پیش بینی های ولیّ امر را #بدون_عینک هم می شود دید آقای #روحانی !!!</a></h2>
+<div class="context">
+<font face="Mihan-Koodak" size="3">&nbsp;رئیس جمهور در نشست خبری اخیر خود در بخشی از فرافکنی ها ی غیر مرتبط خود گفتند :<br><br>"عده
+ ای بودند در طول 10 -20 سال اخیر، قبلش هم اینها را می شناسم، هر چه پیش 
+بینی کردند برعکس درآمده است. باز هم پیشگویی می کنند. نمی دانم چه خاصیتی 
+دارد دو مرتبه پیشگویی می کنند."<br><br>به عنوان #یک_نفر_از_هشتاد_میلیون ایران، سوال ما از آقای روحانی این است:<br><br><font color="#CC0000">ادامه در ..</font><br></font><br/>
+<b><a href='http://najvaye-zolf.mihanblog.com/post/933'>ادامه مطلب</a></b><br/>
+<br><br>
+موضوع: <a title="امام خامنه ای (مدظله العالی)" href="http://najvaye-zolf.mihanblog.com/post/category/36">امام خامنه ای (مدظله العالی)</a>، <a title="ولایت فقیه" href="http://najvaye-zolf.mihanblog.com/post/category/12">ولایت فقیه</a>، <a title="نظام جمهوری اسلامی ایران" href="http://najvaye-zolf.mihanblog.com/post/category/21">نظام جمهوری اسلامی ایران</a>، <a title="سیاسی" href="http://najvaye-zolf.mihanblog.com/post/category/10">سیاسی</a>، <br/>
+برچسب ها:
+<a title="امام خامنه ای" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%AE%D8%A7%D9%85%D9%86%D9%87%20%D8%A7%DB%8C">امام خامنه ای</a>، <a title="پیش بینی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D9%BE%DB%8C%D8%B4%20%D8%A8%DB%8C%D9%86%DB%8C">پیش بینی</a>، <a title="برجام" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%A8%D8%B1%D8%AC%D8%A7%D9%85">برجام</a>، <a title="خسارت محض" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%AE%D8%B3%D8%A7%D8%B1%D8%AA%20%D9%85%D8%AD%D8%B6">خسارت محض</a>، <a title="روححانی" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B1%D9%88%D8%AD%D8%AD%D8%A7%D9%86%DB%8C">روححانی</a>، <a title="رئیس جمهور" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B1%D8%A6%DB%8C%D8%B3%20%D8%AC%D9%85%D9%87%D9%88%D8%B1">رئیس جمهور</a>، <a title="زدن عینک" href="http://najvaye-zolf.mihanblog.com/post/tag/%D8%B2%D8%AF%D9%86%20%D8%B9%DB%8C%D9%86%DA%A9">زدن عینک</a>، </br>
+دنبالک ها:
+<a title="کانال نجوای زلف" href="http://https://t.me/najvaye_zolf_channel" target="_blank">کانال نجوای زلف</a>،	 <a title="نگاهی به تحقق عجیب ۱۴ پیش بینی بزرگ امام خامنه ای(مدظله)" href="http://blugh.ir/?p=1297" target="_blank">نگاهی به تحقق عجیب ۱۴ پیش بینی بزرگ امام خامنه ای(مدظله)</a>،	 <a title="کانال یک از هشتاد میلیون نفر" href="http://https://t.me/yekaz80" target="_blank">کانال یک از هشتاد میلیون نفر</a>،	 <br/>
+</div>
+<div class="date">
+<div class="right">[ چهارشنبه 29 دی 1395 ]  [ 23:11 ]  [ دانشجوی بی اعصابم  ]</div>
+<div class="left"><a target="_self" href="javascript:newComment(933)">[ نظرات(<script>setCommentCnt(933)</script>) ]</div>
+</div></div>
+
+<div class="pagination">
+ .: تعداد کل صفحات 17 :. 
+<a href="http://najvaye-zolf.mihanblog.com/page/1"><b>1</b></a>
+<a href="http://najvaye-zolf.mihanblog.com/page/2"><span>2</span></a>
+<a href="http://najvaye-zolf.mihanblog.com/page/3"><span>3</span></a>
+<a href="http://najvaye-zolf.mihanblog.com/page/4"><span>4</span></a>
+<a href="http://najvaye-zolf.mihanblog.com/page/5"><span>5</span></a>
+<a href="http://najvaye-zolf.mihanblog.com/page/6"><span>6</span></a>
+<a href="http://najvaye-zolf.mihanblog.com/page/7"><span>7</span></a>
+<a href="http://najvaye-zolf.mihanblog.com/page/8"><i>...</i></a>
+</div>
+</div>
+
+	<!-- end post -->
+
+<div id="sidebar-r">
+
+<div class="side">
+<h3 class="h3">درباره وبلاگ</h3>
+<center><img src="../static.mihanblog.com/public/user_data/web_photo/327/978338.jpg@8575"  /></center>
+<div class="context-side" style="text-align:justify">
+ ( یکـ پلکــ زدن غافل از آن مآه نباشم... <br />
+<br />
+            شآید کهـ نگاهی کند آگاه نباشمـ )<br />
+<br />
+<br />
+دل من پشت سرت کاسه ی آبی شد و ریخت<br />
+<br />
+کی شود پیش قدم های تو اسپند شوم...<br />
+<br />
+          <br />
+<br />
+بـــــ نــــــــام خــــــدایی کــــــه....!<br />
+<br />
+دغـــدغـــــه ی....؛<br />
+<br />
+&quot;از دســــت دادنــــش&quot; را، نــــــدارم<br />
+<br />
+* و به نام خدایی که از شدت حضور, ناپیداست.... <br />
+<br />
+* سلام بر شهدا, <br />
+<br />
+* و سلام بر دوستانی که در کلاس انتظار هیچگاه غیبت نمیکنند.<br />
+<br />
+<br />
+<br />
+چه کسی می داند؟<br />
+شاید آن شادترین لحظه ما در راه است …<br />
+<br />
+<br />
+<br />
+اینجا :<br />
+وبلاگی دوستانه,روانشناسی,موفقیتی, مذهبی و منتظر ظهور منجی عالم بشریّت.<br />
+<br />
+<br />
+عشق است شهادت...<br />
+تقدیــــــــــــــــــــــــــــــــــــــــــمـــــــ<br />
+به نفسم<br />
+زندگیم<br />
+عشقم<br />
+عزیزم<br />
+امیدم<br />
+سرور و سالارم<br />
+حضرت آیت الله العظمی<br />
+الامام الحسینی خامنه ای<br />
+<br />
+****************************<br />
+استفاده از مطالب وبلاگ نه تنها مجاز است،<br />
+بلکه ثواب هم دارد....<br />
+و مورد دعای ولیعصر(عج)<br />
+و این بنده حقیر قرار می گیرید...<br />
+به شرط فقط و فقط یک صلوات برای ظهور آقا...<br />
+<br />
+<br />
+<br />
+<br />
+مهربانم..<br />
+عالم از توست!<br />
+غریبانه چرا میگردی؟...<br />
+<br />
+<br />
+                                        *********<br />
+من ملک بودم و فردوس برین جایم بود <br />
+                   آدم آورد در این دیر خراب آبادم<br />
+<br />
+                                        *********<br />
+<br />
+حسین جان!!!<br />
+<br />
+روزی که شود&quot;اذاالسما انفطرت&quot;<br />
+<br />
+وانگه که شود&quot;اذاالنجوم انکدرت&quot;<br />
+<br />
+من دامن تو بگیرم اندر &quot;سئلت&quot;<br />
+<br />
+گویم صنما &quot;بای ذنب قتلت &quot;<br />
+<br />
+عشق تومرا &quot;الست منکم ببعید &quot;<br />
+<br />
+هجرتو مرا&quot;ان عذابی لشدید&quot;<br />
+<br />
+برکنج لبت نوشته&quot;یحیی ویمیت&quot;<br />
+<br />
+من مات من العشق فقد مات شهید<br />
+<br />
+شاعر: حضرت آیت‌الله العظمی الامام خامنه‌ای <br />
+<br />
+</div><div class="footer-side"></div></div>
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">آرشیو ماهانه</h3>
+<div class="context-side">
+<div class="Link"><a title=" بهمن 1395" href="http://najvaye-zolf.mihanblog.com/post/archive/1395/11"> بهمن 1395</a></div>
+<div class="Link"><a title=" دی 1395" href="http://najvaye-zolf.mihanblog.com/post/archive/1395/10"> دی 1395</a></div>
+<div class="Link"><a title=" مهر 1395" href="http://najvaye-zolf.mihanblog.com/post/archive/1395/7"> مهر 1395</a></div>
+<div class="Link"><a title=" آذر 1394" href="http://najvaye-zolf.mihanblog.com/post/archive/1394/9"> آذر 1394</a></div>
+<div class="Link"><a title=" مهر 1394" href="http://najvaye-zolf.mihanblog.com/post/archive/1394/7"> مهر 1394</a></div>
+<div class="Link"><a title=" شهریور 1394" href="http://najvaye-zolf.mihanblog.com/post/archive/1394/6"> شهریور 1394</a></div>
+<div class="Link"><a title=" مرداد 1394" href="http://najvaye-zolf.mihanblog.com/post/archive/1394/5"> مرداد 1394</a></div>
+<div class="Link"><a title=" خرداد 1394" href="http://najvaye-zolf.mihanblog.com/post/archive/1394/3"> خرداد 1394</a></div>
+<div class="Link"><a title=" اردیبهشت 1394" href="http://najvaye-zolf.mihanblog.com/post/archive/1394/2"> اردیبهشت 1394</a></div>
+<div class="Link"><a title=" اسفند 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/12"> اسفند 1393</a></div>
+<div class="Link"><a title=" بهمن 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/11"> بهمن 1393</a></div>
+<div class="Link"><a title=" دی 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/10"> دی 1393</a></div>
+<div class="Link"><a title=" آذر 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/9"> آذر 1393</a></div>
+<div class="Link"><a title=" شهریور 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/6"> شهریور 1393</a></div>
+<div class="Link"><a title=" مرداد 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/5"> مرداد 1393</a></div>
+<div class="Link"><a title=" تیر 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/4"> تیر 1393</a></div>
+<div class="Link"><a title=" خرداد 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/3"> خرداد 1393</a></div>
+<div class="Link"><a title=" اردیبهشت 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/2"> اردیبهشت 1393</a></div>
+<div class="Link"><a title=" فروردین 1393" href="http://najvaye-zolf.mihanblog.com/post/archive/1393/1"> فروردین 1393</a></div>
+<div class="Link"><a title=" اسفند 1392" href="http://najvaye-zolf.mihanblog.com/post/archive/1392/12"> اسفند 1392</a></div>
+<div class="Link"><a title=" بهمن 1392" href="http://najvaye-zolf.mihanblog.com/post/archive/1392/11"> بهمن 1392</a></div>
+<div class="Link"><a title=" دی 1392" href="http://najvaye-zolf.mihanblog.com/post/archive/1392/10"> دی 1392</a></div>
+<div class="Link"><a title=" آذر 1392" href="http://najvaye-zolf.mihanblog.com/post/archive/1392/9"> آذر 1392</a></div>
+<div class="Link"><a title=" آذر 1391" href="http://najvaye-zolf.mihanblog.com/post/archive/1391/9"> آذر 1391</a></div>
+<div class="Link"><a title=" آبان 1391" href="http://najvaye-zolf.mihanblog.com/post/archive/1391/8"> آبان 1391</a></div>
+<div class="Link"><a title=" مهر 1391" href="http://najvaye-zolf.mihanblog.com/post/archive/1391/7"> مهر 1391</a></div>
+<div class="Link"><a title=" شهریور 1391" href="http://najvaye-zolf.mihanblog.com/post/archive/1391/6"> شهریور 1391</a></div>
+<div class="Link"><a title=" مرداد 1391" href="http://najvaye-zolf.mihanblog.com/post/archive/1391/5"> مرداد 1391</a></div>
+<div class="Link"><a href="http://najvaye-zolf.mihanblog.com/post/archive">لیست آرشیوها</a></div>
+</div><div class="footer-side"></div></div>
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">آرشیو موضوعی</h3>
+<div class="context-side">
+<div class="Link"><a title="پیامبر اکرم (ص)" href="http://najvaye-zolf.mihanblog.com/post/category/19">پیامبر اکرم (ص) - 18</a></div>
+<div class="Link"><a title="امام زمان (عج)" href="http://najvaye-zolf.mihanblog.com/post/category/13">امام زمان (عج) - 24</a></div>
+<div class="Link"><a title="امام خمینی ( ره )" href="http://najvaye-zolf.mihanblog.com/post/category/15">امام خمینی ( ره ) - 6</a></div>
+<div class="Link"><a title="امام خامنه ای (مدظله العالی)" href="http://najvaye-zolf.mihanblog.com/post/category/36">امام خامنه ای (مدظله العالی) - 3</a></div>
+<div class="Link"><a title="ولایت فقیه" href="http://najvaye-zolf.mihanblog.com/post/category/12">ولایت فقیه - 25</a></div>
+<div class="Link"><a title="نظام جمهوری اسلامی ایران" href="http://najvaye-zolf.mihanblog.com/post/category/21">نظام جمهوری اسلامی ایران - 38</a></div>
+<div class="Link"><a title="سیاسی" href="http://najvaye-zolf.mihanblog.com/post/category/10">سیاسی - 32</a></div>
+<div class="Link"><a title="مذهبی" href="http://najvaye-zolf.mihanblog.com/post/category/2">مذهبی - 2</a></div>
+<div class="Link"><a title="اخبار ویژه" href="http://najvaye-zolf.mihanblog.com/post/category/32">اخبار ویژه - 1</a></div>
+<div class="Link"><a title="اخبار" href="http://najvaye-zolf.mihanblog.com/post/category/30">اخبار - 11</a></div>
+<div class="Link"><a title="وصیت نامه ی شهدا" href="http://najvaye-zolf.mihanblog.com/post/category/20">وصیت نامه ی شهدا - 6</a></div>
+<div class="Link"><a title="شهیدان" href="http://najvaye-zolf.mihanblog.com/post/category/16">شهیدان - 21</a></div>
+<div class="Link"><a title="شعر" href="http://najvaye-zolf.mihanblog.com/post/category/5">شعر - 9</a></div>
+<div class="Link"><a title="عكس" href="http://najvaye-zolf.mihanblog.com/post/category/6">عكس - 16</a></div>
+</div><div class="footer-side"></div></div>
+
+<!--Design By : Avazak.ir-->
+
+
+		
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">آمار وبلاگ</h3>
+<div class="context-side">
+<div class="Link">بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class="Link">بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class="Link">كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class="Link">بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class="Link">بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class="Link">تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class="Link">كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</div><div class="footer-side"></div></div>	
+
+<!--Design By : Avazak.ir-->
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">دیگر امکانات</h3>
+<div class="context-side" style="text-align:center">
+<center>
+
+
+
+<!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=2873652&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=2873652" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Music player by www.1abzar.com --->
+<script language="javascript" src="http://1abzaar.ir/tools/player/?pl=1&file=http://dl.fadaeianhosein.ir/mp3-1394/haftegi941129/haftegi941129%20(7).mp3&start=1&random=1"></script><div style="display:none"><h2><a href="http://www.1abzar.com">&#1705;&#1583; &#1570;&#1607;&#1606;&#1711;</a></h2></div>
+<!-- Music player by www.1abzar.com --->
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//***************************************
+// Author: webkaran.com
+// Version: v2.0
+// Date: 2012-01-12
+// Description: displays the amount of time until the "dateFuture" entered below.
+
+// NOTE: the month entered must be one less than current month. ie; 0=January, 11=December
+// NOTE: the hour is in 24 hour format. 0=12am, 15=3pm etc
+// format: dateFuture1 = new Date(year,month-1,day,hour,min,sec)
+// example: dateFuture1 = new Date(2003,03,26,14,15,00) = April 26, 2003 - 2:15:00 pm
+
+dateFuture1 = new Date(2040,8,9,9,33,25);
+
+// TESTING: comment out the line below to print out the "dateFuture" for testing purposes
+//document.write(dateFuture +"<br />");
+
+
+//###################################
+//nothing beyond this point
+function GetCount(ddate,iid){
+
+	dateNow = new Date();	//grab current date
+	amount = ddate.getTime() - dateNow.getTime();	//calc milliseconds between dates
+	delete dateNow;
+
+	// if time is already past
+	if(amount < 0){
+		document.getElementById(iid).innerHTML="Now!";
+	}
+	// else date is still good
+	else{
+		years=0;days=0;hours=0;mins=0;secs=0;out="";
+
+		amount = Math.floor(amount/1000);//kill the "milliseconds" so just secs
+
+		years=Math.floor(amount/31536000);//years (no leapyear support)
+		amount=amount%31536000;
+
+		days=Math.floor(amount/86400);//days
+		amount=amount%86400;
+
+		hours=Math.floor(amount/3600);//hours
+		amount=amount%3600;
+
+		mins=Math.floor(amount/60);//minutes
+		amount=amount%60;
+
+		secs=Math.floor(amount);//seconds
+
+		out += years +" "+((years==1)?"year":"years")+", ";
+		if(days != 0){out += days +" "+((days==1)?"day":"days")+", ";}
+		if(hours != 0){out += hours +" "+((hours==1)?"hour":"hours")+", ";}
+		out += mins +" "+((mins==1)?"min":"mins")+", ";
+		out += secs +" "+((secs==1)?"sec":"secs")+", ";
+		out = out.substr(0,out.length-2);
+		document.getElementById(iid).innerHTML=out;
+
+		setTimeout(function(){GetCount(ddate,iid)}, 1000);
+	}
+}
+
+window.onload=function(){
+	GetCount(dateFuture1, 'countbox1');
+	//you can add additional countdowns here (just make sure you create dateFuture2 and countbox2 etc for each)
+};
+</script>
+<div id="countbox1"></div>
+
+
+
+
+
+
+
+
+</center>
+</div><div class="footer-side"></div></div>
+
+<!-- end sidebar-r -->
+
+</div></div>
+
+<div id="sidebar-l">
+
+<div class="side">
+<h3 class="h3">آخرین مطالب</h3>
+<div class="context-side">
+<div class="Link"><a title="وعده‌ای پوچ به نامِ «بازگشت عزت به پاسپورت ایرانی» " href="http://najvaye-zolf.mihanblog.com/post/937">وعده‌ای پوچ به نامِ «بازگشت عزت به پاسپورت ایرانی» </a></div>
+<div class="Link"><a title=" با ترامپ چه کنیم؟" href="http://najvaye-zolf.mihanblog.com/post/936"> با ترامپ چه کنیم؟</a></div>
+<div class="Link"><a title="فریدون محاکمه شود..." href="http://najvaye-zolf.mihanblog.com/post/935">فریدون محاکمه شود...</a></div>
+<div class="Link"><a title="دفاع بَد یا بِدعت انحرافی ؟؟" href="http://najvaye-zolf.mihanblog.com/post/934">دفاع بَد یا بِدعت انحرافی ؟؟</a></div>
+<div class="Link"><a title="پیش بینی های ولیّ امر را #بدون_عینک هم می شود دید آقای #روحانی !!!" href="http://najvaye-zolf.mihanblog.com/post/933">پیش بینی های ولیّ امر را #بدون_عینک هم می شود دید آقای #روحانی !!!</a></div>
+<div class="Link"><a title="به نام مشاور به کام انتخابات" href="http://najvaye-zolf.mihanblog.com/post/932">به نام مشاور به کام انتخابات</a></div>
+<div class="Link"><a title="کدام هاشمی به خاک سپرده شد؟" href="http://najvaye-zolf.mihanblog.com/post/931">کدام هاشمی به خاک سپرده شد؟</a></div>
+<div class="Link"><a title="9 دی" href="http://najvaye-zolf.mihanblog.com/post/930">9 دی</a></div>
+<div class="Link"><a title="نطق آزاد " href="http://najvaye-zolf.mihanblog.com/post/929">نطق آزاد </a></div>
+<div class="Link"><a title="غواص ها می آیند..." href="http://najvaye-zolf.mihanblog.com/post/918">غواص ها می آیند...</a></div>
+<div class="Link"><a title="سلام حاج آقا..." href="http://najvaye-zolf.mihanblog.com/post/928">سلام حاج آقا...</a></div>
+<div class="Link"><a title="پیروان مکتب حسینی،همان رهپویان طریق  خمینی اند" href="http://najvaye-zolf.mihanblog.com/post/926">پیروان مکتب حسینی،همان رهپویان طریق  خمینی اند</a></div>
+<div class="Link"><a title="شهدای &quot;مدافع حرم&quot; به چه لبخند می‌زنند" href="http://najvaye-zolf.mihanblog.com/post/925">شهدای &quot;مدافع حرم&quot; به چه لبخند می‌زنند</a></div>
+<div class="Link"><a title="مذاکره با آمریکا ممنوع است...!!!" href="http://najvaye-zolf.mihanblog.com/post/922">مذاکره با آمریکا ممنوع است...!!!</a></div>
+<div class="Link"><a title="لعنت بر آل سعود...." href="http://najvaye-zolf.mihanblog.com/post/921">لعنت بر آل سعود....</a></div>
+<div class="Link"><a title="شمارش معکوس برای نابودی اسرائیل آغاز شد... لبیک یا خامنه ای  (ارواحنا فداه)" href="http://najvaye-zolf.mihanblog.com/post/920">شمارش معکوس برای نابودی اسرائیل آغاز شد... لبیک یا خامنه ای  (ارواحنا فداه)</a></div>
+<div class="Link"><a title="اللهم احفظ قائدنا الامام خامنه ای مدظله" href="http://najvaye-zolf.mihanblog.com/post/916">اللهم احفظ قائدنا الامام خامنه ای مدظله</a></div>
+<div class="Link"><a title="یکم بریم تو فاز سیاست...!!!!  ( مجله ی سیاسی  شماره ی یک)" href="http://najvaye-zolf.mihanblog.com/post/897">یکم بریم تو فاز سیاست...!!!!  ( مجله ی سیاسی  شماره ی یک)</a></div>
+<div class="Link"><a title="غواصان نگران شدند و آمدند...." href="http://najvaye-zolf.mihanblog.com/post/895">غواصان نگران شدند و آمدند....</a></div>
+<div class="Link"><a title="رهبرم تنها نیست......." href="http://najvaye-zolf.mihanblog.com/post/891">رهبرم تنها نیست.......</a></div>
+<div class="Link"><a title="اینجا ایران است..." href="http://najvaye-zolf.mihanblog.com/post/890">اینجا ایران است...</a></div>
+<div class="Link"><a title="اولا غلط میکنید....( کاملا تصویری)" href="http://najvaye-zolf.mihanblog.com/post/889">اولا غلط میکنید....( کاملا تصویری)</a></div>
+<div class="Link"><a title="صرفا جهت اطلاع..." href="http://najvaye-zolf.mihanblog.com/post/885">صرفا جهت اطلاع...</a></div>
+<div class="Link"><a title="پیامی که من از حذف تیم ملّی فوتبال گرفتم ." href="http://najvaye-zolf.mihanblog.com/post/880">پیامی که من از حذف تیم ملّی فوتبال گرفتم .</a></div>
+<div class="Link"><a title="سلام 2باره..." href="http://najvaye-zolf.mihanblog.com/post/874">سلام 2باره...</a></div>
+<div class="Link"><a title="راهیان نور...." href="http://najvaye-zolf.mihanblog.com/post/873">راهیان نور....</a></div>
+<div class="Link"><a title="حضرت زهرا (س)" href="http://najvaye-zolf.mihanblog.com/post/869">حضرت زهرا (س)</a></div>
+<div class="Link"><a title="آقا مجتبی خامنه ای.." href="http://najvaye-zolf.mihanblog.com/post/862">آقا مجتبی خامنه ای..</a></div>
+<div class="Link"><a title="شیعه" href="http://najvaye-zolf.mihanblog.com/post/860">شیعه</a></div>
+<div class="Link"><a title="سردار قاسم سلیمانی.....(شهید زنده)" href="http://najvaye-zolf.mihanblog.com/post/856">سردار قاسم سلیمانی.....(شهید زنده)</a></div>
+</div><div class="footer-side"></div></div>
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">نویسندگان</h3>
+<div class="context-side">
+<div class="Link"><a title="نمایش همه نوشته های دانشجوی بی اعصابم " href="http://najvaye-zolf.mihanblog.com/post/author/786526">دانشجوی بی اعصابم </a></div>
+</div><div class="footer-side"></div></div>
+
+<!--Design By : Avazak.ir-->
+
+<!--Design By : Avazak.ir-->
+
+
+
+
+
+<div class="side">
+<h3 class="h3">پیوندها</h3>
+<div class="context-side">
+<div class="Link"><a href="http://www.khamenei.ir/" title="" target="_blank" >www.khamenei.ir</a></div>
+<div class="Link"><a href="http://basijtu.ORG" title="" target="_blank" >بسیج دانشجویی دانشگاه تبربز</a></div>
+<div class="Link"><a href="http://nedayepakefetrat.ir/" title="" target="_blank" >ندای پاک فطرت</a></div>
+<div class="Link"><a href="http://www.president.ir" title="" target="_blank" >پایگاه اطلاع رسانی ریاست جمهوری</a></div>
+<div class="Link"><a href="http://www.sepahashura.ir" title="" target="_blank" >پایگاه اطلاع رسانی سپاه عاشورا</a></div>
+<div class="Link"><a href="http://blugh.ir/" title="" target="_blank" >بلوغ ، راهی به سوی آسمان</a></div>
+<div class="Link"><a href="http://ishlugh.blogfa.com/" title="" target="_blank" >آی شلوغ ! دانشجوی سیاسی دانشگاه تبریز</a></div>
+<div class="Link"><a href="http://konkorilar.blogfa.com" title="" target="_blank" >کنکوری های علامه یک ( کلاس خودمون)</a></div>
+<div class="Link" style="font-size:7pt">
+</a></div></div><div class="footer-side"></div></div>
+
+
+<!-- end Footer -->
+
+</body>
+</html>
+
+
+
+
+
+<script type="text/javascript">
+var protoUrl = "tg://resolve?domain=najvaye_zolf_channel";
+if (false) {
+var iframeContEl = document.getElementById('tgme_frame_cont') || document.body;
+var iframeEl = document.createElement('iframe');
+iframeContEl.appendChild(iframeEl);
+var pageHidden = false;
+window.addEventListener('pagehide', function () {
+pageHidden = true;
+}, false);
+window.addEventListener('blur', function () {
+pageHidden = true;
+}, false);
+if (iframeEl !== null) {
+iframeEl.src = protoUrl;
+}
+setTimeout(function() {
+if (!pageHidden) {
+window.location = protoUrl;
+}
+}, 2000);
+}
+else if (protoUrl) {
+setTimeout(function() {
+window.location = protoUrl;
+}, 100);
+} 
+</script>
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'najvaye-zolf.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

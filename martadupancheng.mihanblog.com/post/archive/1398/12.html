@@ -1,0 +1,1579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1921832*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[896]='-';commentCnt[951]='6';commentCnt[954]='15';commentCnt[956]='10';commentCnt[957]='11';commentCnt[958]='5';commentCnt[959]='22';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[951]='0';
+mihanblogDisLikeArrCnt[951]='0';
+mihanblogLikeArrCnt[954]='0';
+mihanblogDisLikeArrCnt[954]='0';
+mihanblogLikeArrCnt[956]='0';
+mihanblogDisLikeArrCnt[956]='0';
+mihanblogLikeArrCnt[957]='0';
+mihanblogDisLikeArrCnt[957]='0';
+mihanblogLikeArrCnt[958]='0';
+mihanblogDisLikeArrCnt[958]='0';
+mihanblogLikeArrCnt[959]='0';
+mihanblogDisLikeArrCnt[959]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://martadupancheng.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://martadupancheng.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','517');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','چهارشنبه 5 آذر 1399');
+	
+	setStatVar('today_view','61');
+	setStatVar('yesterday_view','405');
+	
+	setStatVar('this_month_view','9854');
+	setStatVar('last_month_view','8666');
+
+	setStatVar('total_view','608925');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (05:22)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://martadupancheng.mihanblog.com/statupdate/?data[refereruri]=http://martadupancheng.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1398/12&data[sdate]=1607825928&data[hash]=96efed0ad20947164d8ead364c8d9225&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://martadupancheng.mihanblog.com/post/archive/1398/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://martadupancheng.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://martadupancheng.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<!--locking Right click by : fa-tools.ir--> <script language="javascript" src="http://fa-tools.ir/code/rightclick/right-click1.js"></script> <a target="_blank" href="http://fa-tools.ir/News/topic/21/" >  </a><div style="display:none"><a href="http://fa-tools.ir" >   </a></div> <!--locking Right click by : fa-tools.ir-->
+
+<link rel="shortcut icon" href="http://s7.picofile.com/file/8376863826/kyoko_s_soul_gem_by_king_lulu_deer_dc0y5t6.png" />
+
+<!--Code Editing By iDDM.,-->
+ <link href='http://www.fontonline.ir/css/BMorvarid.css' rel='stylesheet' type='text/css'>
+ <style type="text/css">
+  #navbar-iframe {height: 0px; display:none}  
+body{background: url(http://s6.picofile.com/file/8376545626/c908946cac68b14442f72d979494d3dc.png) fixed;} 
+ a:link, a:visited, a:active{ text-decoration:none; font-weight:normal; font-family:Tahoma; color:#000;}
+ a:hover{ color:#ff0099;}
+  b, bold, strong{font-weight:bold; color:#555555;}
+ i{font-style:italic; color:#ff66ff;}
+   u{color:#ff0066; border-bottom:2px solid #ff99ff;}  
+.header{ margin-bottom:5px; padding-top:170px; font-family:"century gothic";  font-size:60px;  color:#eeeeee; letter-spacing:-2px; text-align:center;   text-shadow: 3px 3px 5px #000000;}
+  .subheader{ font-family:"century gothic";  font-size: 13px;  color:#fff;  line-height:15px;  letter-spacing:4px;  text-align:center; padding-right:2px;}
+.shelter{background-image: url("http://uupload.ir/files/nta_thumb-1920-1001010.jpg"); height: 290px; background-position: 49% 58%;}
+
+  .text1{ font-family:"century gothic"; color:#ff6699; border-left: 15px solid #ff0099; background-color:none; text-align:left; font-size:18px; padding: 5px;}  
+.text2{ font-family:"century gothic",BMorvarid,'BMorvarid'; color:#ff6699; border-right: 15px solid #ff0099; background-color:none; text-align:right; font-size: 18px; padding: 5px;}
+  .text3{ font-family:"tahoma"; color:#888888; text-align:left; font-size:11px; line-height:14px; padding:2px;}
+  .text4{ font-family:"tahoma"; font-size:11px; color:#999999; line-height:14px; text-align:right; padding:2px;}
+  blockquote{ font-family:"tahoma"; font-size:11px; color:#cccccc; padding:5px; border-left:15px solid #eeeeee;}
+  blockquote:hover{ font-family:"tahoma"; font-size:11px; color:#999999; padding:5px; border-left:15px solid #ff6699;}
+.old {
+margin-top:10px;
+font:11px Delius;
+padding:2px;
+width:200px;
+color:#fff;
+border-radius:10px;
+align:center;
+text-align:center;
+margin-left:-25px;
+float:left;
+direction:ltr;
+}
+
+.old1 {
+margin-top:10px;
+font:12px Delius;
+padding:2px;
+width:400px;
+color:#000;
+border-radius:10px;
+align:center;
+text-align:center;
+float:left;
+margin-left:-35px;
+direction:ltr;
+}
+    .page-numbers{
+	direction: rtl;
+	margin: 20px auto;
+	text-align: center;
+	font-family: Petit Formal Script;
+
+}
+
+.page-numbers a {
+	border-radius: 1px;
+	box-shadow: 0px 0px 5px 0px #000;
+	font-size: 10px;
+	background: #fff;
+	border: 1px solid #FFFFFF;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding:6px;
+	color: #000000;
+	font-family: Delius;
+}
+.page-numbers a:hover{
+	border-radius: 2px / 3px;
+	background: #fff;
+	color: #000;
+	box-shadow: 0px 0px 5px 2px #fff;
+}
+
+.linkarchivefriends {
+	font-size: 9pt;
+	line-height: 1;
+	word-wrap: break-word;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding-right: 8px;
+        direction: rtl;
+}
+
+.line-height {
+line-height:24px;
+direction: rtl;
+}
+
+ a.escape{font-weight:none;text-decoration:none; display:block; color:#1C1C1C; background-color:#FCFCFC; border-right:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; padding:2;}
+ a.escape:hover{font-weight:none; text-decoration:none; color:#848484; background-color:white; border-top:1px solid #e4e4e4; border-left:1px solid #e5e5e5; border-right:none; border-bottom:none;}
+   </style>   
+
+<noembed></noembed>
+  <table width="100%" cellspacing="0px">
+ <tr> 
+<td height="130px" valign="center";margin="0px">
+ <div class="shelter"><div class="header">Magical Anime <font color=#ff0099>♥</font></div> 
+<div class="subheader">I know I'm not alone!  <font color=#ff0099>|</font>  Magic Spirit Templates</div> </td> </tr> </table><p> </div>  
+<div style="position:absolute; top:300px; left:120px; width:220px; padding: 10px; border-left: 1px dashed #ffccff; background:#fff">
+
+ <div class="text1"><u>Bio</u>graphy</div><br> 
+<div class="text3">
+ <center><img src="../../../../static.mihanblog.com/public/user_data/web_photo/641/1921832.jpg@2049"  /></center>
+<p><center>Welcome and<br />
+ Okairinasai!!!~*♡<br />
+<br />
+~I'm Ava, <br />
+you can call me Mao<br />
+ or Maoii with Chan<br />
+ or anything else♡°<br />
+<br />
+~I'm an Orbit<br />
+, fan of Loona and in <br />
+love with every <br />
+12 members♡°<br />
+<br />
+~I'm an Otaku,<br />
+ fan of Anime and <br />
+Japan, specially<br />
+ science fiction ganer♡°<br />
+<br />
+~Hope you enjoy <br />
+my blog!♡°<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+..... I Love You<br />
+<br />
+.......... I Love You<br />
+<br />
+<br />
+Hello Hello<br />
+ここにいるよ<br />
+この物語の始<br />
+まりの場所で<br />
+約束だけが繰<br />
+り返しても<br />
+あなたの記憶に<br />
+！私はずっと生きてる<br />
+<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+。。♡<br />
+。♡ <br />
+。。♡<br />
+。♡<br />
+<br />
+이제는 너 아닌 나를<br />
+좀 더 사랑할거야<br />
+살아 갈 거야<br />
+한발 더 다가가 나를 더<br />
+안아 줄 거야<br />
+전부 줄 거야<br />
+<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+…＊<br />
+…、＊<br />
+〞<br />
+〝<br />
+〞<br />
+〝<br />
+〞<br />
+〝<br />
+〞<br />
+.<br />
+.<br />
+.<br />
+<br><br></center><p></div> 
+ 
+<div class="text1"><u>Survey</u>box</div><br>
+ <div class="text3">   
+            <center>
+		<form id="frm-16076172245fd24ac843aa0" method="post" action="http://martadupancheng.mihanblog.com/poll/new/fid/16076172245fd24ac843aa0/atrty/1607617224/avrvy/0/key/bb3f4bab0c8a8ecca1d4b0617967bf5d/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="378610" id="data[pollid]" />															
+                از درس خوندن خوشت میاد؟<br>
+                   <label><input type="radio" name="data[answer]" value="v1">آره</label><br>
+                  <label><input type="radio" name="data[answer]" value="v2">نه</label><br>
+                  <input type="submit" style="color:#000;" value="هـــوم^^" >
+		<input type="hidden" name="frm-id" value="16076172245fd24ac843aa0" id="frm-id" /></form></center> </div><br>  
+
+<div class="text1"><u>Extra</u>page</div><br>
+ <div class="text3"><center> 	              	
+	               <a class="li" href="../../../extrapage/utdxc.html">یک تقاضای کوچیک از هیترا((=</a><br/>
+	              	
+	               <a class="li" href="../../../extrapage/memoryha.html">My digital bullet journal ~ Photos of memories</a><br/>
+	              	
+	               <a class="li" href="../../../extrapage/copycapy.html">در زمینه با بحث کپی...!!</a><br/>
+	              	
+	               <a class="li" href="../../../extrapage/eredhg.html">لطفا وارد شید! (در مورد انحرافات انیمه ها!)</a><br/>
+	              	
+	               <a class="li" href="../../../extrapage/ashnayi.html">～＊【My profile】＊～</a><br/>
+	              	
+	               <a class="li" href="../../../extrapage/kabar.html">.</a><br/>
+	               	
+	  <br></center>
+</div> 
+
+ <div class="text1"><u>Subjets</u>box</div><br> 
+<div class="text3">  	   <center>	
+	          	               <a class="li" href="../../category/18.html"> 
+	                       ＊ ارواح کابوری / カポリのアンデッド ＊(47)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/23.html"> 
+	                       ＊ داستان تضاد سیرک / サーカス矛盾 ＊(7)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/28.html"> 
+	                       ＊ معرفی سریال / シリアルイントロ ＊(4)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/2.html"> 
+	                       ＊ درباره ی وب / ウェブについて ＊(57)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/17.html"> 
+	                       ＊ من و دوستام / 私と私の友達 ＊(82)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/6.html"> 
+	                       ＊ معرفی انیمه / アニメ紹介 ＊(23)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/25.html"> 
+	                       ＊ آموزش ژاپنی / 日本の教育 ＊(5)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/12.html"> 
+	                       ＊ کاردستی / 作り方 ＊(9)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/22.html"> 
+	                       ＊ متفرقه / その他 ＊(70)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/10.html"> 
+	                       ＊ بیوگرافی / 伝記 ＊(13)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/26.html"> 
+	                       ＊ کره ای / 韓国人 ＊(3)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/15.html"> 
+	                       ＊ اوتاکو / ウタコ ＊(11)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/16.html"> 
+	                       ＊ آهنگ / その歌 ＊(28)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/20.html"> 
+	                       ＊ انیمه / アニメ ＊(18)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/27.html"> 
+	                       ＊ لونا / ルーナ ＊(13)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/8.html"> 
+	                       ＊ عکس / 写真 ＊(77)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/9.html"> 
+	                       ＊ تیکن / タグ ＊(4)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/19.html"> 
+	                       ＊ ژاپن / 日本 ＊(16)
+	               </a> <br/>
+	          	               <a class="li" href="../../category/24.html"> 
+	                       ＊ کتاب / 本 ＊(14)
+	               </a> <br/>
+	          	  <br></center></div>
+ 
+
+<div class="text1"><u>Links</u>board</div><br> <div class="text3"> Meet the people I love♥ <p> <center> 
+<center>     	               	
+	               <a class="escape" href="../../../../lsdamo-anime.mihanblog.com/index.html" title=""  target="_blank">
+	                         BUNGO STRAY DOGS(الی چان)@منم عاشق بانگوعم *-*@</a>
+      	               	
+	               <a class="escape" href="http://beheshtyakhi.blogfa.com/?#" title=""  target="_blank">
+	                         هشت بهشت گمشده...رقص با شیاطین(آتن چان)@خواهران اسپارکلینگ@</a>
+      	               	
+	               <a class="escape" href="http://chuuya.blogfa.com" title=""  target="_blank">
+	                         دنیای انیمه سگ های ولگرد بانگو(چویا چان)@منم عاشق این انیمه ام T-T@</a>
+      	               	
+	               <a class="escape" href="../../../../this-is-bahar.mihanblog.com/index.html" title=""  target="_blank">
+	                         Bahar world (بهار چان)@چقد صورتیه*-*@</a>
+      	               	
+	               <a class="escape" href="../../../../design-city.mihanblog.com/index.html" title=""  target="_blank">
+	                         Design city (ملیکا چان)@اون یکی وبشه *-*@</a>
+      	               	
+	               <a class="escape" href="http://millii.blogfa.com" title=""  target="_blank">
+	                         جادوگر درون من (میلی چان)@چه گویم ....@</a>
+      	               	
+	               <a class="escape" href="../../../../www.ruins-of-mymind.mihanblog.com/index.html" title=""  target="_blank">
+	                         Ruins of my mind (برین تیک)@خیلی خیلی سایکو *~*@</a>
+      	               	
+	               <a class="escape" href="../../../../bishoujoroyale.mihanblog.com/index.html" title=""  target="_blank">
+	                         美少女 r o y a l e (آفرودیت چان)@بازگشت پس از سالهای متمادیT_T@</a>
+      	               	
+	               <a class="escape" href="http://anisaaa.mihanblog.com" title=""  target="_blank">
+	                         دنیای من (آنیسا چان)@بعضی وقتا مث خودم گشاد میشه D:@</a>
+      	               	
+	               <a class="escape" href="../../../../dindinsama-world.mihanblog.com/index.html" title=""  target="_blank">
+	                         ●Amazingly world●(دین دین)@دخترمه T0T~♡@</a>
+      	               	
+	               <a class="escape" href="http://naghashinaghashi.blogfa.com" title=""  target="_blank">
+	                         دنیایی به نام سرزمین عجایب (آنه چان)@از داستانم خوشش اومدهT-T@</a>
+      	               	
+	               <a class="escape" href="../../../../www.yaddashthayenegin.mihanblog.com/index.html" title=""  target="_blank">
+	                         Cute :) (نگین چان)@ساده و رنگی ^-^♡@</a>
+      	               	
+	               <a class="escape" href="http://myb-a-c-w.mihanblog.com/" title=""  target="_blank">
+	                         :)میس نایت(: (میس نایت)@با وب من اوتاکو شده D:@</a>
+      	               	
+	               <a class="escape" href="../../../../love-on-ice.mihanblog.com/index.html" title=""  target="_blank">
+	                         Love on ice (کاترین چان)@در تلاش برای خواندن رمانشD:@</a>
+      	               	
+	               <a class="escape" href="../../../../niya-yesh85.mihanblog.com/index.html" title=""  target="_blank">
+	                         پاتوق دخیا(نیا چان)@ناز و گوگولی *-*@</a>
+      	               	
+	               <a class="escape" href="../../../../s-1383.mihanblog.com/index.html" title=""  target="_blank">
+	                         دنیای رنگی من (ستی چان)@جِِِِِــــــــــیز *-*@</a>
+      	               	
+	               <a class="escape" href="../../../../mplyrics.mihanblog.com/index.html" title=""  target="_blank">
+	                         متن و ترجمه آهنگ (Bunny Mads)@عــررره D:@</a>
+      	               	
+	               <a class="escape" href="../../../../niiiiiirrrrrchannn.mihanblog.com/index.html" title=""  target="_blank">
+	                         *nier-nekoo *0(نکو چان)@البته نیر هم میگن بش^^@</a>
+      	               	
+	               <a class="escape" href="../../../../dokhy-crazy.mihanblog.com/index.html" title=""  target="_blank">
+	                         Devil world(شیوری چان)@هوم^~^@</a>
+      	               	
+	               <a class="escape" href="../../../../fakeme.mihanblog.com/index.html" title=""  target="_blank">
+	                         《Deadend》(نودل سنپای) @چه گویم در وصف پست هایش؟!@</a>
+      	               	
+	               <a class="escape" href="http://teensblog.mihanblog.com" title=""  target="_blank">
+	                         Teens blog (مبی چان)@دلم برای جولیا تنگ شده =^=@</a>
+      	               	
+	               <a class="escape" href="../../../../apparition77.mihanblog.com/index.html" title=""  target="_blank">
+	                         Apparition Nastaka (ناستاکا چان) @یوهی ^~^@</a>
+      	               	
+	               <a class="escape" href="../../../../animeyiha.mihanblog.com/index.html" title=""  target="_blank">
+	                         アニメ(یوریه چان)@وب اوتاکوییشه@</a>
+      	               	
+	               <a class="escape" href="http://ofogh83.mihanblog.com/" title=""  target="_blank">
+	                         کهکشان خاطرات(افق چان)@میشه توش محو شد...@</a>
+      	               	
+	               <a class="escape" href="../../../../my-redlife.mihanblog.com/index.html" title=""  target="_blank">
+	                         White life (آیلی چان)@همون هونوکا چان خودمونه*0*@</a>
+      	               	
+	               <a class="escape" href="http://otaku-city.blog.ir" title=""  target="_blank">
+	                         Otaku city(میونا چان)@دوس دارم وبشو^ω^باحاله@</a>
+      	               	
+	               <a class="escape" href="http://ugly-dream.blog.ir" title=""  target="_blank">
+	                         رویای زشت(میونا چان)@عاشق نوشته هاشم:)@</a>
+      	               	
+	               <a class="escape" href="http://sargarmiemita.blogfa.com/" title=""  target="_blank">
+	                         *همه ی شادی ها*(میترا چان)@وبش خاصع *-*@</a>
+      	               	
+	               <a class="escape" href="http://days-of-an-otaku.mihanblog.com" title=""  target="_blank">
+	                         Days of an Otaku (کاتیسا چان)@حرفی نیست *^*@</a>
+      	               	
+	               <a class="escape" href="../../../../best-anime-world.mihanblog.com/index.html" title=""  target="_blank">
+	                         my anime world (فاطی چان)@از بیخوابی رنج میبره #_#@</a>
+      	               	
+	               <a class="escape" href="../../../../blink-182.mihanblog.com/index.html" title=""  target="_blank">
+	                         were all alone tonight(ست چان)@هعی TvT چقدر هم عقیده ایم TwT@</a>
+      	               	
+	               <a class="escape" href="../../../../countrygirls-1384.mihanblog.com/index.html" title=""  target="_blank">
+	                         اکیپ دخملا (فاطمه چان)@واهی *^*♡❤♡@</a>
+      	               	
+	               <a class="escape" href="http://animelovers33.blogfa.com" title=""  target="_blank">
+	                         Just Anime (جاسمین چان)@عاااا :|~@</a>
+      	               	
+	               <a class="escape" href="../../../../japanlover.mihanblog.com/index.html" title=""  target="_blank">
+	                         سرزمین رویا های من(یومیکو چان)@اون یکی وب مشاورم XD@</a>
+      	               	
+	               <a class="escape" href="../../../../mosabeghatfafa.mihanblog.com/index.html" title=""  target="_blank">
+	                         ☆Girly races☆(پناه چان)@این جور مسابقاتو دوس دارم ._.@</a>
+      	               	
+	               <a class="escape" href="../../../../mano-m-darsam.mihanblog.com/index.html" title=""  target="_blank">
+	                         HI WORLD :)! ... (اسما چان) @پستاشو دوس داعرم ^.^@</a>
+      	               	
+	               <a class="escape" href="http://aylar-galaxy.mihanblog.com" title=""  target="_blank">
+	                         My Legends (آیلار چان)@گلکسی دوست ^،^@</a>
+      	               	
+	               <a class="escape" href="http://crystalmonjamed.blogfa.com/#" title=""  target="_blank">
+	                         ⭐ستارگان گمشده عاشقان شیطانی⭐(آتن چان)@ملکه ی سیب آشام ._.@</a>
+      	               	
+	               <a class="escape" href="http://one-way-road.mihanblog.com/" title=""  target="_blank">
+	                         Me...&amp;...You (دختری از تبار زینب)@خیلی مهربونه T^T قادر به توصیف نیستم T^T@</a>
+      	               	
+	               <a class="escape" href="../../../../shishiw15sr.mihanblog.com/index.html" title=""  target="_blank">
+	                         دخترانه های شیشی (شیدا چان)@شیدا ، شیدایی ، شیشی ، شیشه :|@</a>
+      	               	
+	               <a class="escape" href="http://lovesoorati.blogfa.com" title=""  target="_blank">
+	                         بنفشا (فاطیما چان)@موراساکییی*^*@</a>
+      	               	
+	               <a class="escape" href="../../../../u-m-r.mihanblog.com/index.html" title=""  target="_blank">
+	                         ございます :| &amp; hearts (یلدا چان)@یلی - ساما خفن =))@</a>
+      	               	
+	               <a class="escape" href="../../../../k-s-m-m.mihanblog.com/index.html" title=""  target="_blank">
+	                         Real Dreams(ماتسو ، کورایامی و سایکو چان+خودم)@داسی میذاریم ._. منم نویسنشونم *0*\@</a>
+      	               	
+	               <a class="escape" href="../../../../mjorvajorm.mihanblog.com/index.html" title=""  target="_blank">
+	                         joorVajoor(مهتاب چان)@عخی ^.^@</a>
+      	               	
+	               <a class="escape" href="../../../../grotesque.mihanblog.com/index.html" title=""  target="_blank">
+	                         شاهزاده گروتسک (رسویدا چان)@از پستاش خوشم میاد XD@</a>
+      	               	
+	               <a class="escape" href="../../../../fan-chan.mihanblog.com/index.html#" title=""  target="_blank">
+	                         We hide it ;) (فانی چان)@احساسات واقعیشو پنهان نمیکنه ._.@</a>
+      	               	
+	               <a class="escape" href="../../../../twilight-sparkle-dash.mihanblog.com/index.html" title=""  target="_blank">
+	                         Secret heaven (کاناده چان)@مهزاد چیبی ماهی *0*@</a>
+      	               	
+	               <a class="escape" href="http://moosighi11.mihanblog.com/" title=""  target="_blank">
+	                         دخملانه ها(ملیکا چان)@چه پستایی!@</a>
+      	               	
+	               <a class="escape" href="../../../../mykawaiidiary.mihanblog.com/index.html" title=""  target="_blank">
+	                         otaku stories (هانائه چان) @بهترین دوستم *-* با دنیا عوضش نمیکنم *-*@</a>
+      	               	
+	               <a class="escape" href="../../../../sonichorror.mihanblog.com/index.html" title=""  target="_blank">
+	                         کلوپ وحشت (جوکر - چان؟ :|) @چی بگم والا D:@</a>
+      	               	
+	               <a class="escape" href="../../../../kartoniha2017.mihanblog.com/index.html" title=""  target="_blank">
+	                         Anime academy(آنجی چان) @انشا نویس *-*@</a>
+      	               	
+	               <a class="escape" href="../../../../worldofanime.mihanblog.com/index.html" title=""  target="_blank">
+	                         αηιмє мαgιcαℓ яєαℓιѕм(اسی چان)@عمه ی بچه ی کانکی :|@</a>
+      	               	
+	               <a class="escape" href="http://dokhtaroneh1383.mihanblog.com/" title=""  target="_blank">
+	                         دنیای پرنسسها (شکیبا چان)@قوری قوری جونم =))@</a>
+      	               	
+	               <a class="escape" href="../../../../vgoodblog.mihanblog.com/index.html" title=""  target="_blank">
+	                         Photoshop tutorial (ویانا چان)@جدا فتوشاپش محشره*-*@</a>
+      	               	
+	               <a class="escape" href="../../../../diaboliklovers-moreblood.mihanblog.com/index.html" title=""  target="_blank">
+	                         سرنوشت تاریکی (کو چان)@بهترین داداشی دنیا@</a>
+      	               	
+	               <a class="escape" href="../../../../roman-e.mihanblog.com/index.html" title=""  target="_blank">
+	                         Magic spirit (الی چان)@ آجی بزرگمه ^_^ فداش بشم *^*@</a>
+      	               	
+	               <a class="escape" href="../../../../dsatan-skyland.mihanblog.com/index.html" title=""  target="_blank">
+	                         sky land (سحر چان)@یکی از رفقا و آجیای گلم =^=@</a>
+      	               	
+	               <a class="escape" href="../../../../depblakwitgirl.mihanblog.com/index.html" title=""  target="_blank">
+	                         This World Is Wrong! (اون یکی وبم)@جاست دپ :)@</a>
+      	               	
+	               <a class="escape" href="http://www.aparat.com/aaaaaaaaaaaaaa0000" title=""  target="_blank">
+	                         Mao Tamaii - Outako - Sayunara! (کانال آپارتم)@ صد ساله نرفتم :|~@</a>
+      	               	
+	               <a class="escape" href="../../../../i-love-you-forever.mihanblog.com/index.html" title=""  target="_blank">
+	                         forever (لن و رین چان)@دو قلو ها =^=@</a>
+      	               	
+	               <a class="escape" href="http://helenworld.blogfa.com" title=""  target="_blank">
+	                         Helen world (هلن چان)@ملکه ی شیاطین »:|@</a>
+      	               	
+	               <a class="escape" href="../../../../world-of-loneliness.mihanblog.com/index.html" title=""  target="_blank">
+	                         دنیایی از تنهایی (کاترین چان)@خانوم گل داداش آجیم =))@</a>
+      	               	
+	               <a class="escape" href="../../../../kapitanamrika.mihanblog.com/index.html" title=""  target="_blank">
+	                         دنیای مارول (اونی چان)@داچ واقعیم :|@</a>
+      	               	
+	               <a class="escape" href="http://applerarityshy.blogfa.com/" title=""  target="_blank">
+	                         anime world (آیومی چان)@اونه چان نازم ^_^@</a>
+      	               	
+	               <a class="escape" href="http://helya1383.blogfa.com/" title=""  target="_blank">
+	                         سرزمین رویا های من (یومیکو چان)@خواهر گرامی :D@</a>
+      	               	
+	               <a class="escape" href="../../../../1w2w3w.mihanblog.com/index.html" title=""  target="_blank">
+	                         My kawaii world (میساکی چان)@آجی گلمه قربونش برم@</a>
+      	               	
+	               <a class="escape" href="http://diabolikloversep.blogfa.com/" title=""  target="_blank">
+	                         بهشت گمشده (نرسیا چان)@از جمله رفقای پایه :D@</a>
+      	               	
+	               <a class="escape" href="http://yuchan.blogfa.com/" title=""  target="_blank">
+	                         دنیای خوب ما (یو چان)@از اولین و بهترین دوستامه!@</a>
+      	               	
+	               <a class="escape" href="http://joojooyi-amozash.blogfa.com" title=""  target="_blank">
+	                         .</a>
+      	          	         <br> <a href="../../../link/index.html"  target="_blank"><b>All Links</b></a>
+	  </center></div>
+
+  <div class="text1"><u>Past</u>entries</div><br>
+ <div class="text3"> 
+   <center> 	     
+	           		         <a class="li" href='../1399/9.html'> آذر 1399</a>
+		        <br/>
+	           		         <a class="li" href='../1399/3.html'> خرداد 1399</a>
+		        <br/>
+	           		         <a class="li" href='../1399/2.html'> اردیبهشت 1399</a>
+		        <br/>
+	           		         <a class="li" href='../1399/1.html'> فروردین 1399</a>
+		        <br/>
+	           		         <a class="li" href='12.html'> اسفند 1398</a>
+		        <br/>
+	           		         <a class="li" href='11.html'> بهمن 1398</a>
+		        <br/>
+	           		         <a class="li" href='10.html'> دی 1398</a>
+		        <br/>
+	           		         <a class="li" href='9.html'> آذر 1398</a>
+		        <br/>
+	           		         <a class="li" href='8.html'> آبان 1398</a>
+		        <br/>
+	           		         <a class="li" href='7.html'> مهر 1398</a>
+		        <br/>
+	           		         <a class="li" href='6.html'> شهریور 1398</a>
+		        <br/>
+	           		         <a class="li" href='5.html'> مرداد 1398</a>
+		        <br/>
+	           	
+	  <br></center></div>
+ 
+<div class="text1"><u>Credit</u>orials</div><br>
+<div class="text3"> <b>NEVER REMOVE THIS SECTION! </b><p> 
+<center><b>Layout Designer:</b><br> <a href="../../../../roman-e.mihanblog.com/index.html">Minami Ellie</a></div><br><center> <br></center>
+ </div>
+          
+<div style="position:absolute; border:0; left: 380px; top: 300px; width:700px; padding: 10px; border-left: 1px dashed #ffccff; background:#fff ;">  
+<br>
+
+<Blogger>
+				      
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		                                   <div class="text2">چن سال شد؟((=... The last day</div>
+		          	    <p class="text4">پنجشنبه 29 اسفند 1398 | 06:45 ب.ظ </p>
+        	<div class="line-height">		          	
+		            	<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8391436918/tumblr_o5yjpgHbzS1r6xhg5o1_500.gif" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">دیدین چی شد؟((=</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">امـروز دیگه آخرشه،</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">انگار نه انگار که همین چن روز پیش تو اون</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">چالش<font color="#ff6666"> <i>#X_روز_تا_سال_نو!!!</i></font></font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">شــرکـت کــردیــــم ((=...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">این یکی دوسال اخیر جوری برای من سریع</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">گـذشـت کـه اصـلـا حـسـش نـکردم((=...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans" color="#ff6666"><i style="">*کـی؟ چـی؟ کجا؟ کِـی؟ برای چی اصن؟*...</i></font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">یه همچین حالتی((=...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">انگار نه انگار من هنوزم همون دختـر کوچـولـوی</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">عـاشـق صـورتـی هـسـتم کـه پـنج سال پیـش</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">به طور ناگهانی تصمیم گرفت یه وب تازه بزنه((=</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">واقعا...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">کی فکرشو می کرد اینقدر اینجا موندنی بشم؟</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">تا ایـن کـه روزی بـه جــایــی برسم که بگم:</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans" color="#ff6666"><i style="">"هیچ نقطه ای از فضای مجازی برام مثل وبم نیست"...!!!</i></font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8391436950/ec3de09a00adfbcf5d2a593a07c6840e.gif" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="2">خودتون که میدونین من تو ادامه مطلب زیادی زر زر میکنم((=...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="2">حتما لازمه که بگم:</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="2">-اگه میخواین بخونین برین ادامه...؟!</font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8391438184/original_10_.gif" alt=""></div>
+
+
+
+
+		            	 </div>
+		            	<div class="old1"><a href='../../959.html'>ادامه مطلب</a></div><br>
+		            		<div class="old">
+				 <a style="dir:ltr" target="_self" href="javascript:newComment(959)" > Comment:(<script>setCommentCnt(959)</script>)</a></div><br>
+			<br>                                   <div class="text2">●نگاهی کوتاه به چند چیز کوچیک! ... *'Fav K-pop comeback♡ #Loona! *'M Countdown♡</div>
+		          	    <p class="text4">پنجشنبه 22 اسفند 1398 | 11:07 ب.ظ </p>
+        	<div class="line-height">		          	
+		            	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8390879350/c6bc1704d6b6274f953412c86f10691f.jpg" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><font size="4" color="#990000"><b><font face="Mihan-Iransans">?</font></b><b><font face="Mihan-Iransans">I’m so bad, what’s wrong with that&nbsp;</font></b></font></div><div style="text-align: center;"><font size="4" color="#990000"><b><font face="Mihan-Iransans">?</font></b><b><font face="Mihan-Iransans">I’m so&nbsp; bad,&nbsp; so what</font></b></font></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="4" color="#990000">.I’m so bad, be myself</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="4" color="#990000">!!!I’m so Bad</font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8390902668/pixel_music_bars_by_nights_lights_dbd9bl0.gif" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خاب سلام @-@</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">چـطـوریایین؟!...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">ایـن قـرنـطـیـنه لـعنـتی به طرز</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">غیرقابل&nbsp;</font></b><b><font face="Mihan-Iransans" size="3">باوری&nbsp;</font></b><b><font face="Mihan-Iransans" size="3">به من فشار آورده|:</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">دگ شما رو نمیدونم...</font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8390902668/pixel_music_bars_by_nights_lights_dbd9bl0.gif" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">آغا M countdown رو دیدین؟!</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">دیدیـن لونـا جایـزه گرفـت؟</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">دیــدیــن اول شـــدن؟ *-*</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">So what رو اجرا کردن که کامبکشون بود^^</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بـین اون همـه گروه مـعروف... خداع T-T</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">دیـدیـن چـجـوری گـریــه مــیــکردن؟...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">ینی موقع دیدنشون بـه صـورت نـاخـوآگاه</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">زدم زیـــر گـــریـــه (("=</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خیلی براشون خوشحالم...&nbsp;</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بـرا هـمـه ی اوربـیـتـام هـمـچنیـن (("=</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">ینی یقین دارم که لونا یه روزی جز گروهای</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خـیـلـی مـعـروف میشه (("=</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">اینم لینک دانلود آهنگشه *-*</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">حتما گوش کنین، من خودم از وقتی اومده قفلی زدم روش((:</font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><a href="http://s6.picofile.com/file/8390880668/LOONA_%EC%9D%B4%EB%8B%AC%EC%9D%98_%EC%86%8C%EB%85%80_So_What.mp3.html" target="_blank" title=""><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8390904376/Hash_Digital_Album_Cover.png" alt=""></a></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">جدا از این بیاین چن تا آهـنگ دیگه بهتون معرفی کنم *-*</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بـه شـخـصـه خـیـلـی بـا این کامبکای اخیر حال کردم!~♡</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">از اکثر آهنگا خیلی خوشم اومد، که این Fiesta یکی از مهم تریناشونه!</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">کـه هـمـون کـامـبـک گـروه IZ*ONE هـســت*-*</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خیلی دوسشون دارم، صدا هاشون خیلی خاصه *-*</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بزنین رو عکس زیر *~*</font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><a href="http://s6.picofile.com/file/8390890118/IZ_ONE_%EC%95%84%EC%9D%B4%EC%A6%88%EC%9B%90_FIESTA_MV.mp3.html" target="_blank" title=""><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8390900076/a8fc7e0af6f928b2452d7aed002bd913.jpg" alt=""></a></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">و بعدی Wannabe هست از ایتزی که کامبکشون بود*0*</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">یـنـی ریـتـمتش... رقـصـش... مـوزیـک ویـدیـوش!!...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">لیریکشم که هیچی... ناموسا گوش کنین خیلی خفن شده *-*</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بزنین رو عکس دگ^^</font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><a href="http://s6.picofile.com/file/8390889918/ITZY_WANNABE_M_V.mp3.html" target="_blank" title=""><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8390900184/maEzviQ.jpg" alt=""></a></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بعدیشم که آهنگ Queen بید از 3YE *---*</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">ینی ریتم این لنتی یه جوریه آدم فقط دلش میخواد پاشه قر بده XD</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">لباسای استیجشونم خیلی پسندیدم به طرز ناجوری '-'</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">هرچند انتظار نداشتم کوین رو اجرا کنن، ولی دنیا پر از غافلگیریه دیگه '-'</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بزنین رو عکسش برا دانلود '-'</font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><a href="http://s6.picofile.com/file/8390889000/3YE_%EC%8D%A8%EB%93%9C%EC%95%84%EC%9D%B4_QUEEN_%ED%80%B8_M_V.mp3.html" target="_blank" title=""><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8390901226/590ce8b2a21b6ebb3ab6cff44cdfc9f1_Copy.jpeg" alt=""></a></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بعدیشم که واقعا عاشقشم Lie بید از گروه Favorite *-*</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خـیـلی قـشنگـه آهنگش، رقصشونم خیلی قشنگ بود،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">تازه رنـگ قـرمـز هـم خـیـلی بـهـشـون مـیـاد T_T...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بزنین دانلود شه *-*</font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><a href="http://s6.picofile.com/file/8390886768/FAVORITE_%ED%8E%98%EC%9D%B4%EB%B2%84%EB%A6%BF_%E2%80%93_LIE_%EB%98%90_LIE_Color_Coded_Han_Rom_Eng_.mp3.html" target="_blank" title=""><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8390900550/FAVORITE_Lie_album_cover.png" alt=""></a></div><div style="text-align: center;"><br></div><div style="text-align: center;"><div><b><font face="Mihan-Iransans" size="3">و یکی از آهنگای خیلی خفن که Thumbs up بود از مومولند *-*</font></b></div><div><b><font face="Mihan-Iransans" size="3">یـنـی از وقـتـی ایـنـا کـامـبـک دادن رو ایـن آهنگ قفل زدم |:</font></b></div><div><b><font face="Mihan-Iransans" size="3">هم رقصش هم لیریـکـش... اصـن خـیـلی خـوبـه XD</font></b></div><div><b><font face="Mihan-Iransans" size="3">البته مال M countdown دوماه پیـشـه، ولی ب درک '-'</font></b></div><div><b><font face="Mihan-Iransans" size="3">تضمینی عاشقش میشین'-'</font></b></div><div><b><font face="Mihan-Iransans" size="3">بـزنـیــن رو عــکــــس^^</font></b></div><div><br></div><div><a href="http://s7.picofile.com/file/8390888542/Thumbs_Up_Thumbs_Up_.mp3.html" target="_blank" title=""><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8390900818/c63fc5156a00af646fabdb6096423e01.jpg" alt=""></a></div><div><br></div></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خلاصه که آره...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">این آهنگارم دانلود کنین گوش بدین لذت ببرین تا من دوباره یه سوژه برای سرگرم شدن تو این روز های کذایی پیدا کنم '-'</font></b></div><div style="text-align: center;"><div><b><font face="Mihan-Iransans" size="3">پ.ن: عا راستی کاور sorry sorry لونا رو دیدین؟</font></b></div><div><b><font face="Mihan-Iransans" size="3">اصل آهنگ مال سوپرجونیور بود، ولی خایلی خفن کاور کرده بودن خدایی((=</font></b></div><div><b><font face="Mihan-Iransans" size="3"><br></font></b></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		            	 </div>
+		            	<div class="old1"></div><br>
+		            		<div class="old">
+				 <a style="dir:ltr" target="_self" href="javascript:newComment(958)" > Comment:(<script>setCommentCnt(958)</script>)</a></div><br>
+			<br>                                   <div class="text2">معرفی سریال آکادمی آمبرلا --&gt; (The Umbrella Academy (TV series</div>
+		          	    <p class="text4">دوشنبه 19 اسفند 1398 | 10:49 ب.ظ </p>
+        	<div class="line-height">		          	
+		            	
+
+
+
+
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8390544242/b4702caf921299838fce1a8095463031.gif" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><font face="Mihan-Iransans" size="3" color="#993399"><i style="">اون تنها کسی بود که منو واقعا به خاطر خودم میخواست!</i></font></div><div style="text-align: center;"><i style="font-size: medium; font-weight: bold; font-family: Mihan-Iransans;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</i><font face="Mihan-IransansLight" style="" size="1"><i> &nbsp; &nbsp; &nbsp;-وانیا</i></font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8390539100/annoying_dog_bullet_free_to_use_by_heartinarosebud_da1ch2k.gif" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">سلام *-*...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">خب چیکارا میکنین تو ایـن دوران قرنطینه؟</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">خـب جـوابـو خـودم مـیـدونـم... هـیچی:|</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">البته به جز یه عده که از این دوران استفاده</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">مفـید مـیکنن :__:</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">درود بهشـون :___:</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">پ.ن: دلم برای این اراجیف اول پستام تـنگ</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">شده بود شدیدا:|</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">اهم...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">چــقـدر از بـحـث اصـلی دور شـدیـم '-'</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">اومـدم یه سریال خیلـی خـفـن آمریکایی</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">رو بـهـتـون مـعـرفـی کـنم که به شخصه</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">خیلی حال کردم باهاش *-*</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans"><i>"آکادمی چتر -&nbsp;The Umbrella Academy"</i></font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">ای کـسـانـی که ایمان آوردید و هیچ کـار</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">خاصی نمیکنید:|</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">حـداقـل بـرین ایـنـو ببینین شاید رستگار</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">گشتین .___.</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">ادامــــه ^.^</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans"><br></font></b></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8390544334/quyrlgffjqh21.jpg" alt=""></div>
+
+
+
+
+
+
+
+
+
+
+
+
+		            	 </div>
+		            	<div class="old1"><a href='../../957.html'>ادامه مطلب</a></div><br>
+		            		<div class="old">
+				 <a style="dir:ltr" target="_self" href="javascript:newComment(957)" > Comment:(<script>setCommentCnt(957)</script>)</a></div><br>
+			<br>                                   <div class="text2">Be positive^^ --&gt; Girl stop apologizing #Rachel_Hollis</div>
+		          	    <p class="text4">شنبه 17 اسفند 1398 | 10:11 ق.ظ </p>
+        	<div class="line-height">		          	
+		            	
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8390328026/a80fd50524199f7c93606ba073d1e497.jpg" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: justify;"><b><font face="Mihan-Iransans" size="3">وقتی می گویم خوشحال، منظورم خوشحال است، نه فقط آرام یا خوب، یا سخت گرفتن. من شاد و شکرگذارم و نود درصد اوقات خوشبختم، نه به این خاطر که زندگی ام از جهاتی آسان تر شده است. من یکی از شادترین دخترانی هستم که می شناسید چون خودم هر روز انتخاب می کنم که شاد باشم. هر روز انتخاب میکنم که شکرگذار باشم. انتخاب می کنم که اطرافم را با افراد مثبت پر کنم،. من افکارم را کنترل می کنم چو افکار احساسات را کنترل می کنند.</font></b></div><div style="text-align: justify;"><b><font face="Mihan-Iransans" size="3">کلمات و جملاتی که استفاده می کنیم به موسیقی متن هر لحظه از زندگی مان تبدیل می شوند و هیچ فکری -مثبت یا منفی- وجود ندارد که بدون اجازه ی شما در ذهنتان ماندگار شده باشد. آیا به طور مرتب افکارتان را بررسی می کنید؟ آیا برای کنترل داشتن روی افکاری که در مورد خودتان دارید و کلماتی که برای توصیف خودتان استفاده می کنید تمرین دارید؟ شما احمق نیستید، این صفت را برای خودتان به کار نبرید. شما زشت نیستید, بنابراین هرگاه به آینه نگاه می کنید این حرف را به خودتان بزنید. شما آدم بدی نیستید. حتی اگر در گذشته کار های بدی کرده اید باز هم این حرف را به خودتان نزنید. شما بدجنس، بدذات، غیردوست داشتنی، بی ارزش یا بی اهمیت یا هر صفت مزخرف دیگری که به خودتان نسبت می دهید نیستید.</font></b></div><div style="text-align: justify;"><b><font face="Mihan-Iransans" size="3">باید انتخاب کنید که مثبت باشید و فرصت ها و برکت های روزانه زندگی را ببینید. شما خودتان افکارتان را انتخاب می کنید و هیچ فکری وجود ندارد که بدون اجازه ی شما در ذهنتان ماندگار شده باشد؛ بنابراین هرگاه شروع کردید به منفی نگری دست نگه دارید...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3" color="#339999"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3" color="#339999">شرمنده نباش دختر! - !Girl stop apologizing</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3" color="#339999">ریچل هالیس - Rachel Hollis</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><font face="Mihan-Iransans" size="1"><i>پ.ن: چرا دوباره دارم میخونمش؟!</i></font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8390327734/4a6fa34829468b6330df5766d5a9bbfb.gif" alt=""></div><div style="text-align: center;"><br></div>
+
+
+
+
+		            	 </div>
+		            	<div class="old1"></div><br>
+		            		<div class="old">
+				 <a style="dir:ltr" target="_self" href="javascript:newComment(956)" > Comment:(<script>setCommentCnt(956)</script>)</a></div><br>
+			<br>                                   <div class="text2">Where is the title?...</div>
+		          	    <p class="text4">شنبه 10 اسفند 1398 | 08:46 ب.ظ </p>
+        	<div class="line-height">		          	
+		            	
+
+
+<div style="text-align: center;"><i><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8389691526/original_2_.gif" alt=""></i></div><div style="text-align: center;"><font face="Mihan-IransansLight" style="" color="#ff6666" size="1"><b style="">*میرای به عنوان یه شخصیت انیمه ای بیش از اندازه منه ((:*</b></font></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans"><br></font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">خوب سلام((=...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">مـیـدونم مـمـکـنـه سـوال مـسـخـره ای</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">به نظر بیاد ولی... حالـتـون چـطـوره؟! ((:</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">به قول یکی، این که کرونا گرفتم یه طرف ،</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">ایـن کـه فـک میکنم کرونا گرفتم یه طرف</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">دیگه...!...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">در واقع...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">مـثـل این میمونـه که توی یه تونل تکراری</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">و بـی انـتـهـا گیر افتادم، گیر افتادیم...!!((=</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">انـدکـی چـس نـالــه در ادامــه...</font></b></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">خواستید بخونید، خواستید نه ((:...</font></b></div><div style="text-align: center;"><font face="Mihan-Iransans" size="3"><b>پ.ن1: شرایط که قر و قاطیه، شاید حتی منم دو روز دیگه نباشم بینتون، شاید همین الانم مریضم، خلاصه خوبی بدی دیدین حلال کنین ((:</b></font></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="1" color="#ff6666"><br></font></b></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8389689534/ea948c261f6f69ab62acee759c9a6887.gif" alt=""></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="1" color="#ff6666"><br></font></b></div><div style="text-align: center;"><font face="Mihan-IransansLight" style="" size="1" color="#ff6666"><b>*واسه این گیف بالا هرچی گریه کنم کمه((=*</b></font></div><div style="text-align: center;"><font size="1" color="#ff6666"><font face="Mihan-IransansLight" style=""><b>*Fullmetal Alchemist</b></font><font face="Mihan-Iransans" style="font-weight: bold;">*</font></font></div><div style="text-align: center;"><font size="1" color="#ff6666"><font face="Mihan-Iransans" style="font-weight: bold;"><br></font></font></div><div style="text-align: center;"><b><font size="3" face="Mihan-Iransans">پ.ن2: راستی! اگه توی این روزای سیاه یا نمیدونم هر رنگی، کار خاصی انجام میدین که فک میکنین به درد بقیه میخوره، حتما بگین، مارو بی نصیب نذارین((=</font></b></div><div style="text-align: center;"><br></div>
+
+
+
+
+
+
+
+
+		            	 </div>
+		            	<div class="old1"><a href='../../954.html'>ادامه مطلب</a></div><br>
+		            		<div class="old">
+				 <a style="dir:ltr" target="_self" href="javascript:newComment(954)" > Comment:(<script>setCommentCnt(954)</script>)</a></div><br>
+			<br>                                   <div class="text2">♡♡♡ᴴᵃᵖᵖʸ ᵇᶤʳᵗʰᵈᵃʸ ᴸᵉᶰˑˑˑᵎᵎᵎᵎ♡♡♡</div>
+		          	    <p class="text4">یکشنبه 4 اسفند 1398 | 09:21 ق.ظ </p>
+        	<div class="line-height">		          	
+		            	
+
+
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s9.picofile.com/file/8368952200/01d134c188a5c840acbf5d90a01d658a.jpg" alt=""></div><div style="text-align: center;"><span style="font-size: 15.8463px;"><font color="#cc9933"><i><br></i></font></span></div><div style="text-align: center;"><b><font color="#cc9933"><i style=""><font size="6">﹗﹗﹗﹗</font><font size="5">...&nbsp; Hᴀᴘᴘʏ ʙɪʀᴛʜᴅᴀʏ Lᴇɴ*~☆</font></i></font></b></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s9.picofile.com/file/8368951818/881a2f71f6ddd78f1bec88cb1a96a26a.png" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><i>,Watashi wo wasurenaide</i></div><div style="text-align: center;"><i>!?Ne</i></div>
+
+
+
+
+
+
+
+
+		            	 </div>
+		            	<div class="old1"></div><br>
+		            		<div class="old">
+				 <a style="dir:ltr" target="_self" href="javascript:newComment(896)" > Comment:(<script>setCommentCnt(896)</script>)</a></div><br>
+			<br>                                   <div class="text2">26#_روز_تا_سال_نو.....!!!!!♡♡♡</div>
+		          	    <p class="text4">شنبه 3 اسفند 1398 | 10:56 ق.ظ </p>
+        	<div class="line-height">		          	
+		            	
+
+
+
+
+
+
+
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8388944050/0b91458085dc712e25aa2a99bf4ef898.jpg" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">برای عوض کردن زندگی مان، برای تغییر دادن خودمان هیچوقت دیر نیست. هر چند سال که داشته باشیم، هرگونه که زندگی کرده باشیم، هر اتفاقی که از سر گذرانده باشیم، باز هم نو شدن ممکن است. حتی اگر یک روزمان درست مثل روز قبل باشد، باید افسوس بخوریم. باید در هر لحظه و در هر نفس نو شد، برای رسیدن به زندگی نو باید پیش از مرگ مرد.</font></b></div><div style="text-align: center;"><font style="" face="Mihan-IransansLight" size="2" color="#660000"><i><br></i></font></div><div style="text-align: center;"><font style="" face="Mihan-IransansLight" size="2" color="#660000"><i>~قاعده ی ۳۸ شمس تبریزی~</i></font></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8388944300/9e66494abfa54cebbde2cb0c1ff8cfd6.jpg" alt=""></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خب... سلام ^-^~</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">ایـن سـال هـم داره تـمـوم مـیشه ((=</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">کـاری نـدارم چـجـوری، خـلـاصـه داره</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بــه آخــرش نــزدیــک مــیــشـــه.</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">ایـن چالشـو تـو وب یومـیـکـو دیـدم،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">حالا ۲۶ روز از سال ۱۳۹۸ برام مونده((=</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8388941726/de137e8df22719f65f6d3fdd5024169a_4.jpg" alt=""></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خیلی کارا قرار بود تو این سال انجام بدم،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خیلیاشو انجام دادم،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خـیـلـیــاشــم نـه!</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خـیـلـی چـیـزا قـرار بـود به خیلیا بگم،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خیلیاشو گفتـم،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">خیلیـاشـم نـه!</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8388941768/de137e8df22719f65f6d3fdd5024169a_3.jpg" alt=""></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بـیـایـن قـبـل ایـن کـه سال تموم شه،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">چـن تـا قـول کـوچـولـو بـه هـم بدیم،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">نـمـیـخـواد قـول هـای بـزرگ بـدیـم!</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">چـون طبیعتا اراده ی بزرگ هم میخوان،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">کـه خیلیامون نداریم((=...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">آخرشم میزنیم زیرشون!...&nbsp;</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بیاین قول هایی بدیم که مطمئن هستیم</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">از پسشون بر میایم!...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3" color="#ff6666"><i>*یه کوچولو عوض بشیم، فقط یه کوچولو!*</i></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><i><br></i></font></b></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8388941818/de137e8df22719f65f6d3fdd5024169a_2.jpg" alt=""></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">یه تـقـویـم جـدید بخرین،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">یا یه دفترچه کـهنه بردارین،</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">فرق نمیکنه!...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">هدفاتونو بنویسین، آرزو هاتونو، چیزایی که سال جدید بهشون نیاز دارین!</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">چیـزایـی کـه بـاید بریـزیدشـون دور، چـیزایی که باید به دست بیارین...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">هـر چـی کــه لـازمـه!...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">برنامه هاتونو بنویسین...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">بعد بهشون عمل کنین!...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">هـر جـا بـه بـمـبـسـت خـوردیـن کـمـک بـگـیـریـن،...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">نگران نباشین، با کمک خواستن ابهتتون نمیره زیر سوال!!</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">هـر چـی کـه یـاد گـرفـتـیـن، بـنویسین!...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">نذارین یادتون بره، نذارین بمونه تو دیروز!...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8388941918/de137e8df22719f65f6d3fdd5024169a_1.jpg" alt=""></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">از این چالش خوشم میاد، میخوام چن تا هشتگ دیگه بهش اضافه کنم (;...</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><i>26#_روز_تا_سال_نو!!</i></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><i>#به_خودمون_باور_داشته_باشیم!!</i></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><i>#آزاد_باشیم!!</i></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">.</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">.</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3">.</font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-Iransans" size="3" color="#ff6666"><i>*"باور من به وجودم، تک تک تغییرات مثبت زندگیمو توجیه میکنه"*</i></font></b></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s7.picofile.com/file/8388937250/bebf761fccba2dd1c54e64d219fce530.jpg" alt=""></div><div style="text-align: center;"><font style="" face="Mihan-IransansLight" color="#ff6666" size="2"><i style="">پ.ن: آهنگ Hi high رو گوش کنین، مال لوناست، خیلی بهم امید میده((:♡</i></font></div><div style="text-align: center;"><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		            	 </div>
+		            	<div class="old1"></div><br>
+		            		<div class="old">
+				 <a style="dir:ltr" target="_self" href="javascript:newComment(951)" > Comment:(<script>setCommentCnt(951)</script>)</a></div><br>
+			<br>	     	      </Blogger>
+ </div>   <script language=JavaScript> <!-- //Disable right click script III- By Renigade (renigade@mediaone.net) //For full source code, visit http://www.dynamicdrive.com  var message=""; /////////////////////////////////// function clickIE() {if (document.all) {(message);return false;}} function clickNS(e) {if  (document.layers||(document.getElementById&&!document.all)) { if (e.which==2||e.which==3) {(message);return false;}}} if (document.layers)  {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;} else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}                                        document.oncontextmenu=new Function("return false") // --> </script> <!-- iD Clean Code Ver. 2.3 By Fantasier --><!-- อย่่าลบข้อความเครดิตที่มานะครับ สามารถก็อปต่อไปได้โดยไม่ลบเครดิตในโค้ด ไม่ต้องให้เครดิตที่หน้าไอดีก็ได้จ้า --><style type="text/css">#wrapper { display:none } </style> <div class="theanchor"></div> <script type="text/javascript">$('.theanchor').parent().wrapInner('<div class="thcon"></div>');  $('#wrapper').before($('.thcon').contents());</script>
+
+<!-- Online Support by www.1abzar.com --->
+<style>#abzar-online-support{position:fixed;z-index:20000;bottom:1px;right:1px}</style><script type="text/javascript" src="https://online.1abzar.com/1abzar.php?admin=3060841&mail=1&on=http://s7.picofile.com/file/8376409792/samane_Copy.png&off=http://s6.picofile.com/file/8376409818/samane.png"></script><div style="display:none"><h3><a href="http://www.1abzar.com">&#1662;&#1588;&#1578;&#1740;&#1576;&#1575;&#1606;&#1740;</a></h3></div>
+<!-- Online Support by www.1abzar.com --->
+
+
+<center><style>
+img {
+max-width:550px;
+max-height:10000px;
+border: dashed 2px #      ;
+}
+img:hover {
+     border-top-left-radius:30px;
+        border-bottom-left-radius:30px;
+     border-top-right-radius:30px;
+        border-bottom-right-radius:30px;
+     border-top-right-radius:30px;
+        border-bottom-left-radius:30px;
+  border-top-left-radius:30px;
+        border-bottom-right-radius:30px;
+box-shadow: 0 0 0.10px #       ;
+-webkit-transition: all 1s ease-in;
+-moz-transition: all 1s ease-in;
+-o-transition: all 1s ease-in;
+transition: all 1s ease-in;
+-webkit-transform: rotate(0.15deg);
+-moz-transform: rotate(0.15deg);
+-o-transform: rotate(0.15deg);
+}</style>
+</p><p style="text-align:center;margin:2px 0px 0px 0px;font-size:10px;padding:0;"><a href="12.html" style="text-decoration:none;margin:0;padding:0;" title="  "  target="_blank" >   </a></p>
+<p></center><script language="javascript" type="text/javascript"src="12.html"></script>
+
+
+
+
+
+<div style="position:absolute;top:-200%;"><h1><a  href="http://codebazan.ir/">&#1705;&#1583;&#1576;&#1575;&#1586;&#1575;&#1606;</a></h1></div><style>.ui-to-top {  width: 90px;  height: 422px;  font-size: 24px;  line-height: 45px;  color: #007fff;  background: #fff;  border-radius: 10%;  position: fixed;  left: 15px;  bottom: 15px;  overflow: hidden;  text-align: center;  text-decoration: none;  z-index: 20;  transition: .3s all ease;  border: 2px solid #ffffff;  outline: none;  -webkit-transform: translateY(100px);  transform: translateY(100px);}.ui-to-top:hover, .ui-to-top:focus {  color: #FFF;  background: #007fff;  text-decoration: none;  outline: none;}.ui-to-top.active {  -webkit-transform: translateY(0);  transform: translateY(0);}.mobile .ui-to-top,;.tablet .ui-to-top {  display: none !important;}@media (min-width: 480px) {  .ui-to-top {    right: 40px;    bottom: 40px;  }}
+</style>
+ 
+  <!------>
+<a href="12.html#" id="ui-to-top" class="ui-to-top fa fa-angle-up active"><img style="width:50" src="http://s7.picofile.com/file/8376411692/Untitled_1_Copy.png"></a>
+ <!------>
+
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'martadupancheng.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

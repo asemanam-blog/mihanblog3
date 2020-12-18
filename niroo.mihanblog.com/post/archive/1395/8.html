@@ -1,0 +1,1483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*312944*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[694]='2';commentCnt[695]='0';commentCnt[696]='3';commentCnt[697]='1';commentCnt[698]='1';commentCnt[699]='0';commentCnt[700]='0';commentCnt[701]='2';commentCnt[702]='0';commentCnt[703]='3';commentCnt[704]='0';commentCnt[705]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[694]='0';
+mihanblogDisLikeArrCnt[694]='0';
+mihanblogLikeArrCnt[695]='0';
+mihanblogDisLikeArrCnt[695]='0';
+mihanblogLikeArrCnt[696]='0';
+mihanblogDisLikeArrCnt[696]='0';
+mihanblogLikeArrCnt[697]='0';
+mihanblogDisLikeArrCnt[697]='0';
+mihanblogLikeArrCnt[698]='0';
+mihanblogDisLikeArrCnt[698]='0';
+mihanblogLikeArrCnt[699]='0';
+mihanblogDisLikeArrCnt[699]='0';
+mihanblogLikeArrCnt[700]='0';
+mihanblogDisLikeArrCnt[700]='0';
+mihanblogLikeArrCnt[701]='0';
+mihanblogDisLikeArrCnt[701]='0';
+mihanblogLikeArrCnt[702]='0';
+mihanblogDisLikeArrCnt[702]='0';
+mihanblogLikeArrCnt[703]='0';
+mihanblogDisLikeArrCnt[703]='0';
+mihanblogLikeArrCnt[704]='0';
+mihanblogDisLikeArrCnt[704]='0';
+mihanblogLikeArrCnt[705]='0';
+mihanblogDisLikeArrCnt[705]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://niroo.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://niroo.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','759');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','جمعه 16 خرداد 1399');
+	
+	setStatVar('today_view','80');
+	setStatVar('yesterday_view','119');
+	
+	setStatVar('this_month_view','3745');
+	setStatVar('last_month_view','6128');
+
+	setStatVar('total_view','690751');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (14:49)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://niroo.mihanblog.com/statupdate/?data[refereruri]=http://niroo.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1395/8&data[sdate]=1607772858&data[hash]=bd01531e24e70a1836ba875ac39e9536&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://niroo.mihanblog.com/post/archive/1395/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://niroo.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://niroo.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://niroo.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://niroo.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://niroo.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://niroo.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://niroo.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Theme Designer" content="www.MyTheme.ir">
+<script src="http://mytheme.ir/themes/script.js" language="javascript"></script>
+<meta name="description" content="">
+<meta name="keywords" content=""> 
+<link rel="alternate" type="application/rss+xml" title="یادداشت‌های آقا معلم" href="../../rss/index.html">
+<link rel="alternate" type="application/atom+xml" title="یادداشت‌های آقا معلم" href="../../atom/index.html">
+<link href="http://mythemes.ir/t36/style-mihanblog.css" type="text/css" rel="stylesheet"> 
+
+<script type="text/javascript" src="http://mythemes.ir/t36/jquery.js"></script>
+<script type="text/javascript" src="http://mythemes.ir/t36/easySlider1.5.js"></script>
+<script type="text/javascript">
+var jq=jQuery.noConflict();
+jq(document).ready(function(){	
+jq("#slider").easySlider();
+});
+
+var i=1;
+var mytheme_pic=new Array();
+var mytheme_titr=new Array();
+var mytheme_text=new Array();
+var mytheme_link=new Array();
+/* nahveye estefade az slideshow
+baraye ijad slide jadid az 3 ghesmat zir copy begirid va adade dakhel keroshe ra be tartib tanzim konid:
+
+ mytheme_pic[4] = 'Your_pic.jpg'
+mytheme_titr[4] = 'Your_titr';
+mytheme_text[4] = 'Your_text';
+mytheme_link[4] = 'Your_link';
+
+tavajoh konid tedad slide haye shoma bayad ba moteghayer (number) barabar bashad.
+
+>> SIZE TASAVIR >> width="650 px" :: height="260 px"
+
+*/
+
+var number = 8; //numbers of slides
+
+ mytheme_pic[1] = 'http://hw8.asset.lenzor.com/lp/3281041-6192-l.jpg'; //adress tasvire shoma
+mytheme_titr[1] = 'سفرنامه مشهد'; //titr marbot be tasvire shoma
+mytheme_text[1] = 'اردوی زیارتی مشهد مقدس دانش‌آموزان پایه اول- بهمن92'; //matne tozih marbot be tasvire shoma
+mytheme_link[1] = 'http://niroo.mihanblog.com/post/tag/%D8%A7%D8%B1%D8%AF%D9%88%DB%8C+%D9%85%D8%B4%D9%87%D8%AF';
+
+ mytheme_pic[2] = 'http://hw8.asset.lenzor.com/lp/381329-3929-l.jpg';
+mytheme_titr[2] = 'زیارت در مدرسه پنهان';
+mytheme_text[2] = 'نقش القایی زیارت در برنامه درسی پنهان مدرسه';
+mytheme_link[2] = 'http://www.chaharsoogh.ir/?q=%D8%B3%D8%AE%D9%86%D8%B1%D8%A7%D9%86%DB%8C/%D8%B2%DB%8C%D8%A7%D8%B1%D8%AA-%D8%AF%D8%B1-%D9%85%D8%AF%D8%B1%D8%B3%D9%87-%D9%BE%D9%86%D9%87%D8%A7%D9%86';
+
+ mytheme_pic[3] = 'http://hw8.asset.lenzor.com/lp/381335-3466-l.jpg';
+mytheme_titr[3] = 'همه دانش‌آموزان باهوشند';
+mytheme_text[3] = 'استفاده از نظریه هوش‌های چندگانه گاردنر در آموزش ریاضی';
+mytheme_link[3] = 'http://www.chaharsoogh.ir/?q=%D8%B3%D8%AE%D9%86%D8%B1%D8%A7%D9%86%DB%8C/%D9%87%D9%85%D9%87-%D8%AF%D8%A7%D9%86%D8%B4-%D8%A2%D9%85%D9%88%D8%B2%D8%A7%D9%86-%D8%A8%D8%A7%D9%87%D9%88%D8%B4%D9%86%D8%AF';
+
+ mytheme_pic[4] = 'http://hw8.asset.lenzor.com/lp/381327-148-l.jpg'
+mytheme_titr[4] = 'كلاس 7/7';
+mytheme_text[4] = 'لزوم نوآوری در فرایند یاددهی-یادگیری در برنامه زنده باز باران شبكه آموزش';
+mytheme_link[4] = 'http://www.chaharsoogh.ir/?q=%DA%86%D9%86%D8%AF-%D8%B1%D8%B3%D8%A7%D9%86%D9%87%E2%80%8C%D8%A7%DB%8C/%DA%86%D9%87%D8%A7%D8%B1%D8%B3%D9%88%D9%82-%D8%AF%D8%B1-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%A8%D8%A7%D8%B2-%D8%A8%D8%A7%D8%B1%D8%A7%D9%86-%DB%B9%DB%B2%DB%B8%DB%B8';
+
+ mytheme_pic[5] = 'http://hw8.asset.lenzor.com/lp/381427-2759-l.jpg'
+mytheme_titr[5] = 'دوره 9 سبحان';
+mytheme_text[5] = 'روایت برنامه درسی آشکار و پنهان کلاس حساب دیفرانسیل و انتگرال';
+mytheme_link[5] = 'http://2re9.blogfa.com/';
+
+ mytheme_pic[6] = 'http://hw8.asset.lenzor.com/lp/381442-2850-l.jpg'
+mytheme_titr[6] = 'هوش‌های چندگانه';
+mytheme_text[6] = 'وبلاگ تخصصی نظریه هوش‌های چندگانه گاردنر';
+mytheme_link[6] = 'http://mniroo2.blogfa.com/';
+
+ mytheme_pic[7] = 'http://hw8.asset.lenzor.com/lp/381455-9945-l.jpg'
+mytheme_titr[7] = 'حكایات خواندنی';
+mytheme_text[7] = 'داستان‌ها و روایات و نكات نغز';
+mytheme_link[7] = 'http://mniroo.blogfa.com/';
+
+ mytheme_pic[8] = 'http://hw8.asset.lenzor.com/lp/478980-5670-l.jpg'
+mytheme_titr[8] = 'كارگاه هوش‌های چندگانه';
+mytheme_text[8] = 'طراحی برنامه درسی مبتنی بر هوش‌های چندگانه';
+mytheme_link[8] = 'http://www.aparat.com/v/0nZE6';
+
+
+</script>
+
+<title>یادداشت‌های آقا معلم - مطالب  آبان 1395</title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td class=div2>
+<div class=div00>
+
+<div class=div60>
+<div class=div101>
+<div class=div10><font class=title>یادداشت‌های آقا معلم</font></div></div>
+<div class=div11>
+<div class=div12><font class=des>تجربیات زیسته كلاس درس </font></div></div>
+</div>
+
+<div class=ss>
+<div class=s1><form id="frm-16075752865fd1a6f6795ff" method="get" action="http://niroo.mihanblog.com/post/search/fid/16075752865fd1a6f6795ff"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+<div class=s2>
+<input type="text" name="search_text" size="19" style="border: 0px none; background: none; font-family:Tahoma; font-size:9pt; direction:ltr; color:#5f5f5f;"></div>
+<div class=s3><input type="image" src="http://mythemes.ir/t36/blank.gif" width=50 height=60 value="جستجو"></div>
+<input type="hidden" name="frm-id" value="16075752865fd1a6f6795ff" id="frm-id" /></form></div>
+
+<div class=s4>
+<div class=s5><font class=text10>
+<a href="../../../index.html"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=75 height=70></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="mailto:mniroo.sobhan@gmail.com"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=75 height=70></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="../../rss/index.html"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=75 height=70></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:messageForm()"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=75 height=70></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://www.mytheme.ir" target="_blank"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=75 height=70></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></div></div>
+</div>
+
+<div class=div170>
+
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+<div class=div341>
+<div class=sm></div>
+<div class=div31><center><img src="../../../../static.mihanblog.com/public/user_data/web_photo/105/312944.jpg@2829"  /></center><br>
+<font class=text1>این وبلاگ محفلی است كه دل‌نوشته‌ها، برداشت‌ها و گزارش‌های كلاس درس و مدرسه‌ام را به منظور آگاهی همكاران، والدین و دانش‌آموزان عزیزم درج كرده و ضمن به اشتراك‌گذاری، آنها را به بوته نقد و نظر قرار می‌دهم. همچنین با درج تجارب زیسته كلاس، امكان بازنگری و تحلیل كار معلمی‌ام را مهیا كرده تا در نهایت زمینه رشد جمعی و بهره‌وری فرایند آموزش را به ارمغان آورد.<br />
+(تلگرام mniroo@)<br>
+	<b>مدیر وبلاگ :</b> <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div><div class=div30></div>
+</div>
+
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>موضوعات</font></div></div>
+<div class=div341><font class=text1>
+<ul><li><a href="../../category/19.html">تجارب دانشگاهی (28)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/18.html">کلاس حسابان1 سال تحصیلی 97-96 (15)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/17.html">كلاس ریاضی سال تحصیلی 96-95 (80)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/16.html">گروه تلگرامی آموزش پژوهی صلحا (17)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/15.html">هوش‌های چندگانه (26)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/14.html">تولید محتواها (42)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/13.html">معاونت آموزشی (158)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/11.html">پراكنده (111)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/1.html">تجربه زیسته (219)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/12.html">دبیرستان باقرالعلوم (6)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/10.html">مناسبت‌ها (12)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/2.html">اطلاعیه‌ها (32)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/8.html">كلاس حل مسئله آقای ربیعی (4)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/9.html">تجربه زیسته همكار گرامی، آقای بشارت (2)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../category/7.html">تجارب موثر معلمان (1)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>مطالب اخیر</font></div></div>
+<div class=div341><font class=text1>
+<ul><li><a href="../../919.html">معلم حرفه‌ای پساکرونا و منحنی دوم</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../918.html">لایو اینستاگرام با موضوع هوش‌های چندگانه</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../917.html">چطور در خانه معلم خوبی باشیم؟/ شناخت هوش‌های چندگانه و تفاوت یادگیری در کودکان</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../915.html">همایش هوشهای چندگانه برای مربیان خانه‌های کودک سازمان فرهنگی شهرداری</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../914.html">اولین جلسه کلاس درس حسابان</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../913.html">شروع سال تحصیلی و شروع نوشتن در وبلاگ</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../912.html">برگزاری همایش برنامه ریزی و مدیریت زمان</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../911.html">کارگاه آموزش ضمن خدمت معلمان مدرسه شهید شرافت و ۱۷ شهریور منطقه ۱۳ تهران</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../910.html">گزارش تصویری نشست با معلمان ریاضی متوسطه اول منطقه 13 تهران</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../909.html">کارگاه یادگیری تعاملی در شوشتر</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../908.html">نشست‌های برنامه درسی پنهان</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../907.html">گزارش جلسه ششم کلاس روشها و فنون تدریس</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../906.html">گزارش تصویری کارگاه دبیرستان دخترانه شهید شرافت منطقه 13 تهران</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../905.html">برگزاری کارگاه یادگیری تعاملی برای حدود 40 نفر از بهترین معلم‌های منطقه آزاد ماکو</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../904.html">گزارش جلسه پنجم کلاس روشها و فنون تدریس علوم و تحقیقات</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../903.html">همراه با دانشجویان جهادی السابقون</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../902.html">کلاس برنامه ریزی درسی در آموزش عالی دانشگاه خاتم (قسمت پنجم)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../901.html">کلاس برنامه ریزی درسی در آموزش عالی دانشگاه خاتم (قسمت چهارم)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../900.html">کلاس برنامه ریزی درسی در آموزش عالی دانشگاه خاتم (قسمت سوم)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../899.html">کلاس برنامه ریزی درسی در آموزش عالی دانشگاه خاتم (قسمت دوم)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../898.html">کلاس برنامه ریزی درسی در آموزش عالی دانشگاه خاتم (قسمت اول)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../895.html">کلاس روشها و فنون تدریس</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../893.html">موضوع تکلیف در گفت‌وگوی آقامعلم با شبکه العالم</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../892.html">وبینار برنامه درسی پنهان</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../891.html">کلاس روشها و فنون تدریس</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../889.html">ترم جدید کلاس های دانشگاه</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../887.html">راه کارهای شروع سال تحصیلی برای معلمان و دبیران (قسمت دوم)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../885.html">راه کارهای شروع سال تحصیلی برای معلمان و دبیران (قسمت اول)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../878.html">جلسه بررسی ملاک های ارزشیابی و بودجه بندی تدریس</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../883.html">گزارش ارایه مبحث برنامه‌ درسی پنهان در دبستان پیام رستگاران</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+<div class=div341><font class=text1>
+<ul><li><a href="../1399/3.html"> خرداد 1399</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1398/8.html"> آبان 1398</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1398/7.html"> مهر 1398</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1398/2.html"> اردیبهشت 1398</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1397/11.html"> بهمن 1397</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1397/10.html"> دی 1397</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1397/9.html"> آذر 1397</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1397/8.html"> آبان 1397</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1397/7.html"> مهر 1397</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1397/5.html"> مرداد 1397</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1397/4.html"> تیر 1397</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1397/3.html"> خرداد 1397</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1397/2.html"> اردیبهشت 1397</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/12.html"> اسفند 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/11.html"> بهمن 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/10.html"> دی 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/9.html"> آذر 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/8.html"> آبان 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/7.html"> مهر 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/5.html"> مرداد 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/4.html"> تیر 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/3.html"> خرداد 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/2.html"> اردیبهشت 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../1396/1.html"> فروردین 1396</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="12.html"> اسفند 1395</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="11.html"> بهمن 1395</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="10.html"> دی 1395</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="9.html"> آذر 1395</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="8.html"> آبان 1395</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="7.html"> مهر 1395</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><b><a href="../../archive.html">آرشیو كل مطالب</a></b></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+</font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>نویسندگان</font></div></div>
+<div class=div341><font class=text1>
+<ul><li><a href="../../author/207465.html">محمد نیرو (751)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../author/1719823.html">محمد حامدی (3)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"></font></div><div class=div30></div>
+</div>
+
+		
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>برچسبها</font></div></div>
+<div class=div341><font class=text1>
+<ul><li><a href="../../tag/خانه.html">خانه</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/معلم+خوب.html">معلم خوب</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/دانش‌افزایی+معلمان.html">دانش‌افزایی معلمان</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/همایش.html">همایش</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/كوییز+گروهی.html">كوییز گروهی</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/هوش‌های+چندگانه.html">هوش‌های چندگانه</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/زیارت.html">زیارت</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/حل+تمرین.html">حل تمرین</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/كهف+الشهدا.html">كهف الشهدا</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/یادگیری+مشاركتی.html">یادگیری مشاركتی</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/ایام+کرونا.html">ایام کرونا</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/دكتر+حقانی.html">دكتر حقانی</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/فاطمیه.html">فاطمیه</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/هوشهای+چندگانه.html">هوشهای چندگانه</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/آموزش+پژوهی.html">آموزش پژوهی</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/برنامه+درسی+پنهان.html">برنامه درسی پنهان</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/مرگ.html">مرگ</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/ثبت+نام.html">ثبت نام</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/لایو.html">لایو</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/اردوی+مشهد.html">اردوی مشهد</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/خاطرات+دفاع+مقدس.html">خاطرات دفاع مقدس</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/اینستاگرام.html">اینستاگرام</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/كار+گروهی.html">كار گروهی</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/مقاله.html">مقاله</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/پایان+كلاس‌ها.html">پایان كلاس‌ها</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/خبرگزاری+فارس.html">خبرگزاری فارس</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/مثلثات.html">مثلثات</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/اسلاید+ریاضی.html">اسلاید ریاضی</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/بازخورد.html">بازخورد</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../tag/یادگیری.html">یادگیری</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"></font></div><div class=div30></div>
+</div>
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+<div class=div341><font class=text1>
+<ul><li><a href="http://webposter.ir/webmasters" title="در آمد میهن بلاگی ها در تیر ماه 95 به 2245000 تومان رسید.
+
+    - در آمد هر پاپ آپ 30 ریال.
+    - در آمد بنر گرافیکی 600 ریال. (جدید)
+
+وب پوستر - هوشمند
+webposter.ir
+
+لطفا این لینک را تایید کنید." target="_blank">کسب در آمد از سایت و وبلاگ</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="http://www.ymansourian.ir/" title="" target="_blank">وبگاه دكتر یزدان منصوریان</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../../../solahapd.mihanblog.com/index.html" title="" target="_blank">پیش دبستان صلحا</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../../../maktabeshohada1375.mihanblog.com/index.html" title="" target="_blank">هیئت مکتب الشهدا</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../../../solaha.mihanblog.com/index.html" title="" target="_blank">دوره‌های آموزش پژوهی صلحا</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="../../../../moshavere-tmt92.mihanblog.com/index.html" title="دوست عزیزسلام !!
+
+بنده مجید صادقی هستم دانشجوی مشاوره و مشاور تحصیلی بچه های کنکوری و دانش آموزان مدارس ،در دانشگاه فرهنگیان 
+
+لطفا برای کمک در راستای مشاور کنکوری لینک بنده رو تایید کنید ممنون میشم 
+
+با تشکر فراوان از شما" target="_blank">وبلاگ راهنمایی ومشاوره </a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="http://educationconcerns.blog.ir/" title="" target="_blank">دغدغه هایی درباره ی تربیت و تعلیم</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="http://chaharsoogh.ir" title="" target="_blank">چهارسوق (نشر ایده‌های تعلیم و تربیت)</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="http://2re9.blogfa.com" title="" target="_blank">تجارب زیسته کلاس دیفرانسیل دوره 9 سبحان</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><a href="http://MNIROO.BLOGFA.COM" title="" target="_blank">حكایات خواندنی</a></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13"><ul><li><b><a href="../../../linkdaily/index.html">همه پیوندهای روزانه</a></b></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+<ul><li><b><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></b></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+</font></div><div class=div30></div>
+</div>
+
+
+<div class=div24>
+<div class=div35>
+<div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+<div class=div341><font class=text1>
+<ul><li>کل بازدید : <script>getStatVar('total_view');</script></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+<ul><li>بازدید امروز :<script>getStatVar('today_view');</script></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+<ul><li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+<ul><li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+<ul><li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+<ul><li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+<ul><li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+<ul><li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+<ul><li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li></ul><img border="0" src="http://mythemes.ir/t36/mytheme.ir_05.jpg" width="213" height="13">
+</font></div><div class=div30></div>
+</div>
+</div>
+
+<div class=div20>
+
+<!-- Slideshow Starts Here -->
+<div class="mys">
+<div id="container">
+<div id="content">
+<div id="slider">
+<ul>				
+<script type="text/javascript">
+for (i=1;i<=number;i++)
+{
+document.write('<li><div class=imgs style="background:url('+mytheme_pic[i]+.html')" width=650 height=260><div class=texts><div class=texts2><a style="text-decoration:none;" href="http://niroo.mihanblog.com/post/archive/1395/'+mytheme_link[i]+'"><font class=text11>'+mytheme_titr[i]+'</font><br><font class=text12>'+mytheme_text[i]+'</font></a></div></div></div></li>');
+};
+</script>
+			</ul>
+		</div>
+</div></div>
+</div>
+<!-- Slideshow Ends Here -->
+
+<div class=div201>
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/705">كلاس ریاضی آقامعلم - روز بیستم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/705#commentlist"><script>setCommentCnt(705)</script></a></b></font></div>
+<div class=div58><font class=text7>شنبه 29 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<font size="2">به دلیل آلودگی هوا روز چهارشنبه و به تبع آن روز پنجشنبه تعطیل شده بود. من دفترچه سوالات چهارگزینه‌ای را روز سه شنبه آماده كرده بودم كه بچه ها با حل آن برای آزمون روز جمعه آینده آماده شوند. این دفترچه را به معلم راهنما دادم و برای بچه ها هم سوالاتی از آن را در سامانه مدبر درج كردم كه حل كنند. معلم راهنما آن روز دفترچه را به بچه ها نرساند. شاید دلیلش این بود كه سه شنبه بچه ها ورزش داشتند و دسترسی به آنها سخت بود و وی ترجیح داد كه فردایش بدهد.<br>ولی از شانس خوب بچه ها! فردای آن روز و پس فردایش تعطیل شد. من خیلی ناراحت شدم كه این فرصت طلایی بدین جهت از دست می رود و فشار آن برای روزهای آینده وارد خواهد شد. از این روی روز پنجشنبه كه بچه ها سال چهارم در مدرسه حضور داشتند سعی كردم كه خود را به مدرسه رسانده، فایل دفترچه را دریافت كرده و به صورت فایل پی دی اف، آن را از طریق سامانه مدبر به بچه ها برسانم. ولی متاسفانه به هر دری كه زدیم نشد. یعنی مسئول انتشارات نبود و دسترسی هم به كلید آنجا نشد.<br>به هر روی روز شنبه در حالی به كلاس آمدیم كه تمرینی برای رفع اشكال نداشتیم. ضمن اینكه زنگ اول هم بچه ها به طور مشترك آزمون میان نیمسال فیزیك داشتند. خلاصه در زنگ دوم كه به طور مشترك در اختیار من بود، من به هر دو كلاس گفتم كه به صورت گروهی بنشینند. خوشبختانه به دلیل داشتن دستیاری شایسته و دوست داشتنی هر كدام در یك كلاس می توانستیم مستقر شویم. در دو زنگی كه بچه ها به این شكل حضور داشتند، از آنها خواستم كه تستها را از اول دفترچه شروع به حل كنند. طبیعی بود كه چون بدواً قرار به انجام این كار را داشتند، در دو زنگ در اختیار پیشروی زیادی حاصل نشد. یكی شاید به این دلیل بود كه لازم بود برخی فرمولها و تكنیكها را مرور كنند. و اینكه باید هم فكر می كردند و هم سرگروه راه حل را برای اعضای گروه شرح می داد. خلاصه همین شد كه حدود 12 تست حل شد. این كار برای من باز هم مغتنم بود. آنها با این مقدمه آماده شدند كه سه صفحه اول دفترچه را كه بخش زیادی از صفحه اول را نیز حل كرده بودند، برای تكلیف جلسه بعد انجام دهند.<br>خلاصه اینكه وقتی دفترچه یا پلی كپی آماده شده است، باید اطمینان حاصل كرد كه به موقع تحویل دانش‌آموزان شود؛ اگرچه شاید لازم به مداخله و پی گیری به هنگام صورت گردد. البته مانند</font><font size="2"> </font><font size="2"> جلسه قبل هم می شد كه ابتدا فرصت حل انفرادی در یك زنگ داد و زنگ بعد به رفع اشكال همانها سپری می شد. باید بررسی كرد تا متوجه شد كه كدام روش بازدهی بیشتری خواهد داشت.<br></font>
+
+
+
+
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز بیستم - /post/705"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/705&t=كلاس ریاضی آقامعلم - روز بیستم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/705&title=كلاس ریاضی آقامعلم - روز بیستم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/705&title=كلاس ریاضی آقامعلم - روز بیستم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/704">كلاس ریاضی آقامعلم - روز نوزدهم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/704#commentlist"><script>setCommentCnt(704)</script></a></b></font></div>
+<div class=div58><font class=text7>سه شنبه 25 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4><ol><li>
+
+<font size="2">امروز اسامی برترین خلاصه‌نویسی مبحث مثلثات را بر روی برگه‌ای درج كرده و روی تابلوی كریدور طبقه مقطع زدم. ذیل آن یادداشت كردم كه افراد فوق یك مثبت دریافت كردند. این امر موجب حساسیت و شاید اعتراضك برخی دیگر را كه آنها هم به زعم خودشان و به واقع خوب نوشته بودند برانگیخت. به نظر می‌رسد كه اعلام اسامی برترین ها بر روی تابلو كفایت می‌كند و مشوق آنها خواهد بود و اعطای مثبت هم انگیزه درونی آنها را تحت الشعاع شاید قرار دهد و هم از مشكلات جانبی را در پی خواهد داشت.</font></li><li><font size="2">هنگامی كه قرار است سوالات چهارگزینه ای با پاسخ تشریحی در دفتر انجام شود، در اختیار قرار دادن كلید سوالات به منظور بررسی جواب نهایی مانعی ندارد.</font></li><li><font size="2">امروز كتاب ورزش ذهن (انتشارات گاج) را برای ایجاد تمركز و كاهش خطای محاسبه به بچه ها معرفی كردم.</font></li><li><font size="2">خلاصه نویسی‌های فصل مثلثات بچه ها خیلی خوب بود. برخی از منابع گوناگون به جمع آوری نكات اقدام كرده بودند.</font></li><li><font size="2">یكی از بچه ها كه از دانش‌آموزان ضعیف كلاس هم هست،‌ بعد از دریافت برگه آزمون میان نیمسال خود مراجعه كرد و اشاره داشت كه در تصحیح برگه وی اشتباهی رخ داده و نمره اضافی داده شده! پس از بررسی اظهار او مورد تایید قرار گرفت. ولی به دلیل صداقتش در حالی كه به نمره اش نیاز داشت، نه تنها نمره ای از او كاسته نشد، بلكه كتاب ریاضی كمك درسی هم به او در حضور دیگران اهدا شد. تا میوه صداقت وی گسترش یابد.</font></li><li><font size="2">هنوز برخی بچه ها به خاطر اینكه یادگیری ایشان از طریق فیلم صورت می‌گیرد عادت نكرده اند و اعتراض‌هایی به گوش می‌رسد. به واقع كار آنها قدری زیادتر می‌شود و البته كلاس من نیز گسترش می‌یابد. گویی دو زنگ افزایش یافته چرا كه تدریس به خانه‌های آنها منتقل شده و عملا كار آنها هم زیادتر شده. همین البته باعث شده اكنون از معلمان و كلاس‌های همتا جلوتر باشیم. امیدوارم كه بچه ها با خودتنظیمی شان، سریعتر خود را وفق دهند.<br></font></li></ol><br><div align="center"><img src="http://static.asset.aparat.com/lp/15711178-2917-l.jpg" alt="" width="620" vspace="0" border="1" align="bottom" hspace="0" height="466"></div><br><div align="center"><img src="http://static.asset.aparat.com/lp/15711179-6837-l.jpg" alt="" width="619" vspace="0" border="1" align="bottom" hspace="0" height="465"></div><br><div align="center"><img src="http://static.asset.aparat.com/lp/15711177-7885-l.jpg" alt="" width="620" vspace="0" border="1" align="bottom" hspace="0" height="466"></div><br><div align="center"><img src="http://static.asset.aparat.com/lp/15711175-5468-l.jpg" alt="" width="620" vspace="0" border="1" align="bottom" hspace="0" height="465"></div><br><div align="center">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/bJThf]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/bJThf/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br><br>
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/ARVph]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/ARVph/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br></div>
+
+
+
+
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز نوزدهم - /post/704"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/704&t=كلاس ریاضی آقامعلم - روز نوزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/704&title=كلاس ریاضی آقامعلم - روز نوزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/704&title=كلاس ریاضی آقامعلم - روز نوزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/703">كلاس ریاضی آقامعلم - روز هجدهم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/703#commentlist"><script>setCommentCnt(703)</script></a></b></font></div>
+<div class=div58><font class=text7>شنبه 22 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4>
+<font size="2">روز موعود فرارسید! امروز بچه‌ها آزمون میان نیم‌سال داشتند. آزمون بچه‌ها در دو قسمت برگزار شد. یك قسمت آزمون كتبی 16 نمره‌ای بود. برخی از بچه‌ها اضطراب زیادی داشتند. البته خود من هم قدری به آن دامن زده بودم. علتش این است كه فكر می كردم برخی از آنها دغدغه و وقت كافی برای آمادگی آزمون را نمی‌گذارند. ولی امتحان بسیار خوبی از حیث محتوا تنظیم شده بود به طوری كه جناب آقای دكتر داودی به عنوان متخصص فن آن را به شایستگی تایید كرد. سوالات و پاسخ آن در ذیل آمده است. در این امتحان بچه‌ها نوعا دچار كمبود وقت نشدند و سوالات امتحان در حد دانایی پیشین آنها بوده است. البته برای كسانی كه همراه بوده اند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15701278-8979-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><img src="http://static.asset.aparat.com/lp/15701280-4326-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><img src="http://static.asset.aparat.com/lp/15701282-5220-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><img src="http://static.asset.aparat.com/lp/15701286-6299-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br><br><div align="right"><font size="2">در قسمت آزمون عملی بچه ها را در گروه‌های 14 نفری بردم داخل سایت و در زمان محدود كاری كه باید تولید كنند را توجیه كردم و فرصت دادم تا دو كار مربوط را آماده كرده و برای هر كار دو نمره تخصیص دادم. بچه هایی كه خود را كاملا آماده كرده بودند و نسبت به نرم افزار جئوجبرا تسلط پیدا كرده بودند، توانستند از عهده كار برآیند. آنهایی كه این امر را جدی نگرفته بودند، حسابی در تنگنا قرار گرفته و نمره آن را از دست دادند. به هر روی فرصت 15 دقیقه پیش بینی شده نخستین برای بچه ها كم بود. به این دلیل وقت را تا جایی كه می شد اضافه كردم. ارزشیابی این امر كاری دشوار بود و تمامی ابعاد آن را پیش بینی نكرده بودم و شاخص‌های آن را تعیین نكرده بودم. برای همین به طور نظری نمره دادم و از این روی نمره را اعلام نكردم تا در صورت نیاز، در مورد نمره ها بازنگری بتوانم انجام دهم. ولی همینكه بچه ها استفاده از جئوجبرا را جدی قلمداد كردند برای من كفایت می كند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15701268-4560-l.jpg" alt="" width="623" vspace="0" border="0" align="bottom" hspace="0" height="360"><br><br><img src="http://static.asset.aparat.com/lp/15701371-9778-l.jpg" alt="" width="623" vspace="0" border="1" align="bottom" hspace="0" height="326"><br></div></div></div>
+
+
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز هجدهم - /post/703"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/703&t=كلاس ریاضی آقامعلم - روز هجدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/703&title=كلاس ریاضی آقامعلم - روز هجدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/703&title=كلاس ریاضی آقامعلم - روز هجدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/702">كلاس ریاضی آقامعلم - روز هفدهم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/702#commentlist"><script>setCommentCnt(702)</script></a></b></font></div>
+<div class=div58><font class=text7>پنجشنبه 20 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4><font size="2">صبح طبق قرار،‌ از ساعت 6:45 دقیقه به مدت 45 دقیقه در خدمت سرگروه ها بودم. قبل از آن سوالات چالشی ویژه علاقمندان از فصل دوم (مثلثات) را آماده كرده و در داخل اسلاید بردم تا در كلاس به صورت حضوری،‌ آنها را برای ایشان حل كرده و برایشان توضیح دهم. همین هم شد. این كار را با قلم هوشمند انجام دادم كه برای نخستین بار آنها شاهد بر آن بودند و فكر می كنم برایشان خیلی جالب بود. حسن بزرگ این كار این بود كه نوشته ها امكان ضبط شدن داشت. <br>در این جلسه نیز به جز یك نفر كه از ابتدا اصرار به نیامدن داشت و تمایل به سرگروهی ندارد و یك نفر دیگر هم كه كلا امروز غایب بود، بقیه سرگروه ها حضور یافتند. این در حالی است كه ایشان مجبور به حضور نیستند بلكه یك امتیاز است و آنها نیز قدردان این فرصت هستند. در ضمن برای ایشان نیز ده سوال نسبتا دشوار تستی نیز طرح و تكثیر كردم و از آنها خواستم كه حل كنند و تا دوشنبه پاسخ هایش را تحویل دهند.<br>من آنچه كه به ایشان حضورا نوشتم را به صورت فایل پی دی اف تنظیم كرده و در سامانه مدبر در اختیار همه دانش آموزان قرار دادم. همچنین امروز آخرین روز از فرصت باقیمانده برای آمادگی آزمون میان نیمسال اول است. برای همین زمان را مغتنم شمرده و از بچه‌ها خواستم كه به صورت گروهی به حل تمرینهای كتاب كار هفته 7 بپردازند.<br>از آن روی كه در نشست فوق العاده سرگروه ها متوجه اشكال عمومی در یكی از سوالات شدم، در ابتدا پیش از انجام كار گروهی، آن سوال را برای همه حل كردم. همچنین در ضمن انجام كار گروهی، پاسخ تشریحی سوالات را از ابتدای فعالیت گروهی، با استفاده از دیتا پروژكتور به نمایش گذاشتم به طوری كه در هر صفحه نمایش پاسخ دو یا چند سوال دیده میشد. تقریبا بعد از حدود ده دقیقه یكبار، صفحه بعدی كه شامل سوالات بعدی بود را به نمایش می‌گذاشتم. به این ترتیب جدا از بنده و آقای آشور (كه البته روزهای پنجشنبه به دلیل دانشگاهش با قدری تاخیر به ما ملحق می‌شود) و سرگروه‌ها، امكان مشاهده جواب صحیح سوالات بر روی پرده نمایش كلاس نیز مهیاست.<br>ناگفته نماند كه با این وصف، دو سه سوال كه پاسخ آن نیز برای ایشان دشوار بود را به صورت عمومی توضیح داده و حل كردم. دست آخر كوییزی از بخش مربوطه گرفتم. این بخش مربوط به اتحادهای مثلثاتی است. بخشی كه تازگی داشته و نیازمند تجربه و خلاقیت است. لذاست كه ابتدا ایشان قدری نگران باشند و سوالات كوییز هم برای ایشان دشوار بنماید. من از این فرصت استفاده كردم و گفتم كه بدین سان خود را برای آزمون شنبه (آزمون میان نیمسال ریاضی) آماده كنند. از این طریق آنها را خواستم ترغیب كنم كه به جد به آمادگی آزمون بپردازند. ناگفته نماند كه سطح آزمون متوسط و بالاتر است و نه تماما دشوار. حال نمی دانم كه این هشدار در ایشان اضطراب ایجاد می كند یا محرك می‌شود. آیا اضطراب احتمالی، یاس و ترس كاهنده و مخرب خودباوری ایشان خواهد شد یا مقوم و محرك تلاش ایشان خواهد گردید. این چیزی است كه در روز شنبه و بعد از نتایج آزمون نمودار خواهد شد.<br>به هر روی فكر می كنم با استفاده از این شیوه كه پیش گرفتیم، كمتر مدرسه ای در سطح پیشروی ما قرار گرفته باشد. شیوه ای كه معلم با فیلم آموزشی در درون منازل ایشان تدریس می‌كند و فرصت كلاس صرف جمع‌بندی و تكمیل نكات و بالاخره رفع اشكال و فرصت تعامل و یادگیری همیارانه می‌شود.<br>گفتنی است، همچنانكه پیش بینی می‌شد، موج مخالفت‌ها و بدگویی‌ها با خرق رویه سنتی و مرسوم ظهور یابد. البته من فراوانی آنها را به طور كلی نمی‌دانم. اما مطالبی كه به گوشم رسیده است جالب توجه است. نكته تاسف بار این است كه بسیاری از این مطالب،‌ از سوی كسانی مطرح شده است كه ظاهری وجیه و با اخلاق داشته و مورد توجه و علاقه من بوده اند و آنها نیز ظاهرا اظهار ارادت می‌كرده‌اند!<br>البته امروز با یكی دو نفر از آنها به طور خصوصی سخن گفتم و سعی كردم كه ذهن آن‌ها را روشن كرده و تشكیك‌ها و شبهات آنها را به نوعی پاسخ گویم. ضمن آنكه اخلاقا توصیه كردم كه با غیبت و بدگویی و تخریب معلم خود، معصیت نخرند. خوشبختانه مدیر دانای مدرسه مانند كوه پشت این امر ایستاده است و پشتیبانی خواهد كرد. برای خود آقامعلم كه علم الیقین است. لذا اگر هم تماما معترض باشند، مانند دو سال گذشته، مدرسه مقاومت و حمایت خواهد كرد و اعتراض‌ها راه به جایی نخواهد برد.<br>اعتراض‌ها برخی ریشه در دشواری ترك عادات بعضا ناصواب دارد. عاداتی كه میراث رویكرد سنتی ماست. برخی نیز ریشه در تنبلی و توجیه كم كاری معترضان دارد كه حس نگاه كردن فیلم را ندارند. برخی هم تصور می‌كنند كه معلم باید در كلاس تدریس كنند و غیر از آن را بر نمی‌تابند. حال آنكه باید سوال كرد كه هدف معلم تدریس است یا یادگیری دانش‌آموز؟ اگر دانش‌آموزی بخواهد یاد بگیرد، این رویه به تایید پژوهشها و تایید تجارب پیشین، بهتر آن را به ارمغان خواهد آورد و با گشایش زمان كلاس، فرصت تعامل دانش‌آموزان و حل تمرینهای متعدد و متنوع و به تبع آن تعمیق و تسلط و تثبیت مطالب نزد بچه‌ها بیشتر خواهد شد. جالب است كه برخی شبهه شرعی وارد كرده اند! به این دلیل كه چون آنها شهریه پرداخت كرده اند پس چرا باید فیلم معلمشان از طریق آپارات در دسترس سایر دانش آموزان خارج از مدرسه قرار گیرد. این شبهه به نظر نمی‌رسد كه برخاسته از ذهن دانش‌آموز باشد. به نظر می‌رسد اینها صحبت‌هایی است كه از بزرگترهایشان شنیده باشند. غافل از اینكه مگر از آنها چیزی كاسته شده یا كم گذاشته شده كه دغدغه شهریه خود را دارند؟ مگر جزوه‌ای كه معلمی برای یك كلاس می‌نویسد، مختار نیست كه آن را در اختیار دیگران قرار دهد؟ یا فكر می‌كنم یكی از دانش‌آموزان از من سوالی پرسیده باشد و به دلیل حضور ذهن نداشتن و مشغله ذهنی&nbsp; و تمركز نداشتن، پاسخ آن را به بعد موكول كرده باشم و وی حمل بر ناتوانی و نابلدی معلم كرده است و آن را بهانه و پیراهن عثمان كرده است. و قس علی هذا. آیا بچه ها اساسا مشروعیت و صلاحیت ارزیابی رویه كار معلم را دارند؟ آنهم معلمی كه خود در مرزهای دانش تعلیم و تربیت پیش از اجرای رویكردش، دانش مربوطه را احصا كرده، تجارب قابل توجهی را پی گرفته و پژوهش مدار و همراه با مشورت‌ها و ذیل پایش صاحب‌نظران حیطه آموزش و به ویژه آموزش ریاضی (جنابان دكتر داودی و ربیعی) كارش را دنبال می‌كند. در میان والدین دانش‌آموزان، یكی از مادران خود استاد دانشگاه و دانش‌آموخته رشته برنامه ریزی درسی است و آشنا با این رویكرد. وی موید این رویه است.<br>با این وجود در كل دانش‌آموزان بسیار خوبی داریم. اگر آنها تنبلی را كنار گذاشته و با اطمینان و اعتماد كامل هماهنگ و همراه معلم خود باشند، به نظر می‌رسد رشد چشمگیری را رقم خواهند زد. به هر روی در انتظار آزمون دو روز آینده ایشان و آزمون گزینه دو سه هفته آینده شان خواهیم بود تا در همین نقطه نتیجه كار را بهتر مشاهده كنیم.<br>
+
+
+</font><BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز هفدهم - /post/702"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/702&t=كلاس ریاضی آقامعلم - روز هفدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/702&title=كلاس ریاضی آقامعلم - روز هفدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/702&title=كلاس ریاضی آقامعلم - روز هفدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/701">كلاس ریاضی آقامعلم - روز شانزدهم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/701#commentlist"><script>setCommentCnt(701)</script></a></b></font></div>
+<div class=div58><font class=text7>سه شنبه 18 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4><font size="2">امروز دانش‌آموزان فیلم روابط بین نسبتهای مثلثاتی را علی القاعده دیده اند و به كلاس آمده اند. حسبت تجربه‌ای كه داشتم ابتدا به صورت تصادفی با استفاده از شماره‌های لیست دانش‌آموزان، از آنها می خواستم كه نكاتی كه از فیلم و درس جدید یاد گرفته اند را بیان كنند. من هم در ادامه نكات آنها، مطالب تكمیلی بیان می‌كردم. به عنوان مثال موضوع اتحاد مزدوج به میان آمد. من همین موضوع را به شكلی دیگر بیان كردم تا عمق درك آنها از الگوی اتحاد مزدوج و كاربرد آن را دریابم. در آنجا دیدم كه آنها نیز رویه ای یاد گرفتند. مثلا وقتی جای دو جمله از یكی از پرانتزها را عوض كردم، آنها چون فكر می كردند كه اولی به توان دو است، به اشتباه می‌افتادند. همچنین تعمیم آن مبنی بر آنكه سه جمله در سه جمله نیز می‌تواند با عدم تغییر جملات و تغییر علامت برخی همچنان اتحاد مزدوج قلمداد شود و حاصلش برابر مربع تغییر علامت نیافته منهای مربع تغییر علامت یافته خواهد شد.<br>همچنین از آن روی كه در برخی از سوالات كاربرگ و كتاب كار به اتحاد چاق و لاغر نیازمند بودند آن را نیز توضیح دادم و اتحاد فرعی جمع مربع دو جمله را نیز یادآور شدم. بعد از آن دانش‌آموزان به صورت گروهی به رفع اشكال كاربرگ خود پرداختند. آنها دیگر فرصت رفع اشكال كتاب درسی را نیافتند و از این روی به دلیل محدودیت زمان قبل از آزمون، پاسخ تشریحی آنها را در سامانه مدبر برایشان ارسال كردم. در ضمن در فیلم اشكالی سهوی نیز مرتكب شده بودم كه بچه ها متذكر شدند. به هر روی آنچه كه مشاهده كردم این بود كه اولا بسیاری از بچه ها توانایی بیان برخی از دانسته هایشان را ندارند. به ویژه ترجمان فارسی و كلامس برخی عبارات یا روابط ریاضی را. دوم اینكه بسیاری از دانسته های ایشان سطحی است از جمله اتحاد مزدوج. سوم اینكه برخی فرهوم‌‌ها (فرایند+مفهوم) را در اظهارات ایشان مشاهده كردم. مثلا وقتی می گفتم جذر یا ریشه دوم 16 چند می شود، برخی در پی عددی بودند كه توان دوی آن 16 می شود (فرایند) برخی هم از مفهوم رادیكال مستقیم به 4 می رسیدند.<br>امروز همچنین از یكی از دانش‌آموزان خواستم كه گزارشی از این جلسه برایم یادداشت كند كه در ادامه، یادداشت وی را تقدیم می كنم.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15701153-2241-l.jpg" alt="" width="594" vspace="0" border="1" align="bottom" hspace="0" height="835"><br><br><img src="http://static.asset.aparat.com/lp/15701155-8367-l.jpg" alt="" width="594" vspace="0" border="1" align="bottom" hspace="0" height="728"><br></div>
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز شانزدهم - /post/701"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/701&t=كلاس ریاضی آقامعلم - روز شانزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/701&title=كلاس ریاضی آقامعلم - روز شانزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/701&title=كلاس ریاضی آقامعلم - روز شانزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/700">كلاس ریاضی آقامعلم - روز پانزدهم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/700#commentlist"><script>setCommentCnt(700)</script></a></b></font></div>
+<div class=div58><font class=text7>شنبه 15 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4>
+<font size="2">كلاس امروز ریاضی همراه با تجربه ای متفاوت بود. بچه ها قبلا نكات مربوط به درس دنباله حسابی و هندسی را در دفاتر خود گردآوری كرده بودند ولی فرصت ارائه و بررسی آنها ایجاد نشده بود. این بار می خواستیم تجربه ای دیگر را جدا از نصب آنها بر روی تابلوها به منصه ظهور درآوریم كه همراه با هیجان نیز باشد. از این روی ابتدا به هر یك از گروه‌های هشت گانه گفتم كه هر گروه یك نكته را بگوید و من آنها را روی تخته كلاس می‌نوشتم. هدفم این بود كه بچه ها با اشتراك گذاشتن نكاتشان، نكات همدیگر را تكمیل كنند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15681191-3740-l.jpg" alt="" width="623" vspace="0" border="1" align="bottom" hspace="0" height="468"><br><br></div><font size="2">از سری دوم اعلام نكته‌ها، با استفاده از توپ تخم‌مرغی‌هایی كه بر روی آنها شماره‌های یك تا هشت درج شده بود و در جامی بلورین بود، قرعه‌كشی می‌كردیم و از گروه‌های مربوطه نكته تقاضا می‌كردیم. قرارما بر این بود كه گروه یا گروه‌هایی كه نكاتشان به انتها می‌رسد از گردونه مسابقه كنار رفته و گروه یا گروه‌هایی كه باقی می‌مانند برنده شده و مثبت دریافت كنند.<br><br></font><div align="center"><font size="2"><img src="http://static.asset.aparat.com/lp/15681146-6524-l.jpg" alt="" width="622" vspace="0" border="1" align="bottom" hspace="0" height="467"></font><br><font size="2"></font></div><font size="2"><br>در كلاس اول نكات در دو تخته كلاس به انتها رسید و كل آن در زنگ نخست تمام شد. اما در كلاس دوم كه معمولا اخبار را از كلاس اول دریافت می‌كنند این كار در دو زنگ انجام شد و نكات زیادتری بیان شد.<br><br></font><div align="center"><font size="2"><img src="http://static.asset.aparat.com/lp/15681199-6998-l.jpg" alt="" width="620" vspace="0" border="1" align="bottom" hspace="0" height="465"><img src="http://static.asset.aparat.com/lp/15681203-4202-l.jpg" alt="" width="620" vspace="0" border="1" align="bottom" hspace="0" height="466"><img src="http://static.asset.aparat.com/lp/15681205-6739-l.jpg" alt="" width="620" vspace="0" border="1" align="bottom" hspace="0" height="465"><img src="http://static.asset.aparat.com/lp/15681204-2824-l.jpg" alt="" width="620" vspace="0" border="1" align="bottom" hspace="0" height="465"></font><br><font size="2"></font></div><font size="2"><br>بعد از آن در زنگ دوم،‌ هنگامی كه در كلاس دهم الف فرصت یافتیم از بچه‌ها خواستیم كه به صورت گروهی به رفع اشكال تمرین‌های مثلثات اقدام كنند. قرار گذاشتیم كه كوییز مربوطه را فردا در انتهای كار گروهی فوق برنامه فردای بچه ها داشته باشیم. این كار در كلاس دهم ب صورت نگرفت. در آنجا كار به اطاله انجامید. علتش این بود كه آنها دسترسی به كتاب كار خود كه حاوی نكاتی بود پیدا كردند و بررسی های صورت گرفته توسط همكارم به اتمام رسیده بود. همین امر شاید باعث شد كه فرصت رفع اشكال كلاس دهم الف بیشتر شود و نتایج كوییز مربوطه به گونه ای رقم بخورد كه سه گروه برتر از آن كلاس و سه گروه آخر از كلاس دوم مشاهده شد.<br><br></font><div align="center"><font size="2"><img src="http://static.asset.aparat.com/lp/15681182-3817-l.jpg" alt="" width="620" vspace="0" border="1" align="bottom" hspace="0" height="466"><br><br></font><div align="right"><font size="2">هیجان خاصی در كلاس ایجاد شد. به ویژه كه بعد از سفر اصفهان ایشان و خستگی مربوطه بود. ولی كنترل و مدیریت آن در كلاس دهم ب، دشوار شد و چه بسا كار به گونه‌ای پیش رفت كه زمان هم از دست رفت. شاید لازم بود كه اجازه باز كردن كتاب كار داده نشود و فقط از دفتر خود و آنچه كه قبلا یادداشت كرده بودند بیان می‌شد كه مانند دهم الف كار به اطاله كشیده نمی‌شد.<br>عكس‌هایی كه همكارم جناب آشور از تخته می‌گرفت، ایشان را امیدوار می‌كرد كه با استفاده از آنها جزوات خود را فارغ از هیاهو و هیجان كلاس یادداشت كنند. از سوی دیگر لازم است كه در اولین جلسه دوباره خلاصه نویسی ایشان بازبینی شود تا مطمئن شویم خلاصه برداری ها و نكات به كمال برای همه در جزوه توسط خودشان درج شده باشد.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15681170-2783-l.jpg" alt="" width="621" vspace="0" border="1" align="bottom" hspace="0" height="466"><br><img src="http://static.asset.aparat.com/lp/15681173-5641-l.jpg" alt="" width="620" vspace="0" border="1" align="bottom" hspace="0" height="466"><br></div><font size="2"><br>در كلاس دهم الف، هنگامی كه بچه ها مشغول كار گروهی بودند،‌ برای اینكه وقت و تمركزشان را نگیرم، ترسیم برنامه هفته جاری كلاس ریاضی را برایشان بر روی تخته كلاس درج كردم. لازم به ذكر است كه تصاویر مزبور نیز در سامانه مدبر نیز به صورت پیام برایشان ارسال شد.<br>ان‌شاءالله برای جلسه بعد، در زنگ اول، ابتدا خلاصه مطالب فیلمی كه باید ببینند را خواهم پرسید و سپس از آنها خواهم خواست كه در ادامه زنگ اول رفع اشكال كاربرگ و در صورتی كه فرصت داشتند كتاب درسی را بكنند. در زنگ دوم از آنها خواهم خواست كه هر كدام جداگانه ولی با مشورت گروه، به نكته برداری فصل دوم و دروس مثلثات اقدام نمایند تا برای آزمون میان نیم‌سال هفته آینده نیز دوره ای صورت گیرد.<br>گفتنی است كه در بدو روز، تكالیف را جمع كرده و توسط همكارم نمره تكلیف می‌دهیم. جدی گرفتن تكلیف، سهم شایانی در اثربخشی كار گروهی دارد.<br>در آخر باید خاطرنشان كنم كه فردا بعد از برگزاری كوییز، برگه‌ای را به ایشان خواهیم داد كه در مورد كیفیت كار گروهی از آنها سوالاتی را خواهیم پرسید تا چنانچه لازم باشد، بعد از آزمون‌های میان نیمسال، تغییراتی را در گروه‌بندی‌ها اعمال كنیم.<br>فیلم‌های زیر كه با گوشی همراه همكارم در كلاس گرفته شده بخشی از رخداد خلاصه گویی بچه‌ها را در فرایند امروز نشان می‌دهد.<br><br></font><div align="center"><img src="http://www.aparat.com/v/ytDj3" alt="" vspace="0" border="0" align="bottom" hspace="0">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/ytDj3]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/ytDj3/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br><br>
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/EU6wm]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/EU6wm/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br><br><div align="right"><font size="2">همزمان با انجام كار گروهی،‌ گاه فرصتی دست می‌دهد كه معلم به صورت انفرادی مشكلات برخی از دانش‌آموزان را برطرف كند. مشابه فرصتی كه در زیر نمایان است.</font><br></div><br>
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/3f8ZV]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/3f8ZV/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br></div></div></div><font size="2"></font>
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز پانزدهم - /post/700"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/700&t=كلاس ریاضی آقامعلم - روز پانزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/700&title=كلاس ریاضی آقامعلم - روز پانزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/700&title=كلاس ریاضی آقامعلم - روز پانزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/698">بهترین خلاصه نویسی دانش آموزی </a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/698#commentlist"><script>setCommentCnt(698)</script></a></b></font></div>
+<div class=div58><font class=text7>دوشنبه 10 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4><font size="2">چندی پیش که از بچه ها به طور گروهی خلاصه نویسی سه درس اول فصل یک را مطالبه کردم، بچه ها بر اساس شاخص های جامعیت و آراستگی، شانزده خلاصه نوشته شده به تعداد گروه های دانش آموزی دو کلاس پایه دهم دبیرستان صلحا، خلاصه برتر را معرفی کردند که در زیر آمده است.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15657169-8084-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br><img src="http://static.asset.aparat.com/lp/15657166-8755-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><br><img src="http://static.asset.aparat.com/lp/15657167-2360-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><br><div align="right"><font size="2">به منظور اعتباریابی و همچنین اعتباربخشی به ارزشیابی دانش آموزان، از برخی متخصصان حاضر در مجموعه از جمله دکتر داودی هم تقاضا کردیم که او نیز ارزشیابی کند. جالب است که رتبه اول دانش آموزی با رتبه نخست وی تطابق داشت. بعد از آن برای مدتی گزارشات حاضر به همراه خلاصه نویسی برتر را در تابلوی اعلانات دانش آموزان و در منظر دید ایشان قرار دادم.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15658/15657224-d2c70a2da9d48acf85800a225e79614e-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br></div></div><br></div>
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=بهترین خلاصه نویسی دانش آموزی  - /post/698"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/698&t=بهترین خلاصه نویسی دانش آموزی "><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/698&title=بهترین خلاصه نویسی دانش آموزی "><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/698&title=بهترین خلاصه نویسی دانش آموزی "><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/697">نشست آموزش مشاركتی و یادگیری همیارانه - جلسه دوم و سوم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/697#commentlist"><script>setCommentCnt(697)</script></a></b></font></div>
+<div class=div58><font class=text7>دوشنبه 10 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4>
+
+<div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15657/15656541-b1b587a17af439046ee7d3b4c89881f0-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br><br>
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/sIFU2]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/sIFU2/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br><br><img src="http://static.asset.aparat.com/lp/15656543-6601-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br><br><img src="http://static.asset.aparat.com/lp/15656544-8024-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br><br><img src="http://static.asset.aparat.com/lp/15656545-9379-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br><br>
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/lnPpR]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/lnPpR/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br></div>
+
+
+
+
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/13.html" class=text4>معاونت آموزشی</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=نشست آموزش مشاركتی و یادگیری همیارانه - جلسه دوم و سوم - /post/697"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/697&t=نشست آموزش مشاركتی و یادگیری همیارانه - جلسه دوم و سوم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/697&title=نشست آموزش مشاركتی و یادگیری همیارانه - جلسه دوم و سوم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/697&title=نشست آموزش مشاركتی و یادگیری همیارانه - جلسه دوم و سوم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/699">كلاس ریاضی آقامعلم - روز چهاردهم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/699#commentlist"><script>setCommentCnt(699)</script></a></b></font></div>
+<div class=div58><font class=text7>شنبه 8 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4><font size="2">امروز صبح شنبه آغاز هفته است. بچه‌ها طبق قرار باید فیلم دایره مثلثاتی را مشاهده كرده و تمرین های كاربرگ و فعالیت‌ها و كار در كلاس كتاب درسی را حل كرده باشند. مهمترین نكته كلاس معكوس هم تحقق این امر است. اگر فرصت داشتم و برگه‌‌ای متناسب با محتوای فیلم آماده می‌كردم كه در آن جاهای خالی داشته و بچه‌ها آن را بر اساس فیلم پر می كردند و با خود به كلاس می‌آوردند خیلی خوب می‌شد. در این برگه می‌توانستیم سوالات یا نكته‌هایی كه در فیلم توضیح داده می‌شد یا محلی برای خلاصه‌نویسی از نكات مربوطه درج كنیم. امسال تاكنون موفق به انجام آن نشدم و تهیه فیلم‌ها به اندازه كافی در كنار مسئولیت معاونت آموزشی و تدوین رساله و مدیریت گروه تلگرامی آموزش پژوهی صلحا و به روز نگه داشتن وبلاگ حاضر و مسئولیت خانواده و رسیدگی به فرزندان و ... وقتم را پر كرده است. با این وصف ناامید نیستم و امیدوارم در همین سال نیز گشایش و فرصتی چنین دست دهد.<br>برای جبران این امر و با توجه به اینكه برخی از بچه‌ها در روز گذشته (جمعه) در فضای مجازی تقاضای تكرار مطالب را داشتند، ترجیح دادم این كار را با پرسش و پاسخ از بچه‌ها انجام دهم تا هم مطالب دوره شده باشد و هم آنهایی كه وقت كافی برای انجام این كار نگذاشتند، توبیخ شوند و این كار را تخصیص منفی در لیست انجام دادم. منفی كه دو مثبت ایشان را زایل می‌كند. مثبت‌هایی كه هركدام نیم نمره به جمع نمرات مربوطه از شاخص‌های سه‌گانه آزمون، تكلیف و فعالیت كلاسی اضافه می‌كرد و در نمره مستمرشان تاثیر می‌گذاشت.<br>به هر روی وجود استرس تا حد مناسب، برای تحقق این هدف آموزشی و اجرای این فرایند لازم به نظر می‌رسد. چنانچه امسال هم توفیق یارم است، وجود TA مانند آقای آشور فرصت بررسی تكالیف را به شایستگی پیش رویم قرار میداد. اگر دقت بیشتری داشتم از این فرصت برای افزایش سهم نمره تكلیف استفاده می‌كردم. اكنون كه حدود 40 روز از سال گذشته است حدود 16 نمره از دانش‌آموزان در سیستم درج كرده ام كه به هر یك از شاخص‌های سه گانه فوق مربوط می‌شود.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15665/15664171-68ce6d641097d5c8e78bfe804520ecbe-l.jpg" alt="" width="624" vspace="0" border="2" align="bottom" hspace="0" height="618"><br></div><font size="2"><br>در این روز عكس‌های مربوط به فعالیت‌های جلسه قبل بچه‌ها را همراه با نتایج گروه‌ها و فاصله تخمین آنها با مقدار واقعی و اعطای مثبت به گروه‌های برتر در تابلوی كریدور مدرسه نصب كردم. به این ترتیب تجدید خاطره برای بچه‌های دوره قبل شد و فضای تكاپو برای سایر همكاران القا گردید.<br>ما آزمون‌هایی كه از بچه‌‌ها می‌گیریم، دانش‌آموزانی كه نمره آنها زیر 80% میانگین پایه شوند، ملزم به آزمون مجدد هستند و چنانچه در آزمون مجدد نمره‌شان به آن مقدار حداقل مقبول (80%) رسید و بالاتر شد، همان مقدار حداقل مقبول را در لیست نمراتشان جایگزین می‌كنیم و چنانچه در آزمون مجدد باز هم نتیجه نگرفتند، تمرینهای مناسب برای یادگیری بحث مورد نظر را به آنها داده و از حل آنها را از ایشان مطالبه خواهیم كرد. البته چنانچه مقدور باشد از دانش‌آموزان برتر برای كمك به یادگیری ایشان نیز یاری خواهیم جست.<br>نكته آخر اینكه قصد دارم تا قبل از نیمسال از هریك از گروه‌های هشت گانه هر كلاس بخواهم كه هر كدام یكی از موضوعات هشت گانه كتاب را كه تاكنون خوانده ایم و خود تقسیم بندی خواهم كرد انتخاب كرده و یك فیلم كوتاه یا ارائه‌ای زنده در مدت 5 دقیقه (300ثانیه) بسازند و در یك زنگ، این 40 دقیقه را به جشنواره تولید محتواهای آموزشی كه ایشان ساخته اند اختصاص دهیم و باز توسط خود بچه‌ها ارزیابی صورت گیرد. با این كار آنها به اوج تسلط نسبت به محتوای تولید شده خودشان خواهند رسید. همچنین فرصتی برای بروز استعدادها و كار تیمی ایجاد خواهد شد. و بالاخره از آن پس محتواهای آموزشی دریافتی را با یك ارزشگذاری و قدرشناسی بیشتری استفاده خواهند كرد.<br>فعلا كه دانش‌آموزانمان از فردا تا آخر هفته به اصفهان خواهند رفت و من به خاطر اینكه آموزشم را با فیلم تولید شده دنبال می‌كنم، كمتر نگران عقب ماندن بچه‌ها از بودجه تدریس پیش بینی شده هستم. كما اینكه همكارم در مدرسه ای دیگری به من گفت كه هنوز به فصل دو كتاب نرسیده اند در حالی كه جلسه بعد بچه‌ها فیلم آخرین درس فصل دو را دریافت خواهند كرد.<br></font>
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز چهاردهم - /post/699"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/699&t=كلاس ریاضی آقامعلم - روز چهاردهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/699&title=كلاس ریاضی آقامعلم - روز چهاردهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/699&title=كلاس ریاضی آقامعلم - روز چهاردهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/696">كلاس ریاضی آقامعلم - روز سیزدهم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/696#commentlist"><script>setCommentCnt(696)</script></a></b></font></div>
+<div class=div58><font class=text7>پنجشنبه 6 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4>
+
+
+<div align="right"><font size="2">در این روز قصد انجام دو كار را داشتم كه قبلا به بچه‌ها هم تا حد مورد نیازش را اعلام كرده بودم. اول انجام كوییز از مبحث نسبت‌های مثلثاتی. منتها پیش از انجام آن، نخست قسمت‌هایی از فیلمی كه حدود ده ساعتی وقت برای ساختش صرف كرده بودم و صبح همین روز نیز آماده شد را پخش كردم. علت آن تبیین اهمیت مبحث مربوطه و نمایش قسمت‌های پایانی آن كه مربوط به جئوجبرا بود. با این كار فكر كردم حساسیت و تحریك مناسبی برای مشاهده آن ایجاد شود. مضاف بر اینكه از بچه‌هایی كه قصد مشاهده آن را از سامانه مدبر نداشتند، فلش دریافت كرده و فیلم را منتقل نمودم.</font><br></div><font size="2"><br></font><div align="center">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/bjHVJ]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/bjHVJ/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				</div><font size="2"><br>بعد از آن، فرصتی را در اختیار گروه‌ها قرار دادم تا آخرین اشكالات خود را رفع كرده و آماده‌تر برای انجام كوییز حضور یابند. در ده دقیقه پایانی كلاس نیز كوییز را برگزار كردم و چون زنگ بعدی هم مربوط به كلاس خودم بود و قصد خروج از كلاس و حضور در حیاط مدرسه را داشتیم، اشكالی ندیدم كه فرصت زنگ تفریح را برای كسانی كه آزمون خود را به انتها نرسانده بودند قرار دهم. در زنگ دوم یك كار عملی با استفاده از مفاهیم مثلثات و كاربرد آن در شرایط طبیعی زندگی داشتیم. این كار به این صورت انجام شد كه از بچه‌ها خواستم به حیاط مدرسه رفته و ارتفاع ساختمان مدرسه را با استفاده از نقاله‌ای كه خود به صورت زاویه سنج ساخته بودند، همراه با ماشین حساب و با استفاده از تانژانت زاویه دیدشان تخمین بزنند.<br>قرار بود این كار به صورت گروهی انجام شود و بهترین تخمین‌ها مثبت دریافت كنند. در پایان هم سرگروه‌ها گزارش فعالیت و نتیجه كارشان را در برگه‌های از پیش‌آماده شده درج كرده و تحویل دهند. همچنانكه این كار را در دوسال گذشته نیز تجربه كرده بودیم، بسیار مفرح و موثر بود.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646324-56c56448a5ca9c36022b0e262b47f84a-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><font size="2"><br>ابتدا آنها در كلاس درس نسبت به فعالیتی كه باید انجام دهند توجیه شدند. البته فرایند اجرا را تبیین نكردیم و خواستیم كه خود با دانسته‌هایشان تا كنون بدان پی ببرند. همچنانكه چنین شد و به شایستگی و به سرعت نسبت به آن آگاه شدند. <br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646400-15751bb8c6350e39bac7b5428c475da9-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br></div><font size="2"><br>آنها در قسمت‌های مختلف حیاط مدرسه حضور یافتند و با زاویه‌سنج‌هایی كه خود ساخته بودند سعی كردند زاویه دید پشت بام ساختمان مدرسه را محاسبه نمایند. سپس با متری كه در اختیارشان داده شده بود، فاصله پای خود تا پای دیوار را اندازه گرفته و در تانژانت زاویه دیدشان ضرب كردند. در آخر نیز عدد به دست آمده را با ارتفاع چشمان تا زمین جمع نمودند.<br>اما در این میان صحنه‌ها و تجربه‌های جالبی شكل گرفت.<br><br></font><div align="center"><font size="2"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646332-210249a64fcbba4fa26c8242d0081eb3-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"></font><br><font size="2"></font></div><font size="2"><br>مثلا در ابتدا بچه‌ها در كنار همدیگر این كار را می‌كردند و تراكم حضورشان تمركزشان را كم‌ می‌كرد. بعد متوجه شدند كه دلیلی برای انجام آن نیست. شاید علتش این بود كه متری كه در اختیارشان بود را اولین گروه تا آن نقطه اندازه گرفته بود و فكر میكردند همه باید از آن نقطه اقدام نمایند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15646333-3037-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><font size="2"><br>نكته جالب زاویه‌سنج‌هایی بود كه البته بچه‌ها ساخت آن را از دوره اول دبیرستان توسط معلمشان آقای طاهری آموخته بودند. ولی اینكه این وسیله تا چه میزان می‌توانست رافع مسأله شان باشد را نمی‌دانم تاكنون تجربه كرده بودند یا خیر.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15646335-6259-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"></div><font size="2"><br>بچه‌ها یك قطعه نی را روی نقاله خود سوار كرده و از مركز نقاله نخی را با وزنه‌ای كوچك آویزان كرده بودند. به این ترتیب با مشاهده از داخل نی می‌توانستند زاویه دید را تعیین كنند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15646339-5527-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"></div><font size="2"><br>برخی از بچه‌ها در ابتدا فكر می‌كردند كه برای یافتن زاویه دید باید به صورت خوابیده و از كف حیاط این كار را انجام دهند. البته به مرور متوجه شدند كه لزومی به انجام این كار نیست.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15646342-9741-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><font size="2"><br>برخی از آنها بعد از اینكه متوجه شدند كه می‌توان ایستاد و ارتفاع را از چشم خود تخمین زد و در انتها ارتفاع چشم خود را اضافه كنند، كنار دیوار با انگشت جایگاه چشم تخمین‌گر را مشخص كرده بودند و در انتظار متر بودند كه آن را محاسبه نمایند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15646346-3181-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><img src="http://static.asset.aparat.com/lp/15646349-9480-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><font size="2"><br>آنها از متری كه مهندسان ساختمان استفاده می‌كنند برای یافتن فاصله تا پای ارتفاع بهره‌ بردند. من این متر را هر ساله از همكار و برادر ارجمندم آقای مهندس توسل قرض می‌گیرم و در اختیار دانش‌آموزان قرار می‌دهم. <br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15646401-7212-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br></div><font size="2"><br>طریقه خواندن آن را نیز به آنها یاد داده بودم گرچه پیچیدگی خاصی هم نداشت.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646357-4695b20175bfc62aa236d7e1ad29532f-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><font size="2"><br>البته تعداد اندكی هم با تفویض كار به سایر اعضای گروه یا بعد از اتمام مراحل اصلی كار، فرصت را مغتنم شمرده و به انجام تكالیف زنگ بعد خود می‌پرداختند یا با فوتبال دستی داخل حیاط مدرسه بازی می‌كردند.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646361-eb810c74dde2e9e7e4e7da20f5729457-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><font size="2"><br>برخی از بچه‌ها نظر خاصی را اعلام می‌كردند. مثلا می‌گفتند آنقدر برویم عقب تا به زاویه متعارفی مثل 30 درجه برسیم كه مثلا سینوسش مقدار رند و مشخص یك‌دوم است برسیم. البته آنها خود متوجه شدند كه در این كار نیازمند تانژانت هستند نه سینوس و همچنین در انتهای دیوار مقابل حداقل زاویه دید 60 درجه است نه 30 درجه.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646370-48e28b58694a2f517b767a74e2717271-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><br><font size="2"></font></div><font size="2">آنها پس از جمع‌آوری داده‌های مورد نیازشان به محاسبه و تخمین ارتفاع پرداختند. در آنجا شاید برای نخستین بار از ماشین حساب مهندسی بهره می‌بردند. البته می‌شد كه استفاده از ماشین حساب مهندسی را اجازه نداد و از آنها خواست كه با استفاده از تعاریف مربوطه و ترسیم مثلث قائم الزاویه مربوطه، تانژانت زاویه به دست آمده شان را محاسبه كنند. ولی چون تجربه این كار را در كلاس و كوییز داشته اند و هدف دیگری را دنبال می‌كردیم،‌ بنابراین محدودیتی در این خصوص ایجاد نكردیم.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646373-cf30fed1b24df9e38f48f341be1f6be2-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><font size="2"><br>نكته جالب تخمین‌هایی اولیه‌ای بود كه بچه‌ها نسبت به ارتفاع ساختمان داشتند. از 6 متر تا 80 متر به گوش ما رسید! البته برخی را نمی‌دانم كه به واقع می‌گفتند یا به شوخی.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646378-717363d62deb0bc40b92ab39d8365022-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><br><font size="2"></font></div><font size="2">پس از ارائه گزارش‌ها و تخمین‌های اولیه، هنگامی كه در پرسش‌های هدایت‌گر آقامعلم، بچه‌ها دریافتند كه چنین تخمینی از مكان‌های دیگر حیاط مدرسه نباید تفاوت كند، برخی از گروه‌ها از یكی دو مكان دیگر به طور مشابه اقدام كردند و دست آخر میانگین یافته‌هایشان را اعلام نمودند.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646398-28373c4c8056d81069976ef360e6eb3a-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><br><div align="right"><font size="2">برخی از گروه‌ها، به دلیل اطمینان از یافته‌های خویش یا عدم اعتماد به محاسبات خود، نتایج گروه‌های دیگر را جویا می‌شدند.</font><br></div></div><font size="2"><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15646372-4222-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><br></div><font size="2">در این میان هم از برخی دانش‌آموزان علاقمند و باتجربه‌تر در حیطه عكاسی و فیلم‌برداری خواستم كه فعالیت‌های بچه‌ها را به صورت تصویری مستند كنند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15646406-7935-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><img src="http://static.asset.aparat.com/lp/15646407-1754-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><font size="2"><br>پس از انجام كار و قبل از اتمام زنگ، دانش‌آموزان را فراخواندم و ضمن دریافت گزارش‌ها و مقادیر تخمینی گروه‌ها، سوال امتیازی را در ادامه این فعالیت مطرح كردم تا در جلسه آینده پاسخ آن را یافته و ارائه كنند.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646412-522f1bce49315fb24329bdc18b9a0871-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br></div><font size="2"><br>سوال از این قرار بود كه آنها چگونه بدون دسترسی به پای عمود برج مجاور مدرسه و از صرفا از داخل حیاط مدرسه، می‌توانند ارتفاع آن را با همین ابزارهای موجودشان تخمین بزنند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15646413-8092-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><font size="2"><br></font><div align="center"><font size="2">بعد از آن با گروه فیلم‌برداری و عكاسی و نماینده‌ای از بچه‌ها سوار بر آسانسور مدرسه شدیم و به سمت بام مدرسه رفتیم. </font><br></div><font size="2"><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646419-bec0539864cd7fe7f6ba8510db4ccc67-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><font size="2"><br><br>از آنجان ارتفاع دقیق اندازه گرفته شده را به دست آوردیم و به بچه‌ها اعلام كردیم. در كلاس نخست با اختلاف حدود سی سانتی‌متر و در كلاس دوم با اختلاف ده سانتی‌متر گروه‌های برتر به مقدار ارتفاع مورد نظر نائل شدند.</font><br><br><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646421-e5a3f0ae4e0aa3597ff136f8f25b4ace-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><font size="2"></font></div><br><div align="center"><font size="2">از آن ارتفاع هم عكسی سلفی گرفته شد!</font><br></div><font size="2"><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646429-21a37beb268b952fd58113230da0faea-l.jpg" alt="" vspace="0" border="1" align="bottom" hspace="0"><br><br></div><div align="center"><font size="2">و عكسی جمعی از این تجربه و خاطره به یادماندنی.</font><br><br><div align="right"><font color="#660000"><font size="2"><b>در زیر فیلم فعالیت فوق است که حاوی 50 نکته زیرنویس بوده و به کلیه همکاران گرامی تقدیم می کنم.<br><br></b></font></font><div align="center">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/gpl8P]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/gpl8P/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br></div></div></div><font size="2"></font>
+
+
+
+
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز سیزدهم - /post/696"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/696&t=كلاس ریاضی آقامعلم - روز سیزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/696&title=كلاس ریاضی آقامعلم - روز سیزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/696&title=كلاس ریاضی آقامعلم - روز سیزدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/695">كلاس ریاضی آقامعلم - روز دوازدهم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/695#commentlist"><script>setCommentCnt(695)</script></a></b></font></div>
+<div class=div58><font class=text7>سه شنبه 4 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4>
+<font size="2">آمیختن برخی از حكایات و موضوعات فرهنگی در ارتباط با مفاهیم ریاضی، امتزاج و پیوند شاخه‌های مختلف دانش به ویژه ریاضی را برای دانش‌آموزان بیشتر نمایان می‌كند. به ویژه كه این امر در بافتی از دانش‌آموزان صورت پذیرد كه پذیرای این محتواها نیز باشند. اینها همگی كمك شایانی می‌كند كه خشكی و انتزاعی بودن ریاضی، شیرین و شهودی شود. در این هفته كه وارد فصل دو كتاب شدیم و با موضوع مثلثات و نسبتهای آن آشنا شدیم مجالی دست داد تا از واحد زاویه به عنوان درجه حكایتی از حضرت امیر علیه السلام را نقل كنم كه به عدد 360 مربوط می‌شد و مواردی دیگر كه در زیر آمده.<br></font><br><font size="2"><strong><span style="color:Blue;">عدد کامل</span></strong><br>شخصى یهودی
+ به حضور امام على (ع ) آمد&nbsp;&nbsp;و گمان میکرد کرد که امام علی پیش خودش فکر 
+میکنه که خیلی باهوش است و من ازش سوالی را می پرسم که او قادر به جواب 
+دادنش نباشه تا این شانس پیدا کنم که او را بین اعراب خجالت زده کنم<br>او 
+از امام علی پرسید که عددی را به من بگو که اگر ما ان عدد را به هر عددی از
+ 1 تا 10 تقسیم کنیم عددی که بدست می اید همیشه عددی کامل باشد نه عددی 
+کسری<br>امام على (ع ) بى درنگ به او فرمود:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;«اضرب ایّام اسبوعك فى ایّام سنتك »<br><br>(روزهاى هفته تان را بر روزهاى یک سالتان خودت ضرب كن )<br><br>شخص یهودی از این جواب متحیر شد ولی چون مشرک بود هنوز به امام علی ایمان نداشت<br>او جواب امام علی را که به او داده بود محاسبه کرد<br><br>تعداد روزهای یک سال(سال یهودی) = 360<br>تعداد روزها یک هفته = 7<br> <br>2520 = 7*360<br>حال<br>2520=2520/1<br>1260=2520/2<br>840=2520/3<br>630=2520/4<br>504=2520/5<br>420=2520/6<br>360=2520/7<br>315=2520/8<br>280=2520/9<br>252=2520/10<br><br>توضیح بیشتر:<br>شاید این سوال برای شما هم مطرح شود که یک سال مگر 360روز است؟<br>باید
+ گفت چنانکه تاریخ روایت می کند منجمان در آن روزگار بر این باور بودند که 
+هر ماه مشتمل بر 30 روزاست بنابر این ایام سال نزد ایشان360روز بوده است که
+ سپس 5روز بدان می افزودند؛ از طرفی سائل فردی یهودی است و یهودیان نیز 
+معتقد به سال شمسی بوده اند. و این از بصیرت و هوشمندی بالای حضرت حکایت 
+دارد که به فرد یهودی می فرماید روزهای هفته ات را بر روزهای سال خویش( و 
+نه سال قمری اهل حجاز و عربستان) ضرب کن.<br><br><span style="color:Blue;">_________________________________________</span><br><strong><span style="color:Blue;">تقسیم 17 شتر</span></strong><br>شخصی در حال مرگ بود و قبل از مرگش او وصیت کرد: من 17 شتر و 3 فرزند دارم<br>شتران
+ مرا طوری تقسیم کنید که بزرگترین فرزندم&nbsp;&nbsp;نصف انها را و فرزند دومم یک سوم
+ انها را و فرزند کوچکم یک نهم&nbsp;&nbsp;مجموع شتران را به ارث ببرند<br><br>وقتی 
+که بستگانش بعد از مرگ او این وصیت نامه را مطالعه کردند&nbsp;&nbsp;متحیر شدند و به 
+یکدیگر گفتند ما چطور می توانیم این 17 شتر را به این ترتیب تقسیم کنیم؟<br>و بعد از فکر کردن زیاد&nbsp;&nbsp;به این نتیجه رسیدند که تنها یک مرد در عربستان می تواند به انها کمک کند<br>بنابراین انها به نزد امام علی رفتند تا مشکل خود را مطرح کنند<br>حضرت
+ فرمود: رضایت میدهید که من شترم را با شتران شما اضافه کنم آنگاه تقسیم 
+بنمایم. گفتند: چگونه رضایت نمی دهیم. پس شتر خویش را به شتران اضافه نمود و
+ به فرزند بزرگ که سهمش نصف شتران بود، نه شتر داد. به فرزند دوم که سهمش 
+ثلث شتران بود، شش شتر داد و به فرزند سوم که سهم او یک نهم بود، دو شتر 
+داد&nbsp;&nbsp;و در اخر یک شتر باقی ماند که همان شتر&nbsp;&nbsp;حضرت بود.<br><br><span style="color:Blue;">_________________________________________</span><br><strong><span style="color:Blue;">تقسیم نان</span></strong><br>دو مسافر برای صرف غذا در بین راهی استراحت میکردند<br>یکی از انها 5&nbsp;&nbsp;نان داشت و دیگری 3&nbsp;&nbsp;نان<br> مسافر سومی از راه رسید و از دو مسافر دیگر تقاضای&nbsp;&nbsp;نمود که او را در غذای خودشان شریک کنند<br>مسافر سومی نان های مسافر اولی و دومی را به سه قسمت تقسیم نمود و هر کدام از مسافرها به اندازه یکسان از نانها خوردند<br>بعد از صرف غذا مسافر سومی به دو مسافر اولی و دومی 8 درهم داد و رفت<br>مسافر اولی که 5 قرص نان داشت&nbsp;&nbsp;به مسافر دومی گفت که سهم من 5 درهم می شود و سهم تو 3 درهم این یه تقسیم عادلانه است<br>مسافر دومی این تقسیم بندی را رد کرد و اصرار کرد که 8 درهم به طور مساوی بینشان تقسیم شود<br>این نزاع به نزد امام علی برای داوری برده شد<br>امام علی از مسافر دومی درخواست کرد که 3 درهم را بپذیرد و به او گفت رفیق تو بسیار منصف تر از عمل کرده&nbsp;&nbsp;است<br>مسافر دومی این را رد کرد و گفت که او فقط 4 درهم قبول میکند<br>در
+ این زمان امام علی به مسافر دومی پاسخ داد که سهم تو فقط 1 درهم می شود 
+چون که شماها بین خود 8 نان داشته اید و هر نان به 3 قسمت تقسیم شده است 
+بنابراین شماها<br>24 قسمت مساوی نان داشته اید<br>3 نانی که تو داشتی به 9 قسمت تقسیم شده و تو 8 قسمت ان را خورده ای و 1 قسمت از نانها به مسافر سومی داده ای<br>ولی رفیق تو&nbsp;&nbsp;5 نان را داشته و نانهایش به 3 قسمت تقسیم شده و به 15 قسمت تبدیل شده<br>او (مسافر اولی) 8 قسمت از نانها را خورده و 7 قسمت ان را به مهمان(مسافر سومی)داده<br>به این ترتیب مهمان از نانهای تو 1 قسمت را&nbsp;&nbsp;سهیم شده و 7 قسمت از نانهای رفیق تو<br>بنابراین تو باید 1 درهم را بگیری و رفیق تو 7 درهم را دریافت کند.<br><br>بعد از آن هم یك طنز ریاضی با بچه‌ها داشتم كه به صورت زیر در پای تخته نوشتم و از آن به عنوان علت خودكشی برخی معلمان ریاضی یاد كردم<img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"><br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646292-4ad1cfae3cb8be34852c02067918f4cd-l.jpg" alt="" width="470" vspace="0" border="0" align="bottom" hspace="0" height="404"><br><img src="http://www.lenzor.com/public/public/user_data/photo/15647/15646299-3ea1179a5f1d49de60929c143ed95920-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br><br><div align="right"><font size="2">در ادامه فرمولها و مقادیر نسبت‌های مثلثاتی كمان‌های خاص را به صورت مسابقه از بچه‌ها میپرسیدم و از برخی از آنها می‌خواستم كه بعد از پاسخ دهی نفر بعد و سوال بعد را خود انتخاب كنند. به این ترتیب به صورت بازی و مسابقه مطالب به خوبی برای بچه‌ها مرور شد. در این فاصله همكار خوبم آقای آشور هم به بازدید از تكالیف بچه‌ها كه به تمرینهای كتاب كار هفته 5 اختصاص داشت پرداخت.</font><br><font size="2">در ادامه كلاس درس به انجام كار گروهی پرداختیم و در آن بچه‌ها به رفع اشكال تكالیف مربوطه پرداختند. البته برخی سوالات كه اشكال عمومی بچه‌ها بود نیز توسط آقامعلم به طور عمومی حل شد. با توجه به اینكه كوییز قبلی تصحیح شده بود و نمره آن ثبت گردیده بود، برگه‌های مربوطه را در كلاس اول حین كار گروهی توزیع كردم. این كار اشكالاتی را به همراه آورد. اول این بود كه برخی كه نمره خوبی نگرفته بودند روحیه شان خراب بشود و ادامه كار گروهی را با تمركز،‌ نشاط و انگیزه بالا انجام ندهند. دوم اینكه به دلیل اعتراضات و چانه‌زنی‌های عمومی برخی دانش‌آموزان عملا كار گروهی تحت الشعاع قرار بگیرد. از این روی در كلاس دوم این كار را در اواخر زنگ انجام دادیم.<br><br></font><div align="center">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/Tz8Vb]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/Tz8Vb/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br><font size="2"></font></div><font size="2"><br>در پایان هم از سرگروه‌ها برگه گزارش عملكرد و ارزیابی مشاركت و همراهی سرگروه‌هایشان را كه در فرمت واحدی از پیش تكثیر شده بود و در اختیارشان قرار داده بودم را دریافت كردم. نمرات حاصله در نمره مستمر فعالیت كلاسی دانش‌آموزان درج خواهد شد. در ضمن برخی از بچه‌ها نیز مایل بودند كه به سرگروهشان نیز نمره بدهند كه این كار نیز باید به خوبی انجام شود. برخی از سرگروه‌های متعهد نیز به كیفیت تكلیف دانش‌آموزان در این خصوص نیز توجه كرده بودند. به عنوان مثال او بهتر متوجه شده بود كه دانش‌آموزی به عنوان تكلیف فقط سیاهه‌ای تحویل داده بود و خود به وی معترف بود و او نیز گزارش كرده بود. در اینجا توجیه و هماهنگی با سرگروه‌ها بسیار مهم است.<br></font></div></div>
+
+<BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز دوازدهم - /post/695"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/695&t=كلاس ریاضی آقامعلم - روز دوازدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/695&title=كلاس ریاضی آقامعلم - روز دوازدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/695&title=كلاس ریاضی آقامعلم - روز دوازدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div><div class=div54>
+<div class=div15>
+<div class=div015></div>
+<div class=div18><font class=text6><a href="http://niroo.mihanblog.com/post/694">كلاس ریاضی آقامعلم - روز یازدهم</a></font></div>
+<div class=div27><font class=text8><b><a href="http://niroo.mihanblog.com/post/694#commentlist"><script>setCommentCnt(694)</script></a></b></font></div>
+<div class=div58><font class=text7>شنبه 1 آبان 1395 :: نویسنده : <a href="../../author/207465.html">محمد نیرو</a></font></div>
+</div>
+<div class=div21>
+<div class=div55></div>
+<div class=div56><font class=text4><font size="2">معمولا زنگ اول روزهای شنبه همراه با رخوت و كسالت است. از این روی بهتر دیدم كه ابتدا به صورت پرسش و پاسخ و با صدایی حاوی انرژی، نكاتی كه بچه‌ها از دیدن فیلم نسبت‌های مثلثاتی دریافت كرده بودند را بر روی تخته بنویسم تا جمع بندی و دوره سریعی صورت گرفته باشد. ضمن اینكه جدول نسبتهای مثلثاتی كمان‌های خاص را با استفاده از الگویی برای یادسپاری بر روی تخته نوشته و مقدمات یك بازی را فراهم كردم. به این صورت كه از یك نفر سوالی می كردم و بعد می گفتم از فردی دیگر او سوال كند. از آنها خواستم كه برای جلسه آینده این جدول را مانند جدول ضرب حفظ كنند. در جلسه بعد این كار را به صورت بازی با هیجان و زمینه‌ساز دوره و تثبیت این نسبت‌ها خواهم پرسید.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15621788-8675-l.jpg" alt="" width="620" vspace="0" border="0" align="bottom" hspace="0" height="355"><br><br><img src="http://static.asset.aparat.com/lp/15621781-7457-l.jpg" alt="" width="621" vspace="0" border="0" align="bottom" hspace="0" height="338"><br><br><div align="right"><font size="2">پس از آن یك سوال چالشی كه در جلسه قبل دیدم بچه ها هنگام حل مسائل كتاب كار تقریبا به طور عمده اشكال دارند برای آنها حل كرده و توضیح دادم. این كار برای دو سوال دیگر نیز تكرار شد و از آن نكاتی استخراج گردید.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15621783-6703-l.jpg" alt="" width="621" vspace="0" border="0" align="bottom" hspace="0" height="262"><br><br><div align="right"><font size="2">همزمان همكار خوبم آقای آشور كه دستیاری توانا، دقیق و قابل اتكا است، دفاتر بچه‌ها و كاربرگ‌های بچه‌ها را جمع كرد و به آنها نمره داد. در كلاس آقامعلم از بیست نمره مستمر، 3 نمره سهم تكلیف، 4 نمره سهم مشاركت و 13 نمره سهم آزمون‌هاست. بررسی وی به طور دقیق، مجال كوتاهی در مورد تكلیف را كم می‌كند. به ویژه كه همراه با مچ گیری معلم راهنمای مقتدر پایه و ضبط كتاب‌های برخی دانش‌آموزانی كه قبل از كلاس درس مشغول رونویسی از هم بودند شد.<br>قصه تكلیف غصه عمومی كلاس‌هاست! به واقع یادگیری و بهره‌دهی كار گروهی به جد وابسته به انجام پیشین تكالیف است. از این روی سخت‌گیری در این خصوص لازم و لطف در حق بچه‌هاست. سال‌های گذشته هم برخی از دانش‌آموزان به جدیت در این خصوص تاكید داشتند. به عنوان مثال اظهار یكی از دانش‌آموزان:"در بحث تكلیف به نظر دانش‌آموز [مسئول] نباید تكلیف را ببیند. به نظر معلّم خیلی سفت و سخت و برخورد سنگین خیلی تأثیرش بیشتره. حتی بندازه بیرون. یه مقدار ترس و اضطراب لازمه.<br>امسال برای نخستین بار من به خاطر یاری همیارم در كلاس درس به این توفیق دست یافته‌ام. چه خوب می‌شود سایر معلمان دروس اختصاصی هم مانند من كه شانس حضور آقای آشور را در كلاس درسم دارم، چنین یاورانی در كلاس داشته باشند.<br>در زنگ دوم نیز كتاب‌های كار دانش‌آموزان جمع‌آوری شد و به این ترتیب بچه‌ها سه نمره در حیطه تكلیف دریافت كردند كه بلافاصله در سیستم اطلاع‌رسانی تحت وب مدبر برای بچه‌ها و خانواده‌هایشان ارسال شد.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15621840-3429-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br></div><font size="2"><br></font></div><div align="right"><font size="2">در زنگ دوم هم بچه‌ها به صورت گروهی آخرین فرصت را برای رفع اشكال مطالب هفته 4 (دنباله حسابی و هندسی) پیدا كردند و خود را برای كوییز مربوطه آماده نمودند. از آنجا كه ممكن است با همه این شرایط برخی سوالات برای دانش‌آموزان بدون جواب مانده باشد یا مطمئن از صحت پاسخ‌گویی خود نباشند، پاسخ تشریحی آنها را پشت شیشه اتاق معلم راهنما برای مشاهده ایشان قرار داده‌ایم. همچنین در كلاس‌های درس، اخیرا پاسخ تشریحی سوالاتی كه به طور گروهی رفع اشكال می‌شود را نیز از طریق دیتا در معرض نمایش آنها قرار می‌دهیم تا بدین وسیله اطمینان از صحت پاسخشان پیدا كنند. به مرور صفحات نمایش داده شده پاسخ تشریحی جلو می‌رود.<br><br></font><div align="center"><img src="http://www.lenzor.com/public/public/user_data/photo/15623/15622009-c0d85dcba5e2dd264e22498f95e82008-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br><br>
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/xaJeR]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/xaJeR/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br><br><div align="right"><font size="2">در پایان كلاس‌های امروز هم مطابق اعلام قبلی از مباحث دنباله حسابی و هندسی كوییز به عمل آمد و پاسخ تشریحی آن نیز بعد از آن در منظر دید ایشان قرار گرفت. بچه‌ها موظفند بعد از دریافت نمره خود،جواب و نكته سوالاتی كه غلط حل كرده اند یا موفق به حل آن نشدند را در برگه‌ای ضمیمه برگه آزمون خود درج نموده و در كلیربوك خود نگهداری نمایند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15621800-9305-l.jpg" alt="" width="620" vspace="0" border="0" align="bottom" hspace="0" height="465"><br><br></div></div><br></div></div><div align="right"><font size="2">نكته آخر ولی مهم اینكه یكی از تكالیف این جلسه بچه‌ها این بود كه با استفاده از نرم‌افزار جئوجبرا مطابق آنچه كه من نسبت‌های مثلثاتی زاویه 50 درجه را حساب كرده بودم، برای زاویه 55 درجه به دست بیاورند. در زیر بخش‌هایی از آنچه كه آقامعلم در فیلم برای بچه ها ارائه كرده بود نمایان است.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15621772-3784-l.jpg" alt="" width="619" vspace="0" border="0" align="bottom" hspace="0" height="396"><br><br><img src="http://static.asset.aparat.com/lp/15616815-9378-l.jpg" alt="" width="621" vspace="0" border="0" align="bottom" hspace="0" height="490"><br><br><div align="right"><font size="2">حسن بزرگ جئوجبرا این است كه بازنمایی های جبری و هندسی را همزمان به صورت دینامیك و ساده و زیبا نمایش می‌دهد. پژوهشها موید آن است كه هر چه بازنمایی های مختلفی از یك مفهوم برای دانش‌آموزان ارائه شود،‌ آنها درك بهتری از مفاهیم را خواهند داشت. به ویژه كه الان خود آنها باید مفاهیم نسبت‌های مثلثاتی را در فضای آن تجربه كنند. در زبر برخی از كارهای بچه‌هاست كه برای آقامعلم از طریق تلگرام به عنوان تكلیف ارائه كرده بودند. برخی هم از طریق سامانه مدبر ارسال كردند و برخی هم به صورت فایل در كلاس درس تحویل دادند. البته تعدادی هم در نصب برنامه و كار با آن مشكل داشتند. خوبی این نرم افزار این است كه هم نسخه كامپیوتر دارد هم نسخه تبلت و موبایل.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15621775-3064-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"></div><font size="2"><br>گروهی توانسته بودند تصویر كارشان را ارسال كنند و برخی كه نتوانسته بودند از صفحه نمایشگر رایانه عكس گرفته و ارسال نمودند.<br><br></font><div align="center"><img src="http://static.asset.aparat.com/lp/15621777-3703-l.jpg" alt="" vspace="0" border="0" align="bottom" hspace="0"><br></div></div></div></div></div></div></div><BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+<br><br><font color="#c70900">نوع مطلب :</font>
+<a href="../../category/17.html" class=text4>كلاس ریاضی سال تحصیلی 96-95</a>،&nbsp;<br><font color="#c70900">برچسب ها :</font>
+<br><font color="#c70900">لینک های مرتبط :</font>
+<br><br></font></div>
+<div class=div016>
+<a href="http://twitter.com/home?status=كلاس ریاضی آقامعلم - روز یازدهم - /post/694"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://facebook.com/sharer.php?u=/post/694&t=كلاس ریاضی آقامعلم - روز یازدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.balatarin.com/links/submit?phase=2&url=/post/694&title=كلاس ریاضی آقامعلم - روز یازدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a><br>
+<a href="http://www.cloob.com/share/link/add?url=/post/694&title=كلاس ریاضی آقامعلم - روز یازدهم"><img src="http://mythemes.ir/t36/blank.gif" border=0 width=35 height=35></a></div>
+</div>
+<div class=div26></div>
+
+<div class=div54 style="background: url(http://mythemes.ir/t36/mytheme.ir_04.jpg);">
+<style>
+.text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+.text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+.text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+.com{ width:655px; float:left; background:#f3f3f3; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 10px; padding:0 0 10px 0;}
+.com1{ width:637px; float:left; background:#98ac26; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+.com3{ width:410px; float:left; text-align:right; direction:rtl; line-height:27px;}
+.com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+.com4{ width:617px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com5{ width:617px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+.com6{ width:627px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+.com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+</style>
+</div>
+</div>
+<div class=div29></div>
+<div class=div28><font class=text9>
+<br><br>
+</font>
+</div>
+</div>
+</div>
+
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td class=b2>
+<div class=div7>
+<a href="http://www.mytheme.ir" target="_blank">
+<img src="http://mythemes.ir/t36/blank.gif" border=0 width=204 height=35></a></div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</div>
+
+</body>
+
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'niroo.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

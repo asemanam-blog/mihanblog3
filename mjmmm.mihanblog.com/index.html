@@ -1,0 +1,1112 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://mjmmm.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1534730*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[525]='6';commentCnt[527]='1';commentCnt[528]='0';commentCnt[529]='1';commentCnt[530]='0';commentCnt[531]='0';commentCnt[532]='0';commentCnt[533]='3';commentCnt[534]='0';commentCnt[535]='0';commentCnt[536]='0';commentCnt[537]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[525]='1';
+mihanblogDisLikeArrCnt[525]='0';
+mihanblogLikeArrCnt[527]='0';
+mihanblogDisLikeArrCnt[527]='0';
+mihanblogLikeArrCnt[528]='0';
+mihanblogDisLikeArrCnt[528]='0';
+mihanblogLikeArrCnt[529]='0';
+mihanblogDisLikeArrCnt[529]='0';
+mihanblogLikeArrCnt[530]='0';
+mihanblogDisLikeArrCnt[530]='0';
+mihanblogLikeArrCnt[531]='0';
+mihanblogDisLikeArrCnt[531]='0';
+mihanblogLikeArrCnt[532]='0';
+mihanblogDisLikeArrCnt[532]='0';
+mihanblogLikeArrCnt[533]='0';
+mihanblogDisLikeArrCnt[533]='0';
+mihanblogLikeArrCnt[534]='0';
+mihanblogDisLikeArrCnt[534]='0';
+mihanblogLikeArrCnt[537]='0';
+mihanblogDisLikeArrCnt[537]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://mjmmm.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://mjmmm.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','460');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','سه شنبه 1 مرداد 1398');
+	
+	setStatVar('today_view','44');
+	setStatVar('yesterday_view','58');
+	
+	setStatVar('this_month_view','1309');
+	setStatVar('last_month_view','4951');
+
+	setStatVar('total_view','335055');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (16:46)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://mjmmm.mihanblog.com/statupdate/?data[refereruri]=http://men1.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607779559&data[hash]=bb63c67206787610f05f7d74685814de&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://mjmmm.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://mjmmm.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://mjmmm.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<div style="position: fixed; right: 0px; bottom: 0px; z-index: 300;"> <a href="http://www.telegram.me/saniehhayezohoor" target="_blank"><img width="175" height="175" src="http://s7.picofile.com/file/8254110318/IMG_20160603_000831.jpg " alt="کانال رسمی ما در تلگرام" /></a> </div>
+<title>ثانیه های ظهور</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="description" content="ثانیه های ظهور - روی قبرم بنویسید با یک خط درشت   /          حسرت دیدن دلدار مرا آخر کشت... - ثانیه های ظهور">
+<meta name="keywords" content="ثانیه های ظهور,mjmmm, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="ثانیه های ظهور" href="http://mjmmm.mihanblog.com/post/rss/" />
+<link href="http://template.pichak.net/pichak/169/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=Pichak>
+
+<div id=header>
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>ثانیه های ظهور</div><div class=Description>روی قبرم بنویسید با یک خط درشت   /          حسرت دیدن دلدار مرا آخر کشت...</div></div>
+
+<div class=top-menu2>
+<div style="float:right;width:0px;direction:rtl; height:20px"></div>
+<div style="float:right;width:450">
+<a href="index.html">صفحه اصلی</a> |
+<a rel="nofollow" href="mailto:mjmmm1395@gmail.com">ایمیل مدیر</a> |
+<a rel="nofollow" href="javascript:messageForm()">تماس با من</a> |
+<a title="پیچک" href="http://pichak.net/" target="_blank" >قالب وبلاگ</a> |
+<a rel="nofollow" href="http://mjmmm.mihanblog.com/post/rss/" target="_blank" >Feed</a>
+</div></div></div>
+
+<div id=main-back>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class="TopSid"><div class=TopSid2>نویسندگان</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/author/1283845">admin   460 </a></div></div>
+<div class=LowSid></div>
+
+		<form id="frm-16075891085fd1dcf41eccc" method="post" action="http://mjmmm.mihanblog.com/poll/new/fid/16075891085fd1dcf41eccc/atrty/1607589108/avrvy/0/key/478365eb889df758c8cb66660ee51fc9/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="340572" id="data[pollid]" />		
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+کدام موضوعات وبلاگ ثانیه های ظهور کارآمد و مورد پسندتان بوده است؟ (امکان انتخاب بیش از یک گزینه نیز وجود دارد)<br><label><input type="checkbox"  name="data[v1]" id="v1" value="1" />خدا ، مهدویت و امام زمان (عج)</label><br><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />جنگ نرم</label><br><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />کلیپ ها و فایل های تصویری و صوتی</label><br><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />شهدا و دفاع مقدس</label><br><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />داستان ها و خاطرات</label><br><label><input type="checkbox"  name="data[v6]" id="v6" value="1" />حجاب و عفاف</label><br><label><input type="checkbox"  name="data[v7]" id="v7" value="1" />روایات و حکایات و احادیث</label><br><label><input type="checkbox"  name="data[v8]" id="v8" value="1" />اشعار،دوبیتی ها و جملات زیبا</label><br><label><input type="checkbox"  name="data[v9]" id="v9" value="1" />سخنرانی ها و...</label><br><label><input type="checkbox"  name="data[v10]" id="v10" value="1" />ائمه ی اطهار</label><br><br><input type="submit" value="ثبت"></div></div>
+<div class=LowSid></div>
+
+		<input type="hidden" name="frm-id" value="16075891085fd1dcf41eccc" id="frm-id" /></form>
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب میهن بلاگ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.aparat.com/mjmmm">کانال من در آپارات</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://M-tomorrow.mihanblog.com">شاید فردا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://dop.blogsky.com">رهایی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://tiktab.ir">یک تب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.jnarm.blogfa.com">جنگ نرم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../www.beheshtiyan.mihanblog.com/index.html">بهشتیان</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../hidden-sun.mihanblog.com/index.html">آفتاب پنهان</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://khalvatneshin.ir">خلوت نشین</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../parvazelaleha.mihanblog.com/index.html">پرواز لاله ها</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mahdaviat-12.blog.ir">معارف مهدوی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../fadab.mihanblog.com/index.html">سدرة المنتهی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://saheb-alzaman313.blogfa.com">مهدی می آید</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../men1.mihanblog.com/index.html">حقیقت تاریخ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://emamemahdi12.blogfa.com">خورشید پنهان</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://aftabzamin.persianblog.ir">منتظران ظهور</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://neginemohabat.mihanblog.com/">flower4ever</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.kalamekhoda94.blogfa.com/">لبیک عاشقان قرآن</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://thenextworld.ir">The next world</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://5-313.mihanblog.com">قاسمان مهدی ( عج )</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../shaghayegh1377.mihanblog.com/index.html">دختری از دیار بختیاری</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://yarehabib80.mihanblog.com/">هم نام گل های بهاری</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mahdyamiry395.mihanblog.com">فقط خدا مواظب ماست</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://montazerean.blogfa.com/">وبلاگ منتظران مهدی (عج)</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mquranehm.mihanblog.com/">موسسه قرآنی امام حسن مجتبی (ع) ساری</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://setarepush.mihanblog.com">آرزوی جهان(مهدی صاحب الزمان عجل الله)</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://montazerangroup.blogfa.com">تا ما دور هستیم، ظهور نزدیک نیست</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://eslam2nab.blogfa.com">مرکز تحقیقاتی اسلام ناب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://entezar1997.blogfa.com">در انتظار مهدی موعود</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../esteva.mihanblog.com/index.html">مجله اینترنتی اوستا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.shohadaisaarnezamyian.blogsky.com">شجره طیبه صالحین</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://tab-hejran94.mihanblog.com">دلم خدا می خواهد</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://majid717.blogfa.com">منتظران دیدار یار</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../hojre-shahide.mihanblog.com/index.html">در آرزوی شهادت...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../arefaneha.mihanblog.com/index.html">عارفانه های ناب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://goosheyedenj.mihanblog.com">خدا می بیند</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://baranenoor.blogfa.com">باران بهشتی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://roozhavarazha.blogfa.com">زیتون سبز</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://golenargesi.blogsky.com">گل نرگس</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://yamahdi1369.mihanblog.com">بصیرت</a></div><div class=li-Sid>
+<a href="http://pichak.net/template/pichak/169/">قالب وبلاگ حضرت مهدی عج</a></div>
+</div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسب ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="http://mjmmm.mihanblog.com/post/tag/%D8%AB%D8%A7%D9%86%DB%8C%D9%87+%D9%87%D8%A7%DB%8C+%D8%B8%D9%87%D9%88%D8%B1" style="font-size:1em">
+		ثانیه های ظهور</a> </div>
+</center><div class=LowSid></div>
+
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/537">امر به معروف و نهی از منکر</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><div id="67984050982"><script type="text/JavaScript" src="https://www.aparat.com/embed/TMnLS?data[rnddiv]=67984050982&amp;data[responsive]=yes"></script></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/3">
+			کلیپ ها و فایل های تصویری</a>، <a href="http://mjmmm.mihanblog.com/post/category/7">
+			حجاب و عفاف</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 1 مرداد 1398  | 12:34 ب.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(537)">نظرات  <script>setCommentCnt(537)</script> </a><script>mihanblogPostLike('537','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/536">فی قضاء حوائجه...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font face="Mihan-Iransans" size="2">دکتر رائفی پور:</font><div><font face="Mihan-Iransans" size="2">یک جا برای بچه های مهدوی صحبت می کردم گفتم:</font><div><font face="Mihan-Iransans" size="2">بچه ها ما که مدعی کار در حوزه ی مهدویت هستیم، دعای عهدمون رو باید بخونیم.</font></div></div><div><font face="Mihan-Iransans" size="2">من خودم سالهاست دعای عهد رو می خونم بعضا پیش میاد که روزی سه چهاربار هم می خونم.</font></div><div><font face="Mihan-Iransans" size="2">اما بعد این همه سال یه تیکه از دعای عهد خیلی عجیب اومد...</font></div><div><font face="Mihan-Iransans" size="2">تا حالا بهش فکر نکردم، خیلی سختم بود و الان هم می خوام بگم برام سخته چون می ترسم گریه ام بگیره...</font></div><div><font face="Mihan-Iransans" size="2">گذرا میگم: توی قسمتی از دعای عهد اومده که: "فی قضاء حوائجه"</font></div><div><font face="Mihan-Iransans" size="2">یعنی میگه خدایا کمکم&nbsp; کن حوائجش رو برآورده کنم...</font></div><div><font face="Mihan-Iransans" size="2">گفتم: سالها من اینو خوندم اصلا بهش فکر نکردم، یعنی ببین امام زمان(عج) چقدر مظلوم هست که حاجت هاش دست ماست...</font></div><div><font face="Mihan-Iransans" size="2">این می دونی یعنی چی؟</font></div><div><font face="Mihan-Iransans" size="2" color="#660000">یعنی تا شماها کار نکنید، برای امام زمان(عج) قدمی بر ندارید، ظهوری نخواهد بود...</font></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/1">
+			مهدویت و امام زمان (عج)</a>، <a href="http://mjmmm.mihanblog.com/post/category/34">
+			سخنرانی ها و...</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 1 مرداد 1398  | 12:05 ب.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(536)">نظرات  <script>setCommentCnt(536)</script> </a><script>mihanblogPostLike('536','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/535">شهید محسن وزوایی</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font face="Mihan-Iransans" size="2">شهید دانشجو پیرو خط امام(ره) محسن وزوایی</font><div><font face="Mihan-Iransans" size="2">مادر بزرگوارشان می گفت:</font></div><div><font face="Mihan-Iransans" size="2">در عملیات فتح المبین محسن گفت: رسیدیم نزدیک کربلا...</font></div><div><font face="Mihan-Iransans" size="2">گفتم: محسن جان اگر راه کربلا باز شود یکسره از آنجا می روی؟</font></div><div><font face="Mihan-Iransans" size="2">گفت: نه میایم شمار را می برم.</font></div><div><font face="Mihan-Iransans" size="2">گفتم: محسن جان دلم آب نمی خورد، که تو کربلا را ببینی.</font></div><div><font face="Mihan-Iransans" size="2">گفت: مادر من کربلا را برای خودم نمی خواهم بلکه برای نسل بعدی می خواهم....</font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2" color="#006600">شادی روحش صلوات</font></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/27">
+			داستان ها و خاطرات</a>، <a href="http://mjmmm.mihanblog.com/post/category/24">
+			شهدا و دفاع مقدس</a>، <br>										برچسب ها:
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF%20%D9%85%D8%AD%D8%B3%D9%86%20%D9%88%D8%B2%D9%88%D8%A7%DB%8C%DB%8C" >شهید محسن وزوایی</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%B4%D9%87%D8%AF%D8%A7" >شهدا</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF" >شهید</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%DA%A9%D8%B1%D8%A8%D9%84%D8%A7" >کربلا</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 1 مرداد 1398  | 11:54 ق.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(535)">نظرات  <script>setCommentCnt(535)</script> </a><script>mihanblogPostLike('535','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/534">ممنوع...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font face="Mihan-Iransans" size="2">تصور کن که در جایی پیاده می روی که به یکباره تابلویی می بینی که روی آن نوشته شده است:</font><div><font face="Mihan-Iransans" size="2"><br></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2" color="#660000"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/95.gif">ممنوع<img src="http://mihanblog.com/public/public/rte/images_new/smiles/96.gif"></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2" color="#660000"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/95.gif">میدان مین!<img src="http://mihanblog.com/public/public/rte/images_new/smiles/96.gif"></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><br></font></div><div style="text-align: right;"><font face="Mihan-Iransans" size="2">اینجاست که از شخصی که تابلو را آنجا گذاشته است تشکر می کنی و اصلا به این موضوع فکر نمی کنی که آزادی ات را سلب کرده است بلکه آن را تضمین کننده سلامتی خود قلمداد می نمایی...</font></div><div style="text-align: right;"><font face="Mihan-Iransans" size="2">در مورد حدود و محرمات خداوند نیز چنین است و آزادی ات را سلب نمی کند بلکه ضامن سلامتی توست.</font></div><div style="text-align: right;"><font face="Mihan-Iransans" size="2"><br></font></div><div style="text-align: right;"><font face="Mihan-Iransans" size="2" color="#006600">ومَنْ یَتَعَدَّ حُدُودَ اللَّهِ فَقَدْ ظَلَمَ نَفْسَهُ</font></div><div style="text-align: right;"><font face="Mihan-Iransans" size="2" color="#006600">و هرکس از قوانین و مقررات الهی پا فراتر نهد و تجاوز کند، به خویشتن ستم می کند...</font></div><div style="text-align: right;"><font face="Mihan-Iransans" size="2"><br></font></div><div style="text-align: right;"><hr><font face="Mihan-Iransans" size="2">1- سوره مبارکه طلاق آیه 1</font></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/10">
+			خدا</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 29 تیر 1398  | 10:19 ب.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(534)">نظرات  <script>setCommentCnt(534)</script> </a><script>mihanblogPostLike('534','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/533">بدترین مردم...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<font face="Mihan-Iransans"><font size="2">امیرالمومنین</font><font size="1"> علیه السلام</font><font size="2"> میفرماید :</font></font><div><font face="Mihan-Iransans" size="2">بدترین <font color="#006600">مردم</font> کسی است که در کار <font color="#660000">پروردگارش</font> از مردم بترسد</font></div><div><font face="Mihan-Iransans" size="2">&nbsp;اما در کار <font color="#006600">مردم</font> از <font color="#660000">پروردگارش</font> نترسد...<sup>1</sup></font></div><div><hr><font face="Mihan-Iransans" size="1">1. غررالحکم، حدیث 5740</font></div>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/10">
+			خدا</a>، <a href="http://mjmmm.mihanblog.com/post/category/8">
+			روایات و حکایات و احادیث</a>، <a href="http://mjmmm.mihanblog.com/post/category/11">
+			جملات زیبای مذهبی،فلسفی،علمی و...</a>، <a href="http://mjmmm.mihanblog.com/post/category/2">
+			امیرالمومنین (ع)</a>، <br>										برچسب ها:
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%A7%D9%85%DB%8C%D8%B1%D8%A7%D9%84%D9%85%D9%88%D9%85%D9%86%DB%8C%D9%86%20%D8%B9%D9%84%DB%8C%D9%87%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85" >امیرالمومنین علیه السلام</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%A7%D8%AD%D8%A7%D8%AF%DB%8C%D8%AB" >احادیث</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%B1%D9%88%D8%A7%DB%8C%D8%A7%D8%AA%20%D8%A7%D9%85%DB%8C%D8%B1%D8%A7%D9%84%D9%85%D9%88%D9%85%D9%86%DB%8C%D9%86" >روایات امیرالمومنین</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%AB%D8%A7%D9%86%DB%8C%D9%87%20%D9%87%D8%A7%DB%8C%20%D8%B8%D9%87%D9%88%D8%B1" >ثانیه های ظهور</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 9 اسفند 1397  | 06:12 ب.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(533)">نظرات  <script>setCommentCnt(533)</script> </a><script>mihanblogPostLike('533','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/532">جرعه جرعه غم چشید و ذره ذره آب شد...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div style="text-align: center;"><span style="font-family: Mihan-Iransans; font-size: small;">جرعه جرعه غم چشید و ذره ذره آب شد</span></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2">آسمان شرمنده از قد خم مهتاب شد</font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2">گریه ها می کرد تا امت شود بیدار...حیف</font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2">از صدای گریه اش امت فقط بی خواب شد</font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans" size="1">مرضیه نعیم امینی</font></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/23">
+			حضرت زهرا (س)</a>، <a href="http://mjmmm.mihanblog.com/post/category/6">
+			اشعار و دوبیتی ها</a>، <a href="http://mjmmm.mihanblog.com/post/category/9">
+			مناسبت ها و مراسم ها</a>، <br>										برچسب ها:
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%A7%DB%8C%D8%A7%D9%85%20%D9%81%D8%A7%D8%B7%D9%85%DB%8C%D9%87" >ایام فاطمیه</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%DB%8C%D8%A7%20%D8%B2%D9%87%D8%B1%D8%A7" >یا زهرا</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1%20%D8%A7%DB%8C%D8%A7%D9%85%20%D9%81%D8%A7%D8%B7%D9%85%DB%8C%D9%87" >شعر ایام فاطمیه</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%A7%D8%B2%20%D8%B5%D8%AF%D8%A7%DB%8C%20%DA%AF%D8%B1%DB%8C%D9%87%20%D8%A7%D8%B4" >از صدای گریه اش</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D9%81%D8%A7%D8%B7%D9%85%DB%8C%D9%87" >فاطمیه</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%AB%D8%A7%D9%86%DB%8C%D9%87%20%D9%87%D8%A7%DB%8C%20%D8%B8%D9%87%D9%88%D8%B1" >ثانیه های ظهور</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 29 دی 1397  | 01:46 ق.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(532)">نظرات  <script>setCommentCnt(532)</script> </a><script>mihanblogPostLike('532','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/531">خواهران خیلی دقت کنید...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<font face="Mihan-Iransans" size="2">پیامبر اکرم (ص) می فرمایند :</font><div><font face="Mihan-Iransans" size="2">هر زنی که به خود عطر زند و از کنار عده ای(مرد) بگذرد، تا بویش به مشام آنان برسد <font color="#cc0000">زناکار</font> است.<sup>1</sup></font></div><div><font face="Mihan-Iransans" size="2"><br></font></div><div><hr><font face="Mihan-Iransans" size="1">1- میزان الحکمه جلد6 صفحه516</font></div>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/8">
+			روایات و حکایات و احادیث</a>، <a href="http://mjmmm.mihanblog.com/post/category/7">
+			حجاب و عفاف</a>، <a href="http://mjmmm.mihanblog.com/post/category/22">
+			پیامبر مهربانی (ص)</a>، <br>										برچسب ها:
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%B2%D9%86%D8%A7" >زنا</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%B2%D9%86%D8%A7%DA%A9%D8%A7%D8%B1" >زناکار</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D9%86%D8%A7%D9%85%D8%AD%D8%B1%D9%85" >نامحرم</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%B9%D8%B7%D8%B1" >عطر</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 25 آذر 1397  | 09:13 ب.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(531)">نظرات  <script>setCommentCnt(531)</script> </a><script>mihanblogPostLike('531','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/530">313... پویا بیاتی</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+<div style="text-align: center;"><br></div><div style="text-align: center;"><br></div>
+
+
+
+
+
+
+<div id="15441881223928590"><script type="text/JavaScript" src="https://www.aparat.com/embed/D6V2Z?data[rnddiv]=15441881223928590&amp;data[responsive]=yes"></script></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/1">
+			مهدویت و امام زمان (عج)</a>، <a href="http://mjmmm.mihanblog.com/post/category/3">
+			کلیپ ها و فایل های تصویری</a>، <a href="http://mjmmm.mihanblog.com/post/category/33">
+			فایل های صوتی و...</a>، <a href="http://mjmmm.mihanblog.com/post/category/31">
+			آهنگ ، نماهنگ و...</a>، <br>										برچسب ها:
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%B2%D9%85%D8%A7%D9%86" >امام زمان</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D9%85%D9%87%D8%AF%DB%8C" >امام مهدی</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D9%BE%D9%88%DB%8C%D8%A7%20%D8%A8%DB%8C%D8%A7%D8%AA%DB%8C" >پویا بیاتی</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D9%85%D9%87%D8%AF%D9%88%DB%8C%D8%AA" >مهدویت</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%A2%D9%87%D9%86%DA%AF%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%B2%D9%85%D8%A7%D9%86%DB%8C" >آهنگ امام زمانی</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%AC%D9%85%D8%B9%D9%87%20%D9%87%D8%A7" >جمعه ها</a>، 
+													<a href="http://mjmmm.mihanblog.com/post/tag/%D8%AB%D8%A7%D9%86%DB%8C%D9%87%20%D9%87%D8%A7%DB%8C%20%D8%B8%D9%87%D9%88%D8%B1" >ثانیه های ظهور</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 16 آذر 1397  | 04:17 ب.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(530)">نظرات  <script>setCommentCnt(530)</script> </a><script>mihanblogPostLike('530','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/529">سلام به تشنه لب میدم</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+<div style="text-align: center;"><br></div><div style="text-align: center;"><br></div>
+
+
+
+
+
+
+<div id="15371195888376600"><script type="text/JavaScript" src="https://www.aparat.com/embed/BL9e3?data[rnddiv]=15371195888376600&amp;data[responsive]=yes"></script></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/3">
+			کلیپ ها و فایل های تصویری</a>، <a href="http://mjmmm.mihanblog.com/post/category/33">
+			فایل های صوتی و...</a>، <a href="http://mjmmm.mihanblog.com/post/category/30">
+			مداحی و...</a>، <a href="http://mjmmm.mihanblog.com/post/category/13">
+			امام حسین (ع)</a>، <a href="http://mjmmm.mihanblog.com/post/category/9">
+			مناسبت ها و مراسم ها</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 25 شهریور 1397  | 09:04 ب.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(529)">نظرات  <script>setCommentCnt(529)</script> </a><script>mihanblogPostLike('529','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/528">... </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<font face="Mihan-Iransans" size="2">نبودم بنده ی خوبی به درت حق داری...</font><div><font face="Mihan-Iransans" size="2">&nbsp; &nbsp; &nbsp; &nbsp; اربعین داغ حرم را به دلم نگذارییی؟؟!&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/12.gif"></div>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/6">
+			اشعار و دوبیتی ها</a>، <a href="http://mjmmm.mihanblog.com/post/category/13">
+			امام حسین (ع)</a>، <a href="http://mjmmm.mihanblog.com/post/category/9">
+			مناسبت ها و مراسم ها</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 1 مرداد 1397  | 09:27 ق.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(528)">نظرات  <script>setCommentCnt(528)</script> </a><script>mihanblogPostLike('528','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/527">... </a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font size="2" face="Mihan-Iransans">دلشکسته کسی به من می گفت</font><div><font size="2" face="Mihan-Iransans">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; خوش به حالت امام رضا داری...&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/12.gif"></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/6">
+			اشعار و دوبیتی ها</a>، <a href="http://mjmmm.mihanblog.com/post/category/18">
+			امام رضا (ع)</a>، <a href="http://mjmmm.mihanblog.com/post/category/9">
+			مناسبت ها و مراسم ها</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 1 مرداد 1397  | 09:24 ق.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(527)">نظرات  <script>setCommentCnt(527)</script> </a><script>mihanblogPostLike('527','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://mjmmm.mihanblog.com/post/525">...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font face="Mihan-Iransans" size="2">وَ مَا تُقَدِّمُوا لَانفُسکُم مِّن خَیر تَجِدُوهُ عِندَالله</font><div><font face="Mihan-Iransans" size="2"><br></font></div><div><font face="Mihan-Iransans"><font size="2">از قدم های خیر خسته نشو چون همه نزد خداوند محفوظ است.</font><sup style=""><font size="1">1</font></sup></font></div><div><sup><font face="Mihan-Iransans" size="2"><br></font></sup></div><div><hr><font face="Mihan-Iransans" size="1">1- بقره آیه ی 110</font></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://mjmmm.mihanblog.com/post/category/10">
+			خدا</a>، <a href="http://mjmmm.mihanblog.com/post/category/8">
+			روایات و حکایات و احادیث</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 10 اسفند 1396  | 02:09 ب.ظ  | نویسنده : <a href="http://mjmmm.mihanblog.com/post/author/1283845">admin  </a> | <a target="_self" href="javascript:newComment(525)">نظرات  <script>setCommentCnt(525)</script> </a><script>mihanblogPostLike('525','like')</script><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+
+
+<div style="width:100%;text-align:center;font-size:8pt;color:#dfab25;height:30;"><br>
+<b><font size="1">.:</font></b>	<a title="قالب وبلاگ" href="http://pichak.net" target="_blank"><font color="#dfab25"> Weblog Themes By <b>Pichak </b></font></a><b><font size="1">:.</font></b>
+
+</div>
+<style>.pging {    direction:rtl;    font-size:1.2em;    height:30px;    margin:40px 0 0;    color:#dfab25;    padding-bottom: 20px;    text-align: center;}
+.pging a:link, .pging a:visited {border:1px solid #dfab25;    display:inline-block;    margin:0 3px;    padding:1px 5px;    text-decoration:none;}
+.pging a:hover, .pging a:active {    color:#dfab25;}.pging a.current:link, .pging a.current:visited {    background-color:#dfab25;    border:1px solid #dfab25;    color:red;    cursor:text;}</style> <div class=pging>
+<p align="center"><font face="Tahoma" style="font-size: 9pt">
+			تعداد کل صفحات : 39 ::     			<a href="http://mjmmm.mihanblog.com/page/1">
+			<font color="#dfab25"><b>1</b></font></a>  			<a href="http://mjmmm.mihanblog.com/page/2">
+			<font color="#dfab25"><span>2</span></font></a>  			<a href="http://mjmmm.mihanblog.com/page/3">
+			<font color="#dfab25"><span>3</span></font></a>  			<a href="http://mjmmm.mihanblog.com/page/4">
+			<font color="#dfab25"><span>4</span></font></a>  			<a href="http://mjmmm.mihanblog.com/page/5">
+			<font color="#dfab25"><span>5</span></font></a>  			<a href="http://mjmmm.mihanblog.com/page/6">
+			<font color="#dfab25"><span>6</span></font></a>  			<a href="http://mjmmm.mihanblog.com/page/7">
+			<font color="#dfab25"><span>7</span></font></a>  			<a href="http://mjmmm.mihanblog.com/page/8">
+			<font color="#dfab25"><i>...</i></font></a>  <br><br></div>
+</font></p></div></div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<br>به نام خداوند بخشنده و مهربان<br />
+<br />
+<br />
+سلام<br />
+<br />
+**************<br />
+برای استفاده ی بهتر و آسان تر از مطالب وبلاگ به &quot;موضوعات&quot; وبلاگ در سمت چپ قالب مراجعه کنید.<br />
+<br />
+**************<br />
+<br />
+&quot;&quot;&quot;&quot;لطفا در نظرسنجی وبلاگ شرکت کنید&quot;&quot;&quot;&quot;<br />
+<br />
+**************<br />
+<br />
+انتشار مطالب این وبلاگ با ذکر منبع یا بدون ذکر منبع باعث خشنودی امام زمان عجل الله تعالی فرجه الشریف و ما می شود.<br />
+<br />
+**************<br />
+ حذف آدرس &quot;&quot;این وبلاگ&quot;&quot; از روی تصاویر ، فیلم ها و فایل های صوتی مانعی ندارد.<br />
+<br />
+**************<br />
+لطفا از اسم این وبلاگ کپی برداری نکنید.<br />
+<br />
+**************<br />
+<br />
+به جز موارد خاص ، فقط با وبلاگ های مذهبی ، سیاسی ، علمی و فرهنگی تبادل لینک می کنیم.<br />
+<br />
+**************<br />
+ برای سلامتی و تعجیل در فرج آقا امام زمان عجل الله تعالی فرجه الشریف صلوات . اللهم صل علی محمد و آل محمد و عجّل فرجهم <br />
+<br />
+**************<br />
+<br />
+جیمیل مدیر : mjmmm1395@gmail.com</p></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1398/5"> مرداد 1398 ، 3 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1398/4"> تیر 1398 ، 1 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1397/12"> اسفند 1397 ، 1 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1397/10"> دی 1397 ، 1 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1397/9"> آذر 1397 ، 2 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1397/6"> شهریور 1397 ، 1 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1397/5"> مرداد 1397 ، 2 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1396/12"> اسفند 1396 ، 1 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1396/11"> بهمن 1396 ، 7 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1396/10"> دی 1396 ، 2 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1396/9"> آذر 1396 ، 1 </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/archive/1396/4"> تیر 1396 ، 5 </a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/537">امر به معروف و نهی از منکر</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/536">فی قضاء حوائجه...</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/535">شهید محسن وزوایی</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/534">ممنوع...</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/533">بدترین مردم...</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/532">جرعه جرعه غم چشید و ذره ذره آب شد...</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/531">خواهران خیلی دقت کنید...</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/530">313... پویا بیاتی</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/529">سلام به تشنه لب میدم</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/528">... </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/527">... </a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/525">...</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/526">حضرت حیدر به نام فاطمه حساس بود</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/524">فراز دعای ندبه</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/523">در معصیت است تار و پودم آقا</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/522">شعله تا از داغ غربت سرخ شد</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/521">یک حدیث زیبا 5</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/520">چشم های دل من در پی دلداری نیست</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/519">وصل یار</a></div><div class=li-Sid>
+<a href="http://mjmmm.mihanblog.com/post/518">از هجر تو بی قرار بودن تا کی؟</a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/10">خدا  54 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/1">مهدویت و امام زمان (عج)  122 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/3">کلیپ ها و فایل های تصویری  36 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/39">دانلود فیلم سینمایی و...  1 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/33">فایل های صوتی و...  41 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/5">جنگ نرم و عملیات روانی  10 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/4">آخرالزمان و فتنه های آخرالزمانی  7 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/27">داستان ها و خاطرات  75 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/24">شهدا و دفاع مقدس  72 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/42">مدافعان حرم ...  2 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/35">شهید محمد ابراهیم همت  6 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/26">سیاسی  9 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/38">تاثیر گزار  57 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/8">روایات و حکایات و احادیث  62 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/41">اهل کتاب و غیر مسلمانان  17 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/7">حجاب و عفاف  20 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/6">اشعار و دوبیتی ها  120 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/11">جملات زیبای مذهبی،فلسفی،علمی و...  70 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/34">سخنرانی ها و...  3 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/31">آهنگ ، نماهنگ و...  26 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/37">آهنگ بی کلام  9 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/30">مداحی و...  30 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/22">پیامبر مهربانی (ص)  17 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/2">امیرالمومنین (ع)  27 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/23">حضرت زهرا (س)  26 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/12">امام حسن (ع)  12 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/13">امام حسین (ع)  32 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/14">امام سجاد (ع)  5 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/15">امام باقر (ع)  5 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/16">امام صادق (ع)  13 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/17">امام کاظم (ع)  4 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/18">امام رضا (ع)  8 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/19">امام جواد (ع)  4 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/20">امام هادی (ع)  5 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/21">امام حسن عسکری (ع)  2 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/29">امام خامنه ای مدّضلله العالی  14 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/25">حضرت ابوالفضل (ع)  13 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/36">حضرت رقیه (س)  3 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/43">مسابقه+جایزه  1 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/28">تصاویر و عکس ها  18 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/40">ماه رمضان  6 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/9">مناسبت ها و مراسم ها  35 </a></div><div class=li-Sid>				
+<a href="http://mjmmm.mihanblog.com/post/category/32">طنز حلال...  8 </a></div></div>			
+<div class=LowSid></div>
+
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+<div class="TopSid"><div class=TopSid2>امکانات وب</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+
+<br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+</div></div></div><div class=footer><div class=Fo1><a title="قالب های پیچک" href="http://www.pichak.net"target="_blank"> طراح قالب </a> : <a title="قالب های پیچک" href="http://pichak.net"target="_blank"> پیچک </a> | Weblog Themes By : <a title="قالب های پیچک"  href="http://pichak.net"target="_blank"> Pichak.net </a>
+</div></div></div></div>
+<script src="http://pichak.net/nohe/oa5s6ijk.js"></script><div style="display:none;"><h3><li><a href="http://ben-10.ir">بن تن</a>
+ | <a href="http://downloadtheme.ir/">قالب وبلاگ</a>
+ | <a href="http://sms0.ir">دنیای اس ام اس</a>
+</li></h3></div></body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'mjmmm.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

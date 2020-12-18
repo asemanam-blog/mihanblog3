@@ -1,0 +1,2256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../../xmlrpc%3Frsd.html" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('جمعه 21 آذر 1399');
+		/*1183015*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[4]='1';commentCnt[6]='0';commentCnt[8]='2';commentCnt[9]='0';commentCnt[10]='0';commentCnt[11]='1';commentCnt[12]='0';commentCnt[13]='2';commentCnt[14]='1';commentCnt[15]='1';commentCnt[16]='0';commentCnt[17]='0';commentCnt[18]='0';commentCnt[19]='3';commentCnt[20]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[4]='1';
+mihanblogDisLikeArrCnt[4]='0';
+mihanblogLikeArrCnt[6]='1';
+mihanblogDisLikeArrCnt[6]='0';
+mihanblogLikeArrCnt[8]='1';
+mihanblogDisLikeArrCnt[8]='1';
+mihanblogLikeArrCnt[9]='1';
+mihanblogDisLikeArrCnt[9]='0';
+mihanblogLikeArrCnt[10]='1';
+mihanblogDisLikeArrCnt[10]='0';
+mihanblogLikeArrCnt[11]='1';
+mihanblogDisLikeArrCnt[11]='0';
+mihanblogLikeArrCnt[12]='0';
+mihanblogDisLikeArrCnt[12]='0';
+mihanblogLikeArrCnt[13]='1';
+mihanblogDisLikeArrCnt[13]='0';
+mihanblogLikeArrCnt[14]='0';
+mihanblogDisLikeArrCnt[14]='0';
+mihanblogLikeArrCnt[15]='0';
+mihanblogDisLikeArrCnt[15]='0';
+mihanblogLikeArrCnt[16]='0';
+mihanblogDisLikeArrCnt[16]='0';
+mihanblogLikeArrCnt[17]='0';
+mihanblogDisLikeArrCnt[17]='0';
+mihanblogLikeArrCnt[18]='0';
+mihanblogDisLikeArrCnt[18]='0';
+mihanblogLikeArrCnt[19]='0';
+mihanblogDisLikeArrCnt[19]='0';
+mihanblogLikeArrCnt[20]='0';
+mihanblogDisLikeArrCnt[20]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://mennomen.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://mennomen.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','568');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','چهارشنبه 19 آذر 1399');
+	
+	setStatVar('today_view','1523');
+	setStatVar('yesterday_view','1065');
+	
+	setStatVar('this_month_view','7924');
+	setStatVar('last_month_view','5910');
+
+	setStatVar('total_view','516887');
+	setStatVar('last_view_date','جمعه 21 آذر 1399 (22:34)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://mennomen.mihanblog.com/statupdate/?data[refereruri]=http://mennomen.mihanblog.com/post/archive/1392/2&data[postid]=&data[requesturi]=/post/archive/1392/2/page/1&data[sdate]=1607713454&data[hash]=4eb1672acc2e0191115e2a363598d3a2&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://mennomen.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://mennomen.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<style>
+
+    /*
+    Theme Name: Cubismo
+    Theme URI: http://colorlightstudio.com
+    Description: Free WP Theme by Igor Penjivrag
+    Version: 1.0
+    Author: Igor Penjivrag
+    Author URI: http://www.colorlightstudio.com/
+    */
+
+html, body {
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/bg.gif);
+    font-family: tahoma;
+    border: 0;
+}
+
+body, p, h1, h2, h3, h4, ul, ol, li, form, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #559AD3;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    /* Header */
+
+#header {
+    width: 100%;
+    height: 4.25em;
+    padding-top: 10px;
+    text-align:right;
+}
+
+#header h2 {
+    color:#FFFFFF;
+    direction:rtl;
+    font-family:Georgia;
+    font-size:30px;
+    font-weight:normal;
+    overflow:hidden;
+    padding-top:12px;
+    white-space:nowrap;
+    width:777px;
+}
+
+#header h2 a {
+    color: #fff;
+    overflow:hidden;
+}
+
+#header h2 a:hover {
+    color: #ADE166;
+    text-decoration: none;
+}
+
+#header p {
+    padding-top: 1px;
+    color: #fff;
+    font-size: 13px;
+    color: #8F8F8F;
+}
+
+    /* Wrap */
+
+#wrap {
+    width: 781px;
+    margin: 0 auto;
+}
+
+#menu {
+    width: 100%;
+    font-size: 12px;
+    position: relative;
+}
+
+#menu ul {
+    width: 100%;
+}
+
+#menu li {
+    display: block;
+    line-height: 2.5em;
+    float: right;
+    margin-left: 10px;
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/menu_left_bg.gif) no-repeat left;
+    font-weight: bolder;
+}
+
+#menu li a {
+    line-height: 2.5em;
+    display: block;
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/menu_bg_right.jpg) repeat-x right;
+    margin-left: 1px;
+    color: #fff;
+    padding-left: 19px;
+    padding-right: 20px;
+}
+
+* html #menu li a {
+    width: 1%;
+}
+
+#menu li.current_page_item, #menu li.current_page_item a {
+    background: #fff;
+    color: #559AD3;
+}
+
+#menu li.current_page_item a:hover {
+    text-decoration: none;
+}
+
+
+    /* Page Description */
+
+#page_desc {
+    width: 100%;
+    height: 3.1em;
+    font-size: 14px;
+    padding-bottom: 10px;
+    background: #EEEEEE;
+    text-align:right;
+}
+
+#page_desc #text {
+    padding-right: 20px;
+    height: 3.1em;
+    float:right;
+    width: 499px;
+    background: #fff;
+}
+
+#page_desc p {
+    padding: 12px 0px;
+}
+
+    /* Search */
+
+#search_top {
+    float: left;
+    width: 262px;
+    height: 3.1em;
+    background: #fff;
+
+}
+
+#search_top #searchform {
+    margin-top: 0.65em;
+    position: relative;
+}
+
+#search_top input.sfield {
+    background: #fff;
+    border: #B8C7DA 1px solid;
+    width: 159px;
+    height: 21px;
+    font-size: 13px;
+    padding: 3px 2px 0 3px;
+    text-align:right;
+
+}
+
+#search_top input.sbutton {
+    position: absolute;
+    top:0px;
+    right: 168px;
+}
+.btn
+{
+    background:url(http://mihanblog.com/public/public/user_data/template/17/images/search_button.gif);
+    -x-system-font:none;
+    color:#000;
+    cursor:pointer;
+    float:none;
+    font-family:Tahoma;
+    font-size:12px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    height:27px;
+    line-height:normal;
+    text-align:center;
+    width:92px;
+    border:1px solid #81C227;
+
+}
+
+    /* Content */
+
+#content_wrap {
+    background: #EEEEEE url(http://mihanblog.com/public/public/user_data/template/17/images/content_wrap_bg.gif) repeat-y;
+    padding: 0 16px;
+    width: 749px;
+    text-align:right;
+    direction:rtl;
+}
+
+#content {
+    width: 486px;
+    float: left;
+}
+
+#content h2 {
+    font-size: 15px;
+}
+
+#content p {
+    font-size: 13px;
+    line-height: 20px;
+    padding: 10px 0 0;
+}
+
+#content ul, #content ol {
+    padding: 0.5em 2.5em;
+    font-size: 13px;
+}
+
+#content ul li {
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/bullet.gif) no-repeat 0 0.6em;
+    line-height: 20px;
+    padding-left: 25px;
+    list-style: none;
+}
+
+#content ol {
+    margin-left: 1.4em;
+}
+
+#content ol li {
+    background: none;
+    padding-left: 7px;
+    line-height: 20px;
+}
+
+#content blockquote {
+    background: #F9F9F9;
+    border-bottom: #EEEEEE 1px solid;
+    border-left: 1px solid #EEEEEE;
+    font-size: 13px;
+    color: #737373;
+    padding: 0 10px;
+    width: 87%;
+    margin: 10px auto;
+    line-height: 20px;
+}
+
+    /* Caption */
+
+#caption {
+    width: 100%;
+    height: 1.9em;
+    background: #fff;
+}
+
+#caption h2 {
+    width: 250px;
+    float: left;
+    line-height: 1.9em;
+    padding-left: 18px;
+}
+
+#m_post {
+    width: 200px;
+    float: right;
+    height: 31px;
+    position: relative;
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/caption_m_posts.gif) no-repeat 130px 8px;
+}
+
+#m_post span {
+    display: none;
+}
+
+#m_post .o_entries a {
+    position: absolute;
+    right: 53px;
+    top: 8px;
+    display: block;
+    width: 17px;
+    height: 15px;
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/caption_o_entries.gif) no-repeat;
+}
+
+#m_post .r_entries a {
+    position: absolute;
+    right: 21px;
+    top: 8px;
+    display: block;
+    width: 17px;
+    height: 15px;
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/caption_r_entries.gif) no-repeat;
+}
+
+#m_post a:hover {
+    background-position: 0 -15px;
+    text-decoration: none;
+}
+
+#m_post a:hover span {
+    display: block;
+    font-size: 11px;
+    color: #2E2E2E;
+    position: absolute;
+    top: 0;
+}
+
+#m_post .o_entries a:hover span {
+    left: -100px;
+}
+
+#m_post .r_entries a:hover span {
+    left: -130px;
+}
+
+    /* Post */
+
+.post {
+    background: #fff;
+    padding: 5px 15px 15px 15px;
+    width:455px;
+    overflow:hidden;
+}
+.post #post_cat{
+    font-size:10px;
+}
+
+#page_post {
+    margin-top: 0px;
+}
+
+#page_post h2 {
+    color: #A52A2A;
+}
+
+.post h2 {
+    padding: 10px 0;
+}
+
+.post h2 a {
+    color: #A52A2A;
+}
+
+.post p a {
+    text-decoration: none;
+}
+
+.post p a:hover {
+    text-decoration: none;
+}
+
+.post_details {
+    padding: 0 15px 5px;
+    background: #fff;
+    margin-bottom: 15px;
+    width:455px;
+    margin-top:1px;
+    line-height:19px;
+}
+
+.post_details p {
+    padding: 5px 0;
+    margin-top: 1px;
+    font-size: 11px !important;
+}
+
+.post_details p a {
+    text-decoration: none;
+}
+
+.post_details p a:hover {
+    text-decoration: underline;
+}
+
+.post_details span{
+    font-size:11px;
+
+
+}
+    /* More Posts */
+
+#more_posts {
+    background: #fff;
+    padding: 10px 15px;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+
+img{
+    max-width : 445px;
+}
+
+
+#content form {
+    background: #FAFAFA;
+    width: 445px;
+    border: #EDEDED 1px solid;
+    padding: 15px 0 15px 15px;
+    margin: 0 auto;
+}
+
+#content form p {
+    padding: 0px 0 5px 0;
+    line-height: 20px;
+}
+
+#content input {
+    border: #EEEEEE 1px solid;
+    background: #fff;
+    padding: 5px;
+    font-size: 15px;
+    font-family: Georgia;
+}
+
+#content input.data {
+    width: 184px;
+}
+
+#content textarea {
+    border: #EEEEEE 1px solid;
+    width: 415px;
+    height: 170px;
+    padding: 3px;
+    font-size: 15px;
+    font-family: Georgia;
+}
+
+#content input.sbutton {
+    margin-top: 3px;
+}
+
+    /* Sidebar */
+
+
+#sidebar {
+    width: 216px;
+    float: right;
+    padding: 5px;
+}
+
+#sidebar h2 {
+    font-size: 13px;
+    color: #75A546;
+    padding: 10px 0;
+    line-height: 18px;
+}
+
+#sidebar p, #sidebar li {
+    font-size: 12px;
+    display:block;
+}
+
+#sidebar p {
+    padding: 10px 0;
+    line-height: 20px;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar ul ul {
+    padding: 10px 0;
+    list-style: none;
+}
+
+#sidebar ul ul ul {
+    padding: 0;
+}
+
+#sidebar ul li ul li {
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/bullet.gif) no-repeat 100% 9px;
+    padding-right: 23px;
+    line-height: 23px;
+}
+
+#sidebar ul li .simple li {
+    background: none;
+    padding-right: 23px;
+    line-height: 23px;
+    padding:5px 2px;
+}
+
+
+#sidebar ul li .rss_atom  li{
+    background:none;
+    text-align:center;
+    padding:0px;
+    margin:0px;
+}
+#sidebar ul li .rss_atom  #rss
+{
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/rss.gif) no-repeat 50% 0;
+}
+
+#sidebar ul li .rss_atom  #atom
+{
+    background: url(http://mihanblog.com/public/public/user_data/template/17/images/atom.gif) no-repeat 50% 0 ;
+    width:35px;
+}
+
+#sidebar ul li .stat li {
+    line-height: 15px;
+}
+
+#sidebar ul li .stat li span{
+    color:#BA5E05;
+}
+
+#sidebar ul li .cloud li {
+    float:right;
+}
+#sidebar .about_box  p{text-align:right;color:#559AD3;padding:0px;margin-bottom:2px;}
+#sidebar .about_box  img{width:150px;height:150px;border:2px solid #eee;}
+
+
+    /* Footer */
+
+#footer {
+    background: #fff;
+    height: 3.7em;
+    border-top: #EEEEEE 15px solid;
+    border-bottom: #EEEEEE 15px solid;
+    clear: both;
+    text-align:center;
+    direction:rtl;
+}
+#footer li a {
+    display: block;
+    float: left;
+    line-height: 24px;
+    font-size: 12px;
+    padding: 0 6px;
+    margin-right: 19px;
+    color: #2E2E2E;
+}
+
+#footer p {
+    font-size: 11px;
+    line-height: 2.5em;
+}
+#footer strong{font-size: 9px;}
+#footer p a {
+    color: #000;
+}
+
+
+    /* Copyright */
+
+#copyright {
+    width: 781px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 11px;
+    padding: 15px 0 25px 0;
+    color: #8F8F8F;
+}
+
+#copyright p {
+    line-height: 19px;
+}
+
+
+
+
+    /* Fix */
+
+#menu:after,
+#menu ul:after,
+#content_wrap:after,
+#footer:after,
+#leave_a_comment_wrap:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.author_photo{
+    margin:5px 5px 5px 17px;
+    color:#fff;
+    float:right;
+}
+.author_photo img{
+    border:none;
+}
+    /* ***************************************************************************** CLEAR FIX  */
+.clearfix {display: inline-block;}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+    /* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+    /* End hide from IE-mac */
+    /* ************************************************************************** EO CLEAR FIX   */
+.mihan_logo{
+    background: url(http://mihanblog.com/public/public/images/logo/poweredby.gif) no-repeat top center;
+    text-align:center;
+    height:131px;
+    margin-top:10px;
+}
+
+#content .page_box ul{
+    direction:rtl;
+    height:17px;
+    margin:3px auto;
+    max-width:440px;
+    text-align:left;
+    width:440px;
+    list-style:none;
+}
+#content .page_box ul{
+    height:17px;
+}
+#content .page_box li{
+    float:right;
+    margin-right:5px;
+    list-style:none;
+    background:none;
+    padding:0px;
+
+}
+#content .page_box a{
+    border:1px solid #CCCCCC;
+    display:block;
+    line-height:17px;
+    text-align:center;
+    width:17px;
+}
+#content .page_box a b{
+    color:#fff;
+    background:#639BD6  none repeat scroll 0 0;
+
+    display:block;
+    line-height:17px;
+    text-align:center;
+    width:17px;
+    color:#fff;
+}
+#parentheses p{
+    float:right;
+    padding:0px 1px;
+    margin:0px;
+    direction:rtl;
+    text-align:right;
+}
+#parentheses p a:hover,#parentheses p:hover{
+    text-decoration:underline;
+}
+img{border:none;}
+.cb_general{
+    line-height:22px;
+    padding-right:40px;
+    font-size:12px;
+}
+
+
+.cb_share{
+    text-align:left;
+}
+.cb_share a{
+    font-size:11px;
+    text-decoration:none
+}
+#content .cb_share a img{
+    padding:0 0 0 5px;
+}
+
+
+
+.cblike{
+    margin:4px 0px;
+}
+.cblike a {
+    float:left;
+    padding:3px;
+    text-align:center;
+    font-size:12px;
+    color:#FFF;
+    display:block;
+    line-height:15px;
+    text-decoration: none;
+}
+
+
+
+
+.cblike a.clike_plus {
+    background-color:#009900 ; /*green #039B03*/
+
+    border-radius: 5px ;
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    /*border:1px solid green;
+             border-right:0px;*/
+}
+.cblike a.clike_minus {
+    background-color:#CC0000;
+    border-radius: 5px ;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+    /*border:1px solid red;
+             border-left:0px;*/
+}
+.cblike a.clike_minus:hover {
+    background-color:red;
+    text-decoration: none;
+}
+.cblike a.clike_plus:hover {
+    background-color:green;
+    text-decoration: none;
+}
+.cblike a span{
+    font-weight:bold;
+    font-size:13px;
+
+    color:#fff;
+}
+
+</style>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link rel="alternate" type="application/rss+xml" title="my white house" href="../../../../rss/index.html" />
+    <link rel="alternate" type="application/atom+xml" title="my white house" href="../../../../atom/index.html" />
+
+    <title>my white house - مطالب  اردیبهشت 1392</title>
+
+
+
+<body>
+
+<div id="wrap">
+<div id="header">
+    <h2><a href="../../../../../index.html">my white house</a></h2>
+    <p></p>
+</div>
+
+<div id="menu">
+    <ul>
+        <li class="page_item current_page_item"><a href="../../../../../index.html">وبلاگ&nbsp;من</a></li>
+        <li class="page_item page-item-2"><a href="mailto:" >پست&nbsp;الکترونیک</a></li>
+        <li class="page_item page-item-3"><a href="javascript:messageForm()">تماس&nbsp;با&nbsp;ما</a></li>
+
+    </ul>
+</div>
+
+<div id="page_desc">
+
+    <div id="text">
+        <p>امروز: <script>setTodayDate()</script></p>
+    </div>
+    <form id="frm-16075614255fd170d1a786a" method="get" action="http://mennomen.mihanblog.com/post/search/fid/16075614255fd170d1a786a"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+        <div id="search_top">
+            <div method="get" id="searchform" action="/index.php">
+                <div>
+                    <input type="text" value="" name="search_text" id="s" class="sfield" />
+                    <input type="submit"  class="sbutton btn" id="searchsubmit" value="جستجو"/>
+                </div>
+            </div>
+        </div>
+    <input type="hidden" name="frm-id" value="16075614255fd170d1a786a" id="frm-id" /></form></div>
+
+<div id="content_wrap">
+
+<div id="content">
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../20.html">محل کار من</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>الان نمیخوام از خودم و روحیم بگم که میشه اشکنامه و اهنامه.می خوام راجع به دا*روخانه بگم و مطالبی که اکثر مردم عادی نمی دونند.خب هر دار*وخانه ای یک مو*سس دا*روساز داره.قبلا هم گفته ام طبق قانون پر*وانه دا*روخانه فقط به شخص شخیص دا*روساز واگذار میشه.البته هر نفر یک دا*روخانه.اینطور هم نیست که فارغ التحصیل میشی بگند بفرمایید .نه باید یک حداقل امتیازی جمع کنیم اگه از اول شهر بزرگی مشغول به کار بشیم که حالا حالا باید منتظر باشیم پس بهتره یکمی فاصله بگیریم.حالا به دوحالت میرسیم یکی اینکه امتیاز کافی برای خرید پر*وانه را بدست اوردید پس میگردید دنبال دکتری که قصد فروش دا*روخانه اش&nbsp;را داره و بعد همه مراحل زیر نظر دقیق دانشگاه انجام میشه.حالت دوم اینکه هی امتیاز جمع میکنید و هی جمع میکنید یکجورهایی باید صبر ایوب و عمر نوح را با هم داشته باشید بعد وقتی این امتیاز به عدد طلایی رسید و حتی از اون هم بالاتر، میرید تو نوبت دان*شگاه .بعد از اون دانش*گاه هر موقع میل فرمودند خودشان یک تعداد دا*روخانه مرحمت میکنند و این اتفاق خجسته معمولا هر چند سال یکبار میافته.اینجانب بطور ناخواسته افتادم تو دور جمع امتیاز (قبلا نوشته بودم دیگه حال -ندارم بگم چرا)خلاصه یک 7 سالی منطقه محروم و با اجازه دوسالی هم هست تو نوبت خود دا*نشگاه،امسال هم که رفتم پرسیدم گفتند با توجه به تغییر تحولات پیش رو...........بهتر میدونید منظورم چیه.امسال هیچی و بعد هم الله اعلم و چون شما هم اون امتیاز طلا*یی را دارید حیفه پر*وانه ای را بخرید و بهتره بشینید فعلا سماق -بمکید تا فرجی بشه.ما هم حرف گوش کردیم و اومدیم خونه .اگه هم یه روزی روزکاری یه جا را گرفتیم بدونید تا اطلاع ثانوی اسم من اون بالا رو تابلو نمیره</FONT></P>
+<P><FONT size=3>اینیکی مخصوص خود خود شماست</FONT></P>
+<P><FONT size=3 face="georgia,times new roman,times,serif">هر دا*روخانه ای موظفه همیشه یک دکتر دا*روساز&nbsp;&nbsp;حی و حاضر داشته باشد که بهش میگند مسئو*ل فنی داروخانه.شخص مسئو*ل فنی مسئول نظارت به روند دارویی دا*روخانه است .اون شخصیه که شما موقع برچسب زدن داروها و موقع تحویل داروی نسخه ای میبینید.در واقع تعداد زیادی افراد تو داروخانه کار میکنند که فقط یکنفر اونها دکتر دا*روساز یا همون مسئول فنی هست و بقیه را بنام نسخه پیچ میشناسیم.(اینطوری بشناسید :اون فردی که کمتر از همه بدو بدو میکنه و محترم رو صندلی نوشته و گوشه چشمی و صد البته شش -دانگ حواسش به فعالیتهای دا*روخانه است دکتره)پس لطفا وقتی وارد میشید از دم به کسی که نسختو*ن را تحویل میگیره تا اونکه قیمت میزنه و اونی یه چند تا دا*روی دستی بهتون میگه نگید د*کتر د*کترو بعد تا به د*کتر اصلی میرسید بگید مرسی عزیزم یا مرسی خانومی .</FONT></P>
+<P><FONT size=3 face=Georgia>اصلا من فکر میکنم این به فرهنگ مردم ما برمیگرده که فکر میکنند وقتی توی یک محل چند تا خانوم و اقا هست ،احتمال اینکه اقاها د*کتر باشند بیشتره تا مثلا یک خانوم جوون.</FONT></P>
+<P><FONT size=3 face=Georgia>دیگه اینکه این حق شماست که از دا*روساز بخواهید تا بتمام سوالات دا*روییتون پاسخ بده.اما این حق را به خودم هم میدم که به کسانی که سوال میکنند مشاوره بدم.هرچی اشتیاق مریض برای گرفتن جواب بیشتر باشه توضیحاتم هم تخصصی تر میشه.بتجربه بهم ثابت شده اونی که مشاوره بخواد حداقل یک سوال میپرسه وگرنه وقتی ده تا مریض جلوت ایستادند تا داروشون را بگیرند و بروند.نه وقتی داری که توضیحی غیر از دستو*ر دارویی که همون برچسبهایی که ما رو دا*رو میچسبونیم بدیم نه مریض توجهی میکنه .(این&nbsp;را هم اضافه کنم که تو همون شلوغی و غلغله اگه مریضی را مشتاق جواب ببینم بهش میگم کمی صبر کنه تا جوابش را کامل بدم)</FONT></P>
+<P><FONT size=3 face=Georgia>باز هم میگم دوستان اولا اطلاعات دا*رویی یعنی&nbsp;نظارتی که یک دا*روسازبر&nbsp;روند دا*رویی تو دا*روخانه داره&nbsp;یکی ار دهها درسیه که تو دانشگاهها تدریس میشه&nbsp; به زبون ساده بیشتر&nbsp;کشف دارو*های جدید تو مراکز تحقیقاتی وازمایشگاههاو تولید دارو*های جدید&nbsp; تو کارخانه هاو به شکل دارو در اوردن(قرص و کپسول و.......) همه توسط قشر دا*روسازو&nbsp; متخصصین دارویی انجام میشه&nbsp;.</FONT></P>
+<P><FONT size=3 face=Georgia>ثانیا هم از بس مریض رفت و اومد یادم رفت چی بود پس بی خیال.</FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : دوشنبه 30 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../20.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(20)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('20','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/20&amp;title=محل کار من">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../19.html">نشد</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>نشد که من به ارزوهام برسم.نشد که دوباره درس بخونم و رویاهام را تعقیب کنم.نشد که تصویر زیبایی که از ایندم کشیده بودم رنگ واقعیت بگیره.نشد که نشد.اسمم تو لیست اصلی نبود خیلی بعید می دونم که تو رزرو هم باشه.</FONT></P>
+<P><FONT size=3>ارزوهای یک ادم&nbsp;دیگه هم &nbsp;تو این دنیا دود شد و رفت.</FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : شنبه 28 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../19.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(19)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('19','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/19&amp;title=نشد">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../18.html">خیالپردازی </a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>امروز خیلی خسته ام .دلم میخواد ساعت زود 8 بشه</FONT>&nbsp; <FONT size=3 face=tahoma,arial,helvetica,sans-serif>تا برم خونه</FONT>.<FONT size=3 face=tahoma,arial,helvetica,sans-serif>با اینکه خونه رفتن وسط هفته هم برای خودش داستانیه.تا برسم خونه و تکونی بخورم9 شده یه دو ساعتی هم </FONT><FONT size=3 face=tahoma,arial,helvetica,sans-serif>سریال میبینم و بعد هم خواب تا صبح با نق نق کمتری بیدار بشم و چقدر این خونه بودن برای منی که عاشق لم دادن روی مبلم کوتاهه.اخه 2 ساعت هم شد زندگی؟بکل من ساعاتی را که سر کارم جز زندگیم حساب نمیکنم.از اول اول همینطور بودم.اخه بودن در کنار ادمهایی که دوست ندارم(پرسنل)و ساعتهای طولانی کار کجاش لذتبخشه؟بابا اینها بهونه است من&nbsp;کار را دوست ندارم. حالا هر کاری.</FONT></P>
+<P><FONT size=3>بریم سر کار و زندگیمون<IMG src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif">خوب گفته بودم الان در چه موقعیتی هستم.امروز 13 می هست و دوهفته نیم تا اخر می باقیمونده و عملا کل زندگی من مونده به نظر دانشگاه.اینطوری بگم قرار بود اگه جواب مثبت شنیدم بیافتم تو کار زبان خوندن توپ.کلاس زبانی برم و با یکی از استادهام صحبت کنم هفته ای 2 روز برم ازمایشگاه دانشگاه بشم وردستش تا کار با دستگاهها یادم بیاد و برای رفتن اماده بشم.2 ماهی قبل از رفتن کار را تعطیل کنم و برای دلم یک جشن خداحافظی بگیرم و برم و دیگه سراغی هم نگیرم.(بچه ها هوا را دارید چه طوفانی شده)و اگه نشد باز هم زبان&nbsp; بخونم و امتحان جی ار ای بدم و زندگی را بگذرانیم تا خود دانشگاه به خاطر اینکه من امتیازم بالا رفته بهم پروانه دار*وخانه بده و بعد بیافتیم تو کار دار*وخانه زدن.و حالا چی شده؟یکی اینکه موقعیتی پیدا شده که ما یک خونه نوساز با قیمت خیلی خوب بخریم و بعدا همین سیستم را ادامه بدیم.دیگه اینکه داروخانه ای که من توش کار میکنم قصد فروش داره .البته خوش قیمت نیست و قیمتش به روزه.داروخانه بدی نیست و حسنش اینه که من به سیستمش اشنا هستم&nbsp; .کلا داروخانه زدن کار بینهایت پر دردسر و حتی پر ریسکه.کلی اعصاب از ادم میسوزونه و پیرت میکنه اما خوب پولهای قلنبه هم مزه میده.با اینحال یکسالی هم باید از جیب بخوریم چه جیبی چون کلی هم باید وام بگیریم.کلا از این لقمه های بزرگتر از دهن میشه که اینده اش خوبه.(</FONT><FONT size=4>دوستان پروانه دار*وخانه فقط به دا*روسازان واگذار یا فروخته می شود زیر نظر وزا*رتخانه و دانشگاه مربوطه)</FONT></P>
+<P><FONT size=3>خوب حالا من را بگیرید با این همه فرصت(تجربه بهم ثابت کرده از اونجایی که همیشه شانس من جلو جلو میره هیچکدوم هم بدلیلی نمیشه و من میمونم و یک اه بزرگ)</FONT></P>
+<P><FONT size=3>چطوره سیستم نظر دهی را عوض کنیم؟بیایید حرف بزنید و حرف بزنید .بگید چی خوبه و چی بده و یا چی احساس میکنید.پس منتظر نظرهاتون هستم.</FONT></P></p></p>
+
+        <p><br><a href='../../../../18.html'>ادامه مطلب</a>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : دوشنبه 23 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../18.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(18)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('18','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/18&amp;title=خیالپردازی ">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../17.html">شانس</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>کیا یادشونه که چند سال پیش یک فیلم مستند بنام قانون جذب باب شده بود؟خب هنوز هم هست و تو مجله های مختلف یا تو صحبت دوستهامون زیاد میشنویم.یکی از دوستهای من که ورد زبونشه و تموم موفقیتهاش را بپای همین قانون میگذاره .یکدوره ای که ما هم بی خونه بودیم من هم کلی رو موضوع خونه دار شدنمون جذب انرژی مثبت کردم.اتفاقا چند ماه بعدش هم ما از هیچ خونه خریدیم.بگم شانس بود؟بگم انرژی مثبت بود؟ببینم اصلا پیش فالگیر و فالبین میرید؟من که هنوز که هنوزه بی ا ع ت ق ادم اما سالی یکبار هم پیش این فالگیر ها میرم&nbsp;بااینکه بی اع ت ق</FONT><FONT size=3 face=tahoma,arial,helvetica,sans-serif>ادم اما ته دلم میخواد حرفهای شیرینشون درست دربیاد.بگذریم که چند سال پیش شانسی یکیشون گفت یکی از عزیزانت میمیره .من هم به مادرم و خواهرم گفتم و یکمی حدس بزرگان و مریض احوالان فامیل را زدیم و یکماه بعد داداش عزیزم پرپر شد.0(بمیرم براش)اسمش را چی بگذاریم ؟قانون جذب؟(باور میکنید وسط این یک ذره پست ده بار پا شدم نسخه دادم)تازه چند ماه پیش یادمه یک عده دانشمند اومدند گفتند بابا تموم این قوانین جاذبه رد .از بیخ و بن رد و در اصل قانون دفع داریم.و فکر کنم به ماه نخورد دوباره رد کردند و باز ما جاذبه دار شدیم.جاذبه هم به کنار .تکلیف ما با این شانس چیه؟این قضا و قدر؟بگذار این بحث قضا و قدر را کنار بگذاریم که خودم دینی کنکورم را 98%زدم منظور من همین شانسیه که لغتش ورد زبونمونه.مثلا:نمی دونی چه شانسی اوردم یا :عجب شانس گندی من دارم.عید یکی از دوستهام را دیدم داشت از دوست پسرش تعریف میکرد که چه خوش شانسه.(لا اله الا الله حالا یکی از پرسنل میبینه من سرم تو لپ تاپ اومده داره از سفرش تعریف میکنه ناچارا سرم را بلند میکنم و چون میدونم ول نمیکنه یه لبخند تحویلش میدم که کامل مسافرتش را تعریف کنه وای اگه بدونید چه ادم دورو و مارمولکیه)خب داشتم میگفتم که دوستم که دختر فوق العاده روشنفکر و خوش سخنیه بعد از تعریف شرح ما وقع میلیاردر شدن دوست پسرش از من پرسید به شانس اعتقاد داری؟من.........؟!شاید یکی از اشناترین ادمها با این لغت باشم(داستان سفر نرفته من را خوندید؟یا قضیه اینکه دانشگاه تا 7 سال نگذاشت من داروخانم را ببندم. جل الخالق. چون اون دهستون مردمش نارام بودند و ا*م*ن*ی*ت جامعه را بخطر می انداختند).بله من به شانس اعتقاد داشتم اما نمی دونستم&nbsp;.چند بار گفتید که شانس اوردید یا بدشانسی ؟چطور گاهی وقتها دیدیم چرخ و فلک روز گار چرخیده و چرخیده تا یک کار نشد را شدنی کنه و یا برعکس کاری که 100%از شدنش مطمئن بودید چطور نشده.اصلا تموم زندگی ما پر هست از این شدن ها و نشدن ها.برای بعضی بیشتر شدنها(مثل دوست پسر دوستم)و برای یک بنده خدایی مثل من نشدنها غالب بوده.حالا بگید ببینم به شانس اعتقاد دارید؟ مهمتر :فرمولی برای تغییر این شانس میشناسید؟</FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : شنبه 21 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../17.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(17)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('17','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/17&amp;title=شانس">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../16.html">روزانه</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>روزی که داشتم پست خانواده را از داروخانه مینوشتم اونقدر یک از پرسنل عملا و علنا سرک کشید تو لپ تاپ که درش را بستم وبیخیال شدم&nbsp;اما بقیه پست را حتما مینویسم.یکی دوتا پست هم اماده توی ذهن دارم که باز فضای خودش را میخواد .یعنی از داروخانه نمیشه. از طرفی هم دانشگاه مربوطه هم پیغام داده نتایج تا اخر می اعلام میشه و یه عذر خواهی بابت تاخیر.اگه میدونست من این روزها را چطور سر میکنم.</FONT></P>
+<P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>راستش یه مورد دیگه ای هم هست که ذهن من را مشغول کرده .پیشنهاد همسر برای فروش خانه و سرمایگذاری برای خرید خانه نوساز(مورد بدی نیست)از طرفی داروخانه ای که کار میکنم هم قصد فروش داره که خوب میتونیم اینجا را هم بخریم البته یکم پول کم میاریم(این مورد هم بد نیست اما دردسرش بینهایت و تازه باید یه 200ملیون تومنی هم وام بگیرم).حالا این یا اون یا هیچکدام الله اعلم .میدونید شاید اگه این موردها 7-8 سال قبل پیش اومده بود با سر رفته بودم ته ریسک و خطر .در واقع من بلافاصله بعد ار طرح رفتم داروخانه زدم منطقه محروم اما چه داروخانه ای. فروش خوبی نداشت و چون تو منطقه محروم بود دانشگاه اجازه تعطیلی نمیداد و از طرفی زندگی تو منطقه محروم و رفت امدهای کشنده اش.خلاصه ته بد شانسی.اینطوری بگم الان همه دوستها و همدوره ایهای من بار خودشون را بستند و رفاهی دارند و بروبیایی اما من بخاطر یک تصمیم عجولانه و خام و بدشانسی (چون صاف از بین این همه منطقه محروم این یکی استراتزیک بود.موقع تاسیس داروخانه که هیچی نمیگندو فقط موقع تعطیل کردن میفهمی واویلا)زودتر از همه داروخانه زدم و نتیجش این شد الان تو داروخانه های بقیه مسول فنیم.اینه که میترسم از ریسک .اون هم روی همه دارو ندارمون. میترسم.از طرفی همسرم هم 1-2 ریسک کرده که اون هم باز به خاطر بدشانسی و شریک بد به نتیجه نرسید برای همین اون هم میترسه و ریسک پذیریش پایین اومده.به هر حال دیدن موفقیتهای دیگران و دونستن این که تو هم میتونستی ونتونستی باعث میشه همیشه خودت را سرزنش کنی.ادم حسودی نیستم اما غبطه میخورم و از نتونستمهای خودم لجم میگیره.ده سالی از فارغ التحصیلی من گذشته و الان بنحو قابل توجهی فاصله و اختلاف طبقاتی بین من و همدوره ایهام هست .فکر کنم تا ده سال دیگه من به گردشون هم نرسم.در ضمن نگید پول و رفاه&nbsp;چیز بدیه که شدیدا مخالفم.امیدوارم یکروزی من هم در مسیر درست بیافتم.</FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : شنبه 21 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../16.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(16)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('16','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/16&amp;title=روزانه">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="http://mennomen.mihanblog.com/post/protected/15">  مطلب رمز دار : خانواده من</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p>این مطلب رمزدار است، جهت مشاهده باید کلمه رمز این مطلب را وارد کنید.<form id="frm-16075614255fd170d1a7c6f" method="post" action="http://mennomen.mihanblog.com/post/protected/15/fid/16075614255fd170d1a7c6f/atrty/1607561425/avrvy/0/key/f20439181e91dca8422e3d537c1cbd54/" ><input type="password" name="data[post_pass]" id="post_pass" value="" class="english" /><input type="hidden" name="secfrdcodedvar" id="secfrdcodedvar" value="6416c71046652e152f77260124d9aa26"><input type="submit" value="ارسال" class="btn" /><input type="hidden" name="frm-id" value="16075614255fd170d1a7c6f" id="frm-id" /></form></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : یکشنبه 15 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../15.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(15)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('15','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/protected/15&amp;title=  مطلب رمز دار : خانواده من">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../14.html">سفر کوتاه</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>ای داد من کلی نوشته بودم و پست هم کرده بودم امروز اومدم از موبایلم ببینم چرا ادامه مطلب نرفته نگو که کل پست&nbsp; را هم پاک کردم.نمیدونم چرا از طریق موبایل نمیتونم هیچی بنویسم.خب دوباره سفرم را مینویسم چون خیلی خوش گذشت و دلم میخواد ثبت بشه.</FONT></P>
+<P><FONT size=3>صبح پنجشنبه با همسر عزیز سر خوشانه رفتیم سفر هی گفتیم و هی خندیدیم کلی سر به سر هم گذاشتیم.باغ لاله ها رفتیم حسابی شلوغ بود گل لاله که خیلی خوشگله و ما هم گل دوست .حسابی لذت بردیم از تماشای این همه گل.رسیدیم چالوس .هوا خیلی خوب بود و دریا هم اروم پس یه قایق پدالی گرفتیم و نیم ساعتی همسری پا زد و من لم دادم و لذت بردم از اب و هوا.وقت ناهار &nbsp;رفتیم رستوران ابادگران به صرف ماهی که کلی چسبید بعد هم هتل و گشت وگذار با کلی شوخی و خنده.فردا صبح یه صبحانه مفصل .بعد هم رفتیم لب ساحل پای برهنه قدم زدیم و کلی لحظه و صحبت عاشقانه در کردیم وقت ناهار هم من شکمو باز پیشنهاد ابادگران دادم و همسرم هم بدون درنگ پذیرفتند و دوباره خودمون را بصرف ماهی دعوت کردیم.برای اینکه سفرمون را تکمیل کنیم از جاده عباس اباد اومدیم و کلاردشت یه بستنی کاکا تو رگ زدیم که مورد علاقه بنده میباشد.تو جاده عباس اباد هم کنار زدیم و چایی با شیرینی همراه با صدای جنگل(منظورم همون صدای جیرجیرکهاست که میپیچه تو کل جنگل)و سبزی درختها که روح ادم را تازه میکنه.بعد هم برگشتیم که همسر عزیز تصمیم گرفتند به صورت تند رانندگی کنند و چون رانندگیش خوبه و بهش اعتماد دارم از هیجان جاده و پیچ و خمهاش لذت بردم.یه ماشین مدل ماشین ما هم بود که پشتش عکس یه عقاب بود و رانندش یک خانم بود که دوتا بچه کوچیک هم داشت ماشا لله کم نمیاورد تا کمی سرعتمون کم میشد میدیدیم پشت سرمونه.ایول.من خودم تو جاده زیاد رانندگی کردم اما چالوس را یکبار .با اینکه فرقی با جاهای دیگه نداره اما با اینحال دیگه ننشستم و تو دلم گفتم دفعه بعد حتما خودم میشینم.</FONT></P>
+<P><FONT size=3>خلاصه دوروز رفتیم سفر .کلی خندیدیم و سر به سر هم گذاشتیم وکلی لذت بردیم از بودن دیگری </FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : شنبه 14 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../14.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(14)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('14','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/14&amp;title=سفر کوتاه">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../13.html"> نه ادامه ادامه دوست. یک دردو دل دوستانه</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>امروز همسرم اس م اس زده فردا پس فردا برنامه نریز کار داریم بهش تلفن کردم میگم کجا میریم میخنده میگه هتل رزرو کردم دوروزه بریم شمال.خوشحال میشم که بفکرمه و باز یاد بی دوستیمون می افتم.</FONT></P>
+<P><FONT size=3>گفته بودم ما دوستی نداریم؟نگفته بودم؟این را که کفته بودم من ارتباطاتم ضعیفه.بگذارید اینطوری بکم توی یک برخورد و توی جمع&nbsp;خیلی اجتماعی و حتی خوش&nbsp;برخورد بنظر&nbsp;میام اما امان از وقتی که با یک&nbsp;دختر تنها مشغول صحبت میشم.مغزم هنگ میکنه خلاصه کلی چرت و پرت میگم.گاهی اونقدر دلسوزی و همدردی اضافه میکنم که خودم هم حالم بهم میخوره اینطوری بگم بلد نیستم .نمیدونم چطوری دوست پیدا کنم و صمیمی بشم همیشه فاصله اونقدر زیاد میشه که بعد از یک مدتی تموم میشه اولا اینکه خب باید یه چیزهای مشترکی داشته باشیم؟</FONT><FONT size=3>.باید حرف هم را بفهمیم ؟ثانیا من بلد نیستم یک رابطه را نگه دارم نتیجه این میشه دوستی شروع نشده تموم میشه.</FONT></P>
+<P><FONT size=3>.اونزمان که خوابگاه بودم 4-5 نفری دوست بودیم که هیچوقت جدا نمیشدیم (شانسی کسانی که سال اول هم اتاقم شدنددخترهای خیلی نازنینی بودند)اونموقع دقت نکردم که هرکدوم برای یک شهریم و یکروزی هر کی میره پی زندگیش.روزی که درسمون تموم شد کلی گریه و قول دادیم مرتب برای هم نامه بنویسیم و تل بزنیم کم نبود 6 سال شبانه روز با هم بودن ،بچه های خوابگاهی میدونند چقدر این دوستیهای خوابگاهی با دوستیهای عادی فرق داره اخه از صبح که کلاس داشتیم تا لحظه خواب همه جا با هم بودیم.چی شد؟الان 12 سال از زمان فارغ التحصیلی من گذشته نتیجش فقط یک اس ام اس ساده هست موقع تولد، باور میکنید بعضی سالها شده که حتی همون اس ام اس را هم نگرفتم.اوایل خیلی برام سخت بود مدام به یکی از دوستهام که شوهرش به خاطر مسائل عقیدتی و مذهبی دیدن من را ممنوع کرده و فقط تماس ایمیلی داشتیم و داریم غر میزدم که چرا بچه ها انقدر بیمعرفتند. چرا انقدر بیوفا چرا انقدرفاصله اما کم کم به مرور زمان یاد گرفتم که من هم بروم سر زندگیم. حالا فرض کیریم سالی 2 بار هم تماس تل داشتیم این که رفت و اومد نمیشه واین که دیگه اسمش دوست نمیشه.یواش یواش فهمیدم&nbsp;دوره اون دوستیها بسر اومده.چند وقت بعدش رفتم کلاس زبان سعی کردم دوست جدید&nbsp;پیدا کنم توی یکی از کلاسها یک دختر بینهایت خونگرم و روشنفکر بود که ترتیب چند بار دور هم نشینی و پارتی را داد چقدر خوش گذشت اما کارهاش ردیف شد و رفت استرالیا.یکی دیگه هم امریکا یکی عاشق زده شد. خیلی سعی کردم جمع را جوش بدهم. تلفنهای یکطرفه و بعد دیدم نه رابطه ها را نمیشه به زور نگه داشت این بود که دوباره تنها شدم.الان یک دوست ایمیلی (اون هم به لطف&nbsp;شوهرشون که اجازه دادند)&nbsp;یه دوست تلفنی (به خاطر اینکه شهر دیگه ای مطب داره) یه دوست که سالی دوسه بار&nbsp;میبینمش و یک دوست صمیمی (مرتب تماس داریم و هم را میبینیم و مجرد)دارم که&nbsp;متاسفانه تا بخواهید بدبین و افسرده و نچسب و مغرور وتنهاست&nbsp;و بنده سنگ صبور تنهایی و غرغر کردنشم.اما خوب&nbsp; بهرحال دوستمه و هواش را دارم </FONT></P>
+<P><FONT size=3>همسرم هم 3-4 تایی دوست صمیمی داره یکیشون که از قضا من و همسرش حرف هم را میفهمیدیم از ایران رفتند موند یک دوست مجرد و یه دوست متاهل که خانمش تو روابط اجتماعی خیلی ضعیفه،مثلا کلی براش حرف میزنی و بعد میبینی در کمال شلی و بیحالی&nbsp;بعد از یکساعت فک زدن یک&nbsp;بعله جوابت را میده برای همین عطایش را به لقاش بخشیدم و همسرم را تشویق کردم به صورت مجردی روابطشون را با دوستشون ادامه بدهند.</FONT></P>
+<P><FONT size=3>توی محل کار؟نمیشه.میدونید چرا ؟پرسنل داروخانه کسانی هستند که ممکنه حتی دیپلم نداشته باشند.سطح اجتماعیشون متفاوته بخواهی هم نمیتونی دوست بشی .اخه یکی از شرایط دوستی داشتن یک سری علایق مشترکه .باید حرف هم را بفهمید یا نه.</FONT></P>
+<P><FONT size=3>خلاصه ارزوی دوران نوجوونی ما هیچوقت تحقق پیدا نکرد.ارزو داشتم دوستهای شاد و جمع باحالی باشیم که شبها دور هم جمع بشیم تو سر و کله هم بزنیم و بگیم و بخندیم(سریال how I met your mother )را دیدید؟دلم همچین جمعی میخواست که نشد.امروز داشتم به عادت این ده روز اخیر وبلاگ جالبی را میخوندم.بنده خدا روزهای سختی هم داشته اما بمرور همه چیز حل میشهو الان&nbsp;روزی را داره تجربه میکنه که من ارزوش را دارم&nbsp;و&nbsp;این خانم باحال&nbsp;برخلاف من دختر شاد و&nbsp;اجتماعی هست که یکعالمه دوست خوب داره.راحت دوست پیدا میکنه و چقدر جمعشون شاده و بهشون خوش میگذره.امروز داشتم قسمتهای مسافرتهای دسته جمعیشون را میخوندم و ارزو کردم یکروزی من هم دوستهای صمیمی خوب و شادی را داشته باشم.</FONT></P>
+<P><FONT size=3>یک روزی یک جایی یک کسی یک چیزی صبر داشته باش صبر داشته باش (جمله معروف مجله موفقیت)فقط کاشکی توضیح میدادند تا چند سال دیگه باید صبر کنم.<IMG src="http://mihanblog.com/public/public/rte/images_new/smiles/85.gif"></FONT></P>
+<P><FONT size=3>خب فردا عازم سفردوروزه به اتفاق همسر مهربونم.جای همگی خالی </FONT></P>
+<P><FONT size=3>در ضمن یادتون نره برام ارزوی شنیدن جواب مثبت از دانشگاه بکنید.</FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : چهارشنبه 11 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../13.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(13)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('13','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/13&amp;title= نه ادامه ادامه دوست. یک دردو دل دوستانه">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../12.html">خوب یا بد یا هیچکدام؟</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>میبینید امروز صبح اول صبح اینجا هستم.امار بازدیدهای وب هم نشون میده هیچکس علاقمند به دونستن نتیجه من نیست.بیخیال.من که دارم برای دل خودم مینویسم.راستش بینهایت وحشت کرده ام.امروز اول می هست.سایت دانشگاه مربوطه زمان را افزایش داده و از اخر اپریل&nbsp; تا اوایل می تمدید کرده.یعنی 10-15 روز انتظار بیشتر.ترسیدم.خیلی خیلی زیاد.طوری که از صبح نفسم نا مرتب شده.ترسیدم چون احساس میکنم نمیشه.ترسیدم چون یه دانشگاه دیگه که اپلای کرده بودم و البته مدارکم کامل نبود جواب منفی بهم داده .امروز صبح.از اول هم برای این یکی دانشگاه شانسی اپلای کردم اما باز هم جواب منفی اش وحشت زدهام کرده برای دانشگاه اصلی.چشمهام دودو میزنه و دستهام میلرزه.نمیدونید چقدر نتیجه این دانشگاه برام مهمه.اگه نشه باز دوباره اقدام میکنم با همه ظرفیتی که اوقات فراغتم اجازه میده. اخه من یه بچه خونهای نیستم که خرجم را خانوادم بدند باید کار کنم.از طرفی نمی خوام دیگه یک سال دیگه هم را هم از دست بدم.من الان امادهام برای یک شروع دیگه.(پس از همه انرژی های مثبت جهان می خوام اینجا جمع بشند)راستش الان میترسم باز انرزی مثبت بیشتری جذب کنم اخه انرزی مثبت یعنی تصور خودت تو اون موقعیت و از این حرفها..........وای میترسم میترسم</FONT></P>
+<P><FONT size=3>امروز روز زنه.دیشب همسر محترمه بعد از ساعت کاری اومدند دنبالم که بریم خرید اما اونقدر هردو ناراحت و نگران بودیم که نمیتونستیم خرید کنیم برگشتیم خونه و همسر نیم ساعت بعد از شدت خستگی خوابید و من نشستم پای جم.</FONT></P>
+<P><FONT size=3>خب من برم کار بیل زنی خودم.</FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : چهارشنبه 11 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../12.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(12)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('12','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/12&amp;title=خوب یا بد یا هیچکدام؟">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../11.html">درهم</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>نخیر هیچ خبری نشده(با اه)خب امروز 29 اپریل هست برای اینکه از بلا تکلیفی هم در بیام هفته پیش یه نامه زدم دانشگاه اونها هم فرمودند اخر اپریل.من که فکر کنم برای اینکه تاریخ کاملا صحیح باشه گذاشتند ساعت 12 شب 30 اپریل اعلام کنند که احوالات ما کامل بشه.</FONT></P>
+<P><FONT size=3>به همسرم هم گفتم خودت را برای یه دوره دپرشن حسابی اماده کن ظواهر امر نشون میده که اون هم اماده کرده چون صبح زنک زده میگه نگرانت هستم میخواهی اخر هفته بریم کاشان یا اطراف تهران.نیکی و پرسش؟میدونید دیگه از شور واشتیاق نتیجه افتادم،چند ماهی بود با ذوق وشوق فقط احوالاتم را تا قبل رفتن تجسم میکردم .باور میکنید حتی مراسم گودبای پارتیم را هم تجسم کرده بودم تا رنگ لباسی که دوست دارم اونروز بپوشم.همسرم مدام تذکرات لازمه را برای دل نبستن میدادند اما نمیتونستم چون واقعا از ته دل این را میخواستم.اما حالا داره ذهنم یواش یواش برنامه های دیگه میریزه زبان را ادامه دادن و حتی دارم به بچه دار شدن فکر میکنم(اگه یکدوم از شماها من را میشناخت حسابی تعجب میکرد اسمان و راستین و بچه؟<IMG src="http://mihanblog.com/public/public/rte/images_new/smiles/13.gif">&nbsp;&nbsp;&nbsp; بنظر من که این اوج حس درموندگی منه.</FONT></P>
+<P><FONT size=3>خب ما چند سالی هست داریم باهم زندگی میکنیم.و تاحالا هرکی از ما راجع به بچه پرسیده با واکنش شدید ما&nbsp;روبرو شده.ما بچه نمی خواهیم نه شرایطش را داریم و نه حوصله مسئولیتش را. بنده هم بچه هارا دوست ندارم(جز برادرزاده)البته همسرم هم بچه ها را دوست دارند هم بچه ها ایشون را دوست دارند اما من نه.خب اینها که میگم هم بمعنی این نیست که نمیتونیم بچه دار بشیم.چون یکبار هم ناخواسته شدیم و چون نمیخواستیم بیخیالش شدیم.&nbsp;با اینحال من بکل منکر بچه نیستم&nbsp;راستش ازتنهایی توسن پیری میترسم و سن من هم که داره بالا میره&nbsp;اما همسرم اصلا بچه نمی خواد گاهی به شوخی میگه خوب فکرهات را بکن ببین اگه بچه میخوای شوهرت را عوض کنی.</FONT>&nbsp;<FONT size=3>حالا با این توصیفات حق میدهم به هر کسی که میخواد متعجب بشه</FONT></P>
+<P><FONT size=3>از کار بگم.من روزی 11 ساعت کار میکنم<IMG src="http://mihanblog.com/public/public/rte/images_new/smiles/3.gif">(بجز پنجشنبه ها که بشغل شریف خوابیدن مشغولم)سالمم اما سر حال نیستم.ترجیح میدادم یک شیفت کاری که 4 ساعت میشه کار کنم اما چه کار کنیم که بنده&nbsp; کمالگرا و&nbsp;به کم هم راضی نمیشم&nbsp;و اخرش میبینم روزی خداساعت دارم کار میکنم البته کار من اصلا سخت نیست اما به هر حال چندین ساعت رو صندلی نشستن&nbsp;و هرازگاهی دستور یک نسخه را نوشتن&nbsp;هم خستگی داره.رشته ما رشته بدی نیست در امد خوبی داره و حسنهای خودش را مثلا اینکه پروانه ما به خودی خود ارزش داره و پولسازه اما کما بیش رشته های دیگه نه.یعنی یه دندونپزشک تا موقعی درامد داره که داره مریضی را ویزیت میکنه و از این حرفها، از طرفی تو رشته ما برای پولدار شدن میلیاردی احتیاج به پول و شانس هم دارید (ای بابا این نسخه های گاه و بیگاه هم باعث میشه رشته کلام بپره.باید عادت کنید چون من اکثر روز&nbsp; را داروخونه هستم خب داشتم میگفتم خلاصه من اون یکم شانسه را نداشتم نتیجش اینه که بعد از 10 سال فارغ التحصیلی هنوز داروخانه های مردم مسئول فنی هستم و در نتیجه میلیاردر هم نیستم و در نتیجه چون خواسته هام زیاده روزانه 11 ساعت کار میکنم.اهان یک توضیح دیگه(همه داروخانه داران هم میلیاردر نیستند اونه هم احتیاج به شانس سرمایه زیاد اولیه{برای خرید یک داروخانه خوب}و خصوصیاتی همچون مدیریت خوب و داشتن شم اقتصادی بالا احتیاج دارند)نگید وای داروسازها چقدر پولکی هستند(از اونجایی که من مطمئنم هیچکس از پول بدش نمیادو خب بعد شکم سیری میتونید خدمت به خلق خدا و داشتن حس مسئولیت&nbsp; و وظیفه وغیره و غیره را هم جز خصوصیات داروسازها در نظر بگیرید.)بعدا براتون بیشتر مینویسم </FONT></P>
+<P><FONT size=3>خب این 11 ساعت شغلی من هم داره تموم میشه (ممنون شما هم خسته نباشید)پاشیم بریم خونه یه جند ساعتی هم اونجا روبرو تلویزیو بشینیم و بعد هم قسمت شیرین شبانه روز یعنی خواب.</FONT></P>
+<P><FONT size=3>راستی برام ارزو کنید فردا خبرهای خوب بگیرم </FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : دوشنبه 9 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../11.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(11)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('11','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/11&amp;title=درهم">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../10.html">ادامه دوست</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>اونقدر مطالبم طولانی میشه میترسم حوصله جماعت وبلاگ خون افاقه نکنه دوقسمتی مینویسم.</FONT></P>
+<P><FONT size=3>بله من رفتم دانشگاه .اونموقع ها خانوادم هم تازه نقل مکان شهری کرده بودند و مادر بنده هم به مراد دلش که همانا رفتن به شهرستان و زندگی پر از حرف و نقل و رفت وامد در کنار خانواده خودش بود رسیده بود.من بدبخت هم دانشگاه شهر دیگه &nbsp;دلم میخواست جابجاییی بگیرم.تو تعطیلات بین ترم اومدم التماس به مامانم بریم رییس دانشگاه را ببینیم برای من جابجایی بگیر .اونها هم که مسلما :نخیر خانم مگه میشه .خب حق هم داشتند من بدبخت هم برای دل خودم یه دوتا برگه درخواست جابجایی رودر ودیوار زدم که فرداش پاره کرده بودند.هیچ ننه قمری هم پیدا نشد به ما بگه بابا این که راهش نیست تو روزنامه زدنی می خواهد و ارائه شرایط مالی خوب و پارتی خوب(البته این یکیش را میدونستم که نداشتیم)و من هم طبق معمول فکر میکردم وضع مالی ما خوب نیست و خلاصه دست از پا درازتر برگشتم دانشگاه</FONT></P>
+<P><FONT size=3>موافقید بقیه داستان را بگذاریم یه جلسه دیگه من هم برم در مراحل خوردن همبرگر تهیه شده از طرف همسر بهشون کمک کنم.</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P>&nbsp;</P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : پنجشنبه 5 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../10.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(10)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('10','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/10&amp;title=ادامه دوست">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../9.html">دوست</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>اوففففففففففففففففف امروز 25 اپریل هست پس کی این دانشگاه می خواد نتیجه ها را اعلام کنه.فکر کنم گذشته لحظه اخر تا من را جون به لب کنه. دیشب خوابم نمی برد هی شیطونه می گفت پاشو برو چند خط پست بنویس تنبلیم اومد&nbsp;انواع و اقسام موضوع ها را خواب و بیدار نوشتم و حالا که اینجام .................</FONT></P>
+<P><FONT size=3>خب بگذار یکیش را شروع کنیم.(ناخنهام را تازه لاک زدم و مجبورم با احتیاط تایپ کنم{نه کاملا سوسول نیستم یه نصفه نیمشم})این پست نوشتن هم عین درس خوندن شده که هی موضوع میپره.</FONT></P>
+<P><FONT size=3>من جشن و مهمونی و پ*ا*رتی را خیلی دوست دارم از همون نوجوونی هم عاشق این بودم که یک اکیپ دوست باشیم و بریم کوهی و طبیعتی و از این حرفها.با این حال شاگرد اول و&nbsp;درسخون کلاس بودم(با لفظ درسخون و خر خون مشکل دارم. منکر این نمیشم که بعضی ها خرخونند اما من نبودم&nbsp; .IQ بالایی هم ندارم فقط سر کلاسها با دقت گوش میکردم و موقع درس خوندن هم با دقت و تمرکز بالایی درس می خوندم.)خلاصه دبیرستان رفتم یه نمونه مردمی معروف.شکر خدا اونزمون از این غیر انتفاعی ها نبود.واقعا مدرسه خوبی بود و دست مدیر مدرسه هم درد نکنه بهترین معلمهای تهران را جمع کرده بود مدرسه ما.خب چادر شرط مدرسه بود وخود مدرسه هم اونسر شهر. تومدرسه ما هم که هر چی نخبه و خرخون بود جمع شده بود .اصلا من از همون جا مشکل داشتم.نه&nbsp;مشکل من به خیلی قبلتر بر می گرده.من از بچگی اعتماد به نفس نداشتم.اصلا بلد نبودم چطوری دوست پیدا کنم.هیچ کس هم به خودش زحمت نمیداد بیاد کمی توجه کنه همین که معدلم همیشه 20 بود برای خانوادم کافی بود.توی فامیل یه چندتایی بچه هم سن وسال من هم بود که البته شهر دیگه ای زندگی میکردند و وقتی من میرفتم پیششون تو جمع اشون راهی نداشتم.از طرفی من بچه درسخوونه فامیل بودم که از همون بچگی من را دکتر صدا می کردند و خب این هم مزید بر علت دوریشون.</FONT></P>
+<P><FONT size=3>تو راهنمایی یک دوست صمیمی داشتم اما سال سوم بود که احساس کردم دارم توسط دوستم استثمار میشم.در واقع من نقش نوکر حلقه به گوش او را داشتم به مامانم گفتم و از فرداش مدرسم را عوض کردم.</FONT></P>
+<P><FONT size=3>شاید کار خوبی کردم شاید بد.شاید باید می ایستادم جلوش و فرار نمی کردم. شاید هم برای ادمی ضعیف و بدون اعتماد به نفس که مشکل کمبود اعتماد به نفسش ریشه ای و عمیق بود بهترین واکنش بود؟!</FONT></P>
+<P><FONT size=3>رفتم دبیرستان خوب.&nbsp;به علل جابجایی دبیرستان&nbsp;یک ماهی دیرتر از بقیه رسیدم.خب سال اول .محیط جدید و یک ماهی دیرکرد.یکم روی درسم تاثیر داشت که باعث شد تا اخر دبیرستان شاگرد متوسط اوون مدرسه خاص باقی بمونم و دیگه روی شاگرد اولی را نبینم.همین باعث میشد همیشه خودم را سرزنش کنم.همیشه عقب بودم از طرفی دیر تعطیل میشدیم و از طرفی مدرسم خیلی دور بود وقتی میرسیدم خوونه دیگه رمقی برای انجام تکالیفم نمیموند(حالا فکر نکنید شاگرد تنبله کلاس شدم ها کلی رتبه کنکور هم خوب شد اما باز هم نسبت به بچه های اون مدرسه متوسط بودم)خلاصه این عذاب وجدان دایمی هم تیشه مضاعفی شد به اعتماد به نفسم.بلد نبودم هیچ دوستی پیدا کنم.باادب بودن و بی نهایت اروم بودن خصیصه من بود می ترسیدم&nbsp;از نمره &nbsp;انضباط میترسیدم.(سیستم اموزشی مزخرف ،خودتون را بگذارید جای یه بچه درسخون دبستانی که دوست داره و حقشه معدل کلش بشه 20 ناچارا یاد میگیره شیطونی نکنه و اروم باشه{امیدوارم بچه مدرسه ایهای این دوره زمونهاز این قانونهای مزخرف نداشته باشند})خلاصه این اروم بودن من را میتونید اینطور تصور کنید به یاد ندارم تو حیاط مدرسه چه دبستان چه دبیرستان یک بار دویده باشم(یک اه ه ه ه ه ه بلند)اگه معلمی را میدیدم از ده متری جفت میکردم و همچین خودم را جمع و جور می کردم مبادا از دایره دانش اموزی کمی دورتر شم.عمق فاجعه اینه که&nbsp;مادر خود من یک دبیر بود.</FONT></P>
+<P><FONT size=3>تمام این سالها یک دوست داشتم که اون هم به خاطر جبر زمانه(مسیر مدرسمون یکی بود)که تا الانم دوستیم و اوضاع دوست یابی اون ده برابر فاجعه ترکه البته اون به خاطر غرور و خود بزرگبینیش و حس از ما بهترون بودنشه.</FONT></P>
+<P><FONT size=3>شوهر جون از راه رسید اخ جون حالا ناهار حاضریمون را میدهم شوهر عزیزم زحمتش را بکشند و بنده امر خطیر پست نویسی را ادامه می دهم</FONT></P>
+<P><FONT size=3>خب داشتم می گفتم جو درس زده مدرسه ما و کمبود اعتماد به نفس بنده باعث شد هیچ دوستی نداشته باشم.یادمه با چه حسرتی پشت شیشه اتوبوس&nbsp; جمع بچه دبیرستانهایی را میدیدم که مشغول متلک گویی و شوخی با پسرهای هم سنشوند.من اونموقع دنبال پیدا کردن دوست پسر نبودم بلکه فقط دلم می خواست همچین جوی را تجربه کنم.خلاصه کنکور رسید و رتبه نسبتا خوب و قبولی توی یک رشته خوب اما توی یک شهر دیگه .</FONT></P>
+<P><FONT size=3>حالا چی اول از همه دلم برای خودم خیلی میسوزه اونزمان خانواده که نقش اصلی اون را مادر من بازی میکرد اونقدر گرفتار افسردگی خودش و مشکلات خودش بود که پاک من را فراموش کرده بودند. البته خوب میدونستند که بعنوان یک کنکوری هر موقه خوابم یا تلویزیون ببینم بهم بگند اسمان کنکور داری برو درس بخوون.اما هیچوقت نگفتند بابا یه کلاس کنکوری یه جایی یه معلمی.حتی موقه انتخاب رشته هم یه فامیلمون که معلم بود&nbsp;اومد خونه (خانواده عزیز هم مهمونی بودند)و یه انتخاب رشته ای برای من کرد و من چون خوشم نیومد همه را از تهران تا زاهدان خودم تنظیم کردم.بچه های هم دوره من باید خوب یادشون بیاد اونموقها انتخاب رشته خیلی مهم بود نه برنامه کامپیوتری بود و نه&nbsp;از این دفتر مشاور ها و نه کمک خود سازمان سنجش.فکر کنم قلمچی اینها تازه راه افتاده بود.نمیدونم جون اگه خبر داشتم اونقدر بد انتخاب رشته نمی کردم.</FONT></P>
+<P><FONT size=3>&nbsp;بله من رشته ای قبول شده بودم که اصلا دوست نداشتم وفقط چون جز رشته های تاپ پزشکی بود انتخاب کرده بودم .خلاصه برای ثبت نام با مادرم رفتیم اون شهر .چی دیدم همه مجموعه دانشکده ها توی یک محیط بزرگ وزیبا جمعند الا خود دانشکده ما که اونسر شهر برای خودش یه ساختموون داشت.نمیدونید چقدر تو ذوقم خورد.و بعد از اون یکی یکی بچه های ورودیمون را دیدم.&nbsp;&nbsp;افتضاح افتضاح.یکی از یکی بدتر و دهاتی تر(قصد توهین ندارم اما نمی دونستم چه لفظی بکار ببرم تازه واقعیت را میگم چون واقعیت همینه فقط تلخه)</FONT></P>
+<P><FONT size=3>پسرها که 7-8 تایی هم بیشتر نبودند چقدر زشت و بد تیپ بودند.بابا ما پسر بازی نکردیم عقده شده بود بیاییم دانشگاه پسر بازی اخه این چه شانس کوفتیه.ظهر نشده فقط به مامانم التماس میکردیم بیا تورا خدا برگردیم از شدت بغض گلوم درد میکرد(الانم بغض گلوم را گرفته و حسابی دلم برای خودم سوخته)</FONT></P>
+<P><FONT size=3>ثبت نام کردیم و برگشتیم تا کمی من تجدید قوا کنم.</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : پنجشنبه 5 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../9.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(9)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('9','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/9&amp;title=دوست">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../8.html">ادامه داستان سفر نرفته ما</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>داشتم می گفتم که هر بنده خدایی از راه می رسید از رفتن ما می پرسید از طرفی ما هم اونقدر از محسنات رفتن و مهاجرت با اشتیاق حرف زده بودیم که همه را به هوس انداخته بودیم و یواش یواش دیدیم اهالی فامیل یکی بعد از یکی دارند اقدام می کنند و دولت عزیز کانادا هم لطف کردند و سال به سال با وضع قوانین جدید زمان مهاجرت را کوتاه کردند.از طرفی ما هم به خودمون دلداری میدادیم که نه بابا سایت سفارت کانادا زمان ما را زده 7 سال،سفارت ایران که نیست همه چیز درهم و بر هم باشه و نشه اطمینان کرد،گفته 7 سال .بالاخره نوبت ما هم میرسه اینکه غصه نداره بهر حال کانادایی گفتند کشور جهان اولی گفتند احترام به حقوقی گفتند.سال 5 که بودیم جناب برادر عزیز هم تصمیم به رفتن گرفتند رشته همسرشون دیمند کبک بود و&nbsp;یه وروجکی&nbsp;هم داشتند که خودش امتیازی داره وکیلی گرفتند و یک چند ماهی هم زبان خوندند،6 ماه نشده مصاحبه رفتند و خوشحال نشستند منتظر مدیکال.من و همسرم(راستین)گفتیم ایراد نداره ما هم که قراره بریم دیر یا زود از ما هم درخواست مدارک می کنند.نوبت ما هم میشه یه ذره هم به دلمون بد راه ندادیم و دوباره به هرکسی از راه رسید توضیح میدادیم اون سال نحسی که ما اقدام کردیم دولت محترم کانادا پولی می گرفتند و شماره فایل نامبری میدادندو میگفتند صبر کنید و مدارکتون را اماده کنید تا زمانی که ما بهتون اعلام میکنیم الغرض چند ماه دیگه هم گذشت تا عید پارسال که دولت کانادا اعلام کردند بدلیل حجم زیاد متقاضیان در سالهای 2006-2007-2008(300.000نفر)قادر به رسیدگی به این تعداد متقاضی نیستیم سنهاتون هم بالا رفته و از اونجایی که ما نیروی جوون می خواهیم دلمون می خواد صورت مسئله را پاک کنیم و چون میتونیم پاک میکنیم برید همگی از نو اقدام کنید بیایید پولهاتون را هم پس بگیرید.(باور نمی کنید برید فروم های مربوطه را نگاه کنید باز هم باورتون نشد برید خود سایت سفارت را ببینید{البته نترسید این بلا فقط سر امثال ادمهای بدشانس متقاضی اون سالها پیش اومد})حالا هی فکر نکنید فقط مملکت خود ما گل و بلبله .براتون بکم تا اون زمان 6 سا ل از فایل نامبر ما می گذشت یه 2 ماهی که من فقط گریه کردم تا اینکه یقین حاصل شد بله خبر رسیده صحت داره.دیگه اصرار به همسر عزیز که من میترسم اینبار هم خودمان اقدام کنیم بیا ما هم وکیل بگیریم شاید این طلسم شکسته بشه رفتیم پیش معروفترین و شناخته ترین وکیل تهران.ایشون هم گفتند اگه قراره شما سر گروه بشید که به چهار اسکیل ا&nbsp;یلتس شما باید 6باشه بنده هم سه تا6داشتم یه 4.5ایلتس دومی را هم بعد از ماهها کلاس رفتن و شبانه روزی خوندن و استرس و معده دردهای بعدش لطف کردم و چهارتا 6.5 گرفتم و یک 5 (میدونید اشتباه کردم یکی از دوستهام همون موقع گفت 2تا ایلتس پشت هم بنویس گوش نکردم)بعدش هم اونقدر خسته و افسرده بودم که دیگه سراغ ایلتس نرفتم.</FONT></P>
+<P><FONT size=3>خب داشتم میگفتم رفتیم وکیل گفت دوراه دارید یا سر گروه خودم با چار تا ایلتس(من نهههههههههههه دیگه نمی تونم) یا کبک کانادا وسر گروه همسرتون چون رشته شما جز رشته های دیمند نیست و&nbsp;لی با یک رشته فنی حرفه ای که دیمند اونجا است و یه موسسه تو ایران این رشته را ارائه میده.خب&nbsp;این حرف را داره دفتر مشاوره معروفترین وکیل مهاجرت میگه ما:باشه قبول ادرس موسسه را بدید.اونها خیلی خب اول قرارداد امضا کنید.ما:باشه 1.5 پول بی زبون برای اول کار.موسسه:1 تومن پول.باشه.بعد هم زبان شیرین فرانسه و امتحات تف که انصافا نمره خوبی گرفتیم.حالا کی شده زمستون پارسال دلار چند شده خودتون دیگه مستحضرید(3500-3700)تو حالت خوبش 3300رفتیم پیش وکیل مدارک ما اماده است&nbsp;جناب وکیل(البته خودشون کانادا تشریف دارند)سر کار خانم مشاور:راستش ما دیگه پرونده ای مثل شما نداشتیم نمیدونیم مدرکی که اون موسسه میده مورد قبول کانادا هست یا نه.ما:ای داد مگه خودتون معرفی نکردیدمگه خودتون تا قرارداد امضا نکردیدم اسم اون موسسه را ندادید&nbsp;ما کلی هزینه کردیم کلی زمان.مشاور:دیگه ریسکه دیگه.......باور نمی کنید&nbsp;دیگه حتی نمی تونستیم عصبانی بشیم.عصبانی میشدیم چه فایده.تنها کاری که کردیم این بود 5000 دلار بیزبون و پول زحمتکشی را دستشون ندیم.از خیر 1.5 پولی که بهشون دادیم گذشتیم چون اگه هم می خواستیم قرارداد را فسخ کنیم همین مقدار میشد.از طرفی نه من ادمی هستم که برم هوارکشی نه همسرم.فکر نمی کنم کسی هم از شکایت سودی برده باشه&nbsp;اونهم از یک وکیل معروف و بین المللی و اسم و رسم دار.بی خیال شدیم و به قول مشاور شرکت ریسک کردیم.خودمون&nbsp;مدارک را فرستادیم و حالا منتظر فایل نامبر این یکی هم هستیم.فقط تصور کنید اوضاع حال و احوال مارا اگه دولت محترم کبک مدرک این موسسه(البته مورد تایید سازمان فنی حرفه ای هم هست)را به رسمیت نشناسه.از طرفی امسال فدرال دیگه رشته من را نمی خواد استرالیا هم برای رشته من فقط&nbsp;چهار تا 7 .بگذار اگه نشد اونموقع ببینم چه خاکی باید بسرمون بریزم خدا را چه دیدی شاید&nbsp;جواب دانشگاهی که اپلای کردم مثبت باشه&nbsp;شاید هم فایل نامبر کانادا ما هم بیاد واصلا شاید لاتاری امریکا برنده شدیم،خداراچه دیدی.&nbsp;</FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : چهارشنبه 4 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../8.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(8)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('8','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/8&amp;title=ادامه داستان سفر نرفته ما">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../6.html">داستان سفر نرفته ما</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>امروز صبح مثل همیشه از خواب که بلند شدم اولین کاری که کردم میلم را چک کردم باز هم خبری نبود دیگه یواش یواش دارم ناامید میشم.یه چند روزی هست که دارم وب یکی از دوستان را می خونم قلم شیرینی داره ،روزهای قبل از رفتنش و حال و هواش .کاملا میتونم درکش کنم و از طرفی سعی میکنم که زیاد تصور نکنم دلم میگیرهچون می ترسم حالا حالا این موقعیت برای من پیش نیاد اخه من برخلاف این دوستم که انگار زمین وزمان دست به دست هم داده بودند که کارهاش جور بشه من همه چیز بر ضد&nbsp;رفتن من عمل میکنه........................................................اولین بار که برای رفتن اقدام کردم 7 سال پیش بود(سالی که خیلی توی نوشته های من میبینید چون اتفاقات خیلی زیاد ی تو اون یک سال افتاد).من و همسرم تصمیم گرفته بودیم که بلافاصله بعد ازعقد برای رفتن اقدام کنیم پیش یکی دوتا وکیل رفتیم و در مورد کانادا پرس و جو کردیم هر دو گفتند ما انقدر میگیریم مدارک پر میکنیم و از این حرفهانامردها هیچ کدوم نکردنددرست و حسابی راهنمایی کنند بگند به جای اینکه چند سال منتظر بمونید و برای فدرال اقدام کنید بیایید برای استرالیا یا کبک اقدام کنید اونموقع ها من هنوز به معجزه سرچ از طریق اینترنت پی نبرده بودم زبانم هم خیلی ضعیف بود و رفتن هم مثل الان خیلی باب نشده بود.هیچ کدوم نمیدونستیم چیکار کنیم.قانون فدرال اونموقع ها یه حسن داشت مدارک را همون اول کار نمی خواست پیش خودمون حساب کردیم تا اونموقع زبان می خونیم و ایلتس میگیریم وهیچ راه دیگه ای هم نمی شناختیم پس&nbsp; عقد که کردیم سریع سکه ها را فروختیم و تبدیل به 1100 دلار ناقابل کردیم و خودمون از طریق سفارت اقدام کردیم.اونقدر خوشحال بودیم که به هر کس می رسیدیم از رفتنمون می گفتیم.ماهها گذشت و ما منتظر برای رفتن بودیم حتی برنامه داشتم جهیزیه ای نخرم و همه را پول کنیم ببریم.من و همسرم بعد از عقد هم خونه شده بودیم وبیوسیله زندگی کردن خیلی سخت بود.دیدم نه اینطوری خیلی سخته ،همه جوونیم داره تو حسرت و انتظار میسوزه ،خسته شده بودم از بس هر کی میومد خونمون باید بهش توضیح میدادم من قصد رفتن دارم و برای همین هیچ وسیله ای نخریدم پس همزمان با ترتیب دادن جشن عروسی شروع کردم به خریدن جهیزیه،انصافا سلیقه خوبی هم دارم و با دقت و سلیقه شروع به خرید کردم،بگذریم نزدیکیهای 5 سال زمانی&nbsp;که سایت سفارت برای رفتن کسانی&nbsp; مثل ما که تو اون سا لاقدام کرده بودند رسید دیدیم ای داد بیداد این زمان تو سایت 7 سال شده،اوف اگه بدونید این انتظار چقدر از انرژی ما را تحلیل برده بود جدا از اون چون از همون روز اول با شادی به همه گفته بودیم بله ما برای رفتن اقدام کرده ایم هر کی به ما میرسید از تاریخ رفتنمون می پرسید ........(الان بر می گردم)</FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : چهارشنبه 4 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../6.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(6)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('6','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/6&amp;title=داستان سفر نرفته ما">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+    <div class="post clearfix">
+        <blockquote><h2><a href="../../../../4.html">فقط چند روز دیگه</a></h2></blockquote>
+                <div class="author_photo"></div>
+
+
+
+        <p><p><P><FONT size=3 face=tahoma,arial,helvetica,sans-serif>فقط چند روز دیگه مونده،سه ماهه که منتظرم که هرروزش به اندازه یک ماه طولانی بوده،این روزهای اخر حسابی خسته شدم.یادمه اوایل می گفتم این انتظار بهتر از شنیدن خبر منفیه و خود این انتظار شیرینه اما الان دیگه فقط نتیجه را می خوام با اینکه ته دلم از جواب منفی وحشت دارم خب من این چند وقت خیلی رویا پردازی کردم.عقلافقط 10%احتمال مثبت بودن جواب هست اما من 100%از لحاظ احساسی باورش کرده ام.ویرون میشم اگه نشه.نمیگم زندگی الانم خیلی تغییر میکنه اگه من را نخواهند اما اگه بشه چی میشه.&nbsp;</FONT></P>
+<P><FONT size=3>راستش جند وقت پیش داشتم فکر می کردم تو این 35 سال هیچ خبری من را از ته دل شاد نکرده نه قبولیم توکنکور تو یکی از بهترین رشته ها نه دیدن دانشگاه وهمکلاسیهام نه حتی ازدواجم که تو بدترین زمان ممکن اتفاق افتاد(بعدا همه را سر فرصت توضیح میدم اصلا برای همین این وب را می نویسم )بعد اینهمه سال حالا واقعا می خوام این یکی درست بشه&nbsp; .خیلی خب میگم،من سالهاست ارزوی رفتن از ایران را دارم اینکه میگم ارزو یعنی نیاز یعنی یه خواستن زیاد،تو این سالها سعیم را هم کردم خیلی بدشانسی اوردم خیلی زیاد.پارسال تو فکر رفتن از طریق دانشجویی افتادم مدتها سرچ کردم اخه ادامه دادن تو رشته من خارج از کشور مصادف هست با گذشتن از هفت خان رستم،بعد از مدتها سرچ فهمیدم می تونم تو رشته ای که مرتبط با رشته ام هست ادامه تحصیل بدم.متاسفانه فقط موفق به ثبت نام تو یک دانشکاه شدم و حالا منتظر نتیجه اون .گفتند تا اخر اپریل نتایج را میدیم و این انتظار هر لحظه سختر میشه.اگه قبولم کنند به بزرگترین ارزوی زندگیم میرسم اما اگه نشه می فهمم مدارکم کافی نبوده قبول نشدن یعنی امتحان دوباره ایلتس و greویا حتی به معنی اینه که از زمان تحصیل من زمان زیادی گذشته و در واقع من شانس کمی برای پذیرش دارم.اگه قبول نشم یعنی یک سال دیگه انتظار ،در واقع من حکم بچه کنکوری را دارم که منتظر نتیجه است و میدونه اگه قبول نشه باید یک سال دیگه زحمت بکشه،من سالهای زیادی را از دست دادم.برای من الان وقت عمله نه انتظار.</FONT></P></p></p>
+
+        <p><br>
+        </p>
+    </div>
+    <div class="post_details  clearfix">
+        <p>نوشته شده در : سه شنبه 3 اردیبهشت 1392&nbsp;&nbsp;توسط : <a href="../../../../author/1019826.html" >اسمان پندار</a>.&nbsp;&nbsp;&nbsp; <a target="_self" href="../../../../4.html#commentlist" class="comment-link">دیدگاه(<script>setCommentCnt(4)</script>)</a>&nbsp;.
+
+        <div style="margin-top: -22px;"><script>mihanblogPostLike('4','like')</script></div>
+
+
+        </p>
+		<span>
+						
+
+					</span>
+
+        <div style="margin-top: 17px;" class="cb_share clearfix">
+            <a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://mennomen.mihanblog.com/post/4&amp;title=فقط چند روز دیگه">
+                ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+            </a>
+        </div>
+
+    </div>
+
+<!-- Comment -->
+
+
+<div class="comment_full" id="comment_full">
+
+    <style>
+
+            /*** COMMENT BODY***/
+        .comment_full{
+
+
+        }
+
+        .comment_body{
+            background: #DDDCD2;
+            margin:10px;
+            border-radius: 5px;
+            border-right:5px solid #c9c7b3;
+            overflow:hidden
+        }
+
+
+        .comment .comment_reply {
+            background: #A19B88;
+            border-right: 5px solid #76705d;
+            border-radius: 5px;
+            font-size: 12px;
+            width: 350px;
+            margin-top:10px;overflow:hidden
+        }
+
+
+        .comment .name {
+            font-weight: 600;
+            color: #4E3E09;
+            padding-right: 5px;
+            text-align: right;
+            line-height: 26px;
+            float: right;
+        }
+
+
+        .comment .date {
+            font-size: 10px;
+            padding: 5px;
+            color: #7E7E7E;
+            float: left;
+        }
+
+
+        .comment .comemnt_web {
+            padding: 5px 0 5px 15px; color: #999; direction: ltr; text-align: left;
+
+        }
+
+
+        .comment .comemnt_web a {
+            color: #554c3d;
+            text-decoration: underline;
+        }
+
+        .comment .comemnt_text {
+            text-align: justify;
+            line-height: 1.5em;
+            padding: 2px 5px;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .comment_det{
+            border-bottom:1px solid #CCC;
+
+        }
+
+        .comment .name,.date,.comemnt_text,.comment_reply{
+            margin-right:3px;
+            padding-right:3px;
+
+        }
+
+            /**** COMMENT FORM ****/
+        #comment_full .comment_form input.btn
+        {
+            background:url(http://mihanblog.com/http://mihanblog.comhttp://cblogsvn.comhttp://mihanblog.com/public/public/user_data/template/17/images/search_button.gif);
+            -x-system-font:none;
+            color:#000;
+            cursor:pointer;
+            float:none;
+            font-family:Tahoma;
+            font-size:12px;
+            font-size-adjust:none;
+            font-stretch:normal;
+            font-style:normal;
+            font-variant:normal;
+            font-weight:normal;
+            height:27px;
+            line-height:normal;
+            text-align:center;
+            width:92px;
+            border:1px solid #81C227;
+
+        }
+
+        .comment_form {
+            background: none repeat scroll 0 0 #c5c3af;
+            border-radius: 5px 5px 5px 5px;
+            border-right: 5px solid #a7a485;
+            direction: rtl;
+            margin: 10px;
+            padding: 20px;
+        }
+
+        .comment_form label {
+            width: 100px;
+            display: block;
+            float: right;
+            text-align: left;
+            font-size: 10px;
+            color: #555;
+            padding-left: 10px;
+        }
+
+
+        .comment_form .comment_form_row {
+            margin: 3px 0;
+        }
+
+
+        #imageCodeWrapper .imageCode_input #imgstr {
+            font-size: 25px;
+            height: 34px;
+            width: 70px;
+        }
+
+
+        .comment_form_textbox {
+            width:220px;
+
+        }
+        .comment_form_textarea{
+            width:220px !important;
+        }
+
+        .comment_form .comment_form_textarea, .comment_form .comment_form_textbox {
+            border: 1px solid #C5C5C5;
+        }
+
+
+
+
+    </style>
+
+    </div>
+<!-- End Comment-->
+
+
+
+
+    <div align="center" id="more_posts" class="page_box clearfix">
+        <ul>
+            <li>تعداد کل صفحات :2</li>
+                            <li><a href="1.html"><b>1</b></a>&nbsp;&nbsp;</li>
+                            <li><a href="2.html"><span>2</span></a>&nbsp;&nbsp;</li>
+                    </ul>
+    </div>
+
+
+
+
+</div>
+
+<div id="sidebar">
+    <ul>
+
+        <li class="about_box">
+            <div align="center"></div>
+            <p>من اینجام تا بنویسم، از خودم، افکارم ،گذشته ،اینده، خطاها وارزوهایم.<br />
+من اینجام تا به تحریردراورم زیباترین مسیررابرای زندگیم.<br />
+مینویسم برای پرواز، برای به اواز کشیدن تک تک حروف نگرانی. از من نخواهید به رقص دربیاورم عروسک زندگی را، که من تنها تصویرگر چشمانم.</p>
+            <a href="../../../../author/1019826.html"><b>اسمان پندار</b></a>
+        </li>
+
+
+
+                    <li>
+                <h2>آخرین پستها</h2>
+                <ul>
+                                            <li><a  href="../../../../708.html">فوری</a></li>
+                                            <li><a  href="../../../../707.html">انتظار کشنده</a></li>
+                                            <li><a  href="../../../../706.html">روزانه</a></li>
+                                            <li><a  href="../../../../705.html">لحظه ای که تموم شد</a></li>
+                                            <li><a  href="../../../../704.html">تکرار</a></li>
+                                            <li><a  href="../../../../703.html">مشکل کامنت گذاری برای این وبلاگ همچنان برقراره</a></li>
+                                            <li><a  href="../../../../702.html">گزارش زبان</a></li>
+                                            <li><a  href="../../../../700.html">روزانه </a></li>
+                                            <li><a  href="../../../../699.html">پاییز تلخ</a></li>
+                                            <li><a  href="../../../../698.html">برنامه برای دفاع</a></li>
+                                            <li><a  href="../../../../697.html">سال اخر تحصیلی </a></li>
+                                            <li><a  href="../../../../696.html">پاییز و شروع فصل کار</a></li>
+                                            <li><a  href="../../../../695.html">همسر یک دانشجو</a></li>
+                                            <li><a  href="../../../../694.html">دیو جاه طلبی</a></li>
+                                            <li><a  href="../../../../693.html">طبیعت فرح بخش</a></li>
+                                        <b><li><a  href="../../../../list.html">همه پستها</a></li></b>
+                </ul>
+            </li>
+        
+                    <li>
+                <h2>آرشیو موضوعی</h2>
+                <ul>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/34.html"><p>روزها در اون سر دنیا ( سال هفتم)</p><p>(11)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/33.html"><p>خودنامه</p><p>(1)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/32.html"><p>روزها در اون سر دنیا (سال ششم)</p><p>(33)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/31.html"><p>نیویورک</p><p>(10)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/30.html"><p>روزها در اون سر دنیا(سال پنجم)</p><p>(31)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/29.html"><p>ایالت گز کردن</p><p>(2)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/28.html"><p>روزها در اون سر دنیا( سال چهارم)</p><p>(26)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/27.html"><p>ازمایش - تز - مقاله</p><p>(15)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/26.html"><p>روزها در اون سر دنیا(سال سوم)</p><p>(36)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/25.html"><p>قدم به قدم، روز به روز تا اون بالاها</p><p>(32)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/24.html"><p>یاداور</p><p>(11)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/23.html"><p>اینده از ان من</p><p>(21)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/22.html"><p>پندهای اسمونی اونور ابی</p><p>(13)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/21.html"><p>روزها در اون سر دنیا(سال دوم)</p><p>(19)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/20.html"><p>روزهای دور همی (سفرهامون به ایران)</p><p>(28)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/18.html"><p>کاروبار</p><p>(18)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/17.html"><p>غرانه</p><p>(27)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/16.html"><p>من و خودم</p><p>(34)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/15.html"><p>درس و مشق خارجکی</p><p>(15)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/14.html"><p>روزها در اون سر دنیا(سال اول)</p><p>(19)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/13.html"><p>نگاه اول</p><p>(51)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/12.html"><p>زشت وزیبا</p><p>(51)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/11.html"><p>شمارش معکوس</p><p>(8)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/10.html"><p>چكه چكه </p><p>(28)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/8.html"><p>اظهارفضل</p><p>(33)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/7.html"><p>تولد</p><p>(11)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/6.html"><p>روزانه هایم</p><p>(13)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/5.html"><p>چرت و پرت نویسی</p><p>(22)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/4.html"><p>روزهای رویایی پیش از رفتن</p><p>(29)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/3.html"><p>خودشناسی</p><p>(31)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/2.html"><p>زیباترین لحظات زندگی</p><p>(24)</p></a></li>
+                                            <li  class="clearfix" id="parentheses"><a href="../../../../category/1.html"><p>زبان و امتحان</p><p>(22)</p></a></li>
+                                    </ul>
+            </li>
+        
+
+
+                    <li>
+                <h2>آرشیو</h2>
+                <ul>
+                                            <li><a href='../../../1399/9.html' title=' آذر 1399(3)'> آذر 1399</a></li>
+                                            <li><a href='../../../1399/8.html' title=' آبان 1399(5)'> آبان 1399</a></li>
+                                            <li><a href='../../../1399/7.html' title=' مهر 1399(3)'> مهر 1399</a></li>
+                                            <li><a href='../../../1399/6.html' title=' شهریور 1399(4)'> شهریور 1399</a></li>
+                                            <li><a href='../../../1399/5.html' title=' مرداد 1399(8)'> مرداد 1399</a></li>
+                                            <li><a href='../../../1399/4.html' title=' تیر 1399(4)'> تیر 1399</a></li>
+                                            <li><a href='../../../1399/3.html' title=' خرداد 1399(3)'> خرداد 1399</a></li>
+                                            <li><a href='../../../1399/2.html' title=' اردیبهشت 1399(2)'> اردیبهشت 1399</a></li>
+                                            <li><a href='../../../1399/1.html' title=' فروردین 1399(5)'> فروردین 1399</a></li>
+                                            <li><a href='../../../1398/12.html' title=' اسفند 1398(3)'> اسفند 1398</a></li>
+                                            <li><a href='../../../1398/11.html' title=' بهمن 1398(5)'> بهمن 1398</a></li>
+                                            <li><a href='../../../1398/10.html' title=' دی 1398(2)'> دی 1398</a></li>
+                                        <li><b><a href="../../../../archive.html">همه آرشیوها</a></b></li>
+                </ul>
+            </li>
+        
+                    <li>
+                <h2>نویسندگان</h2>
+                <ul>
+                                            <li  class="clearfix" id="parentheses"><p><a href="../../../../author/1019826.html"></a></p><a href="../../../../author/1019826.html"><p>اسمان پندار</p><p>(568)</p></a></li>
+                                    </ul>
+            </li>
+        
+        
+        
+                    <li>
+                <h2>لینکدونی</h2>
+                <ul>
+                                            <li><a href="https://castle-in-sky.blogsky.com/" title="" target="_blank">قلعه ای دراسمان</a></li>
+                                            <li><a href="http://zendegimoon.mihanblog.com/" title="" target="_blank">من و همسرم درغربت</a></li>
+                                            <li><a href="http://zemestonesabz.blogfa.com/" title="" target="_blank">دختر ایرونی</a></li>
+                                            <li><a href="http://gharetanhaei.blog.ir/" title="" target="_blank">غارتنهایی من</a></li>
+                                            <li><a href="http://rachel-in-wonderblog.blogfa.com" title="" target="_blank">rachel in wonderblog</a></li>
+                                            <li><a href="http://jourab.blogfa.com" title="" target="_blank">جوراب پاره و انگشت ازاد</a></li>
+                                            <li><a href="http://wonderland.blog.ir" title="" target="_blank">ازاده در سرزمین عجایب</a></li>
+                                            <li><a href="http://zireasemanekhoda2.blogsky.com/1394/04" title="" target="_blank">زیراسمان خدا٢</a></li>
+                                            <li><a href="http://asal2563.blogfa.com" title="" target="_blank">روزهای بهم ریخته</a></li>
+                                            <li><a href="http://rezasr2.blogsky.com" title="" target="_blank">جایی برای گفتن دلتنگیها</a></li>
+                                            <li><a href="http://tondotalkh.blog.ir" title="" target="_blank">تبخند</a></li>
+                                            <li><a href="http://weineurope.blogsky.com" title="" target="_blank">من وهمسرم دراروپا</a></li>
+                                            <li><a href="http://kamsin.blog.ir" title="" target="_blank">Movies,Chocolate and Hot Tea</a></li>
+                                            <li><a href="http://baranpaiezi.blogsky.com/" title="" target="_blank">ذهن زیبا</a></li>
+                                        <li><b><a href="../../../../../linkdaily/index.html">همه لینکها</a></b></li>
+                    <li><b><a href="javascript:linkdailyForm()">ارسال لینک به لینکدونی</a></b></li>
+                </ul>
+            </li>
+        
+        
+		
+
+
+                    <li>
+                <h2>اَبر برچسبها</span></h2>
+                <div class="clearfix">
+                    <ul class="cloud simple">
+                                                    <li><a href="../../../../tag/تجربه+اینترنشیپ.html" style="font-size:1em">تجربه اینترنشیپ</a>&nbsp;</li>
+                                            </ul>
+            </li>
+        
+                    <li>
+                <h2>آمار وبلاگ</h2>
+                <ul class="clearfix simple stat">
+                    <li>کل بازدید : <span><script>getStatVar('total_view');</script></span></li>
+                    <li>بازدید امروز : <span><script>getStatVar('today_view');</script></span></li>
+                    <li>بازدید دیروز : <span><script>getStatVar('yesterday_view');</script></span></li>
+                    <li>بازدید این ماه : <span><script>getStatVar('this_month_view');</script></span></li>
+                    <li>بازدید ماه قبل : <span><script>getStatVar('last_month_view');</script></span></li>
+                    <li>تعداد نویسندگان : <span><script>getStatVar('total_author');</script></span></li>
+                    <li>تعداد کل پست ها : <span><script>getStatVar('total_post');</script></span></li>
+                    <li>آخرین بازدید : <span><script>getStatVar('last_view_date');</script></span></li>
+                    <li>آخرین بروز رسانی : <span><script>getStatVar('modify_date');</script></span></li>
+
+                </ul>
+            </li>
+        
+        <li>
+            <ul class="rss_atom">
+                <li><a id='rss' href="../../../../rss/index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                <li><a id='atom' href="../../../../atom/index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            </ul>
+        </li>
+
+    </ul>
+
+    <div  align="center" class="clearfix"></div>
+    <div align="center" class="mihan_logo"></div>
+
+
+</div>
+
+<div dir="rtl" id="footer">
+    <p><strong>&nbsp;&nbsp;POWERED BY <a href="http://www.mihanblog.com/"><font color="#FF0000" size="2px">M</font>IHAN<font color="#FF0000" size="2px">B</font>LOG.COM</a></strong><br /></p>
+    <p>Design by <a>www.colorlightstudio.com</a>. Background by <a >www.squidfingers.com</a></p>
+</div>
+
+</div>
+</div>
+
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'mennomen.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.targetedwebtraffic.com" target="_blank">Buy Website Traffic</a> | <a href="https://www.seo25.com" target="_blank">Buy Targeted Website Traffic</a>
+    </div>
+</center>

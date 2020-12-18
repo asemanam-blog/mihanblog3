@@ -1,0 +1,1336 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://magichighschool.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1614195*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[1]='2071';commentCnt[2]='275';commentCnt[11]='1411';commentCnt[14]='-';commentCnt[20]='22';commentCnt[21]='27';commentCnt[22]='13';commentCnt[23]='33';commentCnt[24]='22';commentCnt[28]='74';commentCnt[29]='86';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[1]='0';
+mihanblogDisLikeArrCnt[1]='0';
+mihanblogLikeArrCnt[2]='0';
+mihanblogDisLikeArrCnt[2]='0';
+mihanblogLikeArrCnt[11]='0';
+mihanblogDisLikeArrCnt[11]='0';
+mihanblogLikeArrCnt[14]='0';
+mihanblogDisLikeArrCnt[14]='0';
+mihanblogLikeArrCnt[20]='0';
+mihanblogDisLikeArrCnt[20]='0';
+mihanblogLikeArrCnt[21]='0';
+mihanblogDisLikeArrCnt[21]='0';
+mihanblogLikeArrCnt[22]='0';
+mihanblogDisLikeArrCnt[22]='0';
+mihanblogLikeArrCnt[23]='0';
+mihanblogDisLikeArrCnt[23]='0';
+mihanblogLikeArrCnt[24]='0';
+mihanblogDisLikeArrCnt[24]='0';
+mihanblogLikeArrCnt[28]='0';
+mihanblogDisLikeArrCnt[28]='0';
+mihanblogLikeArrCnt[29]='0';
+mihanblogDisLikeArrCnt[29]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://magichighschool.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://magichighschool.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','12');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','سه شنبه 6 تیر 1396');
+	
+	setStatVar('today_view','5');
+	setStatVar('yesterday_view','49');
+	
+	setStatVar('this_month_view','1184');
+	setStatVar('last_month_view','1419');
+
+	setStatVar('total_view','120174');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (05:25)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://magichighschool.mihanblog.com/statupdate/?data[refereruri]=http://khatereh82.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607825862&data[hash]=d6dc9092bf4535e601c6608e663682eb&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://magichighschool.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://magichighschool.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://magichighschool.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META NAME="description" CONTENT="">
+<META NAME="keywords" CONTENT="">
+<META NAME="DesignerUrl" CONTENT="http://Avazak.ir">
+<META NAME="Designer" CONTENT="AVAZAK">
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<link rel="alternate" type="application/rss+xml" title="زیرنویس و دوبله برای کارتون ها" href="http://magichighschool.mihanblog.com/post/rss/" />
+<title>زیرنویس و دوبله برای کارتون ها</title>
+<link href="http://avazak.ir/Theme/style/826.css" type="text/css" rel="stylesheet">
+<!--[if IE 5]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div align="center">
+
+<div id="navbarbox"><div id="navbar">
+<span class="home"><a href="index.html">صفحه اصلی</a></span>
+<a href="http://magichighschool.mihanblog.com/post/list">عناوین مطالب</a>
+<a href="javascript:messageForm()">تماس با من</a>
+<a title="قالب وبلاگ رایگان" href="http://avazak.ir/">قالب وبلاگ</a>
+</div></div>
+
+<div class="line"></div>
+
+<div id="headerbox"><div id="header">
+<div class="right">
+<h1 class="h1">زیرنویس و دوبله برای کارتون ها</h1>
+<div class="desc">همه ی زیرنویس ها و دوبله ها کار خودمه</div>
+</div>
+<div class="left">
+<div style="float:right;width:75%;">
+<form style="margin:0px;padding:0px;" target="_new" method=get action=http://www.google.com/search>
+<input type="text" id="inputsearch" name=q maxlength="40" placeholder="جستجو ..." />
+<input value="http://magichighschool.mihanblog.com" type="hidden" name=sitesearch checked>
+<input type=hidden name=ie value=UTF-8>
+<input type=hidden name=oe value=UTF-8>
+</div>
+<div style="float:left;width:25%;">
+<input class="sbs" type="submit" name="btnG" value="">
+</form>
+</div>
+</div>
+</div>
+
+<div class="line"></div>
+
+<div id="aboutbox"><div id="about">
+<div class="logo"><img src="../static.mihanblog.com/public/user_data/web_photo/539/1614195.jpg@3979"  /></div>
+<div class="text">سلام:)<br />
+امیدوارم از دوبله ها و زیرنویس های من خوشتون بیاد:))<br />
+نظر بدید:)))<br />
+کپی فقط با ذکر منبع:))))</div>
+</div></div>
+
+<div class="line"></div>
+
+</div>
+
+
+	<!-- end header -->
+
+
+
+<div id="avazak">
+	
+<!--Design By : Avazak.ir-->
+
+<div id="content">
+<div id="bodyposts">
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<h2 class="title"><a title="سلام" href="http://magichighschool.mihanblog.com/post/1">سلام</a></h2>
+
+<div class="date">
+<div class="day">دوشنبه 4 خرداد 1394</div>
+<div class="time">10:25 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(1)">نظرات(<script>setCommentCnt(1)</script>)</a></div>
+</div>
+
+<div class="context">
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><br></div><div><div><br></div><div><span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;">سلام به همگی</span></div><div><span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><br></span></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3">من در این وبلاگ زیرنویس ها و دوبله هایی که خودم ساختم رو در وبلاگم قرار میدم</font></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3">لطفانظر بدید چون برای هر کدومشون خیلی خیلی زحمت می کشم..</font></div><div><br></div></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3">قوانین وبلاگ من اینا هستند:</font></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3">1- کپی کنید ولی فقط با ذکر منبع</font></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3">2-هرچی بیشتر نظر بدین بیشتر پست میذارم</font></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3">3- اگر کارتونی دارید که میخواید زیرنویس یا دوبله بشه بگین در صورت امکان میگذارم</font><font size="3">&nbsp;</font></div><div><font size="3"><br></font></div><div><font size="3"><br></font></div><div style="text-align: right;"><font size="3">&nbsp;<a href="http://opizo.com/qofhiG" target="" title="">برای ورود به پروفایلم کلیک کن</a></font></div><div style="text-align: right;"><br></div><div style="text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">&nbsp;<a href="http://magichighschool.mihanblog.com/extrapage/hemaitemn" target="_blank" title="">برای ورود به بخش حمایت وب بدون نیاز به پول و حجم اینترنت کلیک کن</a></font></div><div></div><div style="text-align: right;"><span style="font-size: medium;"><br></span></div><div style="text-align: right;"><span style="font-size: medium;">خداحافظ</span></div><div><br></div><div><br></div><div><font size="3">جعبه ی اخبار:</font></div><div><font size="3"><br></font></div><div><br></div><div><div style="direction: rtl; font-size: 12px;"><br style="direction: rtl;"></div><div style="direction: rtl; font-size: 12px;"><div align="center" style="font-family: Tahoma; direction: rtl; line-height: 16px;"><div style="font-family: Arial; direction: rtl; border: 1px solid rgb(0, 0, 0); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; width: 228px; height: 98px; overflow: auto; background-image: url(&quot%3Bhttp%253A/girlygifs.com/wp-content/uploads/2011/04/458.gif&quot%3B.html);"><font size="3" style="font-family: tahoma; direction: rtl;" color="#ffffff"><p align="center" style="direction: rtl; margin-top: 10px; margin-bottom: 0px;">مدرسه ها شروع شد و فعالیت وب تا تابستون تموم میشه ولی از تابستون دوباره سفارشات رو میگیرم</p><p align="center" style="direction: rtl; margin-top: 10px; margin-bottom: 0px;">لطفا حمایت یادتون نره!</p></font></div></div><span style="font-family: Tahoma; direction: rtl; color: rgb(237, 69, 192); line-height: 16px; text-align: center;"></span></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="اخبار و..." href="http://magichighschool.mihanblog.com/post/category/1">اخبار و...</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/1">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="نیاز به همکار" href="http://magichighschool.mihanblog.com/post/29">نیاز به همکار</a></h2>
+
+<div class="date">
+<div class="day">سه شنبه 6 تیر 1396</div>
+<div class="time">02:45 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(29)">نظرات(<script>setCommentCnt(29)</script>)</a></div>
+</div>
+
+<div class="context">
+<font face="tahoma, arial, helvetica, sans-serif" size="3">سلام به همگی!</font><div><br></div><div><font face="tahoma, arial, helvetica, sans-serif" size="3">خیلیاتون درخواست زیرنویس سیزن های وینکس رو کرده بودید و اگر من بخوام بذارمشون باید از فصل ۱ شروع به گذاشتن کنم و نیاز به یه همکار دارم کسی که انگلیسی اش حرفه ای باشه و بتونه ترجمه کنه حتی اگه بلد نیستین چطوری جدا زیرنویس کنین خودم بهتون یاد میدم ولی تا وقتی یه همکار برای سریال پیدا نکنم هیچگونه سریالی قرار نمیدم خیلی ببخشید.</font></div><br/>
+<b></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="اخبار و..." href="http://magichighschool.mihanblog.com/post/category/1">اخبار و...</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/29">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="دانلود انیمیشن monster high:frights,camera,action به سفارش سحر" href="http://magichighschool.mihanblog.com/post/28">دانلود انیمیشن monster high:frights,camera,action به سفارش سحر</a></h2>
+
+<div class="date">
+<div class="day">شنبه 3 تیر 1396</div>
+<div class="time">10:10 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(28)">نظرات(<script>setCommentCnt(28)</script>)</a></div>
+</div>
+
+<div class="context">
+
+
+
+
+
+
+
+
+
+<div><br></div><div><br></div><div><img src="https://i.jeded.com/i/monster-high-frights-camera-action.22114.jpg"></div><div><font face="arial, helvetica, sans-serif"><br></font></div><div><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">ژانر :&nbsp;<span style="box-sizing: inherit;">انیمیشن</span></font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">ناریخ نمایش : March 2014<span style="box-sizing: inherit; line-height: normal; text-align: start;"><br style="box-sizing: inherit;"></span></font></p><p style="box-sizing: inherit; text-align: justify; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">کارگردان : William Lau</font></p><p style="box-sizing: inherit; text-align: justify; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">نویسنده : Dan Serafin –&nbsp; Audu Paden</font></p><p style="box-sizing: inherit; text-align: justify; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">ستارگان : Yeni Alvarez –&nbsp; Laura Bailey – Cameron Clarke</font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">امتیاز:۶.۶</font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">زبان : انگلیسی</font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">زیر نویس فارسی : دارد</font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">کیفیت : 720p</font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">فرمت نمایش : mkv</font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">زمان : 73</font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font size="3" color="#ffffff" face="tahoma, arial, helvetica, sans-serif">&nbsp;دقیقه</font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font color="#ffffff" size="3" face="tahoma, arial, helvetica, sans-serif"><br></font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font color="#ffffff" size="3" face="tahoma, arial, helvetica, sans-serif">خلاصه ی داستان:</font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font color="#ffffff" size="3" face="tahoma, arial, helvetica, sans-serif"><br></font></p><p style="box-sizing: inherit; text-align: right; line-height: 2em;"><font color="#ffffff" size="3"><font face="tahoma, arial, helvetica, sans-serif">دراکورلا &nbsp;به این باور میرسد که ملکه است و به سوی قلعه اش حرکت میکند اما در آنجا رازی بیش از حد تصور بزرگ انتظارش را</font><font face="arial, helvetica, sans-serif" style="font-weight: bold;"> میکشد...</font></font></p></div>
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://magichighschool.mihanblog.com/post/28'>ادامه مطلب</a></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="انیمیشن بلند" href="http://magichighschool.mihanblog.com/post/category/5">انیمیشن بلند</a>، </div>
+<div class="meta">برچسب ها:
+<a title="دانلود کارتون monster high frights camera action با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20monster%20high%20frights%20camera%20action%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود کارتون monster high frights camera action با زیرنویس فارسی</a>، <a title="دانلود انیمیشن مانستر های" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86%20%D9%85%D8%A7%D9%86%D8%B3%D8%AA%D8%B1%20%D9%87%D8%A7%DB%8C">دانلود انیمیشن مانستر های</a>، <a title="دانلود انیمیشن monsterhigh frights camera action با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86%20monsterhigh%20frights%20camera%20action%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود انیمیشن monsterhigh frights camera action با زیرنویس فارسی</a>، <a title="زیرنویس انیمیشن monster high frights camera action" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86%20monster%20high%20frights%20camera%20action">زیرنویس انیمیشن monster high frights camera action</a>، <a title="زیرنویس مانسترهای" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%85%D8%A7%D9%86%D8%B3%D8%AA%D8%B1%D9%87%D8%A7%DB%8C">زیرنویس مانسترهای</a>، <a title="دانلود انیمیشن جدید" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86%20%D8%AC%D8%AF%DB%8C%D8%AF">دانلود انیمیشن جدید</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/28">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="دانلود انیمیشن دبیرستان هیولاها: شهر وحشت-Monster High – Scaris: City of Frights" href="http://magichighschool.mihanblog.com/post/24">دانلود انیمیشن دبیرستان هیولاها: شهر وحشت-Monster High – Scaris: City of Frights</a></h2>
+
+<div class="date">
+<div class="day">پنجشنبه 25 شهریور 1395</div>
+<div class="time">07:35 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(24)">نظرات(<script>setCommentCnt(24)</script>)</a></div>
+</div>
+
+<div class="context">
+
+
+
+
+
+
+<div><br></div><div><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjQxMzEzMzg0NF5BMl5BanBnXkFtZTgwNzAxMTg1MzE@._V1_.jpg">'</div><div><br></div><div><font size="3"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;">&nbsp;نام: دبیرستان هیولاها: شهر وحشت – Monster High – Scaris: City of Frights</span></font></div><div><font size="3"><br style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;">&nbsp;سال تولید: ۲۰۱۳</span></font></div><div><font size="3"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><br></span></font></div><div><font size="3"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;">&nbsp;کارگردان: Andrew Duncan , Dustin Mckenzie, Audu Paden</span></font></div><div><font size="3"><br style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;">&nbsp;شرکت تولید کننده: &nbsp;Playground Productions</span></font></div><div><font size="3"><br style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;">&nbsp;کشور تولید کننده: آمریکا</span></font></div><div><font size="3"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><br></span></font></div><div><font size="3">&nbsp;امتیاز:6.8</font></div><div><font size="3"><br></font></div><div><font size="3"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;">&nbsp;زمان: ۹۵ دقیقه</span></font></div><div><font size="3"><br style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;">&nbsp;زبان: انگلیسی</span></font></div><div><font size="3"><br style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;">&nbsp;زیرنویس: دارد</span></font></div><div><font size="3"><br style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;">&nbsp;کیفیت: عالی (BR-Rip 1080p + BR-Rip 720p)</span></font></div><div><font size="3"><span style="font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><br></span></font></div><div><font face="Tahoma, Arial, Verdana, sans-serif" size="3"><span style="line-height: 18px;">خلاصه:کلاودین و دوستانش نمایش مدی در دبیرستان برگزار میکنن و ناگهان فرد مهمی آن را میبیند و به طراحی لباس او علاقمند میشود و از کلاودین میخواد شاگردش شود..کلاودین قبول میکنداما او هیچ چیزی از راز های ترسناک آن خانم نمیداند</span></font></div>
+
+
+
+
+
+<br/>
+<b><a href='http://magichighschool.mihanblog.com/post/24'>ادامه مطلب</a></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="انیمیشن بلند" href="http://magichighschool.mihanblog.com/post/category/5">انیمیشن بلند</a>، </div>
+<div class="meta">برچسب ها:
+<a title="دانلود کارتون 2016" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%202016">دانلود کارتون 2016</a>، <a title="دانلود انیمیشن Monster High – Scaris: City of Frights با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86%20Monster%20High%20%E2%80%93%20Scaris:%20City%20of%20Frights%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود انیمیشن Monster High – Scaris: City of Frights با زیرنویس فارسی</a>، <a title="دانلود انیمیشن دبیرستان هیولاها: شهر وحشت" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86%20%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86%20%D9%87%DB%8C%D9%88%D9%84%D8%A7%D9%87%D8%A7:%20%D8%B4%D9%87%D8%B1%20%D9%88%D8%AD%D8%B4%D8%AA">دانلود انیمیشن دبیرستان هیولاها: شهر وحشت</a>، <a title="monster high" href="http://magichighschool.mihanblog.com/post/tag/monster&#32;high">monster high</a>، <a title="مانستر های" href="http://magichighschool.mihanblog.com/post/tag/%D9%85%D8%A7%D9%86%D8%B3%D8%AA%D8%B1%20%D9%87%D8%A7%DB%8C">مانستر های</a>، <a title="دانلود انیمیشن جدید و دخترونه" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86%20%D8%AC%D8%AF%DB%8C%D8%AF%20%D9%88%20%D8%AF%D8%AE%D8%AA%D8%B1%D9%88%D9%86%D9%87">دانلود انیمیشن جدید و دخترونه</a>، <a title="کارتون باربی جدید" href="http://magichighschool.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20%D8%A8%D8%A7%D8%B1%D8%A8%DB%8C%20%D8%AC%D8%AF%DB%8C%D8%AF">کارتون باربی جدید</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/24">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="دانلود انیمیشن دبیرستان هیولا: صخره مرجانی بزرگ – Monster High: The Great Scarrier Reef به سفارش کیانا" href="http://magichighschool.mihanblog.com/post/23">دانلود انیمیشن دبیرستان هیولا: صخره مرجانی بزرگ – Monster High: The Great Scarrier Reef به سفارش کیانا</a></h2>
+
+<div class="date">
+<div class="day">چهارشنبه 3 شهریور 1395</div>
+<div class="time">03:14 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(23)">نظرات(<script>setCommentCnt(23)</script>)</a></div>
+</div>
+
+<div class="context">
+
+
+
+
+
+
+<p style="margin: 0px; padding: 0px; direction: rtl; font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><br></p><p style="margin: 0px; padding: 0px; direction: rtl; font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><br></p><p style="margin: 0px; padding: 0px; direction: rtl; font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><img src="http://minitoons.ir/wp-content/images/posts/1234/a.jpg"></p><p style="margin: 0px; padding: 0px; direction: rtl; font-family: Tahoma, Arial, Verdana, sans-serif; line-height: 18px; text-align: right;"><br></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;نام: دبیرستان هیولا: صخره مرجانی بزرگ – Monster High: The Great Scarrier Reef</font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;سال تولید: ۲۰۱۶</font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br></font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;امتیاز: 5.8</font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br>&nbsp;کارگردان: William Lau</font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br>&nbsp;شرکت تولید کننده: Mattel Playground Productions</font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br>&nbsp;کشور تولید کننده: آمریکا</font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br>&nbsp;زمان: ۷۱ دقیقه</font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br>&nbsp;زبان: انگلیسی</font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3"><br>&nbsp;زیرنویس:دارد<br></font></p><p style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: right;"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;</font></p><p dir="rtl" style="margin: 0px; padding: 0px; direction: rtl; line-height: 18px; text-align: justify;"><font face="tahoma, arial, helvetica, sans-serif" size="3"><strong>خلاصه داستان:</strong>&nbsp;در مهمانی در دبیرستان هیولاها نیروهایی عجیب لگونا بلو و دوستانش را به زیر آب میکشاند و قبل از اینکه خودشان نیز بفهمند چه اتفاقی افتاده است بیش از حد در مشکلات و داستان ها فرو میروندو...این انیمیشن نیز مانند بقیه ی انیمیشن های مانستر های برای بزرگ ترها نیز جالب و دیدنی خواهد بود&nbsp;</font></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://magichighschool.mihanblog.com/post/23'>ادامه مطلب</a></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="انیمیشن بلند" href="http://magichighschool.mihanblog.com/post/category/5">انیمیشن بلند</a>، </div>
+<div class="meta">برچسب ها:
+<a title="دانلود کارتون Monster High: The Great Scarrier Reef" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20Monster%20High:%20The%20Great%20Scarrier%20Reef">دانلود کارتون Monster High: The Great Scarrier Reef</a>، <a title="دانلود انیمیشن Monster High: The Great Scarrier Reef با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86%20Monster%20High:%20The%20Great%20Scarrier%20Reef%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود انیمیشن Monster High: The Great Scarrier Reef با زیرنویس فارسی</a>، <a title="دانلود انیمیشن صخره های مرجانی بزرگ با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86%20%D8%B5%D8%AE%D8%B1%D9%87%20%D9%87%D8%A7%DB%8C%20%D9%85%D8%B1%D8%AC%D8%A7%D9%86%DB%8C%20%D8%A8%D8%B2%D8%B1%DA%AF%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود انیمیشن صخره های مرجانی بزرگ با زیرنویس فارسی</a>، <a title="دانلود کارتون مانستر های" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20%D9%85%D8%A7%D9%86%D8%B3%D8%AA%D8%B1%20%D9%87%D8%A7%DB%8C">دانلود کارتون مانستر های</a>، <a title="زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">زیرنویس فارسی</a>، <a title="کارتون جدید" href="http://magichighschool.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20%D8%AC%D8%AF%DB%8C%D8%AF">کارتون جدید</a>، <a title="فیلم جدید" href="http://magichighschool.mihanblog.com/post/tag/%D9%81%DB%8C%D9%84%D9%85%20%D8%AC%D8%AF%DB%8C%D8%AF">فیلم جدید</a>، </div>
+<div class="meta">دنبالک ها:
+<a title="imdb" href="http://www.imdb.com/title/tt5475710/" target="_blank">imdb</a>،	 <a title="زیرنویس از سایت sub scene" href="http://https://subscene.com/subtitles/monster-high-great-scarrier-reef/farsi_persian/1391878" target="_blank">زیرنویس از سایت sub scene</a>،	 </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/23">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="دانلود سریال انیمیشنی amethyst princess of the gameworld با زیرنویس فارسی(کامل)" href="http://magichighschool.mihanblog.com/post/22">دانلود سریال انیمیشنی amethyst princess of the gameworld با زیرنویس فارسی(کامل)</a></h2>
+
+<div class="date">
+<div class="day">شنبه 23 مرداد 1395</div>
+<div class="time">01:15 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(22)">نظرات(<script>setCommentCnt(22)</script>)</a></div>
+</div>
+
+<div class="context">
+
+
+
+
+
+
+
+
+<div><br></div><div><img src="http://ia.media-imdb.com/images/M/MV5BMjA2ODk1ODI2MV5BMl5BanBnXkFtZTcwNzgzOTAyOQ@@._V1_SX1777_CR0,0,1777,999_AL_.jpg"></div><div><br></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">نام:amethyst princess of the gemworld</font></span></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;ژانر : انیمیشن-ماجرایی&nbsp;</font></span></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;محصول کشور: usa&nbsp;</font></span></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;امتیاز : 7.6&nbsp;</font></span></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;مدت انیمیشن:9دقیقه و 7 ثانیه&nbsp;</font></span></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">کیفیت : 720p&nbsp;</font></span></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;زیرنویس :دارد&nbsp;</font></span></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">&nbsp;سال انتشار:2013&nbsp;</font></span></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">تعداد فصل ها:1&nbsp;&nbsp;</font></span></div><div><span style="color: rgb(255, 255, 255); text-align: right; background-color: rgb(37, 43, 55);"><font face="tahoma, arial, helvetica, sans-serif" size="3">خلاصه داستان : این انیمیشن شامل 7 قسمت کوتاه است که من همه شان رو باهم در یک کارتون جمع آوری کرده ام..با اینکه این سریال انیمیشنی 9 دقیقه بیشتر نیست اما هم بچه ها و هم بزرگترها از آن خیلی لذت میبرند..جریان داستان جریان دختری عادی است که ناگهان وارد دنیای بازی میشود و او را پرنسس میخوانندو..</font></span></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://magichighschool.mihanblog.com/post/22'>ادامه مطلب</a></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="انیمیشن بلند" href="http://magichighschool.mihanblog.com/post/category/5">انیمیشن بلند</a>، <a title="کارتون کوتاه" href="http://magichighschool.mihanblog.com/post/category/2">کارتون کوتاه</a>، </div>
+<div class="meta">برچسب ها:
+<a title="دانلود سریال Amethyst" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%B3%D8%B1%DB%8C%D8%A7%D9%84%20Amethyst">دانلود سریال Amethyst</a>، <a title="Princess of Gemworld  با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/Princess%20of%20Gemworld%20%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">Princess of Gemworld  با زیرنویس فارسی</a>، <a title="دانلود Amethyst" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20Amethyst">دانلود Amethyst</a>، <a title="Princess of Gemworld" href="http://magichighschool.mihanblog.com/post/tag/Princess&#32;of&#32;Gemworld">Princess of Gemworld</a>، <a title="کارتون جدید باربی" href="http://magichighschool.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20%D8%AC%D8%AF%DB%8C%D8%AF%20%D8%A8%D8%A7%D8%B1%D8%A8%DB%8C">کارتون جدید باربی</a>، <a title="کارتون کوتاه زیبا" href="http://magichighschool.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20%DA%A9%D9%88%D8%AA%D8%A7%D9%87%20%D8%B2%DB%8C%D8%A8%D8%A7">کارتون کوتاه زیبا</a>، <a title="زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">زیرنویس فارسی</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/22">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="دانلود انیمیشنMonster High Boo York Boo York با زیرنویس فارسی به سفارش کیانا" href="http://magichighschool.mihanblog.com/post/21">دانلود انیمیشنMonster High Boo York Boo York با زیرنویس فارسی به سفارش کیانا</a></h2>
+
+<div class="date">
+<div class="day">شنبه 9 مرداد 1395</div>
+<div class="time">12:02 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(21)">نظرات(<script>setCommentCnt(21)</script>)</a></div>
+</div>
+
+<div class="context">
+<div><br></div><div><img src="https://i.jeded.com/i/monster-high-boo-york-boo-york.38542.jpg"></div><div><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">نام:<font color="#330033"><span style="line-height: 24px; text-align: justify;">Monster High Boo York Boo York</span><span style="line-height: 24px; text-align: justify;">&nbsp;</span></font></font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">ژانر : انیمیشن-ماجرایی</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">محصول کشور: usa</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">امتیاز : 6.6</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">کیفیت : 1080p-720p</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">زیرنویس :دارد</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">کارگردان :&nbsp;<span style="line-height: 18px;">William Lau</span></font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">سال انتشار:2015</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: justify;"><font size="3" face="tahoma, arial, helvetica, sans-serif"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-stretch: inherit; vertical-align: baseline; line-height: 19.8px;">خلاصه داستان :</span><span style="line-height: 24px;">&nbsp;</span><span style="line-height: 24px;">در این قسمت از این انیمیشن جذاب و دیدنی هیولاها به سهر بو یورک(نیویورک) سفر می کنند و متوجه جریاناتی عجیب و هیجان انگیز میشوند و ممکن است شخصیت هایی آشنا از سریال ever after high نیز در این فیلم ببینید</span></font></p></div>
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://magichighschool.mihanblog.com/post/21'>ادامه مطلب</a></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="انیمیشن بلند" href="http://magichighschool.mihanblog.com/post/category/5">انیمیشن بلند</a>، </div>
+<div class="meta">برچسب ها:
+<a title="مانستر های با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D9%85%D8%A7%D9%86%D8%B3%D8%AA%D8%B1%20%D9%87%D8%A7%DB%8C%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">مانستر های با زیرنویس فارسی</a>، <a title="monster high :boo york boo york با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/monster%20high%20:boo%20york%20boo%20york%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">monster high :boo york boo york با زیرنویس فارسی</a>، <a title="دانلود انیمیشنMonster High Boo York Boo York  با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%A7%D9%86%DB%8C%D9%85%DB%8C%D8%B4%D9%86Monster%20High%20Boo%20York%20Boo%20York%20%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود انیمیشنMonster High Boo York Boo York  با زیرنویس فارسی</a>، <a title="کارتون باربی جدید" href="http://magichighschool.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20%D8%A8%D8%A7%D8%B1%D8%A8%DB%8C%20%D8%AC%D8%AF%DB%8C%D8%AF">کارتون باربی جدید</a>، <a title="مانستر های 2015" href="http://magichighschool.mihanblog.com/post/tag/%D9%85%D8%A7%D9%86%D8%B3%D8%AA%D8%B1%20%D9%87%D8%A7%DB%8C%202015">مانستر های 2015</a>، <a title="monster high" href="http://magichighschool.mihanblog.com/post/tag/monster&#32;high">monster high</a>، <a title="monster high با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/monster%20high%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">monster high با زیرنویس فارسی</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/21">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="دانلود انیمیشن Winx Club: The Mystery of the Abyss 2014 با زیرنویس فارسی به سفارش کیانا" href="http://magichighschool.mihanblog.com/post/20">دانلود انیمیشن Winx Club: The Mystery of the Abyss 2014 با زیرنویس فارسی به سفارش کیانا</a></h2>
+
+<div class="date">
+<div class="day">جمعه 8 مرداد 1395</div>
+<div class="time">09:59 ق.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(20)">نظرات(<script>setCommentCnt(20)</script>)</a></div>
+</div>
+
+<div class="context">
+
+
+
+
+
+
+
+<div><br></div><img src="https://i.jeded.com/i/winx-club-the-mystery-of-the-abyss.35173.jpg"><font size="3" color="#ffffff"><br><br>
+
+
+</font><div><p style="outline: 0px; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; line-height: 22px; text-align: justify;"><font size="3" color="#ffffff">ن</font><font size="3">ام انیمیشن: Winx Club The Mystery of the Abyss</font></p><p style="outline: 0px; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; line-height: 22px; text-align: justify;"><font size="3">ژانر: انیمیشن</font></p><p style="outline: 0px; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; line-height: 22px; text-align: justify;"><font size="3">امتیاز:4.4</font></p><p style="outline: 0px; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; line-height: 22px; text-align: justify;"><font size="3">سال انتشار: ۲۰۱۴</font></p><p style="outline: 0px; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; line-height: 22px; text-align: justify;"><font size="3">مدت زمان: ۵۲ دقیقه</font></p><p style="outline: 0px; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; line-height: 22px; text-align: justify;"><font size="3">حجم: – مگابایت</font></p><p style="outline: 0px; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; line-height: 22px; text-align: justify;"><font size="3">کیفیت:&nbsp;<b>720p-1080p</b><br></font></p><p style="outline: 0px; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; line-height: 22px; text-align: justify;"><font size="3">زیرنویس فارسی: دارد</font></p><p style="outline: 0px; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; line-height: 22px; text-align: justify;"><font size="3">خلاصه داستان: Winx Club با رازی وحشتناک دست و پنجه نرم می کند و کسانی که به دریای بیکران باز گشته اند حتی وحشتناک تر از آن هستند که بتوانید تصور کنید</font></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://magichighschool.mihanblog.com/post/20'>ادامه مطلب</a></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="انیمیشن بلند" href="http://magichighschool.mihanblog.com/post/category/5">انیمیشن بلند</a>، </div>
+<div class="meta">برچسب ها:
+<a title="دانلود زیرنویس کارتونWinx Club The Mystery of the Abyss" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86Winx%20Club%20The%20Mystery%20of%20the%20Abyss">دانلود زیرنویس کارتونWinx Club The Mystery of the Abyss</a>، <a title="دانلود کارتونWinx Club The Mystery of the Abyss با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86Winx%20Club%20The%20Mystery%20of%20the%20Abyss%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود کارتونWinx Club The Mystery of the Abyss با زیرنویس فارسی</a>، <a title="وینکس کلاب زیرنویس" href="http://magichighschool.mihanblog.com/post/tag/%D9%88%DB%8C%D9%86%DA%A9%D8%B3%20%DA%A9%D9%84%D8%A7%D8%A8%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3">وینکس کلاب زیرنویس</a>، <a title="ترجمه وینکس کلاب" href="http://magichighschool.mihanblog.com/post/tag/%D8%AA%D8%B1%D8%AC%D9%85%D9%87%20%D9%88%DB%8C%D9%86%DA%A9%D8%B3%20%DA%A9%D9%84%D8%A7%D8%A8">ترجمه وینکس کلاب</a>، <a title="فصل6winx club با زیرنویس" href="http://magichighschool.mihanblog.com/post/tag/%D9%81%D8%B5%D9%846winx%20club%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3">فصل6winx club با زیرنویس</a>، <a title="کارتون جدید" href="http://magichighschool.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20%D8%AC%D8%AF%DB%8C%D8%AF">کارتون جدید</a>، <a title="بلوم" href="http://magichighschool.mihanblog.com/post/tag/%D8%A8%D9%84%D9%88%D9%85">بلوم</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/20">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="دانلود فصل 1 سریال dc super hero girls با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/14">دانلود فصل 1 سریال dc super hero girls با زیرنویس فارسی</a></h2>
+
+<div class="date">
+<div class="day">شنبه 26 تیر 1395</div>
+<div class="time">05:00 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(14)">- تو پست ثابت بده(<script>setCommentCnt(14)</script>)</a></div>
+</div>
+
+<div class="context">
+
+
+
+
+<div><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-weight: 600; font-stretch: inherit; font-size: 13.2px; vertical-align: baseline; line-height: 2.3em; color: rgb(82, 96, 119); text-align: right;"><br></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-weight: 600; font-stretch: inherit; font-size: 13.2px; vertical-align: baseline; line-height: 2.3em; color: rgb(82, 96, 119); text-align: right;"><img src="http://i.newsarama.com/images/i/000/169/579/i02/DCSHG_FCBD_resized.jpg?1462211323"></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">ژانر : انیمیشن سریالی،ماجراجویانه</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">محصول کشور:usa</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">امتیاز :7.1</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">کیفیت : bluray</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">زیرنویس فارسی:دارد</font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: right;"><font size="3" face="tahoma, arial, helvetica, sans-serif">ستارگان :<span style="background-color: rgb(255, 255, 255);"><span itemprop="actors" itemscope="" itemtype="http://schema.org/Person"><a href="http://www.imdb.com/name/nm0217221?ref_=tt_ov_st_sm" itemprop="url" style="text-decoration: none; white-space: nowrap;"><span class="itemprop" itemprop="name">Grey Griffin</span></a>,&nbsp;</span><span itemprop="actors" itemscope="" itemtype="http://schema.org/Person"><a href="http://www.imdb.com/name/nm1911958?ref_=tt_ov_st_sm" itemprop="url" style="text-decoration: none; white-space: nowrap;"><span class="itemprop" itemprop="name">Teala Dunn</span></a>,&nbsp;</span><span itemprop="actors" itemscope="" itemtype="http://schema.org/Person"><a href="http://www.imdb.com/name/nm0152839?ref_=tt_ov_st_sm" itemprop="url" style="text-decoration: none; white-space: nowrap;"><span class="itemprop" itemprop="name">Tara Strong</span></a>&nbsp;</span><span class="ghost">|</span></span></font></p><p style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline; line-height: 2.3em; text-align: justify;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-stretch: inherit; vertical-align: baseline; line-height: 19.8px;"><font size="3" face="tahoma, arial, helvetica, sans-serif">خلاصه داستان :&nbsp;این سریال جریان دبیرستانی را میگوید که در آن قهرمان ها پرورش میابند..اما جریان اصلی درمورد دختران سوپر قهرمان ،دوستی شان،ماموریت هایشان و ماجراجویی هایشان است..این سریال با آنکه قسمت های کوتاهی دارد اما بسیار قشنگ است</font></span></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://magichighschool.mihanblog.com/post/14'>دانلود در ادامه</a></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="dc super hero girls" href="http://magichighschool.mihanblog.com/post/category/4">dc super hero girls</a>، </div>
+<div class="meta">برچسب ها:
+<a title="کارتون باربی" href="http://magichighschool.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20%D8%A8%D8%A7%D8%B1%D8%A8%DB%8C">کارتون باربی</a>، <a title="دانلود سریال dc super hero girls با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%B3%D8%B1%DB%8C%D8%A7%D9%84%20dc%20super%20hero%20girls%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود سریال dc super hero girls با زیرنویس فارسی</a>، <a title="دانلود سریال dc super hero girls high" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%B3%D8%B1%DB%8C%D8%A7%D9%84%20dc%20super%20hero%20girls%20high">دانلود سریال dc super hero girls high</a>، <a title="دانلود کارتون 2016" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%202016">دانلود کارتون 2016</a>، <a title="دانلود کارتون باربی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86%20%D8%A8%D8%A7%D8%B1%D8%A8%DB%8C">دانلود کارتون باربی</a>، <a title="دانلود سریال دبیرستان سوپر قهرمانها" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%B3%D8%B1%DB%8C%D8%A7%D9%84%20%D8%AF%D8%A8%DB%8C%D8%B1%D8%B3%D8%AA%D8%A7%D9%86%20%D8%B3%D9%88%D9%BE%D8%B1%20%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%D9%87%D8%A7">دانلود سریال دبیرستان سوپر قهرمانها</a>، <a title="دختران قهرمان" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%AE%D8%AA%D8%B1%D8%A7%D9%86%20%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86">دختران قهرمان</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/14">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="دانلود فصل 1 سریال ever after high با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/11">دانلود فصل 1 سریال ever after high با زیرنویس فارسی</a></h2>
+
+<div class="date">
+<div class="day">سه شنبه 25 خرداد 1395</div>
+<div class="time">01:22 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(11)">نظرات(<script>setCommentCnt(11)</script>)</a></div>
+</div>
+
+<div class="context">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center;"><div><br></div><div><br></div><div><img src="http://www.everafterhigh.com/en-us/Images/quiz-Thronecoming-promo_tcm571-180232.jpg"></div><div><p style="text-align: right; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline;"><font size="3">ژانر : فانتزی،انیمیشن سریالی</font></p><p style="text-align: right; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline;"><font size="3">محصول کشور: USA</font></p><p style="text-align: right; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline;"><font size="3">امتیاز : 8.0</font></p><p style="text-align: right; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline;"><font size="3">کیفیت : BluRay</font></p><p style="text-align: right; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline;"><font size="3">زیرنویس فارسی :دارد</font></p><p style="text-align: right; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline;"><font size="3">دانلود در ادامه ی مطلب</font></p><p style="text-align: right; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline;"><font size="3">ستارگان :&nbsp;<span style="text-align: start; ">&nbsp;</span><span itemprop="actors" itemscope="" itemtype="http://schema.org/Person" style="text-align: start; "><a href="http://www.imdb.com/name/nm0280230?ref_=tt_ov_st_sm" itemprop="url"><span class="itemprop" itemprop="name">Erin Fitzgerald</span></a>,&nbsp;</span><span itemprop="actors" itemscope="" itemtype="http://schema.org/Person" style="text-align: start; "><a href="http://www.imdb.com/name/nm1512156?ref_=tt_ov_st_sm" itemprop="url"><span class="itemprop" itemprop="name">Kate Higgins</span></a>,&nbsp;</span><span itemprop="actors" itemscope="" itemtype="http://schema.org/Person" style="text-align: start; "><a href="http://www.imdb.com/name/nm5043171?ref_=tt_ov_st_sm" itemprop="url"><span class="itemprop" itemprop="name">Evan Smith</span></a>&nbsp;</span></font></p><p style="text-align: right; box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-stretch: inherit; vertical-align: baseline;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-stretch: inherit; vertical-align: baseline;"><font size="3">خلاصه داستان :&nbsp;دختران و پسران شخصیت های داستانی مانند سفید برفی و ملکه ی شیطانی در مدرسه ای به نام ever after high درس میخوانند جایی که دانش آموزان سلطنتی(کسانی که میخواهند سرنوشت مقدر شده برایشان را انجام دهند)و دانش آموزان یاغی(آنهایی که میخواهند خودشان سرنوشت خودشان را بسازند) با هم جریان های هیجان انگیزی را تجربه میکنند..با اینکه این سریال انیمیشن است اما بزرگتر ها از دیدن آن لذت بسیاری میبرند</font></span></p></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://magichighschool.mihanblog.com/post/11'>ادامه ی مطلب</a></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="ever after high" href="http://magichighschool.mihanblog.com/post/category/3">ever after high</a>، </div>
+<div class="meta">برچسب ها:
+<a title="سریال ever after high" href="http://magichighschool.mihanblog.com/post/tag/%D8%B3%D8%B1%DB%8C%D8%A7%D9%84%20ever%20after%20high">سریال ever after high</a>، <a title="ever after high" href="http://magichighschool.mihanblog.com/post/tag/ever&#32;after&#32;high">ever after high</a>، <a title="دانلود سریال ever after high با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D8%B3%D8%B1%DB%8C%D8%A7%D9%84%20ever%20after%20high%20%D8%A8%D8%A7%20%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود سریال ever after high با زیرنویس فارسی</a>، <a title="زیرنویس فارسی ever after high" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C%20ever%20after%20high">زیرنویس فارسی ever after high</a>، <a title="اور افتر های" href="http://magichighschool.mihanblog.com/post/tag/%D8%A7%D9%88%D8%B1%20%D8%A7%D9%81%D8%AA%D8%B1%20%D9%87%D8%A7%DB%8C">اور افتر های</a>، <a title="زیرنویس" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3">زیرنویس</a>، <a title="زیرنویس اورافتر های" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3%20%D8%A7%D9%88%D8%B1%D8%A7%D9%81%D8%AA%D8%B1%20%D9%87%D8%A7%DB%8C">زیرنویس اورافتر های</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/11">ادامه مطلب</a></div></div>
+</div>
+<div class="post">
+<h2 class="title"><a title="اولین پستم" href="http://magichighschool.mihanblog.com/post/2">اولین پستم</a></h2>
+
+<div class="date">
+<div class="day">سه شنبه 5 خرداد 1394</div>
+<div class="time">02:45 ب.ظ</div>
+<div class="author">ραяαѕтσσ .</div>
+<div class="comment"><a target="_self" href="javascript:newComment(2)">نظرات(<script>setCommentCnt(2)</script>)</a></div>
+</div>
+
+<div class="context">
+
+
+
+
+<img src="../static.mihanblog.com/public/user_data/user_photo/448/1343209.jpg"><div><font face="tahoma, arial, helvetica, sans-serif" size="3">سلام&nbsp;</font><img src="http://i5.glitter-graphics.org/pub/725/725325v80m0346dj.gif"><div><br></div><div><br></div><div><font size="3">من امروز یکی از قسمت های بانمک باب اسفنجی رو با دوبله ی خودم&nbsp;</font><img src="http://i5.glitter-graphics.org/pub/725/725325v80m0346dj.gif"></div><div><font size="3"><br></font></div><div><font size="3"><br></font></div><div><font size="3">گذاشتم(یه خورده بد شد چون عجله داشتم و اولین دوبله ام بود)</font><img src="http://i5.glitter-graphics.org/pub/725/725325v80m0346dj.gif"></div><div><br></div><div><br></div><div><br></div><div><br></div><div><font size="3">اگر نظرات به 8 تا رسید یک کارتون کوتاه آواتار که خِیلی بانمکه رو با زیر نویس میگذارم</font><img src="http://i5.glitter-graphics.org/pub/725/725325v80m0346dj.gif"></div><div><br></div><div><br></div><div><br></div><div>از اون جایی که من دخترم سخت بود ولی صداهاشون رو درآوردم:))))<img src="http://i5.glitter-graphics.org/pub/725/725325v80m0346dj.gif"></div><div><br></div><div><a href="http://opizo.com/5gvUKS" target="" title=""><font size="5">کلیک کن</font></a><img src="http://i5.glitter-graphics.org/pub/725/725325v80m0346dj.gif"></div>
+
+</div>
+
+
+
+
+
+<br/>
+<b></b><br/>
+<br><br>
+<div class="meta">موضوع: <a title="کارتون کوتاه" href="http://magichighschool.mihanblog.com/post/category/2">کارتون کوتاه</a>، </div>
+</div>
+<div class="date">
+<div class="more"><a href="http://magichighschool.mihanblog.com/post/2">ادامه مطلب</a></div></div>
+</div>
+
+</div>
+
+	<!-- end post -->
+
+<div id="sidebar-r">
+
+<div class="side">
+<h3 class="h3">آرشیو مطالب</h3>
+<div class="context-side">
+<div class="Link"><a title=" تیر 1396" href="http://magichighschool.mihanblog.com/post/archive/1396/4"> تیر 1396</a></div>
+<div class="Link"><a title=" شهریور 1395" href="http://magichighschool.mihanblog.com/post/archive/1395/6"> شهریور 1395</a></div>
+<div class="Link"><a title=" مرداد 1395" href="http://magichighschool.mihanblog.com/post/archive/1395/5"> مرداد 1395</a></div>
+<div class="Link"><a title=" تیر 1395" href="http://magichighschool.mihanblog.com/post/archive/1395/4"> تیر 1395</a></div>
+<div class="Link"><a title=" خرداد 1395" href="http://magichighschool.mihanblog.com/post/archive/1395/3"> خرداد 1395</a></div>
+<div class="Link"><a title=" خرداد 1394" href="http://magichighschool.mihanblog.com/post/archive/1394/3"> خرداد 1394</a></div>
+<div class="Link"><a href="http://magichighschool.mihanblog.com/post/archive">لیست آرشیوها</a></div>
+</div></div>
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">دسته بندی موضوعات</h3>
+<div class="context-side">
+<div class="Link"><a title="انیمیشن بلند" href="http://magichighschool.mihanblog.com/post/category/5">انیمیشن بلند - 6</a></div>
+<div class="Link"><a title="dc super hero girls" href="http://magichighschool.mihanblog.com/post/category/4">dc super hero girls - 1</a></div>
+<div class="Link"><a title="ever after high" href="http://magichighschool.mihanblog.com/post/category/3">ever after high - 2</a></div>
+<div class="Link"><a title="کارتون کوتاه" href="http://magichighschool.mihanblog.com/post/category/2">کارتون کوتاه - 2</a></div>
+<div class="Link"><a title="اخبار و..." href="http://magichighschool.mihanblog.com/post/category/1">اخبار و... - 2</a></div>
+</div></div>
+
+<!--Design By : Avazak.ir-->
+
+
+		
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">لینک های ویژه</h3>
+<div class="context-side">
+<div class="Link" style="font-size:7pt">﻿<a href="http://toparoosi.com/%D9%84%D8%A8%D8%A7%D8%B3-%D8%B9%D8%B1%D9%88%D8%B3/" title="لباس عروس" target="_blank">لباس عروس</a>|﻿<a href="http://www.moshaveranetehran.net" title="انجام پایان نامه" target="_blank">انجام پایان نامه</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://parstina.com/jewelry/necklaces/morghamin" title="گردنبند مرغ آمین" target="_blank">گردنبند مرغ آمین</a>|<a href="http://parstina.com/stationery/magicpens" title="ماژیک جادویی نقاشی" target="_blank">ماژیک جادویی نقاشی</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://www.sakhtemoon.com/list/speed-dome-cctv/" title="فروش دوربین مداربسته اسپید دام" target="_blank">فروش دوربین مداربسته اسپید دام</a>|<a href="http://iranarchitects.com/companies/diesel-generator" title="دیزل ژنراتور" target="_blank">دیزل ژنراتور</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://mazafa.ir/" title="فروشگاه اینترنتی" target="_blank">فروشگاه اینترنتی</a>|﻿<a href="http://www.nezarati.ir" title="دوربین مدار بسته" target="_blank">دوربین مدار بسته</a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://www.sitedesignidea.com" title="طراحی وب سایت" target="_blank">طراحی وب سایت</a>|<a href="http://www.flashkhor.com/search.php?page=3&name_en=&sabk=8&sort=1" title="بازی آنلاین باربی " target="_blank">بازی آنلاین باربی </a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://www.sampashi.net/انواع-آفات/سمپاشی-سوسک.html" title="سمپاشی سوسک" target="_blank">سمپاشی سوسک</a>|<a href="http://www.backlinka.ir/" title="بک لینک" target="_blank">بک لینک</a>|<a href="http://doorgoo.chat/" title="تلگرام" target="_blank">تلگرام</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://mersadmarket.ir/%D8%AE%D8%B1%DB%8C%D8%AF-%D8%AA%D8%AE%D9%85-%D9%85%D8%B1%D8%BA-%D9%BE%D8%B2-%D9%87%D9%85%D9%87-%DA%A9%D8%A7%D8%B1%D9%87-%D8%A7%D8%B5%D9%84-%D8%A7%D8%B1%D8%B2%D8%A7%D9%86" title="تخم مرغ پز چند کاره" target="_blank">تخم مرغ پز چند کاره</a>|﻿<a href="http://www.decornama.com/دکوراسیون-داخلی/" title="شرکت دکوراسیون داخلی" target="_blank">شرکت دکوراسیون داخلی</a></div></div></div>
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">آمار وبلاگ</h3>
+<div class="context-side">
+<div class="Link" style="padding:0 10px">بازدیدهای امروز : <script>getStatVar('today_view');</script> نفر</div>
+<div class="Link" style="padding:0 10px">بازدیدهای دیروز : <script>getStatVar('yesterday_view');</script> نفر</div>
+<div class="Link" style="padding:0 10px">كل بازدیدها : <script>getStatVar('total_view');</script> نفر</div>
+<div class="Link" style="padding:0 10px">بازدید این ماه : <script>getStatVar('this_month_view');</script> نفر</div>
+<div class="Link" style="padding:0 10px">بازدید ماه قبل : <script>getStatVar('last_month_view');</script> نفر</div>
+<div class="Link" style="padding:0 10px">تعداد نویسندگان : <script>getStatVar('total_author');</script> عدد</div>
+<div class="Link" style="padding:0 10px">كل مطالب : <script>getStatVar('total_post');</script> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</div></div>	
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">دیگر امکانات</h3>
+<div class="context-side" style="text-align:center">
+<center>بنر ثابت من:
+<p align="center"><a href="index.html" target="_blank"><img border="0" src="http://s3.picofile.com/file/8190483092/43167_bfd2.gif"  width="200" alt="زیر نویس و"  height="200"></a><br><input onclick="this.select()" type="text" width="356" name="T1" size="15" value='<!-- start logo cod off http://magichighschool.mihanblog.com --><p align="center"><p align="center"><a href="http://magichighschool.mihanblog.com" target="_blank"><img border="0" src="http://s3.picofile.com/file/8190483092/43167_bfd2.gif"  width="200" height="200" alt="زیر نویس و"></a></p><!--finish logo cod off http://magichighschool.mihanblog.com -->' dir="ltr" ></p><div style="display:none"><a href="http://blogers.ir">وبلاگ</a>-<a href="http://blogers.ir/cod/make-logo-banner-cod/">کد لوگو و بنر</a></div>
+
+
+<!--start this code by Www.Emoticons.ir--><p style="font:11px tahoma;"><a target="_blank" href="http://www.emoticons.ir"><span style="text-decoration: none; font-weight: 700"><font color="#FF0000"></font></span></a></p><style>body{cursor:url('http://www.emoticons.ir/files/smiles/girls/8116.gif')}</style><!--end code: Www.Emoticons.ir -->
+
+<p align='center'><script src="http://code.jquery.com/jquery-1.8.2.min.js"></script><script src="http://cafe-webniaz.ir/abzar/zibasaz/bgcolor.js"></script></div></p>
+<p align="center"><p align="center"><a href="../dhoktar-sefares.mihanblog.com/index.html" target="_blank"><img border="0" src="http://www.axgig.com/images/60263789182850783043.gif"  width="200" height="300" alt=""></a></p>
+
+لوگوی مدرسه ی تابستانه ی دختر خوشگلا:
+http://schoolmohadese.mihanblog.com/ --><p align="center"><p align="center"><a href="http://schoolmohadese.mihanblog.com/" target="_blank"><img border="0" src="http://uupload.ir/files/i6pd_بلالباد.png"  width="250" height="250" alt="مدرسه تابستانه"></a></p><!--finish logo cod off http://schoolmohadese.mihanblog.com/ -->
+
+<!-- start logo cod off http://dokhtar82.mihanblog.com/ --><p align="center"><p align="center"><a href="http://template-mahshid.mihanblog.com/" target="_blank"><img border="0" src="http://s6.picofile.com/file/8256344250/bloggif_576554081965f.gif"  width="200" height="200" alt=""></a></p><!--finish logo cod off http://dokhtar82.mihanblog.com/ -->
+</center>
+</div></div>
+
+<!-- end sidebar-r -->
+
+</div></div>
+
+<div id="sidebar-l">
+
+<div class="side">
+<h3 class="h3">آخرین مطالب</h3>
+<div class="context-side">
+<div class="Link"><a title="نیاز به همکار" href="http://magichighschool.mihanblog.com/post/29">نیاز به همکار</a></div>
+<div class="Link"><a title="دانلود انیمیشن monster high:frights,camera,action به سفارش سحر" href="http://magichighschool.mihanblog.com/post/28">دانلود انیمیشن monster high:frights,camera,action به سفارش سحر</a></div>
+<div class="Link"><a title="دانلود انیمیشن دبیرستان هیولاها: شهر وحشت-Monster High – Scaris: City of Frights" href="http://magichighschool.mihanblog.com/post/24">دانلود انیمیشن دبیرستان هیولاها: شهر وحشت-Monster High – Scaris: City of Frights</a></div>
+<div class="Link"><a title="دانلود انیمیشن دبیرستان هیولا: صخره مرجانی بزرگ – Monster High: The Great Scarrier Reef به سفارش کیانا" href="http://magichighschool.mihanblog.com/post/23">دانلود انیمیشن دبیرستان هیولا: صخره مرجانی بزرگ – Monster High: The Great Scarrier Reef به سفارش کیانا</a></div>
+<div class="Link"><a title="دانلود سریال انیمیشنی amethyst princess of the gameworld با زیرنویس فارسی(کامل)" href="http://magichighschool.mihanblog.com/post/22">دانلود سریال انیمیشنی amethyst princess of the gameworld با زیرنویس فارسی(کامل)</a></div>
+<div class="Link"><a title="دانلود انیمیشنMonster High Boo York Boo York با زیرنویس فارسی به سفارش کیانا" href="http://magichighschool.mihanblog.com/post/21">دانلود انیمیشنMonster High Boo York Boo York با زیرنویس فارسی به سفارش کیانا</a></div>
+<div class="Link"><a title="دانلود انیمیشن Winx Club: The Mystery of the Abyss 2014 با زیرنویس فارسی به سفارش کیانا" href="http://magichighschool.mihanblog.com/post/20">دانلود انیمیشن Winx Club: The Mystery of the Abyss 2014 با زیرنویس فارسی به سفارش کیانا</a></div>
+<div class="Link"><a title="دانلود فصل 1 سریال dc super hero girls با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/14">دانلود فصل 1 سریال dc super hero girls با زیرنویس فارسی</a></div>
+<div class="Link"><a title="دانلود فصل 1 سریال ever after high با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/11">دانلود فصل 1 سریال ever after high با زیرنویس فارسی</a></div>
+<div class="Link"><a title="اولین پستم" href="http://magichighschool.mihanblog.com/post/2">اولین پستم</a></div>
+<div class="Link"><a title="سلام" href="http://magichighschool.mihanblog.com/post/1">سلام</a></div>
+</div></div>
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">نویسندگان</h3>
+<div class="context-side">
+<div class="Link"><a title="نمایش همه نوشته های ραяαѕтσσ ." href="http://magichighschool.mihanblog.com/post/author/1343209">ραяαѕтσσ .</a></div>
+</div></div>
+
+<!--Design By : Avazak.ir-->
+
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">پیوندها</h3>
+<div class="context-side">
+<div class="Link"><a href="http://www.webmoshaveran.mihanblog.com" title="مال بهترین دوستمه حتما بسرید" target="_blank" >وب مشاوران</a></div>
+<div class="Link"><a href="../khatereh82.mihanblog.com/index.html" title="" target="_blank" >خاطرات دخترک ۱۴ ساله</a></div>
+<div class="Link"><a href="../b-lovely.mihanblog.com/index.html" title="" target="_blank" >خاطرات دو دوست</a></div>
+<div class="Link"><a href="../story-writers.mihanblog.com/index.html" title="" target="_blank" >وب رمان نویسان</a></div>
+<div class="Link"><a href="../romanhayemn.mihanblog.com/index.html" title="مال بهترین دوستمه سر بزنیددد" target="_blank" >رمان های من</a></div>
+<div class="Link"><a href="../blackbutler.mihanblog.com/index.html" title="" target="_blank" >خادم سیاه</a></div>
+<div class="Link"><a href="http://opizo.com/eyyEp9" title="" target="_blank" >مدرسه ی جاودانه</a></div>
+<div class="Link"><a href="http://opizo.com/ref:52054" title="" target="_blank" >اپیزو</a></div>
+<div class="Link"><a href="http://opizo.com/rRyfN9" title="" target="_blank" >مسابقات فری</a></div>
+<div class="Link"><a href="http://opizo.com/U8kNql" title="" target="_blank" >اون یکی وب خودم(لطفا سر بزنید)</a></div>
+<div class="Link"><a href="http://opizo.com/iNpND8" title="" target="_blank" >دخی بی ادب</a></div>
+<div class="Link"><a href="http://www.aila83.blogfa.com" title="" target="_blank" >خب که چی!</a></div>
+<div class="Link"><a href="http://dokhtar82.mihanblog.com/" title="" target="_blank" >girls code</a></div>
+<div class="Link"><a href="../magic-race.mihanblog.com/index.html" title="" target="_blank" >مسابقات جادویی</a></div>
+<div class="Link"><a href="http://poetic.mihanblog.com/" title="" target="_blank" >وب رعنا جون</a></div>
+<div class="Link"><a href="http://4everafterhigh.mihanblog.com/" title="" target="_blank" >وب اور افتر های</a></div>
+<div class="Link"><a href="../dhoktar-sefares.mihanblog.com/index.html" title="" target="_blank" >سفارشات دخی اسکله:)</a></div>
+<div class="Link"><a href="../romannevisan3.mihanblog.com/index.html" title="" target="_blank" >رمان نویسان</a></div>
+<div class="Link"><a href="../melina12.mihanblog.com/index.html" title="" target="_blank" >پاتوق دهه هشتادیا</a></div>
+<div class="Link"><a href="http://taravat2015.mihanblog.com/" title="" target="_blank" >گالری کدنویسی طراوت</a></div>
+<div class="Link" style="font-size:7pt">
+<a title="قالب میهن بلاگ" href="http://avazak.ir/tag/قالب-میهن-بلاگ/" target="_blank">قالب میهن بلاگ</a>|<a href="http://tools.avazak.ir/theme/avazak/826/قالب-وبلاگ-سه-ستونه-سه-رنگ-حرفه-ای.php" title="قالب وبلاگ سه رنگ حرفه ای" target="_blank">قالب وبلاگ سه رنگ حرفه ای</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://gallery.avazak.ir" title="عکس جدید" target="_blank">عکس جدید</a>|﻿<a href="http://paflex.ir/" title="عایق الاستومری" target="_blank">عایق الاستومری</a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://typesara.com" title="تایپیست" target="_blank">تایپیست</a>|<a href="http://imenbazar.com/category/34/%D8%B3%DB%8C%D8%B3%D8%AA%D9%85-%D8%A7%D8%B7%D9%81%D8%A7-%D8%AD%D8%B1%DB%8C%D9%82" rel="nofollow" title="اطفای حریق" target="_blank">اطفای حریق</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://avazak.ir/abzar/fal" title="فال حافظ" target="_blank">فال حافظ</a>|﻿<a href="http://parsanco.com/" title="دستمال بدون پرز" target="_blank">دستمال بدون پرز</a>|<a href="http://kosargasht.ir" title="چارتر" target="_blank">چارتر</a>|</div>
+<div class="Link" style="font-size:7pt"><a href="http://pakoota.ir/" title="آتلیه عکاسی کودک" target="_blank">آتلیه عکاسی کودک</a>|<a href="http://xn--mgbfavh0joal50j.com/" title="تور تایلند" target="_blank">تور تایلند</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://sanatesakhteman.ir/Aluminium-Window/" title="قیمت درب و پنجره آلومینیومی دوجد اره- ترمال بریک" target="_blank">قیمت درب و پنجره آلومینیومی دوجد اره- ترمال بریک</a>|<a href="http://www.tour-of-karbala.loxblog.com/" title="تور زیارتی کربلا" target="_blank">تور زیارتی کربلا</a></div></div></div>
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">صفحات جانبی</h3>
+<div class="context-side">
+<span dir="ltr">
+<div class="Link"><a title="حمایت من(لطفا چک کنیدد)" href="http://magichighschool.mihanblog.com/extrapage/hemaitemn">حمایت من(لطفا چک کنیدد)</a></div>
+<div class="Link"><a title="پروفایل اصلی من:)" href="http://magichighschool.mihanblog.com/extrapage/profile2">پروفایل اصلی من:)</a></div>
+</div></div>
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">برچسب ها</h3>
+<div class="context-side">
+<span dir="ltr">
+<a title="زیرنویس فارسی ever after high" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3+%D9%81%D8%A7%D8%B1%D8%B3%DB%8C+ever+after+high">زیرنویس فارسی ever after high</a> } 
+<a title="monster high" href="http://magichighschool.mihanblog.com/post/tag/monster+high">monster high</a> } 
+<a title="دانلود سریال ever after high با زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D8%B3%D8%B1%DB%8C%D8%A7%D9%84+ever+after+high+%D8%A8%D8%A7+%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3+%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">دانلود سریال ever after high با زیرنویس فارسی</a> } 
+<a title="اور افتر های" href="http://magichighschool.mihanblog.com/post/tag/%D8%A7%D9%88%D8%B1+%D8%A7%D9%81%D8%AA%D8%B1+%D9%87%D8%A7%DB%8C">اور افتر های</a> } 
+<a title="زیرنویس فارسی" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3+%D9%81%D8%A7%D8%B1%D8%B3%DB%8C">زیرنویس فارسی</a> } 
+<a title="کارتون جدید" href="http://magichighschool.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86+%D8%AC%D8%AF%DB%8C%D8%AF">کارتون جدید</a> } 
+<a title="دانلود کارتون 2016" href="http://magichighschool.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86+2016">دانلود کارتون 2016</a> } 
+<a title="زیرنویس اورافتر های" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3+%D8%A7%D9%88%D8%B1%D8%A7%D9%81%D8%AA%D8%B1+%D9%87%D8%A7%DB%8C">زیرنویس اورافتر های</a> } 
+<a title="زیرنویس" href="http://magichighschool.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B1%D9%86%D9%88%DB%8C%D8%B3">زیرنویس</a> } 
+<a title="کارتون باربی جدید" href="http://magichighschool.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D8%AA%D9%88%D9%86+%D8%A8%D8%A7%D8%B1%D8%A8%DB%8C+%D8%AC%D8%AF%DB%8C%D8%AF">کارتون باربی جدید</a> } 
+</div></div>
+
+<!--Design By : Avazak.ir-->
+
+<div class="side">
+<h3 class="h3">طراح قالب: آوازک</h3>
+<div class="context-side" style="text-align:center">
+[ طراح قالب: <a tite="ابزار وبلاگ نویسی" href="http://avazak.ir">آوازک</a> ]<br/>
+</div></div>
+
+<!-- end sidebar-l -->
+
+</div></div>
+</div>
+
+<div class="line"></div>
+
+
+<div id="footer">
+<div id="about">تمامی حقوق این وب سایت متعلق به <a href="index.html" title="زیرنویس و دوبله برای کارتون ها" target="_blank">زیرنویس و دوبله برای کارتون ها</a> است. <span>||</span> طراح قالب <a href="http://avazak.ir" title="قالب وبلاگ" target="_blank">avazak.ir</a></div>
+</div>
+
+
+</div>
+
+<!-- end Footer -->
+
+</body>
+</html>
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'magichighschool.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

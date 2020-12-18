@@ -1,0 +1,1814 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*999078*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[12329]='0';commentCnt[12333]='0';commentCnt[12338]='0';commentCnt[12347]='0';commentCnt[12351]='0';commentCnt[12352]='0';commentCnt[12354]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[12329]='9';
+mihanblogDisLikeArrCnt[12329]='0';
+mihanblogLikeArrCnt[12333]='6';
+mihanblogDisLikeArrCnt[12333]='0';
+mihanblogLikeArrCnt[12338]='4';
+mihanblogDisLikeArrCnt[12338]='0';
+mihanblogLikeArrCnt[12347]='1';
+mihanblogDisLikeArrCnt[12347]='0';
+mihanblogLikeArrCnt[12351]='1';
+mihanblogDisLikeArrCnt[12351]='0';
+mihanblogLikeArrCnt[12352]='0';
+mihanblogDisLikeArrCnt[12352]='0';
+mihanblogLikeArrCnt[12354]='1';
+mihanblogDisLikeArrCnt[12354]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://najvaye-kangan.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://najvaye-kangan.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','6217');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','سه شنبه 18 آذر 1399');
+	
+	setStatVar('today_view','263');
+	setStatVar('yesterday_view','1109');
+	
+	setStatVar('this_month_view','16947');
+	setStatVar('last_month_view','10227');
+
+	setStatVar('total_view','7094200');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (17:34)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://najvaye-kangan.mihanblog.com/statupdate/?data[refereruri]=http://najvaye-kangan.mihanblog.com/post/archive/1399/1&data[postid]=&data[requesturi]=/post/archive/1399/1/page/1&data[sdate]=1607782143&data[hash]=dceb6bf3bb6e44a589df0b626fa1f6c4&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://najvaye-kangan.mihanblog.com/post/archive/1399/1/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content="پیگیری تحلیل و تجزیه رویدهای سیاسی منطقه ای وجهان اسلام"/>
+    <meta name="keywords" content="نجوا کنگان"/>
+    <link rel="alternate" type="application/rss+xml" title="نجوا کنگان" href="../../../../rss/index.html" />
+    <link rel="alternate" type="application/atom+xml" title="نجوا کنگان" href="../../../../atom/index.html" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099141/style.css" type="text/css" rel="stylesheet">
+
+    <title>نجوا کنگان - مطالب  فروردین 1399</title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td class=div02>&nbsp;</td>
+<td class=div70 valign=top><div class=div71></div></td>
+
+<td class=div2 valign=top>
+<div class=div1>
+
+<div class=div20>
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../../12354.html">                                               مجله وایرد: بررسی رفتار تأثیر گذاران درشبکه اجتماعی</a></font></div>
+            <div class=div58><font class=text7>چهارشنبه 27 فروردین 1399 :: نویسنده : <a href="../../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="../../../../tag/نجوای&#32;کنگان&#32;_____%257C(dot)%257C_____مجله&#32;وایرد%253A&#32;بررسی&#32;رفتار&#32;تأثیر&#32;گذاران&#32;درشبکه&#32;اجتماعی.html" class=text4>نجوای کنگان .مجله وایرد: بررسی رفتار تأثیر گذاران درشبکه اجتماعی</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../../12354.html#commentlist">نظرات (<script>setCommentCnt(12354)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('12354','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../../12352.html">سلام</a></font></div>
+            <div class=div58><font class=text7>سه شنبه 26 فروردین 1399 :: نویسنده : <a href="../../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+سلام                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="../../../../tag/نجوای&#32;کنگان&#32;_____%257C(dot)%257C_____سلام.html" class=text4>نجوای کنگان .سلام</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../../12352.html#commentlist">نظرات (<script>setCommentCnt(12352)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('12352','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../../12351.html">     شبکه بلومبرگ، آمریکا را از مخالفت با اعطای وام صندوق بین المللی پول به ایران برحذر داشت</a></font></div>
+            <div class=div58><font class=text7>دوشنبه 25 فروردین 1399 :: نویسنده : <a href="../../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+
+
+
+
+
+
+
+<p class="post-lead mb-2"><b>شبکه بلومبرگ، آمریکا را از مخالفت با 
+اعطای وام صندوق بین المللی پول به ایران برحذر داشت</b> و اعلام کرد راه هایی 
+وجود دارد - از جمله حذف دلار- که از طریق آن می توان جلو بهانه های آمریکا
+ را در خصوص دسترسی ایران به کمک های مالی گرفت.</p><a href="https://www.alef.ir/files/post/lg/2020/16/190557.jpg" target="_blank"><figure>&nbsp;</figure></a>	
+	<div class="post-content clearfix mb-3">
+		<p>&nbsp;به گزارش الف بلومبرگ یادآور شد فروش دارایی های ایران درصندوق به یک کشور ثالث نیز از دیگر راهکارها است.</p>
+<p>« شیوع ویروس کرونا اقتصاد ایران را با دشواری روبرو کرده است. مانند 
+بسیاری از کشورهای در حال توسعه جهان که شاهد کاهش درآمدهای صادراتی خود 
+بوده اند، ایران نیز با بحران پرداخت ها روبرو شده است، اما این بحران با 
+پویش تحریم های دولت ترامپ موسوم به "فشار حداکثری" تشدید شده است.</p>
+<p>"برایان هوک" مسئول میز ایران در وزارت خارجه آمریکا به تازگی ادعا کرده
+ دولت ترامپ دسترسی ایران را به 90 درصد از درآمدهای خارجی اش محدود کرده 
+است. ایران حتی اگر بتواند به این منابع مالی دسترسی داشته باشد، به دست 
+آوردن تجهیزات پزشکی برای آن دشوار خواهد بود. "جان اسمیت" مدیر سابق اداره
+ کنترل دارایی های خارجی در وزارت اقتصاد آمریکا گفته است، تحریم ها 
+"احتمالا سبب شده است بسیاری از شرکت ها تمایلی به صادرات تجهیزات پزشکی به
+ ایران نداشته باشند..."</p>
+<p>ایران هم برای مدیریت این مشکل و به منظور تسهیل واردات تجهیزات پزشکی، 
+از صندوق بین المللی پول (IMF) درخواست 5 میلیارد دلار وام اضطراری کرده 
+است. از طریق ساز و کار موسوم به ابزار تامین مالی سریع IMF حتی کشورهای کم
+ درآمد و نیز کشورهای در حال توسعه که به دلیل تاثیر شیوع کرونا با چالش 
+پرداخت مواجه هستند، می توانند 50 میلیارد دلار تامین مالی شوند.</p>
+<p>گرچه ایران آخرین بار 60 سال پیش از این صندوق وارم دریافت کرده بود، 
+همچنان روابط خوبی با آن دارد. ایران بند مشورتی شماره 4 صندوق را سال 2018
+ اجرا و ثابت کرده که مایل است پیشنهادات اصلاحی اقتصاددانان این نهاد را 
+اجرا کند؛ از جمله از طریق کاهش یارانه های سوخت.&nbsp;</p>
+<p>اما آمریکا احتمالا مانع از دسترسی ایران به وام درخواست شده خواهد شد 
+آن هم به بهانه های مرتبط با تروریسم. سهم رای دهی آمریکا در صندوق 16.51 
+درصد است و این به معنای آن است که آمریکا در هیات مدیره صندوق بین المللی 
+پول حق وتو ندارد اما حتی اگر نتواند مانع از پرداخت وام شود، می تواند با 
+استفاده ازتحریم ها، توزیع کمک های مالی را مختل کند.</p>
+<p>اتحادیه اروپا گفته است از درخواست وام ایران حمایت خواهد کرد و در همین
+ حال مقامات زیادی از دولت ترامپ خواسته اند در زمان بحران ناشی از شیوع 
+کرونا، فشارهای اقتصادی اش را بر ایران کاهش دهد. ولی مقامات دولت ترامپ با
+ بی توجهی به این مساله تلاش کرده اند میزان حمایت از درخواست وام ایران را
+ کاهش دهند، آن هم به این بهانه که احتمال دارد این مبلغ را صرف مقابله با 
+کرونا نکند...</p>
+<p>IMF می تواند گام هایی بردارد که نگرانی های دولت ترامپ برطرف شود. نخست
+ این صندوق می تواند در پرداخت وام، دلار را نادیده بگیرد... ایران حتی می 
+تواند این وام را به یورو دریافت کند به ویژه با توجه به آن که اتحادیه 
+اروپا، مهم ترین تامین کننده کالاهای پزشکی برای ایران است.&nbsp;</p>
+<p>دومین راه آن که می توان این وام را به حسابی واریز کرد که بانک مرکزی 
+ایران در اروپا دارد. این بدان معنا است که وام مورد نظر در چارچوب نظام 
+مالی اروپا هزینه خواهد شد و لذا تحت نظارت تشکیلاتی هستند که با هماهنگی 
+با همتاهای آمریکایی خود، هرگونه سوء استفاده احتمالی را رصد خواهند کرد.&nbsp;</p>
+<p>دولت ترامپ خود سیستم مشابهی را پیشتر اجرا کرده است. این سیستم بخشی از
+ ساز و کار موسوم به "توافق تجاری انسان دوستانه سوئیس" است؛ یک شبکه مالی 
+که در فوریه راه افتاد و به بانک مرکزی ایران اجازه می دهد به ازای صادارات
+ اقلام بشردوستانه از جانب شرکت های سوئیسی، از اموال موجود در این کشور 
+اروپایی استفاده کند.</p>
+<p>مقامات دولت آمریکا می دانند پرداخت وام به ایران را می توان "خطر 
+زدایی" کرد، آنچه آنها دنبال میکنند جلوگیری از یک شکست سیاسی است. برای 
+این منظور صندوق بین المللی پول می تواند در پی شیوه ای کاملا مجزا باشد تا
+ این کمک مالی را فراهم کند: این صندوق می تواند دسترسی ایران را به دارایی
+ های نقد شونده به ارز خارجی تقویت کند؛ آن هم از طریق فروش برخی از دارایی
+ های ایران در این صندوق، به شخص ثالث نظیر یک کشوراروپایی.</p>
+<p>در این سناریو، صندوق بین المللی پول بخشی از ذخایر سهام اموال و دارایی
+ های ایران را به خریدار اختصاص می دهد، که سپس می تواند در قالب ارز خارجی
+ نظیر یورو آن را به تهران بپردازد، آن هم به حسابی که ایران نزد بانک 
+مرکزی خود در خارج از کشور دارد.&nbsp;</p>
+<p>نحوه مصرف این مبالغ نیز با نظارت هایی صورت خواهد گرفت که به آن اشاره شد. چنین معامله ای به تایید شورای حکام IMF هم نیاز ندارد...</p>
+<p>این کار شدنی است. مساله این است که آیا صندوق بین المللی پول می خواهد آن را انجام دهد یا خیر؟»</p>	</div>
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../../../category/3.html" class=text4>تحلیل مقاله</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                                <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../../12351.html#commentlist">نظرات (<script>setCommentCnt(12351)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('12351','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../../12347.html"> سلام </a></font></div>
+            <div class=div58><font class=text7>دوشنبه 25 فروردین 1399 :: نویسنده : <a href="../../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>&nbsp;
+
+
+سلام <br>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                                <br><font color="#CC0000">برچسب ها :</font>
+                                <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../../12347.html#commentlist">نظرات (<script>setCommentCnt(12347)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('12347','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../../12338.html">                                                      پیامدهای کرونا در آینه ی نظریه پردازان</a></font></div>
+            <div class=div58><font class=text7>یکشنبه 17 فروردین 1399 :: نویسنده : <a href="../../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+<div><font size="4">&nbsp;&nbsp;&nbsp; پیامدهای کرونا در آینه ی نظریه پردازان، متفکران ، فیلسوفان سیاسی و آینده نگران جهان امروز<br></font></div><div><font size="4">مبحث اپیدمی کرونا&nbsp; تبدیل یکی از بحران هایی&nbsp; سختی شد که جهان در دهه های اخیر تجربه نکرده است ، این موضوع از مرزهای سنتی که اغلب&nbsp; شامل مباحث عمومی مانند: فرهنگ و اقتصاد ، سیاست، عبور کرده و پیامدهای های مختلفی را بر وضعیت اجتماعی بشرامروز مترتب ساخته است....<br></font></div><font size="4">درست است که جهان امروز براساس دکترین ترس وهیجان اداره می شود و رسانه ها به طور کلی زبان بمباران رسانه ای را تمرین می کنند تا عناوین و اخبار را بنحوی به ذهن مخاطب القاء کنند ولی این باعث نمی شود&nbsp; که جهت گیری&nbsp; بازیگران بزرگ اندیشه ورز&nbsp; اجتماعی و نخبگان منابع فکری تحت تاثیر آسیب های شدید جامعه&nbsp; بی تحرک وبی تفاوت باقی بمانند زیرا همواره در مقابل همه ی وقایع ، یک طرف دیگر زنده فعال در جامعه وجود دارد که در پشت دیوارهای انزوای اجتماعی پنهان است تا&nbsp; علل ،روح، سرنوشت رخدادهای مهم </font><font size="4">و&nbsp; اینک پیامدهای کرونا برای آینده بشریت تشریح کند<br></font><div><font size="4">چشم اندازهای انتقادی شدید مراجع مجامع فکری دراین باره ، بحث های فرهنگ سیاسی و اجتماعی&nbsp; سنتی را احیا کرد و حتی انتقادات تند وتیز چپ گرایان به سبک کارو سرنوشت نئولیبرال را به صحنه ی روزمره اروپا و آمریکا بازگرداندتا انزوای اجتماعی ،دیدگاه های فلسفی در دانشگاه ها را کنار زد تا در مورد استراتژی های حیاتی فراموش شده صحبت کنند و در مورد بازگشت به ارزش ها و نهادهای سنتی و جنایتی که جریان مدرنیته منجر به خالی شدن روابط انسانی از آن مواضع شدبار دیگر به آن بپردازند:<br></font></div><div><font size="4">-بسیار قابل توجه است که&nbsp; دکتر" احمد الریسونی"یکی ازاندیشمندان مسلمان با ایده ای&nbsp; قابل تأمل میگوید:&nbsp; همه مراکز گرانش عقب نشینی کرده اند و پزشکان به کسانی تبدیل شده اند که حاکم بر جهان هستند ،وی در پستی در صفحه فیس بوک خود ،نوشت:&nbsp; که&nbsp; اکنون سران&nbsp; جهان مجبور هستند سیاست اداره ی مردم را به پزشکان سپرده واز طریق اینان تصمیمات لازم را بگیرند .؟.</font></div><div><font size="4">- </font><font size="4"><span class="st"><em>مارسل</em> گوشه" <em>فیلسوف</em>، تاریخدان و جامعه شناس معروف&nbsp;</span> فرانسوی : او به شدت از عدم شفافیت مقامات فرانسوی در مدیریت بحران انتقاد کرده است ، زیرا فرض بر این بود که اگر تصمیم و استراتژی آن مبتنی بر یک عقیده علمی تولید شده توسط یک کمیته علمی تخصصی باشد ( از ویروس شناسان و اپیدمیولوژیست ها) این کمیته می داند که کیست وچکار باید کند؟ و برای تدوین تحقیقات و توصیه های خود و شفاف سازی اطلاعات و در معرض دید قرار دادن آن در وب سایت های عمومی با انتشار آن در وب سایت رسمی این کمیته&nbsp; امادگی داشت ؟ اما اینگونه نشد؟&nbsp; در فرانسه ؛همه مخاطبان&nbsp; به علم اعتماد دارند ، اما علم مربوط به هرموضوع عمومی باید به صورت علنی اطلاع رسانی داده شود و در عصر علم و مدرنیته نباید در کمیته مخفی با توصیه های مخفی کاری انجام شود ، بنابراین اگر علم پایه ای محکم برای تصمیم گیری فراهم کند ، هنر تصمیم گیری سیاسی با پنهان کردن و پنهان شدن پشت علم و دانشمندان ، در این یا آن جهت مشخص می شود.ورشکستگی اخلاقی ... زندگی مردم کم ارزش تر از رونق کالا است.<br>محرک بحران ناشی از شیوع این بیماری همه گیر شدید این واقعیت بود که هم رئیس جمهور آمریکا ترامپ و هم جانسون نخست وزیر انگلیس&nbsp; بارها توصیه های&nbsp; وزیر بهداشت را ردکردند ضمن اینکه اعلام کردند که نها یتاً تعدادی از افراد دارای ایمنی ضعیف یا افراد مسن می میرند. از یک منطق قدیمی عملگرای انگلیسی تبعیت کردند: " بر اساس ضرورت پرداخت قیمت ، برای غلبه بر بحران ، تا زمانی که این بیماری برای عموم مردم چندان خطرناک نباشد ، درست است که&nbsp; کسانی قربانی شوند که شکننده هستند تا جلوی&nbsp; حرکت اقتصاد نگیرند و زندگی متوقف نشود.</font></div><div><font size="4"><br></font></div><div><font size="4">-&nbsp; </font><font size="4"><span class="tlid-translation translation" lang="fa"><span title="" class="">فیلسوف مایکل اونفری</span></span> فیلسوف منتقد مدرنیته ، در مصاحبه خود با رادیو اروپا 1 در انتقاد شدید از این استراتژی غیراخلاقی دریغ نکرد و تعجب کرد که چرا این گروه شکننده (قدیمی ترین افراد) که بیشتر آنها متعلق به گروه بازنشستگان هستند و به اعتقاد برخی کارشناسان اقتصاد این گروه غیرفعال است و بودجه های مالی زیادی را به خود اختصاص می دهد و بار مؤسسات حمایت از سلامت اجتماعی و بهداشت و مؤسسات مالی جهانی را به عهده دارد.باید ازبین بروند؟!شاید با آنچه گفته می شود این است که خلاص شدن از بار سنگینی که این افراد بر عهده&nbsp; جامعه دارند&nbsp; می خواهندخلاص&nbsp; شوند و به جای اینکه در مسیرهای بی پایان گفتگو برای اصلاح سیستم های بازنشستگی همانطور که در فرانسه ، اسپانیا و ایتالیا اتفاق می افتد ، تلاش&nbsp; دولت&nbsp; برای اصلاح شرایط بازنشستگی را فراهم کند.</font></div><div><font size="4">-.اندیشمند آمریکایی ، نوام چامسکی در مصاحبه با DiEM 25 تصریح کرد که جهان با توجه به سیاستهای نئولیبرالی ، چالش های بزرگی را برای تهدید بشریت رقم زده است ، و این&nbsp; در گسترش کرونا و عدم مقابله با آن ودر عدم موفقیت سیاست های بازار&nbsp; ان را روشن کرده و به اثبات رسانده است و کرونا فقط نماینده علامتی هشدار دهنده است که نشان دهنده نقص سیستم جهانی ما و عدم تعادل اجتماعی و اقتصادی اش را آشکار کرده است.</font></div><div><font size="4"><br></font></div><div><font size="4">-- فیلسوف اسلوونیایی </font><font size="4"><span class="st"><em>اِسلاوُی</em> ژیژِک<em></em>، روان‌کاو، نظریه‌پرداز، جامعه‌شناس، منتقد فرهنگی و سیاست‌مدار اسلوونیایی</span>&nbsp;</font><font size="4"> محقق ارشد انستیتوی جامعه شناسی در دانشگاه لیوبلیانا ،&nbsp; کتابی را در مورد ویروس کرونا تحت عنوان " Pandemic منتشر کرد ، که در آن وی به موعظه مبادرت کرد که کمونیسم جدید راه حل متوقف کردن این بیماری همه گیر ناشی از بربریت جهانی است ، با توجه به اینکه ویروس Corona مرز بین دانشمند وغیر دانشمنداست. و دیگراین که پایان نظام سرمایه داری با هزینه سنگین&nbsp; مرگ هزاران انسان و میلیون ها&nbsp; بیمار روبرو شده تا بشریت به یک مسیر جدید هدایت شود</font></div><div><font size="4">-ادگار مورین ، فیلسوف مشهور فرانسوی &nbsp; انتقاد جهانی سازی را مورد انتقاد قرار داد ، که&nbsp; با&nbsp; بحران کرونا، برهنگی خود را در معرض دید عموم قرار داد ، و در قالب وابستگی متقابل و مبادله ای بدون همبستگی ظاهر شد ، زیرا حرکتش به سمت فناوری و اقتصاد رفته بود ، در حالی که نتوانست تفاهم را بین مردم ترغیب کند ، در این اپیدمی مقیاس خودخواهی و انزوا نشان داده شده توسط هر ملت را نشان داد و خواستار فكر كردن به مسیری جدید برای بشریت غیر متعارف نئولیبرالی بود ، مسیری كه بخش های دولت ، خدمات بهداشتی و اجتماعی آن را بازیابی می كند و با سیاست های ریاضتی كه بر مؤسسات بهداشتی ، آموزشی و اجتماعی تأثیر گذاشت ،&nbsp; عقب نشینی می کند</font></div><div><font size="4"></font><br><font size="4"><span class="tlid-translation translation" lang="fa">- فلورین بیبر ، استاد
+ تاریخ و سیاست دانشگاه اتریش گراس ، در مقاله خود در مجله ی فارن پالسی آمریکایی از 
+هشدار سخت نسبت به گرایش روزافزون استبدادی و دیکتاتوری اقتدارطلبی بین المللی، و خودسرانه 
+بودن موضوع در استفاده از قدرت و خودسر بودن آنها در کاهش آزادی های مدنی 
+مردم دریغ نکرد. وی ضمن تصدیق اینكه چنین اقدامات ممكن است در محدود كردن 
+شیوع این بیماری همه گیر مفید باشد ، اما وی ابراز ترس از خطر گسترش قدرت 
+طلبی پس از بیماری همه گیر كرونا ،پیش بینی کرد كه دموكراسی در تعدادی از
+ كشورها از بین برود زیرا این امر باعث شده بسیاری اقدامات كه به دلیل شیوع
+ این بیماری همه گیر وضعیت فوق العاده ای بدست آورده اند. ، حتی بعد از 
+اتمام آن&nbsp; این روند طبیعی و پایدار خواهدبود؟!</span></font></div><div><font size="4"><span class="tlid-translation translation" lang="fa">بازگشت به خانه ، تحکیم رابطه با همسر ، مراقبت از فرزندان ، لذت بردن از مکالمه روزمره با آنها و تجدید پیوند با همسایگان ، ارزشهای جدیدی بود که پس از انقراض شدید آنها به ویژه در جوامع اروپایی و آمریکایی به زندگی بازگشت ، این بازگشت&nbsp; سوالات انتقادی را دوباره بر روی گسل های مسیر نئولیبرال متمرکز کرد. ، تصدیق می کنم که مسیر مدرنیته موجب شده است که&nbsp; باعث بدتر شدن ساختارهای همبستگی سنتی </span></font><font size="4"><span class="tlid-translation translation" lang="fa"><font size="4"><span class="tlid-translation translation" lang="fa">جوامع</span></font> شوند و بازیابی این نوع همبستگی ، بین همسایگان ، کارگران و شهروندان&nbsp; و بین والدین و فرزندان که از تحصیل در مؤسسات آموزشی متوقف شده اند ، به یکی از بزرگترین چالش ها </span></font><font size="4"><span class="tlid-translation translation" lang="fa"><font size="4"><span class="tlid-translation translation" lang="fa"> درجامعه </span></font>تبدیل شده است.</span></font></div><div><font size="4"><span class="tlid-translation translation" lang="fa">- فیلسوف آلمانی ،&nbsp; خانم أما الفیلسوفة الألمانیة، Svenja Flassp.hler، ؟&nbsp; در گفتگو با DW&nbsp; آلمانی : گسترش همه گیری كرونا و فرصت های ارائه شده توسط قرنطینه ی بهداشتی برای تقویت پیوند خانواده ، فرصتی برای بررسی سیستم سرمایه داری است كه اجازه نمی دهد كارگران از درون خانه های خود كار كنند و محدودیت های بوروكراتی را تحمل نمی كنند این مسئله را نیز باید در نظر گرفت که این بحران به مردم فرصتی می دهد تا در مورد نقص سرمایه داری ، لزوم مبارزه طولانی علیه آن و دستیابی به یک انقلاب بزرگ علیه آن که به عناصر فردی این سیستم می اندیشد ، بازتاب دهند و آن را در دایره پاسخگویی قرار دهند. این فیلسوف آلمانی&nbsp; از قرار دادن مفهوم خوشبختی در دایره سؤال نیز ،&nbsp; ضرورت بازیابی مفهوم قدیمی فلسفی خوشبختی که بر اخلاق متمرکز است </span></font><font size="4"><span class="tlid-translation translation" lang="fa"><font size="4"><span class="tlid-translation translation" lang="fa">یادآور </span></font>شد، زیرا اخلاق با توجه به دیدگاه&nbsp; فرد نقش اساسی در خوشبختی دارد.</span></font></div><div><font size="4"><span class="tlid-translation translation" lang="fa">-</span></font><br><font size="4"><span class="tlid-translation translation" lang="fa"><span class="tlid-translation translation" lang="fa">-&nbsp; آینده نگر مشهور آلمانی ، ماتیاس هورس ، وی مقاله ای را در سرمقاله ی نشریه آلمانی (deutschland.de) در تاریخ 26 مارس 2020 نوشت ، که در آن او انتظار دارد تکلیف آینده جهان در پاییز آینده روشن شود .وی تأکید کرد که مردم غالباً ضرر و زیانی را که برای آنها رخ داده را نمی بینند. در نتیجه واگرایی اجتماعی ، اما آنها جنبه مثبت این ضرر را نمی بینند ، زیرا واگرا بودن در نظر وی به معنای ضرر نیست بلکه ممکن است دروازه امکانات جدیدی را باز کند. برخی قبلاً این مسئله را تجربه کرده اند ، به عنوان مثال با سرگرمی های اجتماعی ، مردم از غذا لذت می برند ، و هرچه ویروس بین ما فاصله فیزیکی ایجاد کند ، نزدیکی جدیدتر به ما تحمیل شده است ، ویروس به ما این امکان را داده است تا&nbsp; افرادی را که هرگز ندیده ایم با آنها ملاقات کنیم و با دوستان قدیمی تماس بگیریم. اغلب اوقات ، روابط سست تقویت&nbsp; شد ، خانواده ها ، همسایگان و دوستان نزدیک تر شدند و درگیری های پنهان نسبتاً متوقف می شد.<br><br>نگاهی نو به ابزار ارتباط و بازیابی فرهنگ به نقش آن<br><br>این آینده شناس آلمانی به ابعاد جدیدی از پیامدهای همه گیر کرونا توجه کرد ، زیرا این بیماری همه گیر عمل آموزش از طریق اینترنت و کار فناوری ارتباطات از راه دور را&nbsp; به ما تحمیل کرد ، پس از آنکه تعدادی از مسئولان حاضر به مقاومت در برابر این فناوری ها شدند و این یک امتیاز ویژه برای تجار پنج ستاره بود ، اما با اپیدمی کرونا ، این همه&nbsp; را رونق داد و همه چیز با فناوری ارتباط از راه دور بدست آمد.ماتیاس ؛ همچنین به یک تغییر دیگر که در عملکرد ارتباطات رخ داده توجه کرده است ، جابجایی از ارتباط به برقراری ارتباط واقعی اتفاق افتاده است ، با افراد در چشمانشان ، بدون دستکاری مردم از طریق صفحه نمایش دوم ، هیچ کس منتظر نمی ماند&nbsp; ، من در نگاه دنیای آینده فرهنگ سازی&nbsp; جدید برای شبکه سازی غیر از دیروز</span></span></font><font size="4"><span class="tlid-translation translation" lang="fa"><span class="tlid-translation translation" lang="fa"><font size="4"><span class="tlid-translation translation" lang="fa"><span class="tlid-translation translation" lang="fa">&nbsp; روکرده ام.</span></span></font>. حتی کسانی که مدت طولانی در مقابل یک دستگاه تلفن همراه گذراندند ، نیاز به کتاب را احساس کردند و ناگهان خواندن کتاب به عبادت تبدیل شد و دنیای آینده را اضافه کردند و تأکید کردند که تغییری&nbsp; متفاوت در رابطه بین فناوری و فرهنگ ایجاد شده است.<br><br>پیش از بحران ، فن آوری به نظر می رسید حامل تمام مدینه های فاضله باشد. هنوز هیچ کس - یا فقط تعداد معدودی از افراد مسلح - به رستگاری بزرگ دیجیتال امروز اعتقاد ندارند. امروز ، دنیای آینده نگرانه آرزو می کند ، سر و صدای تکنولوژیکی بزرگ به پایان رسیده است. ما دوباره توجه خود را به سؤالات بشردوستانه معطوف می کنیم: بشریت چیست؟ منظور ما از "یکدیگر" چیست؟<br><br>این آینده شناس آلمانی در جمله ای هیجان انگیز که انتظارات خود را برآورده می کند ، گفت: "ثروت دیگر به طور ناگهانی نقش تعیین کننده ایفا نمی کند. همسایگان خوب و یک باغ سبز پررونق اهمیت بیشتری پیدا می کند."<br>چه کسی این حرف ها را برای ویروس شناسان ، سیاستمداران یا احزاب دیگری که در پشت علم پنهان هستند ، از سرگرفته است؟</span></span></font></div>
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../../../category/3.html" class=text4>تحلیل مقاله</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="../../../../tag/نجوای&#32;کنگان&#32;_____%257C(dot)%257C_____&#32;پیامدهای&#32;کرونا&#32;در&#32;آینه&#32;ی&#32;نظریه&#32;پردازان.html" class=text4>نجوای کنگان . پیامدهای کرونا در آینه ی نظریه پردازان</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../../12338.html#commentlist">نظرات (<script>setCommentCnt(12338)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('12338','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../../12333.html">                                  کرونا وپنج سوال بدون پاسخ دقیق؟</a></font></div>
+            <div class=div58><font class=text7>چهارشنبه 13 فروردین 1399 :: نویسنده : <a href="../../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> کرونا وپنج سوال بدون پاسخ دقیق؟</b><br>
+
+
+</div><div><br></div><div> 5سوال که پاسخ روشنی در اپیدمی کرونا ندارند؟<br>پاریس - AFP<br></div><div>&nbsp;پزشکان و دانشمندان در سراسر جهان تلاش می کنند تا سه ماه پس از ظهورکرونا در چین ، باتجزیه و تحلیل&nbsp; مقابله با ان را تحقق بخشند ، اما هنوز از جنبه های بزرگ وابعاد مختلف آن آگاه نیستیم.</div><div>در این را ه پنج سؤال اساسی وجود دارد که با توجه به شیوع گسترده ویروس Covid-19 و اپیدمی جهانی ناشی از آن ، هنوز پاسخی دقیق به آنها&nbsp; دریافت نشده است.</div><div>&nbsp;-چرا در بعضی افرادعوارض این بیماری ضعیف و در برخی دیگر شدید است؟</div>از نظر شدت علائم بیماری در بیماران مبتلا به آن تنوع گسترده ای وجود دارد ، چرا ویروس کرونا اغلب&nbsp; باعلائم جزئی ظاهر می شود یا زمانی&nbsp; در 80٪ از افراد مبتلا به آن بدون علامت ظاهر&nbsp; میشود ، در حالی که در برخی از بیماران با التهاب شدید ریوی که باعث میشود آنها در چندروز بمیرند، کشنده است ؟<br>لیو بون از دانشکده پزشکی در هنگ کنگ می گوید: "تحقیقات انجام شده از فوریه 2020 نشان می دهد که علائم بالینی این بیماری بسیار متفاوت است."<br>در اوج اپیدمی در چین ، این محقق به همراه تیمی از دانشگاه نانچانگ در مرکز چین ، بیماران با مصدومیت جزئی را با بیماران دارای علائم شدید مقایسه کردند که نتایج آن در مجله پزشکی بریتانیا The Lancet منتشر شد.<br>این مطالعه نشان داد افرادی که علائم شدید دارند&nbsp; گروه " سالمندان" بیمار از افراد دیگرمبتلا با عفونت خفیف&nbsp; متفاوت هستند و غلظت ویروس در نمونه های اسکن گلو و بینی&nbsp; اینها"حدود شصت برابر بیشتر" از سایر نمونه های بیماری دیگران است.<br>آیا این در اثر پاسخ ایمنی ضعیف تر به دلیل افزایش سن یا در نتیجه قرار گرفتن در معرض ابتلا به مقدار بیشتر ویروسی ایجاد می شود؟<br><div>مطالعات مربوط به یک ویروس متفاوت ، ویروس حصبه نشان داده است که شدت این بیماری با قرار گرفتن در معرض ابتلا به ویروس اولیه مرتبط است. آیا این امر در مورد ویروس کرونا نیز صدق می کند؟</div><div><br></div><div>-آیا ویروس در هوا معلق می ماند؟<br><br>مشخص است که ویروس کرونا از طریق تماس جسمی و از طریق دستگاه تنفسی منتقل می شود. به عنوان مثال می تواند از طریق ریز بزاق ها که شخص بیمار هنگام سرفه کردن به اطرافش پخش می کند، منقل شود<br><br>اما آیا ویروس در هوا معلق خواهد ماند؟ شبیه به آنفولانزای فصلی که می تواند به شکل"اسپری" که در هوا منتقل می شود انتقال می یابد؟ ابهام این مسئله هنوز برطرف نشده است.<br>آنتونی فاوچی ، ایمونولوژیست و مشاور دونالد ترامپ رئیس جمهور آمریكا در مورد ویروس کروناگفت : "ما نمی توانیم این ایده را به طور كامل رد كنیم.<br>و یک مطالعه آمریکایی دیگر منتشر شده در "ژورنال پزشکی جدید انگلستان" نشان داده شد که ویروس جدید کرونا می تواند به مدت سه ساعت در آزمایشگاه به شکل ذرات معلق در هوا زنده بماند.قابل بحث می باشد<br>اما مشخص نیست که آیا این&nbsp; وضعیت نقش در انتقال بیماری نقش دارد یا خیر. وی افزود: "آیا ویروس در محیط اطراف ما وجود دارد؟ آیا مدت طولانی در هوا یا روی سطوح باقی می ماند؟ این چیزی است که ما نمی دانیم و البته ما می دانیم که می توانیم اثری از این ویروس پیدا کنیم ، اما نمی دانیم این ویروس عفونت را منتقل می کند. یا خیر؟!"</div><div>- چند نفر به ویروس آلوده هستند؟<br>این سؤال برای همه هشت میلیارد نفر جمعیت کره زمین صدق می کند که چند نفر از آنها به ویروس آلوده شده اند؟ به استثنای معدود کشورهایی که سیاست شناسایی زودهنگام را از طریق کمپین های غربالگری فشرده در مقیاس بزرگ ، مانند کره جنوبی و آلمان به سرعت اتخاذ کرده اند ، جایی که می توان نیم میلیون نفر را در هفته مورد بررسی قرار داد ، تعداد شناخته شده تلفات تقریباً تا حد زیادی تحت کنترل باقی مانده است.<br>به عنوان مثال ، در 17 مارس ، دولت انگلیس تعداد الودگان را 55000 نفر تخمین زد ، در حالی که کمتر از 2000 نفر از طریق آزمایش های غربالگری تأیید شدند.<br>به منظور جداسازی ناقلین ویروس کرونا و ارائه معالجه مناسب برای آنها ، داشتن آگاهی دقیق از دایره وسعت این بیماری ضروری است.<br>در مرحله دوم ، نظارت بر افرادی که به این ویروس مبتلا شده اند بسیار مهم است و می توان فرض کرد که نسبت به آن مصونیت کسب کرده اند.<br>این تنها با آزمایش های نسل جدید امکان پذیر خواهد بود ، یعنی آزمایش های سرولوژیکی که اثر انگشت ایمنی یافته را در اثر ویروس در خون رصد می کنند.<br></div><div><br></div><div>-آیا ویروس&nbsp; کروناتحت تأثیر شرایط آب و هوایی است؟<br><br>آیا اپیدمی Covid-19 با هوای بهتری در نیمه شمالی زمین محو می شود و با بازگشت گرما ناپدید می گردد؟ کارشناسان می گویند این امکان پذیر است ، اما قطعی نیست.<br>ویروس های آنفولانزای فصلی در هوای سرد و خشک با ثبات تر هستند و باعث تقویت انتقال آنها می شود.<br>یک مطالعه انجام شده توسط اساتید دانشگاه در هنگ کنگ نشان داد ویروس SARS که در سالهای 2002-2003 به آسیا حمله کرده است باعث مرگ 774 نفر شده بود و نوعی ویروس در حال حاضر در حال گسترش است که در درجه حرارت پایین و رطوبت ضعیف تر است.همخانواده هستند.<br>&nbsp;منطقی است که برخی از متخصصان تصور کنند که این دو ویروس در برابر شرایط آب و هوایی یکسان هستند. اما یک مطالعه جدید در دانشکده پزشکی هاروارد در بوستون نتیجه گرفت که "تغییر شرایط آب و هوایی (درجه حرارت بالا و رطوبت تا بهار و تابستان) به تنهایی لزوماً منجر به کاهش صدمات Covid-19 بدون انجام اقدامات بهداشتی و درمانی جدی نخواهد شد."</div><div><br></div><div>-چرا این بیماری کودکان را کمتر تحت تاثیر قرار میدهد؟<br>کودکان بسیار کمتر از بزرگسالان احتمال ابتلا به همه گیری Covid-19&nbsp; دارند. در صورت بروز علائم ، آنها معمولاً به اندازه موارد ذکر شده توسط یک تیم چینی در ماه مارس درسایت Nature ، جزئی&nbsp; دچار شده اند.<br>از بین ده کودک که به کرونا آلوده شده بودند ، که مورد بررسی قرار گرفتند ، هیچ کدام علائم جدی نشان ندادند وعلائم آن فقط به گلو درد ، سرفه و تب خفیف محدود شده بود. این بیشتر در کودکانی که با افراد آلوده زندگی می کنند مشهود است ، زیرا دو یا سه برابر کمتر از بزرگسالان به این ویروس مبتلا می شوند. هیچ کس دلیل این امر را نمی داند ، اما هنگامی که ویروس SARS در 2002-2003 شیوع پیدا کرد ، همین مورد مشاهده شد.<br>کارن لاکومبه با جمع بندی اوضاع گفت: "موارد بسیاری وجود دارد که ما نمی دانیم ، بنابراین باید فروتنی زیادی نشان دهیم."<br></div>
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../../../category/3.html" class=text4>تحلیل مقاله</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="../../../../tag/نجوای&#32;کنگان&#32;_____%257C(dot)%257C_____&#32;کرونا&#32;وپنج&#32;سوال&#32;بدون&#32;پاسخ&#32;دقیق؟.html" class=text4>نجوای کنگان . کرونا وپنج سوال بدون پاسخ دقیق؟</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../../12333.html#commentlist">نظرات (<script>setCommentCnt(12333)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('12333','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../../12329.html">                                سرلشکر باقری: تأثیرگذاری راهبردی سپاه عامل عصبانیت و تحقیر آمریکا است</a></font></div>
+            <div class=div58><font class=text7>جمعه 8 فروردین 1399 :: نویسنده : <a href="../../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;
+
+
+<span class="title mb-2 d-block text-justify">سرلشکر باقری: تأثیرگذاری راهبردی سپاه عامل عصبانیت و تحقیر آمریکا است</span></b>
+                                    <p class="lead p-2 text-justify">
+                                        رئیس ستادکل نیروهای مسلح در 
+پیامی با تبریک روز پاسدار، تاکید کرد: سپاه امروز به سطحی از اقتدار و 
+تأثیرگذاری راهبردی رسیده است که جبهه دشمنان انقلاب به ویژه رژیم تروریستی
+ و مستکبر آمریکا را به شدت عصبانی و حتی در جدال های نفسگیر رو در رو 
+تحقیر و زمین‌گیر ساخته است.
+                                    </p>
+                                        <img class="w-100" src="https://media.farsnews.ir/Uploaded/Files/Images/1398/09/14/13980914000789_Test_PhotoN.jpg" alt="سرلشکر باقری: تأثیرگذاری راهبردی سپاه عامل عصبانیت و تحقیر آمریکا است">
+                                
+                            
+                            
+
+                        
+
+                    
+                    
+                        <p style="text-align: justify;">به گزارش گروه 
+دفاعی خبرگزاری فارس، در آستانه فرارسیدن سالروز میلاد خجسته امام حسین(ع) و
+ روز پاسدار، سرلشکر پاسدار محمد باقری در پیامی خطاب به سرلشکر پاسدار 
+حسین سلامی با تبریک روز پاسدار، سپاه را مولد فرصت‌های بزرگ از متن 
+تهدیدات و بحران ها برای پیش روندگی انقلاب، پیشرفت کشور و پیشبرد آمال و 
+آرمان های ملت ایران توصیف و تاکید کرد: اقتدار و تاثیرگذاری راهبردی سپاه 
+عامل عصبانیت آمریکا و تحقیر و انزوای دشمنان ایران اسلامی است.</p>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="../../../../tag/نجوای&#32;کنگان&#32;_____%257C(dot)%257C_____سرلشکر&#32;باقری%253A&#32;تأثیرگذاری&#32;راهبردی&#32;سپاه&#32;عامل&#32;عصبانیت&#32;و&#32;تحقیر&#32;آمریکا&#32;است.html" class=text4>نجوای کنگان .سرلشکر باقری: تأثیرگذاری راهبردی سپاه عامل عصبانیت و تحقیر آمریکا است</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../../12329.html#commentlist">نظرات (<script>setCommentCnt(12329)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('12329','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text4>
+                <br><br>
+        ( کل صفحات : 2 )&nbsp;&nbsp;&nbsp;
+            <a href="1.html" class=text4><b>1</b></a>&nbsp;&nbsp;&nbsp;<a href="2.html" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;    </font>
+    </div>
+</div>
+
+<div class=div17>
+
+    <div class=div60>
+        <div class=div101>
+            <div class=div10><font class=title>نجوا کنگان</font></div></div>
+        <div class=div11>
+            <div class=div12><font class=des>دلگیرم   از    خود  با  تو نجوا  می کنم       دریا  این سفره ی دل پیش تو    وا می کنم  </font></div></div>
+    </div>
+
+    <form id="frm-16076951295fd37b1904ad2" method="get" action="http://najvaye-kangan.mihanblog.com/post/search/fid/16076951295fd37b1904ad2"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> <div class=div80>
+        <div class=div81></div>
+        <div class=div37>
+            <input type="text" name="search_text" size="25" style="border: 0px none; background: none; font-family:Tahoma; font-size:9pt; color:#FFFFFF"></div>
+        <div class=div38>
+            <input type="image" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width=67 height=28></div>
+    </div><input type="hidden" name="frm-id" value="16076951295fd37b1904ad2" id="frm-id" /></form>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div31><center><img src="../../../../../../static.mihanblog.com/public/user_data/web_photo/334/999078.jpg@3692"  /></center><br>
+                <font class=text1><center> سلام علیكم اینجانب عبدالمجید اورا متولد1348/6/25- كنگان-محله خور چوری(خیابان استقلال)<br />
+</center><br>
+                    <img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10">مدیر وبلاگ : <a href="../../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div><div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>مطالب اخیر</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12634.html">                                  آینده کار: مهارت های مورد نیاز نوجوانان چیست؟</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12633.html">                                مرحله نهایی واکسن های کرونا  که از این تعداد 7 مورد به تولید رسیده اند!  </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12632.html">                                     بخشی از ویژگیهای یک  فعال رسانه ی موفق ؟  </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12631.html">                                 بازدید قطری ها از کنگان؛ انعقاد تفاهم نامه در اصفهان!</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12629.html">                           دانشگاه های صوری و گواهینامه های جعلی ... </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12628.html">                      اینترنت 5G: داستان علمی تخیلی که  رنگ واقعیت  می گیرد !</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12627.html">                                روشهائی که  به مطالعه موثر &quot;درس خواندن&quot; کمک می کنند!</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12626.html">                نحوه تحقیق در خصوص اخبارعلمی مرتبط با کرونا(  COVID-19)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12625.html">                 کدام یک را ترجیح می دهید: کتاب صوتی ( الکترونیکی) یا کتاب خواندنی( چاپی)؟</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../12624.html">                             واکسن فایزر علیه کرونا و پاسخ 11 سوال ؟</a></font></div>        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>موضوعات</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../category/9.html">سوالات امادگی دفاعی 2 (8)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../category/8.html">سخنان رهبری (9)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../category/6.html">تصاویر رهبری (17)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../category/7.html">شعر (304)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../category/4.html">خبر (651)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../category/3.html">تحلیل مقاله (2729)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../category/2.html">مقاله (201)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../category/5.html">پیشنهاد برنامه شهرستان كنگان (14)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../category/1.html">داستان های قدیمی كنگون (56)</a></font></div>        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../9.html"> آذر 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../8.html"> آبان 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../7.html"> مهر 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../6.html"> شهریور 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../5.html"> مرداد 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../4.html"> تیر 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../3.html"> خرداد 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../2.html"> اردیبهشت 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../1.html"> فروردین 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../1398/12.html"> اسفند 1398</a></font></div>            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../archive.html">آرشیو كل مطالب</a></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://www.moallemaniran.ir" title="" target="_blank">پایگاه خبری تحلیلی معلمان ایران</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://parlemanmelk.ir" title="سلام 
+فرهیخته گرامی لطفا ما را لینک کنید با تشکر" target="_blank">املاک منطقه 22</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.Hsbteam.com" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+گروه نرم افزاری HSB" target="_blank">گروه نرم افزاری HSB</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://shahre-music.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">تک آهنگ جدید</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://tnvj.ir/" title="باسلام و احترام
+وبلاگ بسیار مفید و کاربردی ایجاد کرده اید، بسیار خرسندم از بررسی وبلاگتان. در صورت تمایل حاضر به تبادل لینک هستیم. آدرس سایت ما http://tnvj.ir/ می باشد.
+در صورت تمایل به تبادل لینک ابتدا لینک ما را در قسمت پیوندهای وبلاگتان درج نمایید و سپس از طریق ایمیل به آدرس HAMID.AZADI74@GMAIL.COM اطلاع دهید.
+پیشاپیش از همکاری و مساعدت شما سپاسگزارم." target="_blank">تبادل لینک</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://botgram.mobi/" title="ربات اینستاگرام با عضویت رایگان و اکانت 7 روز تست" target="_blank">افزایش فالوور اینستاگرام</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://sainkala.com/news-technology" title="" target="_blank">اخبار تکنولوژی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../../amin2002.mihanblog.com/index.html" title="" target="_blank">یک قدم تا قلم</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://dabiranfile.ir/" title="مرجع فایل فرهنگیان شامل:
+گزارش تخصصی- تجربیات مدون- درس پژوهی-اقدام پژوهی-برنامه سالانه-تقویم اجرایی-طرح تعالی مدیریت کیفیت مدار-طرح تدبیر-طراحی آموزشی-تحلیل محتوا-تولید محتوای الکترونیکی
+سایت:
+http://dabiranfile.ir
+کانال تلگرام:
+https://t.me/dabirfile
+ایمیل سایت:
+dabiranfile@gmail.com" target="_blank">دبیران فایل</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.senfit.ir" title="" target="_blank">اطلاعات اصناف ایران</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../../rassam110.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+گروه نرم افزاری HSB" target="_blank">RASSAM MEDIA</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.parvaresheafkar.com/law-attraction" title="سلام سایت من درباره قانون جذب خوشحال میشم تایید کنید" target="_blank">قانون جذب </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.muslimpress.com" title="با سلام....
+ 
+اهداف اصلی این سایت اطلاع رسانی از آخرین وضعیت مسلمانان جهان، نشان دادن چهره حقیقی اسلام ، انعکاس فرمایشات پیامبر اسلام محمد مصطفی (ص)، شریعت و احکام اسلامی می باشد  که متاسفانه امروزه به چهره ای  سرشار از اکاذیب و ریای غرب و گاه ضد انسانی تبدیل شده است.
+
+ در این دنیای فریبنده،غرب، پیامبر رحمت را پیامبر خشونت و دین اسلام را دینی خشن و ضد اخلاقی معرفی می کند.شایان ذکر است این سایت، بیان نقطه نظرات مشترک اسلام را  با دیگر ادیان الهی بر عهده دارد که این مهم بی شک می تواند انسان های موحد را در سرتاسر جهان به یکدیگر نزدیک تر کند.
+
+سایت مسلم پرس پیام آور صلح و دوستی  به همه مردم جهان است. مودت و دوستی را ترویج ، و به مبارزه با  ظلم و استکبار می پردازد  همانگونه که برای هیچ فردی پذیرفتنی نیست ." target="_blank">news</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://eheyat.com" title="مداحان" target="_blank">مداحان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://melatblog.ir" title="سرویس وبلاگدهی ملت بلاگ برای ساخت وبلاگ رایگان فارسی برای حمایت از زبان شیرین پارسی در پهنای اینترنت پا به عرصه نهاد و امید بتوان گامی هر چند کوچک برای اثر بخشی زبان پارسی در جهانیان انجام داد." target="_blank">ملت بلاگ</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.iraniannurse.com" title="با سلام....
+ لطفا لینک ما را تایید کنید." target="_blank">وبسایت پرستاری ایرانیان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.amirreza256.ir/" title="با سلام....
+ به وب ما هم سر بزنید." target="_blank">سایت دانش آموزان قره چپق</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.veteranstoday.com" title="" target="_blank">پژوهش ها</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../../rahbarshenasi.mihanblog.com/index.html" title="" target="_blank">رهبر شناسی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.daneshforum.ir" title="انجمن علمی دانش آموزان و دانشجویان" target="_blank">دانش فروم</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://ghazamag.ir/" title="اخبار صنایع غذایی ایران
+
+سلام دوست عزیز
+وبلاگ خوبی داری ما هم وب سایت خبری راه اندازی در حوزه صنایع غذایی و تغذیه و سلامت
+
+ممنون میشم لینک رو تایید کنید تا وب سایت ما هم از رتبه خوبی برخوردار بشه" target="_blank">اخبار صنایع غذایی ایران</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://Dnis.ir" title="با سلام.
+با توجه به مطالب مفید و خوب بلاگ شما، جهت فعالیت در سایت دنیس به عنوان مدیر دعوت می شوید.
+ارادتمند شما. Dnis.ir" target="_blank">شبکه هوشمند دنیس ...</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://kangannajva.blogfa.com/" title="به دو زبان عربی و لاتین" target="_blank">کنگان نجوا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../../www.beheshtiyan.mihanblog.com/index.html" title="سلام دوست عزیز
+بلاگ زیبایی داری.اگه مایل به تبادل لینک هستی ابتدا منو با نام بهشتیان لینک کن بعد خبر بده تا من هم تو رو لینک کنم.
+با تشکر" target="_blank">بهشتیان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../../imamreza88.mihanblog.com/index.html" title="با سلام ، گرچه وب سایت امام رضا (ع) تازه شروع به کار کرده ولی با حمایت شما به بالاتر ها  خواهد رفت
+...............................................................
+ و اصل مطلب :
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و حتما اطلاع بدید.
+
+باتشکر وب سایت بزرگ امام رضا(ع)" target="_blank">وب سایت امام رضا (ع)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.GuilanFX.com" title="آموزش رایگان فعالیت در بازار بورس ارز بین المللی هام و اوراق بهادار" target="_blank">آموزش فعالیت در بورس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.hormozban.ir" title="اخبار استان هرمزگان را در پایگاه خبری هرمزبان دنبال نمایید.
+با تشکر" target="_blank">پایگاه خبری هرمزبان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../../khormabad.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">روستاها</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.2016rio.ir" title="المپیک 2016" target="_blank">المپیک 2016</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://WWW.FIREANGEL.IR" title="سلام دوست عزیز این یک پیام تبلیغاتی نیست وبنده به وبلاگ شما شخصن سر زدم
+دوست من گروه ماو نویسندگان ما برای افزایش امنیت در فضای مجازی به پا شده وداره تمام تجربیات واطلاعات خود را در اختیار کاربران میزاره 
+برای همین تیم ما نیاز به همایت داره بیشتر مارو به نام طرف داران امنیت میشناسند وتمام اطلاعات وتجربیاتمونو رایگان در اختیار کار برا میزاریم همچنینن اخبار هک و...
+دوست وبلاگ نویس من اگه لطف کنی واز ما همایت کنی وسایت مارو لینک کنی 
+وهمچنینن شما میتوانید از لینک زیر تبلیغ خود را در سایت ما نمایش بدهی
+http://fireangel.ir/?page_id=321
+
+باتشکر از شما  admin:fireangel
+
+ادرس سایت:www.fireangel.ir
+
+httP://fireangel.ir
+
+دوست داران امنیت" target="_blank">دوست داران امنیت</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../../ershadgar20.mihanblog.com/index.html" title="خداوند به داوود وحی کرد: یا داوود من پنج چیز را در پنج چیز بنا نهاده ام ومردم آن ها را در جای دیگر می جویند و هرگز نمی یابند :
+
+دانش را در گرسنگی و کوشش گذاشته ام و آنان در سیری و تبلی می جویند و نمی یابند.
+
+عزّت را در فرمانبرداری خودم گذاشته ام و آنان در بارگاه شاهان می جویند و نمی یابند .
+
+بی نیازی را در قناعت گذاشته ام و آنان در ثروت می جویند و نمی یابند.
+
+رضای خودم را در نَفس ستیزی گذاشته ام و آنان در پیروی از نفس می جویند و نمی یابند.
+
+آسایش را در بهشت گذاشته ام و آنان در دنیا می جویند و نمی یابند .
+
+احادیث قدسی جلد 1 صفحة 178" target="_blank">طلبه ارشادگر</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.jobnetfa.com" title="&quot;JobNetFa&quot; اولین و جامع ترین پورتال مشاغل نوین به زبان فارسی میباشد.
+هدف از ایجاد این پورتال ایجاد فضایی امن برای فعالیت های نوین شما دوستان عزیز میباشد.
+در این پورتال تمامی روش های تایید شده,اموزش ها,خبر ها,تحلیل و بررسی و ... در اختیار شما قرار داده شده است.
+معرفی بیش از 10 روش تایید شده.
+معرفی بش از 1000 سایت کسب درامد.
+برگزاری قرعه کشی های هفتگی,ماهانه و سالانه بین اعضا
+ارائه طرح های تشویقی برای افراد.
+پشتیبانی اعضا تا رسیدن به درامد
+و...
+اگر به دنبال شروع کسب درامد هستید,به این پورتال مراجعه کنید.
+http://www.jobnetfa.com/" target="_blank">JobNetFa اولین و جامع ترین پورتال مشاغل نوین به زبان فارسی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://atrekhoda.com" title="آرامشــبخش ترین و عاشقانه ترین ها را اینجا بخوانید
+
+با عطر خدا همراه باشید" target="_blank">███ عطر خدا ، آرامش خدایی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://WWW.bia2apk.ir" title="فایل تی اس ,بزرگترین بانک مقالات داشجویی - مرجع مقالات
+دانلود مقاله|مقالات دانشجویی|دانلود پروژه|مرجع مقاله
+www.filets.fileina.com
+همراه با پرداخت انلاین وامن" target="_blank">فایل تی اس ,بزرگترین بانک مقالات داشجویی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://melatblog.ir/" title="سرویس وبلاگدهی ملت بلاگ برای ساخت وبلاگ رایگان فارسی برای حمایت از زبان شیرین پارسی در پهنای اینترنت پا به عرصه نهاد و امید بتوان گامی هر چند کوچک برای اثر بخشی زبان پارسی در جهانیان انجام داد." target="_blank">ملت بلاگ</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://arawebco.ir" title="طراحی سایت" target="_blank">طراحی سایت</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.galleypic.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">خبرخوان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../../it71.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">دنیای فناوری اطلاعات * طاها *</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://montasar.ir" title="وبسایت مهدویت" target="_blank">حضرت مهدی عج</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.daneshjooazad.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+پایگاه اطلاع رسانی دانشجو آزاد" target="_blank">پایگاه اطلاع رسانی دانشجو آزاد</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.jonbeshnet.ir/news/33132" title="با سلام
+گروه اینترنتی رهروان ولایت 
+از تمامی فعالان فضای مجازی دعوت می کنیم 
+با قرار دادن «لوگوهایجنبش اینترنتی امر به معروف و نهی از منكر» در پایگاه های اینترنتی و وبلاگ های خود و همچنین با تولید، انتشار و... ما را در این امر خطیر یاری فرمایند.
+
+لطفا گروه اینترنتی رهروان ولایت را لینك كرده و به ما هم در سایت در بخش نظرات بفرمائید تا شمارو لینك كنیم .
+ منتظر لینكتون هستم .
+http://www.jonbeshnet.ir/news/33132" target="_blank">فیروزجائی </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://farasokhan.blogfa.com" title="" target="_blank">فرا سخن</a></font></div>            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../linkdaily/index.html">همه پیوندهای روزانه</a></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندها</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.welayatnet.com/fa/news/91496" title="" target="_blank">پویش «من منتظرم»</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.jnarm.blogfa.com/" title="" target="_blank">جنگ نرم</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://kangannajva.blogfa.com/" title="به دو زبان عربی ولاتین" target="_blank">کنگان نجوا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://http://www.globalresearch.ca" title="ممممممم" target="_blank">تحقیقات جهانی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://http://jannaat.mihanblog.com/" title="" target="_blank">جنات اندیمشک</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://journal-neo.org/http://" title="" target="_blank">چشم انداز جنوب غرب آسیا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.manar.com" title="" target="_blank">صحیفة المنار</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.nakhelnews.com/" title="" target="_blank">النخیل</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://almasalah.com/" title="" target="_blank">المسلة</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.almuraqeb-aliraqi.org/" title="" target="_blank">صحیفة المراقب العراقی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://awraqpress.net/portal/" title="" target="_blank">موقع اوراق برس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.alahednews.com.lb/" title="" target="_blank">موقع العهد</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.addiyar.com/" title="" target="_blank">الدیار لبنان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://topnews-nasserkandil.com/final/HomePage.php" title="" target="_blank">سایت توب نیوز</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://assafir.com/" title="" target="_blank">سایت السفیر لبنان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://burathanews.com/index.html" title="" target="_blank">سایت براثا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://basiratjooyan.ir/" title="" target="_blank">پایگاه تحلیلی- بصیرتی بصیرت جویان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://weblognevisan.ir/" title="" target="_blank">انجمن وبلاگ نویسان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../../sarbazgomnam08.mihanblog.com/index.html" title="" target="_blank">پایگاه اطلاع رسانی سربازان گمنام امام زمان(عج)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.koogana.ir/" title="" target="_blank">سایت خبری کوگانا(سایت خبری کنگان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href=" http://www.rahbaram110.blogfa.com/" title="" target="_blank">رهبرم سید علی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.banakvagoonagoon.blogfa.com/" title="" target="_blank">بنک و گوناگون</a></font></div>            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../link/index.html">همه پیوندها</a></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>نویسندگان</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../author/849529.html">عبدالمجید اورا (6217)</a></font></div>        </div><div class=div30></div>
+    </div>
+    
+    
+		
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>برچسبها</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252F+خلاصه+ی+کتاب.html">نجوای کنگان/ نجوا کنگان/ خلاصه ی کتاب</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252Fخبرگزاری+فارس.html">نجوای کنگان/ نجوا کنگان/خبرگزاری فارس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252F.html">نجوای کنگان/ نجوا کنگان/</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252Fsputnik.html">نجوای کنگان/sputnik</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252F+خبرگزاری+فارس.html">نجوای کنگان/ خبرگزاری فارس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252F+خلاصه+کتاب.html">نجوای کنگان/ خلاصه کتاب</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252F+نجوا+کنگان.html">نجوای کنگان/ نجوا کنگان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252F++_____%257C(dot)%257C_____sputniknews.html">نجوای کنگان/  .sputniknews</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252Fhttp%253A%252F%252Fir_____%257C(dot)%257C_____sputniknews_____%257C(dot)%257C_____com.html">نجوای کنگان/ نجوا کنگان/http://ir.sputniknews.com</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252F+خبرگزاری+فارس.html">نجوای کنگان/ نجوا کنگان/ خبرگزاری فارس</a></font></div>        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>کل بازدید : <script>getStatVar('total_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید امروز :<script>getStatVar('today_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید دیروز : <script>getStatVar('yesterday_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید این ماه : <script>getStatVar('this_month_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>تعداد نویسندگان : <script>getStatVar('total_author');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>تعداد کل پست ها : <script>getStatVar('total_post');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>آخرین بازدید : <script>getStatVar('last_view_date');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <style>
+            .mihan_logo {
+                background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+                height: 131px;
+                margin-top: 10px;
+                text-align: center;
+            }</style>
+        <div class="mihan_logo"></div>
+        <center><script language="javascript" src="http://news.parseek.com/Javascript/?items=20&type=ALL&bullet=true&source=false" ></script></center><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+</div>
+
+</div>
+</td>
+<td class=div01 valign=top><div class=div001></div></td>
+<td class=div02>&nbsp;</td>
+</tr>
+<tr>
+    <td class=div04>&nbsp;</td>
+    <td colspan="3" class=div4>
+        <div class=div6></div>
+        <div class=div7>
+            <a href="http://www.mytheme.ir" target="_blank">
+                <img src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" border=0 width=189 height=35></a></div></td>
+    <td class=div04>&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 460px;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'najvaye-kangan.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

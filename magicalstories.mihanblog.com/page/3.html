@@ -1,0 +1,2027 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1939539*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[23]='612';commentCnt[45]='39';commentCnt[66]='2';commentCnt[68]='1';commentCnt[69]='1';commentCnt[74]='6';commentCnt[79]='5';commentCnt[80]='5';commentCnt[83]='-';commentCnt[84]='-';commentCnt[85]='-';commentCnt[87]='-';commentCnt[88]='-';commentCnt[89]='-';commentCnt[90]='-';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[23]='1';
+mihanblogDisLikeArrCnt[23]='0';
+mihanblogLikeArrCnt[66]='0';
+mihanblogDisLikeArrCnt[66]='0';
+mihanblogLikeArrCnt[68]='0';
+mihanblogDisLikeArrCnt[68]='0';
+mihanblogLikeArrCnt[74]='0';
+mihanblogDisLikeArrCnt[74]='0';
+mihanblogLikeArrCnt[79]='0';
+mihanblogDisLikeArrCnt[79]='0';
+mihanblogLikeArrCnt[80]='0';
+mihanblogDisLikeArrCnt[80]='0';
+mihanblogLikeArrCnt[83]='0';
+mihanblogDisLikeArrCnt[83]='0';
+mihanblogLikeArrCnt[84]='0';
+mihanblogDisLikeArrCnt[84]='0';
+mihanblogLikeArrCnt[87]='0';
+mihanblogDisLikeArrCnt[87]='0';
+mihanblogLikeArrCnt[88]='0';
+mihanblogDisLikeArrCnt[88]='0';
+mihanblogLikeArrCnt[89]='0';
+mihanblogDisLikeArrCnt[89]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://magicalstories.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://magicalstories.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','45');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','دوشنبه 12 شهریور 1397');
+	
+	setStatVar('today_view','1');
+	setStatVar('yesterday_view','3');
+	
+	setStatVar('this_month_view','156');
+	setStatVar('last_month_view','134');
+
+	setStatVar('total_view','14569');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (04:34)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://magicalstories.mihanblog.com/statupdate/?data[refereruri]=http://magicalstories.mihanblog.com/&data[postid]=&data[requesturi]=/page/3&data[sdate]=1607826115&data[hash]=188e6843824a19e3ed41666f4d7114dc&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://magicalstories.mihanblog.com/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://magicalstories.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://magicalstories.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+		
+<html>
+
+	<head>
+		<title>رمـــان نویـــسآن</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Language" content="fa">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		
+		<link rel="alternate" type="application/rss+xml" title="رمـــان نویـــسآن" 
+		  href="../post/rss/index.html" />
+		<link rel="alternate" type="application/atom+xml" title="رمـــان نویـــسآن" 
+		  href="../post/atom/index.html" />
+	
+	</head>
+	<style>
+		*{font-family:tahoma;direction:rtl;color:#74D4DD}
+		#sidebar{float:right;width:200px;margin-right:5px}
+		#content{float:left;width:500px;padding:20px}	
+		#body{display:block;font-size:12px}
+		
+		a,a:hover,a.visited{text-decoration:none}
+		.inbox{list-style:none; padding:0 4px}
+		ul{padding:3px;margin:5px;}
+		h2{color:red}
+		h2 a{color:BlanchedAlmond; font-size:25px; font-family:arial}
+		h3{color:ButtonText; margin-top:0; font-size:20px; font-family:arial; text-align:center}
+		#header h1 a{font-size:35px; font-family:arial; float:center; color:}		
+		#header h1{margin:0; height:50px; overflow:hidden}
+		
+		.author_box img{float:right;border:none;}
+		.mihan_logo{text-align:center;height:131px;margin-top:10px;
+	background: url(../../static.mihanblog.com/public/images/logo/poweredby.gif) no-repeat top center;}
+		.slogan{
+			color:#74D4DD; text-align:center; padding:5px 0;
+			background: url(../../static.mihanblog.com/public/images/template_packages/8/body_background.png) repeat;
+			background: expression(#056D7C);
+		}
+		
+		#footer{font-size:9px;display:block;margin-top:50px; float:left}
+		#footer a,#footer a:hover,#footer a:visited{color:#000;}
+		
+		.hr{border-top:1px solid #CCCCCC;height:1px;margin:3px;}	
+		
+		body{margin:0; background: #237D8C url(../../static.mihanblog.com/public/user_data/user_template/1273/3816845_photo_mid.jpg) no-repeat fixed center}
+		
+		.sidebar_box{background-color:#348A99; padding:10px 5px; line-height:5px; line-height:20px}
+		.sidebar_box_border{background-color:#348A99; height:1px; display:block; overflow:hidden}
+		.sidebar_box_border_div{width:185px;}
+		.seprator{margin-bottom:10px}
+		.main_menu{text-align:center}
+		.blog_title{color:#}
+		
+		#header{height:100px; overflow:hidden; background-color: #005361}
+		#body{
+			background: url(../../static.mihanblog.com/public/images/template_packages/8/body_background.png) repeat;
+			background: expression(#056D7C);
+		}
+		#blog_body{width:750px; margin:30px auto; }
+		#footer_background{height:0}
+	
+		.clearfix {
+			display:inline-block;
+		}
+		.clearfix:after {
+			clear:both;
+			content:'.';
+			display:block;
+			height:0;
+			visibility:hidden;
+		}
+		* html .clearfix {
+			height:1%;
+		}
+		.clearfix {
+			display:block;
+		}
+	</style>
+	<body>
+
+		<div id="blog_body">
+	
+			<div id="header">
+				<h1><p style="text-align:center; margin:0"><a class="blog_title" href="http://magicalstories.mihanblog.com/page/Magicalstories" style="margin:10px">رمـــان نویـــسآن</a></p></h1>
+			</div>
+		
+			<div class="slogan"></div>
+			
+			<div class="clearfix">
+			
+				<div id="body" class="clearfix">
+					
+					<div id="content">
+													
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+										<div>
+									<h2>
+										<a href="../post/23.html">Sabet</a>
+									</h2>
+									<p class="date">
+										دوشنبه 8 خرداد 1396 02:05 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="../post/author/1590864.html">
+									Miss ♥ Celine  								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/8.html">
+											قوانین										</a>،
+												              	  		     
+									<br>
+											        			          	
+								<a href="../post/author/1590864.html"><img src="../../static.mihanblog.com/public/user_data/user_photo/531/1590864.jpg"  /></a>								<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center"><img src="http://s9.picofile.com/file/8333448192/photo_%DB%B2%DB%B0%DB%B1%DB%B8_%DB%B0%DB%B4_%DB%B1%DB%B3_%DB%B2%DB%B2_%DB%B5%DB%B7_%DB%B2%DB%B6.jpg" alt="" width="415" vspace="0" hspace="0" height="518" border="0" align="bottom"></div><div align="center"><br></div><div align="center"><div align="center"><font size="4" face="Mihan-IransansLight">سلامی گرم تقدیم به همه ی دوستان عزیز و خوانندگان محترم وبلاگ<br></font></div><div align="center"><font size="4" face="Mihan-IransansLight">من میس سلین هستم، مدیر این وب</font></div><div align="center"><font size="4" face="Mihan-IransansLight">در این وب نمیگم هرچیزی که فکرشو بکنید پیدا میشه...</font></div><div align="center"><font size="4" face="Mihan-IransansLight">چون ما نه اونقدر مقدار بازدیدمون بالاست، نه مقدار مطلب گذاشتنامون.</font></div><div align="center"><font size="4" face="Mihan-IransansLight">به همین دلیل تنها عکس نوشته و رمان پست میکنیم و اگر چیزی مد نظر شماهم بود میتونید بهم بگید تا پست کنم.</font></div><div align="center"><font size="4" face="Mihan-IransansLight">یه
+ وب دیگم که توش مسابقه و عکس نوشته آپ میکنم،آدرسش اینجاست،اگر که وقتشو 
+داشتید و دوست داشتید میتونید از وب و مسابقم بازدیدی داشته باشید</font></div><div align="center"><font size="4"><font face="Mihan-IransansLight">آدرس :</font></font></div><div align="center"><font face="Mihan-IransansLight"><font size="4">چون اینجا نمیتونم آدرسو بدم و کلیک راست هم قفل داره،اگر تمایل داشتید میتونید بیاید از خودم بگیرید</font></font><br></div><div align="center"><font size="4" face="Mihan-IransansLight">توی نظرسنجی هم شرکت کنید تا مقدار کیفیت وب رو از نظر شما بسنجیم.</font></div><div align="center"><font size="4" face="Mihan-IransansLight">روزتون خوش و شبتون هم به همین منوال ...</font></div><div align="center"><font size="4" face="Mihan-IransansLight">♥<br></font></div><div align="center"><font size="4" face="Mihan-IransansLight"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/54.gif"> با احترام - میس سلین <img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></font></div><font size="3" face="Mihan-IransansLight"><font size="4">بـــدرود <img src="http://mihanblog.com/public/public/rte/images_new/smiles/57.gif"></font></font></div><div align="center"><br><font face="Mihan-IransansLight"><font size="4"></font></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(23)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(23)</script> ×کـــــــآمنت×								</a> 
+								
+								<br/>
+			
+													
+																	<b>دنبالک ها:</b>
+																		<a href="http://" target="_blank">
+										قوانین									</a> ،
+																		
+									<br/>
+													        		 			
+								<b>آخرین ویرایش:</b>
+								جمعه 12 مرداد 1397  08:43 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/90">این خیلی خوب و خفنه!</a>
+									</h2>
+									<p class="date">
+										چهارشنبه 20 تیر 1397 02:23 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="../post/author/1590864.html">
+									Miss ♥ Celine  								</a> 
+			        			
+								<br/>
+			
+											        			          	
+																
+<div align="center"><font face="Mihan-Iransans"><font size="4">سلام بچــــه هااااا</font></font></div><div align="center"><font face="Mihan-Iransans"><font size="4">حتما آهنگ 6Days رو از Mehmet Orhan دانلود کنین</font></font></div><div align="center"><font face="Mihan-Iransans"><font size="4">خیلی قشنگه<img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></font></font></div>
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(90)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(90)</script> -								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								چهارشنبه 20 تیر 1397  02:24 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/89">معشوقه،قسمت چهارم</a>
+									</h2>
+									<p class="date">
+										چهارشنبه 20 تیر 1397 01:56 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="../post/author/1590864.html">
+									Miss ♥ Celine  								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/4.html">
+											معشوقه										</a>،
+												              	  		     
+									<br>
+											        			          	
+																
+
+
+
+
+
+
+<div><font size="4"><font face="Mihan-IransansLight">تقریبا ساعت هشت شب است. مادرم در تکاپوی آماده شدن برای مراسم است،پدرم دارد کرواتش را امتحان میکند و سام هم درحالی که کتاب میخواند،مسواک هم میزند. یاشار هم که طبق معمول...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">من هم گوشه ای نشسته ام و دارم خودم را آماده میکنم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- یه سلام خشک و خالی،شوخی ممنوع،خنده ممنوع،میتمرگی سرجات یغما!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">هرگز فکر نمیکردم شوخ طبعی و خوشمزگی ام چنین بلایی سرم بیاورند و بعد از آن خودم را محکوم به سکوتی مرگبار کنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">به سمت کمدم میروم و یک مانتوی بلند مجلسی با شلوار گشاد و یک شال بی رنگ را برای مراسم امشب برمیدارم. به خودم اصلا نمیرسم و همانطوری شل و ول روی مبل لم میدهم و منتظر بقیه میشوم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">شاید فکر میکنید خیلی زود با این قضیه کنار آمده ام اما چیزی که مهم است،این است که کارش بی جواب نخواهد ماند.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">یاشار چند دقیقه ای گوشی اش را به حال خود گذاشته و من هم مثل همیشه او را در گوشی اش میکاوم. به درون تلگرامش میروم و صفحه ی چتش را زیر نظر میگیرم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">یکی از آنها که با اسم "آتاناز 3" در صفحه ی چتش است،توجهم را جلب میکند. نمیفهمم منظورش چیست اما مثل خودش یک پوزخند کج میزنم. اینها هرکاری بکنند عیبی ندارد،اما اگر من یا بهتر بگویم ما زنان حتی به طور ناخواسته کاری انجام دهیم ،بیا و ببین چه ولوله ای به پا خواهد شد!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">انگار ما از همان بدو تولد جهان،محکوم به زوال بودیم... اما من کوتاه نمی آیم و حق آرزوهای مرده ام را از تو پست فطرتی که تنها از مردانگی،جنسش را به ارث برده ای خواهم گرفت.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">چت هایش را با همان آتاناز 3 میبینم... حرف هایی مفتضح و عکس هایی مفتضح تر که غالبا از سوی همین دختر فرستاده میشود. ای احمق! خودت را میفروشی،مهم نیست که مجازی باشد و حضور مستقیم نداشته باشی... وقتی برادر من پوزخند میزند و من چهره اش را میبینم،میفهمم چندین بار خودت را به او مفت ارزانی داشته ای...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">گوشی اش را پرت میکنم روی میز و فکر میکنم دستم نجس شده که چنین مهملات کثیفی را درون دنیای مثلا الگویم دیده ام.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">به سام نگاهی می اندازم و میبینم یک نگاهش به سطرهای کتاب "دختری که رهایش کردی" است و یک نگاهش به جورابی که دارد پایش میکند،بی اختیار لبخند میزنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">اما به پایش که برسد،توهم مرا با قضاوت ها و اغلب برچسب "لکه ی ننگ" خواهی کشت.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">بالاخره همه حاظر و آماده اند و تنها من هستم که گرچه حضور فیزیکی در جمع دارم اما روحا در عوالم خود سیر میکنم...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">به خودم از سر اجبار تکانی میدهم و کیفم را روی شانه می اندازم و به همراه بقیه از خانه خارج میشوم. تا به مقصد برسیم،میتوانم بازهم فکر کنم و خودم را آماده ی هر اتفاقی بکنم اما زمانی که با او رو به رو شوم، دوباره همه چیز یادم میرود. نه از اینکه خیلی عاشقش هستم و او خیلی دلرباست،بلکه او همانی است که در اوج اعتمادم،مرا شکست...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">ماشین در سکوت غرق است،هیچکس حرفی نمیزند و این هم چیز غیرطبیعی نیست. همیشه همینگونه بوده و هست...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">میانه ی راه هستیم که چراغ قرمز میشود و ما می ایستیم،همان لحظه گوشی مادرم زنگ میخورد و او هم با عجله گوشی را بیرون میکشد. تازه گوشی خریده و فکر میکند اگر کمی دیر جواب بدهد،گوشی به فنا خواهد پیوست...!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- سلام پسرم</font></font></div><div><font size="4"><font face="Mihan-IransansLight">من یخ میزنم</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- بله شکر خدا،تو خوبی؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">در دل میگویم الهی بمیری</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- خواهش میکنم،بزرگی شمارو میرسونه...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">ای مادر احمق!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- تو راهیم،داریم میایم. دیگه نزدیکیم... باشه پسرم،خداحافظ</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و بعد بازهم سکوتی که در میانش،تعاریف بی حد و مرز مادرم است. یکدفعه مثل همیشه بی مقدمه میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- کاشکی دامادم بود...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و نمیدانم چطور اوج میگیرم و از عصبانیت سرخ میشوم و فریادم که نمیدانم از کجای حنجره ام برخاسته</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- بس کن!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">حتی سام که هیچگاه تکانی نمیخورد،لرزید. یاشار با سردرگمی گفت :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- یغما...؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و این سام است که چشم غره ی جهنمی به من میرود. پدرم از شیشه ی ماشین نگاه مهربانی نثارم میکند و بعد خطاب به مادرم که لب و لوچه اش را آویز کرده میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- خانوم،شوخیت بی جا بود.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">مادرم گویی که بخواهد پدرم را از سرش باز کند،میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- خُبه خُبه</font></font></div><div><font size="4"><font face="Mihan-IransansLight">پدرم با تحکم همیشگی اش میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- خانوم</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و مادرم هم سکوت پیشه میکند،گویی برای همیشه...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">بالاخره میرسیم، پدرم درحالی که ماشین را پارک میکند،نگاهی هم به منظره می اندازد</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- الحق که خیلی شیکه</font></font></div><div><font size="4"><font face="Mihan-IransansLight">مادرم با چاپلوسی همیشگی اش میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- ساخت خودشه دیگه. ماشاالله</font></font></div><div><font size="4"><font face="Mihan-IransansLight">یاشار نگاهی به من می اندازد و من هم دهن کجی میکنم. اوهم میخندد و با ایما و اشاره اش میفهماند مادرمان قدرت تفکر لازم را ندارد. سام پیاده میشود و مرا هم به دنبال خود میکشد</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- ولم کن وحشی</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- خفه!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">حوصله ی جر و بحث را ندارم،فقط میگویم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- پس مثل بچه ها دستمو نکش،آبرومون نره یه وخ جلو روهام خــان</font></font></div><div><font size="4"><font face="Mihan-IransansLight">آنچنان اسم روهام را با تحقیر میگویم که لحظه ای می ایستد و نگاهش را رویم متمرکز میکند.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و بعد از آن،دستم را به آرامی ول میکند و راهش را میرود.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">کیفم را روی شانه جابه جا میکنم و به سمت خانه ای گام برمیدارم که صاحبش،اعتماد،عشق،رویاها و هرچیز قیمتی مرا سوزاند. لحظه ای سرم را بالا میگیرم تا قرص ماه را تماشا کنم که به جایش مفتخر میشوم از پنجره ی خانه،صورت اورا که با جدیت نگاهم میکند را لحظه ای ببینم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">نمیدانم چرا اما صورتم طوری درهم میشود انگار که میخواهم استفراغ کنم. سریع نگاهم را میگیرم و به سمت سام میروم و خدا خدا میکنم تا دیدارمان به همین نگاه منتهی شود...<br></font></font></div>
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(89)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(89)</script> -								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								شنبه 23 تیر 1397  12:15 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/88">عکس دو شخصیت رمان</a>
+									</h2>
+									<p class="date">
+										چهارشنبه 20 تیر 1397 11:28 ق.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="../post/author/1590864.html">
+									Miss ♥ Celine  								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/4.html">
+											معشوقه										</a>،
+												              	  		     
+									<br>
+											        			          	
+																
+
+
+
+
+
+<div><font face="Mihan-Iransans"><font size="4">سلام امروز اومدم با عکس شخصیت ها (فقط روهام و یغما) اگه شماهم عکسی برای این دو مد نظرتون هست بفرستین،خوشحال میشم.</font></font></div><div><font face="Mihan-Iransans"><font size="4">...</font></font></div><div><font face="Mihan-Iransans"><font size="4">یغما :</font></font></div><div><font face="Mihan-Iransans"><font size="4"><img src="http://s8.picofile.com/file/8331499800/11111.jpg" alt="" width="529" vspace="0" hspace="0" height="368" border="0" align="bottom"></font></font></div><div><br></div><div><font size="4"><font face="Mihan-Iransans">روهام :</font></font></div><div><font size="4"><font face="Mihan-Iransans"><img src="http://s8.picofile.com/file/8331498042/8.jpg" alt="" width="486" vspace="0" hspace="0" height="479" border="0" align="bottom"></font></font></div><div><font face="Mihan-Iransans"><font size="4"><br></font></font></div>
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(88)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(88)</script> -								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								شنبه 23 تیر 1397  12:15 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/87">معشوقه،قسمت سوم</a>
+									</h2>
+									<p class="date">
+										چهارشنبه 20 تیر 1397 10:49 ق.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="../post/author/1590864.html">
+									Miss ♥ Celine  								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/4.html">
+											معشوقه										</a>،
+												              	  		     
+									<br>
+											        			          	
+																
+
+
+
+<div><font size="4"><font face="Mihan-IransansLight">سرم را آرام بالا می آورم و انگشتم را جای شقیقه ام میگذارم. سرم آنقدری سنگین است که تحمل نگهداشتنش را ندارم. حجم بالای خاطرات سیاهش به حدی است که نمیدانم چگونه بالا بیاورمشان.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">اشک ها روی گونه هایم خشک شده اند و من بازهم دست میبرم تا پاکشان کنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">دماغم را با فین فین مختصری بالا میکشم و بلند میشوم،دنیا دور سرم خودش را میچرخاند و من برای از دست ندادن تعادل،دست به دیوار کنار دستم میگیرم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">به موهای کوتاه شده ام که در وسط اتاق پخش اند نگاه غمباری می اندازم و نزدیکشان میشوم تا تکه های خودم را جمع کنم. هرکدامشان را در یک کیسه ی نایلونی می اندازم و با غمی فزاینده خیره نگاهش میکنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">حالم وخیم است و هیچکس هم جوابگو نیست!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">دیگر فقط غم در روح و وجودم مانده و حس میکنم اشکی برای ریختن ندارم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و این از هرچیزی دردناک تر است،اما از جنبه ی دیگرش،راحت شده ام از اشک ریختنی که آبش هرگز خشک نمیشود. اما انگار شد!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">یک شال از کمدم بیرون میکشم و روی موهایم قرارشان میدهم. زمانی که کلید را دوباره میچرخانم تا در را باز کنم،حس میکنم در ورطه ای از زندگی ام قرار دارم که بی شک سقوط خواهم کرد.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">اما قولی که به خودم دادم را یادم می آید. همانی که هرگز به خودم آسیبی نخواهم رساند و روهام را درگیر این لنجزار خواهم کرد و اکنون حال موهایم گویای قول شرفی که به خود داده ام،کاملا هستند...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">در باز میشود و من همهمه ای که مختص خانواده ام است را از آشپزخانه میشنوم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">قدم هایم سست و ناتوان است،اما خودم را جمع میکنم. باید یک توضیحی برای کارم داشته باشم!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">از ورودی آشپزخانه نگاهشان میکنم. سام،مثل همیشه سرش در کتابش است و مادرم هم دارد خورش را به هم میزند و زیرلب آواز محلی اش را میخواند. یاشار با پوزخند کجش چیزی را درون پی وی دوست دخترش تایپ میکند و پدرم هم با چشم غره ای که گویی برای او ساخته اند،به یاشار نگاه میکند و زیرلب نچ نچ میکند.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- سلام</font></font></div><div><font size="4"><font face="Mihan-IransansLight">این را میگویم و همه سرشان به سوی من میچرخد. لبخند میزنم،جز این چاره ی دیگری هم دارم؟!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">مادرم با دلخوری نگاه از من میگیرد و پدرم هم لبخند مهربانش را برای دخترش میپردازد.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">سام ابرویی بالا میدهد و یاشار هم بعد از نگاه گذرایی که حامل هیچ پیامی نیست دوباره چشم هایش را به صفحه ی گوشی اش میدوزد.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">وارد آشپزخانه میشوم و کنار بابا مینشینم. کنار پدری که اگر بفهمد دیشب چه بلایی بر سر این جسم نحیف آمده دیگر فقط سیلی هایی که برق از چشمانم میپراند را خرجم میکند نه این تبسم ملیح را...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">پس سکوت،بهترین حرف است!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">یا شاید هم نه... چرا سکوت کنم و محیط دست درازی را برای آن مردک فراهم کنم؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">اما همین که سفره ی دلم را باز کنم و بعد از زیر بار قضاوت ها و نگاه های ملامت بارشان، مرا رد کنند میدانی چقدر درد دارد؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">اما بدتر از هرچیزش این است که درد سکوت،از این هم بدتر است...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">چشم هایم را به ناخن هایم میدوزم و خودم را مشغول وارسی شان نشان میدهم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">صدای سام را میشنوم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- موهای دخترتو دیدی بابا؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">بابا هم نگاهی به من و بعد به سام می اندازد. سام با پوزخندش میگوید که بابا شالم را بردارد که بهتر گندکاری ام را ببیند.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">بابا یک لحظه شالم را کنار میزند و بعد نفس در سینه اش حبس میشود. مادرم هم با نگرانی همیشگی اش نگاهم میکند و یاشاری که با تعجب میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- اوهو!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">زیرلب میگویم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- دوسشون نداشتم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">از هیچکدامشان هیچ حرفی در نمی آید. من تنها صدای نفس های ناآرام پدرم را میشنوم و بعد صدای یاشار که مذبوحانه برای عوض کردن جو حاکم بر فضا تلاش میکند</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- مهمونی دعوتیم. حواستون که هس؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">مادرم با کلمه ی "آره خب" حرف یاشار را تصدیق میکند و سام هم با چشم هایش،یاشار را به خفه شدن دعوت میکند. پدرم تنها همین را میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- بعدا باهم صحبت میکنیم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و من با آمدن این بعدا ها،خدارا شکر میکنم که اکنون از زیربار سوالات ممتدش خلاص شده ام.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">اما پدرم که تمام شود،بی شک نوبت سام است که بدون اینکه اول جویای حالم شود،طبق عادت همیشگی اش بی محابا قضاوتم میکند...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">" این قسمت نسبت به بقیه کم بود،امیدوارم خوشتون اومده باشه"<br></font></font></div><div><font size="4"><font face="Mihan-IransansLight"><br></font></font></div>
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(87)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(87)</script> -								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								شنبه 23 تیر 1397  12:22 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/85">یه درس مهم</a>
+									</h2>
+									<p class="date">
+										چهارشنبه 20 تیر 1397 10:30 ق.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="../post/author/1590864.html">
+									Miss ♥ Celine  								</a> 
+			        			
+								<br/>
+			
+											        			          	
+																
+
+<div align="right"><img src="http://s9.picofile.com/file/8331493834/photo_%DB%B2%DB%B0%DB%B1%DB%B8_%DB%B0%DB%B7_%DB%B0%DB%B9_%DB%B1%DB%B9_%DB%B1%DB%B2_%DB%B5%DB%B5.jpg" alt="" width="366" vspace="0" hspace="0" height="648" border="0" align="bottom"></div><div align="right"><br></div><div align="right"><font face="Mihan-Iransans"><font size="4">یه درس مهم،به اندازه ی تمام زندگیم ارزش داشت.</font></font></div><div align="right"><font face="Mihan-Iransans"><font size="4">راس میگن دلتنگی احمقت میکنه! الان فهمیدم. قبلا به این متن اعتقاد نداشتم و اعتنا هم نمیکردم. اما الان به شدت فهمیدم که چه متن حقیقیه...!</font></font></div><div align="right"><font size="4"><font face="Mihan-Iransans">من دیگه تجربش کردم،شمام اگه هنوز اعتقاد بهش ندارین مجازین که تجربش کنین</font></font></div><div align="right"><font size="4"><font face="Mihan-Iransans">اما بعد چنان حس بدی شمارو قالب میگیره که شاید بتونین فراموشش کنین، به سرد شدن طرف مقابلتونم حق میدین... اما هیچوقت مزه ی گند اون سردی از دلتون بیرون نمیره.</font></font></div><div align="right"><font size="4"><font face="Mihan-Iransans">روحتون همیشه یادش میمونه...</font></font><br></div>
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(85)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(85)</script> -								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								چهارشنبه 20 تیر 1397  11:34 ق.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/84">معشوقه،قسمت دوم</a>
+									</h2>
+									<p class="date">
+										سه شنبه 19 تیر 1397 04:35 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="../post/author/1590864.html">
+									Miss ♥ Celine  								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/4.html">
+											معشوقه										</a>،
+												              	  		     
+									<br>
+											        			          	
+																
+
+
+
+
+
+
+<div><font size="4"><font face="Mihan-IransansLight">مادرم با نگرانی به سمتم قدم برمیدارد و کنارم مینشیند. درحالی که به موهای ریخته از سرم نگاه هراسناکی می اندازد،میگوید:</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- دختر چی شده؟ الهی بمیرم... با خودت چیکار کردی؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">سوال های ممتدش که از دهانش سر میخورد،عصبی ترم میکند. اگر ترس از تو و برادر های ابلهم نبود، من به این حال و روز نمی افتادم و خودم را&nbsp; با گفتن اتفاقات دیشب که در لحظه به لحظه اش بی گناه بوده ام خلاص میکردم. زمانی که فریاد میکشم و کلمه ی "خفه شو" را توی چهره ی متعجبش میکوبم،میخکوب میشود و به معنای واقعی از خفه شو گفتنم تبعیت میکند.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">نمیدانم با چه قدرتی که در کجای وجودم پیدا کرده ام، بلند میشوم و به سمت تلفن قدم تند میکنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">گوشی را برمیدارم و تند تند شماره ی آرایشگاه همیشگی ام را میگیرم، نمیفهمم میخواهم به بهبودم کمک کنم یا ناخواسته دارم محیط سقوطم را فراهم میکنم؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">چندباری از فرط عجله،شماره را اشتباهی میگیرم و با عصبانیت گوشی را میگذارم و دوباره این چرخه را تکرار میکنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">تا زمانی که آرامشم را باز میابم و در انتظار صدای پر عشوه ی سیما میمانم. بوق های ممتد گوشی روی اعصابم تخمه میشکنند،در همین حین حضور سنگین و پربغض مادرم را در کنارم حس میکنم که نگاه ملامت بارش را رویم افکنده است.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">بالاخره صدایش که آرامش قابلی به روانم میبخشد،در گوشی میپیچد</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- بفرمایـــین</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- سلام سیما جان، میخواستم برای موهام ازتون وقت بگیرم</font></font></div><div><font size="4"><font face="Mihan-IransansLight">خنده ی مصنوعی اش، اصلا با اوضاع کنونی من جور نیست.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- وا خوشگل خانوم. اون موهای کمند شمارو ما مفتخر شدیم درست کنیم؟ خـــدای من!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">آرام میگویم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- وقت میدی؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- چرا که نه عزیزم. من فردا بیکارم،یعنی نسبت به بقیه ی روزا... شما ساعت 10 تشریف بیار که اوکیت کنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و بعد باشه؟ گفتن پرشیطنتش که هیچ حسی را در من ایجاد نمیکند. درجواب تمام این شیرین زبانی هایش یک خیلی ممنون خشک و خالی میگویم و درحالی که دستم میلرزد،تلفن را سرجایش میگذارم. نمیخواهم بچرخم و آن چشمان سرخی که میخواهند با سکوتشان،حرف بزنند را نگاه کنم. چشمانم را به پیش پایم میدوزم و راه اتاقم را پیش میگیرم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">هیچ واکنشی از هیچکداممان پیدا نیست و این از هر چیزی بدتر است. میشود گفت سکوت پر سر و صدایی بینمان جاری است.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">تا اتاقم چند قدمی نمانده که صدای مادرم را میشنوم درحالی که مخاطبش من نیستم</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- سلام آقــا... چیشده به ما زنگ زدین؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">خوب میفهمم سعی بر این دارد که نشان دهد امروز خیلی شنگول است.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- امشب؟ دعوت شام؟ بهت نمیاد پسرم... چیشده حالا؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">حتی در این حال و احوال هم نمیتوانم جلوی کنجکاوی ام را بگیرم و به مکالمات مبهم مادرم گوش نسپارم.<br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">- بله مگه میشه نیایم روهام جان؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و یکدفعه قلب من می ایستد. دست به دیوار میگیرم و دست آزاد دیگرم را روی سینه میگذارم،نفس هایم به شمار افتاده و من دیگر هیچ چیزی را نمیشنوم. همانجا کز میکنم و با ترس صحنه های دیشب را تداعی میکنم. من نمیتوانم با قاتل رویاها و وجود و روحم سر یک میز بنشینم <br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">من نمیتوانم زیر نگاهش دوام بیاورم. گرمی دست کسی را روی دستانم حس میکنم و با ترس چشم هایم را به کنار دستم میدوزم. زیرلب اسمش را فریاد میکشم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- سام</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و بعد خودم را به نفرت به کناری میکشم. از رفتارم به شدت جا میخورد و با همان جاخوردگی میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- آبجی...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">فریاد میزنم</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- کثافتا. همتون عین هم کثیفین.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و بلند میشوم و به اتاقم میروم و قبل از اینکه سام بتواند واکنشی نشان بدهد، در را قفل میکنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">صدای نگرانش را از پشت در میشنوم <br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">- آبجی چیشده...؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و بعد سکوتی مرگبار و یکدفعه صدای متعجب و عصبی سام که وضع موهایم را به یاد آورده<br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">- کلتو تراشیدی دختر؟ چرا اونجوری شده؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و بعد ضربه ی محکمی که به در میخورد و باعث میشود بغضم سرباز کند و گریه ام بگیرد.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">با این حرکت، درون خاطراتی پرت میشوم که برایم حکم پرتگاه را دارد</font></font></div><div><font size="4"><font face="Mihan-IransansLight">...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">میخواهم در را ببندم که پای کسی لایش گذاشته میشود. با تعجب به پا و کفشش نگاه میکنم و زمانی که چشمم به چهره اش می افتد،لبخند میزنم</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- سلام</font></font></div><div><font size="4"><font face="Mihan-IransansLight">در را آرام باز میکنم و با چشم هایم به داخل دعوتش میکنم. آشفته به نظر می آید،طوری که هیچوقت نبود</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- یغما،وقت داری؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">با لبخند سری تکان میدهم و درحالی که کیفم را به گوشه ای که نمیدانم کجاست،پرت میکنم،به سمت آشپزخانه میروم تا آب بردارم. حداقل چیزی که این وقت شب برای پذیرایی میتوانم عرضه کنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">درحالی که پارچ را آب میکنم،با لبخند و خوش مزگی همیشگی ام،مخاطب قرارش میدهم و چشمکی حواله اش میکنم</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- مهمون که هستی،درست! ولی بیکار وا نستا. بیا یخ بشکن... زود،تند،سریع</font></font></div><div><font size="4"><font face="Mihan-IransansLight">با حسی غریب نگاهم میکند و بعد از درنگی بلند،قدم های کوتاهش را به سمت آشپزخانه برمیدارد</font></font></div><div><font size="4"><font face="Mihan-IransansLight">با خودم میخندم و اصلا رفتارش را غیرعادی تلقی نمیکنم، پارچ را که اکنون سنگین شده است را روی اپن میگذارم و درحالی که از کابینت ها لیوان برمیدارم، بازهم میخندم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- میخندی؟ به چی؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">با همان خنده ای که اکنون تنها از آن لبخندی باقیست،میگویم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- به تو</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- چرا؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- چون خنده داری</font></font></div><div><font size="4"><font face="Mihan-IransansLight">نگاهش بی اندازه غریب و سرد میشود،اما من بازهم متوجه نمیشوم و با شیطنت میگویم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- به اندازه ی کافی صریح بود؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">درحالی که در فریزر را میبندد و&nbsp; قالب یخ در دستش است،به سمتم می آید و کنارم می ایستد.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">با نگاه همیشگی ام که مملو از شوخی و سبکسری است،حرکاتش را که با زور دستانش، یخ را میشکند، نگاه میکنم و زمانی که کارش تمام میشود،بازهم به قصد شوخی میگویم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- آفرین</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و برایش درحالی که دست میزنم،خنده ی ریزی هم میکنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">زمانی که نگاهم بهش نیست و میگویم یه قاشق بده و دستم را برای گرفتنش دراز میکنم،بیش از حد معمول منتظر میشوم و زمانی که دستم را بیشتر به سمتش میبرم و با خنده میگویم بده دیگه، و هنوز هم مثل احمق ها نگاهش نمیکنم یکدفعه از گرمی ناگهانی دستانم،لرزه به اندامم می افتد.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">نگاه متعجبم&nbsp; روی دستی که دور دستم پیچیده شده،میماند و بعد روی چهره ای متمرکز میشوم که خیلی غیرطبیعی است. زیرلب اسمم را زمزمه میکند و من با خجالت،دستم را میکشم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">درحالی که به سمت جاقاشقی میروم،زیرلب به تقلید از او،همانطور زمزمه وار میگویم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- امشب یه چیزیت هستا...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و یک قاشق برمیدارم و به سمت پارچ میروم تا به همش بزنم. دیگر حس آرامش و شادی نمیکنم،برعکس حس غریبگی او هم به من سرایت کرده است. نگاهم را به طور مداوم از چشمانش میدزدم و خودم را مشغول بهم زدن آب پارچ نشان میدهم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">زمانی که پشت دستم را به بدنه ی پارچ میکشم،میبینم سرد سرد است. بدون اینکه نگاهش کنم،یک کلمه میپرسم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- آب؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">صدایی ازش در نمی آید. عصبی میشوم و بازهم بدون اینکه نگاهش کنم،میپرسم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- میخوری؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">صدایش به زحمت شنیده میشود</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- آره</font></font></div><div><font size="4"><font face="Mihan-IransansLight">پارچ را برمیدارم و درون لیوان هایمان،محتوای پارچ را خالی میکنم. بازهم بدون اینکه نگاهش کنم،لیوان را به سمتش دراز میکنم. دقایقی که میگذرد و او هیچ واکنشی نشان نمیدهد مراهم مصر تر میکند تا همانطوری بمانم و نگاهش نکنم. و بعد یکدفعه فریادش را که بیشتر شبیه به نعره میماند را میشنوم و ناخودآگاه دستم میلرزد و لیوان از دستم می افتد</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- نگام کن یغما</font></font></div><div><font size="4"><font face="Mihan-IransansLight">به دنباله ی این فریاد،فریاد خودم و صدای شکستن شیشه را میشنوم و بعد صدای نگران او و زمانی که مرا به عقب هل میدهد تا آسیبی نبینم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">درحالی که نگاهش به خرده شیشه های کف سالن است،میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- یغما...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و منی که از ترس به اتاقم پناه میبرم&nbsp; و میخواهم در را قفل کنم که ناگهان، ضربه ی مهیبی به در وارد میشود و من تلوتلویی میخورم و ترس، تمام وجودم را به یکباره تحت سلطنتش درمی آورد.<br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">&nbsp;جیغی میکشم که با گرفتن دستانش جلوی دهانم،خاموش میشود و به ناله های طعمه ای که در دام گرفتار شده،بدل میشود. و بعد جملات مبهمش که انگار مرا دوستم دارد و دیگر تحمل این خواهر برادر بازی هارا ندارد...! و بعد خواهش و التماس های مکرر من و بعد از آن بوسه های داغ او،دست و پا زدن من و حرکات وحشیانه ی دستانش دور کمرم. اشک های داغ و نفس های گرم او و یغما گفتنش که سرشار از لذت است. و توروخدا ولم کن های منی که با ترس عجین است...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">...<br></font></font></div>
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(84)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(84)</script> نظرات								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								شنبه 23 تیر 1397  12:22 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/83">معشوقه،قسمت اول</a>
+									</h2>
+									<p class="date">
+										سه شنبه 19 تیر 1397 12:40 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="../post/author/1590864.html">
+									Miss ♥ Celine  								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/4.html">
+											معشوقه										</a>،
+												              	  		     
+									<br>
+											        			          	
+																
+
+
+
+
+
+
+<div><font size="4"><font face="Mihan-IransansLight">ناله های ضعیفی به گوشم میرسد. هق هق هایی که در گلو خفه شده اما با سماجت راه خود را باز میکند. اشک های داغی که گونه هایم را ناخن میکشد! این ها من هستم؟ حتی اسمم هم گویای احوالم است... یغما، ربودگی... به تاراج رفته...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">زندگی زیبایم تمام شد! رویاهای رنگینم،خنده های جوانی... همه تک به تک سوزانده شد. روی همین تخت!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">پاهایم را درونم جمع میکنم. هوای فضا،راکد است. چیزی جم نمیخورد،موهایم پریشان است.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">تاری از آن توی دهانم رفته، یقه ی پاره ی لباسم، کبودی های روی گردنم و مهم تر از همه اشک های داغ و غلتانم، همه گویای اتفاقی که چندی پیش افتاده،هستند...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">کسی خانه هست؟ کسی آمده؟ فکر نکنم... اما حس میکنم کسی در کنارم جابجا میشود،دستانی که روی موهایم کشیده میشوند. زیرلب،فقط میتوانم میگویم</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- نکن</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و اوهم دست میکشد از دختری که رویاهایش را به فنا سپرد!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">من نابودم! از درون شکسته ام. چه کسی جوابگوی این حال من است؟ غریضه ی وحشی مردی که دیگر ارضا شد؟ چرا من؟ چرا منی که هنوز اول راه بودم؟ خدایا تو چرا ساکتی؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">فقط میگویم که این حق من نبود...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">بی توجه به او بلند میشوم. قدم هایم به قدری کند است که فکر میکنم از سرجایم تکان نخورده ام.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">اما به هر زوری که هست، خودم را به حمام میرسانم و سریعا در را قفل میکنم...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">شیر آب را باز میکنم،بدون اینکه لباس های پاره ام را در بیاورم. آب آنقدری سرد هست که بتوانم گرمای مشمئز کننده ی بدن او را از خودم جدا کنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">دست هایم را به بازوهایم میکشم و چنگشان میزنم. گویا میخواهم خودم را پاک کنم،از روهام.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">گردنم را بی هیچ رحمی ناخن میکشم،چنگ میزنم تا رد انگشتان آن بی وجود پیدا نباشد ...<br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">آن هم که برود،اشک هایم اند که به عیادتم می آیند. الان چه کار کنم؟ تیغ بردارم؟ رگم را نشانه بگیرم؟ از دردم کاسته میشود...؟ با ناامیدی به خودم میگویم :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- نه.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">من نمیخواهم بمیرم،با تمام این اتفاقات،با تمام نابه هنجاری های زندگی،من لجوجانه نمیخواهم از ماشین زندگی پیاده شوم. همینی که هست!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">میخواهم زجه بزنم،نمیدانم که چرا نمیتوانم. فقط اشک میریزم...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">با خودم زمزمه میکنم،درحالی که گویی عفریت مرگ از گلویم میجوشد و در لحنم رخنه میکند</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- روهام،رویاهامو ازم گرفتی. هرچی که داریو ازت میگیرم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">خورشید سلام میکند،مثل همیشه. چشمانم را باز میکنم،درحالی که روی تخت،به پهلو با همان حوله ی خیس افتاده ام! سرم به تنم سنگینی میکند، فکر کنم سرما خورده ام.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">با تمام توانی که در خود میبینم،سعی بر این دارم که بلند شوم. زمزمه هایی به گوشم میرسد،اعتنایی نمیکنم و پتو را دور خودم میپیچم. چنگی به موهایم میزنم واز اینکه هنوز خیس اند،متعجب میشوم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">از تخت پایین می آیم،نمیدانم چرا صورتم خیس است. من هنوز هم دارم گریه میکنم؟!</font></font></div><div><font size="4"><font face="Mihan-IransansLight">جلوی آینه میروم، گودیِ سیاه زیر چشمانم پوزخند بدی بهم میزند. چشم های بی فروغم که دیگر از آن شیطنت نمیتراود به جای پوزخند،اشک و اشک تحویلم میدهند.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">به سمت کمدم میروم و پوشیده ترین لباسی که در بین تمام آن تی شرت های خوش رنگ و لعاب، خاک خورده است را پیدا میکنم. دیگر نسبت به پدر و برادرم هم حساسم! شلوار کتانی ام را به پا میکنم و&nbsp; ناشیانه حوله ای دور موهایم میپیچم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">یک لحظه زمان برایم متوقف میشود،صدای چندش آورش در ذهنم اکو میشود</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- آخه دخترجون، تو که یه شال میخری پونزده تومن،یه جوری نپوشش که فقط پنج تومنش رو سرت باشه</font></font></div><div><font size="4"><font face="Mihan-IransansLight">صدای خنده ی خودم را که با کلمه ی "بی شعور" همراه است میشنوم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و صدای او که میگوید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- موهات خیلی نازن. ابریشمن نه؟<br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">و بعد دستانی که از جانب او،تاری از موهایم را نوازش میکند و چشم غره ی من که با خنده ی ابلهانه ام همراه است... دوباره صدایش می آید :</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- موهات خیلی نازن،ابریشمن نه؟<br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">حوله را از سرم میکشم و قیچی را از روی میز برمیدارم. اشک هایم به آمدن و جوشیدنشان،سرعت بخشیده اند. نجوایی از درونم نهیب میزند</font></font></div><div><font size="4"><font face="Mihan-IransansLight">- نکن</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و من با اشک و ناله ای که دارد جان میگیرد تا به فریادی از اعماق دل بدل شود،قیچی را به موهایم میرسانم و تنها صدای کوتاه شدن تارهای بلندی را میشنوم که روزی از زیبایی شان در آینه به خودم فخر میفروختم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">دوباره همان صدا را میشنوم،چشم هایم را بسته ام و اصلا نمیدانم دارم چطوری کوتاهشان میکنم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">چند بار دیگر، با بی دقتی همه شان را قیچی میکنم و زمانی که چشم باز میکنم میبینم اگر کمی دیگر ادامه میدادم خودم را کچل میکردم. قیچی از دستم می افتد و بعد صدای مادرم که در را باز میکند و میگوید :<br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">- مامان جان...</font></font></div><div><font size="4"><font face="Mihan-IransansLight">و بعد جیغ خفیفی که میکشد و لحنی که آرامشش از آن زایل شده است<br></font></font></div><div><font size="4"><font face="Mihan-IransansLight">- چیکار کردی یغما؟</font></font></div><div><font size="4"><font face="Mihan-IransansLight">دیگر توان و تحملش را ندارم، درحالی که روی زمین می افتم،با تمام توان فریاد میکشم.</font></font></div><div><font size="4"><font face="Mihan-IransansLight">...</font></font></div>
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(83)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(83)</script> نظرات								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								شنبه 23 تیر 1397  12:22 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/80">سـاعت صفـر عاشقـی ، قسمـت سـوم</a>
+									</h2>
+									<p class="date">
+										پنجشنبه 26 مرداد 1396 01:20 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="http://magicalstories.mihanblog.com/post/author/1553188">
+									нεℓïa ♥ 								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/1.html">
+											ساعت صفر عاشقی										</a>،
+												              	  		     
+									<br>
+											        			          	
+								<a href="http://magicalstories.mihanblog.com/post/author/1553188"><img src="../../static.mihanblog.com/public/user_data/user_photo/518/1553188.jpg"  /></a>								
+
+
+<div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><div><font size="3"><br></font></div><div><font size="3"><img src="http://s6.picofile.com/file/8266371368/bloggif_57cd769d00696.jpeg"></font></div><div><font size="3"><br></font></div><div><font size="3">سهلـآم :)</font></div><div><font size="3"><br></font></div><div><font size="3">به قسمـت جدید ولکام شدیـد !</font></div><div><font size="2"><br></font></div></div>
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+								<a href='http://magicalstories.mihanblog.com/post/80'>وا خب کلیک کن عزیزم</a>								
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(80)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(80)</script> نظـر								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								جمعه 27 مرداد 1396  02:48 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/79">سـاعت صفـر عاشقـی ، قسمـت دوم</a>
+									</h2>
+									<p class="date">
+										دوشنبه 16 مرداد 1396 07:15 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="http://magicalstories.mihanblog.com/post/author/1553188">
+									нεℓïa ♥ 								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/1.html">
+											ساعت صفر عاشقی										</a>،
+												              	  		     
+									<br>
+											        			          	
+								<a href="http://magicalstories.mihanblog.com/post/author/1553188"><img src="../../static.mihanblog.com/public/user_data/user_photo/518/1553188.jpg"  /></a>								
+
+
+
+
+
+
+
+
+
+
+<div><font size="3"><br></font></div><div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8266371368/bloggif_57cd769d00696.jpeg" alt=""></font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">سلـــام :)</font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3">به قسمـت جدید ولکام شدیـد !</font></div><div style="text-align: center;"><font size="2"><br></font></div></div>
+
+
+
+												            	
+								<br>
+								
+								<a href='http://magicalstories.mihanblog.com/post/79'>عه ! نمیخوای بیای؟!</a>								
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(79)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(79)</script> نظـر								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								شنبه 21 مرداد 1396  07:49 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/74">سـاعت صفـر عاشقـی ، قسمـت اول</a>
+									</h2>
+									<p class="date">
+										یکشنبه 8 مرداد 1396 11:46 ق.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="http://magicalstories.mihanblog.com/post/author/1553188">
+									нεℓïa ♥ 								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/1.html">
+											ساعت صفر عاشقی										</a>،
+												              	  		     
+									<br>
+											        			          	
+								<a href="http://magicalstories.mihanblog.com/post/author/1553188"><img src="../../static.mihanblog.com/public/user_data/user_photo/518/1553188.jpg"  /></a>								
+
+
+
+
+
+<div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><font size="3"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8266371368/bloggif_57cd769d00696.jpeg" alt=""></font></div><div style="text-align: center;"><font size="3"><br></font></div><div style="text-align: center;"><div><font size="3">هِلـو هِلـو !</font></div><div><font size="3"><br></font></div><div><font size="3">ایشالا روزتـون شیک طـوری باشـه&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></font></div><div><font size="3"><br></font></div><div><font size="3">بپـرید ادامه :)))</font></div><div><font size="3"><br></font></div><div><font size="2"><br></font></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+								<a href='http://magicalstories.mihanblog.com/post/74'>بـدو !</a>								
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(74)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(74)</script> نظر								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								شنبه 21 مرداد 1396  07:49 ب.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/69">قسمت اول داستان قتل در نیوبتفورد</a>
+									</h2>
+									<p class="date">
+										جمعه 6 مرداد 1396 04:31 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="http://magicalstories.mihanblog.com/post/author/1702147">
+									paniz 								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/3.html">
+											قتل در نیوبتفورد										</a>،
+												              	  		     
+									<br>
+											        			          	
+																
+
+
+<div align="center"><br><font size="5">سلام<br>خب شخصیت هارم که میشناسین پس سریع برین ادامه<br>ایرادی تو این قسمت دیدن حتما بگین تا برای دفعه دیگه رفع شه<br></font><br><img src="http://uupload.ir/files/8tx8_axe._%28134%29.jpg" alt=""></div>
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+								<a href='http://magicalstories.mihanblog.com/post/69'>ادامه مطلب</a>								
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(69)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(69)</script> نظرات								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								یکشنبه 8 مرداد 1396  11:55 ق.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/68">داستان قتل در نیوبتفورد</a>
+									</h2>
+									<p class="date">
+										جمعه 6 مرداد 1396 03:14 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="http://magicalstories.mihanblog.com/post/author/1702147">
+									paniz 								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/3.html">
+											قتل در نیوبتفورد										</a>،
+												              	  		     
+									<br>
+											        			          	
+																
+
+
+
+
+
+<div align="center"><font size="5">سلام<br></font><br><br><br><br><font size="5"><img src="http://uupload.ir/files/8tx8_axe._%28134%29.jpg" alt=""><br><br><br>&nbsp;<br>بی نهایت از سلین ممنونم که عضوم کرد</font></div><div align="center"><font size="5"><br>و بی نهایت از هلیا ممنونم که دسترسی هامو باز کرد</font></div><div align="center"><font size="5"><br>مقدمه:<br></font><div style="text-align: right;"><div style="text-align: center;"><span style="font-size: x-large;">اگر کسی حضورت رو تشویق نکرد...</span></div><font size="5"><br></font></div><div style="text-align: right;"><div style="text-align: center;"><span style="font-size: x-large;">پس بزار اونها ببینند</span></div><font size="5"><br></font></div><font size="5">...غیبتت رو..<br><br><br></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+								<a href='http://magicalstories.mihanblog.com/post/68'>ادامه مطلب</a>								
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(68)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(68)</script> نظرات								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								یکشنبه 8 مرداد 1396  11:55 ق.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/66">داستان ساعت صفـر عاشقی</a>
+									</h2>
+									<p class="date">
+										سه شنبه 3 مرداد 1396 10:44 ق.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="http://magicalstories.mihanblog.com/post/author/1553188">
+									нεℓïa ♥ 								</a> 
+			        			
+								<br/>
+			
+																	<b>ارسال شده در:</b>
+																			<a href="../post/category/1.html">
+											ساعت صفر عاشقی										</a>،
+												              	  		     
+									<br>
+											        			          	
+								<a href="http://magicalstories.mihanblog.com/post/author/1553188"><img src="../../static.mihanblog.com/public/user_data/user_photo/518/1553188.jpg"  /></a>								
+
+
+
+
+
+
+
+<div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s6.picofile.com/file/8266371368/bloggif_57cd769d00696.jpeg" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><div><font size="3">سلـام بچه ها ! خوبین؟؟</font></div><div><font size="3"><br></font></div><div><font size="3">من هلیا هستم نویسنده ی جدید..ممنون از سلین جان که عضوم کرد</font></div><div><font size="3"><br></font></div><div><font size="3">&nbsp;و داستان پُلیسیـم رو واستون میزارم :)</font></div><div><font size="3"><br></font></div><div><font size="3">امیدوارم ازش خوشتون بیاد&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/53.gif"></font></div><div><font size="3"><br></font></div><div><font size="3">معرفـی و شخصیـت های داستانم تو ادامـه ست !</font></div><div><font size="3"><br></font></div><div><font size="3"><br></font></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												            	
+								<br>
+								
+								<a href='http://magicalstories.mihanblog.com/post/66'>! come on</a>								
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(66)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(66)</script> نظر								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								یکشنبه 8 مرداد 1396  11:55 ق.ظ								
+								<br><br>
+							
+															<div>
+									<h2>
+										<a href="http://magicalstories.mihanblog.com/post/45">داشته ها نداشته ها</a>
+									</h2>
+									<p class="date">
+										پنجشنبه 15 تیر 1396 09:07 ب.ظ									</p>
+								</div>
+			
+								<b>نویسنده :</b>
+								<a href="../post/author/1590864.html">
+									Miss ♥ Celine  								</a> 
+			        			
+								<br/>
+			
+											        			          	
+								<a href="../post/author/1590864.html"><img src="../../static.mihanblog.com/public/user_data/user_photo/531/1590864.jpg"  /></a>								<P align=center><FONT size=2><IMG style="WIDTH: 471px; HEIGHT: 558px" border=0 hspace=0 alt="" align=baseline src="http://ups.night-skin.com/up-95-12/photo-۲۰۱۷-۰۵-۲۰-۱۵-۱۴-۴۷.jpg" width=320 height=930></FONT></P>
+<P align=center><FONT size=2>روزی دختری را دیدم که از درد موهای کوتاهش مینالید</FONT></P>
+<P align=center><FONT size=2>دختر دیگری را دیدم که از درد موهای بلندش مینالید</FONT></P>
+<P align=center><FONT size=2>زنی را دیدم که از رنگ قهوه ای چشمانش بیزار بود</FONT></P>
+<P align=center><FONT size=2>زن دیگری را دیدم که هزاران عمل کرده بود تا چشمانش قهوه ای شوند !!!</FONT></P>
+<P align=center><FONT size=2>مردی را دیدم که از بیکاری مینالید</FONT></P>
+<P align=center><FONT size=2>مرد دیگری از مشغله و کارهای اداری اش مینالید</FONT></P>
+<P align=center><FONT size=2>پسر بچه ای از نداشتن پول مینالید</FONT></P>
+<P align=center><FONT size=2>و پسری دیگر از داشتن آن همه پول که دخترهای ظاهر بین جذبش میشدند غذاب میکشید</FONT></P>
+<P align=center><FONT size=2>او که موهایش کوتاه بود میخواست بلند شود ... اوکه بلند بود میخواست کوتاه شود</FONT></P>
+<P align=center><FONT size=2>او که چشمان قهوه ای رنگش آرزوی کسی دیگر بود از این داشته ی با ارزش بیزار بود</FONT></P>
+<P align=center><FONT size=2>مردی که در به در دنبال کار میگشت نبود تا ببیند مردی آن سو از اداره اش فراریست</FONT></P>
+<P align=center><FONT size=2>پسری که آرزو داشت تاجر شود این آرزو برای پسر دیگری همانند کابوس بود که هیچکس او را به خاطر خودش نمیخواهد</FONT></P>
+<P align=center><FONT size=2>"واقعا چرا؟! چرا به داشته هایمان راضی نیستیم؟!"</FONT></P>
+<P align=center>&nbsp;</P>
+<P align=center>&nbsp;</P>												            	
+								<br>
+								
+																
+								<br>
+								<br>
+				            	
+								<a target="_self" href="javascript:newComment(45)">
+									<b>دیدگاه ها : </b>
+									<script>setCommentCnt(45)</script> نظرات								</a> 
+								
+								<br/>
+			
+													
+													        		 			
+								<b>آخرین ویرایش:</b>
+								پنجشنبه 15 تیر 1396  09:17 ب.ظ								
+								<br><br>
+							
+																	     	
+						<br><br>
+				     		 
+							     	
+					
+													تعداد کل صفحات : 3  
+														<a href="1.html"> <span>1</span></a>  
+														<a href="2.html"> <span>2</span></a>  
+														<a href="3.html"> <b>3</b></a>  
+																
+					
+						<div id="footer" class="clearfix">
+							<strong>
+								POWERED BY <a href="../../www.mihanblog.com/index.html">
+								<font color="#FF0000" size="2px">M</font>IHAN
+								<font color="#FF0000" size="2px">B</font>LOG.COM</a>
+							</strong>
+						</div>
+					</div>		
+				
+					<div id="sidebar">
+							<form id="frm-16076524355fd2d4533b5d8" method="get" action="http://magicalstories.mihanblog.com/post/search/fid/16076524355fd2d4533b5d8"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+								<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<input type="text" name="search_text" style="width:90px"/>
+										<input type="submit" value="جستجــو"/>
+									</div>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+							<input type="hidden" name="frm-id" value="16076524355fd2d4533b5d8" id="frm-id" /></form>						   
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>
+					
+							<div class="sidebar_box_border_div">
+								<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								<div class="sidebar_box">
+									<div style="text-align:center">
+										<div align="center" style="border:none; width:160px; overflow:hidden"><img src="../../static.mihanblog.com/public/user_data/web_photo/647/1939539.jpg@5830"  /></div>
+										<a href="http://magicalstories.mihanblog.com/page/rominanokian8@gmail.com"> پست الکترونیک</a><br/>
+										<a href="javascript:messageForm()">تماس با ما</a><br/>
+										<div style="text-align:center">میتونید مضمون این وب رو از پست ثابت دریافت کنید،البته با خوندنش ...!<br />
+اوقات خوشی رو در این وب براتون آرزومندم، توی نظر سنجی هم که در باب گسترش وب ایجاد شده،شرکت کنید :)<br />
+<br />
+با احترام - میس سلین</div>
+										<div class="clearfix" style="margin-right:70px">
+											<a href="../post/rss/index.html"><img style="border:none; float:right" src="../../static.mihanblog.com/public/images/icon/rss.gif"/></a>
+											<a href="../post/atom/index.html"><img style="border:none; float:right" src="../../static.mihanblog.com/public/images/icon/atom.gif"/></a>
+										</div>
+									</div>
+								</div>
+								<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+							</div>
+
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>
+							
+							
+		<form id="frm-16076524355fd2d4533bda3" method="post" action="http://magicalstories.mihanblog.com/poll/new/fid/16076524355fd2d4533bda3/atrty/1607652435/avrvy/0/key/c9d6eab125164bc42914ff74b7cfd52c/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="375191" id="data[pollid]" />		
+								<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<h3>نظرسنجی</h3>
+										نظرتون رو در مورد آهنگ وب و مطالب وب، در یک گزینه خلاصه کنید<br>
+																					<label><input type="radio" name="data[answer]" value="v1">عالیه</label>											<br>
+																					<label><input type="radio" name="data[answer]" value="v2">یه جوریه</label>											<br>
+																					<label><input type="radio" name="data[answer]" value="v3">خب خوبه</label>											<br>
+																					<label><input type="radio" name="data[answer]" value="v4">بد نیست</label>											<br>
+																					<label><input type="radio" name="data[answer]" value="v5">اصلا به مزاج سلیقه ی من خوش نیومد</label>											<br>
+																					<label><input type="radio" name="data[answer]" value="v6">میتونم یه چیزی بگم؟ شما خیلی بی سلیقه ای!</label>											<br>
+																					<label><input type="radio" name="data[answer]" value="v7">میتونم دو چیز بگم؟ شما عالی و بی نقص هستی!!</label>											<br>
+											
+										<input type="submit" value="♥"/>
+									</div>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+							
+		<input type="hidden" name="frm-id" value="16076524355fd2d4533bda3" id="frm-id" /></form> 
+														
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<h3>اَبر برچسبها</h3>
+														
+											<a href="../post/tag/فتو+گراقی+و+بک+گراند.html" style="font-size:1em">
+												فتو گراقی و بک گراند 
+											</a>
+											
+									</div>	
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+							
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<h3>آرشیو موضوعی</h3>
+																					<a href="../post/category/10.html"> 
+												پس زمینه(1)
+											</a> 
+											<br/>
+						          													<a href="../post/category/9.html"> 
+												عکس نوشته(2)
+											</a> 
+											<br/>
+						          													<a href="../post/category/8.html"> 
+												قوانین(3)
+											</a> 
+											<br/>
+						          													<a href="../post/category/7.html"> 
+												دیالوگ(3)
+											</a> 
+											<br/>
+						          													<a href="../post/category/6.html"> 
+												مناسبت ها(1)
+											</a> 
+											<br/>
+						          													<a href="../post/category/5.html"> 
+												فتو گرافی و بک گراند(2)
+											</a> 
+											<br/>
+						          													<a href="../post/category/4.html"> 
+												معشوقه(12)
+											</a> 
+											<br/>
+						          													<a href="../post/category/3.html"> 
+												قتل در نیوبتفورد(2)
+											</a> 
+											<br/>
+						          													<a href="../post/category/1.html"> 
+												ساعت صفر عاشقی(13)
+											</a> 
+											<br/>
+						          											</div>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+														
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>														
+
+															<div class="sidebar_box_border_div">						    
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<div>
+											<h3>نویسندگان</h3>
+											 	
+												<a href="../post/author/1590864.html"><img src="../../static.mihanblog.com/public/user_data/user_photo/531/1590864.jpg" style="width:16px;" /></a>												<a href="../post/author/1590864.html">
+													Miss ♥ Celine  (35)
+												</a>
+											<br/>
+																					</div>
+									</div>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+														
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+							 
+							
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>						    							
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<h3>آرشیو</h3>
+																					<a href="../post/archive/1397/6.html"> شهریور 1397</a>
+											<br/>
+																					<a href="../post/archive/1397/5.html"> مرداد 1397</a>
+											<br/>
+																					<a href="../post/archive/1397/4.html"> تیر 1397</a>
+											<br/>
+																					<a href="../post/archive/1396/5.html"> مرداد 1396</a>
+											<br/>
+																					<a href="../post/archive/1396/3.html"> خرداد 1396</a>
+											<br/>
+																				<a href="../post/archive.html"><b>همه آرشیوها</b></a>
+									</div>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+										    														
+							
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<h3>لینکستان</h3>
+										     	
+											<a href="../../hayola.mihanblog.com/index.html" title="" target="_blank">
+												مرضیه جون											</a>
+											<br/>
+										     	
+											<a href="../../rainbowcode.mihanblog.com/index.html" title="" target="_blank">
+												رینبو کد											</a>
+											<br/>
+										     	
+											<a href="../../thisisyasi.mihanblog.com/index.html" title="" target="_blank">
+												My blue queendom											</a>
+											<br/>
+										     	
+											<a href="../../themeland.mihanblog.com/index.html" title="" target="_blank">
+												themeland											</a>
+											<br/>
+										     	
+											<a href="http://dokhtarone1.mihanblog.com/" title="" target="_blank">
+												انیمه											</a>
+											<br/>
+										     	
+											<a href="http://dokhmalajon.mihanblog.com/" title="" target="_blank">
+												دخملا جون											</a>
+											<br/>
+										     	
+											<a href="http://cafe-novels.blogfa.com" title="" target="_blank">
+												غریبه ی آشنا											</a>
+											<br/>
+										     	
+											<a href="../../baygoosh.mihanblog.com/index.html" title="" target="_blank">
+												یه چیز جالب											</a>
+											<br/>
+																				<a href="../link/index.html"><b>همه لینکها</b></a>
+									</div>	
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+								
+						    
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<div class="sidebar_box">
+										<h3>لینکدونی</h3>
+										     	
+											<a href="http://yon.ir/AA8ez" title="سلام. ممنونم که پرچم وبلاگ نویسی رو بالا نگه داشتید :)
+
+سایت نویسور راه اندازی شده تا پست های شما بیشتر خونده بشن، اپ موبایلمون هم تو راهه.
+
+دعوت میکنم تشریف بیارید به لینک زیر و فصل نو ی وبلاگ نویسی تون رو شروع کنید.
+yon.ir/AA8ez
+
+لطفا این لینک را هم تایید کنید. متشکرم" target="_blank">
+												ــ وبـلاگ نویسی بهـترــ											</a>
+											<br/>
+										     	
+											<a href="http://yon.ir/AA8ez" title="سلام. ممنونم که پرچم وبلاگ نویسی رو بالا نگه داشتید :)
+
+سایت نویسور راه اندازی شده تا پست های شما بیشتر خونده بشن، اپ موبایلمون هم تو راهه.
+
+دعوت میکنم تشریف بیارید به لینک زیر و فصل نو ی وبلاگ نویسی تون رو شروع کنید.
+yon.ir/AA8ez
+
+لطفا این لینک را هم تایید کنید. متشکرم" target="_blank">
+												ــ وبـلاگ نویسی بهـترــ											</a>
+											<br/>
+										     	
+											<a href="../../chadorekhakiemadar.mihanblog.com/index.html" title="" target="_blank">
+												چادرخاکی مادر											</a>
+											<br/>
+										     	
+											<a href="http://www.arsambar.com" title="سلام
+وبلاگی با محتوای جالبی دارید
+ما هم یه سایت باربری داریم که خدماتی از جمله بسته بندی کالا و وسایل منزل و...
+استفاده از کارگران مجرب،حمل بار بین شهرها و استان ها،
+حمل با دفاتر و شرکت ها، حمل وسایل سنگین و ...
+را به مشتریان ارائه می دهد.
+با یک بار اعتماد به ما خیال خود را برای همیشه ، در جابجایی راحت کنید .
+
+ممنون میشیم بهمون سر بزنید و لینکمون رو تایید کنید.
+http://www.arsambar.com" target="_blank">
+												حمل بار و اثاثیه منزل											</a>
+											<br/>
+										     	
+											<a href="http://www.zarrinhoor.com/" title="سلام
+وبلاگی با محتوای جالبی دارید
+ما هم یه سایت مهندسی داریم که کلی پست جذاب و اختصاصی آماده کردیم(ترفندهای فتوشاپ، ویندوز، آندروید و... +آموزش های برنامه نویسی) که همشون رایگانه
+در کنارشم ممبر واقعی تلگرام برای فروش داریم
+ممنون میشیم بهمون سر بزنید و لینکمون رو تایید کنید.
+http://www.zarrinhoor.com/" target="_blank">
+												مطالب علمی و برنامه نویسی و فروش ممبر											</a>
+											<br/>
+																				<a href="../linkdaily/index.html"><b>همه لینکها</b></a>
+										<a href="javascript:linkdailyForm()"><b>ارسال لینک</b></a>
+									</div>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+							    														 	
+							
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>					
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>	    
+									<div class="sidebar_box">
+										<div>
+											<h3>مطالب اخیر</h3>
+											 	
+												<a href="../post/130.html">
+													کوییز+نظر سنجی												</a>
+												<br/>
+											 	
+												<a href="../post/129.html">
+													×اطلاعیه×												</a>
+												<br/>
+											 	
+												<a href="../post/128.html">
+													ساعت صفر عاشقی،قسمت یازدهم												</a>
+												<br/>
+											 	
+												<a href="../post/127.html">
+													ساعت صفر عاشقی،قسمت دهم												</a>
+												<br/>
+											 	
+												<a href="../post/126.html">
+													ساعت صفر عاشقی،قسمت نهم												</a>
+												<br/>
+											 	
+												<a href="../post/125.html">
+													ساعت صفر عاشقی،قسمت هشتم												</a>
+												<br/>
+											 	
+												<a href="../post/124.html">
+													ساعت صفر عاشقی،قسمت هفتم												</a>
+												<br/>
+											 	
+												<a href="../post/123.html">
+													یه خبر-هلیا												</a>
+												<br/>
+											 	
+												<a href="../post/120.html">
+													Ax Neveshte												</a>
+												<br/>
+											 	
+												<a href="../post/119.html">
+													Pas Zamineh												</a>
+												<br/>
+											 	
+												<a href="../post/117.html">
+													Ax Neveshte												</a>
+												<br/>
+											 	
+												<a href="../post/115.html">
+													Coming Soon												</a>
+												<br/>
+											 	
+												<a href="../post/114.html">
+													پستی برای هلیا جان												</a>
+												<br/>
+											 	
+												<a href="../post/113.html">
+													یه خبر خــــــــــوب!!! :)))												</a>
+												<br/>
+											 	
+												<a href="../post/112.html">
+													سـاعت صفـر عاشقـی ، قسمـت ششـم												</a>
+												<br/>
+																					</div>
+									</div>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+														
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>														
+							
+															<div class="sidebar_box_border_div">
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								    <div class="sidebar_box">
+										<h3>آمار وبلاگ </h3>
+										کل بازدید:<script>getStatVar('total_view');</script><br/>
+										بازدید امروز :<script>getStatVar('today_view');</script><br/>
+										بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/>
+										بازدید این ماه : <script>getStatVar('this_month_view');</script><br/>
+										بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br/>
+										تعداد نویسندگان : <script>getStatVar('total_author');</script><br/>
+										تعداد کل مطالب : <script>getStatVar('total_post');</script><br/>
+										آخرین بازدید : <script>getStatVar('last_view_date');</script><br/>
+										آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br/>
+									</div>	
+									<b class="sidebar_box_border" style="margin:0 1px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 2px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+									<b class="sidebar_box_border" style="margin:0 3px"><img src="../../static.mihanblog.com/public/images/empty.gif"/></b>
+								</div>
+														  							
+						    
+							<div class="seprator"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>					
+
+							<div class="sidebar_box_border_div">
+								<p align='center'><script type='text/javascript' src='http://cafe-webniaz.ir/abzar/axotasvir/rotate11.js'></script></p>
+<!-- Online Support by www.1abzar.com --->
+<script>
+ var offline_text="Offline";
+ var online_text="Online";
+ var first_text="اسمتو وارد کن و بعد تمام حرفایی که میخوای بهم بگی رو...";
+ var rangbg="6554BE"; var rangtxt="30F8FF";
+</script><script type="text/javascript" src="https://online.1abzar.com/1abzar-mini.php?admin=3064755&mail=1&poz=right"></script><div style="display:none"><h3><a href="http://www.1abzar.com">&#1662;&#1588;&#1578;&#1740;&#1576;&#1575;&#1606;&#1740;</a></h3></div>
+<!-- Online Support by www.1abzar.com --->
+
+
+
+
+<center><audio controls autoplay preload="none" style="width:94%;margin:0% 3%;"><source type="audio/mpeg" id="player" src="http://dl.nex1music.ir/1394/12/18/Hamed%20Baradaran%20-%20To%20Be%20Sheddat%20Khassi%20%5B128%5D.mp3">مرورگر شما از Player ساپورت نمی کند</audio><br /><a href="http://nex1music.ir/tag/دانلود-آهنگ/" target="_blank">دانلود آهنگ</a></center>
+
+
+
+
+
+ <!--locking Right click by : fa-tools.ir--> <script language="javascript" src="http://fa-tools.ir/code/rightclick/right-click1.js"></script> <a target="_blank" href="http://fa-tools.ir/News/topic/21/" > کد حرفه ای قفل کردن کامل راست کلیک </a><div style="display:none"><a href="http://fa-tools.ir" > فاتولز – جدیدترین ابزار رایگان وبمستر </a></div> <!--locking Right click by : fa-tools.ir--> 
+ <!--locking Right click by : fa-tools.ir--> <script language="javascript" src="http://fa-tools.ir/code/rightclick/right-click1.js"></script> <a target="_blank" href="http://fa-tools.ir/News/topic/21/" > کد حرفه ای قفل کردن کامل راست کلیک </a><div style="display:none"><a href="http://fa-tools.ir" > فاتولز – جدیدترین ابزار رایگان وبمستر </a></div> <!--locking Right click by : fa-tools.ir--> 
+
+
+
+<p align='center'><script type='text/javascript' src='http://cafe-webniaz.ir/abzar/mouse/webniaz.blogfa.com_sibfan.js'></script></p>
+
+
+
+
+<!-- Upper Code by Nightnama.ir --->
+<script type="text/javascript" src="http://nightnama.ir/codes/upper/jquery.min.js"></script><script>var abzar = "<img src= http://nightnama.ir/codes/upper/50.png>";</script><script type="text/javascript" src="http://nightnama.ir/codes/upper/scrolltop.js"></script><div style="display:none"><h1><a href="http://nightnama.ir">هدایت به بالا</a></h1></div>
+<P><A href="http://nightnama.ir/codes/upper" target=_blank><SPAN 
+style="FONT-WEIGHT: 700; TEXT-DECORATION: none">کد هدایت به بالا</FONT> </SPAN></A></P>
+<!-- Upper Code by Nightnama.ir ---><!-- = لطفا حذف نکنید = -->
+<link rel="canonical" href="http://www.homescript.ir" />
+<link rel="canonical" href="http://www.20script.ir" />
+<link rel="canonical" href="http://www.onescript.ir" />
+<div style="visibility:hidden;display:none">
+<a href="http://www.20script.ir/" rel="nofollow" >بیست اسکریپت</a>
+</div>
+<div style="visibility:hidden;display:none">
+<a href="http://www.onescript.ir/" rel="nofollow" >وان اسکریپت</a>
+</div>
+<div style="visibility:hidden;display:none">
+<a href="http://www.homescript.ir/" rel="nofollow" >خانه اسکریپت</a>
+</div>
+<!-- = لطفا حذف نکنید = -->
+
+
+
+
+www.quizyourfriends.com/take-quiz.php?id=1809031054467497&lnk&							</div>
+
+							<div class="sidebar_box_border_div">
+								<div class="mihan_logo"></div>
+							</div>
+					</div>
+
+				</div>
+			</div>
+			
+			<div id="footer_background"><img src="../../static.mihanblog.com/public/images/empty.gif"/></div>
+								
+		</div>				
+		
+	</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'magicalstories.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

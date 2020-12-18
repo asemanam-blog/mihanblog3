@@ -1,0 +1,2582 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1676450*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[40]='7';commentCnt[41]='7';commentCnt[42]='58';commentCnt[44]='20';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[40]='0';
+mihanblogDisLikeArrCnt[40]='0';
+mihanblogLikeArrCnt[41]='0';
+mihanblogDisLikeArrCnt[41]='0';
+mihanblogLikeArrCnt[42]='0';
+mihanblogDisLikeArrCnt[42]='0';
+mihanblogLikeArrCnt[44]='0';
+mihanblogDisLikeArrCnt[44]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://mygam.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://mygam.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','364');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','یکشنبه 9 شهریور 1399');
+	
+	setStatVar('today_view','1456');
+	setStatVar('yesterday_view','891');
+	
+	setStatVar('this_month_view','38463');
+	setStatVar('last_month_view','44474');
+
+	setStatVar('total_view','1479804');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (23:09)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://mygam.mihanblog.com/statupdate/?data[refereruri]=http://mygam.mihanblog.com/post/archive/page/2&data[postid]=&data[requesturi]=/post/archive/1394/11&data[sdate]=1608234072&data[hash]=848a1c9ebceef0c6013d353caea538bd&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+<meta name="jibisite" content="ACTIVE">
+<head>
+<meta name="jibisite" content="ACTIVE">
+<!-- main meta -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- service meta -->
+<title>بسیج ولایت - مطالب  بهمن 1394</title>
+<base href="" />
+<meta http-equiv="Content-Language" content="fa">
+<meta name="description" content="خبرگزاری بسیج ولایت بهترین وبلاگ برای دانلود خبرهای سیاسی،اقتصادی،ورزشی و...
+بهترین سایت برای دانلود تصاویر مذهبی
+بسیج ولایت" />
+<meta name="keywords" content="بسیج ولایت،خبرهای سیاسی جهان،خبرهای مذهبی،عکس پروفایل مذهبی،پروفایل مذهبی،خبرهای ورزشی،تبلیغات،میهن بلاگ،بسیج،سپاه پاسداران،about Iran،Iran's nuclear deal،What does mobilization mean،What country is Iran،" />
+<link rel="alternate" type="application/rss+xml" title="بسیج ولایت" href="http://www.mygam.ir/post/rss/" />
+<link rel="alternate" type="application/atom+xml" title="بسیج ولایت"  href="http://www.mygam.ir/post/atom/" />
+<!-- attach css files -->
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/glyphicon.css" rel="stylesheet" type="text/css">
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/social.css" rel="stylesheet" type="text/css">
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/style7.css" rel="stylesheet" type="text/css">
+<!-- attach js files -->
+<script type="text/javascript" src="http://ssup.ir/protemp/seri2/newsplus/js/jquery.js"></script>
+<script type="text/javascript" src="http://ssup.ir/protemp/seri2/newsplus/js/bootstrap.js"></script>
+<script type="text/javascript" src="http://ssup.ir/protemp/seri2/newsplus/js/owl.carousel.js"></script>
+
+<!-- Service script -->
+
+<!--- Style ---->
+<style>
+
+
+.cmnt-list { margin-bottom: 10px; border: 1px solid #ccc;}
+.cmnt-user { border-bottom: 1px dashed #ccc; padding:10px; background-color:#F1F1F1;}
+.cmnt-user i:before {margin-left:5px; font-size: 18px; vertical-align:middle;}
+.cmnt-text {padding:10px;}
+.cmnt-reply { padding:10px; background-color:#DCDCDC;}
+.cmnt-reply i:before {margin-left:5px; font-size: 18px; vertical-align:middle;}
+.cmnt-form { margin: 20px 0px; padding:10px; direction:rtl; }
+.comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;padding: 5px;}
+input.comment_form_textbox { margin-bottom: 10px; width: 300px;}
+textarea.comment_form_textarea { box-sizing:border-box; width:}
+@media (max-width: 768px) {
+input.comment_form_textbox {display: block; margin-bottom: 10px; width: 100%;}
+textarea.comment_form_textarea {display: block; margin-bottom: 10px; width: 90%; float:none;}
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container-fluid topbar">
+<div class="container">
+<div class="row topnavi">
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<span class="sr-only hidden-xs">MENU</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+       
+
+<li><a href="http://www.mygam.ir" id="homeactive">خانه</a></li>
+<li><a href="http://www.mygam.ir/post/archive">آرشیو</a></li>
+<li><a href="mailto:alikh2202@gmail.com">ایمیل</a></li>
+<li><a href="http://www.mygam.ir/post/list">عناوین </a></li>
+
+        
+</ul>
+</div>
+</nav>
+</div>
+<!--- end row top navbar --->
+</div>
+</div>
+<!---- end top ---->
+
+<!----------------------- Start mainpagebg ------------------->
+<div class="container-fluid">
+<div class="container">
+<div class="mainpagebg">
+<div class="row header">
+
+<div class="col-md-18">
+<div class="site-title">
+
+<h1><a href="http://www.mygam.ir">بسیج ولایت</a></h1>
+<h3>به امید دنیایی بهترو سرزمینی آبادتر</h3>
+
+</div>
+</div>
+            
+<div class="col-md-18">
+<div class="agahi">
+<a href="http://mygam.ir/extrapage/tab" target="_blank"><img src="http://ssup.ir/protemp/seri2/newsplus/image/agahi.jpg" alt="آگهی"/></a>
+<a href="http://mygam.ir/extrapage/tab" target="_blank"><img src="http://ssup.ir/protemp/seri2/newsplus/image/agahi.jpg" alt="آگهی"/></a>
+</div>
+</div>
+<!--- e adz --->
+          	
+               
+</div>
+<!----- end row header ---->
+          
+          
+<div class="row catnavi">
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+<span class="sr-only hidden-xs">فهرست</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+<ul class="nav navbar-nav navbar-right">
+       
+<li><a href="../../category/6.html">سیاسی</a></li>
+<li><a href="../../category/7.html">داخلی</a></li>
+<li><a href="../../category/5.html">سخنان رهبر انقلاب</a></li>
+<li><a href="../../category/4.html">بسیج</a></li>
+<li><a href="../../../extrapage/profile.html">پروفایل مذهبی</a></li>
+<li><a href="../../../extrapage/tab.html">تبلیغات</a></li>
+<li><a href="../../../extrapage/khabarnegar.html">خبرنگار ما باشید</a></li>        
+<li><a href="../../../linkdaily/new.html">ارسال لینک</a></li>
+        
+</ul>
+</div>
+</nav>
+</div>
+<!--- end row bottom navbar --->
+<!--- end header & bottom navbar --->
+
+<!----- Start Topnews ------->
+<div class="topnews">
+<div class="row">
+<div class="col-md-18">
+<div class="slidebox">
+<div class="slidebox-title"><h3>مهمترین عناوین خبری روز</h3> </div>
+<div class="slidebox-body">
+<!-----   برای تغییر عکس های اسلایدر آدرس عکس های خود را جایگزین عکس های پیشفرض در زیر بکنید
+برای لینک دادن عکس ها به صفحه یا عکس بزرگتر می توانید آدرس مورد نظر را جایگزین
+Likn
+در بخش مربوط به هر عکس بکنید
+-------------------------------------------------------------------------------------------->   
+<div class="tpn-slider">
+<div class="owl-carousel">
+
+<div class="item"><a href="../../413.html" target="_blank"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/2163629_746.jpg"/><h2>
+بسیج صحنه را ترک نخواهند کرد
+</h2></a></div>
+
+<div class="item"><a href="../../144.html" target="_blank"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/tye.png"/><h2>
+شهدای مدافع حرم را فراموش نکنیم
+</h2></a></div>
+
+<div class="item"><a href="http://www.mygam.ir/post/335" target="_blank"><img src="https://newsmedia.tasnimnews.com/Tasnim/Uploaded/Image/1394/06/29/139406291930587946132024.jpg"/><h2>
+سپاه باید مرجع اعتماد جامعه باشد
+</h2></a></div>
+
+<div class="item"><a href="../../212.html" target="_blank"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/rttnt.png"/><h2>
+علت افزایش حملات دشمنان
+</h2></a></div>
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+<!--- e slider topnews --->
+
+<div class="col-md-18 umenu">
+<div class="row">
+<div class="umenu-title">
+<h3>عناوین مطالب منتخب</h3>
+</div>
+</div>
+<!--- e title --->
+<div class="row">
+<div class="umenu-body">
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../337.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+دیپلماسی پنهان غربی ها
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../336.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+راز هسته های مقاومت درمنطقه
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../334.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+تمام مطقه از فساد اسرائیل متاثر شده است
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../335.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+سپاه باید مرجع اعتماد جامعه باشد
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../331.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+نباید در جامعه اسلامی فقیر وجود داشته باشد
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../324.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+برندپرستی در مصرف ممنوع!
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../323.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+تنها کتابی که با همکاری ۶۰۰ نفر تدوین شد
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../322.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+۱۵ دقیقه مشاوره تنها برای شنیدن دلایل طلاق
+</h2>
+</a><div class="story"></div>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<!--- e topnews list box col --->
+</div>
+</div>
+<!----- Start Topnews ------->
+
+
+<div class="row">
+<div class="col-md-20 col-md-push-8">
+        
+
+<div class="mainposts">
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="http://www.mygam.ir/post/44">&quot;داعش&quot; چه گروهی است و چه می‌خواهد؟</a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="http://www.mygam.ir/post/author/1392940">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+پنجشنبه 29 بهمن 1394 11:27 ق.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="http://www.mygam.ir/post/44#commentlist"> نظرات (<script>setCommentCnt(44)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<div style="padding:7px; text-align:center"><div style="padding:7px; text-align:center"><img id="ctl00_MainContent_View1_imgPic" src="http://secretnews.ir/Uploads/NewsPics/20140612123404787.jpg" alt="&quot;داعش&quot; چه گروهی است و چه می‌خواهد؟" style="border-color:Black;border-width:1px;border-style:solid;width:300px;"></div>
+    <div style="font-size:7pt; margin-top:7px">&nbsp; <br></div><table border="0" cellpadding="3" cellspacing="0" width="100%"><tbody><tr><td style="width:700px; margin-top:10px"><br></td>
+            <td><br></td>
+        </tr>
+    </tbody></table>
+    <div class="newsViewText"><p><br>• سازمان "دولت اسلامی در عراق و 
+شام" (داعش) یکی از رادیکال‌ترین گروه‌های اسلام‌گرا در منطقه خاورمیانه 
+است. این سازمان که در جنگ داخلی سوریه فعال است، و پیشتر فلوجه و اینک 
+موصل عراق را تصرف کرده، چه ماهیت و هدفی دارد؟<br> "دولت اسلامی در عراق و شام" در سال 2013 از ادغام دو گروه " جبهه النصره" و "دولت اسلامی در عراق" بوجود آمد.<br>"دولت
+ اسلامی در عراق" را شماری از گروه‌های مسلح عراق در اکتبر 2006 تشکیل 
+دادند و "ابوعمر البغدادی" را به‌عنوان رهبر خود معرفی کردند. این گروه 
+مسئولیت بسیاری از حمله‌های تروریستی از آن سال به بعد را بر عهده گرفت.<br>ابوعمر
+ البغدادی در سال 2010 کشته شد. به جای وی ابوبکر البغدادی رهبر گروه شد. 
+فعالیت گروه در زمان ابوبکر گسترش یافت و از زمان جنگ داخلی در سوریه عناصر
+ "دولت اسلامی در عراق" در سوریه نیز فعال شدند.<br>در سوریه از اواخر سال 
+2011 "جبهه النصره لاهل الشام" تشکیل شد که شاخه "دولت اسلامی عراق" در 
+سوریه به شمار می‌رفت. ابوبکر البغدادی در سال 2013 ادغام "دولت اسلامی در 
+عراق" و "جبهه‌النصره" را اعلام کرد که در نتیجه "داعش" بوجود آمد.<br>در اواخر سال 2013 و اوایل 2014 "داعش" توانست وارد فلوجه درعراق شود.<br>ارتباط با القاعده<br>رسانه‌های
+ آلمان می‌نویسند که"داعش" برآمده از دل گروه "توحید و جهاد" است که نهضت 
+مقاومت در عراق در سال 2003 برای مقابله با تهاجم آمریکا علیه عراق پایه 
+گذاشته بود. این گروه در عراق تنها به سربازان آمریکایی حمله نمی‌کرد، بلکه
+ با حمله‌های انتحاری شیعیان و مسیحیان را نیز هدف تهاجم خود قرار می‌داد.<br>نخستین
+ رهبر "توحید و جهاد" ابومصعب الزرقاوی بود که اهل اردن بود و بخاطر 
+بی‌رحمی‌هایش مشهور است. از "توحید و جهاد" به عنوان شاخه عراق القاعده یاد
+ می‌شود.<br>الزرقاوی در سال 2006 به دست آمریکایی‌ها کشته شد و به جای او 
+"ابوحمزه المهاجر" ریاست "توحید و جهاد" را بر عهده گرفت. در همان سال بود 
+که "دولت اسلامی در عراق" نیز به رهبری "ابوعمر البغدادی" تاسیس شد.<br>المهاجر و ابوعمر نیز در عملیات مشترک نیروهای عراقی و آمریکایی در سال 2010 کشته شدند.<br>به
+ نوشته رسانه‌های ایران، ریاست "توحید و جهاد" را نیز از آن پس ابوبکر 
+البغدادی بر عهده گرفت که از همان سال رهبری "داعش" را نیز در دست داشت.<br>جبهه‌های جنگ "داعش" و فعالیت‌اش در آلمان<br>در
+ حال حاضر "داعش" در چند جبهه می‌جنگد: علیه گروه‌های شورشی‌ای که در سوریه
+ در رقابت با هم هستند، علیه رژیم بشار اسد و علیه ارتش عراق.<br>قدرت 
+"داعش" از بهار 2013 فزونی یافت. در آن زمان این سازمان وارد جنگ داخلی 
+سوریه شد. "داعش" در آن‌جا با جبهه النصره درگیر شد که متشکل از سلفی‌های 
+سوری بود، اگر چه هم داعش و هم جبهه النصره به شبکه تروریستی القاعده نزدیک
+ بودند.<br>"داعش" بخصوص در جنوب شرقی سوریه به شهرهای کردنشین حمله می‌کند
+ و مردم غیرنظامی را می‌کشد. این سازمان در عراق از اختلاف میان احزاب سنی 
+کشور و دولت نوری المالکی که شیعیان در آن بیشترین نفوذ را دارند سود 
+می‌برد.<br>به گفته محافل امنیتی، این سازمان بیش از ده هزار نفر عضو مسلح 
+دارد. به گزارش دادستانی آلمان، این سازمان مسئول درگیری‌های مسلحانه، 
+سوء‌قصدها، گروگان‌گیری‌ها و حمله‌های انتحاری بسیاری در سوریه است.<br>این
+ گروه همچنین دست به حمله علیه غیرنظامیان و کارمندان سازمان‌های امدادگر 
+می‌‌زند. دادستانی آلمان فدرال در پایان ماه گذشته (مه 2014) سه نفر را که 
+مظنون به عضویت در "داعش" بودند متهم کرد که در آلمان به تهیه اسلحه و پول 
+برای سازمان خود پرداخته‌اند.<br>هدف "داعش"<br>هدف "داعش" مبارزه برای 
+برپایی حکومتی اسلامی است که دایره اقتدار آن از عراق تا سوریه باشد. بدین 
+خاطر است که این سازمان مسلح تنها در عراق نمی‌جنگد بلکه علیه دولت علوی 
+بشار اسد در سوریه نیز مبارزه می‌کند.<br>سنی‌ها در سوریه اکثریت جمعیت 
+کشور را تشکیل می‌دهند اما در عراق در اقلیت هستند. با این حال تا سرنگونی 
+صدام حسین در عراق سنی‌ها قدرت را در دست داشتند.<br>حامیان مالی "داعش"<br>"داعش"
+ هزینه‌های خود را از طریق کمک‌های مالی قطر و عربستان سعودی تامین می‌کند.
+ همچنین مالیات راهی که این سازمان در طول مرز میان عراق و سوریه می‌گیرد 
+پاسخگوی بخشی از نیازهای مالی آن است.<br>در صف "داعش" مسلمانانی از 
+کشورهای گوناگون می‌جنگند، مسلمانانی از شمال آفریقا و کشورهای حاشیه خلیج 
+فارس، همچنین برخی اروپایی‌ها یا آمریکایی‌هایی که به اسلام گرویده‌اند.</p></div></div>
+
+
+
+
+<script>mihanblogPostLike('44','like')</script>                    
+</div>
+
+<div class="post-tags">
+<i class="glyphicon glyphicon-tag"></i>
+ برچسب ها:
+ <a href="http://www.mygam.ir/post/tag/%D8%AF%D8%A7%D8%B9%D8%B4" > داعش </a> ،  <a href="http://www.mygam.ir/post/tag/%DA%86%D9%87%20%D9%85%DB%8C%20%D8%AE%D9%88%D8%A7%D9%87%D8%AF" > چه می خواهد </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%B9%D8%B1%D8%A7%D9%82" > عراق </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%AE%D8%B7%D8%B1%20%D8%AF%D8%A7%D8%B9%D8%B4" > خطر داعش </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%AF%D8%A7%D8%B9%D8%B4%20%DA%86%DB%8C%D8%B3%D8%AA" > داعش چیست </a> ، 
+</div>
+
+                              
+<div class="post-foot">
+</div>
+</div>
+                         
+</div>
+
+
+<!--- end comment box ---->
+
+<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="http://www.mygam.ir/post/42">بخاطر خودتان كلش بازی نكنید!!!</a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="http://www.mygam.ir/post/author/1392940">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+پنجشنبه 29 بهمن 1394 10:32 ق.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="http://www.mygam.ir/post/42#commentlist"> نظرات (<script>setCommentCnt(42)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+
+<div class="thumb-wrap"> <img src="http://rahberey.com/wp-content/uploads/2015/03/Captur555e-Copy.png" class="post-thumbnail wp-post-image" alt="Captur555e - Copy" title="معایب بازی کلش اف کلنز چیست ؟ / چگونه اعتیاد به کلش را ترک کنیم ؟ / فنلاندی ها روزانه بیش از ۶۵۴۰۰۰ دلار از این بازی انلاین پول در می اورند / کلش ، از  ایجاد درگیری عمدی میان ایرانی و عرب تا استفاده از نماد های ماسونی + تصاویر" height="316" width="400"></div>            
+            <h3>	</h3>            
+            
+            <h2>معایب بازی کلش اف کلنز چیست ؟ / چگونه اعتیاد به کلش را 
+ترک کنیم ؟ / فنلاندی ها روزانه بیش از ۶۵۴۰۰۰ دلار از این بازی انلاین پول
+ در می اورند / کلش ، از  ایجاد درگیری عمدی میان ایرانی و عرب تا استفاده 
+از نماد های ماسونی + تصاویر</h2>
+          
+            <div class="top-title">
+              <p>این روزها نام یک بازیِ مخصوص "تلفن های همراه هوشمند" به
+ نام "کلاش اف کلنز" به شدت در میان نسل جوان و نوجوان بر سر زبان ها 
+افتاده است.شما در قالب این بازی استراتژیک و جذاب به جنگ های قبیله ای 
+پرداخته و از قلعه خود دفاع می</p>
+             
+            </div>
+              
+         
+           <div class="top-text content"><p>به گزارش گروه اجتماعی “ره به
+ ری” : این روزها نام یک بازیِ مخصوص “تلفن های همراه هوشمند” به نام “کلاش
+ اف کلنز” به شدت در میان نسل جوان و نوجوان بر سر زبان ها افتاده است.</p>
+<p><strong>جدید : در همین رابطه بخوانید:<a href="http://rahberey.com/ShowNews/%d9%85%d8%b6%d8%b1%d8%a7%d8%aa-%d8%a8%d8%a7%d8%b2%db%8c-%da%a9%d9%84%d8%b4-%d8%a7%d9%81-%da%a9%d9%84%d9%86%d8%b2">
+ مضرات بازی کلش اف کلنز خانواده های غربی را هم به وحشت انداخت / لطفا 
+همین حالا بازی کلش را ترک کنید+تصاویر+کلیپ ۳ دقیقه از زندگی یک جوان 
+معتاد به کلش</a></strong></p>
+<p>شما در قالب این بازی استراتژیک و جذاب به جنگ های قبیله ای پرداخته و از قلعه خود دفاع می کنید.</p>
+<p>این بازی یکی از پر فروش ترین بازی ها و جذاب ترین بازی های دنیا می باشد.</p>
+<p>بر اساس گزارشات مالی منتشر شده ، بازی کلش اف کینز که توسط یک کمپانی 
+فنلاندی طراحی شده است ، روزانه ۶۵۴۰۰۰ دلار برای گردانندگان آن در آمد 
+زایی دارد.</p>
+<p>در ادامه تصاویری از کارکنان این شرکت را مشاهده می کنید:</p>
+<p><a href="http://rahberey.com/wp-content/uploads/2015/03/url.jpg"><img class="alignnone wp-image-124186 size-full" src="http://rahberey.com/wp-content/uploads/2015/03/url.jpg" alt="url" height="428" width="600"></a></p>
+<p><a href="http://rahberey.com/wp-content/uploads/2015/03/Clash_of_clans_Flame_thrower_lvl_3_00029.png"><img class="alignnone wp-image-124184 size-full" src="http://rahberey.com/wp-content/uploads/2015/03/Clash_of_clans_Flame_thrower_lvl_3_00029.png" alt="Clash_of_clans_Flame_thrower_lvl_3_00029" height="484" width="600"></a></p>
+<p><a href="http://rahberey.com/wp-content/uploads/2015/03/Capture5.png"><img class="alignnone wp-image-124181 size-full" src="http://rahberey.com/wp-content/uploads/2015/03/Capture5.png" alt="Capture5" height="486" width="600"></a></p>
+<p>شاید برای شما این سوال پیش آید که این درآمد زایی از چه طریقی انجام می
+ شود ؟! در حقیقت در این نوع بازی های آنلاین شما جهت دریافت یک سری 
+تجهیزات و آپشن های اضافی باید قدری پول خرج کنید و این تراکنش ها کم کم 
+زیاد می شوند …</p>
+<p>اکثر محتویات و قابلیت های بازی رایگان و به اصلاح آنلاک و باز هستند 
+اما برای این که قوی تر شوید باید کمی پول خرج کنید تا ابزار آلات هجومی و 
+دفاعی قوی تری خریداری کنید یا اگر به الماس و منابع بیش تری نیاز دارید 
+باید آن را بخرید.</p>
+<p>در ادامه تصاویری از فضای این بازی را ماهده می کنید:</p>
+<p><strong>مضرات بازی کلش اف کینز چیست ؟ </strong></p>
+<ol><li>یاد دادن استراتژی های خاص و محدود:</li></ol>
+<p>در این بازی شما به ظاهر فکر می کنید که خلاقیت دارید و بر اساس خلاقیت 
+خود بازی می کنید ولی در حقیقت در زمین سازندگان بازی می کنید و از 
+استراتژی های آنها تبعیت می کنید. پس خلاقیتی در کار نیست بلکه به شما 
+آموزش داده می شود که آنگونه که آنها می خواهند فکر کنید و عمل نمایید.</p>
+<ol start="2"><li>اهمیت نداشتن کشته شدن سربازان:</li></ol>
+<p>برای یک فرمانده حفظ جان سربازان در کنار رسیدن به هدف اهمیت دارد 
+امابرای شما در این بازی مثل یک پادشاه ستمگر فقط رسیدن به منابع دیگران و 
+پیشرفت و کسب امتیاز اهمیت دارد و سربازان بردگان شما برای رساندن شما به 
+اهدافتان هستند.</p>
+<ol start="3"><li>ترویج خشونت:</li></ol>
+<p>این بازی تخم خشونت را در وجود ما و مخصوصا کودکان می کارد.</p>
+<ol start="4"><li>خراب کردن همه چیز:</li></ol>
+<p>شما برای کسب غنایم همه چیز دهکده دشمن را نابود می کنید.</p>
+<p><a href="http://rahberey.com/wp-content/uploads/2015/03/Captwefwure.png"><img class="alignnone wp-image-124183 size-full" src="http://rahberey.com/wp-content/uploads/2015/03/Captwefwure.png" alt="Captwefwure" height="308" width="600"></a></p>
+<ol start="5"><li>اول خراب کردن سرزمینهای کوچک:</li></ol>
+<p>این قانون جنگل است که قوی تر ضعیف تر را نابود می کند. در این بازی هم 
+برای رسیدن به منابع بیشتر باید اول از نابود کردن و غارت سرزمین های 
+کوچکتر شروع کنید تا به موفقیت برسید.</p>
+<ol start="6"><li>اسمها و علائمی که در این بازی ترویج می شود با نمادهای فراماسونری و 
+اومانیستی و جنگهای صلیبی و شیطان پرستی قرابت زیادی دارد.(در این باره در 
+آینده بیشتر سخن خواهیم گفت)</li><li>اصل اساسی این بازی مبتنی بر توسعه طلبی و کشورگشایی و طمع داشتن به اموال دیگران و پیشرفت از طریق غارت دیگران بنا نهاده شده است.</li><li>در این بازی معمولاً مثلا به طور رندوم ولی در عمل کاملاً عمدی اعراب 
+در برابر ایرانیان قرار می گیرند و دشمنی را میان آنها تقویت می کند و 
+درگیریهای لفظی در رومها اتفاق می افتد.(در این باره در آینده بیشتر سخن 
+خواهیم گفت)</li><li>اتحاد دهکده ها برای نابودی دهکده های دیگر:</li></ol>
+<p>برای افزایش سرعت پیشرفت و حذف رقبا شما با دیگران متحد می شوید تا 
+دهکده های کوچکتر را نابود کنید. این موضوع ما را یاد تشکیلات ناتو و 
+ائتلاف های امریکا می اندازد.</p>
+<ol start="10"><li>این بازی طبق اعتراف بازیکنان حرفه ای آن به شدت وقت را تلف می کند و اعتیادآور است.</li></ol>
+<p>در این بازی شما در یک دور باطل هستید. به ظاهر دارید پیشرفت می کنید 
+ولی چه پیشرفتی؟ پیشرفت برای رسیدن به چی؟ آپگرید می کنید غارت میکنید که 
+بزرگ شوید تا دوباره آپگرید شوید تا سرزمین بزرگتری را غارت کنید و دوباره 
+پیشرفت کنید که آپگرید کنید که غارت کنید که بزرگ شوید که آپگرید کنید و 
+غارت کنید که بزرگ شوید . . .</p>
+<p><a href="http://rahberey.com/wp-content/uploads/2015/03/clash6.jpg"><img class="alignnone wp-image-124185 size-full" src="http://rahberey.com/wp-content/uploads/2015/03/clash6.jpg" alt="clash6" height="355" width="600"></a></p>
+<p><strong>ترک اعتیاد بازی کلش اف کینز (ضمن عذر خواهی از مخاطبین عزیز این بخش مطلب کمی تخصصی است)</strong></p>
+<p>۱- اولین قدم برای ترک بازی غیر فعال کردن نوتفیکیشن است .</p>
+<p>حتما برای شما هم پیش امده ، زمانی که تا از بازی بیرون میایید در 
+اعلانات نوشته می شود: داره به شما اتک میشه-سرباز های شما اماده جنگ 
+هستند-اسپل اماده است-کلن وار شروع شد-کلن وار تموم شد -شیلد شما در حال 
+اتمامه و ….</p>
+<p>لزوما هر کس باشه وارد اکانت میشه و اگر هم وارد شد ، آن دقر فضا جذاب و مهم می شود که دیگه خارج کردنش دست خداست….</p>
+<p>برای غیر فعال کردن این اعلانات و حل این مشکل باید از وارد 
+تنظیمات&lt;مدیریت برنامه ها&lt;کلش اف کلنز&lt;زیر دکمه توقف اجباری یک 
+تیک وجود دارد ، آن تیک را بردارید تا برای همیشه خلاص شوید.</p>
+<p>۲-&nbsp; سعی کنید در فصل امتحانات حتما کاپ و یاهمون تروفی خود رو پاییین نگه دارید ، چرا ؟به دو دلیل</p>
+<p>دلیل اول : تجربه نشون میده اگه شما سعی کنید تروفی خود و یا همون کاپ 
+رو ببرید بالا حداقل ۴ ساعت در روز گیرش می افتید و از زندگی عقب می افتید&nbsp;
+ (حداقل چهار ساعت)</p>
+<p><a href="http://rahberey.com/wp-content/uploads/2015/03/Capture8.jpg"><img class="alignnone wp-image-124182 size-full" src="http://rahberey.com/wp-content/uploads/2015/03/Capture8.jpg" alt="Capture8" height="484" width="600"></a></p>
+<p>دلیل دوم اینکه اگر شما کاپتون بالای ۲۲۰۰ باشه&nbsp; حداقل ۵ ساعت توی روز 
+توی بازی گیر میکنین و با خودتون میگید اگه بیام بیرون غارتم میکنه بزار 
+یکم دیگه برم بالا فقط یکم( پس سعی کنید پایین نگهش دارید.</p>
+<p>۳- اگه بازی روی گوشی شما نصب هست و شما هم کامپیوتر دارید حتما بازیتون
+ رو روی گوگل سیو کنید و برنامه بلواستکس رو دانلود و روی کامپیوتر نصب 
+کنید و اینجوری دسترس شما به بازی محدود میشه و نمیتونید مداوم به بازی سر 
+بزنید و خلاصه حوصله ندارید مداوم کامپیوتر را روشن کنید.</p>
+<p>۴-سعی کنید توی دوره های ترک (امتحانات ) توی بازی هدفی نداشته باشید . 
+چون وقتی شما هدفی دارید مثلا به خودتون میگید امروز کارگرم بیکار میشه منم
+ ۷۰۰۰۰۰ گلد دارم بزار برم اتک جمع کنم تا ۳۲۰۰۰۰۰ بدم کَنون بره لول ۱۱ و 
+همین خودش بدون اینکه بفهمید ۳ یا ۴ ساعت از وقت شما رو میگیره…</p>
+<p>۵-به هیچ عنوان کلن نسازید !!!&nbsp; شاید عجیب باشه ولی بارها تجربه شده که 
+اگه مدیر کلنی باشید رفت و امد توی بازی حداقل ۳ برابر قبل میشه&nbsp; به دلایل 
+مختلف مثل چک کردن کاربران و کولیدران (تا خراب کاری نکند ) چک کلن وار&nbsp;&nbsp; 
+،چک&nbsp; و پر کردن درخواست ها ، و ….</p>
+<p><strong>شاید اینها آغازی برای ترک این بازی باشد.</strong></p>
+<p>۶-چند تا نکته درباره اینکه کلش اف کلنز برای گوشی و یا تبلت شما چقدر ضرر داره :</p>
+<p>اول- با نصب و اجرای این بازی به علت حجم زیاد و اینکه بازی انلاین و 
+سرور رو باید چک بکنه ۶۶% از مصرف باتری گوشی رو به خودش اختصاص میده که 
+توی دو ساعت بازی کردن میبینید اخطار تخلیه باتری براتون میاد .</p>
+<p>سیستم و یا همون پردازنده گوشی و یا تبلت شما بسیار داغ میکنه چون شما 
+حتما با زدن تلفن همراه در شارز ، و بازی میکنید که براش اصلا خوب نیست.</p>
+<p>مصرف اینترنتتون بشدت بالا میره و…</p>
+<p><a href="http://rahberey.com/wp-content/uploads/2015/03/Captur555e.png"><img class="alignnone wp-image-124180 size-full" src="http://rahberey.com/wp-content/uploads/2015/03/Captur555e.png" alt="Captur555e" height="476" width="600"></a></p>
+<p><strong>درد دل یکی از کاربران این بازی معروف (با زبان ساده) :</strong></p>
+<p>در اوایل بازی حدود دو ماهی در کلن های مختلفی گشت زدم و با آدم و گروه های متفاوتی آشنا شدم…<br>
+که برخی مشکلات این بازی رو در کلن های مختلف باهاش برخورد کردم و این 
+اواخر هم بیشتر در قسمت چت همگانی بودم به برخی فسادهای این بازی برخورد 
+کردم..که فکر میکنم این برای والدین افراد زیر ۱۸ سال هشدار هست نه افرادی 
+که خوب و بد رو تشخیص میدن و شخصیتشون شکل گرفته…<br>
+من به یک کلنی پا گذاشتم که رنج سنی **** داشت اول گفتم خوبه عوضش بچه بازی
+ نیست در کلن هایی که افراد زیر ۱۷ سال وجود داره ثبات حاکم نیست چون هنوز 
+احساس نوجوانی در بچه ها هست و حس غرور کاذب و احساس بزرگی زود رس }گفتم پس
+ در محیطی آرام و کم تنش زا هستم..چون بیشتر افراد بالای ۱۹ سال یا دانشجو 
+هستند یا شاغل و توقع دارند ساعات استراحت خود رو در بازی بگذرونن و دچار 
+اعصاب خوردی نشن {چنین چیزی نبودش در این بازی محال هست }…بعد از گذشت چند 
+ساعت در بازی فحاشی هایی رو از افراد اون کلن دیدم که برای اونها جنبه 
+تفریح و شوخی داشت و کم کم یکی از پسران کلن شروع کرد برای یکی از دخترهای 
+کلن خاطرات خود رو در مورد روابط نامشروع خودش گفتن و تمام کلن دم به دم هم
+ دادن در این مورد و تازه متوجه شدم این دوستان اکثریت اینکاره هستند و 
+اگرم نیستند افراد رو تحریک به اعمال نادرست میکنن و تشویش به این امر 
+…واقعا متاسف بودم برای افرادی که بازی نمیکردند هدفشون چیز دیگری بود و 
+سریع ازون کلن زدم بیرون و خیلی از خدای خودم شرمنده بودم که چرا باید ما 
+انسانها محیط بازی رو هم به فساد بکشیم و خوشحالم که سریع متوجه شدم اومدم 
+بیرون…شاید خیلی نگذشت از حضورم در این کلن ولی دریافتم فاسد در همه جا کار
+ خودش رو انجام میده…حتی در چت همگانی به وفور دیده میشه …پسر ۱۲ ساله 
+فحاشی هایی میکنه فقط آدم خجالت میکشه این به عنوان ایرانی داره حرف 
+میزنه….<br>
+بعد اون کلنی رفتم بر حسب اتفاق به پیشنهاد یکی از اقوام که حالت دوستانه و
+ خانوادگی داشت کلن واقعا مودب و عالی بودجالب بودم برام یه چیزیش که دوتا 
+داداش و یک خواهر بودن در این کلن که مامانشونم بود حتی نامزد یکی از پسرها
+ هم بود…میخوام بگم مادر که حس نگرانی به این بازی رو با ورود خودش به بازی
+ و جایی که فرزندانش بیشترین ساعات رو میگذروند نظاره گر بود و آفات بازی 
+رو از نزدیک لمس میکرد…<br>
+یکی از اتفاقات این بازی سر شوخی بین افراد کلن اختلاف بین یک زوج افتاد تا
+ حدی که باهم قهر کردند و یکی از کلن رفتو دیگری راحت در کلن بود و با ابجی
+ های هم کلنیش میگفت و میخدید و براش مهم نبود چون تنوع برای انتخاب و فکر 
+میکرد این بازی باعث شد روشن بشه و بفهمه که دختر خوب و سر به زیر به درد 
+زندگی نمیخوره…<br>
+افراد کوچیکتر هم شاهد این موضوع بودن که سر یک باز ی هم میشه حتی یک زندگی مشترک دچار آسیب بشه…<br>
+در کلن دیگری یکی از افراد با افتخارمیگفت من حتی سر کار یواشکی بازی میکنم
+ و وقتی خونه میام برای پسر یکساله ام و همسرم وقتی نمیذارم بعد شام 
+وارهایی که دارم رو میرم و چندتا غارت میکنم و به دهکده ام سر و سامان میدم
+ و اونقدر خسته هستم میخوابم…<br>
+واقعا سوالم اینه ازین پدر و همسر سی و چند ساله که ارزش بازی از فرزند یک 
+ساله که شیرین ترین لحظات یک بچه هست بیشتره؟لحظاتی که هیچ وقت بر 
+نمیگرده…یا اینکه همسر شما واقعا حقی نداره بعد از یک روز تمام انتظار 
+رسیدن شما به خونه که به جای بازی به ایشون توجه بشه نه ابجی های توی کلن 
+!!!<br>
+گاهاً دیدم طرف میگه از خستگی چشمام باز نمیشه و از سر کار با همسرم اومدیم و شام خوردیم<br>
+و الان اون خوابیده من اومدم ات وار برم بعد ات وارش رو رفته ولی زمانیکه 
+برای گپ زدن میتونست برای همسرش بذاره رو برای ابجی ها یا برعکس برای 
+داداشی هاشون گذاشتن خانم ها و اونقدر که در صدد رفع ناراحتی اینها هستند 
+برای اعضای خانواده خودشون زمانی نمیذارن…<br>
+بعد رفتم کلنی دیگر فضای خوبی بود ولی آسیب هایی که قشر محصل میدید رو براتون میگم …<br>
+رنج سنی ۱۳- ۱۶ سال مخصوصا آقا پسرا از درس خودشون میزدن که بازی کنن شب 
+امتحان میومدن که وار برن هرچند مدیر کلن حواسش بود آسیب نبینن ولی باید 
+همه وار میرفتن …و کلا نگم از تنش هایی که بین افراد پیش میومد برای شرکت 
+در وار و چه کدورت هایی ایجاد میشد بین صمیمی ترین افراد و حتی بین زوج ها و
+ خواهر برادرها…<br>
+طرف سال پیش دانشگاهی بود و خیلی باهوش ولی تایم زیادی رو برای بازی میذاشت و خیلی قوی بود…سال شرنوشت ساز یک نوجوان…<br>
+یک سوال دارم از همه ی محصلین عزیز واقعا بازی ارزشش از آینده شغلی 
+،اقتصادی ،اجتماعی شما بیشتر هست…یک روزی ازین بازی زده میشد که دیگه دیر 
+هست برای جبران روزها و ساعتها و زمان های خوب برای فرصت های خوب یادگیری 
+یا فرصت های خوب شغلی یا از همه مهم تر در کنار خانواده بودن…<br>
+شما اون زمانی رو که صرف بازی میکنید صرف تفریحات همراه خانواده کنید و 
+برای درس و وظایف اصلیتون زمان بذارید ،برای کسب درآمد به فکر دزدی بازی 
+نمی افتید…{البته کم هستند این افراد ولی هستند در همه رنج سن}<br>
+بله دزدی در سسن ۱۳ و ۱۶ ساله …یه بنده خدایی میخواست بازی خودش رو بفروشه 
+چون دیگه میخواست زمانش رو بیشتر برای کار و چیزهای مهم زندگیش بذاره دوتا 
+مشتری داشت که نوجوون بودن و اصرار داشتن که یوزر نیم و پسورد جیمیلش رو 
+بگیرن اول و بعد ۱۵۰۰۰۰۰تومان رو به حساب شخص بریزن…خلاصه همین که اسم 
+سایتهای معتبر واسطه برای فروش اکانت بازی آوردیم کم کم عصبی میشدن و زیر 
+بار نمی رفتن و میگفتن ما به شما اعتماد داریم و شما هم باید به ما اعتماد 
+کنید ولی در آخر نفروخت و اونها توی اون سن فحاشی هایی میکردن که من توی 
+این ۲۴ سال زندگیم نشنیده بودم…<br>
+معلوم و آشکار شد که قطعا دزدن…{چون فکر نمیکنم پدر و مادر درست و فهمیده 
+اجازه خرج میلیونی به نوجوون خود بدهند و چه بسا بیشتر چدر و مادرهای این 
+افراد انسانهای خوبی هستند ولی فرزندانشون با هم نشینی با افراد نادرست یا 
+کل با دوستان یا طمع پول و یا هر دلیل دیگری فرزندشون گرفتار کار نادرستی 
+بشه}<br>
+خب چرا یه بازی باید باعث بشه افراد زیادی فقط به فکر دزدی و کلاه برداری 
+باشن …مگه اسمش بازی نیست؟!!!این هایی که گفتم تازه بعضی از آسیب های این 
+بازی هست…<br>
+لازم به ذکر هست که با خودن این مطلب فقط قرار هست هشیار بشیم و نه اینکه 
+بگیم تمام افرادی که بازی میکنن به این شکل هستند بنده تجربیات خودم رو 
+گفتم و افراد خوب و متشخص زیادی هم در همه رنج سنی بود و فقط فقط قصد بازی 
+داشتند و بس که تعداد این افراد خیلی بیشتر از آنهایی بود که روایت شد…فقط 
+بنده قصد آگاهی بخشس به همه افرادی بود که حتی درست بازی میکنن که گرفتار 
+این طور مشکلات نشن….<br>
+در آخر از همه میخوام که اگرم بازی میکنید در حد یک بازی و تفریح سالم زمان
+ بذارید براش…محصلین و مجردین بزرگوار زندگی فقط بازی نیست که حتی پس انداز
+ های خودتون رو سر این بازی هدر کنید…پدر و مادر ان ما زحمت بسیار زیادی 
+برای ما کشیدن تا شدیم ماهایی که در کلن تا لول و سطحمون بالا میره دیگه 
+خدارو بنده نیستیم و سر بازی باهاشون جر و بحث میکنیم و باعث نگرانی اونها 
+میشیم که آینده اخلاقی و اجتماعی و تحصیلی فرزند من چی میشه وقتی که حتی 
+وقت غذا و خرید و مهمانی و سر کلاس درس و شب یواشکی زیر پتو مشغول بازی 
+هست…پرخاشگر شده!!!…</p><p><br></p><p>منبع:<cite class="_Rm">rahemellat.ir</cite></p>
+</div>
+
+
+
+
+<script>mihanblogPostLike('42','like')</script>                    
+</div>
+
+<div class="post-tags">
+<i class="glyphicon glyphicon-tag"></i>
+ برچسب ها:
+ <a href="http://www.mygam.ir/post/tag/%D9%83%D9%84%D8%B4%20%D8%A7%D9%81%20%D9%83%D9%84%D9%86%D8%B2" > كلش اف كلنز </a> ،  <a href="http://www.mygam.ir/post/tag/%D9%85%D8%B9%D8%A7%DB%8C%D8%A8%20%D8%A8%D8%A7%D8%B2%DB%8C%20%D9%83%D9%84%D8%B4%20%D8%A7%D9%81%20%D9%83%D9%84%D9%86%D8%B2" > معایب بازی كلش اف كلنز </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%A7%D8%B9%D8%AA%DB%8C%D8%A7%D8%AF%20%D8%A8%D9%87%20%D9%83%D9%84%D8%B4%20%D8%A7%D9%81%20%D9%83%D9%84%D9%86%D8%B2" > اعتیاد به كلش اف كلنز </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%A8%D8%AE%D8%A7%D8%B7%D8%B1%20%D8%AE%D9%88%D8%AF%D8%AA%D8%A7%D9%86%20%D9%83%D9%84%D8%B4%20%D8%A8%D8%A7%D8%B2%DB%8C%20%D9%86%D9%83%D9%86%DB%8C%D8%AF" > بخاطر خودتان كلش بازی نكنید </a> ، 
+</div>
+
+                              
+<div class="post-foot">
+</div>
+</div>
+                         
+</div>
+
+
+<!--- end comment box ---->
+
+<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="http://www.mygam.ir/post/41"> انشای یک کودک در مورد ماهواره(طنز) </a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="http://www.mygam.ir/post/author/1392940">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+پنجشنبه 29 بهمن 1394 10:24 ق.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="http://www.mygam.ir/post/41#commentlist"> نظرات (<script>setCommentCnt(41)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+
+<h2 class="title icon"> <img title="Wink" src="http://forums.pichak.net/images/icons/icon12.png" alt="Wink"> انشای یک کودک در مورد ماهواره(طنز) </h2>    <img src="http://media.jamnews.ir/Larg1/1391/12/14/IMG17480940.jpg" alt="" border="0"> <br> <br>
+باید بگویم که ماهواره چیز خوبی است ، چون ما اطلاعات زیادی از درون آن به 
+دست می آوریم ، مثلاً یاد می گیریم که “چنار” علاوه بر اسم درخت ، اسم آدم 
+نیز می تواند باشد. ما میتوانیم با مشاهده ی ماهواره با فرهنگ کشور های 
+دیگر هم آشنا شویم ، مثلاً در کشور “بقلستان” مردم همواره به فکر ازدیاد 
+نسل هستند و همواره تلاش می کنند که برای همدیگر بچه به دنیا بیآورند<a href="http://forums.pichak.net/">.</a><br>
+ماهواره داشتن ، پتانسیل امنیتی آدم را بالا می برد به گونه ای که ما دیشِ 
+مان را در کور ترین نقطه ی پشت بام قایم میکنیم تا کسی آن را از خیابان 
+نبیند ، و یا آن را در بالکن گذاشته و رویش پارچه می اندازیم ، بدون اینکه 
+احدالنّاسی متوجه آن بشود<a href="http://forums.pichak.net/">.</a><br>
+ماهواره باعث پیشرفت تکنولوژی در ما می شود. مثلاً وقتی پدرمان کانالی را 
+قفل می کند ، ما انواع و اقسام عددها را امتحان می کنیم تا به رمز دست 
+بیابیم و این باعث می شود که ذهن ما به کار بیفتد<a href="http://forums.pichak.net/">.</a><br>
+ماهواره داشتن کلاس دارد ، به گونه ای که اگر کسی در خانه اش ماهواره 
+نداشته باشد اورا اُمّل و بی سواد و از جامعه دورمانده میخوانند!<br>
+ماهواره داشتن در بحث های گروهی و فامیلی به ما کمک می کند ، مثلاً شب های 
+جمعه خانواده ها دور یکدیگر جمع شده و عکدمی نگاه می کنند و در پایان آن را
+ برای هم تفسیر میکنند و در آخر به این نتیجه می رسند که آنها استعداد 
+خواننده شدن را داشتند اما سوختند !!<br>
+ماهواره داشتن حس کنجکاوی انسان را دو چندان می کند ، مثلاً ما در خانه 
+ساعت ها راجع به این موضوع بحث می کنیم : که چرا آقای “روزخیز” روز به روز 
+جوان تر میشود<a href="http://forums.pichak.net/">.</a><br>
+پدرم فکر میکند آنهایی که پایشان آن ور آب است ، بهتر می دانند درون مملکت 
+چه خبر است! و من هرچه میخواهم او را توجیه کنم فایده ندارد و به من می 
+گوید بچه برو سر درس و مشقت!<br> <b><font color="#00cc00">ما نتیجه می 
+گیریم که ماهواره بسیار چیز مفید و کارآمدی است و ضررهای آن شاید به تعداد 
+انگشت های یک دست هم نرسد! من به آقای معلم توصیه می کنم که یک ماهواره 
+بخرد تا خودم برایش آبگرید کنم و حتماً برنامه های جـِـن تی وی را تماشا 
+کند ، چون اگر نکند ، نصف عمرش بر فناست.</font></b><br> <i><b>پایان</b></i>
+
+
+
+
+<script>mihanblogPostLike('41','like')</script>                    
+</div>
+
+<div class="post-tags">
+<i class="glyphicon glyphicon-tag"></i>
+ برچسب ها:
+ <a href="http://www.mygam.ir/post/tag/%D8%A7%D9%86%D8%B4%D8%A7" > انشا </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%B7%D9%86%D8%B2" > طنز </a> ،  <a href="http://www.mygam.ir/post/tag/%D9%85%D8%A7%D9%87%D9%88%D8%A7%D8%B1%D9%87" > ماهواره </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%A7%D9%86%D8%B4%D8%A7%DB%8C%20%D8%B7%D9%86%D8%B2%20%D8%AF%D8%B1%D9%85%D9%88%D8%B1%D8%AF%20%D9%85%D8%A7%D9%87%D9%88%D8%A7%D8%B1%D9%87" > انشای طنز درمورد ماهواره </a> ، 
+</div>
+
+                              
+<div class="post-foot">
+</div>
+</div>
+                         
+</div>
+
+
+<!--- end comment box ---->
+
+<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="http://www.mygam.ir/post/40">زندگی نامه امام خمینی</a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="http://www.mygam.ir/post/author/1392940">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+سه شنبه 20 بهمن 1394 05:58 ب.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="http://www.mygam.ir/post/40#commentlist"> نظرات (<script>setCommentCnt(40)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+
+<br>
+
+
+
+
+<p style="text-align: center;"><a title="زندگی نامه امام خمینی" href="http://www.beytoote.com/religious/bozorgan-din/biography-imam-khomeini.html" target="_blank"><img title="زندگینامه امام خمینی امام خمینی زندگی نامه امام خمینی" src="http://www.beytoote.com/images/stories/religious/hhr4.jpg" alt="زندگینامه امام خمینی امام خمینی زندگی نامه امام خمینی"></a></p>
+<p><span style="color: #800000;"><strong>زندگینامه امام خمینی:</strong></span></p>
+<p style="text-align: justify;">&nbsp;<strong>امام خمینی</strong> در روز 
+بیستم جمادى الثانى 1320 هجرى قمرى مطابق با 30 شهریـور 1281 هجرى شمسى ( 
+24 سپتامپر 1902 میلادى ) در شهرستان خمیـن از توابع استان مركزى ایران در 
+خانواده اى اهل علـم و هجرت و جهاد و در خـانـدانـى از سلاله زهـراى اطهر 
+سلام الله علیها, روح الله المـوسـوى الخمینـى پـاى بـر خـاكدان طبیعت نهاد
+ .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">او وارث سجایاى آبا و اجدادى بـود كه نسل در نسل در كار هدایت مردم وكسب معارف الهى كـوشیـده انـد. پـدر بزرگـوار <strong>امام خمینـى</strong>
+ مرحوم آیه الله سید مصطفى مـوسـوى از معاصریـن مرحـوم آیه الله العظمـى 
+میرزاى شیـرازى (رض), پـس از آنكه سالیانـى چنـد در نجف اشـرف علـوم و 
+معارف اسلامـى را فرا گرفته و به درجه اجتهاد نایل آمـده بـود به ایران 
+بازگشت و در خمیـن ملجإ مردم و هادى آنان در امـور دینـى بـود. در حـالیكه 
+بیـش از 5 مـاه ولادت<strong> امام خمینی</strong>نمى گذشت،طاغوتیان و 
+خـوانیـن تحت حمایت عمال حكومت وقت نداى حق طلبـى پـدر را كه در برابر 
+زورگـوئیهایشان به مقاومت بـر خاسته بـود، با گلـوله پاسخ گفتنـد و در مسیر
+ خمیـن به اراك وى را به شهادت رسانـدنـد.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">بدیـن ترتبیب<strong> امام خمینى</strong>
+ از اوان كـودكى با رنج یتیمى آشنا و با مفهوم شهادت روبرو گردید. وى دوران
+ كـودكـى و نـوجـوانى را تحت سرپرستى مادر مـومنه اش (بانـو هاجر) كه خـود 
+از خاندان علـم و تقـوا و از نـوادگان مـرحـوم آیه الله خـوانسـارى ( صاحب 
+زبـده التصانیف ) بوده است. همچنیـن نزد عمه مكرمه اش ( صاحبه خانم ) كه 
+بانـویى شجاع و حقجـو بـود سپرى كرد اما در سـن 15 سالگى از نعمت وجـود آن 
+دو عزیز نیز محـروم گـردید .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: #800000;"><strong>هجـرت امام خمینی به قـم و تحصیل دروس تكمیلـى:</strong></span></p>
+<p style="text-align: justify;">اندكـى پـس از هجرت آیه الله العظمـى حاج 
+شیخ عبد الكریـم حایرى یزدى ـ رحمه الله علیه ـ ( نـوروز 1300 هجـرى شمسـى,
+ مطابق بـا رجب المـرجب 1340 هجـرى قمـرى ) <strong>امام خمینـى </strong>نیز رهسپـار حـوزه علمیه قـم گردید و به سرعت مراحل تحصیلات تكمیلى علوم حـوزوى را نزد اساتید حـوزه قـم طـى كرد.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: #800000;"><strong>ازدواج امام خمینی و تشکیل خانواده:</strong></span></p>
+<p style="text-align: justify;">میرزا محمد ثقفی تهرانی در زمان تحصیل در 
+شهر مقدس قم، با حاج آقا روح ‌الله مصطفوی خمینی (حضرت امام) كه در آن زمان
+ 27 سال داشت آشنا شد كه همین آشنایی، واسطه‌ ازدواج <strong>امام خمینی</strong>(ره) با بانو ثقفی در سال 1308 شمسی شد.</p>
+<p style="text-align: justify;"><strong>امام خمینی</strong> در سال ۱۳۰۸ 
+هجری خورشیدی با خدیجه ثقفی دختر میرزا محمد ثقفی تهرانی ازدواج کرد.برخلاف
+ سنت رایج چند همسری و متعه در بین روحانیان آن زمان، خمینی هیچگاه همسر 
+دیگری و متعه اختیار نکرد و برخلاف رسم آن زمان خمینی در امور منزل به 
+همسرش کمک می کرد.</p>
+<p style="text-align: justify;"><br><span style="color: #ff0000;">ثمره 
+این ازدواج تولد سید مصطفی، فرزند اول آنها در آذر 1309؛ سید احمد در 26 
+اسفند 1324 و خانم‌‌ها سیده فریده‌،‌ سیده زهرا و سیده صدیقه بود.</span></p>
+<p style="text-align: center;"><a title="زندگی نامه امام خمینی" href="http://www.beytoote.com/religious/bozorgan-din/biography-imam-khomeini.html" target="_blank"><img title="زندگینامه امام خمینی امام خمینی زندگی نامه امام خمینی" src="http://www.beytoote.com/images/stories/religious/hhr5.jpg" alt="زندگینامه امام خمینی امام خمینی زندگی نامه امام خمینی"></a></p>
+<p style="text-align: justify;">&nbsp;پـس از رحلت آیه الله العظمـى حـایـرى یزدى تلاش<strong> امـام خمینـى</strong>
+ به همراه جمعى دیگر از مجتهدیـن حـوزه علمیه قـم به نتیجه رسیـد و آیه 
+الله العظمـى(رض) به عنـوان زعیـم حـوزه علمیه عازم قـــم گردید. در این 
+زمان,<strong> امام خمینـى</strong> به عنـوان یكـى از مـدرسیـن و مجتهدیـن صـاحـب راى در فقه و اصـول و فلسفه و عرفـــان و اخلاق شناخته مى شد . حضرت <strong>امام خمینی</strong>
+ طى سالهاى طولانى در حوزه علمیه قـم به تدریـس چندیـن دوره فقه, اصـول, 
+فلسفه و عرفان و اخلاق اسلامـى در فیضیه, مسجـد اعظم, مسجـد محمـدیه, 
+مـدرسه حـاج ملاصـادق, مسجـد سلماسى, و ... همت گماشت و در حـوزه علمیه نجف
+ نیز قریب 14 سال در مسجـد شیخ اعطـم انصــــارى (ره) معارف اهل بیت و فقه 
+را در عالیترین سطـوح تدریـس نمود و در نجف بـود كه براى نخستیـن بار 
+مبانـى نظرى حكـومت اسلامـى را در سلسله درسهاى ولایت فقیه بازگـو نمود .</p>
+<p>&nbsp;</p>
+<p style="text-align: justify;"><span style="color: #800000;"><strong>امـام خمینـى در سنگـر مبـارزه و قیــام:</strong></span></p>
+<p style="text-align: justify;">روحیه مبارزه و جهاد در راه خدا ریشه در بینـش اعتقادى و تربیت و محیط خانـوادگى و شرایط سیاسى و اجتماعى طـول دوران زندگى <strong>امام خمینی</strong>
+ داشته است. مبارزات ایشان از آغاز نـوجـوانـى آغاز, و سیر تكاملى آن به 
+مـوازات تكامل ابعاد روحى و علمى امام خمینی از یكسـو و اوضاع و احـوال 
+سیاسـى و اجتماعى ایران و جـوامع اسلامـى از سـوى دیگـر در اشكـال مختلف 
+ادامه یـافته است و در ســـال 1340 و 41 ماجراى انجمنهاى ایالتى و ولایتى 
+فرصتـى پـدید آورد تا <strong>امام خمینی</strong> در رهبـریت قیام و 
+روحـانیت ایفاى نقـش كنـد و بـدیـن تـرتیب قیام سراسرى روحانیت و ملت ایران
+ در 15 خرداد سال 1342 با دو ویژگـى برجسته یعنى رهبرى واحد امام خمینى و 
+اسلامـى بـودن انگیزه ها, و شعارها و هدفهاى قیام, سرآغازى ششـد بر فصل 
+نـویـن مبارزات ملت ایران كه بعدها تحت نام انقلاب اسلامى در جهان شناخته و
+ معرفـى شد</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>امام خمینـى</strong> خاطـره 
+خـویـش از جنگ بیـن الملل اول را در حالیكه نـوجـوانى 12 ساله بـوده چنین 
+یاد مـى كند : مـن هر دو جنگ بیـن المللـى را یادم هست ... مـن كـوچك بـودم
+ لكـن مدرسه مى رفتـم و سربازهاى شـوروى را در همان مركزى كه ما داشتیـم در
+ خمیـن, مـن آنجا آنها را مى دیدم و ما مورد تاخت و تاز واقع مى شدیـم در 
+جنگ بیـن الملل اول.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">پـس از رحلت آیه الله العظمى حایرى ( 10 
+بهمـن 1315 ه.ش ) حـوزه علمیه قـم را خطر انحلال تهدید مى كرد. علماى متعهد
+ به چاره جویى برخاستند. مدت هشت سال سرپرستى حـوزه علمیه قـم را آیات عظام
+ : سید محمد حجت, سید صدر الدیـن صدر و سید محمد تقـى خـوانسارى ـ رضوان 
+الله علیهم ـ بر عهده گرفتند. در ایـن فاصله و بخصوص پـس از سقوط رضاخان, 
+شرایط براى تحقق مرجعیت عظمى فراهـم گردید. آیه الله العظمى بروجـردى شخصیت
+ علمـى بـرجسته اى بـود كه مـى تـوانست جانشین مناسبـى براى مرحوم حایرى و 
+حفظ كیان حـوزه باشـد. ایـن پیشنهاد از سـوى شاگردان آیه الله حایرى و از 
+جمله امام خمینـى به سرعت تعقیب شـد. شخص<strong> امام خمینی</strong>در دعوت از آیه الله بروجردى براى هجرت به قـم و پذیرش مسئولیت خطیر زعامت حـوزه مجدانه تلاش كرد.</p>
+<p style="text-align: justify;"><strong>&nbsp;</strong></p>
+<p style="text-align: justify;"><strong>امام خمینى</strong> در تعقیب 
+هدفهاى ارزشمند خویش در سال 1328 طرح اصلاح اساس ساختار حـوزه علمیه را با 
+همكارى آیه الله مـرتضـى حایـرى تهیه كرد و به آیه الله بروجردى (ره) 
+پیشنهاد داد. ایـن طرح از سوى شاگردان امام و طلاب روشـن ضمیر حـوزه مورد 
+استقبال و حمایت قرار گرفت .</p>
+<p style="text-align: justify;">اما رژیـم در محاسباتـش اشتباه كرده بود. 
+لایحه انجمنهاى ایالتى و ولایتى كه به موجب آن شرط مسلمان بودن, سوگند به 
+قرآن كریـم و مرد بـودن انتخاب كنندگان و كاندیداها تغییر مـى یافت در 16 
+مهر 1341 ه.ش به تصـویب كـابینه امیـر اسـد الله علـم رسیـد. آزادى 
+انتخابات زنان پـوششـى براى مخفى نگه داشتـن هدفهاى دیگر بـود. حذف و تغییر
+ دو شـرط نخست دقیقا به منظور قانـونـى كـردن حضـور عناصر بهایـى در مصادر 
+كشـور انتخاب شـده بـود. چنانكه قبلا نیز اشاره شد پشتیبانى شاه از رژیـم 
+صهیـونیستـى در تـوسعه مناسبات ایران و اسرأیل شرط حمایتهاى آمریكا از شاه 
+بـود. نفوذ پیروان مسلك استعمارى بهأیت در قـواى سه گانه ایران ایـن شرط را
+ تحقق مـى بخشید. امام خمینـى به همراه علماى بزرگ قـم و تهران به محض 
+انتشار خبر تصویب لایحه مزبور پـس از تبادل نظر دست به اعتراضات همه جانبه 
+زدند .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">نقـش حضرت <strong>امام خمینی</strong> در
+ روشـن ساختـن اهداف واقعى رژیـم شاه و گوشزد كـردن رسالت خطیر علما و 
+حـوزه هاى علمیه در ایـن شـرایط بسیار مـوثـر وكارساز بـود. تلگرافها و 
+نامه ها سرگشاده اعتـراض آمیز علما به شاه و اسد الله علـم مـوجى از حمایت 
+را در اقشار مختلف مردم برانگیخت. لحـن تلگرافهاى <strong>امام خمینـى</strong> به شاه و نخست وزیر تند و هشـدار دهنده بود.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">بدیـن ترتیب ماجراى انجمنهاى ایالتى و 
+ولایتـى تجربه اى پیروز و گرانقدر براى ملت ایران بویژه ازآن جهت بـود كه 
+طى آن ویژگیهاى شخصیتـى را شناختنـد كه از هر جهت براى رهبـرى امت اسلام 
+شایسته بـود. با وجـود شكست شاه در ماجـراى انجمنها, فشار آمركا بـراى 
+انجـام اصلاحـات مـورد نظر ادامه یافت. شاه در دیماه 1341 هجـرى شمسى اصـول
+ ششگانه اصلاحات خویـش ر بر شمرد و خـواستار رفراندوم شد .<strong> امام خمینى</strong> بار دیگر مراجع و علماى قـم را به نشست و چاره جویى دوباره فراخواند .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">با پیشنهاد <strong>امام خمینى</strong> عید باستانـى نـوروز سال 1342 در اعتراض به اقدامات رژیم تحریـم شد. در اعلامیه حضرت <strong>امام خمینى</strong>
+ از انقلاب سفید شاه به انقلاب سیاه تعبیـر و همسـویـى شـاه بـا اهـداف 
+آرمیكا و اسرایل افشا شده بـود . از سوى دیگر, شاه در مورد آمادگى جامعه 
+ایـران بـراى انجام اصلاحات آمـریكا به مقامات واشنگتـن اطمینان داده بود و
+ نام اصلاحات را انقلاب سفیـد نهاده بـود. مخالفت علما براى وى بسیار گران 
+مى آمد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>امام خمینى</strong> در اجتماع 
+مردم, بى پروا از شخص شاه به عنـوان عامل اصلـى جنایات و همپیمان با 
+اسـرأیل یاد مـى كـرد و مـردم را به قیام فرا مـى خواند. <strong>امام خمینى </strong>در
+ سخنرانى خـود در روز دوازده فروردیـن 1342 شدیدا از سكـوت علماى قـم و نجف
+ و دیگر بلاد اسلامى در مقابل جنایات تازه رژیـم انتقاد كرد و فرمود : 
+امروز سكـوت همراهى با دستگاه جباراست حضـرت امام روز بعد ( 13 فـروردیـن 
+42 ) اعلامیه معروف خـود را تحت عنـوان شاه دوستى یعنى غارتگرى منتشر ساخت .
+ راز تإثیر شگفت پیام <strong>امام خمینى</strong> و كلام امام در روان 
+مخاطبینـش كه تا مرز جانبازى پیـش مـى رفت را باید در همیـن اصالت انـدیشه,
+ صلابت راى و صـداقت بـى شـأبه اش بـا مـردم جستجـو كـرد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">سال 1342 با تحریـم مراسـم عید نوروز آغاز
+ و با خـون مظلـومیـن فیضیه خـونرنگ شد. شاه بر انجام اصلاحات مـورد نظر 
+آمریكا اصرار مـى ورزید و <strong>امام خمینى</strong> بر آگاه كردن مردم و
+ قیام آنان در برابر دخـالتهاى آمـریكـا و خیـانتهاى شاه پـافشـارى داشت. 
+در چهارده فروردیـن 1342 آیه الله العظمـى حكیـم از نجف طـى تلگرافهایى به 
+علما و مراجع ایران خـواستار آن شد كه همگـى به طـور دسته جمعى به نجف هجرت
+ كنند. این پیشنهاد براى حفظ جان علماوكیان حـوزه ها مطرح شده بود .</p>
+<p style="text-align: justify;">حضرت <strong>امام خمینى</strong> بـدون 
+اعتنا به ایـن تهدیـدها, پاسخ تلگراف آیه الله العظمى حكیـم را ارسال 
+نمـوده و در آن تإكید كرده بـود كه هجرت دسته جمعى علما و خالـى كـردن 
+حـوزه علمیه قـم به مصلحت نیست .</p>
+<p style="text-align: justify;"><strong>امام خمینـى</strong> در پیامـى( 
+به تایخ 12 / 2 / 1342 ) بمناسبت چهلـم فاجعه فیضیه بـر همـراهـى علما و 
+ملت ایران در رویارویـى سـران ممـالك اسلامـى و دول عربـى بـا اسـرأیل غاصب
+ تـإكیـد ورزیـــد وپیمـانهاى شـاه و اسـرأیل را محكـوم كرد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: #800000;"><strong>قیام 15 خرداد:</strong></span></p>
+<p style="text-align: justify;">ماه محرم 1342 كه مصادف با خرداد بـود فرا رسید.<strong> امام خمینى</strong> از ایـن فـرصت نهایت استفاده را در تحـریك مردم به قیام علیه رژیـم مستبد شاه بعمل آورد .</p>
+<p style="text-align: justify;"><strong>امام خمینى</strong> در عصر 
+عاشـوراى سال 1383 هجرى قمـى( 13 خرداد 1342 شمسى ) در مدرسه فیضیه نطق 
+تاریخـى خـویـش را كه آغازى بر قیام 15 خرداد بود ایراد كرد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">در همیـن سخنرانى بـود كه <strong>امام خمینى</strong>
+ با صداى بلند خطاب به شاه فرمـود : آقا مـن به شما نصیحت مـى كنـم, اى 
+آقاى شاه ! اى جناب شاه! مـن به تو نیصحت مى كنم دست بردار از این كارها, 
+آقا اغفال مى كنند تو را. مـن میل ندارم كه یك روز اگر بخـواهند تـو بروى, 
+همه شكر كنند ... اگر دیكته مى دهند دستت و مى گـویند بخـوان, در اطـرافـش 
+فكـر كـن .... نصیحت مرا بشنـو ... ربط ما بیـن شاه و اسرأیل چیست كه 
+سازمان امنیت مـى گـوید از اسرأیل حـرف نزنیـد ... مگر شاه اسـرأیلـى است ؟
+ شاه فـرمان خامـوش كـردن قیام را صادر كـرد. نخست جمع زیادى از یاران<strong> امام خمینـى</strong> در شـامگاه 14 خرداد دستگیـر و ساعت سه نیمه شب ( سحـرگاه پانزده خـرداد 42 ) صـدها كماندوى اعزامـى از مركز, منزل حضرت <strong>امام خمینى </strong>را
+ محاصره كردند و ایشان را در حالیكه مشغول نماز شب بـود دستگیر و سـراسیمه 
+به تهران بـرده و در بازداشتگاه باشگاه افسـران زندانـى كـردنـد و غروب 
+آنروز به زندان قصر منتقل نمـودنـد . صبحگاه پانزده خرداد خبـر دستگیرى 
+رهبـر انقلاب به تهران, مشهد, شیـراز ودیگـر شهرها رسیـد و وضعیتـى مشـابه 
+قـم پـدید آورد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">نزدیكترین ندیم همیشگى شاه, تیمسار حسیـن 
+فردوست در خاطراتش از بكارگیرى تجربیات و همكارى زبده ترین مإموریـن سیاسى و
+ امنیتى آمریكا براى سركـوب قیام و همچنیـن از سراسیمگـى شاه و دربار و 
+امراى ارتـش وساواك در ایـن ساعات پرده بـرداشته و تـوضیح داده است كه 
+چگـونه شاه و ژنرالهایـش دیـوانه وار فرمان سركـوب صادر مى كردند .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>امام خمینـى</strong>, پـس از 19 روز حبـس در زندان قصـر به زنـدانـى در پـادگـان نظامـى عشـرت آبـاد منتقل شـد .</p>
+<p style="text-align: justify;">با دستگیرى <strong>امام خمینى</strong>&nbsp; و كشتار وحشیانه مـردم در روز 15 خـرداد 42, قیام ظاهرا سركوب شد. <strong>امام خمینى</strong>
+ در حبـس از پاسخ گفتـن به سئوالات بازجـویان, با شهامت و اعلام اینكه هیئت
+ حاكمه در ایـران و قـوه قضأیه آنرا غیر قانـونـى وفاقـد صلاحیت مـى داند, 
+اجتناب ورزید. در شامگاه 18 فروردیـن سال 1343 بدون اطلاع قبلـى, <strong>امام خمینى</strong>
+ آزاد و به قـم منتقل مـى شـود. به محض اطلاع مردم, شادمانى سراسر شهر را 
+فرا مـى گیرد وجشنهاى باشكـوهـى در مـدرسه فیضیه و شهر به مـدت چنـد روز 
+بـر پا مـى شـود . اولیـن سالگـرد قیام 15 خـرداد در سال 1343 با صـدور 
+بیانیه مشتـرك<strong> امام خمینـى</strong> و دیگر مراجع تقلید و بیانیه هاى جداگانه حـوزه هاى علمیه گرامـى داشته شـد و به عنـوان روز عزاى عمـومـى معرفـى شـد.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>امـام خمینـى</strong> در همیـن 
+روز ( 4 آبـان 1343 ) بیانیه اى انقلابـى صادر كرد و درآن نـوشت : دنیا 
+بـدانـد كه هر گرفتارى اى كه ملت ایـران و ملل مسلمیـن دارنـد از اجـانب 
+است, از آمـریكاست, ملل اسلام از اجـانب عمـومـا و از آمـریكـا خصـوصـا 
+متنفــر است ... آمـریكـاست كه از اسـرأیل و هـواداران آن پشتیبـانـى مـى 
+كنـد. آمریكاست كه به اسرأیل قـدرت مـى دهـد كه اعراب مسلـم را آواره كند. 
+افشاگرى <strong>امام خمینى</strong> علیه تصـویب لایحه كاپیتـولاسیون, ایران را در آبـان سـال 43 در آستـانه قیـامـى دوبـاره قرار داد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">از طـرف دیگـر به مـوجب سنـدهـایـى كه بعد
+ از پیــــروزى انقلاب اسلامـى منتشر شد, كسانـى همچـون آقاى شریعتمدارى در
+ ایـن زمان ( آبان 43 )از مـوقعیت و نفـوذ خـود استفاده كرده و كـوشیدنـد 
+تا طـرفـداران خـویـش را وادار به سكـوت و عدم حمایت از دعوت <strong>امام خمینى</strong> نمایند . سحرگاه 13 آبان 1343 دوباره كماندوهاى مسلح اعزامـى از تهران, منزل <strong>امام خمینى</strong> در قـم را محاصره كردند. شگفت آنكه وقت باز داشت, هماننـد سال قبل مصادف با نیایـش شبـانه <strong>امام خمینـى</strong> بـود .حضرت <strong>امام خمینى</strong>
+ بازداشت و به همراه نیروهاى امنیتى مستقیما به فرودگاه مهرآباد تهران 
+اعزام و با یك فروند هـواپیماى نظامى كه از قبل آماده شده بـود, تحت الحفظ 
+مامـوریـن امنیتى و نظامى به آنكارا پـرواز كـرد. عصـر آنـروز ساواك خبـر 
+تبعیـد <strong>امام خمینى</strong> را به اتهام اقـدام علیه امنیت كشـور ! در روزنـامه ها منتشـر سـاخت.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">علیرغم فضاى خفقان موجى از اعتراضها بـه 
+صـورت تظاهرات در بازار تهران, تعطیلى طولانى مدت دروس حوزه ها و ارسال 
+طومارها و نامه ها به سازمانهاى بیـن المللـى و مـراجع تقلیـد جلـوه گـر 
+شد.</p>
+<p style="text-align: justify;">اقامت امام در تركیه یازده ماه به درازا 
+كشید در ایـن مدت رژیم شاه با شدت عمل بـى سابقه اى بقایاى مقاومت را در 
+ایران در هـم شكست و در غیاب <strong>امام خمینـى</strong> به سرعت دست به 
+اصلاحات آمریكا پسند زد. اقامت اجبارى در تـركیه فـرصتـى مغتنـم بـراى امام
+ بـود تا تـدویـن كتـاب بزرگ تحـریـر الـوسیله را آغاز كند.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: #800000;"><strong>تبعیـد امـام خمینـى از تـركیه به عراق:</strong></span></p>
+<p style="text-align: justify;">روز 13 مهرماه 1343 حضرت امام به همراه فرزنـدشان آیه الله حاج آقا مصطفـى از تركیه به تبعیدگاه دوم, كشـور عراق اعزام شدند . <strong>امام خمینى</strong>
+ پس از ورود به بغداد براى زیارت مرقد أمه اطهار(ع) به شهــرهــاى كاظمیـن,
+ سامـرا و كـربلا شتـافت ویك هفته بعد به محل اصلـى اقـامت خـود یعنـى نجف 
+عزیمت كرد.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">دوران اقامت طـولانـى و 13 ساله <strong>امام خمینـ</strong>ى
+ در نجف در شـرایطـى آغاز شد كه هر چند در ظاهر فشارها و محدودیتهاى 
+مستقیـم در حـد ایـران و تـركیه وجـود نـداشت اما مخالفتها و كارشكنیها و 
+زخـم زبانها نه از جبهه دشمـن رویارو بلكه از ناحیه روحانى نمایان و دنیا 
+خـواهان مخفى شده در لباس دیـن آنچنان گسترده و آزاردهنده بود كه <strong>امام خمینى</strong>
+ با همه صبر و بردبارى معروفـش بارها از سختى شرایط مبارزه در ایـن سالها 
+به تلخى تمام یاد كرده است. ولى هیچیك از ایـن مصـأب و دشـواریها نتـوانست 
+او را از مسیـرى كه آگـاهانه انتخاب كرده بود باز دارد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>امام خمینى</strong> سلسله درسهاى
+ خارج فقه خـویـش را با همه مخالفتها و كارشكنیهاى عناصـر مغرض در آبان 
+1344 در مسجـد شیخ انصارى (ره) نجف آغاز كرد كه تا زمان هجـرت از عراق به 
+پاریـس ادامه داشت .</p>
+<p style="text-align: justify;">حوزه درسى ایشان به عنـوان یكى از برجسته تریـن حـوزه هاى درسى نجف از لحـاظ كیفیت و كمیت شـاگـردان شنـاخته شـد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>امام خمینـى</strong> از بدو ورود
+ به نجف با ارسال نامه ها و پیكهایى به ایران, ارتباط خویـش را با مبارزیـن
+ حفظ نموده و آنان را در هر منـاسبتـى به پـایـدارى در پیگیـرى اهـداف قیام
+ 15 خـرداد فـرا مى خواند . <strong>امام خمینى</strong> در تمام دوران پـس
+ از تبعید, علیرغم دشواریهاى پدید آمـده, هیچگاه دست از مبارزه نكشیـد, وبا
+ سخنـرانیها و پیامهاى خـویـش امیـد به پیـروزى را در دلها زنـده نگـاه مى 
+داشت .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong>امام خمینى</strong> در گفتگـویى 
+با نمانیده سازمان الفتح فلسطیـن در 19 مهر 1347 دیـدگاههاى خـویـش را 
+دربـاره مسأل جهان اسلام و جهاد ملت فلسطین تشریح كرد و در همیـن مصاحبه بر
+ وجـوب اختصاص بخشـى از وجـوه شـرعى زكات بـه مجـاهـدان فلسطینـى فتـوا داد
+ .</p>
+<p style="text-align: justify;">اوایل سال 1348 اختلافات بیـن رژیـم شاه و
+ حزب بعث عراق بـر سـر مرز آبـى دو كشـور شدت گرفت. رژیـم عراق جمع زیادى 
+از ایرانیان مقیـم این كشـور را در بدتریـن شرایط اخراج كرد. حزب بعث بسیار
+ كوشید تا از دشمنى<strong> امام خمینى</strong> با رژیـم ایران در آن شرایط بهره گیرد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">چهار سال تـدریـس, تلاش و روشنگرى <strong>امام خمینـى</strong>
+ تـوانسته بـود تا حـدودى فضاى حـوزه نجف را دگرگـون سازد. اینك در سال 
+1348 علاوه بر مبارزین بیشمار داخل كشـور مخاطبیـن زیادى در عراق, لبنان و 
+دیگـر بلاد اسلامـى بـودنـد كه نهضت <strong>امام خمینـى</strong> را الگـوى خـویـش مى دانستند .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: #800000;"><strong>امـام خمینـى و استمـرار مبـارزه ( 1350 ـ 1356 ):</strong></span></p>
+<p style="text-align: justify;">نیمه دوم سال 1350 اختلافات رژیـم بعثـى عراق و شاه بالا گـرفت و به اخراج و آواره شـدن بسیارى از ایرانیان مقیـم عراق انجامید. <strong>امام خمینى</strong> طـى تلگرافى به رئیـس جمهور عراق شدیدااقدامات ایـن رژیـم را محكـوم نمود. حضرت <strong>امام خمینى</strong> در اعتراض به شرایط پیـش آمده تصمیـم به خـروج از عراق گـرفت اما حكـام بغداد بـا آگـاهـى از پیـامـدهـاى هجـرت <strong>امام خمینى </strong>در آن شـرایط اجـازه خـروج نـدادنـد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">سال 1354 در سالگرد قیام 15 خـرداد, 
+مـدرسه فیضیه قـم بار دیگر شاهـد قیام طلاب انقلابـى بـود. فریادهاى درود 
+بر خمینـى ومرگ بر سلسله پهلـوى به مـدت دو روز ادامه داشت پیـش از ایـن 
+سازمانهاى چـریكـى متلاشـى شـده وشخصیتهاى مذهـى و سیاسـى مبـارز گـرفتـار 
+زندانهاى رژیم بودند .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">شاه در ادامه سیاستهاى مذهب ستیز خـود در 
+اسفنـد 1354 وقیحـانه تاریخ رسمـى كشـور را از مبدإ هجرت پیامبر اسلام به 
+مبدإ سلطنت شاهان هخامنشى تغـییر داد. <strong>امام خمینى</strong> در 
+واكنیشى سخت, فتوا به حرمت استفاده از تاریخ بـى پایه شاهنشاهـى داد. 
+تحریـم استفاده از ایـن مبدإ موهوم تاریخى همانند تحریـم حزب رستاخیز از 
+سـوى مردم ایران استقبال شـد و هر دو مـورد افتضاحـى براى رژیـم شاه شـده و
+ رژیـم در سـال 1357 ناگزیـر از عقب نشینـى و لغو تـاریخ شاهنشاهى شد .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: #800000;"><strong>اوجگیـرى انقلاب اسلامـى در سـال 1356 و قیـام مـردم:</strong></span></p>
+<p style="text-align: justify;"><strong>امام خمینـى</strong> كه به دقت تحـولات جارى جهان و ایـران را زیـر نظر داشت از فـرصت به دست آمـده نهایت بهره بـردارى را كـرد. <strong>امام خمینى</strong>
+ در مرداد 1356 طـى پیامى اعلام كرد : اكنـون به واسطه اوضاع داخلى و خارجى
+ و انعكاس جنایات رژیـم در مجامع و مطبـوعات خارجى فرصتـى است كه باید 
+مجامع علمى و فرهنگـى و رجال وطنخـواه و دانشجـویان خارج و داخل و انجمنهاى
+ اسلامـى در هـر جایـى درنگ از آن استفاده كنند و بى پرده بپا خیزند .</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">شهادت آیه الله حاج آقا مصطفى خمینى در 
+اول آبان 1356 و مراسـم پر شكـوهـى كه در ایران برگزار شـد نقطه آغازى بـر 
+خیزش دوباره حـوزه هاى علمیه و قیام جامعه مذهبى ایران بـود. <strong>امام خمینى</strong>
+ در همان زمان به گـونه اى شگفت ایـن واقعه را از الطـاف خفیه الهى نامیده 
+بـود. رژیـم شاه با درج مقاله اى توهیـن آمیز علیه امام در روزنامه اطلاعات
+ انتقام گرفت. اعتراض به ایـن مقاله, به قیام 19 دى مـاه قـم در سـال 56 
+منجـر شـد كه طــــى آن جمعى از طلاب انقلابـى به خـاك و خـون كشیـده 
+شـدنـد . شاه علیـرغم دست زدن به كشتارهاى جمعى نتـوانست شعله هاى افروخته 
+شـده را خامـوش كند .</p>
+<p style="text-align: justify;">او بسیج نطـامـى و جهاد مسلحـانه عمـومـى 
+را بعنــــوان تنها راه باقیمانـده در شرایط دست زدن آمریكا به كـودتاى 
+نظامـى ارزیابـى مى كرد .</p>
+
+
+
+
+<script>mihanblogPostLike('40','like')</script>                    
+</div>
+
+<div class="post-tags">
+<i class="glyphicon glyphicon-tag"></i>
+ برچسب ها:
+ <a href="http://www.mygam.ir/post/tag/%D8%B2%D9%86%D8%AF%DA%AF%DB%8C" > زندگی </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%A7%D9%85%D8%A7%D9%85%20%D8%AE%D9%85%DB%8C%D9%86%DB%8C" > امام خمینی </a> ، 
+</div>
+
+                              
+<div class="post-foot">
+<a href='http://www.mygam.ir/post/40'>ادامه مطلب</a></div>
+</div>
+                         
+</div>
+
+
+<!--- end comment box ---->
+
+
+
+<!---- end etc page --->
+
+
+</div>
+                    
+                    
+<!---------------------------------------------------- end mainpost ------------------------------------------------->
+
+<!---------------------------------------------------- end pagenavi -------------------------------------------------->
+
+ 
+
+
+
+
+
+
+
+<!-------------------- Start  news Cat box --------------------------------->
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش اول </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox1.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox2.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox3.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox4.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end one cat box --->
+
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش دوم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox11.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox12.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox13.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox14.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end two cat box --->
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش سوم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox21.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox22.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox23.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox24.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end three cat box --->
+
+
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش چهارم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox31.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox32.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox33.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox34.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end four cat box --->
+
+
+
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش پنجم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto1.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto2.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto3.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto4.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end file cat box --->
+
+<!-------------------- end  news Cat box --------------------------------->
+
+
+
+
+<div class="row">
+
+<div class="col-md-18 listbox">
+<div class="lb-title"><h3>  عنوان بخش فهرست اول   </h3></div>
+<div class="lbb">
+<ul>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+
+<div class="col-md-18 listbox">
+<div class="lb-title"><h3>  عنوان بخش فهرست دوم   </h3></div>
+<div class="lbb">
+<ul>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+</div>
+<!----- end seri 1 list boxs ------>
+
+
+<div class="row"><div class="gb-title"><h3>گالری تصاویر</h3></div></div>
+<div class="row gallbox">
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-5.jpg" target="_blank" title="تصاویر زیبا از طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-5.jpg" alt="تصاویر زیبا از طبیعت" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-6.jpg"_blank" title="طبیعت رویایی">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-6.jpg" alt="طبیعت رویایی" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-7.jpg" target="_blank" title="رنگین کمان در طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-7.jpg" alt="رنگین کمان در طبیعت" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="ساحل و دریا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="ساحل و دریا" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" target="_blank" title="عکس های زیبا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" alt="عکس های زیبا" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" target="_blank" title="غروب زیبای خورشید">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" alt="غروب زیبای خورشید" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/dream-amazing-nature-images.jpg" target="_blank" title="طبیعت زیبا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/dream-amazing-nature-images.jpg" alt="طبیعت زیبا" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-12.jpg" target="_blank" title="آبشار و طبیعت زیبا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-12.jpg" alt="آبشار و طبیعت زیبا" />
+</a>
+</div>
+
+
+</div>
+<!---- end gallery row ---->
+
+
+
+
+
+                    
+                    
+</div>
+<!--- end center column --->
+
+
+
+
+
+<div class="col-sm-18 col-md-8 col-md-pull-20">
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-user"></i>  درباره وبلاگ</h3>
+</div>
+<div class="menu-body">
+<center><img src="http://static.mihanblog.com//public/user_data/web_photo/559/1676450.jpg?5999"  /></center>
+ <br>
+وبلاگ بسیج ولایت بروزترین وبلاگ برای خواندن مطالب سیاسی ومذهبی بهترین وبلاگ برای دانلود تصاویر مذهبی.<br />
+<br />
+*ممنون از شما که این وبلاگ را انتخاب کردید*</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-folder-open"></i>موضوعات</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://www.mygam.ir/post/category/9">مذهبی&nbsp;(1)</a></li>
+<li><a href="http://www.mygam.ir/post/category/8">ورزشی&nbsp;(2)</a></li>
+<li><a href="http://www.mygam.ir/post/category/6">موضوعات سیاسی جهان&nbsp;(91)</a></li>
+<li><a href="http://www.mygam.ir/post/category/5">سخنان رهبر انقلاب&nbsp;(32)</a></li>
+<li><a href="http://www.mygam.ir/post/category/7">خبر های مهم ایران&nbsp;(230)</a></li>
+<li><a href="http://www.mygam.ir/post/category/4">بسیج&nbsp;(61)</a></li>
+<li><a href="http://www.mygam.ir/post/category/3">تصاویر مذهبی&nbsp;(1)</a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-list"></i>صفحات جانبی</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://www.mygam.ir/extrapage/ozv">نویسنده وبلاگ شوید</a></li>
+<li><a href="http://www.mygam.ir/extrapage/khabarnegar">خبرنگار ما باشید</a></li>
+<li><a href="http://www.mygam.ir/extrapage/tab">تبلیغات</a></li>
+<li><a href="http://www.mygam.ir/extrapage/profile">عکس پروفایل مذهبی</a></li>
+<li><a href="http://www.mygam.ir/extrapage/profil2">عکس پروفایل مذهبی2</a></li>
+<li><a href="http://www.mygam.ir/extrapage/profil3">عکس پروفایل مذهبی3</a></li>
+<li><a href="http://www.mygam.ir/extrapage/picture">تصاویر زیبا امام خامنه ای</a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-edit"></i> نویسندگان</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://www.mygam.ir/post/author/1392940" >
+<span>✔ (مدیر کل) علی خسروانی&nbsp;(325)</span></a></li>
+<li><a href="http://www.mygam.ir/post/author/1732190" >
+<span>نیما حمیدی&nbsp;(39)</span></a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-tags"></i>برچسب ها</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AC%D9%86%DA%AF">جنگ</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AA%D8%B1%D8%A7%D9%85%D9%BE">ترامپ</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AF%D9%81%D8%A7%D8%B9+%D9%85%D9%82%D8%AF%D8%B3">دفاع مقدس</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%DB%8C%D8%B9%D9%82%D9%88%D8%A8+%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C">سردار یعقوب سلیمانی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A7%D9%85%D8%A7%D9%85+%D8%AE%D8%A7%D9%85%D9%86%D9%87%E2%80%8C%D8%A7%DB%8C">امام خامنه‌ای</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D9%82%D8%A7%D8%B3%D9%85+%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C">قاسم سلیمانی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C">روحانی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AD%D8%B6%D8%B1%D8%AA+%D8%A2%DB%8C%D8%AA+%D8%A7%D9%84%D9%84%D9%87+%D8%AE%D8%A7%D9%85%D9%86%D9%87%E2%80%8C%D8%A7%DB%8C">حضرت آیت الله خامنه‌ای</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%DA%98%DB%8C%D9%85+%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C">رژیم صهیونیستی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A8%D8%B3%DB%8C%D8%AC">بسیج</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4+%D9%82%DB%8C%D9%85%D8%AA">افزایش قیمت</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%DB%8C%DB%8C%D8%B3+%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86+%D8%A8%D8%B3%DB%8C%D8%AC+%D9%85%D8%B3%D8%AA%D8%B6%D8%B9%D9%81%DB%8C%D9%86">رییس سازمان بسیج مستضعفین</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B2%D9%84%D8%B2%D9%84%D9%87">زلزله</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D9%BE%D8%A7%D9%87+%D9%BE%D8%A7%D8%B3%D8%AF%D8%A7%D8%B1%D8%A7%D9%86">سپاه پاسداران</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A8%D8%B3%DB%8C%D8%AC+%D9%88%D9%84%D8%A7%DB%8C%D8%AA">بسیج ولایت</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7">آمریکا</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%D9%87%D8%A8%D8%B1+%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8">رهبر انقلاب</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C">سردار سلیمانی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%D8%A6%DB%8C%D8%B3+%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86+%D8%A8%D8%B3%DB%8C%D8%AC+%D9%85%D8%B3%D8%AA%D8%B6%D8%B9%D9%81%DB%8C%D9%86">رئیس سازمان بسیج مستضعفین</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85">تلگرام</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B2%D9%84%D8%B2%D9%84%D9%87+%DA%A9%D8%B1%D9%85%D8%A7%D9%86%D8%B4%D8%A7%D9%87">زلزله کرمانشاه</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D9%85%D9%82%D8%A7%D9%85+%D9%85%D8%B9%D8%B8%D9%85+%D8%B1%D9%87%D8%A8%D8%B1%DB%8C">مقام معظم رهبری</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B2%D9%84%D8%B2%D9%84%D9%87+%D8%BA%D8%B1%D8%A8+%DA%A9%D8%B4%D9%88%D8%B1">زلزله غرب کشور</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%D8%BA%DB%8C%D8%A8+%D9%BE%D8%B1%D9%88%D8%B1">سردار غیب پرور</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AD%D8%B6%D8%B1%D8%AA+%D8%A2%DB%8C%D8%AA+%D8%A7%D9%84%D9%84%D9%87+%D8%AE%D8%A7%D9%85%D9%86%D9%87+%D8%A7%DB%8C">حضرت آیت الله خامنه ای</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86">ایران</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%D8%BA%D9%84%D8%A7%D9%85%D8%AD%D8%B3%DB%8C%D9%86+%D8%BA%DB%8C%D8%A8+%D9%BE%D8%B1%D9%88%D8%B1">سردار غلامحسین غیب پرور</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88">نتانیاهو</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A8%D8%B1%D8%AC%D8%A7%D9%85">برجام</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D9%85%D8%AD%D8%B1%D9%88%D9%85%DB%8C%D8%AA+%D8%B2%D8%AF%D8%A7%DB%8C%DB%8C">محرومیت زدایی</a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-calendar"></i>  آرشیو</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href='http://www.mygam.ir/post/archive/1399/6' title=' شهریور 1399(2)'> شهریور 1399</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1398/10' title=' دی 1398(9)'> دی 1398</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1398/3' title=' خرداد 1398(4)'> خرداد 1398</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1398/2' title=' اردیبهشت 1398(2)'> اردیبهشت 1398</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1398/1' title=' فروردین 1398(5)'> فروردین 1398</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/12' title=' اسفند 1397(3)'> اسفند 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/11' title=' بهمن 1397(3)'> بهمن 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/10' title=' دی 1397(6)'> دی 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/9' title=' آذر 1397(3)'> آذر 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/8' title=' آبان 1397(3)'> آبان 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/6' title=' شهریور 1397(2)'> شهریور 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/4' title=' تیر 1397(11)'> تیر 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/3' title=' خرداد 1397(70)'> خرداد 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/2' title=' اردیبهشت 1397(58)'> اردیبهشت 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/1' title=' فروردین 1397(51)'> فروردین 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1396/12' title=' اسفند 1396(31)'> اسفند 1396</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1396/11' title=' بهمن 1396(22)'> بهمن 1396</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1396/10' title=' دی 1396(1)'> دی 1396</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1396/9' title=' آذر 1396(2)'> آذر 1396</a></li>
+<li><a href="http://www.mygam.ir/post/archive"><b>لیست آرشیوها</b></a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+
+
+          
+<div class="menu">
+<div class="menu-title">
+<h3> <i class="glyphicon glyphicon-search"></i>جستجو</h3>
+</div>
+<div class="menu-body">
+<form id="frm-16079915445fd800f81fc67" method="get" action="http://www.mygam.ir/post/search/fid/16079915445fd800f81fc67"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+<form method="get" action="http://www.mygam.ir/#">
+<input type="text" name="search_text" id="search-text" value="" />
+<input type="submit" id="search-submit" value="جستجو" />
+</form>
+<input type="hidden" name="frm-id" value="16079915445fd800f81fc67" id="frm-id" /></form></div>
+</div>
+<!--- e menu --->
+
+          
+</div>
+<!--- end right column --->
+
+
+
+
+<div class="col-sm-18 col-md-8">
+          
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-align-justify"></i> تازه ترین مطالب</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a  href="http://www.mygam.ir/post/462">توزیع ۱۰۰۰ بسته معیشتی طی رزمایش کمک‌های مومنانه در کبودراهنگ</a></li>
+<li><a  href="http://www.mygam.ir/post/461">مروری بر وقایع روز تاسوعا/ مهلت از دشمن برای نماز و راز ونیاز</a></li>
+<li><a  href="http://www.mygam.ir/post/459"> فوری/تایید‌ وقوع انفجارهای متعدد در پایگاه هوایی عین الاسد در عراق</a></li>
+<li><a  href="http://www.mygam.ir/post/458">النجباء عراق: موشک‌ها و سلاح‌ها برای پاسخ به آمریکا آماده است</a></li>
+<li><a  href="http://www.mygam.ir/post/457">اولین تصویر و اخبار گزارش شده از پایگاه آمریکایی ‎عین الاسد نشان از گستردگی و حجم بالای آتش دارد</a></li>
+<li><a  href="http://www.mygam.ir/post/456">فوری/اولین ضربه حشد الشعبی عراق به آمریکا</a></li>
+<li><a  href="http://www.mygam.ir/post/455">سردار قاآنی : کمی صبر کنید و با چشمان خود بقایای اجساد شیطان بزرگ را در خاورمیانه خواهید دید</a></li>
+<li><a  href="http://www.mygam.ir/post/454">پوستر ویژه سایت رهبر انقلاب به‌مناسبت شهادت سپهبد قاسم سلیمانی</a></li>
+<li><a  href="http://www.mygam.ir/post/453">Statement by the National Security Council of the Islamic Republic of Iran(After the assassination of US President Sardar Qassim Suleimani(</a></li>
+<li><a  href="http://www.mygam.ir/post/452">بیانیه شورای امنیت ملی جمهوری اسلامی ایران(بعد از ترور سردار قاسم سلیمانی توسط آمریکا)</a></li>
+<li><a  href="http://www.mygam.ir/post/450">شهادت سردار رشید اسلام حاج قاسم سلیمانی </a></li>
+<li><a  href="http://www.mygam.ir/post/424">بنیاد فرهنگی روایت فتح علمدار عرصه هنر در انقلاب اسلامی است</a></li>
+<li><a  href="http://www.mygam.ir/post/423">محکومیت بازداشت دکتر مسعود سلیمانی توسط دولت آمریکا</a></li>
+<li><a  href="http://www.mygam.ir/post/422">مسئولان راه جوانان انقلابی را بند نیاورند</a></li>
+<li><a  href="http://www.mygam.ir/post/421">خواهان جنگ نیستیم ، اما مرد جنگیم</a></li>
+<li><a  href="http://www.mygam.ir/post/420">ناوهای آمریکا در منطقه تحت کنترل کامل ارتش و سپاه هستند</a></li>
+<li><a  href="http://www.mygam.ir/post/419">ارائه خدمات درمانی به بیش از 29732 نفر به مناطق سیل زده</a></li>
+<li><a  href="http://www.mygam.ir/post/418">تولید در کشور به هیچ وجه نباید متوقف شود</a></li>
+<li><a  href="http://www.mygam.ir/post/417">جای دزد و داروغه را عوض کرده اند</a></li>
+<li><a  href="http://www.mygam.ir/post/416">محرومیت زدایی اولویت نخست سپاه و بسیج</a></li>
+<li><a  href="http://www.mygam.ir/post/list"><b>لیست آخرین پست ها</b></a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-bookmark"></i> لینکهای روزانه</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://carpetcrm.ir/" title="http://carpetcrm.ir/" target="_blank">قالیشویی</a></li>
+<li><a href="http://salat313.loxblog.com" title="الصلاة" target="_blank">الصلاة</a></li>
+<li><a href="http://nimamovie.ir" title="دانلود فیلم و سریال بروز" target="_blank">نیما مووی</a></li>
+<li><a href="https://abnoosteam.ir/" title="سلام 
+لطفا ما را لینک کنید با تشکر   انجام پایان نامه" target="_blank">انجام پایان نامه</a></li>
+<li><a href="http://www.asayeshbartehran.com" title="عالی بود 
+لطفا از سایت ما هم دیدن نمایید. آسایش بار" target="_blank">آسایش بار</a></li>
+<li><a href="http://www.zarrinhoor.com/" title="سلام
+وبلاگی با محتوای جالبی دارید
+ما هم یه سایت مهندسی داریم که کلی پست جذاب و اختصاصی آماده کردیم(ترفندهای فتوشاپ، ویندوز، آندروید و... +آموزش های برنامه نویسی) که همشون رایگانه
+در کنارشم ممبر واقعی تلگرام برای فروش داریم
+ممنون میشیم بهمون سر بزنید و لینکمون رو تایید کنید.
+http://www.zarrinhoor.com/" target="_blank">مطالب علمی و برنامه نویسی و فروش ممبر</a></li>
+<li><a href="http://spssproje.mihanblog.com/" title="سلام ، وبلاگ من فقط وبلاگ علمی و تحقیق دانشجویی هست به دور از سیاست یا چیز دیگه ی ،لینک ما رو تایید کنید و لینک وبلاگ خود را جهت درج در وبلاگ ارسال فرمایید." target="_blank">پروژه دانشجویی  Spss</a></li>
+<li><a href="http://AMIN2002.mihanblog.com" title="" target="_blank">یک قدم تا قلم</a></li>
+<li><a href="http://hicharter.com/" title="" target="_blank">بلیط چارتر کیش</a></li>
+<li><a href="http://sevensharj.mihanblog.com/" title="" target="_blank">آنی سون</a></li>
+<li><a href="https://blithavapeyma.com" title="" target="_blank">بلیط هواپیما</a></li>
+<li><a href="https://facenama.com/signup/r:1291126" title="کسب درآمد از طریق تبلیغات کلیکی
+در معتبرترین سایت ایران
+با تنها چند کلیک  و ده دقیقه وقت روزانه درامدی فوق العاده داشته باشید
+همین حالا برای درامدی باورنکردنی بر روی لینک زیر کلیک کنید.
+https://facenama.com/signup/r:1291126" target="_blank">کسب درامد فوق العاده</a></li>
+<li><a href="https://nopardazco.com/pages/news" title="طراحی سایت خبری" target="_blank">طراحی سایت خبری</a></li>
+<li><a href="https://botgram.mobi/" title="ربات اینستاگرام با عضویت رایگان و اکانت 7 روز تست" target="_blank">افزایش فالوور اینستاگرام</a></li>
+<li><a href="http://uupload.ir" title="سلام ، وقتتون بخیر
+پیشنهاد میکنم برای آپلود فایل و عکس از سایت یو آپلود استفاده کنید.
+به صورت رایگان ، دائمی و سرعت بالا 
+لطفا لینک رو تایید کنید تا هم آدرس سایت رو داشته باشید و هم یه حمایتی بشه از ما
+خیلی ممنون" target="_blank">آپلود عکس</a></li>
+<li><a href="http://axtext.com" title="عکس پروفایل" target="_blank">عکس پروفایل</a></li>
+<li><a href="http://www.iran-new.ir/" title="ایران نیو" target="_blank">ایران نیو</a></li>
+<li><a href="http://www.azercharge.ir/home.php" title="سامانه آنلاین خرید شارژ مستقیم، خرید کارت شارژ، خرید وایمکس ایرانسل، پرداخت قبوض، پرداخت جرائم رانندگی، خرید گیفت کارت، خرید آنتی ویروس" target="_blank">خرید شارژ</a></li>
+<li><a href="http://moarefii.com/" title="قبول کنید و در سایت ما رایگان لینک شوید" target="_blank">معرفی </a></li>
+<li><a href="https://sainkala.com/news-technology" title="" target="_blank">اخبار تکنولوژی</a></li>
+<li><b><a href="http://www.mygam.ir/linkdaily/">همه لینکها</a></b></li>
+<li><b><a href="javascript:linkdailyForm()">ارسال لینک</a></b></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<!--- e menu --->
+
+
+
+
+		<form id="frm-16079915445fd800f820820" method="post" action="http://www.mygam.ir/poll/new/fid/16079915445fd800f820820/atrty/1607991544/avrvy/0/key/2480b78924398d0ed16763c97747ded8/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="373376" id="data[pollid]" />		
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-question-sign"></i> نظرسنجی</h3>
+</div>
+<div class="menu-body">
+بازدید کننده محترم: لطفاً نظر خود را راجع به این وبلاگ با انتخاب یکی از گزینه های زیر برای ما ارسال کنید. با تشکر<br>
+<label><input type="radio" name="data[answer]" value="v1">بسیار ضعیف</label><br>
+<label><input type="radio" name="data[answer]" value="v2">ضعیف</label><br>
+<label><input type="radio" name="data[answer]" value="v3">متوسط</label><br>
+<label><input type="radio" name="data[answer]" value="v4">خوب</label><br>
+<label><input type="radio" name="data[answer]" value="v5">بسیار خوب</label><br>
+<label><input type="radio" name="data[answer]" value="v6">عالی </label><br>
+<input type="submit" value="ارسال نظر"/>
+</div>
+</div>
+
+		<input type="hidden" name="frm-id" value="16079915445fd800f820820" id="frm-id" /></form><!--- e menu --->
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-stats"></i>آمار وبلاگ</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li>کل بازدید: <script>getStatVar('total_view');</script></li>
+<li>بازدید امروز : <script>getStatVar('today_view');</script></li>
+<li> بازدید دیروز :<script>getStatVar('yesterday_view');</script></li>
+<li> بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+<li> بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+<li> تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+<li> تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+<li> آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+<li> آخرین بروز رسانی : <script>getStatVar('modify_date');</script> </li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-cog"></i>ابزارک ها</h3>
+</div>
+<div class="menu-body">
+<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=mihanblog/fVge', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>برای عضویت در خبرنامه ایمیل خود را وارد کنید:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="mihanblog/fVge" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="ثبت ایمیل" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+
+
+<p align='center'><script type='text/javascript' src='http://cafe-webniaz.ir/abzar/link/linkcheshmak.js'></script></p>
+
+
+
+<script type="text/javascript"> window.$crisp=[];window.CRISP_WEBSITE_ID="376525b7-000c-4c7a-999f-9912c31c62b4";(function(){ d=document;s=d.createElement("script"); s.src="https://client.crisp.chat/l.js"; s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})(); </script>
+
+
+<a href="https://zarinp.al/@alikh2202"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/736ce4c9.jpg" alt="mygam.ir" /></a></div>
+</div>
+<!--- e menu --->
+
+
+
+
+
+
+
+          </div>
+<!--- end left column --->
+
+
+</div>
+<!--- end main content & menus bar  --->
+
+
+
+
+</div>
+</div>
+</div>
+<!-------- end mainpagebg --------->
+
+<div class="container-fluid btmbar">
+<div class="container">
+<div class="row">
+<div class="col-md-36">
+<div class="social">
+<div class="social-message">
+
+:: من را در شبکه های اجتماعی دنبال بکنید ::
+
+</div>
+<div class="social-box">
+<a href="http://www.mygam.ir/LINK_yahoo" title="ایمیل من" target="_blank"><i class="Social-yahoo"></i></a>
+<a href="http://www.mygam.ir/LINK_Telegram" title="تلگرام من" target="_blank"><i class="Social-telegram"></i></a>
+<a href="http://www.mygam.ir/LINK_Facebook" title="فیسبوک من" target="_blank"><i class="Social-facebook"></i></a>
+<a href="http://www.mygam.ir/LINK_Insta" title="اینستاگرام من" target="_blank"><i class="Social-instagram"></i></a>
+<a href="http://www.mygam.ir/LINK_Twitter" title="توییتر من" target="_blank"><i class="Social-twitter"></i></a>
+<a href="http://www.mygam.ir/LINK_Google" title="گوگل پلاس من" target="_blank"><i class="Social-google-plus"></i></a>
+<a href="http://www.mygam.ir/LINK_Youtube" title="کانال یوتیوب من" target="_blank"><i class="Social-youtube"></i></a>
+</div>                        
+</div>
+<div class="copyrights">
+
+تمامی حقوق مطالب سایت متعلق به وبلاگ بسیج ولایت می باشد
+
+</div>
+<div class="designer">
+طراحی و اجرا:<a href="http://sitesetup.ir">سایت ستاپ</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--- end footer --->
+
+
+<script>
+      var owl = $('.owl-carousel');
+      owl.owlCarousel({
+		loop: true,
+        nav: true,
+		autoplay: true,
+		autoplayTimeout:3000,
+		autoplayHoverPause:true,
+        lazyLoad: false,
+		animateOut: 'fadeOut',
+		margin: 10,
+        loop: true,
+		navText: [
+      "<i class='glyphicon glyphicon-menu-left'></i>",
+      "<i class='glyphicon glyphicon-menu-right'></i>"
+    ],
+		responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:1,
+            nav:true
+        },
+        1000:{
+            items:1,
+            nav:true,
+            loop:true
+        	}
+    	}
+      })
+	  
+    </script>
+	
+	
+
+	
+</body>
+</html>
+
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'mygam.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.targetedwebtraffic.com" target="_blank">Buy Website Traffic</a> | <a href="https://www.seo25.com" target="_blank">Buy Targeted Website Traffic</a>
+    </div>
+</center>

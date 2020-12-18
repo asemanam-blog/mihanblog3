@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc%3Frsd.html" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1799771*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[311]='1';commentCnt[312]='3';commentCnt[313]='2';commentCnt[315]='4';commentCnt[316]='2';commentCnt[317]='12';commentCnt[319]='6';commentCnt[321]='2';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[311]='1';
+mihanblogDisLikeArrCnt[311]='0';
+mihanblogLikeArrCnt[312]='1';
+mihanblogDisLikeArrCnt[312]='0';
+mihanblogLikeArrCnt[313]='0';
+mihanblogDisLikeArrCnt[313]='0';
+mihanblogLikeArrCnt[315]='0';
+mihanblogDisLikeArrCnt[315]='0';
+mihanblogLikeArrCnt[316]='0';
+mihanblogDisLikeArrCnt[316]='0';
+mihanblogLikeArrCnt[317]='0';
+mihanblogDisLikeArrCnt[317]='0';
+mihanblogLikeArrCnt[319]='0';
+mihanblogDisLikeArrCnt[319]='0';
+mihanblogLikeArrCnt[321]='1';
+mihanblogDisLikeArrCnt[321]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://maryambehzadian.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://maryambehzadian.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','381');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','سه شنبه 25 آذر 1399');
+	
+	setStatVar('today_view','2432');
+	setStatVar('yesterday_view','48');
+	
+	setStatVar('this_month_view','4476');
+	setStatVar('last_month_view','2346');
+
+	setStatVar('total_view','221932');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (21:28)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://maryambehzadian.mihanblog.com/statupdate/?data[refereruri]=http://maryambehzadian.mihanblog.com/post/category/3/page/10&data[postid]=&data[requesturi]=/post/category/3/page/14&data[sdate]=1608227998&data[hash]=c496779f8dcc201ab944f3c1b9db4d95&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://maryambehzadian.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://maryambehzadian.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+<head>
+
+<!-- Designed Theme By : www.tempkade.ir -->
+
+<title>(my lonely room) - مطالب احساسی</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="robots" content="index, follow" />
+<meta name="author" content="|STRONG| ">
+<link rel="index" title="(my lonely room)" href="../../../../index.html"/>
+<meta name="description" content=",(my lonely room) - مطالب احساسی,(my lonely room)">
+<meta name="keywords" content="مطالب زیبا,(my lonely room) - مطالب احساسی,(my lonely room)">
+<link rel="alternate" type="application/rss+xml" title="(my lonely room)" href="../../../rss/index.html" />
+<link rel="stylesheet" href="http://up.tempkade.ir/themes/fonts/fontawesome.css" type="text/css">
+<link rel="stylesheet" href="http://up.tempkade.ir/themes/fonts/font-silicon.css" type="text/css">
+
+<style>
+body{font-family:Tahoma;font-size:8pt;background:#FFFFFF url('http://dl.akskhor.ir/uploads1/bg14.gif');}
+#tempkade{direction:rtl;width:980px;}
+h1,h2,h3,h4,h5,h6{margin:0px;padding:0px;font:inherit;color:inherit;}
+#blogseo{display:none;}
+a{color:#000000;text-decoration:none;}
+a:hover{color:#FF0831;font-weight:none;font-style:none;text-decoration:none;}
+.li-block{padding:3px 13px 5px 5px;background:url('http://up.tempkade.ir/themes/images/li.png')100% 5px no-repeat;}
+#headerbar{float:right;width:100%;overflow:hidden;}
+#header{width:700px;height:600px;background:#FFFFFF url('http://dl.akskhor.ir/uploads1/d4b209b343107c8db5036fb37b937a9f_12bb6.jpg')no-repeat center;border-top:4px dashed #000000;border-right:2px dashed #000000;border-bottom:4px dashed #000000;border-left:2px dashed #000000;border-radius:0px 0px 0px 0px;margin-top:0px;margin-bottom:8px;overflow:hidden;}
+.blogtitle{margin:150px 0px 0px 0px;font-size:12pt;color:#FFFFFF;font-weight:bold;text-align:center;}
+.description{margin:10px 0px 0px 0px;font-size:8pt;color:#FFFFFF;text-align:center;}
+#menubar{float:right;width:100%;overflow:hidden;}
+#back-menu{width:800px;padding:3px;background:#FFFFFF;border-top:4px dashed #000000;border-right:2px dashed #000000;border-bottom:4px dashed #000000;border-left:2px dashed #000000;border-radius:0px 0px 0px 0px;margin-top:5px;margin-bottom:5px;overflow:hidden;}
+.c-menu{padding:8px;font-size:8pt;color:#000000;text-align:center;}
+.c-menu a{margin:2px;padding:5px 3px 5px 3px;color:#000000;font-weight:bold;transition-duration:0.5s;}
+.c-menu a:hover{background:#000000;color:#FFFFFC;border-radius:6px;text-decoration:none;}
+#postbar{float:right;width:540px;overflow:hidden;}
+.block-post{width:500px;background:#FFFFFF;border-top:4px dashed #000000;border-right:2px dashed #000000;border-bottom:4px dashed #000000;border-left:2px dashed #000000;border-radius:0px 0px 0px 0px;padding:10px 10px 25px 10px;margin-top:8px;margin-bottom:25px;overflow:hidden;}
+.top-post{padding:8px 30px 17px 0px;font-family:Mj_Silicon,Tahoma !important;font-size:8pt;color:#000000;text-align:right;border-bottom:2px dashed #000000;border-radius:0px;margin-bottom:15px;}
+.top-post a{color:#000000;}
+.top-post a:hover{color:#FF050D;}
+.icon-post{float:left;font-size:20px !important;color:#030303;margin:0px 0px 0px 20px;}
+.c-post{width:100%;font-size:8pt;color:#000000;text-align:right;overflow:hidden;}
+.c-post a{color:#000000;}
+.c-post a:hover{color:#FF0831;}
+.date-post{width:100%;margin:15px 0px 0px 0px;font-size:8pt;color:#000000;text-align:center;}
+.date-post a{color:#000000;}
+.date-post a:hover{color:#FF0831;}
+.c-post img,.c-side img{max-width:100%;height:auto;}
+.pagination{direction:ltr;font-size:8pt;text-align:center;}
+.pagination a{display:inline-block;padding:6px;padding-top:3px;padding-bottom:3px;margin:2px;background:#FFFFFF;color:#000000;border:2px dashed #000000;border-radius:0px;text-decoration:none;}
+.pagination a:hover{background:#050505;color:#FFFFFF;border-color:#FFFFFF;}
+.pagination .current,.pagination_current,pagination a.current{display:inline-block;padding:6px;padding-top:3px;padding-bottom:3px;margin:2px;background:#FFFFFF;color:#000000;border:2px dashed #000000;border-radius:0px;font-weight:bold;}
+table tr td{font-size:8pt;color:#000000;padding:3px 0px 3px 0px;}
+#sidebar{float:right;width:220px;overflow:hidden;}
+.block-side{width:180px;background:#FFFFFF;border-top:4px dashed #000000;border-right:2px dashed #000000;border-bottom:4px dashed #000000;border-left:2px dashed #000000;border-radius:0px 0px 0px 0px;padding:10px 8px 35px 8px;margin-top:8px;margin-bottom:25px;overflow:hidden;}
+.top-side{padding:8px 15px 17px 0px;font-family:Mj_Silicon,Tahoma !important;font-size:8pt;color:#141414;text-align:right;border-bottom:2px dashed #000000;border-radius:0px;margin-bottom:15px;}
+.icon-side{float:left;font-size:20px !important;color:#050505;margin:0px 0px 0px 15px;}
+.c-side{font-size:8pt;color:#000000;text-align:right;overflow:hidden;}
+.c-side a{color:#000000;}
+.c-side a:hover{color:#FF1249;}
+#footerbar{float:right;width:100%;overflow:hidden;}
+.footer{width:530px;padding:15px 10px 15px 10px;background:#FFFFFF;border-top:4px dashed #000000;border-right:2px dashed #000000;border-bottom:4px dashed #000000;border-left:2px dashed #000000;border-radius:0px 0px 0px 0px;margin-top:10px;margin-bottom:10px;overflow:hidden;}
+.c-footer{font-size:8pt;color:#000000;text-align:center;}
+.c-footer a{color:#080808;}
+.c-footer a:hover{color:#FF122A;}
+.like-post{margin:4px 0px 5px 0px;text-align:center;}
+.post-comment{width:95%;background:#232323;padding:8px;margin:2px 0px 8px 0px;border:1px solid #CDCDCD;border-radius:5px;font-size:8pt;color:#fff;text-align:right;overflow:hidden;}
+.top-comment{float:right;width:100%;padding:1px 0px 10px 0px;margin:0px 0px 8px 0px;border-bottom:1px solid #fff;}
+.name-comment{float:right;font-size:8pt;color:#fff;}
+.name-comment a{color:#fff;}
+.name-comment a:hover{color:#ff0000;}
+.date-comment{float:left;padding:2px 0px 0px 0px;font-size:7pt;color:#fff;}
+.body-comment{font-size:8pt;color:#fff;}
+.reply-comment{background:#fff;padding:5px;margin:10px 0px 0px 0px;border-radius:3px;font-size:8pt;color:#000;text-align:right;}
+.reply-commentname{margin:0px 5px 5px 0px;color:#ff0000;}
+.web-comment{float:left;padding:10px 0px 3px 3px;font-size:8pt;color:#fff;}
+.web-comment a{color:#fff;}
+.web-comment a:hover{color:#ff0000;}
+
+@media screen and (max-width:980px){#tempkade{width:100%;}
+#headerbar,#menubar,#postbar,#sidebar,#footerbar{float:none;width:100%;}
+#header,#back-menu,.block-post,.block-side,.footer{width:93%;}
+.c-menu{font-size:7pt;}
+.c-menu a{margin:0px;}
+.block-post img,.block-side img{max-width:94%;max-height:auto;}
+#header{max-width:100%;background-size:100%;}}
+</style>
+
+<div id="blogseo">
+<h1>(my lonely room) - مطالب احساسی</h1>
+<h6></h6>
+<h6>مطالب زیبا</h6>
+</div>
+
+<!-- Designed Theme By : www.tempkade.ir -->
+
+</head>
+<body>
+
+<div align="center"><div id="tempkade">
+
+<div id="headerbar">
+<div id="header">
+<div class="blogtitle"><h6>(my lonely room)</h6></div>
+<div class="description"><h6></h6></div>
+</div></div>
+
+<div id="menubar">
+<div id="back-menu"><div class="c-menu">
+<a title="صفحه اصلی سایت" href="../../../../index.html">Hσмє</a> ** 
+<a title="تماس با ما" href="javascript:messageForm()">Cᴏɴᴛᴀᴄᴛ Us</a> ** 
+<a title="ایمیل مدیر" href="mailto:maryam.behzadian@yahoo.com">A∂мιη ємαιℓ</a> ** 
+<a title="نسخه موبایل" href="http://maryambehzadian.mihanblog.com/m/" target="_blank">Mσвιℓє νєяѕιση</a> ** 
+<a title="تمپ کده دات آی آر" href="http://www.tempkade.ir/" target="_blank" rel="nofollow">Tємρℓαтє cσ∂єc</a> ** 
+<a title="قالب ساز آنلاین" href="http://www.tempkade.ir" target="_blank" rel="nofollow"> Dᴇsɪɢɴᴇʀ</a>
+</div></div></div>
+
+<div id="sidebar">
+
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-info-circle"></i><h4>درباره سایت</h4></div>
+<div class="c-side">
+<p align="center"><img src="http://static.mihanblog.com//public/user_data/web_photo/600/1799771.jpg?4091"  /></p>
+<h5></h5>
+<div class="li-block"><h5>مدیر سایت : <a title="|STRONG| " href="../../../author/1485816.html">|STRONG| </a></h5></div>
+</div></div>
+
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-pencil-square-o"></i><h4>نویسندگان</h4></div>
+<div class="c-side">
+<div class="li-block"><h5> <a href="../../../author/1485816.html"><img src="http://static.mihanblog.com//public/user_data/user_photo/496/1485816.jpg" style="width:16px;" /></a> <a title="درباره من :  |Oηℓу Gσ∂ Cαη Jυ∂gє Mє|" href="../../../author/1485816.html">|STRONG|  ، 381</a></h5></div>
+</div></div>
+
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-archive"></i><h4>آرشیو مطالب</h4></div>
+<div class="c-side">
+<div class="li-block"><h5><a title="1 مطلب" href="../../../archive/1399/9.html"> آذر 1399</a></h5></div>
+<div class="li-block"><h5><a title="2 مطلب" href="../../../archive/1399/8.html"> آبان 1399</a></h5></div>
+<div class="li-block"><h5><a title="2 مطلب" href="../../../archive/1399/7.html"> مهر 1399</a></h5></div>
+<div class="li-block"><h5><a title="1 مطلب" href="../../../archive/1399/6.html"> شهریور 1399</a></h5></div>
+<div class="li-block"><h5><a title="1 مطلب" href="../../../archive/1397/5.html"> مرداد 1397</a></h5></div>
+<div class="li-block"><h5><a title="1 مطلب" href="../../../archive/1397/4.html"> تیر 1397</a></h5></div>
+<div class="li-block"><h5><a title="آرشیو کامل مطالب" href="../../../archive.html">آرشیو کامل مطالب</a></h5></div>
+</div></div>
+
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-list"></i><h4>موضوعات</h4></div>
+<div class="c-side">
+<div class="li-block"><h3><a title="274 پست" href="../../4.html">اجتماعی</a></h3></div>
+<div class="li-block"><h3><a title="273 پست" href="../../3.html">احساسی</a></h3></div>
+<div class="li-block"><h3><a title="272 پست" href="../../2.html">هنری</a></h3></div>
+<div class="li-block"><h3><a title="252 پست" href="../../1.html">فرهنگی</a></h3></div>
+</div></div>
+
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-link"></i><h4>لینک دوستان</h4></div>
+<div class="c-side">
+<div class="li-block"><a title="مرجع بزرگ قالب وبلاگ ، قالب ساز آنلاین وبلاگ" href="http://www.tempkade.ir/" target="_blank">قالب وبلاگ</a></div>
+<div class="li-block"><a title="مرجع مطالب ، داستان ، رمان عاشقانه" href="http://www.lovekade.com/" target="_blank" rel="nofollow">سایت عاشقانه</a></div>
+<div class="li-block"><a title="متفاوت ترین مرجع عاشقانه" href="http://forum.lovekade.com/" target="_blank" rel="nofollow">انجمن عاشقانه</a></div>
+<div class="li-block"><a title="" href="http://seigakuelovers.mihanblog.com/#" target="_blank">seigakuelovers</a></div>
+<div class="li-block"><a title="" href="http://parnia1.mihanblog.com/" target="_blank">♩♫Mind Of Mine♩♫</a></div>
+<div class="li-block"><a title="" href="http://storyk.mihanblog.com/" target="_blank">※Kιαηтσяу※</a></div>
+<div class="li-block"><a title="" href="http://zendeghimon-ghese-nist.mihanblog.com/" target="_blank">زندگیمون قصه نیست و نبود</a></div>
+<div class="li-block"><a title="" href="http://www.artadokht17.mihanblog.com" target="_blank">!Unknown</a></div>
+<div class="li-block"><a title="آرشیو کامل پیوندها" href="../../../../link/index.html">آرشیو کامل پیوندها</a></div>
+</div></div>
+
+</div>
+
+<div id="postbar">
+
+<form id="frm-16082248935fdb907d26ffb" method="get" action="http://maryambehzadian.mihanblog.com/post/search/fid/16082248935fdb907d26ffb"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-search"></i><h2>جستجوگر سایت</h2></div>
+<div style="text-align:center;" class="c-post">
+<input style="width:250px;" name="search_text" type="text">
+<input value="جست و جو" type="submit">
+</div></div>
+<input type="hidden" name="frm-id" value="16082248935fdb907d26ffb" id="frm-id" /></form>
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-pencil-square-o"></i><h2><a title="#رفاقت" alt="#رفاقت" href="../../../321.html">#رفاقت</a></h2></div>
+<div class="c-post">
+<p></p>
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><br><div align="center"><font size="2"><b>زندگی با همه تلخیاش یه درس خوب بهم داد<br>
+اونم اینه که رفیق اونی نیست که باهاش خوشی،<br>
+رفیق اونیه که بدون اون داغونی !<br><br></b></font><br><font size="2"><b><img class="size-full wp-image-15149 aligncenter" title="عکس و متن زیبا در مورد دوست : جملکس های زیبا با موضوع دوستی / سخنان بزرگان" src="http://netangel.ir/wp-content/uploads/2016/08/toptoop.ir%D8%B9%DA%A9%D8%B3-%D9%87%D8%A7%DB%8C-%D9%86%D9%88%D8%B4%D8%AA%D9%87-%D8%AF%D8%A7%D8%B1-%D8%B1%D9%81%D8%A7%D9%82%D8%AA%DB%8C.jpg" alt="عکس و متن زیبا در مورد دوست : جملکس های زیبا با موضوع دوستی / سخنان بزرگان" height="400" width="450"><br>ی دنیا دوست های خوب محدودن<br>
+ولی دوستایِ خوب ، دنیایِ نامحدودن</b></font></div>
+
+<p><b></b></p>
+<div class="like-post"><script>mihanblogPostLike('321','like')</script></div>
+<div class="li-block">موضوعات: <a title="اجتماعی" href="../../4.html">اجتماعی</a> ، <a title="احساسی" href="../../3.html">احساسی</a> ، <a title="هنری" href="../../2.html">هنری</a> ، <a title="فرهنگی" href="../../1.html">فرهنگی</a> ، </div>
+<div class="li-block">برچسب ها: <a title="رفاقت" href="../../../tag/رفاقت.html" >رفاقت</a> ، <a title="توش" href="../../../tag/توش.html" >توش</a> ، <a title="دور" href="../../../tag/دور.html" >دور</a> ، <a title="زدن" href="../../../tag/زدن.html" >زدن</a> ، <a title="نداره" href="../../../tag/نداره.html" >نداره</a> ، </div>
+</div>
+<div class="date-post">[ شنبه 13 خرداد 1396 ] [ 03:30 ب.ظ ] [ <a title="|STRONG| " href="../../../author/1485816.html">|STRONG| </a> ] [ <a target="_self" href="javascript:newComment(321)" >نظرات (<script>setCommentCnt(321)</script>)</a> ]</div></div>
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-pencil-square-o"></i><h2><a title="#انسانیت" alt="#انسانیت" href="../../../319.html">#انسانیت</a></h2></div>
+<div class="c-post">
+<p></p>
+
+<span style="color: #f0f0f0;"></span><p style="text-align: center;"><font size="2"><b>یکی ازمعدود آدمهایی که واژه‌ی انسانیت برازندشونه</b></font></p><p style="text-align: center;"><font size="2"><b>کسایی هستند که میدونند ممکنه محبتشون جبران نشه</b></font></p><p style="text-align: center;"><font size="2"><b>ولی بازم محبت میکنند<img src="http://mihanblog.com/public/public/rte/images_new/smiles/8.gif"><br></b></font></p><p style="text-align: center;"><img src="http://photos02.wisgoon.com/media/pin/images/o/2015/6/4/12/1433404386217406.jpg" border="0"></p><p style="text-align: center;"><br></p><p style="text-align: center;"><b><font size="3">یادمان باشد دنیا زنگ بعد نیست زنگ بعد <font color="#FF0000">حساب</font> داریم!!</font></b><br><font size="2"><b></b></font></p>
+
+
+
+
+<p><b></b></p>
+<div class="like-post"><script>mihanblogPostLike('319','like')</script></div>
+<div class="li-block">موضوعات: <a title="اجتماعی" href="../../4.html">اجتماعی</a> ، <a title="احساسی" href="../../3.html">احساسی</a> ، <a title="هنری" href="../../2.html">هنری</a> ، <a title="فرهنگی" href="../../1.html">فرهنگی</a> ، </div>
+<div class="li-block">برچسب ها: <a title="انسانیت" href="../../../tag/انسانیت.html" >انسانیت</a> ، <a title="مهم ترین" href="../../../tag/مهم&#32;ترین.html" >مهم ترین</a> ، <a title="اصل" href="../../../tag/اصل.html" >اصل</a> ، <a title="زندگی" href="../../../tag/زندگی.html" >زندگی</a> ، <a title="است" href="../../../tag/است.html" >است</a> ، </div>
+</div>
+<div class="date-post">[ چهارشنبه 10 خرداد 1396 ] [ 04:35 ب.ظ ] [ <a title="|STRONG| " href="../../../author/1485816.html">|STRONG| </a> ] [ <a target="_self" href="javascript:newComment(319)" >نظرات (<script>setCommentCnt(319)</script>)</a> ]</div></div>
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-pencil-square-o"></i><h2><a title="#خدا جونم شکرت" alt="#خدا جونم شکرت" href="../../../317.html">#خدا جونم شکرت</a></h2></div>
+<div class="c-post">
+<p></p>
+<div align="center"><br><font size="1"><b><span style="font-size: large;"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://toptoop.ir/files/music/85/86/88/toptoop.ir%20%283%29.jpg" alt="تصاویر خدایا شکرت" width="400" height="400"><br>وقتی ظرف میشویی، خدا را شکر</span><br><span style="font-size: large;">کن...!</span><br><span style="font-size: large;">شکر کن،</span><br><span style="font-size: large;">به خاطر اینکه ظرف‌هایی داری که</span><br><span style="font-size: large;">بشویی...</span><br><span style="font-size: large;">یعنی غذایی در کار بوده...</span><br><span style="font-size: large;">یعنی کسی را سیر کردی...</span><br><span style="font-size: large;">یعنی با محبت، با عشق از یکی دو نفر مراقبت کردی...</span><br><span style="font-size: large;">برایشان آشپزی کرده‌ای...</span><br><span style="font-size: large;">میز چیده‌ای...</span><br><br><span style="font-size: large;">تصور کن چند میلیون نفر در این لحظه ظرفی برای شستن ندارند...</span><br><span style="font-size: large;">یا کسی را ندارند که برایش میز بچینند...</span></b></font></div>
+
+
+<p><b></b></p>
+<div class="like-post"><script>mihanblogPostLike('317','like')</script></div>
+<div class="li-block">موضوعات: <a title="اجتماعی" href="../../4.html">اجتماعی</a> ، <a title="احساسی" href="../../3.html">احساسی</a> ، <a title="هنری" href="../../2.html">هنری</a> ، <a title="فرهنگی" href="../../1.html">فرهنگی</a> ، </div>
+<div class="li-block">برچسب ها: <a title="خدا" href="../../../tag/خدا.html" >خدا</a> ، <a title="جونم" href="../../../tag/جونم.html" >جونم</a> ، <a title="شکرت" href="../../../tag/شکرت.html" >شکرت</a> ، <a title="هزار بار" href="../../../tag/هزار&#32;بار.html" >هزار بار</a> ، </div>
+</div>
+<div class="date-post">[ دوشنبه 8 خرداد 1396 ] [ 04:04 ب.ظ ] [ <a title="|STRONG| " href="../../../author/1485816.html">|STRONG| </a> ] [ <a target="_self" href="javascript:newComment(317)" >نظرات (<script>setCommentCnt(317)</script>)</a> ]</div></div>
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-pencil-square-o"></i><h2><a title="#باران" alt="#باران" href="../../../316.html">#باران</a></h2></div>
+<div class="c-post">
+<p></p>
+<p style="text-align: center;"><br><img style="width: 400px; height: 245px;" title="متن درباره زندگی , جملات قصار در مورد زندگی " src="http://www.beytoote.com/images/stories/fun/fu8369.jpg" alt="عکس های زیبا و دیدنی , متن آموزنده"></p><p style="text-align: center;"><font size="2"><b><br></b></font></p><p style="text-align: center;"><font size="2"><b>آسمان ابریست<br>اما انگار بغض اش نمیشکند تاببارد<br>ای خدا چشم هایم رو به اسمان است<br>میخواهم چشم هایم را<br>فرشته ها<br>با قطراتی از جنس مروارید نوازش کنند<br>ای خدا دوباره بوی تو همین حوالیاست <br>دوباره حس بودنت کنار ماست<br>بزار که اسمون تو بباره<br>دوباره عشق تو واسم بیاره</b></font></p>
+
+
+<p><b></b></p>
+<div class="like-post"><script>mihanblogPostLike('316','like')</script></div>
+<div class="li-block">موضوعات: <a title="اجتماعی" href="../../4.html">اجتماعی</a> ، <a title="احساسی" href="../../3.html">احساسی</a> ، <a title="فرهنگی" href="../../1.html">فرهنگی</a> ، <a title="هنری" href="../../2.html">هنری</a> ، </div>
+<div class="li-block">برچسب ها: <a title="باران" href="../../../tag/باران.html" >باران</a> ، <a title="بباره" href="../../../tag/بباره.html" >بباره</a> ، </div>
+</div>
+<div class="date-post">[ یکشنبه 7 خرداد 1396 ] [ 03:51 ب.ظ ] [ <a title="|STRONG| " href="../../../author/1485816.html">|STRONG| </a> ] [ <a target="_self" href="javascript:newComment(316)" >نظرات (<script>setCommentCnt(316)</script>)</a> ]</div></div>
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-pencil-square-o"></i><h2><a title="#رمضان" alt="#رمضان" href="../../../315.html">#رمضان</a></h2></div>
+<div class="c-post">
+<p></p>
+<div style="direction: rtl;" align="center"><br><b><font size="2">اولی :امسال روزه می گیری؟<br>دومی :آره اگه خدا بخواد…<br>اولی :منم میگیرم ولی آخه کدوم پزشکی این همه سختی رو برای بدن تایید میکنه؟<br>دومی :همونی که وقتی همه پزشکا جوابت کردن برات معجزه میکنه …<br><br></font></b><img style="width: 350px; height: 263px;" title="متن تبریک ماه رمضان, پیامک ماه رمضان" src="http://www.beytoote.com/images/stories/fun/fu5110.jpg" alt="متن تبریک ماه رمضان, پیامک ماه رمضان"><br><br><b><font size="2"></font></b><br><br><b><font size="2">ی 4 ساعت دیگه افطارع و هممون میریم سر سفره ی مهمونی خدا جوون♥♥<br>فقط یادمون نره و حواسمون باشع که دعا واسه همه بکنیم..<br>دعا کنیم مریضا خوب بشن یتیما بخندن پدر و مادرا سلامت باشن و جیبا پر پول باشع.♥♥<br>من که خیلی هیجان دارم واسه اولین دعایی که قراره بکنم☺<br><br></font></b><br><img class="aligncenter size-full wp-image-2071 no-display appear" src="http://www.matilda.ir/wp-content/uploads/2014/07/128520-f7368a4966741748186d3ffc978ca225-l.jpg" alt="128520-f7368a4966741748186d3ffc978ca225-l" height="534" width="475"></div>
+
+
+<p><b></b></p>
+<div class="like-post"><script>mihanblogPostLike('315','like')</script></div>
+<div class="li-block">موضوعات: <a title="اجتماعی" href="../../4.html">اجتماعی</a> ، <a title="هنری" href="../../2.html">هنری</a> ، <a title="احساسی" href="../../3.html">احساسی</a> ، <a title="فرهنگی" href="../../1.html">فرهنگی</a> ، </div>
+<div class="li-block">برچسب ها: <a title="ماه" href="../../../tag/ماه.html" >ماه</a> ، <a title="رمضان" href="../../../tag/رمضان.html" >رمضان</a> ، <a title="میهمانی" href="../../../tag/میهمانی.html" >میهمانی</a> ، <a title="خدا" href="../../../tag/خدا.html" >خدا</a> ، </div>
+</div>
+<div class="date-post">[ شنبه 6 خرداد 1396 ] [ 02:19 ب.ظ ] [ <a title="|STRONG| " href="../../../author/1485816.html">|STRONG| </a> ] [ <a target="_self" href="javascript:newComment(315)" >نظرات (<script>setCommentCnt(315)</script>)</a> ]</div></div>
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-pencil-square-o"></i><h2><a title="#پنــــــــــــــــجره" alt="#پنــــــــــــــــجره" href="../../../313.html">#پنــــــــــــــــجره</a></h2></div>
+<div class="c-post">
+<p></p>
+
+<div align="center"><br><font size="2"><b><img src="http://javanemrooz.com/_Files/_Public/news2/pan3.jpg" alt="" height="307" width="478"><br><br>آدما مثه پنجره هایی با شیشه های رنگی‌اند<br>
+وقتی آفتاب می تابه برق می‌زنن و می‌درخشن<br>
+اما وقتی تاریکی سایه می‌ندازه اونا خاموش میشن،<br>&nbsp;زیبایی حقیقی اونا فقط در صورتی<br>مشخص می‌شه که ی نوری تو خودشون داشته باشن .<br><br></b></font><img alt="پنجره" src="http://ehsan71.persiangig.com/window.jpg" hspace="0" height="249" align="bottom" border="0" width="500"><br><font size="2"><b><br><br>ﺩﺭ ﮐﺘﺎﺏ ﺧﺎﻃﺮﺍﺕ ﻧﻠﺴﻮﻥ ﻣﺎﻧﺪﻻ‌ ﺁﻣﺪﻩ:<br>
+ﻓﺮﻕ ﻣﻦ ﻭ ﺯﻧﺪﺍﻧﺒﺎﻧﻢ ﺭﺍ ﻣﯿﺪﺍﻧﯽ؟<br>
+ﺯﻣﺎﻧﯽ ﮐﻪ ﭘﻨﺠﺮﻩ ﮐﻮﭼﮏ ﺳﻠﻮﻟﻢ ﺭﺍ ﺑﺎﺯ ﻣﯽ ﮐﻨﺪ،<br>
+ﺍﻭ ﺗﺎﺭﯾﮑﯽ ﻭ ﻏﻢ ﺭﺍ ﻣﯽ ﺑﯿﻨﺪ،<br>
+ﻭ ﻣﻦ ﺭﻭﺷﻨﺎﯾﯽ ﻭ ﺍﻣﯿﺪ ﺭﺍ…</b></font></div>
+
+<p><b></b></p>
+<div class="like-post"><script>mihanblogPostLike('313','like')</script></div>
+<div class="li-block">موضوعات: <a title="اجتماعی" href="../../4.html">اجتماعی</a> ، <a title="احساسی" href="../../3.html">احساسی</a> ، <a title="هنری" href="../../2.html">هنری</a> ، <a title="فرهنگی" href="../../1.html">فرهنگی</a> ، </div>
+<div class="li-block">برچسب ها: <a title="آدم ها" href="../../../tag/آدم&#32;ها.html" >آدم ها</a> ، <a title="پنجره" href="../../../tag/پنجره.html" >پنجره</a> ، <a title="نلسون" href="../../../tag/نلسون.html" >نلسون</a> ، <a title="زندانبان" href="../../../tag/زندانبان.html" >زندانبان</a> ، <a title="نور" href="../../../tag/نور.html" >نور</a> ، <a title="غم" href="../../../tag/غم.html" >غم</a> ، <a title="تاریکی" href="../../../tag/تاریکی.html" >تاریکی</a> ، </div>
+</div>
+<div class="date-post">[ پنجشنبه 4 خرداد 1396 ] [ 02:22 ب.ظ ] [ <a title="|STRONG| " href="../../../author/1485816.html">|STRONG| </a> ] [ <a target="_self" href="javascript:newComment(313)" >نظرات (<script>setCommentCnt(313)</script>)</a> ]</div></div>
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-pencil-square-o"></i><h2><a title="قـــــطـره هـــای کــــوچـک آب..." alt="قـــــطـره هـــای کــــوچـک آب..." href="../../../312.html">قـــــطـره هـــای کــــوچـک آب...</a></h2></div>
+<div class="c-post">
+<p></p>
+<div align="center"><br><b><font size="3"><img class="alignnone wp-image-169323 size-full" src="http://www.faranaz.com/wp-content/uploads/2014/08/Emotional-and-romantic-images-of-pure9.jpg" title="تصاویر احساسی و عاشقانه ناب" alt="تصاویر احساسی و عاشقانه ناب" height="663" width="500"><br><br>قـــــطـره هـــای کــــوچـک آب<br>
+اقـــــیـانــــوس بــــزرگ را مـــی ســازنـــد<br>
+دانـــــه هـــای کــــوچــک شـــن<br>
+ســــاحــل زیــــبـا را . . .<br>
+لـــــحـظه هـــای کـــــوتاه<br>
+شـــــایـــد بـــی ارزش بــــه نــــظـر بــــرســـنـد ، اما …</font></b></div><p><b></b></p>
+<div class="like-post"><script>mihanblogPostLike('312','like')</script></div>
+<div class="li-block">موضوعات: <a title="اجتماعی" href="../../4.html">اجتماعی</a> ، <a title="هنری" href="../../2.html">هنری</a> ، <a title="فرهنگی" href="../../1.html">فرهنگی</a> ، <a title="احساسی" href="../../3.html">احساسی</a> ، </div>
+<div class="li-block">برچسب ها: <a title="قطره" href="../../../tag/قطره.html" >قطره</a> ، <a title="آب" href="../../../tag/آب.html" >آب</a> ، <a title="کوچک" href="../../../tag/کوچک.html" >کوچک</a> ، </div>
+</div>
+<div class="date-post">[ چهارشنبه 3 خرداد 1396 ] [ 04:09 ب.ظ ] [ <a title="|STRONG| " href="../../../author/1485816.html">|STRONG| </a> ] [ <a target="_self" href="javascript:newComment(312)" >نظرات (<script>setCommentCnt(312)</script>)</a> ]</div></div>
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-pencil-square-o"></i><h2><a title="#خدا جوووووونم" alt="#خدا جوووووونم" href="../../../311.html">#خدا جوووووونم</a></h2></div>
+<div class="c-post">
+<p></p>
+<p style="text-align: center;"><b><font size="2"><br></font></b></p><p style="text-align: center;"><br><img class="aligncenter wp-image-51290 size-medium" src="http://photokade.com/wp-content/uploads/khodaofficial-text-j-photokade-2-500x500.jpg" alt="عکس نوشته مناجات با خدا" width="500" height="500"></p><p style="text-align: center;"><b><font size="2">خدایا تو رهایم نکن ! تو را غریب دیدم و غریبانه غریبت شدم !</font></b></p><p style="text-align: center;"><b><font size="2"> تو را بخشنده پنداشتم و <strong>گناهکار</strong> شدم !</font></b></p><p style="text-align: center;"><b><font size="2">&nbsp;</font></b></p><p style="text-align: center;"><b><font size="2">تو
+ را وفادار دیدم و هر جا که رفتم بازگشتم ! تو را گرم دیدم و</font></b></p><p style="text-align: center;"><b><font size="2"> سردترین لحظه 
+ها به سراغت آمدم ! تو مرا چه دیدی که وفادار ماندی ؟؟!</font></b></p><p style="text-align: center;"><b><font size="2"> نه آن قدر پاکم که 
+کمکم کنی و نه آن قدر بدم که رهایم کنی</font></b></p><p style="text-align: center;"><b><font size="2"> میان این دو گم شدم و هم خود را و 
+هم تو را آزار میدهم <br></font></b></p><p style="text-align: center;"><b><font size="2">شاید نتوانستم آنی باشم که تو خواستی اما هرگز دوست 
+ندارم آنی باشم که تو رهایم کنی</font></b></p><p style="text-align: center;"><b><font size="2">&nbsp;</font></b></p><p style="text-align: center;"><b><font size="2">گاهی حجم دنیای درونم از وجودت تهی میشود،</font></b></p><p style="text-align: center;"><b><font size="2">آنوقت من می مانم و تنهایی و ترسهایم ، دردها , امیدهایم یک آرزوی دور از دسترس ،</font></b></p><p style="text-align: center;"><b><font size="2"> تنها <strong>نور</strong>
+ وجود توست که دلم را آرام نگاه میدارد ، آنقدر بی تو تنها هستم <br></font></b></p><p style="text-align: center;"><b><font size="2">که بی تو 
+یعنی “هیچ” یعنی “پوچ” ! پس نورت را هرروز به دلم بتابان و دستم را رها نکن</font></b></p><p style="text-align: center;"><b><font size="2"><br></font></b></p><p style="text-align: center;"><b><font size="2"><br></font></b></p><p style="text-align: center;"><b><font size="2">&nbsp;</font></b></p>
+
+
+<p><b></b></p>
+<div class="like-post"><script>mihanblogPostLike('311','like')</script></div>
+<div class="li-block">موضوعات: <a title="اجتماعی" href="../../4.html">اجتماعی</a> ، <a title="احساسی" href="../../3.html">احساسی</a> ، <a title="هنری" href="../../2.html">هنری</a> ، <a title="فرهنگی" href="../../1.html">فرهنگی</a> ، </div>
+<div class="li-block">برچسب ها: <a title="خدا" href="../../../tag/خدا.html" >خدا</a> ، <a title="جونم" href="../../../tag/جونم.html" >جونم</a> ، <a title="عاشقانه" href="../../../tag/عاشقانه.html" >عاشقانه</a> ، <a title="عاشقتم" href="../../../tag/عاشقتم.html" >عاشقتم</a> ، </div>
+</div>
+<div class="date-post">[ سه شنبه 2 خرداد 1396 ] [ 02:30 ب.ظ ] [ <a title="|STRONG| " href="../../../author/1485816.html">|STRONG| </a> ] [ <a target="_self" href="javascript:newComment(311)" >نظرات (<script>setCommentCnt(311)</script>)</a> ]</div></div>
+
+
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-list"></i><h2>آخرین مطالب</h2></div>
+<div class="c-post">
+<div class="li-block"><h5><a title="#اومدم♥" href="../../../629.html">#اومدم♥ (سه شنبه 25 آذر 1399)</a></h5></div>
+<div class="li-block"><h5><a title="#lonely time" href="../../../627.html">#lonely time (چهارشنبه 21 آبان 1399)</a></h5></div>
+<div class="li-block"><h5><a title="#deppresion" href="../../../624.html">#deppresion (جمعه 9 آبان 1399)</a></h5></div>
+<div class="li-block"><h5><a title="#دلم برات تنگ میشه" href="../../../623.html">#دلم برات تنگ میشه (شنبه 5 مهر 1399)</a></h5></div>
+<div class="li-block"><h5><a title="#پاییزه پاییزه برگ از درخت میریزه♥" href="../../../622.html">#پاییزه پاییزه برگ از درخت میریزه♥ (سه شنبه 1 مهر 1399)</a></h5></div>
+<div class="li-block"><h5><a title="#رویـــــــــــــــــــــــــــــا♥به واقعیت میپونده♥" href="../../../621.html">#رویـــــــــــــــــــــــــــــا♥به واقعیت میپونده♥ (چهارشنبه 12 شهریور 1399)</a></h5></div>
+<div class="li-block"><h5><a title="#تعمیر قلب : )" href="../../../599.html">#تعمیر قلب : ) (دوشنبه 15 مرداد 1397)</a></h5></div>
+<div class="li-block"><h5><a title="#کتاب♥" href="../../../585.html">#کتاب♥ (پنجشنبه 14 تیر 1397)</a></h5></div>
+<div class="li-block"><h5><a title="#Congratulations" href="../../../582.html">#Congratulations (سه شنبه 5 تیر 1397)</a></h5></div>
+<div class="li-block"><h5><a title="#Be happy" href="../../../570.html">#Be happy (سه شنبه 29 خرداد 1397)</a></h5></div>
+<div class="li-block"><h5><a title="#هعی" href="../../../568.html">#هعی (یکشنبه 27 خرداد 1397)</a></h5></div>
+<div class="li-block"><h5><a title="#Books are my life" href="../../../559.html">#Books are my life (پنجشنبه 24 خرداد 1397)</a></h5></div>
+<div class="li-block"><h5><a title="#باید بهت بر بخوره :|" href="../../../556.html">#باید بهت بر بخوره :| (سه شنبه 15 خرداد 1397)</a></h5></div>
+<div class="li-block"><h5><a title="#تنهایی.." href="../../../554.html">#تنهایی.. (دوشنبه 14 خرداد 1397)</a></h5></div>
+<div class="li-block"><h5><a title="#آدم هارا.." href="../../../553.html">#آدم هارا.. (جمعه 11 خرداد 1397)</a></h5></div>
+</div></div>
+
+<div class="block-post">
+<div class="top-post"><i class="icon-post fa fa-external-link"></i><h2>صفحات سایت</h2></div>
+<div class="c-post">
+<div class="pagination">
+<p>.: تعداد کل صفحات : <b>35</b> :. </p>
+<a href="10.html"> <i>...</i> </a>
+<a href="11.html"> <span>11</span> </a>
+<a href="12.html"> <span>12</span> </a>
+<a href="13.html"> <span>13</span> </a>
+<a href="14.html"> <b>14</b> </a>
+<a href="15.html"> <span>15</span> </a>
+<a href="16.html"> <span>16</span> </a>
+<a href="17.html"> <span>17</span> </a>
+<a href="18.html"> <i>...</i> </a>
+</div>
+</div></div>
+
+</div>
+
+<div id="sidebar">
+
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-link"></i><h4>پیوندهای روزانه</h4></div>
+<div class="c-side">
+<div class="li-block"><a title="سلام وبلاگتون عالیه تبریک میگم
+
+دنبال گنج هستین ؟
+دنبال مناطق بکر و خوب  دارای گنج در مناطق خوب ایران هستین ؟
+علائم و نشانه های گنج را می شناسید ؟
+انواع سنگ ، سکه و پیشینه همه جای ایران را میخواید بدونید ؟
+پس از کتاب های با ارزش ما دیدن فرمایید 
+
+اینم عیدی من به شما عزیزان گرامی 
+بعد از تایید لینک سایت ما میتوانید لینک وب خودتون را در آدرس زیر ثبت کنید 
+
+http://35040.Rzb.ir
+http://350402.Rzb.ir
+http://350403.Rzb.ir
+http://slinkbux.Rzb.ir
+
+و .. منتظر حضور گرم شما عزیزان هستیم" href="http://qnq313.mihanblog.com/extrapage/book" target="_blank">کتاب های نایاب گنج یابی آثار باستان ایران</a></div>
+<div class="li-block"><a title="1- ارسال لینک وب سایت شما همراه با متن مورد نظرتون
+2- کم حجم بودن برنامه و سرعت بالا (بستگی به سرعت نت شما دارد)
+3- زبان فارسی را به طور کامل پشتیبانی می نماید
+4- امکان ذخیره کردن وبلاگ های گراب شده
+5- امکان حذف وبلاگ های به روز
+6- امکان درج وبلاگ مورد نظر شما در لیست
+
+
+ارتباط در تلگرام
+? @abbas_liv
+tel : 09198517368
+قیمت محصول 50000 تومان که 50 درصد تخفیف خورده
+تعداد محدود به فروش می رسد
+قیمت تخفیف خورده : 25000 تومان" href="http://spammer313.mihanblog.com/extrapage/sendlinkmb" target="_blank">افزایش بازدید سایت، وبلاگ، کانال تلگرام و صفحه اینستاگرام </a></div>
+<div class="li-block"><a title="سلام. ممنونم که پرچم وبلاگ نویسی رو بالا نگه داشتید :)
+
+سایت نویسور راه اندازی شده تا پست های شما بیشتر خونده بشن،.
+
+باید اعلام کنم که بعد از دوماه فعالیت 1000 تایی شدیم.
+
+دعوت میکنم تشریف بیارید به لینک زیر و فصل نو ی وبلاگ نویسی تون رو شروع کنید.
+yon.ir/AA8ez
+
+منتظر پست هاتون در نویسور هستیم :)" href="http://yon.ir/AA8ez" target="_blank">ــ وبـلاگ نویسی بهـترــ</a></div>
+<div class="li-block"><a title="ارسال پیوند روزانه" href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></div>
+<div class="li-block"><a title="آرشیو کامل پیوندهای روزانه" href="../../../../linkdaily/index.html">آرشیو کامل پیوندهای روزانه</a></div>
+</div></div>
+
+
+		
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-external-link"></i><h4>صفحات جانبی</h4></div>
+<div class="c-side">
+<div class="li-block"><h5><a title="عکس نوشته کده : )" href="../../../../extrapage/ax.html">عکس نوشته کده : )</a></h5></div>
+<div class="li-block"><h5><a title="شخصی کده : )" href="../../../../extrapage/profile.html">شخصی کده : )</a></h5></div>
+<div class="li-block"><h5><a title="سرزمین آهنگ ♥" href="../../../../extrapage/songland.html">سرزمین آهنگ ♥</a></h5></div>
+<div class="li-block"><h5><a title="موزیک کده ی خارجی ♥" href="../../../../extrapage/songsoutsidethecountry.html">موزیک کده ی خارجی ♥</a></h5></div>
+<div class="li-block"><h5><a title="موزیک کده ی ایرانی♥♥" href="../../../../extrapage/iranmusic.html">موزیک کده ی ایرانی♥♥</a></h5></div>
+</div></div>
+
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-tags"></i><h4>ابر برچسب ها</h4></div>
+<div style="text-align:center;" class="c-side">
+<a title="(9) مطلب" href="../../../tag/من.html" style="font-size:1em">من</a> ، 
+<a title="(12) مطلب" href="../../../tag/تنهایی.html" style="font-size:1.11em">تنهایی</a> ، 
+<a title="(36) مطلب" href="../../../tag/خدا.html" style="font-size:1.94em">خدا</a> ، 
+<a title="(13) مطلب" href="../../../tag/عشق.html" style="font-size:1.14em">عشق</a> ، 
+<a title="(23) مطلب" href="../../../tag/مبارک.html" style="font-size:1.49em">مبارک</a> ، 
+<a title="(13) مطلب" href="../../../tag/روز.html" style="font-size:1.14em">روز</a> ، 
+<a title="(12) مطلب" href="../../../tag/دختر.html" style="font-size:1.11em">دختر</a> ، 
+<a title="(38) مطلب" href="../../../tag/زندگی.html" style="font-size:2em">زندگی</a> ، 
+<a title="(17) مطلب" href="../../../tag/♥♥.html" style="font-size:1.28em">♥♥</a> ، 
+<a title="(10) مطلب" href="../../../tag/تولد.html" style="font-size:1.04em">تولد</a> ، 
+</div></div>
+
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-bar-chart"></i><h4>آمار سایت</h4></div>
+<div class="c-side">
+<p><img src="http://up.tempkade.ir/themes/images/easymoblog.png" width="15" height="15"> <b>آمار مطالب</b></p>
+<div class="li-block">كل مطالب : <b><script>getStatVar('total_post');</script></b></div>
+<div class="li-block">نویسندگان : <b><script>getStatVar('total_author');</script></b></div>
+<div class="li-block">آخرین بروز رسانی : <b><script>getStatVar('modify_date');</script></b></div>
+<hr>
+<p><img src="http://up.tempkade.ir/themes/images/stats.gif" width="15" height="15"> <b>آمار بازدید</b></p>
+<div class="li-block">بازدید امروز : <b><script>getStatVar('today_view');</script></b></div>
+<div class="li-block">بازدید دیروز : <b><script>getStatVar('yesterday_view');</script></b></div>
+<div class="li-block">بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b></div>
+<div class="li-block">بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b></div>
+<div class="li-block">بازدید کلی : <b><script>getStatVar('total_view');</script></b></div>
+<div class="li-block">آخرین بازدید : <b><script>getStatVar('last_view_date');</script></b></div>
+<hr>
+<p><img src="http://up.tempkade.ir/themes/images/clock.png" width="16" height="16"> <b>سایر اطلاعات</b></p>
+<div class="li-block">امروز : <b><script>setTodayDate()</script></b></div>
+</div></div>
+
+<div class="block-side">
+<div class="top-side"><i class="icon-side fa fa-code"></i><h4>امکانات سایت</h4></div>
+<div class="c-side">
+<div style="text-align:center;"><!-- Begin MeLoDiC.blogfa.com -->
+<div align=center ><embed  src="http://cdn.persiangig.com/preview/75wGjcMCbW/18-01.swf" width="30" height="30" wmode="transparent" type="application/x-shockwave-flash" </embed></div class =mbody><A href="http://melodic.blogfa.com/page/music" target=_blank></center><center><strong>MeLoDiC</strong></a></font></p></center>
+<!-- End MeLoDiC.blogfa.com -->
+
+<script type="text/javascript" src="http://pichak.net/blogcod/clock/code.php?n=57&urlweb=pichak.net"></script><div style="display:none"><h4><a href="http://pichak.net">ساعت فلش</a></h4></div>
+</div>
+</div></div>
+
+</div>
+
+<div id="footerbar">
+<div class="footer"><div class="c-footer">[ Designed Theme By : <a title="تمپ کده دات آی آر" href="http://www.tempkade.ir/" target="_blank" rel="nofollow">www.tempkade.ir</a> ]</div></div>
+</div>
+
+</div></div>
+
+<!-- Designed Theme By : www.tempkade.ir -->
+
+</body>
+﻿</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'maryambehzadian.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

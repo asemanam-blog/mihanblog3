@@ -1,0 +1,2041 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*999078*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[8347]='0';commentCnt[8387]='3';commentCnt[8488]='0';commentCnt[8546]='1';commentCnt[8554]='2';commentCnt[8576]='1';commentCnt[8662]='3';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[8347]='0';
+mihanblogDisLikeArrCnt[8347]='0';
+mihanblogLikeArrCnt[8387]='2';
+mihanblogDisLikeArrCnt[8387]='0';
+mihanblogLikeArrCnt[8488]='1';
+mihanblogDisLikeArrCnt[8488]='0';
+mihanblogLikeArrCnt[8546]='0';
+mihanblogDisLikeArrCnt[8546]='0';
+mihanblogLikeArrCnt[8554]='0';
+mihanblogDisLikeArrCnt[8554]='0';
+mihanblogLikeArrCnt[8576]='1';
+mihanblogDisLikeArrCnt[8576]='0';
+mihanblogLikeArrCnt[8662]='2';
+mihanblogDisLikeArrCnt[8662]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://najvaye-kangan.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://najvaye-kangan.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','6217');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','سه شنبه 18 آذر 1399');
+	
+	setStatVar('today_view','263');
+	setStatVar('yesterday_view','1109');
+	
+	setStatVar('this_month_view','16947');
+	setStatVar('last_month_view','10227');
+
+	setStatVar('total_view','7094200');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (17:34)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://najvaye-kangan.mihanblog.com/statupdate/?data[refereruri]=http://najvaye-kangan.mihanblog.com/post/category/7&data[postid]=&data[requesturi]=/post/category/7/page/2&data[sdate]=1607782118&data[hash]=ecf26511b14bd5bdf9a5a08a6382ee35&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://najvaye-kangan.mihanblog.com/post/category/7/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content="پیگیری تحلیل و تجزیه رویدهای سیاسی منطقه ای وجهان اسلام"/>
+    <meta name="keywords" content="نجوا کنگان"/>
+    <link rel="alternate" type="application/rss+xml" title="نجوا کنگان" href="../../../rss/index.html" />
+    <link rel="alternate" type="application/atom+xml" title="نجوا کنگان" href="../../../atom/index.html" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099141/style.css" type="text/css" rel="stylesheet">
+
+    <title>نجوا کنگان - مطالب شعر</title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td class=div02>&nbsp;</td>
+<td class=div70 valign=top><div class=div71></div></td>
+
+<td class=div2 valign=top>
+<div class=div1>
+
+<div class=div20>
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="http://najvaye-kangan.mihanblog.com/post/8662">            اشعار و دل گویه ها با امام زمان (ع) در عزای امام حسین (ع) در ماه محرم</a></font></div>
+            <div class=div58><font class=text7>پنجشنبه 15 مهر 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+<div class="clearfix">
+												<div class="clearfix comment_row-senderInfo">
+							<div class="comment_row-name"><font size="4">
+								وب سایت حضرت باران							</font></div>	
+							<div class="comment_row-date"><font size="4">
+								پنجشنبه 15 مهر 95 07:41							</font></div>
+							
+							<font size="4"><a href="http://hazratbaran.blog.ir/" class="comment_row-web" target="_blank">http://hazratbaran.blog.ir/</a></font>
+						</div>
+						
+					</div><font size="4">
+						
+
+					</font><div class="comment_row-body">
+						<font size="4"><br>
+اشعار و دل گویه ها با امام زمان (ع) در عزای امام حسین (ع) در ماه محرم<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+ای مقتدا برگرد تا دلهـــــا حسینی ست<br></font>
+<font size="4"><br>
+مولای ما برگرد تا دلـــــها حسینی ست<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+فرمود حق معرفت دست حســین است<br></font>
+<font size="4"><br>
+بر نینوا برگرد تا دلها حســـــــــینی ست<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+گفتی که من با خسته دلهـــــا آشنایم<br></font>
+<font size="4"><br>
+ای آشنا برگرد تا دلها حســـــینی ست<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+ای هر کلامت پرچــــــــــــم سبز هدایت<br></font>
+<font size="4"><br>
+ا ی رهنما برگرد تا دلها حســینی ست<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+رفتی ز ســـــــــرداب و برون آیی ز کعبه<br></font>
+<font size="4"><br>
+تا کربلا برگرد تا دلها حســــــــینی ست<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+ای که شعارت یالثارات الحســین است<br></font>
+<font size="4"><br>
+نور خدا برگرد تا دلها حســـــــینی ست<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+خون خـــــــــــــــدا خونبها نور رخ توست<br></font>
+<font size="4"><br>
+ای خون بها برگرد تا دلها حسینی ست<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+ســـرها هنوز از نیزه می خواند شما را<br></font>
+<font size="4"><br>
+با نیزه ها برگرد تا دلها حســـینی ست<br></font>
+<font size="4"><br></font>
+<br><a href="../../../../../mihanblog.com/moharam95.html" title="" class="" target="_blank" style="position:relative;display:block;"><span style="position: absolute;z-index: 0;color: #fff;top: 10px;right: 15px;font-size: 18px;font-family: 'Mihan-Iransans';">هر وبلاگ یک هیأت</span><div class="moharam_text"><br></div></a><font size="4">
+گفتی فـــــــــــرج را با دعا از ما بخواهید<br></font>
+<font size="4"><br>
+روح دعــــــا برگرد تا دلها حسینی ست<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+گفتی که مــــــــــــادر! انتقامت را بگیرم<br></font>
+<font size="4"><br>
+ای با وفــــا برگرد تا دلها حسینی ست<br></font>
+<font size="4"><br></font>
+<font size="4"><br>
+ما غصـــــــــه ای غیراز غم غیبت نداریم<br></font>
+<font size="4"><br>
+ای مقـــتدا برگرد تا دلها حسـینی ست					</font></div><font size="4">
+					
+										
+					
+				
+						</font><div class="clearfix">
+							
+						</div><font size="4">
+	
+						</font><div class="replybutton"><font size="4">&nbsp;
+							<a class="clearfix " id="replybutton_1956865">
+								</a></font><a href="../../../../../mihanblog.com/moharam95.html" title="" class="" target="_blank" style="position:relative;display:block;">پست های مربوط به ما محرم را با برچسب «Moharam95» منتشر کنید.</a></div><font size="4">
+
+
+</font>
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../7.html" class=text4>شعر</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                                <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://najvaye-kangan.mihanblog.com/post/8662#commentlist">نظرات (<script>setCommentCnt(8662)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('8662','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="http://najvaye-kangan.mihanblog.com/post/8576">                                        دور گشتن از سبکروحان بود بر دل گران</a></font></div>
+            <div class=div58><font class=text7>یکشنبه 4 مهر 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div style="width:82px;margin:auto">
+<font size="4"><br></font></div><div style="width:100%;margin:auto"><font size="4">صائب تبریزی » دیوان اشعار » غزلیات</font></div><font size="4">
+
+</font><div class="spacer"><font size="4">&nbsp;</font></div><font size="4">
+
+</font><div class="b"><div class="m1"><p><font size="4">با خودی هرگز نگردد دل ز درد و غم جدا</font></p></div>
+<div class="m2"><p><font size="4">هر که از خود شد جدا، شد از غم عالم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">نان جو خور، در بهشت جاودان پاینده باش</font></p></div>
+<div class="m2"><p><font size="4">کز بهشت از خوردن گندم شده است آدم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">تا ترا چون گل درین گلزار باشد خرده ای</font></p></div>
+<div class="m2"><p><font size="4">دیده شوری بود هر قطره شبنم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">دور گشتن از سبکروحان بود بر دل گران</font></p></div>
+<div class="m2"><p><font size="4">می شود سنگین چو عیسی گردد از مریم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">در حریم وصل، اشک شور من شیرین نشد</font></p></div>
+<div class="m2"><p><font size="4">کعبه نتوانست کردن تلخی از زمزم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">چون ز صد گرداب کشتی سالم آید بر کنار؟</font></p></div>
+<div class="m2"><p><font size="4">نیست ممکن دل شود زان طره پر خم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">لذت خاصی است با هر بوسه لبهای او</font></p></div>
+<div class="m2"><p><font size="4">می شود نقش نوی هر دم از این خاتم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">چون دو تا شد قد، وداع روح را آماده باش</font></p></div>
+<div class="m2"><p><font size="4">کز کسان تیر سبکرو می شود یکدم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">توسن عمر ترا کردند ازان صرصر خرام</font></p></div>
+<div class="m2"><p><font size="4">تا تو کاه و دانه خود را کنی از هم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">تا دم رفتن سبک از جا توانی خاستن</font></p></div>
+<div class="m2"><p><font size="4">مال را در در زندگی از خویش کن کم کم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">نی که جان را تازه می سازد ز قرب همنفس</font></p></div>
+<div class="m2"><p><font size="4">قالب بی جان شود چون گردد از همدم جدا</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">نیک و بد را می کند صائب فلک هم امتیاز</font></p></div>
+<div class="m2"><p><font size="4">گندم و جو را کند گر آسیا از هم جدا</font></p></div></div><font size="4">
+
+
+
+
+
+</font><div class="spacer"><font size="4">&nbsp;</font></div><font size="4">
+
+
+</font>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../7.html" class=text4>شعر</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="http://najvaye-kangan.mihanblog.com/post/tag/%D9%86%D8%AC%D9%88%D8%A7%DB%8C%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%20%D9%86%D8%AC%D9%88%D8%A7%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%20%D8%B5%D8%A7%D8%A6%D8%A8%20%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2%DB%8C%20/%20%D8%AF%DB%8C%D9%88%D8%A7%D9%86%20%D8%A7%D8%B4%D8%B9%D8%A7%D8%B1%20/%20%D8%BA%D8%B2%D9%84%DB%8C%D8%A7%D8%AA" class=text4>نجوای کنگان/ نجوا کنگان/ صائب تبریزی / دیوان اشعار / غزلیات</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://najvaye-kangan.mihanblog.com/post/8576#commentlist">نظرات (<script>setCommentCnt(8576)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('8576','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="http://najvaye-kangan.mihanblog.com/post/8554">           بیستون را عشق کند و شهرتش فرهاد برد    رنج  گل  بلبل   کشید و بوی اورا ا باد برد </a></font></div>
+            <div class=div58><font class=text7>چهارشنبه 31 شهریور 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><p style="text-align: center;"><font color="#000099" size="3"><strong><span style="font-size: medium;">بیستون را عشق کند و شهرتش فرهاد بر</span>د &nbsp;</strong></font></p><font color="#000099" size="3">
+</font><p style="text-align: center;"><font color="#000099" size="3"><span style="font-size: medium;"><strong>رنج &nbsp;گل &nbsp;بلبل &nbsp;&nbsp;کشید و بوی اورا ا باد برد&nbsp;</strong></span></font></p><font color="#000099" size="3"><br></font><p dir="RTL"><font color="#000099" size="3">چو آن مه بر فراز بیستون شد &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">تو گفتی مه به چرخ بی‌ستون شد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">تفرج را خرام آهسته می‌کرد &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">سخن با کوهکن سربسته می‌کرد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">نخستین گفتش ای فرزانه استاد &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که کار افکندمت با سنگ و پولاد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ندانم چونی از این رنج و تیمار &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">گمانم این که فرسودی در این کار</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به سنگت هست چون پولاد پنجه &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">و یا چون سنگی از پولاد رنجه</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">من این پولاد روییها نمودم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که با سنگت چو پولاد آزمودم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو می‌بینی ز فرهنگی که داری &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">درین ره مومی از سنگی که داری</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">جوابش داد آن پولاد بازو &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که ای مهر و مهت سنگ ترازو</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چودر دل آتشی دارم نهانی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">سزد گر سنگ و پولادم بخوانی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">اگر سنگ است از فولاد کاهد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">و گر پولاد سنگی نیز خواهد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">من آن سنگین تن پولاد جانم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که از سنگی به سختی در نمانم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">اگر زین سنگ و پولاد آتشی زاد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">یقین می‌دان که عالم داد بر باد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">شکر لب گفت دشوار است بسیار &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که از یک تن برآید اینهمه کار</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">با نیازی نیازت هست دانم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">به هر جا هست برخوان کش بخوانم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">که با درد سر کس سر ندارم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">زر ار باید دریغ از زر ندارم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفت این پیشه انبازی نخواهد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که این طایر هم آوازی نخواهد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">اگر سی مرغ اگر سیسد هزار است &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">به یک سیمرغ در این قاف کار است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">درین کشور اگر چه هست دستور &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که گیرد کارفرما چند مزدور</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ولی در شهر ما این رسم برپاست &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که یک مزدور با یک کارفرماست</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">دگر ره سیمبر افشاند گوهر &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که از زرکار مزدور است چون زر</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ترا بینم بدین گردن فرازی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که از سیم و زر ما بی نیازی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">گرت سیم‌و زری در کار باشد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">از این در خیل ما بسیار باشد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفت آن کس گزیر از زر ندارد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که پنهان مخزن گوهر ندارد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">مرا گنجی نهان اندر نهاد است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که با وی گنج باد آورد باد است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">محبت گنج و اشکم گوهر اوست &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">سیه ماری چو زلفت بر سر اوست</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بدیدی گنج باد آورد پرویز &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">ببین این گنج آب آورد من نیز</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به کف زان گنج باد آورد باد است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">مرا این گنج باد آور مراد است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">کسی کو گنج دارد باد پیماست &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">ولی این گنج آب روی داناست</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفت این گنج را چون کردی انبوه &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">بگفت از بس که خوردم تیشه چون کوه</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو کوهم تیشهٔ غم بر دل آید &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که این گنج مرادم حاصل آید</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به کان کندن ز سنگ آرند گوهر &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به جان کندن مرا این شد میسر</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفت این گنج را حاصل ندانم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بگفتا بی نیازی زین و آنم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفت این بی نیازی را غرض گو &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بگفتا تا نیاز آرم به یک سو</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفتا چون به یک سو شد نیازت &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">بگفتا گیرم آن زلف درازت</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفتا جز سیه روزی چه حاصل ؟ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">بگفت این تیره روزی مقصد دل</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفتا باز مقصد در میان است ؟ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بگفتا زانکه مقصودم عیان است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفتا چیست مقصودت ؟ بگو فاش &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بگفتا جان فدای روی زیباش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفتا چیست جان ؟ گفتا نثارت &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">بگفتا چیست تن گفتا غبارت</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به دل گفتا چه داری ؟ گفت یادت &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">مرادت گفت چه ؟ گفتا مردات</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفتا بی‌خودی، گفتا ز رویت &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بگفت آشفته ای ، گفتا ز مویت</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفت از عاشقی باری غرض چیست &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بگفتا عشقبازان را غرض نیست</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفتا محرمت که ؟ گفت حرمان &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بگفتا همنشینت ؟ گفت هجران</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفتا جان در این ره بر سر آید &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بگفتا باله ار جان در خور آید</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ز پرکاری به هر سو می‌کشیدش &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">به کار عاشقی مردانه دیدش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به دل گفتا که این در عشق فردیست &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">به کار عاشقی مردانه مردیست</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به دامان از هوس ننشسته گردش &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">گواه عشق پاک اوست دردش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو می‌بینم هوس را نیست سوزی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">سر آرم با محبت چند روزی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">هوس چندی دلم را رهزن آمد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">همانا عشق پاکم دشمن آمد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به ساقی گفت او را یک قدح ده &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به این غمدیده داروی فرح ده</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به ساغر کرد ساقی بادهٔ ناب &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">فکند الفت میان آتش و آب</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">گرفت و داد ساغر کوهکن را &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که درمان ساز غمهای کهن را</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بدو فرهاد گفت ای دلنوازم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">غمی کز تست چونش چاره سازم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگفت این می به هر دردی علاج است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">یکی خاصیتش با هر مزاج است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ز درد ار خوشدلی می کان درد است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">وگر دلخسته‌ای درمان درد است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو از نوشین لبش کرد این سخن گوش &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به روی یار شیرین شد قدح نوش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو نوشید از کفش جام پیاپی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">عنان خامشی برد از کفش می</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">برآورد از دل پردرد فریاد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">بگفت آه از دل پردرد فرهاد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">که مسکین را عجب کاری فتاده‌ست &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که کارش با چنین باری فتاده‌ست</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">نیازی خسروی در وی نگیرد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">کجا نازش نیاز من پذیرد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">کسی کز افسر شاهیش عار است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به دلق بینوایانش چکار است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">از این درگه که شاهان ناامیدند &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">گدایان کی به مقصودی رسیدند</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چه باشد مفلسی را زیب بازار &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که گردد تاج شاهی را خریدار</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به راهی کافکند پی بادپایی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">به منزل کی رسد بشکسته پایی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">در آن توفان که آسیب نهنگ است &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">شکسته زورقی را کی درنگ است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">در آن آتش کزو یاقوت بگداخت &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">چگونه پنبه را جا می‌توان ساخت</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">از آن صرصر که کوه از جا درآورد &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">چه باشد تا خود احوال کفی کرد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ز سیلابی که نخل اندازد از پای &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">گیاهی کی تواند ماند برجای</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">دلم شد صید آن ترک شکاری &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که شیران را همی بیند به خواری</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">شدم در چنبر زلفی گرفتار &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که دارد از سر گردن کشان عار</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">فکندم پنجه با آن سخت بازو &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که با او چرخ برناید به بازو</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">جهاندم لاشه با چالاک رخشی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که خواند رخش گردونش درخشی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">شدم با جادوی چشمی فسون ساز &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که سحرش بشکند بازار اعجاز</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">دریغا زین تن فرسودهٔ من &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">دریغا محنت بیهودهٔ من</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ز پای افتاد و بگرست آن چنان زار &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">کزان کهسار شد سیلی نگون سار</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">شراب کهنه و عشق جوانی &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">در افکندش ز پای آنسان که دانی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">شکر لب گشت عطر افشان ز مویش &nbsp;&nbsp;<span style="font-size: 10pt;">ز چشم تر گلاب افشان به رویش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بداد از لب میی اندوه سوزش &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که گویی جان به لب آمد هنوزش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بلی ز آن می که در کامش فرو ریخت &nbsp;&nbsp;<span style="font-size: 10pt;">نمیرد، کآب خضرش در گلو ریخت</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">وز آن پس شد به فکر چاره سازیش &nbsp; &nbsp;<span style="font-size: 10pt;">درآمد در مقام دلنوازیش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به سد طنازی و شیرین زبانی &nbsp; &nbsp;<span style="font-size: 10pt;">ز لعل افشاند آب زندگانی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">که ای سودایی زنجیر مویم &nbsp; &nbsp;<span style="font-size: 10pt;">گذشته ز آرزوها آرزویم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به ترکی غمزه‌ام تیرافکن تو &nbsp;&nbsp;<span style="font-size: 10pt;">شده هندوی مستم رهزن تو</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">مپندار اینچنین نامهربانم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که رسم مهربانی را ندانم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">هنوز آن عقل و آن فرهنگ دارم &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که با عشق و هوس فرقی گذارم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">اگر زهرم ولی پازهر دارم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به جایی لطف و جایی قهر دارم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">همه نیشم ولی با خود پسندان &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">همه نوشم به کام دردمندان</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">سمومم لیک خاشاک هوا را &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">نسیمم لیک گلزار وفا را</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به مغروران غرورم راست بازار &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">نیازم را به مهجوران سر و کار</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">سرم با تاج شاهان سرکش افتاد &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">ولی سوز گدایانم خوش افتاد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به خود گر راه می‌دادم هوس را &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">نبود از من شکایت هیچ کس را</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ولی هر جا هوس شد پای برجای &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">کشد عشق گرامی از میان پای</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بر آزادگان تا دلپسندم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">گر آن را زه دهم این را ببندم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ترا خسرو مبین کش تاب دادم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به رنجور هوس جلاب دادم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">گلش را با شکر پیوند کردم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">وزان گلشکرش خرسند کردم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو هم آهو ترا شد صید و هم شیر &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بری آن را به باغ این را به زنجیر</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">و گر بر هر دو نیز آسیب خواهی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">از آن جان پروری زین مغز کاهی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">مرا خود نیز هست آن هوشیاری &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که دانم جای کین و جای یاری</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به صیادی چو بازم شهره و فاش &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که بشناسم کبوتر را ز خفاش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به گلزار وفا آن باغبانم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که خار اندازم و گل برنشانم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به دلجوییش طرحی تازه افکند &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">سخن را با نیاز افکند پیوند</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به چشمم گفت آن خونخوار جادو &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که مست افتاده در محراب ابرو</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به وصلم یعنی ایام جوانی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به لعلم یعنی آب زندگانی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به آشوب جهان یعنی به بویم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به تاراج خرد یعنی به مویم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به این هندوی آتشخانه رو &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">به خورشید نهان در شام گیسو</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به شاخ طوبی و این سرو نازم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به عمر خضر و گیسوی درازم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بدان نیرنگ کن را عشوه رانی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به نیرنگ دگر کن را ندانی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به رنگ‌آمیزی کلک خیالم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به شورانگیزی شوق وصالم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به مهمان نوت یعنی غم من &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به شام هجر و زلف درهم من</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به بحر چرخ یعنی شبنم عشق &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به اصل هر خوشی یعنی غم عشق</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">که تا سروم خرام‌آموز گشته‌ست &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">جمالم تا جهان افروزگشته‌ست</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ندیدم راست کاری با فروغی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">سراسر بوده لافی یا دروغی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">نه با خسرو که باهر کس نشستم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">چو دیدم یک نظر زو دیده بستم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">همه در فکر خویش و کام خویشند &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">مه در بند ننگ و نام خویشند</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">اگر چه عشق را دامن بود پاک &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">ز لوث تهمت مشتی هوسناک</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ولی در دفع تهمت ناشکیب است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که گفت اسلام در دنیا غریب است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به رمز این عشق را اسلام گفته‌ست &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">غریبش گفته کز هرکس نهفته‌ست</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">سفرها کرده در غربت به خواری &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به امید وفا و بوی یاری</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به آخر چون طلبکاری ندیده‌ست &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">به خود جز خود خریداری ندیده‌ست</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">فکنده خوی خود با بی‌نصیبی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">نهاده بر جبین داغ غریبی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">غلط گفتم که آن کس بی‌نصیب است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">کز این آب حیات او را شکیب است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو خور پرتو فکن باشد چه پرواش &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که او را دشمن آمد چشم خفاش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو گل را نکهت و خوبی تمام است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">چه نقصانش که مغزی را زکام است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">شکر شیرین نه اندر کام رنجور &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">قمر روشن نه اندر دیدهٔ کور</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">فرشته دیو را کی در خور آید &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که همچون خویشتن دیریش باید</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ز عشق ای عاقلان غافل چرایید &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">را زینگونه غفلت می‌فزایید</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چرااو را به خود وا می‌گذارید &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">چرا زینسان غریبش می‌شمارید</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بگیریدش که این طرار دهر است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">بگیریدش که این آشوب شهر است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">همه دل می‌برد دین می‌رباید &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">جهان را بی دل و دین می‌نماید</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">نه منصبتان گذارد نه ز رو مال &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که او خود دشمن مال است و آمال</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">عزیزیتان بدل سازد به خواری &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">ه خواریتان فزاید سوگواری</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو او خود ساز و سامانی ندارد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">چو او خود کاخ و ایوانی ندارد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">ز سامانتان به مسکینی نشاند &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">ز ایوانتان به خاک ره کشاند</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">چو او خود یار و پیوندی ندارد &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">چو او خود خویش و فرزندی ندارد</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">برد پیوندتان از یار و پیوند &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">کند چون خویشتان بی‌خویش و فرزند</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">مرا باری دل از وی ناگزیر است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">رم در چنبر عشقش اسیر است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">فدای این غریب آشنا خوی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که هست اندر غریبی آشنا جوی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">غریب کشور بیگانگان است &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">ولیکن در دلش منزل چو جان است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">به این دل الفتی دارد نهانی &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">که از «حب الوطن» دارد نشانی</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">دلم چون مسکن او شد از این است &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">که گاهی شاد و گاه اندوهگین است</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">زمانی نوش بخشد گاه نیشش &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">تصرفها بود در ملک خویشش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">اگر آباد سازد ور خرابش &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-size: 10pt;">کسی را نیست بحث از هیچ باش</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">بیا ساقی به ساغر کن شرابم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">بکلی ساز بی‌خویش و خرابم</span></font></p><font color="#000099" size="3">
+</font><p dir="RTL"><font color="#000099" size="3">مگر کاین بیخودی گیرد عنانم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 10pt;">نماید ره به کوی بیخودانم</span></font></p><font color="#000099" size="3">
+</font><p style="text-align: left;" dir="RTL"><font color="#000099" size="3">« وحشی بافق»&nbsp;</font></p><font color="#000099" size="3">
+</font><p style="text-align: center;" dir="RTL"><font color="#000099" size="3">&nbsp;</font></p><font color="#000099" size="3">
+
+
+</font>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../7.html" class=text4>شعر</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="http://najvaye-kangan.mihanblog.com/post/tag/%D9%86%D8%AC%D9%88%D8%A7%DB%8C%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%20%D9%86%D8%AC%D9%88%D8%A7%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%20%C2%AB%20%D9%88%D8%AD%D8%B4%DB%8C%20%D8%A8%D8%A7%D9%81%D9%82%C2%BB" class=text4>نجوای کنگان/ نجوا کنگان/ « وحشی بافق»</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://najvaye-kangan.mihanblog.com/post/8554#commentlist">نظرات (<script>setCommentCnt(8554)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('8554','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="http://najvaye-kangan.mihanblog.com/post/8546">                             نیست جز سنگ ملامت رزق پاکان از وطن</a></font></div>
+            <div class=div58><font class=text7>دوشنبه 29 شهریور 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+<div style="width:100%;margin:auto"><font size="3">صائب تبریزی » دیوان اشعار » غزلیات</font></div><font size="3">
+
+</font><div class="spacer"><font size="3">&nbsp;</font></div><font size="3">
+
+</font><div class="b"><div class="m1"><p><font size="3">با لب او کار دندان می کند سین سخن</font></p></div>
+<div class="m2"><p><font size="3">زین سبب کم حرف افتاده است آن شیرین دهن</font></p></div></div><font size="3">
+</font><div class="b"><div class="m1"><p><font size="3">سوختم، پاس دل بی تاب دارم تا به کی؟</font></p></div>
+<div class="m2"><p><font size="3">بیش ازین نتوان نهفت اخگر به زیر پیرهن</font></p></div></div><font size="3">
+</font><div class="b"><div class="m1"><p><font size="3">چشم مجمر موم را خوناب حسرت می کند</font></p></div>
+<div class="m2"><p><font size="3">چون تواند گشت خاموشی مرا مهر دهن؟</font></p></div></div><font size="3">
+</font><div class="b"><div class="m1"><p><font size="3">چیدن دامن ز صحبت ها کمند شهرت است</font></p></div>
+<div class="m2"><p><font size="3">شمع فانوسم که باشد خلوتم در انجمن</font></p></div></div><font size="3">
+</font><div class="b"><div class="m1"><p><font size="3">تشنه ای از آب او هرگز لب خود تر نکرد</font></p></div>
+<div class="m2"><p><font size="3">سرنگون هر چند افتاده است آن چاه ذقن</font></p></div></div><font size="3">
+</font><div class="b"><div class="m1"><p><font size="3">سیم و زر بر آتش حرص آب نتواند زدن</font></p></div>
+<div class="m2"><p><font size="3">از گرستن نیست مانع شمع را زرین لگن</font></p></div></div><font size="3">
+</font><div class="b"><div class="m1"><p><font size="3">در حریم بیضه چون عیسی شود گویا ز مهد</font></p></div>
+<div class="m2"><p><font size="3">نیست حاجت طوطی ما را به تلقین سخن</font></p></div></div><font size="3">
+</font><div class="b"><div class="m1"><p><font size="3">بسترش خار است صائب تا بود در کان گهر</font></p></div>
+<div class="m2"><p><font size="3">نیست جز سنگ ملامت رزق پاکان از وطن</font></p></div></div><font size="3">
+
+
+</font>
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../7.html" class=text4>شعر</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="http://najvaye-kangan.mihanblog.com/post/tag/%D9%86%D8%AC%D9%88%D8%A7%DB%8C%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%20%D9%86%D8%AC%D9%88%D8%A7%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%D8%B5%D8%A7%D8%A6%D8%A8%20%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2%DB%8C%20%C2%BB%20%D8%AF%DB%8C%D9%88%D8%A7%D9%86%20%D8%A7%D8%B4%D8%B9%D8%A7%D8%B1%20/%20%D8%BA%D8%B2%D9%84%DB%8C%D8%A7%D8%AA" class=text4>نجوای کنگان/ نجوا کنگان/صائب تبریزی » دیوان اشعار / غزلیات</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://najvaye-kangan.mihanblog.com/post/8546#commentlist">نظرات (<script>setCommentCnt(8546)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('8546','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="http://najvaye-kangan.mihanblog.com/post/8488">                             طبیب درد بی‌درمان کدامست</a></font></div>
+            <div class=div58><font class=text7>دوشنبه 22 شهریور 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div style="width:82px;margin:auto">
+<b><font size="3"><br></font></b></div><div style="width:100%;margin:auto"><b><font size="3">مولوی » دیوان شمس » غزلیات</font></b></div><b><font size="3">
+
+</font></b><div class="spacer"><b><font size="3">&nbsp;</font></b></div><b><font size="3">
+
+</font></b><div class="b"><div class="m1"><p><b><font size="3">طبیب درد بی‌درمان کدامست</font></b></p></div><div class="m2"><p><b><font size="3">رفیق راه بی‌پایان کدامست</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">اگر عقلست پس دیوانگی چیست</font></b></p></div><div class="m2"><p><b><font size="3">وگر جانست پس جانان کدامست</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">چراغ عالم افروز مخلد</font></b></p></div><div class="m2"><p><b><font size="3">که نی کفرست و نی ایمان کدامست</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">پر از درست بحر لایزالی</font></b></p></div><div class="m2"><p><b><font size="3">درونش گوهر انسان کدامست</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">غلامانه است اشیاء را قباها</font></b></p></div><div class="m2"><p><b><font size="3">میان بندگان سلطان کدامست</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">یکی جزو جهان خود بی‌مرض نیست</font></b></p></div><div class="m2"><p><b><font size="3">طبیب عشق را دکان کدامست</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">خرد عاجز شد اندر فکر عاجز</font></b></p></div><div class="m2"><p><b><font size="3">که سرکش کیست سرگردان کدامست</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">بت موزون به بتخانه بسی جست</font></b></p></div><div class="m2"><p><b><font size="3">که موزونات را میزان کدامست</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">چه قبله کرده‌ای این گفت و گو را</font></b></p></div><div class="m2"><p><b><font size="3">طلب کن درس خاموشان کدامست</font></b></p></div></div><b><font size="3">
+
+
+</font></b>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../7.html" class=text4>شعر</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="http://najvaye-kangan.mihanblog.com/post/tag/%D9%86%D8%AC%D9%88%D8%A7%DB%8C%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%20%D9%86%D8%AC%D9%88%D8%A7%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%D8%B7%D8%A8%DB%8C%D8%A8%20%D8%AF%D8%B1%D8%AF%20%D8%A8%DB%8C%E2%80%8C%D8%AF%D8%B1%D9%85%D8%A7%D9%86%20%DA%A9%D8%AF%D8%A7%D9%85%D8%B3%D8%AA%20%D8%A7%D9%88%D8%B1" class=text4>نجوای کنگان/ نجوا کنگان/طبیب درد بی‌درمان کدامست اور</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://najvaye-kangan.mihanblog.com/post/8488#commentlist">نظرات (<script>setCommentCnt(8488)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('8488','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="http://najvaye-kangan.mihanblog.com/post/8387">                           چون شدم صید تو بر گیر و نگهدار مرا</a></font></div>
+            <div class=div58><font class=text7>دوشنبه 8 شهریور 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div style="width:100%;margin:auto"><b><font size="3">خواجوی کرمانی » غزلیات</font></b></div><b><font size="3">
+
+</font></b><div class="spacer"><b><font size="3">&nbsp;</font></b></div><b><font size="3">
+
+</font></b><div class="b"><div class="m1"><p><b><font size="3">مگذر ای یار و درین واقعه مگذار مرا</font></b></p></div><div class="m2"><p><b><font size="3">چون شدم صید تو بر گیر و نگهدار مرا</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">اگرم زار کشی می‌کش و بیزار مشو</font></b></p></div><div class="m2"><p><b><font size="3">زاریم بین و ازین بیش میازار مرا</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">چون در افتاده‌ام از پای و ندارم سر خویش</font></b></p></div><div class="m2"><p><b><font size="3">دست من گیر و دل خسته بدست آر مرا</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">بی گل روی تو بس خار که در پای منست</font></b></p></div><div class="m2"><p><b><font size="3">کیست کز پای برون آورد این خار مرا</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">برو ای بلبل شوریده که بی گلروئی</font></b></p></div><div class="m2"><p><b><font size="3">نکشد گوشهٔ خاطر سوی گلزار مرا</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">هر که خواهد که بیک جرعه مرا دریابد</font></b></p></div><div class="m2"><p><b><font size="3">گو طلب کن بدر خانهٔ خمار مرا</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">تا شوم فاش بدیوانگی و سرمستی</font></b></p></div><div class="m2"><p><b><font size="3">مست وآشفته برآرید ببازار مرا</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">چند پندم دهی ای زاهد و وعظم گوئی</font></b></p></div><div class="m2"><p><b><font size="3">دلق و تسبیح ترا خرقه و زنار مرا</font></b></p></div></div><b><font size="3">
+</font></b><div class="b"><div class="m1"><p><b><font size="3">ز استانم ز چه بیرون فکنی چون خواجو</font></b></p></div><div class="m2"><p><b><font size="3">خاک را هم ز سرم بگذر و بگذار مرا</font></b></p></div></div><b><font size="3">
+
+
+
+
+
+</font></b><div class="spacer"><b><font size="3">&nbsp;</font></b></div><b><font size="3">
+
+
+</font></b>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../7.html" class=text4>شعر</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="http://najvaye-kangan.mihanblog.com/post/tag/%D9%86%D8%AC%D9%88%D8%A7%DB%8C%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%20%D9%86%D8%AC%D9%88%D8%A7%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%D8%AE%D9%88%D8%A7%D8%AC%D9%88%DB%8C%20%DA%A9%D8%B1%D9%85%D8%A7%D9%86%DB%8C%20/%20%D8%BA%D8%B2%D9%84%DB%8C%D8%A7%D8%AA/" class=text4>نجوای کنگان/ نجوا کنگان/خواجوی کرمانی / غزلیات/</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://najvaye-kangan.mihanblog.com/post/8387#commentlist">نظرات (<script>setCommentCnt(8387)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('8387','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="http://najvaye-kangan.mihanblog.com/post/8347">                               چه کند بنده که گردن ننهد فرمان را</a></font></div>
+            <div class=div58><font class=text7>سه شنبه 2 شهریور 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div style="width:82px;margin:auto">
+<font size="4"><br></font></div><div style="width:100%;margin:auto"><font size="4">سعدی » دیوان اشعار » غزلیات</font></div><font size="4">
+
+</font><div class="spacer"><font size="4">&nbsp;</font></div><font size="4">
+
+</font><div class="b"><div class="m1"><p><font size="4">چه کند بنده که گردن ننهد فرمان را</font></p></div><div class="m2"><p><font size="4">چه کند گوی که عاجز نشود چوگان را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">سروبالای کمان ابرو اگر تیر زند</font></p></div><div class="m2"><p><font size="4">عاشق آنست که بر دیده نهد پیکان را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">دست من گیر که بیچارگی از حد بگذشت</font></p></div><div class="m2"><p><font size="4">سر من دار که در پای تو ریزم جان را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">کاشکی پرده برافتادی از آن منظر حسن</font></p></div><div class="m2"><p><font size="4">تا همه خلق ببینند نگارستان را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">همه را دیده در اوصاف تو حیران ماندی</font></p></div><div class="m2"><p><font size="4">تا دگر عیب نگویند من حیران را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">لیکن آن نقش که در روی تو من می‌بینم</font></p></div><div class="m2"><p><font size="4">همه را دیده نباشد که ببینند آن را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">چشم گریان مرا حال بگفتم به طبیب</font></p></div><div class="m2"><p><font size="4">گفت یک بار ببوس آن دهن خندان را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">گفتم آیا که در این درد بخواهم مردن</font></p></div><div class="m2"><p><font size="4">که محالست که حاصل کنم این درمان را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">پنجه با ساعد سیمین نه به عقل افکندم</font></p></div><div class="m2"><p><font size="4">غایت جهل بود مشت زدن سندان را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">سعدی از سرزنش خلق نترسد هیهات</font></p></div><div class="m2"><p><font size="4">غرقه در نیل چه اندیشه کند باران را</font></p></div></div><font size="4">
+</font><div class="b"><div class="m1"><p><font size="4">سر بنه گر سر میدان ارادت داری</font></p></div><div class="m2"><p><font size="4">ناگزیرست که گویی بود این میدان را</font></p></div></div><font size="4">
+
+
+									
+</font><div class="spacer"><font size="4">&nbsp;</font></div><font size="4">
+
+
+</font>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../7.html" class=text4>شعر</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="http://najvaye-kangan.mihanblog.com/post/tag/%D9%86%D8%AC%D9%88%D8%A7%DB%8C%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%20%D9%86%D8%AC%D9%88%D8%A7%20%DA%A9%D9%86%DA%AF%D8%A7%D9%86/%20%D8%B3%D8%B9%D8%AF%DB%8C%20/%20%D8%AF%DB%8C%D9%88%D8%A7%D9%86%20%D8%A7%D8%B4%D8%B9%D8%A7%D8%B1%20/%20%D8%BA%D8%B2%D9%84%DB%8C%D8%A7%D8%AA" class=text4>نجوای کنگان/ نجوا کنگان/ سعدی / دیوان اشعار / غزلیات</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://najvaye-kangan.mihanblog.com/post/8347#commentlist">نظرات (<script>setCommentCnt(8347)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('8347','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text4>
+                <br><br>
+        ( کل صفحات : 44 )&nbsp;&nbsp;&nbsp;
+            <a href="1.html" class=text4><span>1</span></a>&nbsp;&nbsp;&nbsp;<a href="2.html" class=text4><b>2</b></a>&nbsp;&nbsp;&nbsp;<a href="3.html" class=text4><span>3</span></a>&nbsp;&nbsp;&nbsp;<a href="4.html" class=text4><span>4</span></a>&nbsp;&nbsp;&nbsp;<a href="5.html" class=text4><span>5</span></a>&nbsp;&nbsp;&nbsp;<a href="6.html" class=text4><span>6</span></a>&nbsp;&nbsp;&nbsp;<a href="7.html" class=text4><span>7</span></a>&nbsp;&nbsp;&nbsp;<a href="8.html" class=text4><i>...</i></a>&nbsp;&nbsp;&nbsp;    </font>
+    </div>
+</div>
+
+<div class=div17>
+
+    <div class=div60>
+        <div class=div101>
+            <div class=div10><font class=title>نجوا کنگان</font></div></div>
+        <div class=div11>
+            <div class=div12><font class=des>دلگیرم   از    خود  با  تو نجوا  می کنم       دریا  این سفره ی دل پیش تو    وا می کنم  </font></div></div>
+    </div>
+
+    <form id="frm-16076949685fd37a78e2ae9" method="get" action="http://najvaye-kangan.mihanblog.com/post/search/fid/16076949685fd37a78e2ae9"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> <div class=div80>
+        <div class=div81></div>
+        <div class=div37>
+            <input type="text" name="search_text" size="25" style="border: 0px none; background: none; font-family:Tahoma; font-size:9pt; color:#FFFFFF"></div>
+        <div class=div38>
+            <input type="image" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width=67 height=28></div>
+    </div><input type="hidden" name="frm-id" value="16076949685fd37a78e2ae9" id="frm-id" /></form>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div31><center><img src="../../../../../static.mihanblog.com/public/user_data/web_photo/334/999078.jpg@4043"  /></center><br>
+                <font class=text1><center> سلام علیكم اینجانب عبدالمجید اورا متولد1348/6/25- كنگان-محله خور چوری(خیابان استقلال)<br />
+</center><br>
+                    <img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10">مدیر وبلاگ : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div><div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>مطالب اخیر</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12634.html">                                  آینده کار: مهارت های مورد نیاز نوجوانان چیست؟</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12633.html">                                مرحله نهایی واکسن های کرونا  که از این تعداد 7 مورد به تولید رسیده اند!  </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12632.html">                                     بخشی از ویژگیهای یک  فعال رسانه ی موفق ؟  </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12631.html">                                 بازدید قطری ها از کنگان؛ انعقاد تفاهم نامه در اصفهان!</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12629.html">                           دانشگاه های صوری و گواهینامه های جعلی ... </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12628.html">                      اینترنت 5G: داستان علمی تخیلی که  رنگ واقعیت  می گیرد !</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12627.html">                                روشهائی که  به مطالعه موثر &quot;درس خواندن&quot; کمک می کنند!</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12626.html">                نحوه تحقیق در خصوص اخبارعلمی مرتبط با کرونا(  COVID-19)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12625.html">                 کدام یک را ترجیح می دهید: کتاب صوتی ( الکترونیکی) یا کتاب خواندنی( چاپی)؟</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12624.html">                             واکسن فایزر علیه کرونا و پاسخ 11 سوال ؟</a></font></div>        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>موضوعات</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../9.html">سوالات امادگی دفاعی 2 (8)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../8.html">سخنان رهبری (9)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../6.html">تصاویر رهبری (17)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../7.html">شعر (304)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../4.html">خبر (651)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../3.html">تحلیل مقاله (2729)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../2.html">مقاله (201)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../5.html">پیشنهاد برنامه شهرستان كنگان (14)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../1.html">داستان های قدیمی كنگون (56)</a></font></div>        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/9.html"> آذر 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/8.html"> آبان 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/7.html"> مهر 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/6.html"> شهریور 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/5.html"> مرداد 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/4.html"> تیر 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/3.html"> خرداد 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/2.html"> اردیبهشت 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/1.html"> فروردین 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1398/12.html"> اسفند 1398</a></font></div>            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive.html">آرشیو كل مطالب</a></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://www.moallemaniran.ir" title="" target="_blank">پایگاه خبری تحلیلی معلمان ایران</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://parlemanmelk.ir" title="سلام 
+فرهیخته گرامی لطفا ما را لینک کنید با تشکر" target="_blank">املاک منطقه 22</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.Hsbteam.com" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+گروه نرم افزاری HSB" target="_blank">گروه نرم افزاری HSB</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://shahre-music.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">تک آهنگ جدید</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://tnvj.ir/" title="باسلام و احترام
+وبلاگ بسیار مفید و کاربردی ایجاد کرده اید، بسیار خرسندم از بررسی وبلاگتان. در صورت تمایل حاضر به تبادل لینک هستیم. آدرس سایت ما http://tnvj.ir/ می باشد.
+در صورت تمایل به تبادل لینک ابتدا لینک ما را در قسمت پیوندهای وبلاگتان درج نمایید و سپس از طریق ایمیل به آدرس HAMID.AZADI74@GMAIL.COM اطلاع دهید.
+پیشاپیش از همکاری و مساعدت شما سپاسگزارم." target="_blank">تبادل لینک</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://botgram.mobi/" title="ربات اینستاگرام با عضویت رایگان و اکانت 7 روز تست" target="_blank">افزایش فالوور اینستاگرام</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://sainkala.com/news-technology" title="" target="_blank">اخبار تکنولوژی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../amin2002.mihanblog.com/index.html" title="" target="_blank">یک قدم تا قلم</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://dabiranfile.ir/" title="مرجع فایل فرهنگیان شامل:
+گزارش تخصصی- تجربیات مدون- درس پژوهی-اقدام پژوهی-برنامه سالانه-تقویم اجرایی-طرح تعالی مدیریت کیفیت مدار-طرح تدبیر-طراحی آموزشی-تحلیل محتوا-تولید محتوای الکترونیکی
+سایت:
+http://dabiranfile.ir
+کانال تلگرام:
+https://t.me/dabirfile
+ایمیل سایت:
+dabiranfile@gmail.com" target="_blank">دبیران فایل</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.senfit.ir" title="" target="_blank">اطلاعات اصناف ایران</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../rassam110.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+گروه نرم افزاری HSB" target="_blank">RASSAM MEDIA</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.parvaresheafkar.com/law-attraction" title="سلام سایت من درباره قانون جذب خوشحال میشم تایید کنید" target="_blank">قانون جذب </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.muslimpress.com" title="با سلام....
+ 
+اهداف اصلی این سایت اطلاع رسانی از آخرین وضعیت مسلمانان جهان، نشان دادن چهره حقیقی اسلام ، انعکاس فرمایشات پیامبر اسلام محمد مصطفی (ص)، شریعت و احکام اسلامی می باشد  که متاسفانه امروزه به چهره ای  سرشار از اکاذیب و ریای غرب و گاه ضد انسانی تبدیل شده است.
+
+ در این دنیای فریبنده،غرب، پیامبر رحمت را پیامبر خشونت و دین اسلام را دینی خشن و ضد اخلاقی معرفی می کند.شایان ذکر است این سایت، بیان نقطه نظرات مشترک اسلام را  با دیگر ادیان الهی بر عهده دارد که این مهم بی شک می تواند انسان های موحد را در سرتاسر جهان به یکدیگر نزدیک تر کند.
+
+سایت مسلم پرس پیام آور صلح و دوستی  به همه مردم جهان است. مودت و دوستی را ترویج ، و به مبارزه با  ظلم و استکبار می پردازد  همانگونه که برای هیچ فردی پذیرفتنی نیست ." target="_blank">news</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://eheyat.com" title="مداحان" target="_blank">مداحان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://melatblog.ir" title="سرویس وبلاگدهی ملت بلاگ برای ساخت وبلاگ رایگان فارسی برای حمایت از زبان شیرین پارسی در پهنای اینترنت پا به عرصه نهاد و امید بتوان گامی هر چند کوچک برای اثر بخشی زبان پارسی در جهانیان انجام داد." target="_blank">ملت بلاگ</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.iraniannurse.com" title="با سلام....
+ لطفا لینک ما را تایید کنید." target="_blank">وبسایت پرستاری ایرانیان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.amirreza256.ir/" title="با سلام....
+ به وب ما هم سر بزنید." target="_blank">سایت دانش آموزان قره چپق</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.veteranstoday.com" title="" target="_blank">پژوهش ها</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../rahbarshenasi.mihanblog.com/index.html" title="" target="_blank">رهبر شناسی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.daneshforum.ir" title="انجمن علمی دانش آموزان و دانشجویان" target="_blank">دانش فروم</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://ghazamag.ir/" title="اخبار صنایع غذایی ایران
+
+سلام دوست عزیز
+وبلاگ خوبی داری ما هم وب سایت خبری راه اندازی در حوزه صنایع غذایی و تغذیه و سلامت
+
+ممنون میشم لینک رو تایید کنید تا وب سایت ما هم از رتبه خوبی برخوردار بشه" target="_blank">اخبار صنایع غذایی ایران</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://Dnis.ir" title="با سلام.
+با توجه به مطالب مفید و خوب بلاگ شما، جهت فعالیت در سایت دنیس به عنوان مدیر دعوت می شوید.
+ارادتمند شما. Dnis.ir" target="_blank">شبکه هوشمند دنیس ...</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://kangannajva.blogfa.com/" title="به دو زبان عربی و لاتین" target="_blank">کنگان نجوا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../www.beheshtiyan.mihanblog.com/index.html" title="سلام دوست عزیز
+بلاگ زیبایی داری.اگه مایل به تبادل لینک هستی ابتدا منو با نام بهشتیان لینک کن بعد خبر بده تا من هم تو رو لینک کنم.
+با تشکر" target="_blank">بهشتیان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../imamreza88.mihanblog.com/index.html" title="با سلام ، گرچه وب سایت امام رضا (ع) تازه شروع به کار کرده ولی با حمایت شما به بالاتر ها  خواهد رفت
+...............................................................
+ و اصل مطلب :
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و حتما اطلاع بدید.
+
+باتشکر وب سایت بزرگ امام رضا(ع)" target="_blank">وب سایت امام رضا (ع)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.GuilanFX.com" title="آموزش رایگان فعالیت در بازار بورس ارز بین المللی هام و اوراق بهادار" target="_blank">آموزش فعالیت در بورس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.hormozban.ir" title="اخبار استان هرمزگان را در پایگاه خبری هرمزبان دنبال نمایید.
+با تشکر" target="_blank">پایگاه خبری هرمزبان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../khormabad.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">روستاها</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.2016rio.ir" title="المپیک 2016" target="_blank">المپیک 2016</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://WWW.FIREANGEL.IR" title="سلام دوست عزیز این یک پیام تبلیغاتی نیست وبنده به وبلاگ شما شخصن سر زدم
+دوست من گروه ماو نویسندگان ما برای افزایش امنیت در فضای مجازی به پا شده وداره تمام تجربیات واطلاعات خود را در اختیار کاربران میزاره 
+برای همین تیم ما نیاز به همایت داره بیشتر مارو به نام طرف داران امنیت میشناسند وتمام اطلاعات وتجربیاتمونو رایگان در اختیار کار برا میزاریم همچنینن اخبار هک و...
+دوست وبلاگ نویس من اگه لطف کنی واز ما همایت کنی وسایت مارو لینک کنی 
+وهمچنینن شما میتوانید از لینک زیر تبلیغ خود را در سایت ما نمایش بدهی
+http://fireangel.ir/?page_id=321
+
+باتشکر از شما  admin:fireangel
+
+ادرس سایت:www.fireangel.ir
+
+httP://fireangel.ir
+
+دوست داران امنیت" target="_blank">دوست داران امنیت</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../ershadgar20.mihanblog.com/index.html" title="خداوند به داوود وحی کرد: یا داوود من پنج چیز را در پنج چیز بنا نهاده ام ومردم آن ها را در جای دیگر می جویند و هرگز نمی یابند :
+
+دانش را در گرسنگی و کوشش گذاشته ام و آنان در سیری و تبلی می جویند و نمی یابند.
+
+عزّت را در فرمانبرداری خودم گذاشته ام و آنان در بارگاه شاهان می جویند و نمی یابند .
+
+بی نیازی را در قناعت گذاشته ام و آنان در ثروت می جویند و نمی یابند.
+
+رضای خودم را در نَفس ستیزی گذاشته ام و آنان در پیروی از نفس می جویند و نمی یابند.
+
+آسایش را در بهشت گذاشته ام و آنان در دنیا می جویند و نمی یابند .
+
+احادیث قدسی جلد 1 صفحة 178" target="_blank">طلبه ارشادگر</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.jobnetfa.com" title="&quot;JobNetFa&quot; اولین و جامع ترین پورتال مشاغل نوین به زبان فارسی میباشد.
+هدف از ایجاد این پورتال ایجاد فضایی امن برای فعالیت های نوین شما دوستان عزیز میباشد.
+در این پورتال تمامی روش های تایید شده,اموزش ها,خبر ها,تحلیل و بررسی و ... در اختیار شما قرار داده شده است.
+معرفی بیش از 10 روش تایید شده.
+معرفی بش از 1000 سایت کسب درامد.
+برگزاری قرعه کشی های هفتگی,ماهانه و سالانه بین اعضا
+ارائه طرح های تشویقی برای افراد.
+پشتیبانی اعضا تا رسیدن به درامد
+و...
+اگر به دنبال شروع کسب درامد هستید,به این پورتال مراجعه کنید.
+http://www.jobnetfa.com/" target="_blank">JobNetFa اولین و جامع ترین پورتال مشاغل نوین به زبان فارسی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://atrekhoda.com" title="آرامشــبخش ترین و عاشقانه ترین ها را اینجا بخوانید
+
+با عطر خدا همراه باشید" target="_blank">███ عطر خدا ، آرامش خدایی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://WWW.bia2apk.ir" title="فایل تی اس ,بزرگترین بانک مقالات داشجویی - مرجع مقالات
+دانلود مقاله|مقالات دانشجویی|دانلود پروژه|مرجع مقاله
+www.filets.fileina.com
+همراه با پرداخت انلاین وامن" target="_blank">فایل تی اس ,بزرگترین بانک مقالات داشجویی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://melatblog.ir/" title="سرویس وبلاگدهی ملت بلاگ برای ساخت وبلاگ رایگان فارسی برای حمایت از زبان شیرین پارسی در پهنای اینترنت پا به عرصه نهاد و امید بتوان گامی هر چند کوچک برای اثر بخشی زبان پارسی در جهانیان انجام داد." target="_blank">ملت بلاگ</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://arawebco.ir" title="طراحی سایت" target="_blank">طراحی سایت</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.galleypic.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">خبرخوان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../it71.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">دنیای فناوری اطلاعات * طاها *</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://montasar.ir" title="وبسایت مهدویت" target="_blank">حضرت مهدی عج</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.daneshjooazad.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+پایگاه اطلاع رسانی دانشجو آزاد" target="_blank">پایگاه اطلاع رسانی دانشجو آزاد</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.jonbeshnet.ir/news/33132" title="با سلام
+گروه اینترنتی رهروان ولایت 
+از تمامی فعالان فضای مجازی دعوت می کنیم 
+با قرار دادن «لوگوهایجنبش اینترنتی امر به معروف و نهی از منكر» در پایگاه های اینترنتی و وبلاگ های خود و همچنین با تولید، انتشار و... ما را در این امر خطیر یاری فرمایند.
+
+لطفا گروه اینترنتی رهروان ولایت را لینك كرده و به ما هم در سایت در بخش نظرات بفرمائید تا شمارو لینك كنیم .
+ منتظر لینكتون هستم .
+http://www.jonbeshnet.ir/news/33132" target="_blank">فیروزجائی </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://farasokhan.blogfa.com" title="" target="_blank">فرا سخن</a></font></div>            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../linkdaily/index.html">همه پیوندهای روزانه</a></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندها</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.welayatnet.com/fa/news/91496" title="" target="_blank">پویش «من منتظرم»</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.jnarm.blogfa.com/" title="" target="_blank">جنگ نرم</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://kangannajva.blogfa.com/" title="به دو زبان عربی ولاتین" target="_blank">کنگان نجوا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://http://www.globalresearch.ca" title="ممممممم" target="_blank">تحقیقات جهانی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://http://jannaat.mihanblog.com/" title="" target="_blank">جنات اندیمشک</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://journal-neo.org/http://" title="" target="_blank">چشم انداز جنوب غرب آسیا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.manar.com" title="" target="_blank">صحیفة المنار</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.nakhelnews.com/" title="" target="_blank">النخیل</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://almasalah.com/" title="" target="_blank">المسلة</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.almuraqeb-aliraqi.org/" title="" target="_blank">صحیفة المراقب العراقی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://awraqpress.net/portal/" title="" target="_blank">موقع اوراق برس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.alahednews.com.lb/" title="" target="_blank">موقع العهد</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.addiyar.com/" title="" target="_blank">الدیار لبنان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://topnews-nasserkandil.com/final/HomePage.php" title="" target="_blank">سایت توب نیوز</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://assafir.com/" title="" target="_blank">سایت السفیر لبنان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://burathanews.com/index.html" title="" target="_blank">سایت براثا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://basiratjooyan.ir/" title="" target="_blank">پایگاه تحلیلی- بصیرتی بصیرت جویان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://weblognevisan.ir/" title="" target="_blank">انجمن وبلاگ نویسان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../sarbazgomnam08.mihanblog.com/index.html" title="" target="_blank">پایگاه اطلاع رسانی سربازان گمنام امام زمان(عج)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.koogana.ir/" title="" target="_blank">سایت خبری کوگانا(سایت خبری کنگان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href=" http://www.rahbaram110.blogfa.com/" title="" target="_blank">رهبرم سید علی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.banakvagoonagoon.blogfa.com/" title="" target="_blank">بنک و گوناگون</a></font></div>            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../link/index.html">همه پیوندها</a></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>نویسندگان</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../author/849529.html">عبدالمجید اورا (6217)</a></font></div>        </div><div class=div30></div>
+    </div>
+    
+    
+		
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>برچسبها</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252Fhttp%253A%252F%252Fir_____%257C(dot)%257C_____sputniknews_____%257C(dot)%257C_____com.html">نجوای کنگان/ نجوا کنگان/http://ir.sputniknews.com</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252F+خلاصه+ی+کتاب.html">نجوای کنگان/ نجوا کنگان/ خلاصه ی کتاب</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252Fsputnik.html">نجوای کنگان/sputnik</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+خلاصه+کتاب.html">نجوای کنگان/ خلاصه کتاب</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان.html">نجوای کنگان/ نجوا کنگان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+خبرگزاری+فارس.html">نجوای کنگان/ خبرگزاری فارس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252Fخبرگزاری+فارس.html">نجوای کنگان/ نجوا کنگان/خبرگزاری فارس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252F+خبرگزاری+فارس.html">نجوای کنگان/ نجوا کنگان/ خبرگزاری فارس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F++_____%257C(dot)%257C_____sputniknews.html">نجوای کنگان/  .sputniknews</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252F.html">نجوای کنگان/ نجوا کنگان/</a></font></div>        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>کل بازدید : <script>getStatVar('total_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید امروز :<script>getStatVar('today_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید دیروز : <script>getStatVar('yesterday_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید این ماه : <script>getStatVar('this_month_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>تعداد نویسندگان : <script>getStatVar('total_author');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>تعداد کل پست ها : <script>getStatVar('total_post');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>آخرین بازدید : <script>getStatVar('last_view_date');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <style>
+            .mihan_logo {
+                background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+                height: 131px;
+                margin-top: 10px;
+                text-align: center;
+            }</style>
+        <div class="mihan_logo"></div>
+        <center><script language="javascript" src="http://news.parseek.com/Javascript/?items=20&type=ALL&bullet=true&source=false" ></script></center><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+</div>
+
+</div>
+</td>
+<td class=div01 valign=top><div class=div001></div></td>
+<td class=div02>&nbsp;</td>
+</tr>
+<tr>
+    <td class=div04>&nbsp;</td>
+    <td colspan="3" class=div4>
+        <div class=div6></div>
+        <div class=div7>
+            <a href="http://www.mytheme.ir" target="_blank">
+                <img src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" border=0 width=189 height=35></a></div></td>
+    <td class=div04>&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 460px;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'najvaye-kangan.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

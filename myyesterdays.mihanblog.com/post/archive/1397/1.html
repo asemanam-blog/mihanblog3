@@ -1,0 +1,1614 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1882243*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[661]='0';commentCnt[662]='0';commentCnt[663]='0';commentCnt[664]='0';commentCnt[665]='0';commentCnt[666]='0';commentCnt[667]='0';commentCnt[668]='0';commentCnt[669]='0';commentCnt[670]='0';commentCnt[671]='0';commentCnt[672]='0';commentCnt[673]='0';commentCnt[674]='0';commentCnt[675]='0';commentCnt[676]='0';commentCnt[677]='0';commentCnt[678]='0';commentCnt[679]='0';commentCnt[680]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+			} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://myyesterdays.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://myyesterdays.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1000');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','شنبه 21 اردیبهشت 1398');
+	
+	setStatVar('today_view','4');
+	setStatVar('yesterday_view','6');
+	
+	setStatVar('this_month_view','289');
+	setStatVar('last_month_view','327');
+
+	setStatVar('total_view','51514');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (04:34)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://myyesterdays.mihanblog.com/statupdate/?data[refereruri]=http://myyesterdays.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1397/1&data[sdate]=1607826196&data[hash]=b615a516670f8bc92bf9f1c9ff3f93a2&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://myyesterdays.mihanblog.com/post/archive/1397/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<script src=http://3x2.ir/js/LOCKi.php?email=fatemekyu@gmail.com&bg=http://file.mihanblog.com//public/user_data/user_files/628/1882243/lock30.jpg&pm=myloveisallah33></script>
+
+<html>
+<head>
+
+<title>..::دیـــــــــــــــــروزهایـمــ::.. - مطالب  فروردین 1397</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="<-BlogAuthor->">
+<meta name="language" content="Farsi">
+<meta name="description" content="..::دیـــــــــــــــــروزهایـمــ::.. - مطالب  فروردین 1397 - دیــروزهـایمـــ...روزهـایــی که سـپـــــری شــدنــد... - ..::دیـــــــــــــــــروزهایـمــ::..">
+<meta name="keywords" content="..::دیـــــــــــــــــروزهایـمــ::.. - مطالب  فروردین 1397,myyesterdays, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link  href="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/favicon.png"  rel="shortcut icon" />
+<link rel="alternate" type="application/rss+xml" title="..::دیـــــــــــــــــروزهایـمــ::.." href="../../rss/index.html" />
+<link href="http://slidethemes.ir/theme/87/style.css" type="text/css" rel="stylesheet">
+<script src="http://slidethemes.ir/theme/87/slide/jquery-1.8.3.min.js" type="text/javascript" charset="UTF-8"></script>
+<script src="http://slidethemes.ir/theme/87/slide/jquery.nivo.slider.pack.js" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript">
+$(window).load(function() {
+	$('#slider').nivoSlider();
+});
+</script>
+
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=SlideTheme>
+<div id=main-back>
+<div id=header>
+
+
+
+<!-- Slide Start -->
+
+<div id="RM-SlideBack">
+<div class="slider-wrapper style"> 
+ <div id="slider" class="nivoSlider">  
+<a href="1.html#" title="Slide Theme"><img src="http://slidethemes.ir/theme/87/slide1.jpg" alt="" /></a>
+<a href="1.html#" title="Slide Theme"><img src="http://slidethemes.ir/theme/87/slide2.jpg" alt="" /></a>
+<a href="1.html#" title="Slide Theme"><img src="http://slidethemes.ir/theme/87/slide3.jpg" alt=""  /></a>
+ </div></div></div>
+
+<!-- Slide End -->
+
+
+
+<div class=back-menu></div>
+<div class=top-menu2>
+<a href="../../../../www.myyesterdays.mihanblog.com/index.html">خونــه</a> |
+<a href="javascript:messageForm()">تماســ با منـ </a> |
+<a href="mailto:[fatemekyu@gmail.com]">ایمیلــ مدیر</a> |
+<a href="http://www.slidetheme.ir" target="_blank" >قالبــ وبلاگــ</a> |
+<a href="../../rss/index.html" target="_blank" >Feed</a>
+</div>
+
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>..::دیـــــــــــــــــروزهایـمــ::..</div><div class=Description>دیــروزهـایمـــ...روزهـایــی که سـپـــــری شــدنــد...</div></div>
+<div style="display:none"><h1><a href="../../../../www.myyesterdays.mihanblog.com/index.html">..::دیـــــــــــــــــروزهایـمــ::..</a></h1></div>
+</div>
+
+<div id="RM-Back1"></div>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره دیروزهایمـ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="../../../../static.mihanblog.com/public/user_data/web_photo/628/1882243.jpg@1111"  /><br>بـــه نـــــــامــ خـــــــــــــــدا<br />
+.<br />
+.<br />
+ایـنــجا دختــــرکـیـــ از دیــــــروز هـایـشــ میـــ نـویســد<br />
+تـا یـادشــ نـرود گــذشــــته را ...<br />
+.<br />
+.<br />
+.<br />
+چه آسان تماشاگر سبقتــ ثانیه‌هاییمــ؛<br />
+<br />
+و به عبورشان می‌خندیمــ!<br />
+<br />
+چه آسان لحظه‌ها را به کامـ همـ تلخ می‌کنیمـ ؛<br />
+<br />
+و چه ارزان می‌فروشیمــ لذتــ با همــ بودن را!<br />
+<br />
+چه زود دیر می‌شود<br />
+<br />
+و نمی‌دانیم که؛ فردا می‌آید<br />
+<br />
+شاید ما نباشیمــ....<br />
+<br />
+سلام یادمان باشد ....<br />
+<br />
+بخشش را &quot;بخش کنیمــ&quot;<br />
+<br />
+محبتــ را &quot;پخش کنیمــ&quot;<br />
+<br />
+غضبــ &quot;پریشانی&quot; استــ<br />
+<br />
+ نهایتش &quot;پشیمانی&quot; استــ<br />
+<br />
+شکیبایی؛<br />
+<br />
+بر هر &quot;دعوایی&quot;، &quot;دواستــ&quot;<br />
+<br />
+هر چه &quot;بضاعتمان&quot; کمتر استــ؛<br />
+<br />
+&quot;قضاوتمان&quot; بیشتر استــ.<br />
+<br />
+<br />
+ با &quot;خویشتنداری&quot; ؛<br />
+<br />
+ &quot;خویشاوند داری&quot; کنیمــ<br />
+<br />
+<br />
+به &quot;خشمــ&quot; ؛&quot;چشمــ&quot; نگوییمــ<br />
+<br />
+<br />
+سوء تفاهمــ، &quot;تیر خطایی&quot;استــ؛<br />
+<br />
+که از &quot;گمان&quot; رها می شود<br />
+<br />
+<br />
+انسان &quot;خوشرو&quot; ؛<br />
+<br />
+گل &quot;خوشبو&quot; استــ<br />
+<br />
+<br />
+&quot;دوستــ داشتن&quot; را<br />
+<br />
+ &quot;دوستــ بداریمــ&quot;<br />
+<br />
+<br />
+از&quot; تنفر &quot; ؛<br />
+<br />
+&quot;متنفر&quot;باشیمــ<br />
+<br />
+<br />
+به &quot;مهربانی&quot; ؛ <br />
+<br />
+&quot;مهر&quot; بورزیمــ<br />
+<br />
+<br />
+با &quot;آشتی&quot;؛ <br />
+<br />
+&quot;آشتی&quot; کنیمــ<br />
+<br />
+<br />
+و از &quot;جدایی&quot;؛<br />
+<br />
+&quot;جدا &quot;باشیمــ<br />
+<br />
+اینــ دیـــــروزها دیگــر برنمیگردند<br />
+<br />
+زیبا بسازیمشان...<br />
+<br />
+<br />
+میدانی؟؟<br />
+<br />
+<br />
+دَرد که بزرگ شد،<br />
+<br />
+<br />
+در لباس فریاد نمی گُنجد...<br />
+<br />
+<br />
+فقط باید&quot;سکوت&quot;کرد...<br />
+<br />
+<br />
+بُغض وقتی بزرگ شد،نمیشکند...<br />
+<br />
+<br />
+فقط&quot;نفست&quot;را میبُرد...<br />
+<br />
+<br />
+فاصله وقتی که زیاد شد،<br />
+<br />
+<br />
+دلت دیگر&quot;تَنگ&quot;نمیشود...<br />
+<br />
+<br />
+فقط میشکند...<br />
+<br />
+<br />
+عاشقانه هایت وقتی اوج میگیرد،<br />
+<br />
+<br />
+کسی باور نمیکند...<br />
+<br />
+<br />
+فقط برای مردم &quot;جالب&quot;ست...<br />
+<br />
+<br />
+بعضی ها میخندند و میگذرند...و<br />
+<br />
+<br />
+بعضی ها سادگیت را پَسند میکنند...و<br />
+<br />
+<br />
+ببین که چه غم انگیز است این درد ...<br />
+<br />
+<br />
+اما من هنــــــــــــوز،<br />
+<br />
+<br />
+پایدارم،<br />
+<br />
+<br />
+می نویسمـ از آن دیروزها<br />
+<br />
+<br />
+تا یادمـ نرود زندگی با تمامـ فراز و نشیبــ هایشـ،<br />
+<br />
+<br />
+زندگی استــ...<br />
+<br />
+.<br />
+.<br />
+<br />
+بــه گمـانَم بزرگتریـن دارایی زندگی آدمیزاد،<br />
+<br />
+همین انســان ها ی اطرافـش هستنــد،<br />
+<br />
+مخصوصــآ<br />
+<br />
+همین هـــایی که بـا وجود فاصله های بسیار<br />
+<br />
+کنــارت هستند!<br />
+<br />
+همیـن دوست هایی که برایت پیام میگذارند،<br />
+<br />
+که اعلـام میکنند، حواسشــان به تو هست!<br />
+<br />
+همین دوست هایی که با پیام 2-3 خظی<br />
+<br />
+نشـآن میدهند<br />
+<br />
+چقدر دلشان پی درد تو و دل توست!<br />
+<br />
+که چقــد خوب تورا می خواننــد...<br />
+<br />
+همیــن دوست هایی که پیگرند،<br />
+<br />
+که نباشــی دلگیرند !<br />
+<br />
+همیــن دوست هایـی که دلتنــگ میشونــد<br />
+<br />
+و بــی مقدمه برایــت می نویسنــد...<br />
+<br />
+وقــت هــایی<br />
+<br />
+دو سه خط شعــر می فرستنــد<br />
+<br />
+که بدانــی<br />
+<br />
+خودت،خوب بودن حال و احوالت،<br />
+<br />
+برای کسی مهم است<br />
+<br />
+آدمیزاد چه میشــود گاهی،!<br />
+<br />
+با همیـن دو سه خط نوشته،<br />
+<br />
+دو سه خط پیـام از دوستی،<br />
+<br />
+حس شیرینــیست که بدانــی بودنت برای<br />
+<br />
+کسی اهمیت دارد!<br />
+<br />
+وقت هـایی هست که میفهمی حتی اگر<br />
+<br />
+دلت پُر درد است، شاد باشی باید!<br />
+<br />
+تا انها هم غمگین نشونــد!<br />
+<br />
+وقت های که خاطراتت را میخوانند،<br />
+<br />
+که میگویند براید! توصیه هایشــان را!<br />
+<br />
+درد دل هایشـان را، و چقــد خوب است!<br />
+<br />
+خواستم بگویَم،<br />
+<br />
+که چقدر این انسان ها برایم پر ارزشنَد<br />
+<br />
+که چقدر خوب است دارمشان...<br />
+<br />
+چقدر خوب است که دارمتــان!<br />
+<br />
+«از دوستــ خوبمـ ژینا ...»</p></div></div>
+<div class=LowSid></div>
+
+
+<div class="TopSid"><div class=TopSid2>نویسنده</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../../author/1351714.html">fคtē๓ēh   1000 </a></div></div>
+<div class=LowSid></div>
+
+
+
+
+		<form id="frm-16076527865fd2d5b242334" method="post" action="http://myyesterdays.mihanblog.com/poll/new/fid/16076527865fd2d5b242334/atrty/1607652786/avrvy/0/key/3f278c5303987bfa8f77bc4d7214c87c/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="365239" id="data[pollid]" />		
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+به نظرتــ با توجه به خاطــراتمـ،منــ چجـور دختــریمــ...؟؟<br><label><input type="checkbox"  name="data[v1]" id="v1" value="1" />مهربونــ</label><br><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />عصبانـیــ</label><br><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />بامزهــ</label><br><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />لوســـ</label><br><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />افســرده</label><br><label><input type="checkbox"  name="data[v6]" id="v6" value="1" />شــاد</label><br><label><input type="checkbox"  name="data[v7]" id="v7" value="1" />وظیفه شناســ</label><br><label><input type="checkbox"  name="data[v8]" id="v8" value="1" />خاصــ</label><br><label><input type="checkbox"  name="data[v9]" id="v9" value="1" />مغــرور</label><br><label><input type="checkbox"  name="data[v10]" id="v10" value="1" />گلــــــ!!</label><br><br><input type="submit" value="ثبت"></div></div>
+<div class=LowSid></div>
+
+		<input type="hidden" name="frm-id" value="16076527865fd2d5b242334" id="frm-id" /></form>
+
+
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوع</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="../../category/2.html">مدیــر دیــروزها  1 </a></div><div class=li-Sid>				
+<a href="../../category/1.html">دیـــــــروزهایمــ  995 </a></div></div>			
+<div class=LowSid></div>
+
+
+﻿<div class="TopSid"><div class=TopSid2>ویــــژه</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a title="قالب وبلاگ" href="http://www.slidetheme.ir/">قالب وبلاگ</a></div>
+<div class=li-Sid>﻿<a href="../../../../www.2fereshteh.mihanblog.com/index.html" title="دو فرشته از طرفــ خداوند" target="_blank">دو فرشته از طرفـ خداوند</a> | ﻿<a href="http://www.instagram.com/fatellow" title="پیج اینستاگرامـ" target="_blank">Fatellow</a></div>
+<div class=li-Sid>﻿<a href="../../../../www.molaman.mihanblog.com/index.html" title="مولای منـ" target="_blank">مولای منـ</a></div>
+<div class=li-Sid>﻿<a href="http://www.2gholu.mihanblog.com/" title="دوقلوهای افسانه ای" target="_blank">دوقلوهای افسانه ای</a></div>
+﻿<a title="آپاراتــ" href="http://aparat.com/"><img border="0" src="http://iranskin.com/i.png"></a></div>
+<div class=LowSid></div>
+
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینکــ همسایه ها</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../aaaivan.mihanblog.com/index.html">آواز بلوط</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../nikabazrafshan.mihanblog.com/index.html">متــن های زیبـــا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../khodneviskhord.mihanblog.com/index.html">خودنویس</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../www.mortezaghasemi8548.mihanblog.com/index.html">ترانه های سوخته</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://zahra370.mihanblog.com/">خلوت تنهایی من</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../hghight-zandage.mihanblog.com/index.html">تنها سکوت است که میماند !</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../roozayekhoob96.mihanblog.com/index.html">روزنوشته ها...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../amin2002.mihanblog.com/index.html">یک قدم تا قلم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../arefaneha.mihanblog.com/index.html">عارفانه های ناب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../khodneviskhord.mihanblog.com/index.html">خودنویس</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../deathlikelife.mihanblog.com/index.html">Death Like Life</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../t2017.mihanblog.com/index.html">یک فنجان عشق</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://sunkeraid57.mihanblog.com/">SunkeRaid</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../fatemeh-asemani.mihanblog.com/index.html">حس سبــز من ...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://m83kh.blogfa.com/">حوالی من توقف ممنوع است</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../romantik09.mihanblog.com/index.html">♫ احساسی ♫</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://kata.samenblog.com/">همه چیز درسته تو فقط بخند</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://lifemealireza.mihanblog.com/">Lost in you</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mamadivazezejon.mihanblog.com/">غریبی های یک دختر</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://zahra370.mihanblog.com/">خلوت تنهایی من</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../myblog003.mihanblog.com/index.html">متن هایی برای هیچ...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../taranom00.mihanblog.com/index.html">FaZe.DeL</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://kishvamatezendegi.mihanblog.com/">کیش و ماتــ زندگیــ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../mahla0090.mihanblog.com/index.html">سر پر سودای من</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../barbikalab.mihanblog.com/index.html">افسانه گوی شب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../shahre-taraneh.mihanblog.com/index.html">شهر ترانه</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../www.manoto24.mihanblog.com/index.html">فریاد یک سکوت،فریاد زیر آب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../shaghayegh1377.mihanblog.com/index.html">گاهی باید رفت!</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://doshize.blog.ir/">בنیاے یڪ בوشیزہ چپ בست</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../yek-fenjan-sher.mihanblog.com/index.html">یک دیوانه می نویسد!</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.instagram.com/fatellow">FATELLOW</a></div><div class=li-Sid><a title="قالب وبلاگ اسلایدشو دخترانه" href="http://slidetheme.ir/view/87.php">قالب وبلاگ صورتی</a></div>
+<div class=li-Sid><a href="http://slidetheme.ir">قالب میهن بلاگ</a></div>
+</div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="../../../extrapage/fatemeh.html">پروفایلــ منــ</a></div></div>
+<div class=LowSid></div>
+
+
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسبــ ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="../../tag/دیروزهایم.html" style="font-size:1em">
+		دیروزهایم</a> </div>
+</center><div class=LowSid></div>
+
+
+
+<div class=TopSid><div class=TopSid2>
+<b>آشنایانـ</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../dailyme.mihanblog.com/index.html" title="پارمیدا جان">روزانه نویس های یک عدد من :)</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://girly17.mihanblog.com/" title="">یه دختر شیطون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://chapol.blogsky.com/" title="">نوشته های یک چپ دست</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../mesbaholhoda9.mihanblog.com/index.html" title="زهرا جان">نوای حسینی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../galamokagaz9.mihanblog.com/index.html" title="زهرا جان">قلم و کاغذ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../mylife67.mihanblog.com/index.html" title="">لحظه های من</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://jina-shayan.mihanblog.com/" title="ژینا جان">دیاری پر از تنهایی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../bbb-af.mihanblog.com/index.html" title="بشرا جان">همه چی!</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://axtext.com" title="سلام ، خسته نباشید
+وبلاگ بسیار خوب و زیبایی دارید .
+پیشنهاد میکنم از سایت ما هم بازدید کنید. و با تایید لینک از ما حمایت کنید. 
+خیلی ممنون
+خدانگهدار">عکس نوشته پروفایل</a></div><div class=li-Sid><a href="http://slidetheme.ir">قالبــ وبلاگــ</a></div>
+</div>
+<div class=LowSid></div>
+
+<script src="http://slidetheme.ir/img/fall.php" type="text/javascript" charset="UTF-8"></script>
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+<div id="RM-Back2"></div>
+
+
+<div id="aj"><h2>﻿<a href="http://minitools.ir/" title="وب مینی تولز" target="_blank">وب مینی تولز</a></h2> - ﻿<a href="http://panjeh.ir/" title="وب پنجه" target="_blank">وب پنجه</a></div>
+<script type="text/javascript">document.getElementById('a'+'j').style.display='none';</script>
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/680">دیـــروز ششصد و چهلـ و هفتمـ647</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/680">دیـــروز ششصد و چهلـ و هفتمـ647</a></h2></div>
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><b><font size="3" face="georgia,times new roman,times,serif">​داشتمـ به مادرمـ میگفتمـ...</font></b><div><b><font size="3" face="georgia,times new roman,times,serif">میگفتمـ دلمـ نمیخواد زندگی زود بگذره،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">میخوامـ یا انقــدر دیر بگذره که از جوونی خسته شمـ، یا همینجا تمومـ شه...</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اما منـ اینـ تکاپوها رو دوستـ دارمـ،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اینـ استرس ها،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اینـ درس های سختـ دبیرستانـ،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اینـ کشمکش ها برای شستن ظرفــ،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اینـ تعطیلی های مزه دار،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اینـ روزای معنوی،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اینـ پاکیِ جوونی،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اینـ نگاه های محجوبــ و فرو ریختن دلـ،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">و فراموش کردنـ همه چی بعد یه روز...</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">چقــدر تغییر برای آدما راحته،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">منـ اصلا با تغییرها سازگار نیستمـ،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اونا هم باهامـ سازگار نیستنـ...</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">- راستی دیشبــ عروسی قشنگترینـ دوستـ دنیا، «فاطمه ساداتــ.حـ» بود...</font></b><br><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>شده در اوج جوانی، با همینـ ظاهر شاد<br>تا گلو پیـــر کسی باشی و قسمتــ نشود؟<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b></font></b></div>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 31 فروردین 1397  | 03:12 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(680)">نظرات  <script>setCommentCnt(680)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/679">دیـــروز ششصد و چهلـ و ششمـ646</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/679">دیـــروز ششصد و چهلـ و ششمـ646</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3" face="georgia,times new roman,times,serif">​روز صد و بیستـ و یکمـ...<br>اصلا نگرانـ آینـــده نباش خودمـ،<br>خــــدا هستــ،<br>اگه ازش عاقبتــ بخیـــری خواستی،<br>خبــ میده؛<br>اینـ که چیز سختی نیستــ...<br>اگه به اینـ باشه که تا اسمـ امتحاناتــ نهایی و انتخابــ رشته و کنکــور و دانشگاه و ازدواج رو میشنوی،<br>به خودتــ بلرزی که «یعنی چی میشه؟»،<br>بدونـ نمیتونی بیشتر از چند سالـ تو اینـ دنیا زندگی کنی.<br>اومدی اینجا چونـ وظایفی داری، باید قوی باشی،<br>خـــدا فکر همه چیو کرده...<br>فقط کافیه تو هر دوراهی،<br>هرچی خــدا بهتــ یاد داده، بازبینی کنی،<br>ببینی کدومـ راه بهتر تو رو میرسونه به جایی که باید باشی؛<br>تو هر اقدامی، هدفتــ یادتــ باشه،<br>زدی به هدفـــ،<br>مگرنه تیر و کمانـ آماده کردنو همه بلدنـ...<br>«پله ی دومـ: شناسایی جایگاه مطلوبــ»<br></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>خوشا راهی که پایانش «تو» باشی...<br><br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 30 فروردین 1397  | 03:13 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(679)">نظرات  <script>setCommentCnt(679)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/678">دیـــروز ششصد و چهلـ و پنجمـ645</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/678">دیـــروز ششصد و چهلـ و پنجمـ645</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3" face="georgia,times new roman,times,serif">روز صد و بیستمـ مدرسه...<br>- روزای سرد بهاری،<br>درختــ هایی که غافلگیــر شدنـ،<br>یه آسمونـ ابری،<br>ننه سرما امسالـ دلـش نمیخواد بره...<br>- ته کلاس پر چمدونـ بود؛<br>40 نفر تو اردوی مشهــد پذیرفته شده بودنـ،<br>اما اونـ روز 210 تا دلـ، راهی مشهـــد بودنـ...<br>منمـ خیلی دلمـ میخواستــ<br>چمدونـ بستنـ و کار و زندگی رو رها کردنـ و از زیر قرآنـ رد شدنـ و وضوی زیارتــ گرفتنـ و اذنـ دخولـ خوندنـ و سلامـ دادنـ و زیارتـ کردنـ<br>رو به زودی زود تجـــربه کنمـ...<br>چیکار کنمـ؟<br>آقامه، سرورمه، اماممه،<br>دلمـ براش تنگــ شده...<br>دلمـ برای زیارتنامه اش تنگــ شده...<br>دلمـ برای بابــ الجوادش تنگــ شده...<br>اما حیفــ که همونـ جمله ی همیشگی میمونه:<br>لایق نبودمـ...<br></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>دلـ منـ گمـ شد<br>اگر پیــــدا شد<br>بسپارید اماناتــ رضا(ع)...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 29 فروردین 1397  | 02:48 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(678)">نظرات  <script>setCommentCnt(678)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/677">دیـــروز ششصد و چهلـ و چهارمـ644</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/677">دیـــروز ششصد و چهلـ و چهارمـ644</a></h2></div>
+<div class=C-post><div class=CenterPost>
+
+<b><font size="3" face="georgia,times new roman,times,serif">​روز صد و نوزدهمـ مدرسه...<br>- ای همه جانمـ تسبیح آویخته به گردنتــ...!!<br>- شادی خیلی مهمــه،<br>مهمتـــر از اونـ، جنبــه ی شادیه.<br>وقتی آدمـ جنبه ی شادی نداشته باشه، حق نداره شاد باشه،<br>چونـ ممکنه کارهایی بکنه که در نهایتــ، باعثــ آزار و نفرتــ دیگرانـ میشه.<br>یارو تا دیـــروز زانوی غمـ در بغلـ گرفته بود،<br>از دیـــروز که خبر ازدواجـ یه همکلاسی رو شنیده که اصلا ربطی همـ بهش نداشته،<br>تا همینـ الانـ داره دستــ میزنه کِلـ میکشه میرقصه،<br>یعنی اینمـ شده کاسه ی داغ تر از آش از اونـ زاویه!!<br>فقط کافیه یه ثانیه تو کلاس سکوتــ بشه یا بحثــ درس بره تو حاشیه؛<br>دهنشو تا ته باز میکنه که بگه:<br>«برای عروس خانوممونـ یه کفــ مرتبـــــ کلیلیلیلیلیلی!»<br>یا اینکه «دوماد لبــ حوضه، دستش پر موزه...» میخونه؛<br>یا اصلا از یه دید دیگه، چسبیده به عروس، شاید بختــ خودشمـ باز بشه!!<br>خبــ توانـ شنیدنـ اینجور خبرا رو نداری، پیگیـــر نشو!!<br></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>بترس از خـــدا و میازار کــــس<br>ره رستگاری همینـ استــ و بس<br>ــــــفردوسیـــــ</font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b><br><font color="#CC33CC"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ2:</font></font></b></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b></font><br><font color="#CC33CC"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 15pt" face="Arial"><font style="font-size: 8pt" face="Tahoma"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><b><font face="georgia,times new roman,times,serif"><font class="text4"><img src="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/tasbih.jpg" alt="http://file.mihanblog.com//public/user_data/user_files/628/1882243/tasbih.jpg" width="255" height="255"></font></font></b></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b></font><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:</font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:</font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b>
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 28 فروردین 1397  | 03:05 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(677)">نظرات  <script>setCommentCnt(677)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/676">دیـــروز ششصد و چهلـ و سومـ643</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/676">دیـــروز ششصد و چهلـ و سومـ643</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3" face="georgia,times new roman,times,serif">​روز صد و هجدهمـ مدرسه...<br></font></b><div><b><font size="3" face="georgia,times new roman,times,serif">خیلی نیازی نیستــ به تغییـرهای جزئی مانور بدی،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">همینـکه بدونی با همونـ آدمـ قبلی طرفی،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">خودش براتــ یه حجته برای اینکه مثلـ قبلـ باهاش رفتار کنی.</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اما گاهی تغییــر، فراتر از تغییراتـ ظاهریه.</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">گاهی یه اتفاق تو زندگی، سرنوشتــ تو رو تا فرسخ ها تحتــ الشعاع قرار میده،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">با وجود «یهویی» بودنـش، چنانـ تکونتــ میده که فقط حیرتــ براتـ باقی میذاره...</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">چی شد؟ کِی شد؟ چرا شد؟</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">سهمـ تو از اینـ اتفاق، یه عمــر زندگیه...</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اما سهمـ دوستاتــ، فقط نگاه نگاه نگاه...</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">چه حس خوبیه، لبخند شادی آفرینشون،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">و چه نفرتـ انگیزه، حسادتــ برخی از اونا...</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">و تو برای هزارمینـ بار تو دلتــ جمله ی ”سر آدمـ تو لاکـ خود بودنـ” رو تحسینـ میکنی...!!<br>عروس شدنـ دوستامـ مبارکـــ!<br></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>آنکـــــه بی برقــ کنــــد<br>جـــــــــانـ مـــــــــرا،<br>شارژ کجاستــــ؟؟؟؟<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b></div>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 27 فروردین 1397  | 02:59 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(676)">نظرات  <script>setCommentCnt(676)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/675">دیـــروز ششصد و چهلـ و دومـ642</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/675">دیـــروز ششصد و چهلـ و دومـ642</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<font size="3"><font face="georgia,times new roman,times,serif"><b>گاهی دلتــ میخواد خودتــ رو گولـ بزنی؛<br>چشمتو به روی حقایقـ ببنــدی و بگی:<br>«همه چی خوبه.»<br>اما میدونی یه لحظه غفلتــ<br>مساویه با زمینـ موندنـ حرفــ مادرتــــــ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; بزرگترتــ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; رهبرتـــــ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; امامتـــــــ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; پیامبرتــــ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; و حتی خـــداتــ<br>چاره ای نداری فقط در حدی که براتــ مقرر شده،<br>کار رو یکســـره کنی.<br>مجبوری بشینی و حسرتــ بخوری به ریخته شدنـ خونــ شهیدانـ تو سوریه،<br>حسرتــ بخوری به تلاش های بی وقفه ای که دارنـ تو زمینه های علمی انجامـ میدنـ،<br>حسرتــ بخوری به استعـــدادهای درخشانی که شدنـ پلـ موفقیتــ اینـ و اونـ.<br>-جهادتــ سیاهی چادره، چونـ دختری.<br>-وظیفتــ درس خوندنه، چونـ عقبی.<br>-حدّتــ تا همینـ کارهای عادیه، چونـ به درد هیچـ جایی نمیخوری.<br>هر چقـــدر همـ به خودتــ بگی: بدو بدو بدو؛<br>بازمـ به اونـ چیزی که میخوای نمیرسی، پس چه بهتر که رو ابعادی کار کنی که میتونی تغییرش بدی.<br>«پله ی اولـ: شناسایی جایگاه خود»<br></b></font></font><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>رختــ سربازیِ تو بوی کفنـ دارد و منـ<br>شرمسارمـ که نگاهتــ کنمـ و دمـ نزنمـ<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 26 فروردین 1397  | 06:01 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(675)">نظرات  <script>setCommentCnt(675)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/674">دیـــروز ششصد و چهلـ و یکمـ641</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/674">دیـــروز ششصد و چهلـ و یکمـ641</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3"><font face="georgia,times new roman,times,serif">- روزها رو گمـ کردمـ،<br>حتی شاید ساعتــ ها رو...<br>انگار که اصلا «منـ»ــی تو اینـ دنیــا وجود نداره،<br>چه اشکالی داره<br>منمـ حاضر غایبــ باشمـ؟؟<br>- اینکه هدفمـ چیه برای خوندنـش،<br>هنوز با خودمـ روراستــ نشدمـ که بخوامـ اینـ رو بگمـ.<br>و اینکه آیا هدفی دارمـ؟<br>نمیدونمـ!<br>اینـ کنجکاوی بیش از حد برای فرداها،<br>یعنی چی میشه؟<br>یعنی کِی میاد؟<br>یعنی چطور میشمـ؟<br>یعنی کجاستــ؟<br>یه بهونه اس برای هدفدار کردنـ تمامـ امور امروزمـ.<br>تا کی میخوامـ از دیـــروزهامـ یاد بگیرمـ؟<br>امروز بهمـ نیاز داره،<br>و منـ بهش نیاز دارمـ...<br>(آغاز یکــ زاویه دید جدیــــد<img src="http://mihanblog.com/public/public/rte/images_new/smiles/67.gif">)<br></font></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font><font size="3" face="georgia,times new roman,times,serif" color="#339999">جانــــــا تو را که گفتــ که احوالـ ما مپرس<br>بیگانه گــرد و قصــــــهٔ هیچ آشنــا مپرس<br>ز آنجا که لطفــ شاملـ و خلق کریمـ توستــ<br>جرمــ نکرده عفــــــو کنـ و ماجــرا مپرس</font></b><br>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 25 فروردین 1397  | 05:39 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(674)">نظرات  <script>setCommentCnt(674)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/673">دیـــروز ششصد و چهلمـ640</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/673">دیـــروز ششصد و چهلمـ640</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<font size="3"><font face="georgia,times new roman,times,serif"><b>دوباره زده بود به سرمـ،<br>میگفتمـ منـ ترجیح میدمـ تو خونه بمونمـ...<br>وای از اینـ گوشه گیری ها و افسردگی ها...<br>باید دستــ خودمـ می بود،<br>تبدیلـ میشدمـ به یه دختر شاد و پرنشاط.<br>هر چی که هستــ،<br>تسلیمـ اونا شدمـ، یه کتابــ انداختمـ تو کیفمـ و رفتیمـ بیرونـ.<br>نمیدونمـ فسلفه اینکه نمیکتــ رو گذاشته بودنـ تو یه جای سرازیری،<br>چی بود؟؟؟<br>نشسته بودیمـ، همه رو همـ می افتادیمـ،<br>همه خسته شدنـ، بلند شدنـ، یهو منـ با شدتــ لیز خوردمـ و رسیدمـ پایینـ ترینـ نقطه،<br>بی ادبا همه بهمـ خندیدنـ؛<br>حق داشتمـ نمیخواستمـ برمـ بیرونـ!!<br>شبــ ساعتــ 1 یکی زنگــ در رو زد، بهونه های الکی میاورد،<br>قبض برق و فلانـ و بهمانـ و...<br>مادرمـ میگفتــ صد در صد اینـ دزده، میخواستــ بدونه حالا که چراغا چند شبه خاموش نشده، یعنی کسی نیستــ تو خونه؟ که بیاد دزدی.<br>منـ طبق معمولـ نظر مخالفــ داشتمـ، تو فاز افکار منفی نیستمـ.<br>اما از بس مادرمـ منو ترسونده بود، با اشهـــد سرمو گذاشتمـ رو بالش!!!<br></b></font></font><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>کاش منـ همـ گوشه نشینـ حرمـ امامـ رضا (ع) بودمـ خـــدا...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 24 فروردین 1397  | 05:39 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(673)">نظرات  <script>setCommentCnt(673)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/672">دیـــروز ششصد و سی و نهمـ639</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/672">دیـــروز ششصد و سی و نهمـ639</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3"><font face="georgia,times new roman,times,serif">روز صد و هفدهمـ مدرسه...<br>هیچ حسی قشنگــتر از حس بعد از 20 گرفتنـ پرسش اقتصاد نیستــ!<br>ساعتــ 11 کلاسا تعطیلـ شد،<br>یادواره شهدا داشتیمـ؛<br>با حضور پدر شهید احمدی روشنـ.<br>مدرسه تو اینـ زمینه ها خیلی خوبــ مایه میذاره،<br>از اینـ بابتــ خوشحالمـ که رو فرهنگسازی کار میکننـ،<br>کاش اینجور برنامه ها برای همه دانش آموزا اجرا میشد،<br>شاید...<br>دیـــروز خیلی به اتفاقاتــ گذشته فکر کردمـ.<br>به انتظاراتمـ از کراماتــ امامـ حسینـ(ع) و تمامـ کسانی که به زیارتشونـ رفتمـ...<br></font></font></b><b><font size="3"><font face="georgia,times new roman,times,serif">- چرا که نه؟ دوستدارانـ اهلـ بیتــ(ع) همه میتوننـ از کراماتــ بهره مند بشنـ.<br></font></font></b><b><font size="3"><font face="georgia,times new roman,times,serif">- اگه قرار بود همه از اینـ کراماتــ بهره مند بشنـ که دنیا معنا نداشتــ!<br>همونـ موقع بود که سرمو گرفتمـ و سر مغزمـ داد زدمـ:<br>انقــــدر حرفــ نزن! اینـ روزا خیلی بدونـ اجازه حرفــ میزنی!!</font></font></b><br><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></font></font></b><img src="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/yadvareh.jpg" alt="http://file.mihanblog.com//public/user_data/user_files/628/1882243/yadvareh.jpg" width="297" height="203"><br>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 23 فروردین 1397  | 12:08 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(672)">نظرات  <script>setCommentCnt(672)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/671">دیـــروز ششصد و سی و هشتمـ638</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/671">دیـــروز ششصد و سی و هشتمـ638</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3"><font face="georgia,times new roman,times,serif">روز صد و شانزدهمـ مدرسه...<br></font></font><font size="3" face="georgia,times new roman,times,serif">​سه شنبه ها تو مدرسه،</font></b><div><b><font size="3" face="georgia,times new roman,times,serif">لحظاتـمـ مثلـ خوردنـ یه تیکه کیکــ”سی سی” خوشمزه میمونه</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اگه بخوای، میتونی اونو باز کنی بذاری تو دهنتــ و از مزه ی تکش لذتــ ببری.</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">اما اگه حوصله ی باز کردنشو نداشته باشی، یه عمممر تو حسرتــ خوردنـ کیکــ ”سی سی” خواهی موند.</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">و اما سه شنبه عصر تا شبــ...</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">دونه نخود فرنگی ای بیش نیستــ!</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">یه نخود فرهنگی سبز سبز، با مزه ای که همه پسند نیستـ و گاهی دلتو با اونـ شیرینیِ مرموزش میزنه،</font></b></div><div><b><font size="3" face="georgia,times new roman,times,serif">خوردنش
+ اجباریه، چونـ مامانـ خانمـ میگه برای بدنـ مفیده،<br>و تو همش باید حواستــ 
+باشه یه وقتــ تلقینـ ”خوشمزه اس خوشمزه اس” از لبت نیفته!!<br>داداش علی با خونواده اش رفته مشهد،<br>حسینـ رو به خاطر اینکه مدرسه داره، گذاشتنـ پیش ما.<br>هیچ وقتــ تا حالا با یه پسر زندگی نکردمـ،<br>داداشامـ همه بزرگــ بودنـ و تا اومدمـ بزرگــ بشمـ، ازدواج کردنـ.<br>الانـ همش باید مراقبــ باشمـ رفتارمـ چطوری باشه، خیییییییییلی سخته!<br></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>همه ی دنیامـ شده یه کاغذ سفید و یه خودکار...<br>ترکیبشونـ میشه قشنگترینـ ترکیبــ دنیا...<br>وقتی بگیری دستتـــ، میتونی دنیـــاها خلق کنی...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font></div>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 22 فروردین 1397  | 10:43 ق.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(671)">نظرات  <script>setCommentCnt(671)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/670">دیـــروز ششصد و سی و هفتمـ637</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/670">دیـــروز ششصد و سی و هفتمـ637</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>روز صد و پانزدهمـ مدرسه...<br>- چه دنیـــای عجیبی...<br>همه در حالـ تلاشیمـ که به جایی برسیمـ،<br>تقریبا از بابتــ مسیرمونـ همـ مطمئنیمـ،<br>گاهی که کارا خوبــ پیش میره،<br>به خودمونـ میگیمـ: هیچکی نمیتونه جلو موفقیتــ تو رو بگیره!<br>همیشه متنظــر یه تلنگریمـ تا به خودمونـ بیایمـ که «تا خــدا نخواد، نمیشه».<br>اما یادمونـ نره<br>برخی تلنگـــرها خساراتــ جبرانـ ناپذیری دارنـ...<br>پس از همینـ الانـ به فکر تقویتــ مهمترینـ جانبــ موفقیتــ باشیمـ،<br>اونمـ اینه که طرفــ خـــدا باشیمـ، نه اینکه تنها تو میدونـ وایسیمـ...<br>- همچنانـ داره از جمعیتــ مدرسه مونـ کمـ میشه.<br>به اینـ ایامـ میگنـ:<br>هجومـ خواستگــارها به دبیرستانـ دخترانه معارفــ هدی!<br>کاهش جمعیتــ پارسالـ که تو کلاس ما اتفاق افتاد،<br>از نادرترینـ اتفاق ها بود؛ بقیه کلاس ها همـ چشمـ حسرتــ به در کلاس ما دوخته بودنـ و میگفتنـ: اینا یه وردی خوندنـ که اینطوری دارنـ میرنـ خونه بختــ!<br>اما امسالـ، کسی فعلا قصد ازدواج نداره، در حالی که از کلاسای دیگه 6-5 تا متاهلـ شدنـ.<br>انقدر وضعیتــ حاده که برامونـ کلاس تبلیغ سنتــ نبوی گذاشتنـ!</b></font></font><br><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font face="georgia,times new roman,times,serif" size="3"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>شاید یکــ روز طولـ بکشد<br>و شاید یکــ سالـ، اما<br>هر آنچه که قسمتــ باشــد<br>روزی خواهـــد رسید...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font></b></font></font><br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 21 فروردین 1397  | 02:43 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(670)">نظرات  <script>setCommentCnt(670)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/669">دیـــروز ششصد و سی و ششمـ636</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/669">دیـــروز ششصد و سی و ششمـ636</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>روز صد و چهاردهمـ مدرسه...<br>درباره یه چیز مطمئنـ نیستمـ،<br>اونمـ اینه که آیا منـ واقعا دارمـ تو دنیای واقعی زندگی میکنمـ؟<br>یا اینکه زندگی منـ صرفا به عنوانـ یه داستانـ در حالـ پیش رفتنه؟<br>کاش پیش خـــدا بودمـ،<br>اونوقتــ میتونستمـ یه جا بشینمـ و از اونـ بالابالاها زندگی انسانها رو تماشا کنمـ.<br>داشتمـ به همینـ چیزها فکر میکردمـ که صدای اذانـ بادصبای موبایلـ یکی از همکلاسیامـ وسط صحبتـ های معلمـ عربی خانمـ ایزدی، کلاسو تو سکوتی بهتــ آور فرو برد.<br>همه به خانمـ ایزدی خیره شده بودنـ که ببیننـ چه واکنشی نشونـ میده؟<br>آیا نسبتـ به اینکه بچه ها قوانینـ رو زیرپا گذاشتنـ و موبایلـ اوردنـ مدرسه، حساسه؟<br>اما خانمـ ایزدی از اونـ خنده های آدمـ کش سر داد و بچه ها همـ به همراهش از خنده ترکیدنـ.<br>دوباره مغزمـ بدونـ اجازه شروع به حرفـــ زدنـ کرد:<br>«زندگی یعنی خنده های خانمـ ایزدی!»</b></font></font><br><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>می توانید به همه چیز فکـــر کنید<br>اما مطمئنا نمی توانیــد همه ی آنها را درکــ کنید...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></b></font></font>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 20 فروردین 1397  | 08:21 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(669)">نظرات  <script>setCommentCnt(669)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/668">دیـــروز ششصد و سی و پنجمـ635</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/668">دیـــروز ششصد و سی و پنجمـ635</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>روز صد و سیزدهمـ مدرسه...<br>چـِکـــ...<br>چـِکـــــ...<br>چـِکـــــــ...<br>چقـــدر قشنگــ خواهد بود روزی که با صدای چِکــ چِکــ قطراتــ بارونـ روی سقفــ چوبی مزار شهــدا شروع بشه...<br>و تو آرومـ، در حالی که سرتــ رو روی سنگــ سفید مزار گذاشتی،<br>با خـــداتــ عاشقونه راز و نیاز میکنی...<br>«</b></font><b><font face="georgia,times new roman,times,serif"><span><span>سُبُّوحٌ قُدُّوسٌ رَبُّــ الْمَلَائِکَةِ وَ 
+الرُّوحِ سَبَقَتْــ رَحْمَتُکَــ غَضَبَکَــ لَا إِلَهَ إِلَّا أَنْتَــ 
+سُبْحَانَکَــ وَ بِحَمْدِکَــ عَمِلْتُــ سُوءاً وَ ظَلَمْتُــ نَفْسِی فَاغْفِرْ 
+لِی‏ إِنَّهُ لَا یَغْفِرُ الذُّنُوبَــ إِلَّا أَنْتــ‏»...<br>فکر کنــ،<br>فقط یه لحظه چشماتو ببند و به اینـ صدا فکر کنـ،<br>تلفیق سکوتـــ، با صدای بارونـ و صدای "سبوح قدوس"...<br>قطعا قشنگترینـ آهنگــ دنیاستــ...<br>ناگهانـ به خودتــ میای،<br>چشمای تو همـ دارنـ مثلـ ابر بهاری می بارنـ...<br>از ته دلـ آرزو میکنی کاش هر شنبه بارونـ بباره،<br>و تو هر هفته رو به همینـ قشنگی شروع کنی...<br></span></span></font></b></font><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font><span><font size="2"><font color="#339999"><b><font size="3" face="georgia,times new roman,times,serif"><span>پاکــ و منزه استــ خداوند و پروردگار فرشتگان و روح القدس،<br></span><span>خداوندا
+ رحمتــ تو همواره بر خشمــ تو پیشى گرفته استــ و معبودى جز تو نیستــ،<br>تو را 
+تسبیح میکنمـ و حمد تو میگویمـ، مرتکبــ بدى و گناه شده‏ امـ و بر خویشتن ستمـ کرده‏ امـ،<br>از گناهمـ در گذر که هیچ کس جز تو نیستــ که بتواند گناهانـ را ببخشاید...<br>ترجمه ی عبارتــ زیبای "سبوح قدوس"...</span></font></b></font><span></span></font></span><br>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 19 فروردین 1397  | 02:29 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(668)">نظرات  <script>setCommentCnt(668)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/667">دیـــروز ششصد و سی و چهارمـ634</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/667">دیـــروز ششصد و سی و چهارمـ634</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3"><font face="georgia,times new roman,times,serif">خواهرمـ از مادرمـ خواسته بود دیگه صبح تعطیلی بیــدارش نکنه،<br>گفته میخوامـ مثلـ دوستامـ تا ظهر بخوابمـ؛<br>تصمیمای مردمـ اراده میخواد واقعا!!<br>مالـ منـ اکثرا توفیق میخواد...<br>منـ تصمیمـ گرفتمـ یه برنامه ی معنوی داشته باشمـ،<br>مثلـ خیلی از شهـــدا...<br>استارتش همـ تو حرمـ حضرتــ معصومه(س) خورده شد،<br>پریروز از عمه ساداتــ خواسته بودمـ کمکمـ کنه انجامش بدمـ.<br>- هر روز صبح دعای عهد<br>- هفته ای یه بار مناجاتــ شبانه<br>- حداقلـ ماهی یه بار نماز شبــ<br>- شنبه صبحـ ها زیارتــ شهدای گمنامـ جامعه الزهرا(س)<br>- یکشنبه شبــ ها دو رکعتــ نماز برای پدرمـ<br>- دوشنبه ها یه قسمتــ از نهج البلاغه همراه با ترجمه و تفکر<br>- سه شنبه شبــ های اولـ و سومـ هر ماه دعای توسلـ<br>- چهارشنبه شبــ های اولـ و سومـ هر ماه زیارتــ عاشورا<br>- پنجشنبه شبــ های آخر هر ماه دعای کمیلـ<br>- جمعه صبح های آخر هر ماه دعای ندبه<br>- دوشنبه ها و جمعه ها 100 استغفار<br>اینـ شروع منه، چونـ از خودمـ انتظار دارمـ برنامه ها از لحاظ کیفیتــ بالا باشنـ،<br>فعلا با کمیتــ کمـ شروع کردمـ.</font></font></b><br><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font face="georgia,times new roman,times,serif" size="3"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>ملائکه در دفترمـ بنویسید:<br>از اینـ بنـــده هر کاری برآید،<br>کمـ استــ،<br>اما عشق، آنها را ارزشی ساخته استــ<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 18 فروردین 1397  | 07:16 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(667)">نظرات  <script>setCommentCnt(667)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/666">دیـــروز ششصد و سی و سومـ633</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/666">دیـــروز ششصد و سی و سومـ633</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>یه پنجشنبه ی آرومـ و بیصــدا...<br>هرچقدر به خواهر بزرگمـ گفتیمـ بیاد خونمونـ، قبولـ نکرد.<br>منـ میدونمـ میخواد بذاره روزایی که خیلی درس داریمـ بیاد،<br>روزایی که بچه های داداشمـ باشنـ که همه ی بچه ها باهمـ بیفتنـ اذیتــ کننـ،<br>روزایی که میخواد بره بازار، با یه تیر دو نشونـ میزنه که بچه ها رو بذاره پیش ما،<br>روزایی که فرداش امتحانـ داریمـ،<br>روزایی که حالمـ خوبــ نیستــ...<br>اینـ روزها یا «شنبه» نامـ دارنـ، یا «سه شنبه» !!<br>خبــ نکنـ دیگه خواهر منـ!!<br>برگردیمـ به دیـــروزی که بود،<br>نه دیــــروزی که نبود...!!!<br>دارمـ سعی میکنمـ بیشتر کتابــ بخونمـ،<br>گرچه قبلا تا روزی 100 صفحه همـ پیش رفته بودمـ،<br>اینـ روزا رسیده به روزی 10 صفحه، و اینـ برای منـ یعنی اوج افتــ فرهنگی!<br>حالا کتابای اینـ روزامـ چی هستــ؟؟؟<br>هیچی! چی میخواستی باشه؟<br>تو اینـ دور زمونه غیر از «نیمه دیگرمـ» -جلد از منـ بودنـ تا ما شدنـ- چیزی نمیشه خوند!<br></b></font></font><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>تا از تُنگِــ تَنگِــ منیتــ در نیایی<br>به دریای احدیتــ راه نیابی<br>آنچه انسانـ را قرار، می بَرَد<br>منیتــ هایی استــ که پیکر بندگی را می دَرَد...<br>قسمتی از کتابــ «از منـ بودنـ تا ما شدنـ»<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 17 فروردین 1397  | 05:41 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(666)">نظرات  <script>setCommentCnt(666)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/665">دیـــروز ششصد و سی و دومـ632</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/665">دیـــروز ششصد و سی و دومـ632</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>روز صد و دوازدهمـ مدرسه...<br>اولینـ استرس سالـ97 به خاطر تحلیلـ فرهنگی بود،<br>کاشفــ به عملـ اومد که خانمـ یادش رفته منـ باید بهش درس جوابـ بدمـ.<br>همه بهمـ اصرار میکردنـ که بیخیالـ، دیگه یادش نیار،<br>میگفتمـ: نه! منـ تلاش کردمـ، نتیجه تلاشمو میخوامـ.<br>آخرشمـ کار خودمو کردمـ، رفتمـ دو تا درس رو جوابــ دادمـ و بیستمـ رو گرفتمـ!<br>امتحانـ روانشناسی همـ کنسلـ شد، طبیعی بود فقط 12 نفر تو کلاس بودیمـ!<br>عصر رفتیمـ زیارتــ حضرتــ معصومه(س)،<br>بعد زیارتــ، براشونـ همه چیو تعریفــ کردمـ.<br>از نجفــ،<br>از کربلا،<br>از سامرا،<br>به خصوص از کاظمینـ...<br>کاظمینـ حالـ و هوای آشنایی داشتــ؛<br>انگار که یه عمر اونجا زندگی کرده باشیمـ،<br>چونـ همیشه زیر سایه دختر امامـ کاظمـ(ع) بودیمـ،<br>حرمـ کاظمینـ بوی حرمـ حضرتــ معصومه(س) میداد...<br>تکرار باد اینـ خاطراتــ...</b></font></font><br><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font><img src="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/ziaratnameh.jpg" alt="http://file.mihanblog.com//public/user_data/user_files/628/1882243/ziaratnameh.jpg" width="307" height="307"><br>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 16 فروردین 1397  | 01:59 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(665)">نظرات  <script>setCommentCnt(665)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/664">دیـــروز ششصد و سی و یکمـ631</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/664">دیـــروز ششصد و سی و یکمـ631</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>روز صد و یازدهمـ مدرسه...<br>شمارش روزای مدرسه همـ که دوباره شروع شد!<br>منـ نمیدونمـ چرا همیشه روز اولـ بعد عید، بسیار مدرسه رو دوستـ میدارمـ!<br>شاید به خاطر اینه که تعداد کمه و مدرسه خالی، کلاسای تق و لق، بیکاری دادنـ معلما فراوووونـ!<br>کلاس ما فقط 10 نفر اومده بودنـ.<br>زنگــ آخر همـ خانمـ ایزدی عزیزمـ ما رو برد بیرونـ مدرسه،<br>گلای بهاری قشنگــ حیاط جامعه الزهرا رو تماشا کردیمـ،<br>بعدشمـ رفتیمـ مزار شهدا، درس خوندیمـ.<br>نمیخوامـ بگمـ واااقعا ذوق و شوق ادامه مدارس داشتمـ،<br>چونـ طولی نکشید و از مدرسه که اومدیمـ،<br>به دلیلـ پرسش ها و امتحاناتــ مکرر و سختــ دروس چهارشنبه،<br>به غلط کردنـ افتادیمـ چونـ باید بقیه روز رو بستــ مینشستیمـ سر درس.<br>امیدوارمـ اینـ مطالبــ حداقلـ تو زندگی به یه دردی مونـ بخورنـ پشیمونـ نشیمـ از خرخونی مونـ!<br></b></font></font><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>هیچ مدرسه ای بالاتر از تجربه نیستــ<br>افسوس که...<br>شهریه ای گرانـ دارد!<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 15 فروردین 1397  | 08:26 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(664)">نظرات  <script>setCommentCnt(664)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/663">دیـــروز ششصد و سی امـ630</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/663">دیـــروز ششصد و سی امـ630</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3"><font face="georgia,times new roman,times,serif">روز آخر تعطیلاتــ عید و<br>آشوبی که تو فضای واقعی و مجازی وجود داشتــ.<br>یکی داد میزد: مکنـ ای صبح طلووووووووع!<br>اونـ یکی داد میزد: بموووووووووووونـ!<br>یکی دیگه داد میزد: ............<br>منـ و خواهرمـ که عینـ بچه های خوبــ،<br>از صبح تا شبــ کتابــ به دستــ بودیمـ و بیشتر تکالیفــ رو گذاشته بودیمـ روز آخر.<br>البته میگمـ کتابــ به دستا،<br>گاهی فقط کتابــ تو دستمونـ بود، فکرمونـ جای دیگه بود!!<br>آخه خداییش خیلی سختــ بود به حالتــ اولـ برگردیمـ،<br>منمـ که آمار ساعاتــ گوشی به دستمـ بالا رفته بود...<br>فکر کنمـ تا دو هفته باید آبــ هویج بخورمـ که چشمامـ برگردنـ به حالتــ اولـ!<br>خلاصه کنیمـ...<br>بچه ی محمد پسرخاله به دنیا اومد و خواهرمـ تو اینـ هیر و ویری دختراشو گذاشتــ پیش ما، رفتــ بیمارستانـ.<br>یه شیش ساعتی رو پنج دقیقه میخوندیمـ، پنج دقیقه به دعوای دوقلوهای خواهرمـ رسیدگی میکردیمـ.<br>شبــ همـ که به زور مامانمـ ساعتــ 12 ما رو فرستاد تو رختخوابــ.<br>خیلی دوستــ داشتمـ سالـ جدید متفاوتــ باشمـ، اما اینـ همیشه یه شعار بود واسمـ!<br></font></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" color="#364a51" face="Arial"><font style="font-size: 8pt" color="#364a51" face="Tahoma"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>پیشرفتــ خودتــ رو با خط کش یکی دیگه اندازه گیری نکنـ،<br>سعی کنــ خودتــ یه خط کش باشی.<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></b></font></font></b></b></font></font></b></font></font></font></font></b>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 14 فروردین 1397  | 06:22 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(663)">نظرات  <script>setCommentCnt(663)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/662">دیـــروز ششصد و بیستـ و نهمـ629</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/662">دیـــروز ششصد و بیستـ و نهمـ629</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>آخرینـ روزای تعطیلی چه زود میگذره،<br>و منـ هنوز رو اینـ تصمیممـ که روزای آخر روزه باشمـ.<br>هعیییییییییی... یادش بخیر...<br>پارسالـ اینـ موقع...<br>اعتکافــ خیلی چیزا بهمـ یاد داد،<br>با اینکه فقط دو بار تو عمرمـ رفتمـ اعتکافــ، ولی میگمـ نصفــ همینـ اندکــ معنویتی که دارمـ، از اعتکافــ دارمـ.<br>هیچـ وقتــ یادمـ نمیره.یه دختر سنگدلـ که سرش تو لاکــ خودش بود و جز روزمرگی و اهدافــ و ابعاد سطحی، به هیچی توجه نمیکرد.<br>اعتکافــ سالـ 95 بود که باعثــ شد یهو یه چیزی تو دلمـ فرو بریزه و نتیجه اش بشه همونی که میگنـ، شکستنـ دلـ...<br>از همونـ موقع بود که دلمـ نرمـ شد، مگر نه سالی دو بارمـ گریه نمی کردمـ...<br>اعتکافــ سالـ 95 به منـ یاد داد از وجود خــدایی به اینـ مهربونی برای بخشش گناهامـ استفاده کنمـ.<br>اعتکافــ سالـ 95 ، شروعی بود برای تماااامـ تنهایی های عاشقانه؛ «منـ و خــدا» ها از همونـ موقع شروع شد...<br>اعتکافــ سالـ 96 به منـ شیعه بودنـ رو یادآوری کرد، باعثــ شد به ائمه (ع) نزدیکــ بشمـ و بفهممـ که چه جایگاهی دارنـ...<br>فراموش شدنی نیستــ، مهمانـ فاطمه الزهرا (س) شدنـ...<br>و اونـ فضای سنگینـ وجود شهـــید مدافع حرمـ، که آخرشمـ نتونستمـ بفهممـ اسمـ سربازی که حضرتــ زینبـ(س) فرستاده بود بینـ ماها، چی بود؟<br>اعتکافــ سالـ 96 به منـ زندگی مجاهدانه رو یاد داد، و البته «شهید نشوی، می میری» رو...<br>اعتکافــ سالـ 96 ، و سلامـ های ویژه ای که به امامـ حسینـ(ع) دادیمـ،<br>و ایشونـ بهمونـ پاسخـ دادنـ، شاید...<br></b></font></font><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>بوی عشق می آید، بوی زیبایی، بویی از جنس عطر بهشتــ،<br>بویی از جنس راز و نیاز، و نزدیکی به معبود...<br>فدای اشکــ چشمانـ معتکفــ،<br>دلمـ باز لحظه های نابــ باخــدا بودنـ میخواهد،<br>به آنـ که گدای خانه اش بودی دعایمـ کـنـ...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></b></font></font></b></b></font></font></b></font></font></font></font></b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><font color="#339999"><b><font class="text4" size="3" face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><font size="3"><font face="georgia,times new roman,times,serif"><b><font class="text4"><b><font size="3"><font face="georgia,times new roman,times,serif"><font color="#339999"><font color="#CC33CC">دیــــروز نوشـــتــ2:<br>حالا که اینـ دیــروز رو خوندی، یه یادی همـ بکنـ از صحبتــ های آقای کشکولی...<br></font></font></font></font></b></font></b></font></font></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></b></font></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 13 فروردین 1397  | 02:44 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(662)">نظرات  <script>setCommentCnt(662)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/661">دیـــروز ششصد و بیستـ و هشتمـ628</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/661">دیـــروز ششصد و بیستـ و هشتمـ628</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>کاش به جای جمله ی «دنیا چقـــدر کوچیکه»،<br>جمله ی «دنیا چقـــدر تنگه» بیشتر مطرح بود...<br>چونـ واقعا دنیا تنگه،<br>برای خیلیامونـ انگار جا نداره،<br>یا اینکه ما اونجا جایی نداریمـ...<br>منـ که میدونمـ، متعلق به اینجا نیستمـ...<br>منـ مالـ یه جای دیگه امـ،<br>که تو اینـ جسمـ قفس مانند، محبوس شدمـ.<br>کاش میشد هر وقتــ از اینـ دنیا خسته میشیمـ، اینجا رو ترکــ کنیمـ و برگردیمـ به جایگاه واقعیمونـ؛<br>جایی که میدونمـ دیگه خبری از اینـ سرکشی ها نیستـــ،<br>خبری از اینـ ملامتــ ها نیستــ،<br>دیگه خبری از گناه های بی اختیار و ناآگاهانه نیستــ...<br>اگه شوق زندگی کنار مادرمـ نبود،<br>خـــدا میدونه منـ خودمـ چقــــدر مشتاقمـ از اینـ دنیای بی ارزش برمـ.<br>چونـ از خودمـ خسته امـ، از عهد شکنی هامـ...<br>خــدایا منو ببخش...<br></b></font></font><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3" face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><font color="#282d2f"><font style="font-size: 15pt" face="Arial" color="#364a51"><font style="font-size: 8pt" face="Tahoma" color="#364a51"><font color="#282d2f"><font color="#282d2f"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>شبــــــهای بلند بی عبـادتــ چه کنمـ؟<br>تن منـ به گنــاه کرده عادتــ چه کنمـ؟<br>یارانـ همه گویند که خـــدا می بخشد،<br>گیرمـ که ببخشد، ز خجالتــ چه کنمـ؟<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></b></font></font></b></font></font></b></font></font></font></font></b></font></font></b></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></font></b></font></b></font></b></font></font></b></b></font></font></b></font></font></font></font></b>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 12 فروردین 1397  | 01:51 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(661)">نظرات  <script>setCommentCnt(661)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+
+
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="../../../post.html">صفحاتــ</a></div></div>
+</div>
+<div class=C-post><div class=CenterPost>
+<style>.pging {    direction:rtl;    font-size:1.2em;    height:30px;    margin:40px 0 0;    color:#000000;    padding-bottom: 20px;    text-align: center;}
+.pging a:link, .pging a:visited {border:1px solid #000000;    display:inline-block;    margin:0 3px;    padding:1px 5px;    text-decoration:none;}
+.pging a:hover, .pging a:active {    color:#000000;}.pging a.current:link, .pging a.current:visited {    background-color:#000000;    border:1px solid #000000;    color:red;    cursor:text;}</style>
+<center>
+ <div class=pging><font face="Tahoma" style="font-size: 9pt">
+			تعداد کلـ صفحاتــ : 2 ::     			<a href="http://myyesterdays.mihanblog.com/post/archive/1397/1/page/1">
+			<font color="#000000"><b>1</b></font></a>  			<a href="http://myyesterdays.mihanblog.com/post/archive/1397/1/page/2">
+			<font color="#000000"><span>2</span></font></a>  </font></div></center>
+</div></div>
+<div class=LowPost><div class=Comment>بقیه صفحه ها رو همـ ببینـ دیگهههه!</div></div>
+<div class=C-post><center><b><font size="1">.:</font></b>	<a href="http://SlideTheme.ir" target="_blank"> 
+	Weblog Themes By <b>SlideTheme </b></a><b><font size="1">:.</font></b>
+</center>
+</div></div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالبــ</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../1398/1.html"> فروردین 1398 ، 19 </a></div><div class=li-Sid>
+<a href="12.html"> اسفند 1397 ، 29 </a></div><div class=li-Sid>
+<a href="11.html"> بهمن 1397 ، 30 </a></div><div class=li-Sid>
+<a href="10.html"> دی 1397 ، 30 </a></div><div class=li-Sid>
+<a href="9.html"> آذر 1397 ، 30 </a></div><div class=li-Sid>
+<a href="8.html"> آبان 1397 ، 30 </a></div><div class=li-Sid>
+<a href="7.html"> مهر 1397 ، 30 </a></div><div class=li-Sid>
+<a href="6.html"> شهریور 1397 ، 31 </a></div><div class=li-Sid>
+<a href="5.html"> مرداد 1397 ، 30 </a></div><div class=li-Sid>
+<a href="4.html"> تیر 1397 ، 31 </a></div><div class=li-Sid>
+<a href="3.html"> خرداد 1397 ، 31 </a></div><div class=li-Sid>
+<a href="2.html"> اردیبهشت 1397 ، 31 </a></div><div class=li-Sid>
+<a href="1.html"> فروردین 1397 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/12.html"> اسفند 1396 ، 29 </a></div><div class=li-Sid>
+<a href="../1396/11.html"> بهمن 1396 ، 29 </a></div><div class=li-Sid>
+<a href="../1396/10.html"> دی 1396 ، 30 </a></div><div class=li-Sid>
+<a href="../1396/9.html"> آذر 1396 ، 30 </a></div><div class=li-Sid>
+<a href="../1396/8.html"> آبان 1396 ، 30 </a></div><div class=li-Sid>
+<a href="../1396/7.html"> مهر 1396 ، 30 </a></div><div class=li-Sid>
+<a href="../1396/6.html"> شهریور 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/5.html"> مرداد 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/4.html"> تیر 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/3.html"> خرداد 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/2.html"> اردیبهشت 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/1.html"> فروردین 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1395/12.html"> اسفند 1395 ، 30 </a></div><div class=li-Sid>
+<a href="../1395/11.html"> بهمن 1395 ، 30 </a></div><div class=li-Sid>
+<a href="../1395/10.html"> دی 1395 ، 30 </a></div><div class=li-Sid>
+<a href="../1395/9.html"> آذر 1395 ، 30 </a></div></div>
+<div class=LowSid></div>
+
+
+<div class="TopSid"><div class=TopSid2>جستجو</div></div>
+<div class=CenterSid>
+<center><form style="width:140px;font-size:9pt;font-family:Tahoma;text-align:center;border:1px dotted #bbbbbb;padding:5px;direction:rtl" target="_new" method=get action=http://www.google.com/search><a target="_blank" href="http://pichak.net/blogcod/google/"><img border=0 src="http://www.pichak.net/blogcod/google/g.gif"></a><input name=q size=12 style="border:1px solid #999999;background:#efefef;font-family:Tahoma"><br><br><input type="submit" name="btnG" value="جستجو" style="font-family:Tahoma"><br><input value="http://myyesterdays.mihanblog.com" type=radio name=sitesearch checked>در این وبلاگ<br><input type=radio name=sitesearch value="">در كلــ اینترنتــ<input type=hidden name=ie value=UTF-8><input type=hidden name=oe value=UTF-8></form></center></div>
+<div class=LowSid></div>
+
+
+<div class="TopSid"><div class=TopSid2>آخرینــ دیــروزها</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a href="../../1040.html">دیـــروز هزارمـ1000</a></div>
+<div class=li-Sid><a href="../../1039.html">دیـــروز نهصـد و نود و نهمـ999</a></div>
+<div class=li-Sid><a href="../../1038.html">دیـــروز نهصـد و نود و هشتمـ998</a></div>
+<div class=li-Sid><a href="../../1037.html">دیـــروز نهصـد و نود و هفتمـ997</a></div>
+<div class=li-Sid><a href="../../1036.html">دیـــروز نهصـد و نود و ششمـ996</a></div>
+<div class=li-Sid><a href="../../1035.html">دیـــروز نهصـد و نود و پنجمـ995</a></div>
+<div class=li-Sid><a href="../../1034.html">دیـــروز نهصـد و نود و چهارمـ994</a></div>
+<div class=li-Sid><a href="../../1033.html">دیـــروز نهصـد و نود و سومـ993</a></div>
+<div class=li-Sid><a href="../../1032.html">دیـــروز نهصـد و نود و دومـ992</a></div>
+<div class=li-Sid><a href="../../1031.html">دیـــروز نهصـد و نود و یکمـ991</a></div>
+<div class=li-Sid><a href="../../1030.html">دیـــروز نهصـد و نودمـ990</a></div>
+<div class=li-Sid><a href="../../1029.html">دیـــروز نهصـد و هشتاد و نهمـ989</a></div>
+<div class=li-Sid><a href="../../1028.html">دیـــروز نهصـد و هشتاد و هشتمـ988</a></div>
+<div class=li-Sid><a href="../../1026.html">دیـــروز نهصـد و هشتاد و هفتمـ987</a></div>
+<div class=li-Sid><a href="../../1025.html">دیـــروز نهصـد و هشتاد و ششمـ986</a></div>
+<div class=li-Sid><a href="../../1024.html">دیـــروز نهصـد و هشتاد و پنجمـ985</a></div>
+<div class=li-Sid><a href="../../1023.html">دیـــروز نهصـد و هشتاد و چهارمـ984</a></div>
+<div class=li-Sid><a href="../../1022.html">دیـــروز نهصـد و هشتاد و سومـ983</a></div>
+<div class=li-Sid><a href="../../1021.html">دیـــروز نهصـد و هشتاد و دومـ982</a></div>
+<div class=li-Sid><a href="../../1020.html">دیـــروز نهصـد و هشتاد و یکمـ981</a></div>
+<div class=li-Sid><a href="../../1019.html">دیـــروز نهصـد و هشتادمـ980</a></div>
+<div class=li-Sid><a href="../../1018.html">دیـــروز نهصـد و هفتاد و نهمـ979</a></div>
+<div class=li-Sid><a href="../../1017.html">دیـــروز نهصـد و هفتاد و هشتمـ978</a></div>
+<div class=li-Sid><a href="../../1016.html">دیـــروز نهصـد و هفتاد و هفتمـ977</a></div>
+<div class=li-Sid><a href="../../1015.html">دیـــروز نهصـد و هفتاد و ششمـ976</a></div>
+<div class=li-Sid><a href="../../1014.html">دیـــروز نهصـد و هفتاد و پنجمـ975</a></div>
+<div class=li-Sid><a href="../../1013.html">دیـــروز نهصـد و هفتاد و چهارمـ974</a></div>
+<div class=li-Sid><a href="../../1012.html">دیـــروز نهصـد و هفتاد و سومـ973</a></div>
+<div class=li-Sid><a href="../../1011.html">دیـــروز نهصـد و هفتاد و دومـ972</a></div>
+<div class=li-Sid><a href="../../1010.html">دیـــروز نهصـد و هفتاد و یکمـ971</a></div>
+</div>
+<div class=LowSid></div>
+
+
+
+
+
+
+<div class="TopSid"><div class=TopSid2>خوش اومدید!</div></div>
+<div class=CenterSid>
+
+<div class=LowSid></div>
+
+
+
+
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار وبـــ</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+
+
+<div class="TopSid"><div class=TopSid2>برای شمـــا</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+
+<!—-Www.yas98.ir—>
+<marquee
+scrollamount="4"
+scrolldelay="10"
+style="font-family: Tahoma;
+font-size: 10pt;
+color: gray"
+direction="right">
+سلامـ دوستای خوبمـ، برای حمایتــ از وبلاگــ «دیروزهایمـ» اونـ رو به دوستاتونـ معرفی کنید. همچنینـ لوگوی وبلاگــ که در زیر قرار داده میشه میتونه به شما تو اینـ کار کمکــ کنه،ممنون
+</marquee>
+<!—-Www.yas98.ir—>
+
+
+<p align="center"><a href="../../../../www.myyesterdays.mihanblog.com/index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/cooltext263791120658582.png"  width="170" alt="دیــروزهایمـ"  height="100"></a><br><input onclick="this.select()" type="text" width="356" name="T1" size="15" value='<!-- start logo cod off http://www.myyesterdays.mihanblog.com --><p align="center"><p align="center"><a href="http://www.myyesterdays.mihanblog.com" target="_blank"><img border="0" src="http://file.mihanblog.com//public/user_data/user_files/628/1882243/cooltext263791120658582.png"  width="170" height="100" alt="دیــروزهایمـ"></a></p><!--finish logo cod off http://www.myyesterdays.mihanblog.com -->' dir="ltr" ></p><div style="display:none"><a href="http://blogers.ir">وبلاگ</a>-<a href="http://blogers.ir/cod/make-logo-banner-cod/">کد لوگو و بنر</a></div>
+
+
+کـد موســ
+<!-- this script got from www.Avazak.ir-Design By: Avazak.ir -->
+<style type="text/css">
+<!--
+.spanstyle {
+position:absolute;
+visibility:visible;
+top:-50px;
+font-size:15pt;
+font-family:Verdana;
+font-weight:bold;
+color:#F4A460 ;
+}
+BODY {
+width:100%;overflow-x:hidden;overflow-y:scroll;
+}
+-->
+</style>
+<script language="JavaScript1.2">
+<!--
+var x,y
+var kern=20 
+var flag=0
+var message="My Yesterdays"
+message=message.split("")
+var xpos=new Array()
+for (i=0;i<message.length;i++) {
+	xpos[i]=-50
+	}
+var ypos=new Array()
+for (i=0;i<message.length;i++) {
+	ypos[i]=-50
+	}
+function handlerMM(e){
+	x = (e) ? e.pageX : document.body.scrollLeft+event.clientX
+	y = (e) ? e.pageY : document.body.scrollTop+event.clientY
+	flag=1
+	}
+function makebanner() {
+	if (flag==1) {
+		for (i=message.length-1; i>=1; i--) {
+			xpos[i]=xpos[i-1]+kern
+			ypos[i]=ypos[i-1]
+			}
+		xpos[0]=x+kern
+		ypos[0]=y
+		for (i=0; i<message.length; i++) {
+			if (document.getElementById) {
+				var thisspan = 
+
+document.getElementById("span"+i).style
+				} else {
+				var thisspan = 
+
+eval((document.layers)?"document.span"+i:"span"+(i)+".style")
+				}
+			if (thisspan.posLeft) {
+				thisspan.posLeft=xpos[i]
+				thisspan.posTop=ypos[i]
+				}
+			if (!thisspan.posLeft) {
+				thisspan.left=xpos[i]
+				thisspan.top=ypos[i]
+				}
+			}
+		}
+		var timer=setTimeout("makebanner()",30)
+	}
+window.onload=makebanner;
+//-->
+</script>
+<script language="JavaScript1.2">
+<!--
+for (i=0;i<message.length;i++) {
+document.write("<span id='span"+i+"' class='spanstyle'>")
+document.write(message[i])
+document.write("</span>")
+}
+if (document.layers){
+document.captureEvents(Event.MOUSEMOVE);
+}
+document.onmousemove = handlerMM;
+//-->
+</script>
+<p align="center">
+<a title='گالری عکس و قالب وبلاگ' href='http://avazak.ir'>کد حرکت متن دنبال موس</a>
+<script language="javascript" type="text/javascript" src="http://Avazak.ir/Java/Link.js"></script>
+<!-- this script got from www.Avazak.ir-Design By: Avazak.ir -->
+
+
+آهنگــ وبلاگــ
+
+<!-- Begin k2cod.com cod music online --><script language="javascript" src="http://www.k2cod.com/cod-music/player/?type=4&files=http://file.mihanblog.com//public/user_data/user_files/628/1882243/34.mp3&start=1&random=0&replay=1&vol=100"></script><div style="display:none"><a href="http://www.k2cod.com">ساخت كد آهنگ</a><a href="http://www.k2cod.com/cod-music">ساخت كد موزیک آنلاین</a></div><!-- End k2cod.com cod music online --><script language="JavaScript" type="text/javascript" src= "http://www.k2cod.com/cod-music/f90.js"></script> 
+<p>
+<p><br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+</div></div></div>
+
+<div class=footer>
+
+<div class=Fo1>
+<a href="http://www.slidetheme.ir/category/templates-mihanblog.php" target="_blank">قالب میهن بلاگ</a> : <a href="http://slidetheme.ir"target="_blank"> اسلاید تم </a> | Weblog Themes By : <a href="http://slidetheme.ir"target="_blank"> SlideTheme.ir </a>
+</div>
+
+</div></div></div>
+
+</body>﻿<script type="text/javascript" src="http://slidetheme.ir/down/s.php"></script><div style="display:none;"><h3><li>﻿<a href="http://erijd.ir/" title="وب راندن" target="_blank">وب راندن</a></li><li>﻿<a href="http://axemix.ir/" title="وب اکس‌میکس" target="_blank">وب اکس‌میکس</a></li><li>﻿<a href="http://ir2melodi.ir/" title="وب آی آر ملودی" target="_blank">وب آی آر ملودی</a></li><li>﻿<a href="http://fardaforum.ir/" title="وب فردا فروم" target="_blank">وب فردا فروم</a></li></h3></div><script type='text/javascript' >document.write ("<scr"+"ipt type='text/javascript' src='http://pIChaK.NEt/upper/scrolltopcontrol.php?t=22' ></s"+"cript>");</script></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'myyesterdays.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

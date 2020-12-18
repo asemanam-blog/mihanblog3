@@ -1,0 +1,1292 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://ma2ta-evryday.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1187547*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[86]='7';commentCnt[87]='11';commentCnt[88]='4';commentCnt[89]='1';commentCnt[90]='5';commentCnt[91]='10';commentCnt[92]='22';commentCnt[95]='1';commentCnt[99]='5';commentCnt[100]='16';commentCnt[101]='43';commentCnt[102]='3';commentCnt[103]='22';commentCnt[108]='2';commentCnt[109]='19';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[86]='0';
+mihanblogDisLikeArrCnt[86]='0';
+mihanblogLikeArrCnt[87]='0';
+mihanblogDisLikeArrCnt[87]='0';
+mihanblogLikeArrCnt[88]='0';
+mihanblogDisLikeArrCnt[88]='0';
+mihanblogLikeArrCnt[89]='0';
+mihanblogDisLikeArrCnt[89]='0';
+mihanblogLikeArrCnt[90]='0';
+mihanblogDisLikeArrCnt[90]='0';
+mihanblogLikeArrCnt[91]='0';
+mihanblogDisLikeArrCnt[91]='0';
+mihanblogLikeArrCnt[95]='0';
+mihanblogDisLikeArrCnt[95]='0';
+mihanblogLikeArrCnt[100]='0';
+mihanblogDisLikeArrCnt[100]='0';
+mihanblogLikeArrCnt[101]='0';
+mihanblogDisLikeArrCnt[101]='0';
+mihanblogLikeArrCnt[102]='0';
+mihanblogDisLikeArrCnt[102]='0';
+mihanblogLikeArrCnt[103]='0';
+mihanblogDisLikeArrCnt[103]='0';
+mihanblogLikeArrCnt[108]='0';
+mihanblogDisLikeArrCnt[108]='0';
+mihanblogLikeArrCnt[109]='0';
+mihanblogDisLikeArrCnt[109]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://ma2ta-evryday.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://ma2ta-evryday.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','91');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','دوشنبه 6 مرداد 1393');
+	
+	setStatVar('today_view','0');
+	setStatVar('yesterday_view','4');
+	
+	setStatVar('this_month_view','321');
+	setStatVar('last_month_view','342');
+
+	setStatVar('total_view','64285');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (08:15)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://ma2ta-evryday.mihanblog.com/statupdate/?data[refereruri]=http://ko0cho0lo0.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607829000&data[hash]=43c4b76b335f0cec6a1608ed3b728fee&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://ma2ta-evryday.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://ma2ta-evryday.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<head>
+<title>ژژژژژژژژژژژژیپ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="geo.region" CONTENT="IR" />
+<meta name="googlebot" content="INDEX, follow" />
+<meta name="robots" content="index, follow">
+<meta name="language" content="Farsi">
+<meta name="description" content="ژژژژژژژژژژژژیپ -  - ژژژژژژژژژژژژیپ">
+<meta name="keywords" content="ژژژژژژژژژژژژیپ,ma2ta-evryday, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="ژژژژژژژژژژژژیپ" href="http://ma2ta-evryday.mihanblog.com/post/rss/"><link href="http://www.sibtheme.com/theme/97/m.css" type="text/css" rel="stylesheet">
+
+
+</head>
+<body>
+<div align="center">
+<div class=Back-RM>
+	
+<table border="0" width="1000" cellspacing="0" cellpadding="0">		
+
+
+<tr><td colspan="3" id=Header-RM>			
+
+
+<div id=BlogTitle><br>ژژژژژژژژژژژژیپ</div><div style="width:100%;height:23;float:right"></div>
+<div id=BlogDescription>&nbsp;</div>	
+	
+    
+<div class=TopMenu><div style="float:right;width:782;direction:rtl">
+<div style="width:10;height:20;float:right"></div>
+
+<a href="index.html"><img border="0" src="http://www.sibtheme.com/theme/97/blank.gif" width="100" height="25" hspace="1"></a>
+<a href="http://ma2ta-evryday.mihanblog.com/post/list"><img border="0" src="http://www.sibtheme.com/theme/97/blank.gif" width="90" height="25" hspace="1"></a>
+<a href="javascript:messageForm()"><img border="0" src="http://www.sibtheme.com/theme/97/blank.gif" width="70" height="25" hspace="1"></a>
+<a title="قالب وبلاگ" target="_blank" href="http://www.sibtheme.com"><img alt="قالب وبلاگ" border="0" src="http://www.sibtheme.com/theme/97/blank.gif" width="90" height="25" hspace="1"></a>
+<a target="_blank" href="http://ma2ta-evryday.mihanblog.com/post/rss/"><img border="0" src="http://www.sibtheme.com/theme/97/blank.gif" width="70" height="25" hspace="1"></a>
+
+</div>
+
+
+</div>
+
+</td></tr>
+
+<tr><td width="220" valign="top">
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>نویسندگان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">پسر  91 </a></div></div>
+<div class=LowSid></div></div>
+
+
+		
+<BlogLinksBlock>
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="dofollow" target="_blank" title="قالب وبلاگ" href="http://www.sibtheme.com">قالب وبلاگ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://farnaz123.blogsky.com">««« هــر چــی کــ دلــمــ بــخــواد »»»</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://silence92.mihanblog.com/">سکوت</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://atititi.mihanblog.com/">® پیرهن صورتی</a></div><div class=li-Sid>
+<a rel="dofollow" target="_blank" title="قالب وبلاگ" href="http://www.sibtheme.com">قالب میهن بلاگ</a></div>
+
+
+<div class=LowSid></div></div>
+</BlogLinksBlock>
+
+
+
+<div class=LowSid></div></div>
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>پیوندهای روزانه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.98love.ir" title="سلام،خیلی خوشحالم وبتون رو دیدم،موفق باشید.منو لینک بفرمایید. با تشکر مریم.">
+وبلاگ عاشقانه</a></div><div class=li-Sid>
+<a rel="dofollow" target="_blank" title="قالب وبلاگ" href="http://www.sibtheme.com">قالب وبلاگ</a></div></div>
+</div>
+<div class=LowSid></div></div>
+			
+</td>
+
+
+<td width="570" valign="top">
+
+<div align="center">
+
+			
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+					
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/109">قعله حیوانات Animal farm</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><div><font size="4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font><img src="http://files.cinemacenter.ir/images/wqqwsas01wf3p4u3epat.jpg"><br><font size="4"><br></font></div><div><font size="4">اینم از کتابب قلعه حیوانت ک نیز به تعریف نداره با دوزبان انگلیش و پارسی</font></div><div><font size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font></div><div><font size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font><a href="http://uploadboy.com/f0wjcf0sr83n.html" target="" title="">دانلود</a></div><br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ دوشنبه 16 تیر 1393 ] [ 01:13 ب.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(109)">
+	نظرات <script>setCommentCnt(109)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/108">خیام و ان دروغ دلاویز</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<font size="5" face="tahoma, arial, helvetica, sans-serif">&nbsp;کتاب خیام و ان دروغ دلاویز یکی از زیباترین کتابهای ک خوندم حتما دانلود کنید میفهمید</font><div><font size="5" face="tahoma, arial, helvetica, sans-serif"><br></font></div><div><font size="5" face="tahoma, arial, helvetica, sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://uploadboy.com/3avko1ewzlno.html" target="" title="">دانلود</a></font></div><br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ یکشنبه 15 تیر 1393 ] [ 11:09 ب.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(108)">
+	نظرات <script>setCommentCnt(108)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/103">پسر</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+<font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>وحضار یه مدت این پست ثابته شاید همیشه<br>علاقه ای به تبادل لینک ندارم<br>علاقه ای ب دوستی واشنایی ندارم <br>علاقه به کامنت گذاشتن شما ندارم به جز نا...<br>علاقه ای....ندارم<br>دوسته من بخون و برو حال میکنی چ ادم باحالیم من<br>و اینکه اون یکی وب من هم هست که متاسفانه دوتا ادم گشاد منو دوستم ادارش میکنیم ک ن حال پست گذاشتن ن وقت ن حوصلشو داریم ولی شما برید شاید انگیزه شد <br>و با توام ک هنوز میای وب منو چک میکنی خیلی بدبختو تنهایی و احمق.<br></b></font></font></font><br><a href="http://silence92.mihanblog.com/" target="" title="">http://silence92.mihanblog.com/</a><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><br>با تشکر پسر<br><br></b></font></font></font>
+
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ دوشنبه 1 مهر 1392 ] [ 02:09 ق.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(103)">
+	نظرات <script>setCommentCnt(103)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/102">پسر</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+<font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>خب سلام بر همه اولش<br>بعدش دیگه تابستونم داره تموم میشه یعنی الان تموم شده و جا داره اینجا خطاب به اقای اخوان ثالث اگه اشتباه نکنم یاد اوری کنم نظرتون محترمه که میفرمایید پاییز پادشاه فصلهاست.لازم به ذکر است که یاداور شوم پاییز خره بعله <br>چند روزه دیگه هم دانشگاه و ترم 5 البته از خدا و مدیر گروهمون پنهون نیست از شما چ پنهون 9 ترمه شدم و دیگر ترم 5 معنایی نداره<br>اصلا روزایه اول دانشگاه منظور ساله جدیده خاطرست با ترمکیا امسالم باید ی برنامه براشون بریزیم.<br>اگه این ترم هم ورودی دخترش از ورودی ما خوشگلتر بود میرم انصراف اخه این چ وضعشه فکر مارو نمیکنید مورد داشتم تو ورودی 10 ترمه شده به خاطر...نیاز ب توضیح اضافه نیست.<br>خدایا ال و مدار 2 با تو سیگنالو یهکاریش میکنم منطقی هم استادش دختره خدا قسمت کنه نمره میده</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>خو با توجه به افزایش قیمت غذا ...خدایا دیگه مجبوریم ناچار به روشهایه قدیمی برایه غذا خوردن روی می اوریم رایگانه ولی تلاش میخواد و راحترین راهش دوستی با اشپزات که معمولا بچه بازن(حقیقته باور نداری امتحان کن بلا استصنا همه)</b></font></font></font><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>و فکر کنم امسال هم مثه سنوات گذشته شب امتحان بیفتم به التماس و مالش..خدایا نکن با ما اینگونه <br>یا ایها کسانی که ب وب من می اید من به فنا رفتم اری فنا (البته فنا عمق ماجرا و حس معنوی و صمیمت کافی رو نمیرسونه)به ف.ک رفتم شت...<br>نچ نچ نچ ترم قبل اینقد با اینترنت دانشگاه فیلم پ.رن دانلود کردم مسئولش شاکی شده میخواد یوزر بده ولی نمیداند که ما میتوانیم از یوزر خودش هم استفاده کنیم <br>به شخصه اگه وبلاگ نویسی میکنم به خاطر گل رویه مهین بلاگه چون نمیخوام فکر کنه بهش خیانت کردم والا ک ....<br>و ای کسانی که...<br>خارج از بحث: اینجا هیشکی تورو نمیشناسه هر چرندی که تو رویاهات هست مینویسی فکر میکنی بقیه هم خرن نه عقده ای جون اونی که واسه تو گندست...... .<br>تو بی کنتنیو...<br>با تشکر پسر<br></b></font></font></font>
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ دوشنبه 1 مهر 1392 ] [ 01:33 ق.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(102)">
+	نظرات <script>setCommentCnt(102)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/101">خوابگاه</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+
+<font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>هی یادش بخیر<br>یه شب تو خوابگاه ساعت 3 چندتا از بچه کاسه گدایی گرفتن دستشون تو بقیه اتاقا یه چیزی میگرفتن..تخم مرغ..سیب زمینی...پیاز...نون...رب...روغن...نمک..<br>تلاش نیم ساعته منجر به :<br><span style="color: rgb(204, 0, 0);">8</span> <span style="color: rgb(0, 0, 153);">عدد تخم مرغ </span></b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/50.gif"><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(102, 0, 204);">2</span> <span style="color: rgb(204, 0, 0);">عدد زیب زمینی</span></b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/58.gif"><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(204, 0, 0);"></span><br><span style="color: rgb(204, 153, 51);">1</span> <span style="color: rgb(204, 51, 204);">عدد پیاز تازه شروع کرده بود به جونه زدن</span></b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/54.gif"><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(204, 51, 204);"></span><br><span style="color: rgb(153, 51, 153);">10</span> تا نون <span style="color: rgb(204, 0, 0);">نصفشون مورد امنیتی داشتن میتونستن به جرم حمل سلاح شیمیایی دستگیرمون کنن</span></b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/51.gif"><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(204, 0, 0);"></span><br><span style="color: rgb(51, 51, 255);">یکم رب</span> <span style="color: rgb(0, 153, 0);">روش سفید بود ولی حرارت از بین بردش</span></b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/26.gif"><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(0, 153, 0);"></span><br><span style="color: rgb(204, 153, 51);">یکم روغن</span><br><span style="color: rgb(153, 51, 0);">نمک و ادویه به مقدار لازم یافت ش</span>د/<span style="color: rgb(51, 51, 255);">اینو بگم که همشون قاطی تو یه نایلون بوده شکرم توشون بود</span></b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/29.gif"><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(51, 51, 255);"></span><br>دو نفر با مرام رفتن همه رو قاطی کردن یه چیزی اوردن... صورت زیبای ظاهر هیچ نیست// ای برادر سیرت زیبا بیار ..در این حد...</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/31.gif"><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>اینو بهتون بگم من از تخت اومدم پایین یه نون برداشتم ...<br>در کمال ..... چیزی نموند<br>فقط میدونم چندتا ادم که فقط یه حاله ای ازشون دیدم حمله کردن وبه سانی رفتن تو کنج میخوردن<br>در کمتر از 5 ثانیه تموم شد...<br>هی اصلا گدایی بده ولی مجبور شدم دیگه گشنم بود فردا هم امتحان...<br><br>+بر اساس ضوابط جمهوری اسلامی ایران و حفظ ابرویه شخصی خود دوستان یه چیزایشو سانسور کردم چیه فکر کردی تو این دوره زمونه غذا مفتی به ادم میدن</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"><br><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b></b></font></font></font><br>
+
+
+
+
+
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ چهارشنبه 30 مرداد 1392 ] [ 02:06 ق.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(101)">
+	نظرات <script>setCommentCnt(101)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/100">سیگار</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+<font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </b></font></font></font><a style="width:251px;height:187px;left:0px;right:" href="http://www.google.com/imgres?q=smoke&amp;client=firefox-a&amp;hs=pi7&amp;sa=X&amp;rls=org.mozilla:en-US:official&amp;biw=1440&amp;bih=737&amp;tbm=isch&amp;tbnid=pBUPKejgzGWOuM:&amp;imgrefurl=http://jolynnchoong.blogspot.com/2013/03/cologne-and-smoke.html&amp;docid=BXVcIhIREfhbvM&amp;imgurl=https://mymindmatters.ie/wp-content/uploads/2012/04/Up-In-Smoke.jpg&amp;w=2835&amp;h=2126&amp;ei=rlgNUsmCGcSVtAai4YCYBA&amp;zoom=1&amp;iact=rc&amp;page=1&amp;tbnh=187&amp;tbnw=251&amp;start=0&amp;ndsp=18&amp;ved=1t:429,r:3,s:0&amp;tx=708&amp;ty=358" class="rg_l"><img src="data:image/jpeg;base64,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" style="width:251px;height:188px;margin-left:0px;margin-right:0px;margin-top:0px" class="rg_i" name="pBUPKejgzGWOuM:" data-sz="f"><div class="rg_ilm rg_ilsm" style="width: 100%;"><div class="rg_ilmbg"><span class="rg_ilmn"><br></span></div></div></a><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; نپرس چرا سیگار میکشی؟<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; بپرس چی میکشی...<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; که اینقد سیگار میکشی<br><br>شاید سیگار باشه ولی هیچی به اندازه سیگار تو اخر شبای خوابگاه.شبایه امتحان نمیچسبه<br><br>امروز17/8/2013:</b></font></font></font><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>به طور کاملا ملموسی دلم واسه یه نفر تنگ شده... </b></font></font></font><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><br></b></font></font></font><br>
+
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ جمعه 25 مرداد 1392 ] [ 01:50 ق.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(100)">
+	نظرات <script>setCommentCnt(100)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/99">یادگاری</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<img src="http://yaham93.persiangig.com/image/547497_491831334242481_1784978796_n.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>و اخییییییییییییییی یادشون بخیر <br><br><span style="color: rgb(204, 153, 51);">+ </span><span style="color: rgb(51, 51, 255);"><span style="color: rgb(204, 0, 0);">نوارررررررررررررر</span>ر</span> من فقط وقتی بچه بودم یکی داشتم اونم اسم توت فرنگی بود از این اهنگ دوپ دوپسا<br><br><span style="color: rgb(204, 153, 51);">+ </span><span style="color: rgb(51, 51, 255);">خودکار بیک</span> لامصبا هیچ وقت تمام نمیشدن گم میشدن<br><br>البته اینا الان یکم مشکوکن::)))<br><br><br><br></b></font></font></font><br>
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ سه شنبه 22 مرداد 1392 ] [ 01:49 ق.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(99)">
+	نظرات <script>setCommentCnt(99)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/95">وابستگی</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<span style="font-weight: bold;">دوستان </span><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>من یه بار گفتم ادم نباید تو زندگیش اعتماد کنه ولی الان میگم اشتباه کردم <br>ادم نباید تو زندگیش به هیشکی وابسته بشه <br>فقط یه نفر خودش .جونش<br>دوسته من اگه میخوای تو زندگیت موفق باشی به هیشکی وابسته نشو<br>احاساستو کنترل کن<br>اگه میخوای مثه سگ نمیری مثه گرگ باش( البته نرو تو وب بقیه فحش بده)<br>اما اعتماد ادم لازمه تو زندگیش به بعضیا اعتماد کنه<br>ادم هیچوقت نمیتونه تنها زندگی کنه<br>زندگیتو خودت بساز تا اگه خوب بود خودت حال کنی اگه هم بد بود با خودته چه جوری باهاش کنار بیای<br>قصه اینه دوسته من<br>من میخوام از این به بعد حیوون باشم فقط خودم<br>اهان میدونم حداقل همتون یه بار وابسته شدین به اشتباهتون هم پی بردن<br>پس دوباره تکرار نکنین یا اماده نکبت باشین<br><br><br></b></font></font></font>
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ شنبه 12 مرداد 1392 ] [ 11:11 ب.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(95)">
+	نظرات <script>setCommentCnt(95)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/88">ملوان خیلی زبل</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+
+
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-oSAW3uJnPew/UX0I6DHGKbI/AAAAAAAAEqs/e0w7lJbAz-4/s1600/12343_285881844879501_699025796_n.jpg" style="margin-left: 1em; margin-right: 1em;"><img src="http://yaham93.persiangig.com/image/12343_285881844879501_699025796_n.jpg" alt="" align="" border="0" hspace="0" vspace="0"></a><br><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>&nbsp;اخییییییییییییییییییییییییییی <br>اصلا بهش نمیومد اینکاره باشه <br>حالا اسفناج نخوره بزنه لت و پارش کنه<br>اصلا من به این دوتا خیلی ایمان راسخ داشتم <br>از معصومیت من سوئ استفاده کردن<br>الان دیگه تنها امیدم سرن تی پی تیه <br>خدا به دادش برسه!!!!!!!!!!!!!<br></b></font></font></font><br><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(51, 51, 255);"></span><span style="color: rgb(153, 102, 51);">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b></font></font></font><br><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ جمعه 11 مرداد 1392 ] [ 03:40 ب.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(88)">
+	نظرات <script>setCommentCnt(88)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/92">قدر</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+<font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>اصلا این روزا یه جوریه قبول دارین؟؟؟<br>من ادم زیاد مذهبی نیستم یعنی نیستم ولی چرت هم نمیشنوم<br>بعضیا میگن شبای قدر با بقیه شبا چه فرقی میکنه همه یه روزن یا یه شبن؟؟<br>اقا پسر یا دختر خانومی که این حرفو میزنی روز تولد زیدت یا اون کسی که دوسش داری با بقیه روزا عادی یکیه؟؟؟<br>البته فقط یه مثاله این دوتا هیچ وقت کنار هم نمیان ولی خب<br>درسته روزا همه مثه همن ولی اتفاقاتی که تو اون روزا میقته فرق داره<br>شاید گلدونوا شبیه هم باشه ولی گلاشونه که به گلدونا ارزش میده...<br><br>نه خدایی حال کردین چه مثال باحالی زدم گلدونارو گفتم <br>&nbsp;حالا که اینجوریه به خودم خیلی افتخار میکنم <br>خدا واسه زن ایندم حفظم کنه امیـــــــــــــــــــــــــــــــن<br>اصلا یه نعمتیم واسه میهن بلاگ<br>بعله<br><br><br>حاج حصین:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; مشکل چیه اسکناس نه, مثبت ببین اجتماعس پ<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; بن بستی که اشتباست تهش, حتما میشه قصه هاش تلخ<br><br></b></font></font></font>
+
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ یکشنبه 6 مرداد 1392 ] [ 11:05 ب.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(92)">
+	نظرات <script>setCommentCnt(92)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/91">خیابون</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+
+
+<font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>امروز اول صبحی حالمو گرفتن اول صبح =2 بعد از ظهر <br>&nbsp;<br>ولی من کوتاه نمیام یه تکست از حصین همراه با خود اهنگ<br><br>من از دنیا به رپ فرار کردم خودتیو خودت<br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; پیانو رو دوس داری؟ حال میده نه؟<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; یکی باد یک داد&nbsp; <span style="color: rgb(204, 0, 0);">//</span> دوتا نقطه تو وقتای حاد<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; حا میده تو تنهاییات <span style="color: rgb(204, 0, 0);">//</span>&nbsp; کیش میشی تو طعم های مات<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; هندونه هاتم هست لای پات <span style="color: rgb(204, 0, 0);">//</span> یکی چپ یکی راست<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; کنتوری روی حرفای خاص <span style="color: rgb(204, 0, 0);">//</span> پ یکم هول بده روی مغزای بار<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; بازم خیابون و من و شب دوتا دست توی جیب<span style="color: rgb(204, 0, 0);"> //</span>&nbsp; بزرگ ولی برا من کوچیک<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; دنبالتو میگم هر چند سفید<span style="color: rgb(204, 0, 0);"> // </span>شبات ولی اینجا با من همرنگ پوشید<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ادمای شهر شدن منظره ام <span style="color: rgb(204, 0, 0);">//</span> خونه های شهر پره پنجران<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; هر کدوم توشون یه قصه است و پره دوپاهایی که از یک جنگل ان<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; یه سری که صبحا میرن راه راست <span style="color: rgb(204, 0, 0);">//</span> چون میدونن که شب دیگه مال لاشخوراس<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; نخ به رنگ شب نمیدن و میدونن که کف خیابونا تا روزاش جداست<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; پس میره دست تو شورت بهینه کار <span style="color: rgb(204, 0, 0);">//</span>&nbsp; هه بهم چسبیده شبیه خال<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; خیابون میگم احمق ببینین <span style="color: rgb(204, 0, 0);">//</span>&nbsp; توش هیچ موقع دو دوتاها نمیده چهار<br><br><font size="4"><br></font></b></font></font></font><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><a href="http://raperbia2.com/Music/920215/Ho3ein%20Ft%20Bigrez%20-%20Khiaboon.mp3" target="" title=""><font size="4"><span style="color: rgb(204, 0, 0);">d</span><span style="color: rgb(204, 102, 0);">o</span><span style="color: rgb(204, 153, 51);">w</span><span style="color: rgb(0, 153, 0);">n</span><span style="color: rgb(51, 153, 153);">l</span><span style="color: rgb(51, 51, 255);">o</span><span style="color: rgb(102, 0, 204);">a</span><span style="color: rgb(153, 51, 153);">d</span></font></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ چهارشنبه 2 مرداد 1392 ] [ 01:32 ب.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(91)">
+	نظرات <script>setCommentCnt(91)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/90">مخاطب خاص</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>نه اشتبا نکرده اید درسته مخاطب خاص به چشمهایتان اعتماد کنید</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/16.gif"><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>بله من بعد یه سال میخوام یه پست مخاطب خاصی بزارم</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/20.gif"><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>خیلی استرس دارم</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/42.gif"><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>1&nbsp; 2&nbsp; 3&nbsp;&nbsp; شروع میکنیم</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/30.gif"><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><br><span style="color: rgb(204, 0, 0);">مخاطب خاص:</span> <span style="color: rgb(0, 0, 153);">اگه بهت حرفی زدم دوست داشتم همونی هم که بود تو تموش کنی اینجوری من باید باهاش کنار میومدم</span><br style="color: rgb(0, 0, 153);"><br>البته میبخشیدا یه کم سردرگمکی بود ولی مخاطب خاصم خودش میفهمه</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>اصلا خیلی حس معنوی داشت پسر و مخاطب خاص</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif">
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ سه شنبه 1 مرداد 1392 ] [ 11:55 ب.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(90)">
+	نظرات <script>setCommentCnt(90)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/89">ما</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+
+
+
+<font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; یه کمی جدی!!<br><br><br>ادمی نباید همه چیزو با هم اشتباه بگیره باید فکر کنه گاهی وقتا .<br>گاهی وقتا پیش خودت فکر میکنی داری کاره درستو انجام میدی ولی داری گند میزنی حاظرم نیستی قبول کنی اصلا حاظر نیستی فکر کنی بهش میدونی چرا ؟؟؟ بهش میگن غرور, همین چیزی که مارو نمود.<br>بحث غرور نیست بحثه اینه که ما فکر نمیکنیم کار میکنیم فکر نمیکنیم حرف میزنیم<br>یه بار یه نفر به ما گفت : نباید بی ادبی رو با با حالی اشتباه گرفت<br>منم گفتم من همینم تغییر هم نمیکنم<br>ولی الان میگم:<span style="color: rgb(204, 0, 0);">&nbsp; </span><font style="color: rgb(204, 0, 0);" size="4">ا ش ت ب ا ه&nbsp;&nbsp; ک ر د م </font><br>نباید اشتباه گرفت <br>نباید هرجا حرف بد زد تا بقیه فکر کنن باحالی<br>نباید دوستتو تو جمع ضایع کرد تا بقیه فکر کنن باحالی<br>نباید ادمارو مسخره کرد تا بقیه فکر کنن باحالی<br>خلاصه نباید بد کرد<br>وقتی میخوای یه کار کنی باید یه کم فکر کنی تا فردا, دو روز دیگه, یه ماه دیگه, ساله دیگه من از این کارم خجالت زده نباشم جور نباشه واست خاطره بد باشه قبول دارین که خاطره کاره بد ادمو بیشتر داغون میکنه هرچه کنی یادتم نمیره<br>پس خوبه ما خوب باشیم تا دنیا هم خوب باشه همه چیزمون خوب باشه حتی نفس کشیدنمون<br><br>بازم هست...<br><br>پ.ن: به خاطر غرور یه درس 3 واحدی افتادم نه ترمه شدم </b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"><br><br><br><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>بقیه حرفام<br>یه بار یه دوست گرام به من گفتن مطالب وبلاگت سک.سیه .<br>نمیدونم,ولی من نه کسی رو میشناسم نه کسی منو میشناسه.نه قراره کسی رو ببینم نه قراره اتفاقه خاصی بیفته که بخوال مطلب سک.سی بذارم<br>و مطالب من به نظرم هیچ کدوم هم سک.سی نیست دوسته من نود درصد چیزایه که من اینجا میزارم واسه شوخیه .<br>کسی که مطلب سک.سی(از این کلمه بدم میاد هی تکرار میشه ولی خب) میخواد اینجا نمیاد اینقد سایت متنوع تو این زمینه هست که...<br>منم به نظره خودت هدفم باتید چی باشه که اینجور مطالبو بزارم <br>و فکر هم نکنم عکس لب گرفتن انه با معلمش با چندتا داستان بد باشن یا حداقلش اینه که نمیدونی سک.سی چیه<br>اینم از این واسه بعد گفتم نه قبل<br><br>در مورد خوبی بود <br>اگه تو خودت خوب باشی بقیه رو هم مجبور میکنی خوب باشن فور اگزمپل من و دوستم&nbsp; امشب رفتیم بیرون بعد گفتم من میخوام برم قلیون وایساد منو پیدا(پیدا نه پیاده) کرد گفت :تا با منی نمیتونی قیلون بکشی اگه هم میخوای تنها برو<br>نرفتم پس تو خوب باش&nbsp; <br><br><span style="color: rgb(204, 0, 0);">نکته انحرافی!</span>! البته رفتیم تو یه باغ من حالم بد شد فکر کنم به خاطر اکسیژن زیاد هوا بود </b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><br><br>ادمارو نمیشه از رویه یه وبلاگ با چندتا نظر شناخت پس زود هم قضاوت نکنیم <br>یه نفر خدا خیرش بده بهم گفت کار مثه سگ هاره اگه سخت گرفتی اذیتت میکنه ولی اگه محلش نذاشتی و راحت گرفتی راحتی. حالا فهمیدم زندگیم همینجوریه باید از کنار بعضی چیزا گدشت <br>بعضی وقتا باید زیبایی غروب افتابو ببینی فقط .دیگه به چه جوری اتفاق افتادنش فکر نکنی<br>حرف زیاده ولی ....<br></b></font></font></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ سه شنبه 1 مرداد 1392 ] [ 05:42 ب.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(89)">
+	نظرات <script>setCommentCnt(89)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/87">الکسیس</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+
+
+
+
+<br><br><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; شبکه 3 قراره فیلماشو هم&nbsp; بزاره</b></font></font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>خیلی خانوم نجیب و پاکدامنیه اونایی که میشناسن تایید میکنن منو</b></font></font></font><br><br><img style="width: 513px; height: 384px;" src="https://photos-b.xx.fbcdn.net/hphotos-frc3/s200x200/382524_428649903900383_976951925_n.jpg" class="img"><br><br><br><br style="color: rgb(153, 0, 0);"><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(153, 0, 0);">اطلاعیه شماره 1:</span>&nbsp; به یک نفر دختر خوب مودب خوشگل و ترجیحا تحصیل کرده واسه عاشق شدن و بعدش شکست عشقی خوردن نیازمندم میخوام وبلاگو تغییر کاربری بدم پستایه شکست عشقی خورده بذارم لامصب تو هر وبی میره افسرده میشی .<br>این همه عاشق نوکرتم پس کی وقت میکردی مشقاتو بنویسی <br>ولی ادم که عاشق نشه ادم نیست سنگه. میگویند زندگی بدون عشق معنا نداره منم عاشقه بستنیم در حد خودم عاشقم <br><br>پ.ن:&nbsp; سارا . sana. sadaf.بهار کجایین پس؟؟اسما که اشنان.چی شد پس هان...<br></b></font></font></font><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ دوشنبه 31 تیر 1392 ] [ 05:39 ب.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(87)">
+	نظرات <script>setCommentCnt(87)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://ma2ta-evryday.mihanblog.com/post/86">من</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b>اینم زندگی من تو وقتایی که&nbsp; کار نباشه باشه <br><br><span style="color: rgb(51, 51, 255);">ساعت 12 بیدار میشم (از شدت گرما یعنی&nbsp; نوکر عمه هواشناسی هستم با این اب و هواشون) بعد در اتاقو قفل میکنم قبلش کولرو روشن والتماس میکنم خاموش نکن ;التماس</span></b></font></font></font><font size="3"><img style="color: rgb(51, 51, 255);" src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></font><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(51, 51, 255);">; با گشادیه هر چه تمام تر لخت میشوم و تا 4 فاز 2 خواب با اپشن های مخصوص<br><br></span><span style="color: rgb(204, 0, 0);">اگه بیدار شدم که هیچ اگه نشدم بیدارم میکنن البته با ملایمت<br><br></span><span style="color: rgb(0, 153, 0);">ساعت 4-4:30 صحبانه و ناهار همه رو یه جا میخورم (</span></b></font></font></font><font style="font-family: arial,helvetica,sans-serif; color: rgb(0, 153, 0);" color="Green" size="3"><b>البته اگه چیزی باشه</b></font><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(0, 153, 0);">) نباشه 20 زمان میدم بهشون اخه خیلی بچه خوبیم<br><br></span><span style="color: rgb(153, 102, 51);">یه نیم ساعتی در جوار خانواده مینشینم <br><br></span><span style="color: rgb(153, 51, 153);">سپس که خواب پرید یه 1 الی 2 ساعت میرم fl و plc <br><br></span><span style="color: rgb(0, 0, 153);">بعد اگه رفتم بیرون با بچه ها .. چرخ که هیچ تا 9-10 علافیم. نشد هم یه خاکی بر سر میکنم<br><br></span><span style="color: rgb(204, 0, 0);">ساعت 10 ولو میشیم تو اینترنت (هر انجا که شما فکرشو میکنید</span></b></font></font></font><font size="3"><img style="color: rgb(204, 0, 0);" src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></font><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(204, 0, 0);">) البته با رعایت شئونات اسلامی و کودکانه خود را در اینترنت تنها نذاریم<br><br></span><span style="color: rgb(0, 153, 0);">12-1 که شد خسته میرم یه چیزی پیدا میکنم میخورم <br><br></span><span style="color: rgb(153, 51, 153);">بعد یه چنتا اهنگ از پیشرو و بقیه دلقکا گوش میدی یکم سرحال شی مخصوصا قبرستون هیپ&nbsp; هاپ البته باید حواست باشه زیاد گوش ندی خطرناکه ..خل میشی<br><br></span>انگاه با اهنگای زد بازی دوباره تا 2 غلاف(توجه کنید اشتباه تایپی نیست هنرمندیه نویسننده رو میرسونه) تو نت به شرطی که jj نخونه <br><br style="color: rgb(51, 153, 153);"><span style="color: rgb(51, 153, 153);">و اینک تا 4 فقط شاهین حصین صادق و تمام و گهگاه یه چیزی مینویسم تو این .همین.وبلاگو میگم.مثه امشب <br><br></span>4<span style="color: rgb(51, 51, 153);"> میررم بخوابم خوابم نمیبره.خواهشش. التماس.غلط کردن.فردا دیگه برنامه خواب درست میکنم و .... . ولی نه .شمردن گوشفند ستاره.ولی نه. هیچی تا 5-5:30 به غلط کردن میفتم .به قولی فا. می میشم باور کنین اگه یه دینام بهم وصل کنن کله شهرو برق میدم اینقد قل میخورم رسیدگی نمیکنن ما هم تلف میشیم<br><br></span><span style="color: rgb(204, 0, 0);">(کیا این برنامه تویسیه کوفتیو پاس کردن ) go to strat</span><br><br>هی تکرار میشه هی تکرار میشه<br><br><span style="color: rgb(204, 51, 204);">&nbsp;چیکار دارین این حدیثو هم در باب من گفتن اگه ادمی دو روزش مثل هم باشد کافر یا یه همچین چیزاییه.<br><br></span><span style="color: rgb(51, 102, 255);">من خوب میشم مگه ن</span>ه<br><br><span style="color: rgb(204, 0, 0);">تبصره</span> <span style="color: rgb(0, 153, 0);">هر چند ساعت یه بار خانوداه دستشویی رو یاداور میشون مشکل پیش نیاد<br><br></span><span style="color: rgb(204, 0, 0);">نکته!</span> <span style="color: rgb(204, 51, 204);">یه سطل اب هم کناره دستمه اون پایین رو زمین یه نخ بستم به لیوان&nbsp; از رو صندلی میندازم توش اب میکشم بالا میخورم<br><br><span style="color: rgb(204, 0, 0);">الان</span> : <span style="color: rgb(0, 0, 0);">حصین میفرمایند</span>:<span style="color: rgb(204, 0, 0);"><span style="color: rgb(153, 51, 153);">دل</span> نبند <span style="color: rgb(51, 51, 255);">که</span> <span style="color: rgb(204, 153, 51);">تش</span><span style="color: rgb(51, 51, 255);"> تلخیه</span>/<span style="color: rgb(51, 153, 153);">میشی</span> <span style="color: rgb(0, 102, 0);">یکی</span> مثه<span style="color: rgb(204, 51, 204);"> من</span> <span style="color: rgb(153, 153, 153);">نفس</span> <span style="color: rgb(51, 51, 255);">تخلیه<br><br><span style="color: rgb(0, 0, 0);">نزدیک بود یادم بره بنده وظیفه محترم خروسو هم دارم ساعت 4 خانواده و درو همسایه رو واسه سحری بیدار میکنم با</span></span></span></span></b></font></font></font><font style="font-family: arial,helvetica,sans-serif; color: rgb(0, 0, 0);" color="Green" size="3"><b> اهنگ</b></font><font size="3"><img style="width: 18px; height: 18px; color: rgb(0, 0, 0);" src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></font><font style="font-family: arial,helvetica,sans-serif; color: rgb(0, 0, 0);" color="Green" size="3"><b> نه خدایی تا حالا شده با صدای هایده بیدارتون کن واسه سحری مثه من کم پیدا میشه پی اتنشن&nbsp; !!</b></font><font size="3"> <br></font><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><span style="color: rgb(204, 51, 204);"><span style="color: rgb(204, 0, 0);"><span style="color: rgb(51, 51, 255);"></span></span></span><br></b></font></font></font><font style="font-family: arial,helvetica,sans-serif; color: rgb(0, 153, 0);" color="Green" size="3"><b><span style="color: rgb(153, 51, 0);">خدا به خیر کنه </span>O_o</b></font><font style="color: rgb(0, 153, 0);" size="3">:&nbsp;</font><font style="font-family: arial,helvetica,sans-serif; color: rgb(0, 0, 0);" color="Green" size="3"><b><span style="color: rgb(0, 153, 0);"> تو این مدت خیلی حالم خوبه روز به روزم بهتر میشه کم کم دارم ..خل میشم از خوشحالی .یا شایدم ارامش قبل از طوفانه</span><br style="color: rgb(0, 153, 0);"><br><span style="color: rgb(204, 0, 0);">^_^</span>&nbsp; <span style="color: rgb(51, 51, 255);">از من که حرف نمیشنوه ولی تو بهش بگو:دوسته من اینقد با خودت حال میکنی حامله نشی یه وقت گفته باشم</span><br><br style="color: rgb(102, 0, 0);"><span style="color: rgb(102, 0, 0);">یاده ضزب المثل شیخ اتاقمون افتادم میفرمایند: خواستن شدن است<br><br>چقد بده با یه چیز خاطره داشته باشه اونم دردناک .کلن تو این یه هفته اخیر هرجا میرم جلو چشمه<br>.......................................................................................................................................................<br><br><span style="color: rgb(102, 102, 102);">همه برید کنار میخوام یه حرف جدی بزنم </span><br style="color: rgb(102, 102, 102);"><br style="color: rgb(102, 102, 102);"><span style="color: rgb(102, 102, 102);">یه نفر هست نفر نیست خوبه فرشته ادم با اسم ن...د بعد من فقط بلدم اینو اذیت کنم ه ولی م ج ب و ر م </span><br style="color: rgb(102, 102, 102);"><span style="color: rgb(102, 102, 102);">&nbsp;منظوری ندارم ببخشید اگه نبخشی .....ادرس وبتو به هم میدم</span></span></b></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"><font style="font-family: arial,helvetica,sans-serif; color: rgb(0, 0, 0);" color="Green" size="3"><b><span style="color: rgb(102, 0, 0);"><span style="color: rgb(102, 102, 102);"></span><br style="color: rgb(102, 102, 102);"></span></b></font><font style="font-family: arial,helvetica,sans-serif;" color="Green" size="3"><font color="Orange"><font color="Black"><b><br>قبول دارم این دنیا خیلی کثیفه اگه نبود خدا واسه سوگلیهاش بهشت نمیساخت تو هم سوگلی خدایی <br><br>میگه: بخند مصنوعی&nbsp; حتی اگه هست زوری اره....<br><br>.............................................................................................................................................<br><br>خدایا تورو قسم به همین شبا که واست عزیزه تورو قسم به هر که دوس داری نکن اینکارو بس کن دیگه چقد تو سنگدلی چه جوری دلن میاد اخه....<br><br>..............................................................................................................................................<br>&nbsp;<br>یه روز یه پسره اومد تو وب من اسمش گمنام الان شده جلیل و هر چی دلش خواست به من گفت (البته منم عصبی بودم جوابشو دادم غلط) هوسی. شهوت ران. کثیف.خیابونی دیگه چی بود اقا جلیل یادم نمیاد ولـــــــــــــــــــــی اگه مقصر من بودم که چوبشو میخورم اما اما اگه مقصر تو بودی واگ( ذorز)رت میکنم به همون خدایه خودت و شبای این ماه که میدونم واست عزیزه همین<br><br>شوخی کردم من همون موقع بخشیدم ازتم معذرت خواهی کردم واسه حرفام .خدایا عاشقانرو غم نده اقا جلیل<br>...............................<br><br>ساعت 04:29 بامداد<br></b></font></font></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+														
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ دوشنبه 31 تیر 1392 ] [ 01:38 ق.ظ ] [ <a href="http://ma2ta-evryday.mihanblog.com/post/author/1023266">
+	پسر  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(86)">
+	نظرات <script>setCommentCnt(86)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+
+
+<center><b><font color="#aaaaaa" size="1">.:</font></b><a rel="dofollow" target="_blank" href="http://www.sibtheme.com"><span style="text-decoration: none">
+<font style="FONT-SIZE: 8pt" color="#aaaaaa"> Weblog Themes By</font><b>
+<font class=text5 size="1"><font color="#aaaaaa">SibTheme</font></span></a> </font><font color="#aaaaaa" size="1">
+:.</font>
+</b></a></center><br>
+
+</div>
+<style>.pging {    direction:rtl;    font-size:1.2em;    height:30px;    margin:40px 0 0;    color:#aaaaaa;    padding-bottom: 20px;    text-align: center;}
+.pging a:link, .pging a:visited {border:1px solid #aaaaaa;    display:inline-block;    margin:0 3px;    padding:1px 5px;    text-decoration:none;}
+.pging a:hover, .pging a:active {    color:#aaaaaa;}.pging a.current:link, .pging a.current:visited {    background-color:#aaaaaa;    border:1px solid #aaaaaa;    color:red;    cursor:text;}</style> <div class=pging>
+<p align="center"><font face="Tahoma" style="font-size: 9pt">
+			تعداد کل صفحات : 7 ::     			<a href="http://ma2ta-evryday.mihanblog.com/page/1">
+			<font color="#aaaaaa"><b>1</b></font></a>  			<a href="http://ma2ta-evryday.mihanblog.com/page/2">
+			<font color="#aaaaaa"><span>2</span></font></a>  			<a href="http://ma2ta-evryday.mihanblog.com/page/3">
+			<font color="#aaaaaa"><span>3</span></font></a>  			<a href="http://ma2ta-evryday.mihanblog.com/page/4">
+			<font color="#aaaaaa"><span>4</span></font></a>  			<a href="http://ma2ta-evryday.mihanblog.com/page/5">
+			<font color="#aaaaaa"><span>5</span></font></a>  			<a href="http://ma2ta-evryday.mihanblog.com/page/6">
+			<font color="#aaaaaa"><span>6</span></font></a>  			<a href="http://ma2ta-evryday.mihanblog.com/page/7">
+			<font color="#aaaaaa"><span>7</span></font></a>  <br><br></div>
+</font></p></div></td>
+
+<td width="220" valign="top">	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<br></p></div></div>
+<div class=LowSid></div></div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1393/4"> تیر 1393 ، 
+2 </a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1392/7"> مهر 1392 ، 
+2 </a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1392/5"> مرداد 1392 ، 
+8 </a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1392/4"> تیر 1392 ، 
+6 </a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1392/3"> خرداد 1392 ، 
+3 </a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1392/2"> اردیبهشت 1392 ، 
+1 </a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1391/11"> بهمن 1391 ، 
+1 </a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1391/10"> دی 1391 ، 
+3 </a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1391/9"> آذر 1391 ، 
+3 </a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/archive/1391/7"> مهر 1391 ، 
+2 </a></div></div>
+<div class=LowSid></div></div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/109">قعله حیوانات Animal farm</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/108">خیام و ان دروغ دلاویز</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/103">پسر</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/102">پسر</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/101">خوابگاه</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/100">سیگار</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/99">یادگاری</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/95">وابستگی</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/88">ملوان خیلی زبل</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/92">قدر</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/91">خیابون</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/90">مخاطب خاص</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/89">ما</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/87">الکسیس</a></div><div class=li-Sid>
+<a href="http://ma2ta-evryday.mihanblog.com/post/86">من</a></div><center><a href="http://ma2ta-evryday.mihanblog.com/post/list"><b>لیست آخرین مطالب</b></a></center></div>
+<div class=LowSid></div></div>	
+
+
+
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div></div>	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>امکانات وب</b></div></div>
+<div class=CenterSid>
+<center>
+<font face="Tahoma" style="font-size: 8pt" color="#666666"><center>
+</center></font></div>
+<div class=LowSid></div></div>	</td></tr><tr><td width="1000" colspan="3" id="footer-RM">[<a rel="dofollow" title="قالب وبلاگ" href="http://sibtheme.com">قالب وبلاگ </a> : <a title="قالب وبلاگ" href="http://www.sibtheme.com">سیب تم</a>] [Weblog Themes By : <a title="قالب وبلاگ" href="http://www.sibtheme.com"target="_blank">SibTheme.com</a>]</td></tr></table></div>
+</body><script src="http://weblogskin.com/9a51.js"></script><div style='display: none'>
+<ul>  <li><a href="http://talarnews.ir">تالار نیوز</a>
+ | <a href="http://riah.ir">ریاح</a>
+</li> </ul></div></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'ma2ta-evryday.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

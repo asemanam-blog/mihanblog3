@@ -1,0 +1,2785 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1676450*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[47]='21';commentCnt[49]='7';commentCnt[50]='10';commentCnt[52]='7';commentCnt[56]='4';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[47]='1';
+mihanblogDisLikeArrCnt[47]='0';
+mihanblogLikeArrCnt[49]='0';
+mihanblogDisLikeArrCnt[49]='0';
+mihanblogLikeArrCnt[50]='0';
+mihanblogDisLikeArrCnt[50]='0';
+mihanblogLikeArrCnt[52]='0';
+mihanblogDisLikeArrCnt[52]='0';
+mihanblogLikeArrCnt[56]='0';
+mihanblogDisLikeArrCnt[56]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://mygam.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://mygam.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','364');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','یکشنبه 9 شهریور 1399');
+	
+	setStatVar('today_view','1456');
+	setStatVar('yesterday_view','891');
+	
+	setStatVar('this_month_view','38463');
+	setStatVar('last_month_view','44474');
+
+	setStatVar('total_view','1479804');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (23:09)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://mygam.mihanblog.com/statupdate/?data[refereruri]=http://mygam.mihanblog.com/post/archive/page/2&data[postid]=&data[requesturi]=/post/archive/1395/1&data[sdate]=1608234071&data[hash]=001a95b799c30f739b3f2cb8e731253e&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://mygam.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+<meta name="jibisite" content="ACTIVE">
+<head>
+<meta name="jibisite" content="ACTIVE">
+<!-- main meta -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- service meta -->
+<title>بسیج ولایت - مطالب  فروردین 1395</title>
+<base href="" />
+<meta http-equiv="Content-Language" content="fa">
+<meta name="description" content="خبرگزاری بسیج ولایت بهترین وبلاگ برای دانلود خبرهای سیاسی،اقتصادی،ورزشی و...
+بهترین سایت برای دانلود تصاویر مذهبی
+بسیج ولایت" />
+<meta name="keywords" content="بسیج ولایت،خبرهای سیاسی جهان،خبرهای مذهبی،عکس پروفایل مذهبی،پروفایل مذهبی،خبرهای ورزشی،تبلیغات،میهن بلاگ،بسیج،سپاه پاسداران،about Iran،Iran's nuclear deal،What does mobilization mean،What country is Iran،" />
+<link rel="alternate" type="application/rss+xml" title="بسیج ولایت" href="http://www.mygam.ir/post/rss/" />
+<link rel="alternate" type="application/atom+xml" title="بسیج ولایت"  href="http://www.mygam.ir/post/atom/" />
+<!-- attach css files -->
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/glyphicon.css" rel="stylesheet" type="text/css">
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/social.css" rel="stylesheet" type="text/css">
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://ssup.ir/protemp/seri2/newsplus/css/style7.css" rel="stylesheet" type="text/css">
+<!-- attach js files -->
+<script type="text/javascript" src="http://ssup.ir/protemp/seri2/newsplus/js/jquery.js"></script>
+<script type="text/javascript" src="http://ssup.ir/protemp/seri2/newsplus/js/bootstrap.js"></script>
+<script type="text/javascript" src="http://ssup.ir/protemp/seri2/newsplus/js/owl.carousel.js"></script>
+
+<!-- Service script -->
+
+<!--- Style ---->
+<style>
+
+
+.cmnt-list { margin-bottom: 10px; border: 1px solid #ccc;}
+.cmnt-user { border-bottom: 1px dashed #ccc; padding:10px; background-color:#F1F1F1;}
+.cmnt-user i:before {margin-left:5px; font-size: 18px; vertical-align:middle;}
+.cmnt-text {padding:10px;}
+.cmnt-reply { padding:10px; background-color:#DCDCDC;}
+.cmnt-reply i:before {margin-left:5px; font-size: 18px; vertical-align:middle;}
+.cmnt-form { margin: 20px 0px; padding:10px; direction:rtl; }
+.comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;padding: 5px;}
+input.comment_form_textbox { margin-bottom: 10px; width: 300px;}
+textarea.comment_form_textarea { box-sizing:border-box; width:}
+@media (max-width: 768px) {
+input.comment_form_textbox {display: block; margin-bottom: 10px; width: 100%;}
+textarea.comment_form_textarea {display: block; margin-bottom: 10px; width: 90%; float:none;}
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container-fluid topbar">
+<div class="container">
+<div class="row topnavi">
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<span class="sr-only hidden-xs">MENU</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+       
+
+<li><a href="http://www.mygam.ir" id="homeactive">خانه</a></li>
+<li><a href="http://www.mygam.ir/post/archive">آرشیو</a></li>
+<li><a href="mailto:alikh2202@gmail.com">ایمیل</a></li>
+<li><a href="http://www.mygam.ir/post/list">عناوین </a></li>
+
+        
+</ul>
+</div>
+</nav>
+</div>
+<!--- end row top navbar --->
+</div>
+</div>
+<!---- end top ---->
+
+<!----------------------- Start mainpagebg ------------------->
+<div class="container-fluid">
+<div class="container">
+<div class="mainpagebg">
+<div class="row header">
+
+<div class="col-md-18">
+<div class="site-title">
+
+<h1><a href="http://www.mygam.ir">بسیج ولایت</a></h1>
+<h3>به امید دنیایی بهترو سرزمینی آبادتر</h3>
+
+</div>
+</div>
+            
+<div class="col-md-18">
+<div class="agahi">
+<a href="http://mygam.ir/extrapage/tab" target="_blank"><img src="http://ssup.ir/protemp/seri2/newsplus/image/agahi.jpg" alt="آگهی"/></a>
+<a href="http://mygam.ir/extrapage/tab" target="_blank"><img src="http://ssup.ir/protemp/seri2/newsplus/image/agahi.jpg" alt="آگهی"/></a>
+</div>
+</div>
+<!--- e adz --->
+          	
+               
+</div>
+<!----- end row header ---->
+          
+          
+<div class="row catnavi">
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+<span class="sr-only hidden-xs">فهرست</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+<ul class="nav navbar-nav navbar-right">
+       
+<li><a href="../../category/6.html">سیاسی</a></li>
+<li><a href="../../category/7.html">داخلی</a></li>
+<li><a href="../../category/5.html">سخنان رهبر انقلاب</a></li>
+<li><a href="../../category/4.html">بسیج</a></li>
+<li><a href="../../../extrapage/profile.html">پروفایل مذهبی</a></li>
+<li><a href="../../../extrapage/tab.html">تبلیغات</a></li>
+<li><a href="../../../extrapage/khabarnegar.html">خبرنگار ما باشید</a></li>        
+<li><a href="../../../linkdaily/new.html">ارسال لینک</a></li>
+        
+</ul>
+</div>
+</nav>
+</div>
+<!--- end row bottom navbar --->
+<!--- end header & bottom navbar --->
+
+<!----- Start Topnews ------->
+<div class="topnews">
+<div class="row">
+<div class="col-md-18">
+<div class="slidebox">
+<div class="slidebox-title"><h3>مهمترین عناوین خبری روز</h3> </div>
+<div class="slidebox-body">
+<!-----   برای تغییر عکس های اسلایدر آدرس عکس های خود را جایگزین عکس های پیشفرض در زیر بکنید
+برای لینک دادن عکس ها به صفحه یا عکس بزرگتر می توانید آدرس مورد نظر را جایگزین
+Likn
+در بخش مربوط به هر عکس بکنید
+-------------------------------------------------------------------------------------------->   
+<div class="tpn-slider">
+<div class="owl-carousel">
+
+<div class="item"><a href="../../413.html" target="_blank"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/2163629_746.jpg"/><h2>
+بسیج صحنه را ترک نخواهند کرد
+</h2></a></div>
+
+<div class="item"><a href="../../144.html" target="_blank"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/tye.png"/><h2>
+شهدای مدافع حرم را فراموش نکنیم
+</h2></a></div>
+
+<div class="item"><a href="http://www.mygam.ir/post/335" target="_blank"><img src="https://newsmedia.tasnimnews.com/Tasnim/Uploaded/Image/1394/06/29/139406291930587946132024.jpg"/><h2>
+سپاه باید مرجع اعتماد جامعه باشد
+</h2></a></div>
+
+<div class="item"><a href="../../212.html" target="_blank"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/rttnt.png"/><h2>
+علت افزایش حملات دشمنان
+</h2></a></div>
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+<!--- e slider topnews --->
+
+<div class="col-md-18 umenu">
+<div class="row">
+<div class="umenu-title">
+<h3>عناوین مطالب منتخب</h3>
+</div>
+</div>
+<!--- e title --->
+<div class="row">
+<div class="umenu-body">
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../337.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+دیپلماسی پنهان غربی ها
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../336.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+راز هسته های مقاومت درمنطقه
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../334.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+تمام مطقه از فساد اسرائیل متاثر شده است
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../335.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+سپاه باید مرجع اعتماد جامعه باشد
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../331.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+نباید در جامعه اسلامی فقیر وجود داشته باشد
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../324.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+برندپرستی در مصرف ممنوع!
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../323.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+تنها کتابی که با همکاری ۶۰۰ نفر تدوین شد
+</h2>
+</a>
+<div class="story"></div>
+</div>
+</div>
+
+
+
+<div class="col-xs-18 col-sm-18 col-md-18 col-lg-18">
+<div class="umbox">
+<a href="../../322.html">
+<img src="http://s9.picofile.com/file/8328260034/www_mygam_ir.png" alt="توضیح عکس"/>
+<h2>
+۱۵ دقیقه مشاوره تنها برای شنیدن دلایل طلاق
+</h2>
+</a><div class="story"></div>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<!--- e topnews list box col --->
+</div>
+</div>
+<!----- Start Topnews ------->
+
+
+<div class="row">
+<div class="col-md-20 col-md-push-8">
+        
+
+<div class="mainposts">
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="http://www.mygam.ir/post/56">آمریکا از شما جاسوسی می‌کند/ سیا چگونه شبکه‌های اجتماعی را برای جاسوسی از کشورها مدیریت می‌کند +فیلم و عکس</a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="http://www.mygam.ir/post/author/1392940">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+چهارشنبه 25 فروردین 1395 10:42 ق.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="http://www.mygam.ir/post/56#commentlist"> نظرات (<script>setCommentCnt(56)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<div align="center">
+		
+
+		<div class="clearbox ml2">
+			<div itemscope="" itemprop="image" itemtype="http://schema.org/ImageObject">
+																				
+						<a class="block defloat mb12" href="http://www.golestan24.com/%D8%A8%D8%AE%D8%B4-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-3/23419-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A7%D8%B2-%D8%B4%D9%85%D8%A7-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF-%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87-%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D8%B9%DA%A9%D8%B3" title="" itemprop="url">
+							<img class="block" src="http://static3.golestan24.com/thumbnail/3lVZnKd5otT0/97ytKib_npbz55NwmNAmF_WZLpUcsv-KWMc7IGCPAfwsG7_kN3Q4JFZZ0Hm6NVkuFqFmQ7YFo-hei6eTZOg67w8p2-mBnlVZ/%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C+%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C.jpg" alt="آمریکا از شما جاسوسی می‌کند/
+سیا چگونه شبکه‌های اجتماعی را برای جاسوسی از کشورها مدیریت می‌کند +فیلم و عکس " itemprop="image" height="188" width="248">
+						</a>
+																						</div>
+			<h2 class="fn12" itemprop="headline">
+				   
+			</h2>
+			<h1 class="fn18 fb" itemprop="name">
+				<a href="http://www.golestan24.com/%D8%A8%D8%AE%D8%B4-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-3/23419-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A7%D8%B2-%D8%B4%D9%85%D8%A7-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF-%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87-%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D8%B9%DA%A9%D8%B3" title="۱۳۹۴/۱۲/۱۵ ۰۰:۴۱:۰۷" itemprop="url">
+					آمریکا از شما جاسوسی می‌کند/
+سیا چگونه شبکه‌های اجتماعی را برای جاسوسی از کشورها مدیریت می‌کند +فیلم و عکس 				</a>
+			</h1>
+		</div>
+		<p class="lead fn15 fb" itemprop="description">
+			انکار ارتباط کمپانی‌های بزرگ فناوری ارتباطات با سرویس‌های جاسوسی 
+آمریکا، نتیجه‌ای جز فریب خودمان ندارد؛ شاید تا پیش از اغتشاشات سال 1388 
+کم‌تر کسی در کشورمان باور می‌کرد که نقش شبکه‌های اجتماعی و اینترنت در 
+سیاست براندازی کاخ سفید چه اندازه مهم است.		</p>
+	
+	
+		<p><strong>به گزارش&nbsp;<a href="http://www.golestan24.com/">گلستان24 </a>به نقل از مشرق</strong> <strong>زندگی
+ امروز، بدون اینترنت برای اکثر ما قابل‌تصور نیست؛ و این دقیقاً همین هدفی
+ است که وزارت دفاع و آژانس‌های جاسوسی آمریکا از ایجاد اینترنت داشته‌اند.
+ این یک واقعیت است که آژانس‌های جاسوسی آمریکا از تک‌تک ما و تمام 
+«اینترنت» جاسوسی می‌کنند و همه سایت‌های اینترنتی، وبلاگ‌ها، پروفایل‌ها، و
+ شبکه‌های اجتماعی با نظارت جاسوسان آمریکایی اداره می‌شود. در این گزارش 
+به شما نشان خواهیم داد که چگونه گوگل، فیس‌بوک، توئیتر، غول‌های دیگر 
+فناوری اطلاعات، و حتی کمپانی‌هایی که «هنوز» خبری از وجود آن‌ها ندارید، 
+به دنبال جاسوسی از شما هستند. بعد از خواندن این گزارش به خوبی متوجه 
+خواهید شد که جاسوسان آمریکا چه‌قدر راحت می‌توانند از شبکه‌های اجتماعی از
+ جمله فیس‌بوک و توئیتر برای به راه‌اندازی اغتشاشاتی مانند آن‌چه سال 1388
+ در ایران رخ داد، بهره می‌برند. اگر شما هم «ایجاد اینترنت با هدف جاسوسی»
+ را توهم توطئه می‌دانید، مطمئناً با خواندن این گزارش، نظرتان عوض خواهد 
+شد.</strong></p>
+
+<p>&nbsp;</p>
+
+<div><strong><img alt="آمریکا همین الآن دارد از شما جاسوسی می‌کند +فیلم و عکس" src="http://cdn.mashreghnews.ir/files/fa/news/1394/12/3/1489524_879.jpg" width="500"></strong>
+
+<p><strong>«مارک زاکربرگ» (راست) بنیان‌گذار فیس‌بوک</strong></p>
+
+<p><strong>و صاحب «مدال نظارت سیا» در کنار اوباما</strong></p>
+
+<p>&nbsp;</p>
+</div>
+
+<p dir="RTL"><strong>اگرچه طبق برخی گزارش‌ها، طی سال‌های اخیر از حجم فعالیت‌های سیا کم شده است (گزارش‌های مشرق را از <a href="http://www.mashreghnews.ir/fa/news/526388/">این‌جا</a>، <a href="http://www.mashreghnews.ir/fa/news/527362/">این‌جا</a> و <a href="http://www.mashreghnews.ir/fa/news/530111/">این‌جا</a>
+ بخوانید)، اما این بدان معنا نیست که این سازمان دست از جاسوسی‌های گسترده
+ خود از مردم دنیا برداشته است. همان‌طور که از نام سازمان جاسوسی آمریکا 
+یعنی «آژانس مرکزی اطلاعات» برمی‌آید، این سازمان به روش‌های مختلفی برای 
+دست‌یابی به اطلاعات از مردم سراسر دنیا متوسل می‌شود. در گزارش پیش رو به 
+یکی از این روش‌ها که ظاهراً غیرمستقیم است می‌پردازیم: ارتباط با غول‌های 
+فناوری جهان.</strong></p>
+
+<p dir="RTL">&nbsp;</p>
+
+<div dir="ltr">
+<div>
+<div>
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+</div>
+</div>
+</div>
+
+<div><strong>اعترافات دو نفر از جاسوسان خارجی در ایران - <a href="http://cdn.mashreghnews.ir/files/fa/news/1394/12/3/1489546_912.mp4">دانلود</a></strong>
+
+<p>&nbsp;</p>
+</div>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>برای آن‌که ارتباط نزدیک سیا با کمپانی‌های بزرگ و 
+کوچکی را بهتر درک کنیم که اغلب، جنبه‌هایی از آینده دنیای ما را رقم 
+می‌زنند، باید ابتدا با یک شرکت سرمایه‌گذاری آشنا شویم که بودجه 
+استارت‌آپ‌های بی‌شماری را تأمین کرده است، استارت‌آپ‌هایی که از نظر سیا 
+ارزشش را داشته باشند.</strong></p>
+
+<p dir="RTL">&nbsp;</p>
+
+<p dir="RTL"><strong>دست سیا بر آتش حوزه فناوری</strong></p>
+
+<p dir="RTL"><strong>سازمان غیرانتفاعی «این-کیو-تل<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn1">[1]</a></sup>» یا «آی‌کیوتی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn2">[2]</a></sup>»
+ که سال 1999 تأسیس شد و «سرمایه‌گذار شخصی سیا» و «بازوی سرمایه‌گذاری 
+خطرپذیر سیا» توصیف شده، سازمانی است که با استفاده از مالیات مردم آمریکا<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn3">[3]</a></sup>،
+ به اعتراف رسمی خود، «فناوری‌های خلاقانه را با این هدف شناسایی، اقتباس، و
+ عملیاتی می‌کند که از عملیات‌های سیا و جامعه گسترده‌تر اطلاعاتی آمریکا 
+حمایت نماید<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn4">[4]</a></sup>.»
+ این سازمان تا کنون در بیش از 200 استارت‌آپی سرمایه‌گذاری کرده که در 
+زمینه فناوری شکل گرفته‌اند؛ هزینه هر کدام از این حمایت‌ها هم به طور 
+متوسط بین 500 هزار تا 3 میلیون دلار بوده است<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn5">[5]</a></sup>.</strong></p>
+
+<div><strong><img alt="آمریکا همین الآن دارد از شما جاسوسی می‌کند +فیلم و عکس" src="http://cdn.mashreghnews.ir/files/fa/news/1394/12/4/1490775_908.jpg" width="500"></strong>
+
+<p><strong>«اریک اشمیت» (راست) مدیرعامل کمپانی «آلفابت» در کنار اوباما</strong></p>
+
+<p><strong>«آلفابت» کمپانی مادر گوگل است</strong></p>
+
+<p>&nbsp;</p>
+</div>
+
+<p dir="RTL"><strong>این جملات شاید در نظر اول دوپهلو باشد، اما با کمی تعمق به راحتی می‌توان به ماهیت حمایت‌های آی‌کیوتی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn6">[6]</a></sup>
+ به نیابت از سیا از کمپانی‌های نوپا پی برد. اولین جمله‌ای که نشان می‌دهد
+ حمایت‌های هدفمند سیا از کمپانی‌های فعال در عرصه فناوری، ماهیت «عادی» 
+ندارد، در توضیحات رسمی آی‌کیوتی در بخش «تمرکز بر فناوری» آمده است: 
+«[اهداف] سرمایه‌گذاری‌های ما به چهار حوزه فناوری تقسیم می‌شود: تجزیه و 
+تحلیل پیش‌رفته، «فناوری‌های قابل‌استقرار میدانی»<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn7">[7]</a></sup>، زیرساخت و امنیت، و [فناوری‌های] متحرک.»</strong></p>
+
+<p>&nbsp;</p>
+
+<div><strong>برخی «توهم توطئه»ها که بعد از خواندن این گزارش</strong></div>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>شما نیز آن‌ها را تأیید خواهید کرد - <a href="http://cdn.mashreghnews.ir/files/fa/news/1394/12/3/1489579_453.mp4">دانلود</a></strong></p>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>علاوه بر این‌ها، در لیست مقالات و تحقیقات تحت حمایت
+ آی‌کیوتی که با عنوان «در رادار ما» در وب‌سایت این سازمان معرفی شده‌اند،
+ عنوان‌هایی به چشم می‌خورد که جای شک و شبهه‌ای درباره ماهیت جاسوسانه 
+پروژه‌های تحت حمایت این سازمان باقی نمی‌گذارد، از جمله «استفاده از 
+شبکه‌های اجتماعی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn8">[8]</a></sup>» و «بیش از «نقشه»: تجزیه و تحلیل پشت فناوری‌های ژئوفضایی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn9">[9]</a></sup>».</strong></p>
+
+<p dir="RTL"><strong>اگرچه برخی ممکن است در مورد ماهیت فعالیت‌های 
+آی‌کیوتی خوش‌بین یا بدبین باشند، اما موضوعی که همه در آن اتفاق‌نظر 
+دارند، تسلط کامل آی‌کیوتی بر حوزه فناوری نه تنها در آمریکا، بلکه تقریباً
+ در تمام دنیاست؛ تا جایی که گفته می‌شود هر شرکتی که در زمینه‌های 
+اطلاعاتی تحقیقات یا فعالیت می‌کند، احتمالاً از دو حالت خارج نیست: یا یک 
+نفر از آی‌کیوتی با دسته چک به آن شرکت رفته، یا یک تیم از آی‌کیوتی آن 
+شرکت را زیر نظر دارد<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn10">[10]</a></sup>.</strong></p>
+
+<p dir="RTL"><strong>برای آن‌که به ابعاد فعالیت‌های آی‌کیوتی بهتر پی 
+ببرید، و قبل از آن‌که مفصل به لیست حوزه‌های مورد علاقه این سازمان 
+بپردازیم، شاید یک مثال بتواند به خوبی نشان دهد که سیا به کمک آی‌کیوتی به
+ چه حجم گسترده‌ای از اطلاعات دست پیدا می‌کند. یکی از شرکت‌هایی که همین 
+چند سال پیش تحت حمایت شدید آی‌کیوتی قرار گرفت، «کی‌هول<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn11">[11]</a></sup>» (به معنی «سوراخ کلید») بود.</strong></p>
+
+<p>&nbsp;</p>
+
+<div><strong>توضیحات مفصل درباره آی‌کیوتی و ارتباط پیچیده و نزدیک آن</strong></div>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>با حوزه فناوری در دنیا و به ویژه گوگل و فیس‌بوک - <a href="http://cdn.mashreghnews.ir/files/fa/news/1394/12/4/1490703_886.mp4">دانلود</a></strong></p>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>این کمپانی خصوصی کوچک که در کنار غول‌های فناوری در «سیلیکان ولی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn12">[12]</a></sup>»
+ فعالیت می‌کرد، نقشه‌های سه‌بعدی و زیبایی را می‌ساخت که در گزارش‌های 
+جنگی شبکه‌های سی‌ان‌ان، ای‌بی‌سی، و سی‌بی‌اس استفاده می‌شد. این نقشه‌ها 
+که برای اولین بار نه تنها سه‌بعدی بودند، بلکه به جای زوم کردن روی یک 
+عکس، می‌توانستند مانند یک فیلم باکیفیت، تا اندازه نشان دادن یک خانه یا 
+خودرو به زمین نزدیک شوند، قبلاً چشم سیا را هم گرفته بودند<a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn13">[13]</a>. این پروژه موفق، اکنون «گوگل ارث» نام دارد.</strong></p>
+
+<p dir="RTL"><strong>مثال گوگل ارث به خوبی نشان می‌دهد سیا چه اندازه 
+می‌تواند در پیش‌رفت فناوری‌های نوین و آینده‌ساز نقش داشته باشد. آی‌کیوتی
+ تا کنون استارت‌آپ‌های بی‌شماری را تأمین مالی کرده که بعدها توسط غول‌های
+ فناوری مانند گوگل<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn14">[14]</a></sup>، اوراکل، و آی‌بی‌ام، و برخی شرکت‌های صنایع نظامی مانند لاکهید مارتین، خریداری شده‌اند<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn15">[15]</a></sup>.</strong></p>
+
+<div><strong><img alt="آمریکا همین الآن دارد از شما جاسوسی می‌کند +فیلم و عکس" src="http://cdn.mashreghnews.ir/files/fa/news/1394/12/4/1490935_751.jpg" width="500"></strong>
+
+<p><strong>شیمون پرز روی «دیوار» واقعی زاکربرگ در دفتر فیس‌بوک می‌نویسد</strong></p>
+
+<p><strong>مدیرعامل فیس‌بوک رابطه نزدیکی با&nbsp;رئیس رژیم صهیونیستی دارد</strong></p>
+
+<p>&nbsp;</p>
+</div>
+
+<p dir="RTL"><strong>مختصری درباره آن‌چه اغلب تئوری توطئه تصور می‌شود</strong></p>
+
+<p dir="RTL"><strong>امروزه اگر به ما بگویند گوگل، فیس‌بوک، توئیتر، و 
+ده‌ها سرویس همه‌گیر اینترنتی، همگی ابزارهای جاسوسی دولت آمریکا هستند، 
+مسلماً اولین چیزی که به ذهنمان می‌رسد این است که «فلانی توهم توطئه 
+دارد.» «مغزش را شست‌وشو داده‌اند.» و جملاتی از این دست. واقعیت این است 
+که انکار ارتباط مستقیم اغلب (اگر نگوییم تک‌تک) کمپانی‌های بزرگ و موفق 
+مرتبط با اینترنت و دنیای مجازی با سرویس‌های جاسوسی، نتیجه‌ای جز فریب 
+خودمان ندارد. در این‌جا مختصراً به برخی از شواهدی اشاره می‌کنیم که 
+ارتباط مستقیم میان سیا و سایر نهادها و سرویس‌های جاسوسی آمریکا مانند 
+«آژانس امنیت ملی» را با غول‌های فناوری و دنیای مجازی نشان می‌دهد.</strong></p>
+
+<p dir="RTL">&nbsp;</p>
+
+<div dir="ltr">
+<div>
+<div>&nbsp;</div>
+</div>
+</div>
+
+<div><strong>اولین باری که گوگل و سیا به صورت هم‌زمان در یک کمپانی</strong></div>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>سرمایه‌گذاری کردند، پرونده «آینده ضبط‌شده» بود - <a href="http://cdn.mashreghnews.ir/files/fa/news/1394/12/4/1490712_343.mp4">دانلود</a></strong></p>
+
+<p>&nbsp;</p>
+
+<p dir="RTL">&nbsp;</p>
+
+<p dir="RTL"><strong>گوگل و آژانس‌های جاسوسی آمریکا</strong></p>
+
+<p dir="RTL"><strong>ابتدا به این مسئله می‌پردازیم که «سیا چگونه گوگل را به وجود آورد<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn16">[16]</a></sup>» و «گوگل چرا آژانس امنیت ملی را به وجود آورد<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn17">[17]</a></sup>.» «نفیذ احمد<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn18">[18]</a></sup>»
+ مدیر اندیشکده «مؤسسه توسعه و تحقیق سیاستی»، خبرنگار تحقیقی و متخصص 
+شناخته‌شده در امور آژانس‌های اطلاعاتی و جاسوسی، طی یک سری گزارش 25000 
+کلمه‌ای، با استفاده از مستندات<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn19">[19]</a></sup> و شواهد<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn20">[20]</a></sup> و منابع مختلف<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn21">[21]</a></sup>، به طور مفصل ارتباط تنگاتنگ میان گوگل و آژانس‌های جاسوسی آمریکا را اثبات کرده است<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn22">[22]</a></sup>. اگرچه این‌جا مجال پرداختن به این مسئله با تمام جزئیات آن نیست، اما اشاره به چند نکته کوتاه، ضرورت دارد.</strong></p>
+
+<p dir="RTL"><strong>آی‌کیوتی که در بالا به آن اشاره شد، به نوعی ابتکار 
+سیا نبود، بلکه این آژانس جاسوسی آمریکا، ایده ایجاد آن را از پنتاگون 
+الهام گرفت. نهادهای مختلف درون پنتاگون یعنی دفتر وزیر دفاع، «دفتر 
+ارزیابی گروهی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn23">[23]</a></sup>» و «آژانس پروژه‌ها و تحقیقات پیش‌رفته دفاعی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn24">[24]</a></sup>»، سال 1994 (5 سال قبل از تأسیس آی‌کیوتی) با هم‌کاری یک‌دیگر شبکه‌ای خصوصی به نام «انجمن هایلندز<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn25">[25]</a></sup>» را ایجاد کردند.</strong></p>
+
+<p dir="RTL"><strong>این شبکه بیش از 1000 عضو دارد اما جلسات مخفیانه آن 
+با حضور 25 تا 30 نفر از تقریباً تمام شرکت‌های بزرگ از جمله گوگل، 
+مایکروسافت، آی‌بی‌ام، «ای‌تی‌اندتی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn26">[26]</a></sup>»، «ای‌بی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn27">[27]</a></sup>»، «پی‌پل<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn28">[28]</a></sup>»،
+ بی‌بی‌سی، دیزنی، جنرال‌الکتریک، انران برگزار می‌شوند. در این جلسات 
+هم‌چنین نمایندگان دموکرات و جمهوری‌خواه از مجلس نمایندگان و سنای آمریکا،
+ مقامات بخش انرژی و حتی افراد کلیدی در کمپین‌های انتخابات ریاست‌جمهوری 
+دو حزب نیز حضور دارند. اما این انجمن چه نقشی در ایجاد گوگل داشت؟</strong></p>
+
+<p dir="RTL"><strong>فناوری جدید «ردیابی تقاطعی» برای ساخت یک پرونده درباره شما</strong></p>
+
+<p dir="RTL"><strong>از طریق اطلاعات‌تان در تمام دستگاه‌های هوشمند شما - <a href="http://cdn.mashreghnews.ir/files/fa/news/1394/12/4/1490953_404.mp4">دانلود</a></strong></p>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>در اولین سال تأسیس انجمن، دو دانش‌جوی جوان پی‌اچ‌دی
+ در دانشگاه استانفورد که روی اولین برنامه جست‌جو و رتبه‌دهی اتوماتیک 
+صفحات وب کار می‌کردند، به یک موفقیت چشم‌گیر دست پیدا کردند. محصول 
+تلاش‌های «سرگی برین» و «لری پیج» اکنون گوگل نام دارد. نکته این‌جاست که 
+بودجه اولیه برای کار «برین» و «پیج» را برنامه «سیستم‌های غول‌پیکر 
+اطلاعات دیجیتال» متعلق به جامعه نهادهای اطلاعاتی آمریکا از جمله آژانس 
+امنیت ملی و سیا تأمین کرده بود<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn29">[29]</a></sup>.
+ در کنار این پروژه 14 پروژه دیگر نیز تأمین بودجه شده بودند تا در زمینه 
+«پردازش عبارت جست‌جو، مدیریت تراکنش‌ها، مدیریت فراداده، مدیریت فضای 
+ذخیره‌سازی، و یک‌پارچه‌سازی داده‌ها» در ابعاد «چندین ترابایت تا پتابایت»
+ دست به نوآوری بزنند.</strong></p>
+
+<p dir="RTL"><strong>این تنها مدرکی نیست که نشان می‌دهد گوگل را اساساً 
+نهادهای جاسوسی آمریکا ساخته‌اند و اکنون اداره می‌کنند، اما در این گزارش،
+ بیش از این به اثبات این رابطه نمی‌پردازیم (با مراجعه به منابع این مقاله
+ می‌توانید ده‌ها مدرک دیگر پیدا کنید).</strong></p>
+
+<div><strong><img alt="آمریکا همین الآن دارد از شما جاسوسی می‌کند +فیلم و عکس" src="http://cdn.mashreghnews.ir/files/fa/news/1394/12/4/1490957_975.jpg" width="500"></strong>
+
+<p><strong>گوگل هم رابطه نزدیکی با سران رژیم صهیونیستی دارد</strong></p>
+
+<p><strong>در تصویر سمت راست، به پرچم اسرائیل روی حرف L گوگل توجه کنید</strong></p>
+
+<p>&nbsp;</p>
+</div>
+
+<p dir="RTL">&nbsp;</p>
+
+<p dir="RTL"><strong>فیس‌بوک و آژانس‌های جاسوسی آمریکا</strong></p>
+
+<p dir="RTL"><strong>فیس‌بوک هم وضعیتی بهتر از گوگل ندارد، بلکه شاید شواهد واضح‌تری از ارتباط این شبکه اجتماعی با نهادهای جاسوسی آمریکا<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn30">[30]</a></sup>
+ وجود دارد. فیس‌بوک نیز توسط سیا و سایر نهادهای اطلاعاتی آمریکایی ساخته 
+شد و در مأموریت خود مبنی بر «استخراج هر میزان اطلاعات که ممکن باشد از هر
+ تعداد انسان که ممکن باشد» هم فوق‌العاده موفق بود<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn31">[31]</a></sup>. درباره رابطه مستقیم فیس‌بوک با سیا<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn32">[32]</a></sup> و جامعه اطلاعاتی آمریکا نیز مقالات<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn33">[33]</a></sup> بی‌شماری نوشته شده<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn34">[34]</a></sup> تا جایی که فیس‌بوک را «سیابوک» هم نامیده‌اند<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn35">[35]</a></sup>.</strong></p>
+
+<p dir="RTL"><strong>فیس‌بوک و «مارک زاکربرگ» مدیرعامل آن<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn36">[36]</a></sup> نه تنها اعتقادی به حفظ حریم خصوصی<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn37">[37]</a></sup> کاربران ندارند<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn38">[38]</a></sup>، بلکه کاملاً در خدمت نهادهای جاسوسی آمریکا هستند<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn39">[39]</a></sup>. شکی نیست که فیس‌بوک اطلاعات بی‌حد و اندازه‌ای درباره کاربران خود دارد<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn40">[40]</a></sup>.
+ داشتن این اطلاعات آرزوی هر آژانس اطلاعاتی و جاسوسی است. بنابراین طبیعی 
+است که سیا و آژانس امنیت ملی آمریکا بخواهند به پایگاه اطلاعاتی فیس‌بوک<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn41">[41]</a></sup> دست‌رسی داشته باشند، پایگاه داده‌ای که سیا و آژانس‌های مشابه آن را از ماه‌ها جست‌جو و میلیون‌ها دلار هزینه بی‌نیاز می‌کند<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn42">[42]</a></sup>. اما فیس‌بوک چه ارتباطی با سازمان‌های جاسوسی آمریکا دارد؟</strong></p>
+
+<p dir="RTL">&nbsp;</p>
+
+<div><strong>فیس‌بوک کار سیا را بسیار آسان کرده است</strong></div>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>به جای فیس‌بوک از «وان‌بی» استفاده کنید - <a href="http://cdn.mashreghnews.ir/files/fa/news/1394/12/4/1490771_752.mp4">دانلود</a></strong></p>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>برای پاسخ به این سؤال، اشاره به یک مثال ساده کافی 
+است. پیش از آن‌که مارک زاکربرگ در سال 2004 پروژه فیس‌بوک را به دنیا 
+معرفی کند (و بعدها مدال «نظارت» سیا را دریافت کند<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn43">[43]</a></sup>)،
+ این پروژه توسط «پیتر تییل» یکی از مدیران و سرمایه‌داران آمریکایی 500 
+هزار دلار کمک مالی دریافت کرده بود. بعدها این کمک مالی دردسرساز شد و 
+تییل مدعی اسم و رسم در فیس‌بوک شد و حدود 8 درصد از سهام این کمپانی را 
+برای خود برداشت.</strong></p>
+
+<p dir="RTL"><strong>با این حال، سؤال این است که چه شد که یک 
+سرمایه‌گذاری بزرگ‌تر، هیچ‌وقت به اندازه سرمایه‌گذاری تییل خبرساز نشد؟ 
+«جیمز بریر» که ارتباط مستقیمی با آی‌کیوتی دارد<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn44">[44]</a></sup> به نوعی به نیابت از سیا، مبلغ «نجومی» (از نظر زاکربرگِ سال 2004) معادل 12.7 میلیون دلار را به حمایت از فیس‌بوک اختصاص داد<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn45">[45]</a></sup>،
+ اما احتمالاً درخواست کرد تا به ازای پرداخت رقمی بیش از 25 برابر کمک 
+مالی تییل، نامی از سیا به میان نیاید تا اعتماد کاربران خدشه‌دار نشود. 
+اگر بخواهیم به نسبت تییل، به سیا هم سهمی از فیس‌بوک بدهیم، باید 140 درصد
+ از این کمپانی را به نام سیا سند بزنیم. آیا این موجب نمی‌شود سیا هر نوع 
+دخالتی که بخواهد در فیس‌بوک<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn46">[46]</a></sup> داشته باشد؟</strong></p>
+
+<p dir="RTL">&nbsp;</p>
+
+<div><strong>رابطه فیس‌بوک با سیا و سایر سازمان‌های جاسوسی - <a href="http://cdn.mashreghnews.ir/files/fa/news/1394/12/4/1491114_383.mp4">دانلود</a></strong>
+
+<p>&nbsp;</p>
+</div>
+
+<p>&nbsp;</p>
+
+<p dir="RTL"><strong>گوگل و فیس‌بوک از مهم‌ترین ابزارهای سیا برای جاسوسی
+ در زندگی مردم دنیا هستند، اما به هیچ عنوان تنها ابزارهای این سازمان 
+نیستند. بخش‌هایی از دولت آمریکا که «اینترنت» را ساخته‌اند<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn47">[47]</a></sup> و یهودی‌هایی که آن را قبضه کرده‌اند<sup><a href="http://www.mashreghnews.ir/fa/news/538999/%D8%B3%DB%8C%D8%A7-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A7%D8%B2-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3#_edn48">[48]</a></sup>،
+ به این زودی دست از سر مردم برنخواهند داشت. ارتباط غول‌های دیگر فناوری 
+را هم با آژانس‌های جاسوسی آمریکا به راحتی می‌توان اثبات کرد، اما <a href="http://www.mashreghnews.ir/fa/world-news">گروه بین‌الملل مشرق</a> در ادامه این گزارش قصد دارد به جنبه‌هایی از این رابطه اشاره کند که کم‌تر به آن‌ها پرداخته شده است.</strong></p></div>
+
+
+
+
+
+
+<script>mihanblogPostLike('56','like')</script>                    
+</div>
+
+<div class="post-tags">
+<i class="glyphicon glyphicon-tag"></i>
+ برچسب ها:
+ <a href="http://www.mygam.ir/post/tag/%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C" > جاسوسی </a> ،  <a href="http://www.mygam.ir/post/tag/%D9%87%DA%A9" > هک </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7" > آمریکا </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%B4%D8%A8%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C" > شبکه‌های اجتماعی </a> ،  <a href="http://www.mygam.ir/post/tag/%D9%81%DB%8C%D9%84%D9%85%20%D9%88%20%D8%B9%DA%A9%D8%B3" > فیلم و عکس </a> ، 
+</div>
+
+                              
+<div class="post-foot">
+<a href='http://www.mygam.ir/post/56'>ادامه مطلب</a></div>
+</div>
+                         
+</div>
+
+
+<!--- end comment box ---->
+
+<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="http://www.mygam.ir/post/52">دیدار رئیس و مدیران سازمان صداوسیما با رهبر انقلاب</a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="http://www.mygam.ir/post/author/1392940">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+چهارشنبه 25 فروردین 1395 10:27 ق.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="http://www.mygam.ir/post/52#commentlist"> نظرات (<script>setCommentCnt(52)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+
+<h3><br></h3><p><a href="http://farsi.khamenei.ir/photo-album?id=31054"><img src="http://farsi.khamenei.ir/ndata/news/31054/smpl.jpg" style="margin: 3px 5px 5px 0px; border: 1px solid rgb(102, 102, 102);" alt="" align="left" height="165" width="220"></a></p><div style="text-align: justify;">
+	حضرت آیت‌الله خامنه‌ای رهبر معظم انقلاب اسلامی صبح امروز (دوشنبه) در 
+دیدار مسئولان و مدیران رسانه‌ی ملی و اعضای شورای نظارت بر صداوسیما با 
+تبیین اهداف «جنگ نرمِ برنامه‌ریزی شده، گسترده و همه‌جانبه نظامِ سلطه با 
+جمهوری اسلامی»، تغییر باورهای مردم را مهم‌ترین هدف این جنگ پیچیده 
+خواندند و با تأکید بر نقش منحصربه‌فرد رسانه‌ی ملی در این کارزار جدی، 
+برنامه‌ریزی دقیق و عالمانه را برای تحقق وظایف رسانه‌ی ملی مورد تأکید 
+قرار دادند.<br>
+	حضرت آیت‌الله خامنه‌ای در ابتدای سخنان خود به موضوع اهمیت رسانه‌ی ملی 
+در نظام جمهوری اسلامی ایران پرداختند و با اشاره به حرکت عظیم رسانه‌ای که
+ با کمک رسانه‌های نوپدید، به‌وجود آمده گفتند: رسانه‌ی ملی در صحنه‌ی چنین
+ نبرد عجیب و عظیم و درگیری ناخواسته و ناگزیر قرار دارد که همان عرصه‌ی 
+پیچیده و بسیار مهم جنگ نرم است.<br>
+	رهبر انقلاب اسلامی افراد صاحب‌نظر، دلسوز و دارای انگیزه را به مطالعه و 
+بررسی دقیق ابعاد جنگ نرم فراخواندند و گفتند: در جنگ نرم، همان اهداف جنگ 
+سخت دنبال می‌شود اما به‌صورتی فراگیرتر و عمیق‌تر.<br>
+	ایشان به برخی پیچیدگی‌ها و خطرات بیشتر جنگ نرم در مقایسه با جنگ سخت 
+اشاره کردند و افزودند: جنگ نرم برخلاف جنگ سخت، آشکار، قابل فهم و ملموس 
+نیست و حتی در برخی موارد طرف مقابل ضربه‌ی خود را می‌زند اما جامعه‌ی هدف،
+ دچار خواب‌آلودگی و عدم احساس حمله است.<br>
+	رهبر انقلاب اسلامی خاطرنشان کردند: جنگ‌های سخت معمولاً موجب برانگیخته 
+شدن احساسات مردم و ایجاد وحدت و انسجام ملی می‌شود در حالی‌که جنگ نرم، 
+انگیزه‌های مقابله را از بین می‌برد و زمینه‌ساز ایجاد اختلاف نیز می‌شود.<br>
+	حضرت آیت‌الله خامنه‌ای بعد از بیان خطرات به مراتب بیشتر و 
+نگران‌کننده‌تر جنگ نرم در مقایسه با جنگ سخت گفتند: جنگ نرم فقط مخصوص 
+ایران نیست اما در موضوع ایران، هدف اصلی از این جنگ نرمِ فکرشده و 
+حساب‌شده، استحاله‌ی جمهوری اسلامی ایران و تغییر باطن و سیرت، با حفظ صورت
+ و ظاهر آن است.<br>
+	ایشان با تأکید بر اینکه تغییر باطن و سیرت به معنای تغییر انگیزه‌ها، 
+شعارها، معارف انقلابی و اهداف بزرگ است، افزودند: در چارچوب اهداف جنگ 
+نرمِ دشمن، باقی ماندن نام «جمهوری اسلامی» و حتی حضور یک معمم در رأس آن 
+مهم نیست، مهم آن است که ایران تأمین‌کننده‌ی اهداف آمریکا، صهیونیسم و 
+شبکه‌ی قدرت جهانی باشد.<br>
+	رهبر انقلاب اسلامی، مسئولان و مردم&nbsp; را آماج اصلی چنین جنگِ نرمی دانستند
+ و خاطرنشان کردند: در مورد برنامه‌ریزی که در جنگ نرم برای مسئولان وجود 
+دارد با آنان صحبت کرده و خواهم کرد اما مخاطبان اصلی جنگ نرم مردم به‌ویژه
+ نخبگان، دانشگاهیان، دانشجویان، جوانان و عناصر فعال هستند.<br>
+	حضرت آیت‌الله خامنه‌ای افزودند: آنها به‌دنبال تأثیرگذاری بر مردم و 
+تغییر طیف وسیعی از باورهای آنان به‌ویژه جوانان و نخبگان هستند که باورهای
+ اعتقادیِ دینی، سیاسی و فرهنگی مردم از جمله این باورها است.<br>
+	ایشان گفتند: مردم ما باورهای اعتقادی درخصوص دین، خانواده، مسئله‌ی «زن و
+ مرد»، استقلال، مقابله با بیگانه، مردم‌سالاری اسلامی و مسائل گوناگون 
+فرهنگی دارند و طرف مقابل تلاش دارد این باورها را دست‌کاری کند و یا تغییر
+ دهد.<br>
+	رهبر انقلاب اسلامی، تغییر باور به گذشته را از دیگر اهداف مورد نظر در 
+جنگ نرم برشمردند و تأکید کردند: مردم ما نسبت به رژیم فاسد و مستبد گذشته 
+باورهایی دارند که در جنگ نرم تلاش بر این است تا این گذشته زشت و پلید و 
+سیاه به گذشته‌ای درخشان و زیبا تغییر یابد.<br>
+	حضرت آیت‌الله خامنه‌ای افزودند: آنها می‌خواهند با تغییر باور به گذشته، 
+نتیجه بگیرند که لزومی به وقوع انقلاب اسلامی برای از بین بردن آن گذشته، 
+وجود نداشته است.<br>
+	ایشان تغییر باور به آینده و حال را از دیگر اهداف جنگ نرم دانستند و 
+خاطرنشان کردند: آنها می‌خواهند به جوان امروزی القاء کنند که وضع کنونی 
+کشور مایه‌ی شرمندگی است و رسیدن به پیشرفت در آینده نیز غیرممکن است تا 
+نشاط و تحرک و علم‌آموزی و امید به آینده را از نسل جوان بگیرند.<br>
+	رهبر انقلاب اسلامی ایجاد باورهای غیرواقعی در جوانان نسبت به جهان 
+به‌ویژه آمریکا و اروپا و ترسیم&nbsp; کشورهایی پیشرفته، راحت، امن و بدون مشکل 
+از آنها را یکی دیگر از اهداف جنگ نرم برشمردند و در جمع‌بندی این بخش از 
+سخنان خود گفتند: هدف اصلی و نهایی جنگ نرم طراحی‌شده، انحلال درونی و 
+استحاله‌ی داخلی جمهوری اسلامی از طریق تغییر باورها و سست کردن ایمان مردم
+ و به‌ویژه جوانان است.<br>
+	رهبر انقلاب با اشاره به امکانات سخت‌افزاری و نرم‌افزاری دشمن در جنگ نرم
+ افزودند: همه‌ی پیشرفت‌های روزافزون محیط مجازی در خدمت تحقق اهداف جنگ 
+نرم است اما مهم‌تر از این امکانات و پیشرفت‌های سخت‌افزاری، لشکر عظیم 
+نخبگان فکری، سیاسی، ادبی، اجتماعی، و فعالان برجسته‌ی ارتباطات و رشته‌های
+ مختلف هنری است که عقبه‌ی نرم‌افزاری قوی و تأثیرگذاری را برای تحقق اهداف
+ جنگ نرم فراهم آورده است.<br>
+	ایشان برنامه‌ریزی و کار و تلاش منسجم را از ویژگی‌های بارز طراحان و 
+مجریان جنگ نرم برشمردند و خاطرنشان کردند: در همه‌ی تولیدات و فراورده‌های
+ صوتی، تصویری و مکتوب جبهه‌ی مقابل ملت ایران، مقاصد و اهداف جنگ نرم، 
+البته عمدتاً به‌طور غیرمستقیم، پیگیری و القاء می‌شود.<br>
+	رهبر انقلاب در همین زمینه ترویج دین حداقلی و دین سکولار را که با هر 
+رفتار شخصی و اجتماعی قابل انطباق است از جمله اهداف پنهان برنامه‌های 
+عمدتاً اجتماعی رسانه‌های بیگانه خواندند و افزودند: آنها در پیگیری 
+پیچیده‌ی اهداف خود، کاملاً جدی و دارای برنامه هستند اما ما در این زمینه 
+عقب هستیم.<br>
+	حضرت آیت‌الله خامنه‌ای، تلاش‌های رسانه‌ی ملی را قابل توجه دانستند و در 
+عین حال افزودند: باید این تلاش‌ها را به عمق برد و اهداف مورد نظر را بدون
+ تظاهر و درشت‌نمایی، در حد ظرفیت همه‌ی برنامه‌های صداوسیما به‌صورت 
+هنرمندانه ترویج کرد تا مخاطبان اقناع شوند و بپذیرند.<br>
+	رهبر انقلاب مهم‌ترین کار برای تحقق مشهود اهداف رسانه‌ی ملی در قبال جنگ 
+نرم دشمنان را، دست‌یابی به تحلیلی مبنایی، صحیح و واقع‌بینانه از شرایط 
+داخلی، منطقه‌ای و جهانی جمهوری اسلامی خواندند و افزودند: این تحلیل، 
+ذهن‌ها و جهت‌گیری‌های سطوح مختلف مدیریتی و بدنه‌ی سازمان را منسجم می‌کند
+ و پایه‌ی همه‌ی فعالیت‌ها قرار می‌گیرد.<br>
+	حضرت آیت‌الله خامنه‌ای، پرهیز از اغراق در توانایی‌ها، توجه به مشکلات، 
+تأثیرناپذیری از تبلیغات گمراه‌کننده‌ی بیگانگان، پرهیز از سطحی‌نگری، و 
+توجه به ظرفیت‌های بالفعل و بالقوه را در دست‌یابی به تحلیل مبنایی در 
+صداوسیما مؤثر دانستند و افزودند: مقایسه‌ی صحیح موقعیت کشور با دوران 
+متناظر انقلاب‌های مهم جهانی، می‌تواند به درک واقع‌بینانه از شرایط کشور، 
+کمک کند.<br>
+	حضرت آیت‌الله خامنه‌ای با اشاره به مشکلات فراوان، جنگ‌های داخلی خونین و
+ حتی بازگشت برخی انقلاب‌های معاصر جهان به رژیم‌های گذشته افزودند: باید 
+موقعیت کنونی ایران را با موقعیت آمریکا در حدود چهل سال پس از اعلامیه‌ی 
+مهم استقلال آن کشور و موقعیت فرانسه پس از ۴دهه از انقلاب کبیر فرانسه 
+مقایسه کرد تا شرایط امروز ایران و پیشرفت‌های چشم‌گیر کشور بهتر درک شود.<br>
+	رهبر انقلاب که در تبیین ضرورت دست‌یابی به تحلیل مبنایی و جامع‌الاطراف 
+در صداوسیما سخن می‌گفتند خاطرنشان کردند: در این چارچوب باید 
+سیاه‌نمایی‌های بیگانگان را مد نظر داشت و متوجه بود که آنها در تحقق اهداف
+ جنگ نرم، ایران را به جهانیان و حتی به خود ایرانیان واژگونه معرفی 
+می‌کنند ضمن اینکه تصویر رسانه‌ای آنها از جهان نیز کاملاً مغرضانه است.<br>
+	حضرت آیت‌الله خامنه‌ای به مسئولان و مدیران رسانه ملی پیشنهاد کردند برای
+ دست‌یابی به تحلیلی پایه و واقع‌بینانه به مقایسه‌ی موقعیت جمهوری اسلامی 
+با برخی کشورهای منطقه بپردازند که در ۴‌دهه‌ی اخیر زیر سایه‌ی آمریکا 
+زندگی کرده‌اند.<br>
+	ایشان گفتند: این مقایسه نشان می‌دهد که تسلیم، چه نتایجی دارد و ایستادگی به چه خیرات و پیشرفت‌هایی منجر می‌شود.<br>
+	رهبر انقلاب پس از تشریح ضرورت برخورداری صداوسیما از تحلیل مبنایی به 
+عنوان پایه‌ی همه‌ی تولیدات و برنامه‌ها در تبیین دومین کار رسانه‌ی ملی 
+برای پیگیری محسوس‌تر و هنرمندانه‌ی وظایف خود، تعریف و تدوین یک تفکر 
+مبنایی و اصولی را ضروری خواندند.<br>
+	حضرت آیت‌الله خامنه‌ای با اشاره به راهبردهایی که در آغاز مسئولیت آقای 
+سرافراز به رسانه ابلاغ شده تأکید کردند: همه‌ی این راهبردها باید دنبال و 
+برای اجرای آنها برنامه‌ریزی دقیق و عالمانه شود که البته در برخی موارد 
+کارهای خوبی شده است.<br>
+	حضرت آیت‌الله خامنه‌ای برنامه‌ریزی عالمانه و دقیق برای تحقق راهبردهای 
+ابلاغی صداوسیما و راهبردی جمهوری اسلامی را از دیگر ضروریات حرکت رسانه‌ی 
+ملی برشمردند.<br>
+	ایشان رسانه‌ی ملی را رسانه‌ی نظام و کشور و انقلاب دانستند و تأکید 
+کردند: صداوسیما قرارگاه مقدم و فعال مقابله با جنگ نرم است و مدیران و 
+کارکنان رسانه‌ی ملی، سرداران و سربازان این جنگ نرم هستند.<br>
+	رهبر انقلاب اسلامی همچنین با تشکر از زحمات مدیران و کارکنان رسانه‌ی ملی
+ به‌ویژه آقای سرافراز رئیس سازمان صداوسیما، ایشان را فردی پرکار، 
+سخت‌کوش، باهمت، منظم، ساده‌زیست و به‌دور از تشریفات و تجملات، پاک‌دست، 
+حساس در مورد بیت‌المال، شجاع، دارای جسارت در تصمیم‌گیری و خلاق و مبتکر و
+ نوآور دانستند و خاطرنشان کردند: این ویژگی‌ها بسیار باارزش و مورد تحسین 
+است که باید استمرار داشته باشند و برای سازمان صداوسیما به‌عنوان یک 
+سازمان فراقوه‌ای لازم و ضروری است.<br>
+	پیش از سخنان رهبر انقلاب اسلامی، آقای سرافراز رئیس سازمان صداوسیما گزارشی از برنامه‌ها و اقدامات این سازمان بیان کرد.<br>
+	رئیس سازمان صداوسیما با اشاره به چالش‌ها و مشکلات رسانه‌ی ملی، گفت: 
+اصلاح ساختار اداری و همچنین اصلاح آیین‌نامه‌ها و مقررات، فراهم کردن 
+مقدمات راه‌اندازی رسانه‌ی تعاملی، برنامه‌ریزی برای تقویت حضور در محیط وب
+ و شبکه‌های اجتماعی تلفن همراه، افزایش کیفیت تولیدات رسانه ملی از جمله 
+مهم‌ترین فعالیت‌ها و رویکردهای صداوسیما است.<br>
+	وی افزود: پیگیری موضوعات راهبردی همچون گفتمان انقلاب اسلامی، اقتصاد 
+مقاومتی، سبک زندگی ایرانی اسلامی و رشد علمی، تاسیس مرکز گسترش فیلم‌نامه 
+نویسی، بازطراحی و راه‌اندازی شبکه‌ی کودک، ایجاد گروه زیبایی‌شناسی و 
+علوم‌شناختی، به‌کارگیری نیروهای جوان و مؤمن در مدیریت‌های مختلف، افزایش 
+میزان مخاطبان رسانه‌ی ملی و افزایش اثرگذاری شبکه‌های العالم و پرس تی‌وی،
+ راه‌اندازی خبرگزاری صداوسیما و حرفه‌ای‌ و روزآمد شدن شبکه‌ی خبر، تأکید 
+بر تحلیل و تفسیر رویدادها، راه‌اندازی کانال‌های آذری، کردی و اردو در 
+حوزه‌ی برون‌مرزی، بازسازی منابع آرشیوی، توجه به موسیقی دینی و آیینی و 
+انقلابی و توجه به اعتماد و احساس امنیت مردم از دیگر برنامه‌ها و اقدامات 
+رسانه‌ی ملی بوده است.<br><br><br><br>منبع:http://farsi.khamenei.ir<br></div>
+
+
+
+
+<script>mihanblogPostLike('52','like')</script>                    
+</div>
+
+
+                              
+<div class="post-foot">
+</div>
+</div>
+                         
+</div>
+
+
+<!--- end comment box ---->
+
+<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="http://www.mygam.ir/post/50">شبکه های اجتماعی ایرانی</a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="http://www.mygam.ir/post/author/1392940">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+پنجشنبه 19 فروردین 1395 11:32 ق.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="http://www.mygam.ir/post/50#commentlist"> نظرات (<script>setCommentCnt(50)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+
+
+<span id="bodyHolder_newstextDetail_nwstxtBodyPane"><p class="rtejustify">
+		<span style="font-weight: bold;">شبکه اجتماعی هم میهن</span></p>
+	<p class="rtejustify">
+		هم میهن ، از سال 1384 به منظور ایجاد محیطی امن و سالم برای کاربرانی که
+ تمایلی به حضور در شبکه های اجتماعی بیگانه ندارند با مدیریت امیر قاسمی 
+تاسیس گردید.</p>
+	<p class="rtejustify">		&nbsp;</p>	<div>
+		<p style="border-bottom: silver 1px solid; border-left: silver 1px solid; padding-bottom: 5px; background-color: #dddddd; margin: 0px 10px; padding-left: 5px; padding-right: 5px; display: inline-block; clear: both; border-top: silver 1px solid; border-right: silver 1px solid; padding-top: 5px">
+			<img alt="" class="bodyimage img-responsive" id="664245" src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/09/30/13920930000331_PhotoL.jpg" style="width: 517px; height: 360px"></p>
+	</div>	<p>
+		قاسمی، نقطه قوت هم میهن را هماهنگ بودن با
+ فرهنگ ایرانی و اسلامی ،کنترل محتوا و سالم سازی محیط تحت نظر 60 مدیر و 
+6میلیون مخاطب ایرانی عنوان کرد.</p>
+	<p class="rtejustify">
+		برای ثبت نام در این شبکه <a href="http://www.hammihan.com/">اینجا</a> را کلیک کنید و روی عضویت در هم میهن در بالای صفحه کلیک کنید.</p>
+	<p class="rtejustify">
+		<span style="font-weight: bold;">شبکه اجتماعی افسران</span></p>
+	<p class="rtejustify">
+		شبکه اجتماعی افسران جنگ نرم که به اختصار افسران نامیده می شود در بخش 
+معرفی اینگونه نوشته است: با توجه به تأکیدات ویژه رهبر معظم انقلاب نسبت 
+به مقابله با جنگ نرم دشمن و توصیه ایشان مبنی بر اینکه «خودتان در مجامع 
+فکری‌تان به دنبال راهکار باشید»، تصمیم گرفتیم تا شبکه افسران را به منظور
+ - ایجاد بستر برای هم‌فکری و بیان دیدگاه‌ها - شبکه توزیع برای بیشتر دیده
+ شدن محتواهای تولیدشده - انتشار سریع محتوا، ایده یا اطلاع - بسترسازی 
+برای آزمون ایده‌های نو قبل از اجرا - توانمندسازی افسران جوان در مقابله 
+با جنگ نرم دشمن راه‌اندازی کنیم.</p>
+	<p class="rtejustify">		&nbsp;</p>	<div>
+		<p style="border-bottom: silver 1px solid; border-left: silver 1px solid; padding-bottom: 5px; background-color: #dddddd; margin: 0px 10px; padding-left: 5px; padding-right: 5px; display: inline-block; clear: both; border-top: silver 1px solid; border-right: silver 1px solid; padding-top: 5px">
+			<img alt="" class="bodyimage img-responsive" id="664246" src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/09/30/13920930000332_PhotoL.jpg" style="width: 517px; height: 360px"></p>
+	</div>	<p>
+		افسران بستری برای توزیع بهتر، سریعتر و گسترده‌تر محتواهای تولید شده 
+توسط کاربران شبکه است که طبیعتاً علاقه‌مند هستند مخاطبین بیشتری داشته 
+باشند. از سوی دیگر افسران می‌تواند مورد توجه کسانی قرار بگیرد که سعی 
+دارند با دیدگاه‌ها و نظرات مردم بدون واسطه ارتباط داشته باشند.</p>
+	<p class="rtejustify">
+		برای ثبت نام در این شبکه می توانید <a href="http://www.afsaran.ir/site/invitationRequest">اینجا</a> کلیک کنید</p><p class="rtejustify"><br></p><p class="rtejustify"><span style="color: rgb(255, 0, 0);"><span style="font-weight: bold;" lang="FA">شبکه اجتماعی فیس نما </span></span><a href="http://facenama.com"><span style="color: rgb(255, 0, 0);"><span style="font-weight: bold;" lang="FA"></span></span></a></p></span>
+
+<p dir="RTL"><span lang="FA">فیس نما ، از
+سال 1391 با هدف رقابت با شبکه های بیگانه
+و فراهم اوردن محیطی امن برای کاربران با مدیریت علیرضا قاسم پور تاسیس شد.</span></p><div align="center"><img class="img-responsive2" style="border: medium none;" alt="" title="" src="http://cdn.yjc.ir/files/fa/news/1392/9/29/1856146_447.jpg" width="400"></div>
+
+<p dir="RTL"><span lang="FA"></span><span lang="FA"></span><span lang="FA">قاسم پور در گفتگو با خبرنگار ما نقطه قوت فیس نما نسبت
+به دیگر شبکه های داخلی را حضور اکثر کاربران ایرانی فعال در حوزه شبکه های اجتماعی
+، امکانات متعدد و رسیدگی سریع به مشکلات کاربران عنوان کرد</span><span dir="LTR"></span></p>
+
+<p dir="RTL">به نوشته این شبکه کاربران فیس نما کمی بیش از یک میلیون نفر هستند<br></p>
+
+برای ثبت نام در این شبکه <a href="http://facenama.com/home?v=1">اینجا</a> را کلیک کنید<br><br><br><p dir="RTL"><span style="font-weight: bold; color: rgb(255, 0, 0);"><span lang="FA">شبکه اجتماعی فارس توییتر</span></span><a href="http://farstwitter.ir/"><span style="font-weight: bold; color: rgb(255, 0, 0);"><span lang="FA"></span></span></a></p>
+
+<p dir="RTL"><span lang="FA"></span><span lang="FA">فارس توییتر ، از سال 1391 با هدف رقابت با شبکه های اجتماعی خارجی
+و ایجاد محیطی مناسب با فرهنگ ایرانی برای کاربران ایرانی با مدیریت علی اکبر صادقی </span><span lang="FA">راه
+اندازی شد. این شبکه همانطور که از نامش پیداست نوع خدواتش به شبکه معروف توییتر
+بسیار نزدیک است.</span></p><div align="center"><img class="img-responsive2" style="border: medium none;" alt="" title="" src="http://cdn.yjc.ir/files/fa/news/1392/9/29/1856145_705.jpg" width="400"><br></div>
+
+<p dir="RTL"><span lang="FA">صادقی در گقتگو با مجله شبانه باشگاه خبرنگاران نقطه
+قوت فارس توییتر را امنیت، سهولت استفاده کاربران عنوان کرد گفت : یکی از نقاط قوت این شبکه
+نسبت به دیگر شبکه های اجتماعی داخلی
+به روز كردن صفحه با ارسال پیامک توسط كاربران ، عنوان کرد</span></p>
+
+<p dir="RTL"><span lang="FA">در آخرین اعلام مدیر این شبکه تعداد کاربران فارس توییتر به مرز 29.000 کاربر رسیده است.</span></p>
+
+برای ثبت نام در این شبکه <a href="http://farstwitter.ir/signin/">اینجا</a> را کلیک کنید<br><br><br><br><span id="bodyHolder_newstextDetail_nwstxtBodyPane"><p class="rtejustify"></p><p class="rtejustify"><br></p><p class="rtejustify"><br></p><p class="rtejustify">منبع:http://www.mashreghnews.ir<br></p></span>
+
+
+
+
+
+
+<script>mihanblogPostLike('50','like')</script>                    
+</div>
+
+
+                              
+<div class="post-foot">
+</div>
+</div>
+                         
+</div>
+
+
+<!--- end comment box ---->
+
+<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="http://www.mygam.ir/post/49">رهبر معظم انقلاب در دیدار نوروزی جمعی از مسئولان کشور: ما به دنبال بالا بردن انتظارات از دولت نیستیم</a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="http://www.mygam.ir/post/author/1392940">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+پنجشنبه 19 فروردین 1395 11:21 ق.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="http://www.mygam.ir/post/49#commentlist"> نظرات (<script>setCommentCnt(49)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+
+<div style="direction: rtl;">  <div class="rutitr" style="text-align:center">رهبر معظم انقلاب در دیدار نوروزی جمعی از مسئولان کشور:</div> <div class="title" style="text-align:center;margin-bottom: 10px;margin-top: 4px;"> 	<h1 style="padding: 0px;margin: 0px" class="title"> 	<a href="http://www.entekhab.ir/fa/news/261667/%D9%85%D8%A7-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%D8%A8%D8%A7%D9%84%D8%A7-%D8%A8%D8%B1%D8%AF%D9%86-%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D8%B2-%D8%AF%D9%88%D9%84%D8%AA-%D9%86%DB%8C%D8%B3%D8%AA%DB%8C%D9%85"> 		ما به دنبال بالا بردن انتظارات از دولت نیستیم 	</a> 	</h1> </div>  	<div class="subtitle" style="margin-bottom: 10px;text-align: justify;">رهبر
+ انقلاب اسلامی با تأکید بر اینکه اداره کشور که مسئولیت آن بر عهده دولت و
+ شخص رئیس جمهور محترم است بسیار سخت است، گفتند: با توجه به اشتغالات 
+فراوان و گسترده رئیس جمهور محترم، معاون اول رئیس جمهور که دارای جایگاه 
+ممتازی است می تواند نقش ویژه ای برای فرماندهی قرارگاه اقتصاد مقاومتی 
+ایفا کند.</div>  <div class="body" style="text-align: justify;padding: 10px;"> 		<br><div align="center"><img style="border: medium none;" alt="ما به دنبال بالا بردن انتظارات از دولت نیستیم" title="ما به دنبال بالا بردن انتظارات از دولت نیستیم" src="http://www.entekhab.ir/files/fa/news/1395/1/18/145604_752.jpg"><br></div><br><div align="justify">حضرت آیت الله خامنه ای رهبر معظم انقلاب اسلامی ظهر امروز (چهارشنبه) در 
+دیدار عیدانه جمعی از اعضای هیأت دولت، هیأت رئیسه مجلس شورای اسلامی، 
+مسئولان عالی دستگاه قضایی و مسئولان برخی نهادها ضمن تشکر از مسئولان 
+بویژه تلاشها و زحمات دولت محترم در جهت پیگیری اجرای سیاستهای اقتصاد 
+مقاومتی، «همدلی و هم زبانی» و «اتحاد مسئولان کشور» را برای اجرای این 
+سیاستها بسیار مهم ارزیابی و تأکید کردند: قرارگاه مرکزی اقتصاد مقاومتی 
+باید با فرماندهی دولت و شخص معاون اول رئیس جمهور، ضمن جلب همکاری و کمک 
+همه دستگاهها و رصد دقیق عملکرد و حرکت بخش های مختلف، و حمایت جدی از 
+تولید داخلی، زمینه ساز اقدام همه جانبه و فراگیر بمنظور تحقق «اقدام و 
+عمل» در اقتصاد مقاومتی شود.<br><br>به گزارش پایگاه اطلاع رسانی ریاست 
+جمهوری، ایشان نقش فرماندهی قرارگاه اقتصاد مقاومتی را در رصد دقیق فعالیت 
+های دستگاهها، بسیار با اهمیت خواندند و گفتند: در این رصد، باید 
+دستگاههایی که در چارچوب این سیاستها حرکت می کنند تقویت، و دستگاههایی که 
+بی تفاوت هستند، به مسیر اصلی کشانده شوند و از اقدامات دستگاههایی که بر 
+خلاف اقتصاد مقاومتی حرکت می کنند، جلوگیری شود.<br><br>رهبر انقلاب اسلامی
+ با تأکید بر اینکه «اقدام و عمل» در اقتصاد مقاومتی باید به‌گونه ای باشد 
+که در پایان سال، امکان ارائه گزارش دقیق و ملموس از عملکردها در حوزه های 
+مختلف وجود داشته باشد، افزودند: مجموعه دستگاههای اجرایی، توانایی تحقق 
+سیاستهای اقتصاد مقاومتی را دارند و باید مجلس شورای اسلامی نیز در این 
+مسیر به دولت کمک کند.<br><br>حضرت آیت الله خامنه ای خاطرنشان کردند: ما 
+به دنبال بالا بردن انتظارات و توقعات از دولت نیستیم و در جریان مشکلات و 
+کمبود اعتبارات و منابع نیز هستیم اما باید با صرفه جویی در برخی بخشها، 
+خلاءها و کمبودها در بخش های دیگر جبران شود.<br><br>ایشان مجموعه مدیریتی 
+کشور را مجموعه ای زبده، با تجربه و دارای انگیزه و فکر و عمل دانستند و 
+افزودند: قرارگاه فرماندهی که هم مرکز فکر و هم مرکز عمل است، باید با 
+استفاده از توان خوب مدیریتی کشور و همچنین با بهره گیری از ظرفیت ها و 
+توانایی های دستگاههای مختلف در جهت تصمیم گیری و پیگیری مراحل اجرا حرکت 
+کند.<br><br>رهبر انقلاب اسلامی با تأکید بر اینکه اداره کشور که مسئولیت 
+آن بر عهده دولت و شخص رئیس جمهور محترم است بسیار سخت است، گفتند: با توجه
+ به اشتغالات فراوان و گسترده رئیس جمهور محترم، معاون اول رئیس جمهور که 
+دارای جایگاه ممتازی است می تواند نقش ویژه ای برای فرماندهی قرارگاه 
+اقتصاد مقاومتی ایفا کند.<br><br>حضرت آیت الله خامنه ای تأکید کردند: من 
+از هر اقدامی که در دولت، مجلس و قوه قضاییه، در جهت منافع مردم و گشایش 
+امور و حل مشکلات مردم باشد، جداً حمایت خواهم کرد، اما مهم این است که 
+احساس شود کاری که انجام می گیرد، برای منافع ملی مفید و لازم است.<br><br>ایشان تأکید کردند: باید در اجرای سیاستهای اقتصاد مقاومتی به توانایی ها و ظرفیت های فراوان داخلی اتکا کرد.<br><br>رهبر
+ انقلاب اسلامی، امریکا را نماد بداخلاقی و بد ادایی دانستند و خاطرنشان 
+کردند: به امریکاییها نمی توان اعتماد کرد و به غیر از امریکاییها، برخی 
+کشورهای دیگر غربی نیز همینگونه هستند، بنابراین باید به توانایی های 
+خودمان اعتماد کنیم و مواضع و عملکرد مقامات امریکا نیز تأیید کننده همین 
+اعتقاد است.<br><br>حضرت آیت الله خامنه ای با تأکید بر اینکه اگر صادقانه 
+وارد میدان شویم، قطعاً خداوند متعال کمک و یاری خواهد کرد، گفتند: در مسیر
+ زندگی فردی و اجتماعی، همواره فراز و نشیب و سختی و گشایش وجود دارد اما 
+مهم آن است که در همه این شرایط، مسیر و جهت گیری اصلی فراموش نشود.<br><br>ایشان
+ لزوم جدی گرفته شدن مسئله حمایت از تولید را بسیار مهم خواندند و افزودند:
+ باید تولید، در هر دو بخش صنعت و کشاورزی، مورد توجه ویژه قرار گیرد.<br><br>رهبر
+ انقلاب اسلامی «همدلی و هم زبانی و اتحاد مسئولان» را زمینه ساز تحقق 
+اقتصاد مقاومتی خواندند و تأکید کردند: بدون همکاری مسئولان، کارها پیش 
+نخواهد رفت.<br><br>حضرت آیت الله خامنه ای افزودند: جمهوری اسلامی ایران 
+همواره از امتیاز وحدت ملی برخوردار بوده است اما در کنار وحدت ملی، باید 
+اتحاد و همدلی مسئولان نیز وجود داشته باشد و این اتحاد، منافاتی با اختلاف
+ سلیقه ها و دیدگاهها ندارد.<br><br>ایشان دیدار امروز را مظهر همدلی و هم 
+زبانی و انس و الفت مسئولان با یکدیگر دانستند و خاطرنشان کردند: باید 
+مسئولان کشور با هر سلیقه و دیدگاهی، در جهت اهداف اساسی و انقلابی حرکت 
+کنند.<br><br>رهبر انقلاب اسلامی تأکید کردند: امروز این احساس در کشور 
+وجود دارد که مسئولان قوا و مسئولان اصلی نظام، به رغم برخی اختلاف سلیقه 
+ها در شیوه ها و راهها، دارای هم فکری و هم نظری در جهت اهداف اصلی انقلاب 
+هستند.<br><br>حضرت آیت الله خامنه ای در بخش دیگری از سخنان خود ضمن تشکر 
+فراوان از صبر و بردباری خانواده های مسئولان، به‌ویژه همسران آنان، گفتند:
+ بسیاری از تلاشها و زحمات مسئولان که مورد توجه قرار می گیرند، مدیون 
+همسران آنهاست که معمولاً دیده نمی شوند.<br><br>در این دیدار، آقای 
+جهانگیری معاون اول رئیس جمهور ضمن تشکر از رهنمودهای رهبر انقلاب اسلامی و
+ حمایتهای ایشان از دولت، گفت: دولت برنامه جامعی برای عملیاتی کردن 
+سیاستهای اقتصاد مقاومتی تدوین کرده است و این سیاستها را نسخه شفابخش 
+مشکلات اقتصادی کشور می داند.<br><br>معاون اول رئیس جمهور افزود: دولت به 
+سیاستهای اقتصاد مقاومتی اعتقاد کامل دارد و این سیاستها از لحاظ شرعی، 
+قانونی و کارشناسی، مورد قبول دولت است.<br><br>آقای جهانگیری با اشاره به 
+تعیین اولویتهای اقتصادی سال ۹۵، در دو جلسه اخیر قرارگاه اقتصاد مقاومتی، 
+خاطرنشان کرد: شب گذشته، جلسه طولانی با بنگاههای بزرگ اقتصادی برگزار شد و
+ دولت مصمم به راه اندازیِ تولید، توسعه‌ی صادرات، تسهیل کسب و کار و وارد 
+کردن جدی بخش خصوصی است.<br><br>وی لازمه موفقیت دولت در اجرای سیاستهای 
+اقتصاد مقاومتی را همکاری و کمک سایر قوا و نهادهای مختلف و به‌ویژه صدا و 
+سیما دانست و گفت: من اطمینان می دهم که دولت هر آنچه که از لحاظ دانش، 
+تجربه، مدیریت و توان در اختیار دارد، در جهت اجرای سیاستهای اقتصاد 
+مقاومتی دریغ نخواهد کرد.<br><br>پیش از این دیدار، مسئولان نماز ظهر و عصر را به امامت رهبر معظم انقلاب اسلامی اقامه کردند.<br><br><br><br><br>منبع:http://www.entekhab.ir<br></div>  </div>  </div>
+
+
+
+
+<script>mihanblogPostLike('49','like')</script>                    
+</div>
+
+<div class="post-tags">
+<i class="glyphicon glyphicon-tag"></i>
+ برچسب ها:
+ <a href="http://www.mygam.ir/post/tag/%D8%B1%D9%87%D8%A8%D8%B1%20%D9%85%D8%B9%D8%B8%D9%85%20%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8" > رهبر معظم انقلاب </a> ،  <a href="http://www.mygam.ir/post/tag/%D9%85%D8%A7%20%D8%A8%D9%87%20%D8%AF%D9%86%D8%A8%D8%A7%D9%84%20%D8%A8%D8%A7%D9%84%D8%A7%20%D8%A8%D8%B1%D8%AF%D9%86%20%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D8%B2%20%D8%AF%D9%88%D9%84%D8%AA%20%D9%86%DB%8C%D8%B3%D8%AA%DB%8C%D9%85" > ما به دنبال بالا بردن انتظارات از دولت نیستیم </a> ،  <a href="http://www.mygam.ir/post/tag/%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D8%B2%20%D8%AF%D9%88%D9%84%D8%AA" > انتظارات از دولت </a> ، 
+</div>
+
+                              
+<div class="post-foot">
+</div>
+</div>
+                         
+</div>
+
+
+<!--- end comment box ---->
+
+<div class="post">
+<div class="post-title">
+<h2><i class="glyphicon glyphicon-edit"></i><a href="http://www.mygam.ir/post/47">سخنان منتشر نشده از زنده یاد سلحشور</a></h2>                 
+</div>
+
+<div class="post-body">
+<div class="post-info">
+<span><i class="glyphicon glyphicon-user"></i>
+<a href="http://www.mygam.ir/post/author/1392940">✔ (مدیر کل) علی خسروانی </a>
+</span>
+
+<span><i class="glyphicon glyphicon-calendar"></i>
+پنجشنبه 19 فروردین 1395 11:17 ق.ظ</span>
+                              
+<span>
+<i class="glyphicon glyphicon-comment"></i>
+<a href="http://www.mygam.ir/post/47#commentlist"> نظرات (<script>setCommentCnt(47)</script>)</a>
+</span>
+                              
+</div>
+                         
+<div class="post-cnt">
+<div class="saman_abstract">زنده یاد سلحشور در سخنرانی گفته است: اگر در 
+بین شما جوانان انقلابی، مؤمن و متعهد کسانی هستند که استعداد نوشتن دارند،
+ لازم است شروع به کار کنند. جان و روح فیلم‌سازی، سناریونویسی است که با 
+داستان‌نویسی آغاز می‌شود. سناریوی خوب می‌تواند فیلم خوب را شکل دهد.  </div>		
+    		
+	<div class="saman_description">
+		
+			<div class="saman_pic">
+				<a href="http://www.basij.ir//parameters/basij/modules/cdk/upload/content/news/22675/farhangnews_193259-547657-1459939385.jpg" target="_blanck"><img src="http://www.basij.ir//parameters/basij/modules/cdk/upload/content/news/22675/farhangnews_193259-547657-1459939385.jpg" class="saman_pict" alt="سخنان منتشر نشده از زنده یاد سلحشور" title="سخنان منتشر نشده از زنده یاد سلحشور" height="165" width="250"></a> 
+				
+	    		</div>
+	    	
+		<p>به گزارش پایگاه اینترنتی بسیج، زنده یاد «فرج الله  سلحشور» مدتی پیش
+ از اوج بیماری، سخنرانی با موضوع سینمای انقلابی در  دار‌القرآنی واقع در 
+کرج داشته که متن کامل آن به همراه پرسش و پاسخ با  حاضران در قالب چند 
+شماره متوالی در برگزاری فارس منتشر خواهد شد.&nbsp;</p>
+<p style="text-align: justify;" class="rtejustify">بنا  بر این گزارش، 
+متن کامل بخش اول این سخنان که در آن به رسانه به عنوان  قوی‌ترین سلاح جنگ
+ نرم و سناریونویسی متعهد اشاره شده می‌آید:</p>
+<p style="text-align: justify;" class="rtejustify"><span style="color:#FF0000;"><strong>*بمب هسته‌ای ما همین فیلم‌ها و سریال‌های انقلابی است</strong></span></p>
+<p style="text-align: justify;" class="rtejustify">کسی  که در خارج کشور 
+دو سریال علیه ایران ساخته می‌گوید: «شما رسانه ملی  ندارید. این تلویزیون و
+ سینما مال خودتان نیست. اگر رسانه ملی و بومی  داشتید تا امروز آمریکا و 
+اسرائیل را نابود می‌کردید».&nbsp;</p>
+<p style="text-align: justify;" class="rtejustify">به  تاجیکستان رفتم و 
+وزیر فرهنگ و هنر عراق در آنجا عین همان حرف را زد. در  لبنان نیز همین حرف
+ را شنیدم. در ترکیه هم گفته شد. همه آنها می‌گفتند:  «شما به انرژی 
+هسته‌ای در ایران ننازید بلکه باید به «یوسف» افتخار کنید.  بمب اتمی برای 
+شما همین سریال «یوسف» و سریال‌های مذهبی است که می‌سازید، و  نه انرژی 
+هسته‌ای!». ما به عنوان یک کشور اسلامی، سلاح قدرتمندی را  می‌توانستیم در 
+اختیار داشته باشیم ولی نداریم. 4 گروه دارند تلویزیون و  سینمای ما، بخصوص
+ حوزه فیلم و سریال‌سازی را می‌گردانند: توده‌ای‌ها،  ساواکی‌ها، بهایی‌ها و
+ صهیونیست‌ها! این حقیقت را باید پذیرفت. سینما و  تلویزیون ما تبدیل به 
+سنگری شده که آنها از پشتش به خودمان شلیک می‌کنند.  سنگر ما نیست و به 
+دشمن شلیک نمی‌نماید. بخواهیم یا نخواهیم، این حقیقت  دارد.</p>
+<p style="text-align: justify;" class="rtejustify">فیلم و  سریال‌سازی ما
+ در طول 36 سال گذشته به جای آن که در خدمت اسلام و انقلاب  باشد در مقابل 
+آن بوده است. به خاطر دارم که در دهه 60، شصت درصد آثاری که  ساخته می‌شد 
+نسبتاً ارزشی بود. مثلاً «دو چشم بیستون»، «توبه نصوح»، «پرواز  در شب»، 
+«بلمی به سوی ساحل»، «جزیره مجنون» و فیلم‌های زیادی ساخته شد که  همگی 
+ارزشی بودند. در آنها اثری از ابتذال، صحنه‌های سخیف و روابط دختر و  پسر 
+نبود. الآن چند درصد آثار را می‌توان دارای جنبه‌های مثبت دانست؟ تنها 3  
+درصد، آن هم با اغماض! در سال اگر 100 فیلم بسازیم فقط 3 تا از آنها  
+تقریباً خوب است. 10 سریال می‌سازند و فقط یکی از آنها مثل «مامان مدینه»  
+در می‌آید، که آن هم 100 تا ایراد دارد ولی قدری بهتر از بقیه است.  
+سریال‌های بنجل و بدآموز زیادی را پخش می‌کنند.</p>
+<p style="text-align: justify;" class="rtejustify"><span style="color:#FF0000;"><strong>*بچه مذهبی‌ها در حوزه فرهنگ تکلیف برعهده دارند </strong></span></p>
+<p style="text-align: justify;" class="rtejustify">چه  باید کرد؟ ما بچه 
+مذهبی‌ها در هیئت‌هایمان عزاداری می‌کنیم. خانواده چادری  داریم. اهل نماز و
+ عبادتیم. کاری به کار دیگران نداریم، ولی آیا همینقدر  که به زندگی خود 
+بپردازیم کافی است؟ آیا تکلیفی به گردن نداریم؟ اگر  بتوانیم کاری انجام 
+دهیم نباید کوتاهی کنیم.</p>
+<p style="text-align: justify;" class="rtejustify">اگر  در بین شما 
+جوانان انقلابی، مؤمن و متعهد کسانی هستند که استعداد نوشتن  دارند، لازم 
+است شروع به کار کنند. جان و روح فیلم‌سازی، سناریونویسی است  که با 
+داستان‌نویسی آغاز می‌شود. سناریوی خوب می‌تواند فیلم خوب را شکل  دهد.</p>
+<p style="text-align: justify;" class="rtejustify">لازمه سناریست  شدن 
+این است که قلمی مناسب برای نگارش قصه داشته باشید. با ارزیابی قصه‌ای  که 
+می‌نویسید می‌توانیم تشخیص دهیم آیا توان سناریست شدن دارید یا نه؟!  این 
+مسئله مهم است. باید زحمات ما نتیجه بدهد. اگر کسی استعداد سناریونویسی  
+نداشته باشد شاید استعدادش در کارگردانی، نقاشی یا سایر رشته‌ها باشد. اول 
+ امتحان می‌گیریم تا نوشته‌‌هایتان را ببینیم.</p>
+<p style="text-align: justify;" class="rtejustify"><span style="color:#FF0000;"><strong>*تاکید بر تاسیس دانشگاه‌های اسلامی</strong></span></p>
+<p style="text-align: justify;" class="rtejustify">سناریو  را چگونه 
+می‌نویسند؟ همه شما بانک را می‌شناسید. در گذشته بانک شامل یک  میز بود که 
+یهودی‌ها پشت آن می‌نشستند و کسی که قرض می‌خواست، از آنها  می‌گرفت. تعیین
+ می‌کردند که نزول و ربح پول چقدر است و بعد از چند ماه باید  چقدر بدهد. 
+اسم این میز را «بانک» می‌گذاشتند. بنیانگذارش صهیونیست‌ها و  یهودی‌ها 
+بودند. بیش از نیاز مردم، خانه ساخته شده اما قیمت پایین نیامده  زیرا بانک
+ با مجموعه‌ساز دست به یکی کرده‌اند. چرا اینطور شده؟ چون بانک  اسلامی 
+نیست و حالت ربوی دارد. بنیانگذار بانک‌ها بیگانگان بوده‌اند. عین  همین 
+قضیه در دانشگاه نیز دیده می‌شود. دانشگاه امام صادق، دانشگاه امام  حسین و
+ حوزه علمیه قم را داریم که خروجی‌هایشان انسان‌هایی نسبتاً صالح  هستند. 
+نمی‌گوییم بینشان آدم بد پیدا نمی‌شود ولی اغلب آنها اشخاصی مؤمن و  
+خدا‌شناس هستند، ولی در سایر دانشگاه‌ها، اگر دانشجو را خیلی خوب تربیت  
+کنند نهایتاً تبدیل به «احمدی نژاد» می‌شود. او هم آدم خوبی است و نمی‌توان
+  زحماتش را&nbsp; نادیده گرفت ولی به آن حدی از تشخیص نرسید که ولیِّ خود را  
+بشناسد. مفهوم ولایت را نمی‌فهمید چون در محیط دانشگاه‌های که غربی‌ها برای
+  ما ساخته‌اند تربیت شده بود.</p>
+<p style="text-align: justify;" class="rtejustify">ماجرای  هنر نیز همین 
+طور است. اولین بار که سینما و تلویزیون درست شد، تمام  خانواده‌های یهودی و
+ اسرائیلی، یا سرمایه‌گذار فیلم‌ها بودند، یا نویسنده،  یا کارگردان یا 
+بازیگر آن! بعضی از خانواده‌ها هر 3-4 حالت را داشتند. چرا  آنها اینقدر 
+محکم به سینما می‌چسبند؟ چون حداقل از صدر اسلام تا حالا، و  حتی قبل از 
+آن، یهود و بنی اسرائیل برای مردم مسلمان و مردم دیگر کشورهای  دنیا 
+قصه‌گویی می‌کرده است. در قصه‌گویی‌هایشان بازی هم می‌کردند. گاه یک  
+قصه‌گوی یهودی زردچوبه به صورتش می‌مالید تا نقش یک مریض را بازی کند و  
+قصه‌ی یک بیمار را بگوید. حین قصه گفتن گریه می‌کرد و می‌خندید.</p>
+<p style="text-align: justify;" class="rtejustify">اکثر  داستان‌هایی که 
+راویان و ناقلان حدیث در کتب روایی ما آورده‌اند، از  همین‌ها نقل شده است.
+ داستان‌ها یا از ابوحریره است یا امثال او! این اشخاص  داستان‌های مذهبی 
+را بلد بودند و در تورات می‌خواندند. مسلمانان شبه جزیره  اصلاً 
+نمی‌فهمیدند داستان چیست؟! مذهب چیست؟ تورات یعنی چه؟! عده‌ای عرب  وحشی و 
+بدوی بودند که در روستا زندگی می‌کردند. البته زندگی آنها مناسب  فرهنگ 
+خودشان بود ولی خیلی عقب مانده‌تر از بقیه ملت‌های دنیا بودند. اصلاً  
+نمی‌فهمیدند قصه‌های آسمانی و الهی چه معانی دارند. یهودیان هر طور دلشان  
+می‌خواست برای آنها قصه می‌گفتند و یوسف را به نحوی که می‌خواستند تصویر  
+می‌نمودند.</p>
+<p style="text-align: justify;" class="rtejustify"><span style="color:#FF0000;"><strong>*رخنه صهیونیسم در مسلمانان با داستان‌های کذب!</strong></span></p>
+<p style="text-align: justify;" class="rtejustify">«اوج  بن عُنُق» یک 
+شخصیت داستانی بود که در گذشته در دهات به زبان ترکی گفته  می‌شد. 
+می‌گفتند: «اوج بن عنق وقتی پایش را در دریا می‌گذاشت آب دریا فقط  تا مچ 
+پای او می‌رسید. از دریا ماهی می‌گرفت، آن را جلوی خورشید می‌برد،  سرخ 
+می‌کرد و می‌خورد». مردم این حرف را باور می‌کردند. خودم چندین بار این  
+داستان را از زبان قدیمی‌ها شنیدم. الآن که تاریخ را می‌خوانم می‌فهمم  
+ساختن چنین داستانی علت داشته! حضرت موسی بنی اسرائیل را از چنگ فرعون نجات
+  می‌دهد و پشت دروازه‌های «اریحا»، «کنعان» و «فلسطین» می‌آورد، یعنی همان
+  ارض موعود که خداوند به بنی اسرائیل وعده داده! گفت:«این شهر مال شماست. 
+ ساکنین کافر هستند و خداوند اجازه داده شهر را بگیرید تا آسوده زندگی  
+کنید». بنی اسرائیل ترسو بودند. فرعون آنها را بزدل و توسری خور بار آورده 
+ بود. یا بایست موسی را تنها می‌گذاشتند خودش با خدای خود برود و بجنگند، 
+یا  بایست می‌جنگیدند و کشته می‌دادند. وقتی از بنی اسرائیل پرسیده شد «چرا
+  نمی‌جنگید؟» گفتند: «اینها خیلی قلدر هستند. پادشاهشان وقتی پا در دریا  
+بگذارد، آب فقط تا مچ پایش می‌رسد. اگر پادشاهشان یک اشاره بکند، تمام بنی 
+ اسرائیل را در جیبش می‌گذرد. چطور با اینها بجنگیم؟». چنین دروغی ساختند 
+که  ترس خود را پنهان نمایند. از این دروغ‌ها تا دلتان بخواهد در تاریخ  
+ساخته‌اند. خیلی قبل از ظهور سینما اینها قصه‌گو بودند و داستان‌های دروغ  
+را در فرهنگ و مذهب ملت‌ها رخنه می‌دادند. الآن عین همان کار را در قالب  
+سینما انجام می‌دهند.</p>
+<p style="text-align: justify;" class="rtejustify">هدف  آنها دین‌زدایی 
+از مردم دنیاست چون دین الهی مانع اطاعت و بهره‌دهی یک  جامعه در برابر 
+ابرقدرت‌ها می‌شود. یک زورگو، از جامعه‌ای که دین دارد و از  خدا می‌ترسد 
+نمی‌تواند بهره‌کشی کند. یک جامعه‌ی شجاع، فرهنگ خود را دارد.  پارت‌ها 
+یعنی ایرانیان قدیم در اسب‌سواری و تیراندازی خیلی مهارت داشتند.  آنها این
+ شجاعت را از ایشان گرفتند تا بتوانند مورد بهره‌کشی باشند. در  گذشته، 
+اسب‌سواران ایرانی روی اسب تیراندازی می‌کردند و هدف را می‌زدند.  چنین 
+چیزی الآن در دنیا نیست. یک رشته ورزشی در دنیا وجود دارد که  اسب‌سوارها 
+در حین سوارکاری، هدف را بزنند. بچه‌های ما در آن رشته اول  می‌شوند. آیا 
+هرگز این موضوع را شنیده‌اید که در اسب‌سواری المپیک اول  شویم؟ نشنیده‌اید
+ چون اینها جزو ارزش‌های بومی کشورمان به شمار می‌رود و  نباید کسی خبر 
+داشته باشد. باید آن را از ذهنمان بیرون بریزیم.</p>
+<p style="text-align: justify;" class="rtejustify"><span style="color:#FF0000;"><strong>*ماجرای عاشورا یک ملت را از بردگی نجات می‌دهد</strong></span></p>
+<p style="text-align: justify;" class="rtejustify">ارزش‌های  مذهبی ما 
+نیز آنها را می‌ترساند. کربلا، آدم می‌سازد. یک ملت را از بردگی  نجات 
+می‌دهد. باعث می‌شود ملت‌ها یاد بگیرند در برابر ابرقدرت‌ها قد علم  کنند. 
+سعی دارند تا جایی که بتوانند، کربلا را تغییر دهند. انبیا نیز باید  تغییر
+ چهره دهند تا دیگر الگو نباشند. حضرت موسی و عیسی را در فیلم‌ها نشان  
+می‌دهند که دست به گناه می‌زند. اینها پیغمبر خود آنها هستند. چرا خرابشان 
+ می‌کنند و آبرویشان را می‌برند؟ بنی اسرائیل در پی گرفتن دنیاست. امور  
+دنیوی را همواره در دربارها و نزد قدرت‌ها باید جستجو کرد. بنی اسرائیل در 
+ دربارها نفوذ می‌کنند. چند وقتی در دربارهای انگلیس بودند و الآن در کنگره
+  آمریکا! وقتی قدرت مرکزی را دست بگیرند، مجبورند مقابل انبیا بایستند.  
+انبیا با قدرتمندها و زورگویان سازش نمی‌کردند. باید یکی از این دو انتخاب 
+ شود. انبیا را می‌کشند و قدرت مداران را بزرگ می‌نمایند. در یک روز دهها و
+  صدها پیامبر را سر می‌برند.</p>
+<p style="text-align: justify;" class="rtejustify">پیامبر  و ائمه ما و 
+سایر ادیان، حتی دین‌های بومی و بت‌پرستانه، باعث شکل‌گیری  ارزش‌هایی 
+شده‌اند که اسرائیل به عنوان گرداننده‌ی هالیوود و بنیانگذار  سینما با 
+آنها مخالف است. می‌خواهد ملت‌ها را از درون تهی کند. آیا این  سینما، آن 
+بانک و آن دانشگاه به درد ما می‌خورد؟ یا تاکنون چیزی جز ضرر  برایمان 
+داشته؟</p>
+<p style="text-align: justify;" class="rtejustify">باید  بانک اسلامی 
+درست کنید. الآن چند صندوق دیگر در تهران هست که به روش  اسلامی عمل 
+می‌کند. در گذشته، تقریباً تمام مساجد دارای صندوق‌های  قرض‌الحسنه بودند. 
+مردم آنجا پول می‌گذاشتند و وام می‌گرفتند. اگر هم با آن  وام کاسبی 
+می‌کردند و به درآمد می‌رسیدند سهمی به صندوق مسجد می‌دادند.  صندوق 
+قرض‌الحسنه وام خرید مسکن، وام ازدواج، مریضی و... می‌داد و بعد هم  بدون 
+یک ریال نزول، پس می‌گرفت. در بعضی کارها هم سرمایه‌گذاری می‌کردند و  با 
+درآمدش بانک را می‌گرداندند. ریشه این صندوق قرض‌الحسنه در آیات و  روایات 
+مربوط به اقتصاد اسلامی بود، اما بانک‌ها بر اساس آیات و روایات  ساخته 
+نشده‌اند. سینما نیز همین طور است.</p>
+	</div>
+
+
+<script>mihanblogPostLike('47','like')</script>                    
+</div>
+
+
+                              
+<div class="post-foot">
+</div>
+</div>
+                         
+</div>
+
+
+<!--- end comment box ---->
+
+
+
+<!---- end etc page --->
+
+
+</div>
+                    
+                    
+<!---------------------------------------------------- end mainpost ------------------------------------------------->
+
+<!---------------------------------------------------- end pagenavi -------------------------------------------------->
+
+ 
+
+
+
+
+
+
+
+<!-------------------- Start  news Cat box --------------------------------->
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش اول </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox1.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox2.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox3.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox4.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end one cat box --->
+
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش دوم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox11.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox12.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox13.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox14.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end two cat box --->
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش سوم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox21.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox22.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox23.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox24.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end three cat box --->
+
+
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش چهارم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox31.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox32.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox33.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/catbox34.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end four cat box --->
+
+
+
+
+
+
+
+
+<div class="row catbox">
+<div class="cb-title"><h3> عنوان بخش پنجم </h3></div>
+<div class="cb-body">
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto1.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto2.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto3.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+
+<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9">
+<div class="cbm"><a href="http://www.mygam.ir/#" title="عنوان یا توضیح لینک">
+<img src="http://ssup.ir/protemp/seri2/newsplus/image/foto4.jpg" alt="توضیح عکس در اینجا" /><h2>
+عنوان مطلب منتخب در اینجا وارد شود
+</h2></a></div></div>
+<!--- e cbm --->
+
+</div>
+</div>
+<!--- end file cat box --->
+
+<!-------------------- end  news Cat box --------------------------------->
+
+
+
+
+<div class="row">
+
+<div class="col-md-18 listbox">
+<div class="lb-title"><h3>  عنوان بخش فهرست اول   </h3></div>
+<div class="lbb">
+<ul>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+
+<div class="col-md-18 listbox">
+<div class="lb-title"><h3>  عنوان بخش فهرست دوم   </h3></div>
+<div class="lbb">
+<ul>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+<li><a href="http://www.mygam.ir/#"><h2>
+عنوان شما برای یک مطلب انتخابی
+</h2></a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+</div>
+<!----- end seri 1 list boxs ------>
+
+
+<div class="row"><div class="gb-title"><h3>گالری تصاویر</h3></div></div>
+<div class="row gallbox">
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="طبیعت" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-5.jpg" target="_blank" title="تصاویر زیبا از طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-5.jpg" alt="تصاویر زیبا از طبیعت" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-6.jpg"_blank" title="طبیعت رویایی">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-6.jpg" alt="طبیعت رویایی" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-7.jpg" target="_blank" title="رنگین کمان در طبیعت">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-7.jpg" alt="رنگین کمان در طبیعت" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" target="_blank" title="ساحل و دریا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-8.jpg" alt="ساحل و دریا" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" target="_blank" title="عکس های زیبا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" alt="عکس های زیبا" />
+</a>
+</div>
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" target="_blank" title="غروب زیبای خورشید">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-10.jpg" alt="غروب زیبای خورشید" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/dream-amazing-nature-images.jpg" target="_blank" title="طبیعت زیبا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/dream-amazing-nature-images.jpg" alt="طبیعت زیبا" />
+</a>
+</div>
+
+
+
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<a href="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-12.jpg" target="_blank" title="آبشار و طبیعت زیبا">
+<img src="http://www.coca.ir/wp-content/uploads/2017/07/beautiful-dream-nature-photos-12.jpg" alt="آبشار و طبیعت زیبا" />
+</a>
+</div>
+
+
+</div>
+<!---- end gallery row ---->
+
+
+
+
+
+                    
+                    
+</div>
+<!--- end center column --->
+
+
+
+
+
+<div class="col-sm-18 col-md-8 col-md-pull-20">
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-user"></i>  درباره وبلاگ</h3>
+</div>
+<div class="menu-body">
+<center><img src="http://static.mihanblog.com//public/user_data/web_photo/559/1676450.jpg?7354"  /></center>
+ <br>
+وبلاگ بسیج ولایت بروزترین وبلاگ برای خواندن مطالب سیاسی ومذهبی بهترین وبلاگ برای دانلود تصاویر مذهبی.<br />
+<br />
+*ممنون از شما که این وبلاگ را انتخاب کردید*</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-folder-open"></i>موضوعات</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://www.mygam.ir/post/category/9">مذهبی&nbsp;(1)</a></li>
+<li><a href="http://www.mygam.ir/post/category/8">ورزشی&nbsp;(2)</a></li>
+<li><a href="http://www.mygam.ir/post/category/6">موضوعات سیاسی جهان&nbsp;(91)</a></li>
+<li><a href="http://www.mygam.ir/post/category/5">سخنان رهبر انقلاب&nbsp;(32)</a></li>
+<li><a href="http://www.mygam.ir/post/category/7">خبر های مهم ایران&nbsp;(230)</a></li>
+<li><a href="http://www.mygam.ir/post/category/4">بسیج&nbsp;(61)</a></li>
+<li><a href="http://www.mygam.ir/post/category/3">تصاویر مذهبی&nbsp;(1)</a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-list"></i>صفحات جانبی</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://www.mygam.ir/extrapage/ozv">نویسنده وبلاگ شوید</a></li>
+<li><a href="http://www.mygam.ir/extrapage/khabarnegar">خبرنگار ما باشید</a></li>
+<li><a href="http://www.mygam.ir/extrapage/tab">تبلیغات</a></li>
+<li><a href="http://www.mygam.ir/extrapage/profile">عکس پروفایل مذهبی</a></li>
+<li><a href="http://www.mygam.ir/extrapage/profil2">عکس پروفایل مذهبی2</a></li>
+<li><a href="http://www.mygam.ir/extrapage/profil3">عکس پروفایل مذهبی3</a></li>
+<li><a href="http://www.mygam.ir/extrapage/picture">تصاویر زیبا امام خامنه ای</a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-edit"></i> نویسندگان</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://www.mygam.ir/post/author/1392940" >
+<span>✔ (مدیر کل) علی خسروانی&nbsp;(325)</span></a></li>
+<li><a href="http://www.mygam.ir/post/author/1732190" >
+<span>نیما حمیدی&nbsp;(39)</span></a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-tags"></i>برچسب ها</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B2%D9%84%D8%B2%D9%84%D9%87+%D8%BA%D8%B1%D8%A8+%DA%A9%D8%B4%D9%88%D8%B1">زلزله غرب کشور</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AD%D8%B6%D8%B1%D8%AA+%D8%A2%DB%8C%D8%AA+%D8%A7%D9%84%D9%84%D9%87+%D8%AE%D8%A7%D9%85%D9%86%D9%87+%D8%A7%DB%8C">حضرت آیت الله خامنه ای</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A8%D8%B1%D8%AC%D8%A7%D9%85">برجام</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D9%82%D8%A7%D8%B3%D9%85+%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C">قاسم سلیمانی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D9%85%D8%AD%D8%B1%D9%88%D9%85%DB%8C%D8%AA+%D8%B2%D8%AF%D8%A7%DB%8C%DB%8C">محرومیت زدایی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C">روحانی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A8%D8%B3%DB%8C%D8%AC+%D9%88%D9%84%D8%A7%DB%8C%D8%AA">بسیج ولایت</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%DB%8C%DB%8C%D8%B3+%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86+%D8%A8%D8%B3%DB%8C%D8%AC+%D9%85%D8%B3%D8%AA%D8%B6%D8%B9%D9%81%DB%8C%D9%86">رییس سازمان بسیج مستضعفین</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A7%D9%85%D8%A7%D9%85+%D8%AE%D8%A7%D9%85%D9%86%D9%87%E2%80%8C%D8%A7%DB%8C">امام خامنه‌ای</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AD%D8%B6%D8%B1%D8%AA+%D8%A2%DB%8C%D8%AA+%D8%A7%D9%84%D9%84%D9%87+%D8%AE%D8%A7%D9%85%D9%86%D9%87%E2%80%8C%D8%A7%DB%8C">حضرت آیت الله خامنه‌ای</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B2%D9%84%D8%B2%D9%84%D9%87+%DA%A9%D8%B1%D9%85%D8%A7%D9%86%D8%B4%D8%A7%D9%87">زلزله کرمانشاه</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%D8%A6%DB%8C%D8%B3+%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86+%D8%A8%D8%B3%DB%8C%D8%AC+%D9%85%D8%B3%D8%AA%D8%B6%D8%B9%D9%81%DB%8C%D9%86">رئیس سازمان بسیج مستضعفین</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4+%D9%82%DB%8C%D9%85%D8%AA">افزایش قیمت</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88">نتانیاهو</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%DB%8C%D8%B9%D9%82%D9%88%D8%A8+%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C">سردار یعقوب سلیمانی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D9%BE%D8%A7%D9%87+%D9%BE%D8%A7%D8%B3%D8%AF%D8%A7%D8%B1%D8%A7%D9%86">سپاه پاسداران</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86">ایران</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D9%85%D9%82%D8%A7%D9%85+%D9%85%D8%B9%D8%B8%D9%85+%D8%B1%D9%87%D8%A8%D8%B1%DB%8C">مقام معظم رهبری</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B2%D9%84%D8%B2%D9%84%D9%87">زلزله</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AC%D9%86%DA%AF">جنگ</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AF%D9%81%D8%A7%D8%B9+%D9%85%D9%82%D8%AF%D8%B3">دفاع مقدس</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%D9%87%D8%A8%D8%B1+%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8">رهبر انقلاب</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B1%DA%98%DB%8C%D9%85+%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C">رژیم صهیونیستی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85">تلگرام</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7">آمریکا</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%AA%D8%B1%D8%A7%D9%85%D9%BE">ترامپ</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%D8%BA%DB%8C%D8%A8+%D9%BE%D8%B1%D9%88%D8%B1">سردار غیب پرور</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C">سردار سلیمانی</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%A8%D8%B3%DB%8C%D8%AC">بسیج</a></li>
+<li><a href="http://www.mygam.ir/post/tag/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1+%D8%BA%D9%84%D8%A7%D9%85%D8%AD%D8%B3%DB%8C%D9%86+%D8%BA%DB%8C%D8%A8+%D9%BE%D8%B1%D9%88%D8%B1">سردار غلامحسین غیب پرور</a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-calendar"></i>  آرشیو</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href='http://www.mygam.ir/post/archive/1399/6' title=' شهریور 1399(2)'> شهریور 1399</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1398/10' title=' دی 1398(9)'> دی 1398</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1398/3' title=' خرداد 1398(4)'> خرداد 1398</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1398/2' title=' اردیبهشت 1398(2)'> اردیبهشت 1398</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1398/1' title=' فروردین 1398(5)'> فروردین 1398</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/12' title=' اسفند 1397(3)'> اسفند 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/11' title=' بهمن 1397(3)'> بهمن 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/10' title=' دی 1397(6)'> دی 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/9' title=' آذر 1397(3)'> آذر 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/8' title=' آبان 1397(3)'> آبان 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/6' title=' شهریور 1397(2)'> شهریور 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/4' title=' تیر 1397(11)'> تیر 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/3' title=' خرداد 1397(70)'> خرداد 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/2' title=' اردیبهشت 1397(58)'> اردیبهشت 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1397/1' title=' فروردین 1397(51)'> فروردین 1397</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1396/12' title=' اسفند 1396(31)'> اسفند 1396</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1396/11' title=' بهمن 1396(22)'> بهمن 1396</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1396/10' title=' دی 1396(1)'> دی 1396</a></li>
+<li><a href='http://www.mygam.ir/post/archive/1396/9' title=' آذر 1396(2)'> آذر 1396</a></li>
+<li><a href="http://www.mygam.ir/post/archive"><b>لیست آرشیوها</b></a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+
+
+          
+<div class="menu">
+<div class="menu-title">
+<h3> <i class="glyphicon glyphicon-search"></i>جستجو</h3>
+</div>
+<div class="menu-body">
+<form id="frm-16079995045fd8201086121" method="get" action="http://www.mygam.ir/post/search/fid/16079995045fd8201086121"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+<form method="get" action="http://www.mygam.ir/#">
+<input type="text" name="search_text" id="search-text" value="" />
+<input type="submit" id="search-submit" value="جستجو" />
+</form>
+<input type="hidden" name="frm-id" value="16079995045fd8201086121" id="frm-id" /></form></div>
+</div>
+<!--- e menu --->
+
+          
+</div>
+<!--- end right column --->
+
+
+
+
+<div class="col-sm-18 col-md-8">
+          
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-align-justify"></i> تازه ترین مطالب</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a  href="http://www.mygam.ir/post/462">توزیع ۱۰۰۰ بسته معیشتی طی رزمایش کمک‌های مومنانه در کبودراهنگ</a></li>
+<li><a  href="http://www.mygam.ir/post/461">مروری بر وقایع روز تاسوعا/ مهلت از دشمن برای نماز و راز ونیاز</a></li>
+<li><a  href="http://www.mygam.ir/post/459"> فوری/تایید‌ وقوع انفجارهای متعدد در پایگاه هوایی عین الاسد در عراق</a></li>
+<li><a  href="http://www.mygam.ir/post/458">النجباء عراق: موشک‌ها و سلاح‌ها برای پاسخ به آمریکا آماده است</a></li>
+<li><a  href="http://www.mygam.ir/post/457">اولین تصویر و اخبار گزارش شده از پایگاه آمریکایی ‎عین الاسد نشان از گستردگی و حجم بالای آتش دارد</a></li>
+<li><a  href="http://www.mygam.ir/post/456">فوری/اولین ضربه حشد الشعبی عراق به آمریکا</a></li>
+<li><a  href="http://www.mygam.ir/post/455">سردار قاآنی : کمی صبر کنید و با چشمان خود بقایای اجساد شیطان بزرگ را در خاورمیانه خواهید دید</a></li>
+<li><a  href="http://www.mygam.ir/post/454">پوستر ویژه سایت رهبر انقلاب به‌مناسبت شهادت سپهبد قاسم سلیمانی</a></li>
+<li><a  href="http://www.mygam.ir/post/453">Statement by the National Security Council of the Islamic Republic of Iran(After the assassination of US President Sardar Qassim Suleimani(</a></li>
+<li><a  href="http://www.mygam.ir/post/452">بیانیه شورای امنیت ملی جمهوری اسلامی ایران(بعد از ترور سردار قاسم سلیمانی توسط آمریکا)</a></li>
+<li><a  href="http://www.mygam.ir/post/450">شهادت سردار رشید اسلام حاج قاسم سلیمانی </a></li>
+<li><a  href="http://www.mygam.ir/post/424">بنیاد فرهنگی روایت فتح علمدار عرصه هنر در انقلاب اسلامی است</a></li>
+<li><a  href="http://www.mygam.ir/post/423">محکومیت بازداشت دکتر مسعود سلیمانی توسط دولت آمریکا</a></li>
+<li><a  href="http://www.mygam.ir/post/422">مسئولان راه جوانان انقلابی را بند نیاورند</a></li>
+<li><a  href="http://www.mygam.ir/post/421">خواهان جنگ نیستیم ، اما مرد جنگیم</a></li>
+<li><a  href="http://www.mygam.ir/post/420">ناوهای آمریکا در منطقه تحت کنترل کامل ارتش و سپاه هستند</a></li>
+<li><a  href="http://www.mygam.ir/post/419">ارائه خدمات درمانی به بیش از 29732 نفر به مناطق سیل زده</a></li>
+<li><a  href="http://www.mygam.ir/post/418">تولید در کشور به هیچ وجه نباید متوقف شود</a></li>
+<li><a  href="http://www.mygam.ir/post/417">جای دزد و داروغه را عوض کرده اند</a></li>
+<li><a  href="http://www.mygam.ir/post/416">محرومیت زدایی اولویت نخست سپاه و بسیج</a></li>
+<li><a  href="http://www.mygam.ir/post/list"><b>لیست آخرین پست ها</b></a></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-bookmark"></i> لینکهای روزانه</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li><a href="http://carpetcrm.ir/" title="http://carpetcrm.ir/" target="_blank">قالیشویی</a></li>
+<li><a href="http://salat313.loxblog.com" title="الصلاة" target="_blank">الصلاة</a></li>
+<li><a href="http://nimamovie.ir" title="دانلود فیلم و سریال بروز" target="_blank">نیما مووی</a></li>
+<li><a href="https://abnoosteam.ir/" title="سلام 
+لطفا ما را لینک کنید با تشکر   انجام پایان نامه" target="_blank">انجام پایان نامه</a></li>
+<li><a href="http://www.asayeshbartehran.com" title="عالی بود 
+لطفا از سایت ما هم دیدن نمایید. آسایش بار" target="_blank">آسایش بار</a></li>
+<li><a href="http://www.zarrinhoor.com/" title="سلام
+وبلاگی با محتوای جالبی دارید
+ما هم یه سایت مهندسی داریم که کلی پست جذاب و اختصاصی آماده کردیم(ترفندهای فتوشاپ، ویندوز، آندروید و... +آموزش های برنامه نویسی) که همشون رایگانه
+در کنارشم ممبر واقعی تلگرام برای فروش داریم
+ممنون میشیم بهمون سر بزنید و لینکمون رو تایید کنید.
+http://www.zarrinhoor.com/" target="_blank">مطالب علمی و برنامه نویسی و فروش ممبر</a></li>
+<li><a href="http://spssproje.mihanblog.com/" title="سلام ، وبلاگ من فقط وبلاگ علمی و تحقیق دانشجویی هست به دور از سیاست یا چیز دیگه ی ،لینک ما رو تایید کنید و لینک وبلاگ خود را جهت درج در وبلاگ ارسال فرمایید." target="_blank">پروژه دانشجویی  Spss</a></li>
+<li><a href="http://AMIN2002.mihanblog.com" title="" target="_blank">یک قدم تا قلم</a></li>
+<li><a href="http://hicharter.com/" title="" target="_blank">بلیط چارتر کیش</a></li>
+<li><a href="http://sevensharj.mihanblog.com/" title="" target="_blank">آنی سون</a></li>
+<li><a href="https://blithavapeyma.com" title="" target="_blank">بلیط هواپیما</a></li>
+<li><a href="https://facenama.com/signup/r:1291126" title="کسب درآمد از طریق تبلیغات کلیکی
+در معتبرترین سایت ایران
+با تنها چند کلیک  و ده دقیقه وقت روزانه درامدی فوق العاده داشته باشید
+همین حالا برای درامدی باورنکردنی بر روی لینک زیر کلیک کنید.
+https://facenama.com/signup/r:1291126" target="_blank">کسب درامد فوق العاده</a></li>
+<li><a href="https://nopardazco.com/pages/news" title="طراحی سایت خبری" target="_blank">طراحی سایت خبری</a></li>
+<li><a href="https://botgram.mobi/" title="ربات اینستاگرام با عضویت رایگان و اکانت 7 روز تست" target="_blank">افزایش فالوور اینستاگرام</a></li>
+<li><a href="http://uupload.ir" title="سلام ، وقتتون بخیر
+پیشنهاد میکنم برای آپلود فایل و عکس از سایت یو آپلود استفاده کنید.
+به صورت رایگان ، دائمی و سرعت بالا 
+لطفا لینک رو تایید کنید تا هم آدرس سایت رو داشته باشید و هم یه حمایتی بشه از ما
+خیلی ممنون" target="_blank">آپلود عکس</a></li>
+<li><a href="http://axtext.com" title="عکس پروفایل" target="_blank">عکس پروفایل</a></li>
+<li><a href="http://www.iran-new.ir/" title="ایران نیو" target="_blank">ایران نیو</a></li>
+<li><a href="http://www.azercharge.ir/home.php" title="سامانه آنلاین خرید شارژ مستقیم، خرید کارت شارژ، خرید وایمکس ایرانسل، پرداخت قبوض، پرداخت جرائم رانندگی، خرید گیفت کارت، خرید آنتی ویروس" target="_blank">خرید شارژ</a></li>
+<li><a href="http://moarefii.com/" title="قبول کنید و در سایت ما رایگان لینک شوید" target="_blank">معرفی </a></li>
+<li><a href="https://sainkala.com/news-technology" title="" target="_blank">اخبار تکنولوژی</a></li>
+<li><b><a href="http://www.mygam.ir/linkdaily/">همه لینکها</a></b></li>
+<li><b><a href="javascript:linkdailyForm()">ارسال لینک</a></b></li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<!--- e menu --->
+
+
+
+
+		<form id="frm-16079995045fd82010868f6" method="post" action="http://www.mygam.ir/poll/new/fid/16079995045fd82010868f6/atrty/1607999504/avrvy/0/key/e153b409a500c7b8070ea47d0c29125b/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="373376" id="data[pollid]" />		
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-question-sign"></i> نظرسنجی</h3>
+</div>
+<div class="menu-body">
+بازدید کننده محترم: لطفاً نظر خود را راجع به این وبلاگ با انتخاب یکی از گزینه های زیر برای ما ارسال کنید. با تشکر<br>
+<label><input type="radio" name="data[answer]" value="v1">بسیار ضعیف</label><br>
+<label><input type="radio" name="data[answer]" value="v2">ضعیف</label><br>
+<label><input type="radio" name="data[answer]" value="v3">متوسط</label><br>
+<label><input type="radio" name="data[answer]" value="v4">خوب</label><br>
+<label><input type="radio" name="data[answer]" value="v5">بسیار خوب</label><br>
+<label><input type="radio" name="data[answer]" value="v6">عالی </label><br>
+<input type="submit" value="ارسال نظر"/>
+</div>
+</div>
+
+		<input type="hidden" name="frm-id" value="16079995045fd82010868f6" id="frm-id" /></form><!--- e menu --->
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-stats"></i>آمار وبلاگ</h3>
+</div>
+<div class="menu-body">
+<ul>
+<li>کل بازدید: <script>getStatVar('total_view');</script></li>
+<li>بازدید امروز : <script>getStatVar('today_view');</script></li>
+<li> بازدید دیروز :<script>getStatVar('yesterday_view');</script></li>
+<li> بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+<li> بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+<li> تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+<li> تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+<li> آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+<li> آخرین بروز رسانی : <script>getStatVar('modify_date');</script> </li>
+</ul>
+</div>
+</div>
+<!--- e menu --->
+
+
+
+
+<div class="menu">
+<div class="menu-title">
+<h3><i class="glyphicon glyphicon-cog"></i>ابزارک ها</h3>
+</div>
+<div class="menu-body">
+<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=mihanblog/fVge', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>برای عضویت در خبرنامه ایمیل خود را وارد کنید:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="mihanblog/fVge" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="ثبت ایمیل" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+
+
+<p align='center'><script type='text/javascript' src='http://cafe-webniaz.ir/abzar/link/linkcheshmak.js'></script></p>
+
+
+
+<script type="text/javascript"> window.$crisp=[];window.CRISP_WEBSITE_ID="376525b7-000c-4c7a-999f-9912c31c62b4";(function(){ d=document;s=d.createElement("script"); s.src="https://client.crisp.chat/l.js"; s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})(); </script>
+
+
+<a href="https://zarinp.al/@alikh2202"><img src="http://file.mihanblog.com//public/user_data/user_files/559/1676450/736ce4c9.jpg" alt="mygam.ir" /></a></div>
+</div>
+<!--- e menu --->
+
+
+
+
+
+
+
+          </div>
+<!--- end left column --->
+
+
+</div>
+<!--- end main content & menus bar  --->
+
+
+
+
+</div>
+</div>
+</div>
+<!-------- end mainpagebg --------->
+
+<div class="container-fluid btmbar">
+<div class="container">
+<div class="row">
+<div class="col-md-36">
+<div class="social">
+<div class="social-message">
+
+:: من را در شبکه های اجتماعی دنبال بکنید ::
+
+</div>
+<div class="social-box">
+<a href="http://www.mygam.ir/LINK_yahoo" title="ایمیل من" target="_blank"><i class="Social-yahoo"></i></a>
+<a href="http://www.mygam.ir/LINK_Telegram" title="تلگرام من" target="_blank"><i class="Social-telegram"></i></a>
+<a href="http://www.mygam.ir/LINK_Facebook" title="فیسبوک من" target="_blank"><i class="Social-facebook"></i></a>
+<a href="http://www.mygam.ir/LINK_Insta" title="اینستاگرام من" target="_blank"><i class="Social-instagram"></i></a>
+<a href="http://www.mygam.ir/LINK_Twitter" title="توییتر من" target="_blank"><i class="Social-twitter"></i></a>
+<a href="http://www.mygam.ir/LINK_Google" title="گوگل پلاس من" target="_blank"><i class="Social-google-plus"></i></a>
+<a href="http://www.mygam.ir/LINK_Youtube" title="کانال یوتیوب من" target="_blank"><i class="Social-youtube"></i></a>
+</div>                        
+</div>
+<div class="copyrights">
+
+تمامی حقوق مطالب سایت متعلق به وبلاگ بسیج ولایت می باشد
+
+</div>
+<div class="designer">
+طراحی و اجرا:<a href="http://sitesetup.ir">سایت ستاپ</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--- end footer --->
+
+
+<script>
+      var owl = $('.owl-carousel');
+      owl.owlCarousel({
+		loop: true,
+        nav: true,
+		autoplay: true,
+		autoplayTimeout:3000,
+		autoplayHoverPause:true,
+        lazyLoad: false,
+		animateOut: 'fadeOut',
+		margin: 10,
+        loop: true,
+		navText: [
+      "<i class='glyphicon glyphicon-menu-left'></i>",
+      "<i class='glyphicon glyphicon-menu-right'></i>"
+    ],
+		responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:1,
+            nav:true
+        },
+        1000:{
+            items:1,
+            nav:true,
+            loop:true
+        	}
+    	}
+      })
+	  
+    </script>
+	
+	
+
+	
+</body>
+</html>
+
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'mygam.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.targetedwebtraffic.com" target="_blank">Buy Website Traffic</a> | <a href="https://www.seo25.com" target="_blank">Buy Targeted Website Traffic</a>
+    </div>
+</center>

@@ -1,0 +1,1794 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*999078*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[4101]='4';commentCnt[4776]='6';commentCnt[6576]='3';commentCnt[6775]='6';commentCnt[7697]='1';commentCnt[8382]='5';commentCnt[8386]='5';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[4101]='0';
+mihanblogDisLikeArrCnt[4101]='0';
+mihanblogLikeArrCnt[4776]='0';
+mihanblogDisLikeArrCnt[4776]='0';
+mihanblogLikeArrCnt[6576]='0';
+mihanblogDisLikeArrCnt[6576]='0';
+mihanblogLikeArrCnt[6775]='1';
+mihanblogDisLikeArrCnt[6775]='0';
+mihanblogLikeArrCnt[7697]='1';
+mihanblogDisLikeArrCnt[7697]='0';
+mihanblogLikeArrCnt[8382]='2';
+mihanblogDisLikeArrCnt[8382]='0';
+mihanblogLikeArrCnt[8386]='1';
+mihanblogDisLikeArrCnt[8386]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://najvaye-kangan.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://najvaye-kangan.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','6217');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','سه شنبه 18 آذر 1399');
+	
+	setStatVar('today_view','263');
+	setStatVar('yesterday_view','1109');
+	
+	setStatVar('this_month_view','16947');
+	setStatVar('last_month_view','10227');
+
+	setStatVar('total_view','7094200');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (17:34)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://najvaye-kangan.mihanblog.com/statupdate/?data[refereruri]=http://najvaye-kangan.mihanblog.com/post/category/5&data[postid]=&data[requesturi]=/post/category/5/page/1&data[sdate]=1607782128&data[hash]=edda7a72538b326bc5d77eff061e0632&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://najvaye-kangan.mihanblog.com/post/category/5/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://najvaye-kangan.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content="پیگیری تحلیل و تجزیه رویدهای سیاسی منطقه ای وجهان اسلام"/>
+    <meta name="keywords" content="نجوا کنگان"/>
+    <link rel="alternate" type="application/rss+xml" title="نجوا کنگان" href="../../../rss/index.html" />
+    <link rel="alternate" type="application/atom+xml" title="نجوا کنگان" href="../../../atom/index.html" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099141/style.css" type="text/css" rel="stylesheet">
+
+    <title>نجوا کنگان - مطالب پیشنهاد برنامه شهرستان كنگان</title>
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td class=div02>&nbsp;</td>
+<td class=div70 valign=top><div class=div71></div></td>
+
+<td class=div2 valign=top>
+<div class=div1>
+
+<div class=div20>
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../8386.html">                  نماینده مجلس،مدافع همه ی حوزه انتخابیه</a></font></div>
+            <div class=div58><font class=text7>یکشنبه 7 شهریور 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<font size="4"><br><br>&nbsp;نماینده مجلس،مدافع همه ی حوزه انتخابیه<br><br>&nbsp;فراز ونشیب های توسعه و نوع پیگری مطالبات در یک حوزه انتخابیه پس ازیک انتخاب حداقل بمدت چهار سال&nbsp; فراروی شهروندان هر حوزه انتخابیه است درهمین اثنا همواره رقابت وتقابل&nbsp; دو جریان فکری پیش برنده و قهقراء دهنده، سیری متناوب را تا انتخاب بعدی پشت سرمی گذارد.<br>درهرانتخاباتی که صورت می گیرد، رای دهنده&nbsp; مسئول اول در برگزیدن شخصی است که نمایندگی اورا بعهده می گیرد، واین مسئولیت اورا با ماموریت مورد انتظار ازشخص منتخب براساس&nbsp; ظرفیت شان&nbsp; وجایگاه&nbsp; ومحدوده شرح وظایف و حوزه اختیارات در مجلس و بخش نظارت در امور اجرائی ،&nbsp; تبعات ومسئولیتهای بزرگ وکوچک به تعامل و مطالبه گری رهنمون می کند&nbsp; . معمولاً منتخب مردم نقش ایجاد&nbsp; انسجام وهم افزائی در بین احاد مردم و موکلین خود و هماهنگی در بین دستگاههای دولتی&nbsp; و نهادهای حکومتی را در رسیدن به اهداف منطقه ی و&nbsp; کارنامه ی قابل قبول ایفا می کند، وی همچنین با ویژگی اختصاصی قانونی وشخصیتی&nbsp; خود&nbsp; در عملیات تصمیم گیری مربوطه مشارکت فعالی برای خود متصوراست، بخصوص اینکه این تصمیم گیری ها در سرنوشت تک&nbsp; تک شهروندان&nbsp;&nbsp; و پیشبرد اهداف سازمانی دستگاهها و نها د ها ی مورد تعریف قانون تاثیری مستقیم یا غیر مستقیم دارد حتی گاهی یک تصمیم یا عدم اهتمام به درخواست یا موضوعی علی الظاهر ساده&nbsp; می تواند بر زندگی عادی یک شهروند وآینده ی او تاثیری بسزا بگذارد،از همین&nbsp; منظر لازم است که انتخاب کننده&nbsp; در نحوه ی برگزیدن یک منتخب&nbsp;&nbsp; وسواس زیادی&nbsp; داشته باشد چون مسئولیت شرایط مطلوب موجود و وضعیت آینده با هرکیفیتی در چهارچوب معین متوجه خود اوست که حاصل تصمیم نهائی انتخاباتی بشمارمی آید،&nbsp; برهمین پایه منتخب مردم نیز با اولویت&nbsp; دادن به معیارها و شاخص های عمومی و حفظ نگاه عدالت محوربا فاصله گرفتن از معیارها وشاخص&nbsp; فردی&nbsp; مثل مصالح ارتباط سیاسی&nbsp; یا قرابت فامیلی وخانوادگی&nbsp; یا ترجیح منافع بخشی یا منطقه ی برمنطقه ی دیگر، رصایت مندی عمومی فراگیر را تامین کرده و توسعه ی شانه به شانه و متوازنی را در ابعاد مختلف درنقاط متفاوت جغرافیائی حوزه انتخابیه تحت پوشش رقم بزند .<br>برای کمک به تحقق این پروسه&nbsp; 10 ویژگی اصلی ذکر شده که می توان از آنها در ارزیابی از عملکرد یک نماینده و نوع تعامل شهروندان با وی مورد بحث قرار داد:<br><br>1: شخصیت مدیریتی<br>&nbsp;ویژگی های مدیریتی&nbsp; برای جهت دادن به برنامه خود و&nbsp; خواندن بموقع وسریع&nbsp; تنوع نگاه&nbsp; مدیران در هر نماینده ضروری است ، از جمله این ویژگی ها:&nbsp; توانائی شخصیتی تاثیرگذار، وضوح دیدگاه ، قدرت طراحی&nbsp; و انعطاف پذیری درنظرات ، اثربخشی&nbsp; مثبت در توجیه دیگران ،&nbsp; استاندارد کردن خواسته ها ، توانمندی ارزش گذاری در تفاوت ها و عدم غرق شدن درامور جاری روزمره&nbsp; و...است.<br>که رعایت اینها منجر به بسیاری از دستاورهای مطلوب به عنوان یک نتیجه&nbsp; از این دلیل که فرد&nbsp; مناسب در محل متناسب قرار گرفته را بیان می کند..<br>2: اخلاق عمومی<br>صداقت، وفاداری،&nbsp; بیشترین وبهترین سطوح&nbsp; عملکرد نماینده را تحت شعاع قرار داده و&nbsp;&nbsp; عمیق ترین تاثیر را بردیگران بجا می گذارد ، اما&nbsp; باید با&nbsp; عدم تمرکز بر این معیار تنها صرفا همه چیز را در آن خلاصه نکنیم، وبهتر این است که این ویژگی را در کنار دیگر استانداردها بکار ببریم،&nbsp; نگاه اخلاقی مورد نیاز،با&nbsp; بهره وری وبهره دهی بصورتی موازی ارزشمندند نه مجزای از یکدیگر ..<br>3:کسب آگاهی واطلاعات مورد نیازدر اقدامات و فعالیتهای جدید<br>مشاهده و آگاهی از تلاشها ، فعالیت ها و تجارب جدیدوقبلی و مزایای استفاده از فرصت ها وچگونگی&nbsp; رفع موانع از افتادن در قصاوت شتاب زده و بهبود کیفیت تصمیم ،&nbsp; منجر به ایجاد بهترین گزینه های در دسترس در توجه به واقعیت های وآگاهیهای&nbsp; به روز رسانی شده است.<br>4:کار واقدامات عمومی<br>&nbsp;غالباً سهم یک نماینده&nbsp; در زمینه های اقدام عمومی روشن است، وی باید دستاوردها را در زمینه خدمات عمومی به منظور حصول اطمینان&nbsp;&nbsp; در دوره&nbsp; ی که&nbsp; او&nbsp; در جایگاه مسئولیت قرارداشته برمبنای میزان فعالیت در تکمیل دستاوردهای قبلی افزایش بدهد، و معمولا هر زمان که سطح این فعالیت ها&nbsp; بیشتر می شود اثربخشی افزون تری را می توان لمس کرد ..<br>5: برتری و خلاقیت<br>ما به نما ینده ی می توانیم افتخار کنیم که با ارائه طرح های و مصوبات جدید و زمینه ساز امور زیرساختی به ارائه ارزش فزاینده بر اقدامات و کارها و&nbsp; از حرکت های روتین و اظهار خستگی در عملکرد دوری بحوید، و باکمک به ارائه دستاوردهای متنوع و غنی بتواند&nbsp; با برخورداری از نگاه مثبت شهروندان، فصلی پرکار را نوید داده وحداقل در رقابت از سایر همتایان خود در مجلس عقب نماند..<br>6: تیم همراه قوی<br>هر زمان که یک نماینده یک تیم قوی ترعلمی وحقوقی&nbsp; را برای خود انتخاب می کند، قدرت مانور افزونتری می یابد و بلافاصله او قوی تر بچشم می آید، و هنگامی که شما به تیم یک نماینده نگاه می کنید می تواید براحتی یک تصویر کلی از او به دست آورید. وقتی که او در جستجو و&nbsp; پیدا کردن&nbsp;&nbsp; افرادشایسته و صاحبان تجارب متنوع و افراد بازیگر فعال میبینید مطمئن باشید که وی با فعالان برتر که امورمورد نظر مردم&nbsp;&nbsp; بصورتی مطلوب دنبال می کنند ازو یک تجربه خوب در ذهن خواهید داشت..<br>7: دانش واشراف حقوقی و قانونگذاری<br>هرنماینده با برخورداری از دانش حقوقی لازم به طوری که بتواند توابع آن را با بهینه سازی و مشروعیت&nbsp; قانونی انجام دهد موفقیتی بیشتر خواهدداشت، و همچنین بهره مندی از این دانش اورا از افتادن در معرض خطای حقوقی و مشکلات نامنظم بعدی مصون می دارد، برای مثال، هنگام انتخاب یک نماینده برای مجلس باید نامزد آن از آگاهی لازم واشراف&nbsp; دقیق برقانون اساسی&nbsp; قوانین و مقررات و قوانین&nbsp; کشور برخوردار باشد و ازمیزان کاربرد ابزار نظارتی موجود برای نظارت بر عملکرد دولت و وزارتخانه ها و موقعیت استفاده از آن را لحاظ داشته باشد<br>8: روابط عمومی<br><br>&nbsp;روابط عمومی گسترده تر نماینده را قادر به انجام وظایف خود در شرایط بهتری می کند، و روابط نقش مهم و موثری در بهبود عملکرد شبکه ی بازخورد اقدامات وهمکاریهای&nbsp; دوجانبه ی وکیل وموکلین دارد، که این شبکه ی پردامنه از روابط گسترده سهم هم افزائی&nbsp; برای افزایش&nbsp; قدرت نفوذ عملی راهکارها سودمند است ، و روابط عمومی فعال شاهدی بر مهارت های ارتباطی&nbsp; یک نماینده و کمک&nbsp; بیشتربه&nbsp; ایجاد اعتماد بین نماینده و شهروندان است..<br>9: برنامه توسعه وپیشرفت<br><br>&nbsp;ملحوظ داشتن برنامه ی منطقه ی&nbsp; و قرار گرفتن برنامه ها وطرح ها&nbsp; در مراحل اجرایی زمان بندی شده، به طوری که ما بتوانیم مناسب ترین و بهترین برنامه ها&nbsp; را مورد سنجش ملموس قرار دهیم و با تکیه برآن امنیت اجتماعی، شغلی، اقتصادی را درآن تضمین شده ببینیم&nbsp;&nbsp; از تعهدات یک نماینده می تواند باشد که&nbsp; علاوه برآن توانمندی مردم ، مدیران وبرنامه ریزان را&nbsp; در مقایسه ی اهداف ونتایج&nbsp; رقابتی تر می کند..<br>10: توانمندی ارتقاء گمانه زنی و چانه زنی ها <br><br>&nbsp;مدیریت ذهنی&nbsp; یک نماینده&nbsp; ودست یابی زودهنگام&nbsp; به مجموعه ی قضایا با کنارهم چیدن تصاویر نیازمندی ها وضرورت ها&nbsp; وگزارشات میدانی وتحلیل رسانه ها در حوزه&nbsp; انتخابیه،سایر منابع&nbsp; و برنامه ی دولت با توجه به اوضاع کلی کشور در گزینش عنوانهای مناسب و جذاب ابداع وخلاقیت های مردمی بعنوان بازوی کار در بهبود عملکرد و&nbsp; کیفیت پیشبرد اهداف جدید؛ شایان توجه است که هر زمان این عناصر همراه&nbsp; با هم درمیدان حضور داشته باشد اطمینان حصول به درخواست&nbsp; ها بیش از پیش تقویت شده است..<br><br>نتیجه گیری :حفظ اعتماد شهروندان دست کم تا پایان&nbsp; دوره&nbsp; ی از"نمایندگی" یک چالش نظامند بشمار می آید، بنابراین نقاط قوت وضعف ادای نقش نماینده در هردوره ، می تواند فرصت ساز، آفریننده توسعه ورشددهنده ابعاد کلی عرصه های فرهنگی،اقتصادی،&nbsp; اجتماعی&nbsp; و یا عکس آن آسیب زا&nbsp; و هدردهنده سرمایه بزرگی مانند یک انتخاب و یا یک ظرفیت و قابلیت مهم موسمی نفسگیر و غیر قابل تجدید برای مردم یک حوزه انتخابیه باشد .<br><br>
+
+
+</font>
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../3.html" class=text4>تحلیل مقاله</a>،&nbsp;<a href="../../2.html" class=text4>مقاله</a>،&nbsp;<a href="../../5.html" class=text4>پیشنهاد برنامه شهرستان كنگان</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                                <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../8386.html#commentlist">نظرات (<script>setCommentCnt(8386)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('8386','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../8382.html"> شورای اسلامی کنگان ، توسعه ی ناپایدار و پرنوسان</a></font></div>
+            <div class=div58><font class=text7>شنبه 6 شهریور 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+
+
+
+
+<font size="4"><br>&nbsp;شورا ی اسلامی کنگان ، توسعه ی ناپایدار و پرنوسان<br><br>&nbsp;درک مشکلات وچاره جویی معضلات به محدوده چگونگی اندیشه و رفتار ما برمی گردد و کیفیت راه حل نمایی وعاقبت اندیشی در برداشتن موانع به اراده ما بستگی دارد . <br>&nbsp;با همین باور&nbsp; افرادی که که هزینه&nbsp; و چالش فکرکردن را بجان می خرند و ثنا گوی موج و موج سواری گرایش های فصلی نیستند و به عبارت دیگر انهای که دچار محدود اندیشی وگرفتار گفتارهای" فریز "شده یا انجماد واکنش نشده اند در جامعه ی شهری ما کم نیستند. و همین جمع&nbsp; بصورتی واضح وگسترده به وقایع اجتماعی وفرهنگی روزمره ی شهر نگاهی عمیق دارند و از زوایای گوناگون به عنوانی که مطرح شده می پردازند.<br><br>آنها موقعیت ها و فرصت های موفقیت آمیز جامعه خویش را موفقیت خود می دانند </font><font size="4"><font size="4">و یا عکس آن هرگاه اتفاقی می افتند </font> </font><font size="4"><font size="4">مشکلات و معضلاتی که حادث می شود یا جریانی که به هردلیل ممکن است به نتایج معکوسی ختم شود</font>، در ازای آن از خود دلخور می شوند و خوش را سرزنش می کنند و البته در هر مجموعه ی در گوشه وکنار این شهر امکان وجودش هست و سراغ ان را میتوان گرفت این دسته هستند که&nbsp; ارتباط&nbsp; علت و معلولی اتفاقات&nbsp; به قضایای مختلف&nbsp; و تاثیرات احتمالی آن&nbsp; را با تاملی هرچند کوتاه مورد اهتمام قرار می دهند .تا&nbsp; ریشه نما ومیوه نمای ماجرا ی مهمی را مورد تجزیه وتحلیل قرار دهند و با استدلالی تجربی وعلمی برای دیگران&nbsp; ترکیب آشکار وضعیت جدید را به وضوح بیان کنند. <br>زیرا که مسئولیت اجتماعی در درک واقعیت های فوری و جیاتی&nbsp; و انگیزه های&nbsp; اخلاقی محرک انان محسوب&nbsp; می شود تا به بازبینی و بازگوئی&nbsp; ماجرائی تلخ یا شیرین اقدام کنند....<br>برهمین پایه هرقدر عناصر گریبانگیر ماجرا&nbsp; بیشتر و عمیق تر کالبد شکافی شوند موضوعاتی مناسب تر و زمینه های نو&nbsp; برای انتقال موثر و انعکاسی سودمند در دسترس مخاطبین خویش قرار می دهند.<br>&nbsp;به مفهومی عام تر&nbsp; یک تعهد همچنان در دو روح مطالبه گری خواسته های پیدا وپنهان عامه ی مردم نهفته است روحی که از جایگاه حقوقی به مسئولیت خود عمل می کند و دیدگاهی که از موقعیت حقیقی با توجه به اگاهی ها و تعهد ضمیر به پیگیری امور می پردازد<br>&nbsp;و اما پس از این مقدمه چه باید گفت ؟ <br>بررسی عملکرد شورای اسلامی شهرکنگان درجای خود&nbsp; فصلی مفصل و مجزا می طلبد اما در اینجا با طرح یکی دو موضوع&nbsp; برجسته ی این روزها ی شهر ، برشی انتزاعی&nbsp; بر&nbsp; رویه&nbsp; ی&nbsp; جاری و محیطی&nbsp; بر براین نهاد مردمی&nbsp; وفرهنگی شهری&nbsp; بسنده می کنم :<br>موضوع اول اینکه هنوز تکلیف&nbsp; تعاونی مرز نشینان&nbsp; کنگان روشن نیست !&nbsp; که&nbsp; عملکرد فرضاً مطلوبی در آن موجب&nbsp; شود فردی موفق قلمداد شده و&nbsp; ازآن مجموعه&nbsp;&nbsp; بر صندلی&nbsp; شهرداری تکیه بزند آیا با صرف عضویت در شورا و در اختیار داشتن مسئولیت کمیسون عمران وساخت ساز&nbsp; شهری، می توان&nbsp; خود را قانع کرد که این رویه پاسخگوی مسائل&nbsp; شهری&nbsp; با این همه نیازمندی و ضرورتهای بجا مانده&nbsp; که عمیقاً از دوره های قبل نظارتی این بخش&nbsp; و مجموعه ی شورا تابحال خود نمائی می کند، علتی منطقی باشد ؟<br>موضوع دوم :<br>قاعدتاً درمیان اعضای شورا نگاه اول به انجام احسن مسئولیت و دنبالکرد خواست مردم متمرکز و نه چشمداشت به چینش آراء و نحوه ی پرکردن "سبد انتخاباتی"&nbsp; از آرائی که به هر طریق ممکن می توان بدست آورد دوخته شده است&nbsp; برهمین اساس چگونگی&nbsp; انتخاب شهردار و نظارت بر عملکر د وی و دستگاه متبوع نیازمند&nbsp; تابعی بنام عدم معامله و وابسته نشدن به جو مصنوعی&nbsp; یا فضا سازی شخصی و دور شدن از&nbsp; از شائبه ی"من به&nbsp; تو رای می دهم تو هم رای من را از محله ات بگیر" می طلبد و براین دیدگاه متمرکز&nbsp; می باشد ... و سئوال و جواب و خواست و خواسته شهروندان در لابلای " رای قرضی "گم شده و ماندن در قالب سوار نظامی که برخی شان پیرامون&nbsp; قلعه ی شورا سیاهی نشانگر انبوهی معطل مانده&nbsp; و تداعی کننده&nbsp; حکایت خورشید ، فرشید، مهشید ، حمشید که پایانش "خمشید" است نباشد! <br>همه چیز&nbsp; به دور باطل و تسلسلی عاطل&nbsp; ختم می شود که دست آخر هزینه ی کار کردن را افزایش داده و با تراکم خرابی برویرانه ، رسیدگی به امور وخواست مردم در این پروسه به موضوعی&nbsp; دست چندم تبدیل می شود.&nbsp; دراینجا این سئوال مطرح می شود که استقلال اعضای شورا&nbsp; بعنوان یک مجموعه و یا نهایتاً بعنوان&nbsp; منتخبی از میان منتخبان شهر چقدر حفظ شده است؟ <br>نمی توان دقیقاً حدس زد که در تشریح مواضع نسبت صف آرائی، آرایش آراء دراتخاذ تصمیمات مصوب در مجموع کل نشست های مهم شورای اسلامی شهر کنگان چند؟ دربرابرچند بوده است؟ ولی تننوع برخی برداشت ها حاکی از این است فضای حاکم بر شورا&nbsp; متاثر از جوی یکطرفه ویا حداقل پیروی اکثریت از اقلیت است ؟ بویژه اینکه قالب مواضع متخذه درمقابل دو جریان رایج فعلی و خیمه زده درشهر یعنی استحاله ی فرهنگی&nbsp; و توسعه ی ناپایدار وپرنوسان شهری چندان محکم و&nbsp; جدی نبوده که از روند برخی موضع های&nbsp; انفعالی و سکوت معنی دار خود را کما بیش نشان می دهد .<br>با چنین شرایطی چه باید کرد؟<br><br>&nbsp;وقتی نظام عادت و پذیرنده بودن بر جامعه ی سایه انداخت باید منتظر هر اتفاق ناخوشایندی بود و اگر اتفاقی از این دست نیفتاده، بحکم تصادف بوده و نه پیش بینی و پیشگیری...<br>و پدیده عادی شدن چیز نیست جز تکرار اموری که نه رشدی بدست می دهد و نه دستاوردی بنام "توسعه "&nbsp; و "پیشرفت" دارد.<br>و برای عبور از این وضعیت احتمالی در عرصه ی شورای شهر راهی نمی ماند جز اینکه همه باهم فرصت انتخاب رابا اعتمادی فزاینده، برای جوانانی خوشفکر و خلاق برگزیده&nbsp; از تمام محلات در کنار با تجربه های خوشنام که به سلامت فکر معروفند و به دلسوزی مشهور&nbsp; برای احیای شورایی که پویندگی وبالندگی ارمغان آن است فراهم آوریم . <br>&nbsp; <br>&nbsp;<br><br>
+
+
+</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../3.html" class=text4>تحلیل مقاله</a>،&nbsp;<a href="../../2.html" class=text4>مقاله</a>،&nbsp;<a href="../../5.html" class=text4>پیشنهاد برنامه شهرستان كنگان</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                <a href="../../../tag/نجوای&#32;کنگان/&#32;نجوا&#32;کنگان/شورای&#32;اسلامی&#32;شهر&#32;کنگان/توسعه&#32;&#32;ی&#32;فرهنگی&#32;/&#32;مقابله&#32;با&#32;استحاله.html" class=text4>نجوای کنگان/ نجوا کنگان/شورای اسلامی شهر کنگان/توسعه  ی فرهنگی / مقابله با استحاله</a>،                 <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../8382.html#commentlist">نظرات (<script>setCommentCnt(8382)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('8382','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../7697.html">                            سخنی با آنانکه دستی در انتخاب شهردار کنگان دارند </a></font></div>
+            <div class=div58><font class=text7>یکشنبه 12 اردیبهشت 1395 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+<p><font size="4">&nbsp;سخنی با آنانکه دستی در انتخاب شهردار دارند <br></font></p><p><br></p><div class="b"><div class="m1"><p><b>نه هر که طرف کله کج نهاد و تند نشست</b></p></div><div class="m2"><p><b>کلاه داری و آیین سروری داند</b></p></div></div><p><font size="4">&nbsp; </font><font size="4"><br></font></p><div style="" dir="ltr" class="irc_mimg irc_hic iEnD5yJLAkNw-lvVgf-rIiHk"><a data-cthref="/url?sa=i&amp;rct=j&amp;q=&amp;esrc=s&amp;source=images&amp;cd=&amp;ved=0ahUKEwicya2MiLnMAhXBPRQKHX7aDtkQjRwIBw&amp;url=http%3A%2F%2Fkangannews.ir%2F&amp;psig=AFQjCNEdAJCKWvTlfxCduws7Plyu9jeVTA&amp;ust=1462198505446922" data-ved="0ahUKEwicya2MiLnMAhXBPRQKHX7aDtkQjRwIBw" href="https://www.google.com/url?sa=i&amp;rct=j&amp;q=&amp;esrc=s&amp;source=images&amp;cd=&amp;ved=0ahUKEwicya2MiLnMAhXBPRQKHX7aDtkQjRwIBw&amp;url=http%3A%2F%2Fkangannews.ir%2F&amp;psig=AFQjCNEdAJCKWvTlfxCduws7Plyu9jeVTA&amp;ust=1462198505446922" tabindex="0" target="_blank" class="irc_mil i3597 iEnD5yJLAkNw-zixyDjKkw5M" data-noload=""><img src="http://kangannews.ir/wp-content/uploads/kangan7.jpg" class="irc_mi iEnD5yJLAkNw-pQOPx8XEepE" alt="" style="margin-top: 95px;" height="323" width="666"></a></div><p><br><font size="4"></font></p><p><font size="4">&nbsp; مدتی است که شورای اسلامی شهر کنگان در صدد انتخاب شهرداری در جد وتراز مردم و شهر کنگان است طبیعی است&nbsp; هر دست اندر کاری از ظن خود "یاری" را برمی گزیند و و تعداد معدودی نیز&nbsp; خودرا کاندید شایسته این منصب می دانند&nbsp; از منظر قانون&nbsp; وشیوه نامه های انتخاب شهردار، شرایط و صلاحیت ها با چهارچوبی &nbsp; تعریف شده&nbsp; در قوانین مرتبط و&nbsp; صلاحدید شورای شهر، قاعدتاً&nbsp; دوگروه مذکور خود را ذیحق می دانند اما فراتر از این&nbsp; فرایند&nbsp; شهرداری کنگان سخت به فردی نیاز مند است که فارغ از دستجات&nbsp; صنفی و گرایش های سیاسی رایج و وابستگی های محله ی به رتق وفتق امور شهری وفرهنگی مرتبط بپردازد که در خور نام کنگان&nbsp; وکنگانیان باشد.&nbsp; با توسعه ی&nbsp; ابعادجغرافیای شهری وافزایش&nbsp; چشمگیر&nbsp; جمعیت و شتاب گیری مطالبات نو به نو&nbsp; اهالی ،&nbsp; گسترش خدمات&nbsp; وسرویس دهی&nbsp; بصورتی فزاینده مسئولیتی بیش از گذشته را متوجه شورای اسلامی شهر و دستگاه شهرداری وشخص شهردار می نماید بهتر است&nbsp; مسئولیت&nbsp; بزرگ ، مشكلات ومعضلات&nbsp; و چشم انداز حداقل چندساله شهر دیده و فردی انتخاب کنیم که از عهده&nbsp; اداره ی این قضیه سترگ با حداقل حواشی برآید . <br></font></p><p><font size="4">مطمئناً&nbsp; یکی از موضوعات اصلی&nbsp; مورد اهتمام دراین مسیر انتخابی&nbsp; فردی فهیم ، باسواد و مرتبط با سیستم شهرداری است که بتواند برای تامین&nbsp; نواقص بودجه&nbsp; و نکات مبهم در سوء اداره&nbsp; خدمات مورد نظر شهری&nbsp; وعدم توزیع عادلانه توجه برنامه ها وپروژه های شهرداری در سرویس دهی دهی همه جانبه&nbsp; توانمندی لازم&nbsp; را داشته باشد&nbsp; ودر طراحی مبلمان شهری و زیبا سازی ابتکاری خلاقانه داشته باشد .وجود یک شهردار در گوشه گوشه ی این شهر حس شود....<br></font></p><font size="4">
+</font><p><font size="4">اکنون برهرکس که می خواهد&nbsp; برروی کرسی شهرداری کنگان ببیند&nbsp;&nbsp; لازم است که به این موضوع ایمان داشته&nbsp; باشد که واقعاً برای پویا کردن و چابک کردن شهرداری این شهر برنامه داشته و&nbsp; پیشاپیش از زد وبند های احتمالی اعلام بیزاری بجوید و بداند که اگر می خواهد کار کند&nbsp; راهی شاق و تکلیفی عظیم بر دوش خود خواهد دید&nbsp; شهرداری کنگان&nbsp;&nbsp; اکنون مجبوراست&nbsp; خدمات اجتماعی ف فرهنگی و حتی اقتصادی&nbsp;
+ وزیست محیطی&nbsp; وگردشگری و&nbsp; بسیاری از از امور ذیربط فراتر از سنوات گذشته بپردازد وبرهمین پایه چقدر دراین برهه&nbsp; نیاز مندیم ومشتاق ، که شهردار جدید کنگان&nbsp; از این&nbsp; صفات برخوردار باشد:</font></p><font size="4">
+</font><p><font size="4">1: اینکه از ویژ گیهای مدیریتی تراز&nbsp; اول برخورداربوده و قدرت تام در اداره&nbsp; شهرداری داشته و ازدانش مدیریتی کاربردی دراین حوزه برخوردار باشد<br></font></p><font size="4">
+</font><p><font size="4">2 : در عرصه ی کار اداری وفعالیت های احتماعی شخصی خوش نام بوده و در حوزه مرتبط از تجربه و اندیشه ی کارا ی لازم برخوردار باشد<br></font></p><font size="4">
+</font><p><font size="4">3:&nbsp; داشتن آگاهی وسیع وشناخت&nbsp; ازقوانین و مقررات مرتبط به اضافه ی شرایط حاکم &nbsp; فرهنگی&nbsp; واقتصادی&nbsp; 
+وسیاسی واجتماعی از خصوصیات ضروروی، وبمفهومی دیگر از اطلاعات روزآمد همه جانبه نسبی برخوردارباشد</font></p><font size="4">
+</font><p><font size="4">4 : از سیاست پشت درهای بسته دوری جوئیده&nbsp; مشاركت همگان از کارمندان وکارکنان وشهروندان را بصورت میدانی نه دفتری&nbsp; را جلب وجذب نماید واز مشاوران ومعاونین کاربلد کمک گیرد <br></font></p><font size="4">
+</font><p><font size="4">5:&nbsp; از توانائی کافی برای آینده نگری و طراحی پروژه بخصوص از ناحیه مالی&nbsp; واداری و فنی وخدمت رسانی وسرویس دهی شهر برخوردار باشد<br></font></p><font size="4">
+</font><p><font size="4">6. توانمندی در ایجاد ارتباط با مسئولین در سطوح مختلف و ایجاد تعامل با شرکت های&nbsp; انرژی اقماری کنگان داشته باشد&nbsp;<br></font></p><p><font size="4"> از همین رو در این روز ها که افکار زیاد متوجه ی انتخاب شهردار مناسب برای این شهر است . چه خوب است که به "دکتر اکبر طهماسبی" به عنوان گزینه ی بومی و واجد الشرایط توجه دقیق و صحیحی داشته باشیم . مطمئیم ضرر نخواهیم کرد .&nbsp; <br></font></p><p><font size="4">&nbsp; ومی توان با اعتماد کامل واعتقاد راسخ گفت: انتخاب این گزینه&nbsp; بومی در سمت&nbsp; شهرداری بنفع شهر وشهروندان کنگانی خواهد بود.&nbsp; <br></font></p><p><font size="4"><br></font></p><p><br></p><div class="b"><div class="m1"><p><font size="3"><b>هزار نکته باریکتر ز مو این جاست</b></font></p></div><div class="m2"><p><font size="3"><b>نه هر که سر بتراشد قلندری داند</b></font></p></div></div><p><font size="4">عبدالمجید اورا<br></font></p><font size="4">
+
+
+</font>
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../4.html" class=text4>خبر</a>،&nbsp;<a href="../../5.html" class=text4>پیشنهاد برنامه شهرستان كنگان</a>،&nbsp;<a href="../../1.html" class=text4>داستان های قدیمی كنگون</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                                <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../7697.html#commentlist">نظرات (<script>setCommentCnt(7697)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('7697','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../6775.html">                           بلوغ سیاسی در مقابل بلوف انتخاباتی؟</a></font></div>
+            <div class=div58><font class=text7>دوشنبه 30 آذر 1394 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; بلوغ سیاسی در مقابل بلوف انتخاباتی؟<br>&nbsp;در منابع غنی آموزه های دینی عهدنامه ی مالک اشتر آمده است&nbsp; که امام علی (ع) علیه السلام درواقع&nbsp; اوج&nbsp; بلوغ زمامداری&nbsp; و حکمرانی امور مردم ومملکت&nbsp; را درقالب فرمانی&nbsp; به مالک اشتر&nbsp; به همگان یادآوری می فرمایند: ای مالک آگاه باش... خواص و نزدیکان کسانی هستند که به هنگام فراخی و آسایش بر دوش والی باری گران‌اند و چون حادثه‌ای پیش آید کمتر از هر کس به یاریش برخیزند و خوش ندارند که به انصاف درباره آنان قضاوت شود. اینان همه چیز را به اصرار از والی می‌طلبند و اگر عطایی یابند، کمتر از همه سپاس می‌گویند و اگر به آنان ندهند، دیرتر از دیگران پوزش می‌پذیرند. در برابر سختیهای روزگار، شکیبائیشان بس اندک است. اما ستون دین و انبوهی هیبت مسلمانان و ساز و برگ در برابر دشمنان، عامه مردم هستند، ... پس، باید توجه تو به آنان بیشتر و میل تو به ایشان افزونتر...&nbsp; ودر صلاح امور شان و آبادانی&nbsp; "شهرشان" کوشاترباش....<br>پس باید آنگونه عمل کنی، که&nbsp; پس&nbsp; از پایان زمامداری ات، قضاوت&nbsp; و ارزیابی مردم&nbsp; ازتو آنچنان باشد که تو در روز بازپسین از خدای بزرگ انتظار داری با تو روبرو شود...<br>&nbsp;&nbsp; یکی از مزایای عرصه ی&nbsp; انتخابات اینست که برخی از امور پیچیده،مسکوت مانده و منجمد شده معنوی و مادی تا قبل&nbsp; کوران انتخابا ت آزاد و رها شده وبه میدان می آیند. و باب تفکر وصرف زمان انرژی و تحرک میدانی&nbsp; آشکارتر از پیش می شود .&nbsp; برای کسی که واجد شرایط وصلاحیت لازم با توانمندی عمومی است&nbsp; حضور دراین عرصه تنها یک حق نیست بلکه یک مسئولیت است و چه بسیار پیش می آید که نقد عملکرد برخی نمایندگان&nbsp; در دوره هائی با عناوینی چون ناکارآمدی، کارکرد ضعیف وکارنامه ی بانمره ی پائین و روش های پیگیری ناموفق ویا .... در&nbsp; میان لایه های مختلفی از جامعه مطرح شده است و در مقابل&nbsp;&nbsp; از نمایند گانی دیگر، برخودار&nbsp; از سوادفرهنگ سیاسی&nbsp; بادیدگاهی فرا زمانی وفهرست برنامه های متمایز عملی، روابط عمومی قوی ، قدرت بالای گمانه زنی و چانه زنی وکارنامه ی درخشان یاد شده است.که نشان رشد وبلوغ سیاسی&nbsp; وقدرت ارزیابی عامه است.<br>&nbsp;وقتی از بلوغ سیاسی حرف می زنیم یعنی ضمن اینکه ما می توانیم یک منتخت اصلح وبرتر را برگزنیم&nbsp; منتخبی که می تواند با چالش ها ی&nbsp; اصلی این حوزه انتخابیه روبروشود&nbsp; و با برنامه های خود مشکلات را مرتفع نماید&nbsp; همین منظور ماست.<br>بنظر می رسد حداقل 7 چالش اصلی از حوزه جنوبی خواسته یا ناخواسته در دوره چهارساله نمایندگی مجلس دهم قراردارد: 1- چگونگی سهم و بهربرداری مردم حوزه انتخابیه از منافع&nbsp; سرریز&nbsp; و فرصت ها ی موجود درحوزه انرژی پارس جنونی،پالایشگاه ولیعصر جم&nbsp; واحتمالاً پارس شمالی در ابعاد مختلف اقتصادی،اجتماعی وفرهنگی 2-&nbsp; ارتقاء زیر ساخت ها - خدمات و سرویس دهی تجارت (منطقه آزاد تجاری) وصیادی درپایانه های ساحلی وتاسیسات وموسسات خدماتی، رفاهی، فرهنگی&nbsp; متنوع مرتبط&nbsp; عمومی ودولتی 3-- ترسیم طرح جامع&nbsp; چشم انداز ده ساله توسعه منطقه با تکیه بر برنامه ششم توسعه&nbsp; کشور 4- حفاظت از ماهیت و فرهنگ بومی منطقه در چهارچوب سامانه ها و سازکار تعریف شده 5-چگونگی رفع مغضلات زیست محیطی و آلودگیها منابع در پیوست صنعتی شدن&nbsp; منطقه .... 6- مطالبه ی بخشی ازمدیریت منطقه ی حوزه انرژی&nbsp; و واگذاری به مدیران بومی7-تغییر نوع نگاه مرکز نشینان به ویژه در پایتخت به مطالبات مردم این منطقه...<br>نحوه ی مشارکت در انتخابات مجلس&nbsp; وانتخاب نماینده؛ منعکس کننده&nbsp; نوع مطالبه گری،سطح درک&nbsp; نخبگان وآحاد جامعه ما در بازیابی حقوق وخواسته های ماست .<br>&nbsp; ودرمورد بلوف&nbsp; وظاهرسازی&nbsp; پیش از "انتخاب" شاید این مثال تاریخی تاحدی کافی باشد که مثال برای تبیین موضوع است ونه قیاس: عبدالملک&nbsp; مروان، پنجمین خلیفه اموی (بنی امیه) . ... او را "حمامة المسجد" یعنی کبوتر مسجد می گفتند چو ن دائم در مسجد الحرام بسرمی برد و قران می خواند...&nbsp; می گویند: روزی که به این آیه&nbsp; از سوره کهف ( ( قال هذا فراق بینی وبینك سأنبئك بتأویل ما لم تستطع علیه صبرا ( 78 )( گفت : اکنون زمان جدایی میان من و توست و تو را از راز آن کارها که ، تحملشان را نداشتی آگاه می کنم ) :از قران کریم رسیده بود به محض رسیدن خبر انتخابش را به خلیفه گری&nbsp; دریافت همانجا قران را بست و از همان وقت همه ارزش وآرمانها واصول اسلامی را پایمال کرد .<br>ولی در وضعیت فعلی منطق حاضر ما معرف&nbsp; اهمیت توقعات و تكوین رشد سیاسی&nbsp; و میزان تعهد واصرار با انتخاب آگاهانه برای تحقق اهداف عامه است .<br>&nbsp;و این هوشمندی جمعی نخبگان است که می تواند" فضای غالباً تخریب و اکثریت خاموش " را به&nbsp; ترسیم مفهوم زیبای مشارکت سیاسی برای "سرنوشتی خود رقم زده" در منطقه&nbsp; آماده کند.که طبعاً در مطالعه ی دقیق وعلمی، نیازها ضرورت ها و اهداف منطقه نهفته است و نه رسیدن به یک کرسی چهارساله درمجلس با&nbsp; محض ادعا وطرح ظاهر سازی و شعارصرف.؟<br>&nbsp;<br><br><br>&nbsp; <br></font>                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../2.html" class=text4>مقاله</a>،&nbsp;<a href="../../5.html" class=text4>پیشنهاد برنامه شهرستان كنگان</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                                <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../6775.html#commentlist">نظرات (<script>setCommentCnt(6775)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('6775','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../6576.html">        دوماجرای تاریخی از کنگان قدیم</a></font></div>
+            <div class=div58><font class=text7>سه شنبه 19 آبان 1394 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="1" face="Mihan-Koodak">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>
+
+
+
+دوماجرای تاریخی از کنگان قدیم</b><br></font><div dir="rtl" align="justify"><font size="1" face="Mihan-Koodak"><br><span style="font-size: 130%;"><strong>&nbsp;کتاب معاملات&nbsp; موسسه ی جغرافیای&nbsp; بمبئی&nbsp; (هند)<br>سال 1844م </strong></span><br></font></div><div style="" class="irc_mutc"><font size="1" face="Mihan-Koodak"><span class="irc_mutl i3597"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKsAAAEmCAMAAAAqb5CZAAAAllBMVEX////8/PwAAAD5+fnx8fL29vbi4uPr6+zt7e7d3d7l5eb09PW9vb7Y2Nno6OnIyMnPz9Cbm526uryAgIK0tLWsrK7GxseTk5WIiIpwcHKVlZempqienqBpaWuOjpE5NzlLSkxhYWNaWVp5eXxAP0EfHSA0MjRNTU8qKCtEQ0RrbG9UU1QtLC9aWl5+foFlY2QTERUjISOtRDGOAAAMnklEQVR4nO2dC3ujKBfHj1FRFAQV8IIxzaVNk7RJ5/t/ufdgdufZd2dmd/aZtjG7/OYZkyqaPwfkJhwBZgiJbq3A4/H8FPTWAjwej8dzE6QxTHHgmjE+7SAEN6mSILXALyybWnMid9uQKRpDVVUGA0vGqNvFQoBcZJAJvEBAg+DDtG5I19MtwLKBg3Y72tFt9YIH5xByC04xBA8uIvGR5OsCluTY8DME+zqGcF2k6wgCuyB5F6HyyMgP00ph2wPKqVvo2knro9vKcRWg9GRFUlfzZnt3TJ3QwBxDH0vQARwHgBGjOXS4u3wCDE8OSfyRNTVa1EncjGeXejJ6ltPHdsvc7sXKOJV8FWN8lpjmLktcplOWPcAT6q0wdiZf1xb3dYsN+UitU6KPZbBwWa1nkxCZhSs0V1YUPRoz6u0j2r7f4FcXk0vvTlmjzjUGVk8uP4dvG3carfcfqPVhSvpzCwsrgFiQCzRhhfcO/jbHYyUAI1BfUPkuAZZg4M0UvRMe4Q+ot0K7Ynj8akoIzh8nlfUlmiwry2SoA3Luc9aqsGhHlIW7K6sJyLYKba1dLnZhQbUjHtPbhjt1JR4oagzvAmg7zrllGfz23+PxeDwej8fj8Xg8nhkgVCxMhB1tbSQXQvNbC/oxpKvUtk0AWM3HppU7cWtFPyZajnTthrSih6DTZ+YGhmZLnkLsPoMYwgD/hbcWNHM+cPz5U4hvLcDj8Xg8Hs/dcOfNHs+vktxagOen70LXkZu+hD9/zj+5/nuSnHdySyHs9ZDA8GDALA2tt2XptDdudKI989F1/SOtqMQ/req4m4OhMIAajABS9pV2M4gIA+B9yWzEh57ZoZRKY6iqohkerdwlmEqvMVUSL0kqN5UkNCQNhZTUcC4pcEK5jLMsDfM/Z3q1AX2ETkJxCOH1AttdAP0S6h470o+uy991wFBzsItBW4CVATnALoVqhFEDf8VL7MGuMeToNvIAeucm6ESLAsxbCCcKSwlgXtzBBbmmx5iaEcyYaw1JTVkHasGy4YvUD/wkF9Wa6YWI9uxPWu1KXGSC1w0OLLArqlcx2EvYYThRd87yC4YmAfPkAgMcGMsS9gW7iItkwcHNs0BhwwWtNj6h0dgJ9CpQF0gfc5A7qJ6d/QD6BUY4W1w7lsFBBCZ4oRA/Z92ACRgWX1I31YQJloVvWaRhP+TfzIuyh1yPZIHm3vRQLUfxkoN+MC1qtfzRpVjz7GyhV2iH2sDreCBgd7hnwRYZtyNDOw5HzDKSYxYCtlNlhldQw2MM8hlGNwungEyuMVZ88Vs214svFcUfDXd2hxEhYfaSgnzq3RSZ6I3g3SO/6G8yrF2hhaKDxESWYKoDeYxAnyB5iyJFNy68OcCUfGjAtbMrJQPFP9JF9EhBvOEPX2AnA2jUFtOhWk5XXUL6BbWurtGyYO24cloxndBcMYvsE3/LIFzpHWZpkmaYJvKBlCFFrVOeflZ/lsrrU4XZjiyF7oF2sq/eZD6uRD+mrYBxVUBcPk3nrmXcLCF/HgJ7gi0LRwXlAPoQBOUBNp2RbnIRgX6DJg7GSyDfEmDPYYofOotHKPCgi3CNGSdGY5fRkQHZhU2NRgiylwjEAZKSQ75wtyI8/Tm3fiWU3M0STCJOSMopT6CQPJJcAhH8mnGYxhzEhJCGorEHt7NqON5qilGuU6WiSjGpXQHBBst0qXnTVEDaUkI5Rqrt6bg1usO4xHawBuLGtniftIPlcbtXcrtm5SGPhocWiwd1OP5Q7GczlerXOy363khdDKlfHePxeDwej8czT+7pQdw9afV4PJ9Ldh7FKKPREE3UzJ8URI+9ODUNP8rLqb+1mL8hW6dVV+uykW1b31rM3xAEEMchREGQB/Meg7j3KTwej8fjuR33VIXck1aPx3NjslsL8Hg+Fjc3BfjofLtU03wPtf2+s56YFW6rXJe2cL6IgH6k95nvYUvcbOU6hWDJLiigp9+fkBBOq6I25giQDnrrHKmsP1lsOdnVTWuBWKNdh2X7m6OW4ngmoLqvVt64b60unXGX3GltPnmKYem8CS2LjoIs4RG1Ctldj8RahdGRbL9qdSvjugz/TnJ5Qq1l/cnuZ1qnNXP5NWobTOVie/59tZ5zjDPUv9s1OLhpaGu+xnxjK7SuYmcMP352pv0ZcurmHsXGPV4w04I+5rbSP264NXfUZYg+zsma5w7wC1Y9H84dlYee+XIHT55cuzbgbmb0/xWsc3MNEU8eRN23KMc64P/sKv/eyp+bDjyD2C0KgW+9K4i5aQ1Tl0uDEKJvHuLqGeZed0cFkOBWUvmHTPrNUogZEE32c8MJWUL/YN3iRno8Hs+/EaUsouxgrVZaM8UYq/A/E8JIaYwQkks+QW//Op0wjPMwj6IoRRJHkWUkww2CCqWkhKNewdgcR7E8no9jGhO/pyEu7yfA4/kx4T3dIDPs8Xluzwwf0PHZrNH/CWZoP4/n380dDL5/Jc5vreC/yl+NhkgTVYIyYnjAecGl4VIWHM8oSM4DGkEUz8Z/8nJNLwe5HtavfJBdpbd2OdrNawhtbV8OdBzZcs+huXS1Oo61AtKV9lh19rDUg6h5bzSANWTkmgvFWckVCLBZosEIBWBSTpy3LFlcLfBL1Cd+LFUN604OomxgCa0W7RhBuYWHpeadfNgXAG2o2latc4h2zJq2LJSQQ1ec1asEabVdqVJbZpS5mGgBHcAr0Efpps4d9bbsZdUf9Xr5a83vQHIqBZG54BmXKYkNGCMZ/grjsVaRQpuoDIIhr1hprQZ6HptGtmnJSCka0VoDSdur13ZU7Z7ZoVJlKTqhz2XgfFRtzVi242Ao7q3PIv1Fy/46YRBGeeAeCaUhxCSKkizNSEBTCEREc5FFJhSSM0Lm/EI2j8fj8Xg8n0XoezEej8fzd8xl2MDjuUsSTikllE7bjBRFVhRFkkR5nqZ5GLpxuWAuNxlXFdNKW621HZS+findbK2y6YehHHrbjsPgdgzl/TzXCsJ5jLDPJZl/hnlY7N/DPdnznrR6PB6PJ7inQa1/UMW8W23kqzWPx+P5TyB+m6TCp253VkB48wVlP6TTKzJ9dM7PkFrExy3WVsWqPU+V1jjNy+1ezXoGdVg7PqAKcQLq3gdHn/XJuYCCTry6Bkj6cl38vqvmMO1my51fL7lyL/rDnGD39aR1qbfOomrZTqG62r077nYqJ9JDu3YZti0nV2S2b2vnWT16EPsE5bXkYcrHk7+t2UzTTidNRRoWKeYJIo2bxEY1VS4KRdMEkM7dlf1X3ml0jpbvc52/hNzTUOL9876lbuneWapBKjCDFZAohWW/4G62risAnNcFEgfXezycXF5MM8R/UsS7Om3I3WtD6Qs9KCAXcwZYiT1ArYCv9Ssef8RCvn8Wy+l1vudDuLdgsdQqRwPxuY2AYf1VDEMMpk7LqWIgViUQa0PcrGWB28iVId99Z+Q/xNRL95LdQysg3bRYF+1bLN57BoNy61SZK+wxzPWxRXUaTgQExm6JxS3Z9zlQrAE2qRkADlt71fOcrwBe5QvKPpkR4vXIwbzDCy+iEzkJUMPYVsCx4gxgJXcp1BVePbUQrOljCDq7TJUV6GHjftdCrvsaCnbiwDEu+0D2zj3o4XrNZ4kxuzhx4arFLNPtCVZ87S9rhTyIcyiioCCQUEohMYUMwWB+FSoEaqUWUMp88nESNEqeNaY/xGXPgbZ9CroLoBq3CVSb8HSN/gumTvCQPWVA1nILUTNoqExX5LMo1hJUkZLf32ZK8IZKTcExg0ghIZQMI11JkN47yh0REnotP4MkuL6KNoQwj6eiNZzZ0BBvt9eeSqsU7LsM5BLIa40FGcNmYW2mY2HbpgaLj4GnoxKxtolUDCr12Yt4ywoq1+5fDyWsO+OWTGDnRabrJZjdPrtWR22dUCx+txm0O5GrPnPvwtbHz/aFRIvJIRNkMgfJeVxJnlSCc6VSrRsaumosbzhWzmNcymi0BFQDbK1hsO0tPDf9uJ0fie/udg+6w7888cO4J1cQ/5QZDBwUy3a77S6Xerutkda2TdP3VlulGWNGcMFJNrkbu31ZFtAMGwpMKq0rprWybiKJsm3dtG1bd+PYjE2/nEVd7/lgwszlR3JtHU73UXr7DPoD6AprTzIq10XoXcs5XM22kRfu3fLO3QrrAfLqhhzUy+3X5P2AHPs22NdyyzP1CTsoUf3MIX5Hue9YPiclcW72rVOnXf8rbSS299/vBzwej2cOUD2Dlu1PkleDbzF6PJ9MPtvm+rfckVSP52MZ2u+PEc6RpL+f1UQzZba9/+/gG3L/Ev4HbtbMe9NBbOUAAAAASUVORK5CYII=" style="margin-top: 0px;" class="irc_mut" height="393" width="229"></span></font></div><font size="1" face="Mihan-Koodak"><br><br></font><div dir="rtl" align="justify"><font size="1" face="Mihan-Koodak">&nbsp;</font></div><font size="1" face="Mihan-Koodak"><br></font><div dir="rtl" align="justify"><font size="1" face="Mihan-Koodak"><span style="font-size: 130%;"><strong>(1) بحرین:</strong><br>(احمد محمد بن خلیفة العتبی)&nbsp; سابقاً در القرین 
+( كویت)ساکن بوده و از قبیله العتوب&nbsp; بشمار می آمده است ،&nbsp; او بکار 
+تجارت با افرادی درساحل&nbsp; ایران&nbsp; مشغول بوده است ، درآغاز فعالیت&nbsp; با مردی از اهالی کنگان "بندر كنگون" درگیر شده اورا بقتل می رساند <span style="font-size: 100%;">(حاكم بندر كنگون در آن دوره شیخ خاتم بن جباره نصوری بوده است)</span>،
+ وپس از این ماجرا&nbsp;&nbsp; قاتل متوارى&nbsp; شده و به&nbsp; "القرین" کویت برمی گردد، ولی اهالی بندر كنگون ( کنگان) از محل اختفای قاتل آگاه شده ، وبا ارسال نامه ی به&nbsp; اهالی القرین&nbsp; <span style="font-size: 100%;">که (حاكم&nbsp; كویت در آن&nbsp; زمان؛ مبارك اول بن صباح بن جابر العتبی بوده )</span> &nbsp; از آنها می خواهند&nbsp; جانی را تسلیم کنند، و&nbsp; تهدید می کنند</span><span style="font-size: 130%;"><span style="font-size: 130%;">در<b> "غیر اینصورت"</b></span> ودر حالت عدم تسلیم&nbsp; قاتل مذکور؛ کنگانی ها&nbsp;&nbsp; هرلنج وکشتی مربوط به آن منطقه را به همراه ملوانان به آتش کشیده&nbsp; ونابودمی کنند، و در نتیجه این تهدیدات&nbsp; سكان "القرین"</span><span style="font-size: 130%;"><span style="font-size: 130%;">کویت</span> به هراس افتاده، و از پدر احمد (<span style="font-size: 100%;">شیخ محمد بن خلیفه العتبی</span>)&nbsp;
+ درخواست کردند تا برای فرزندش جائی دیگر پیدا کند&nbsp; و به جائی دیگر برود،&nbsp; و اصرار کردندبرای درامان ماندن از انتقام جوئی اهالی کنگان؛ او آنجا را ترک کند&nbsp; ، لذا&nbsp; او&nbsp; مجبور به ترك القرین (كویت)&nbsp; شد و به جائی دیگر&nbsp; یعنی قطر 
+(gultah) رفت، ...<br></span><span style="font-size: 130%;"><strong>(2)&nbsp; ضرب سکه در کنگان (یک قرش) <br>این قضیه هم برای خود، جریانی دامنه دار و مربوط به دوره شیخ مذکور در کنگان بوده است، و جهت روشن شدن اصل مطلب&nbsp; نیاز به مطالعه وتحقیقات گسترده ومستندی دارد؟<br></strong></span></font><div style="" class="irc_mutc"><div style="" class="irc_mutc"><font size="1" face="Mihan-Koodak"><span class="irc_mutl i3597"><img src="http://8pic.ir/images/zd55mb001dj8af7zdeag.jpg" alt="" align="bottom" border="0" height="378" hspace="0" vspace="0" width="342"></span></font></div></div></div><span style="font-size: 130%;"><font size="1" face="Mihan-Koodak"><br></font><div align="justify"><font size="1" face="Mihan-Koodak">&nbsp;مطالب تکمیلی متعاقباً در همین وبلاگ درج خواهد شد.</font><font size="1" face="Mihan-Koodak"><br></font><h3 class="post-title entry-title" itemprop="name"><font size="1" face="Mihan-Koodak">منبع :&nbsp; از یاداشت های مالكولم&nbsp; افسر انگلیسی&nbsp; سال&nbsp; 1800 میلادی</font></h3><p><br></p><div class="post-body entry-content" id="post-body-9039390615872386713" itemprop="description articleBody"><div align="justify">&nbsp;<span style="color: rgb(255, 0, 0); font-size: 130%;"></span></div></div></div></span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../1.html" class=text4>داستان های قدیمی كنگون</a>،&nbsp;<a href="../../5.html" class=text4>پیشنهاد برنامه شهرستان كنگان</a>،&nbsp;<a href="../../3.html" class=text4>تحلیل مقاله</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                                <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../6576.html#commentlist">نظرات (<script>setCommentCnt(6576)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('6576','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../4776.html">                                         بخش دوم  پرسش وپاسخ  دفاعی</a></font></div>
+            <div class=div58><font class=text7>شنبه 29 فروردین 1394 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+<br><br>درس ششم : پدافند غیرعامل<br><br>1-&nbsp;&nbsp;&nbsp; هر دفاعی با بهره گیری از سلاح و تجهیزات نظامی صورت می پذیرد ، دفاع عامل و هر نوع دفاعی که بدون استفاده از سلاح و تجهیزات نظامی انجام شود، دفاع یا پدافند غیر عامل نامیده میشود .(ص51 خط 3تا5)<br><br>&nbsp;<br><br>2-&nbsp;&nbsp;&nbsp; در جنگ هایی که نسل چهارم نام گرفته است ، توسعه فناوری های اطلاعات و ارتباطات الکترونیک ، جنگها را به سطح پیچیده تری از نبرد توسعه داده است .هدف اصلی از جنگ ها&nbsp; جا به جایی حکومت هاست. در جنگ های دوران جدید تسلط فیزیکی اهمیت زیادی ندارد، بلکه طالبان قدرت به دنبال آن هستند تا حکومت ها را به نحوی تغییر دهند که منافع خودشان خودشان تامین شود.(ص51 خط 9و10 و13تا15)<br><br>&nbsp;<br>&nbsp;&nbsp;&nbsp; <br><br>&nbsp;<br><br>&nbsp;<br>&nbsp;&nbsp;&nbsp; <br><br>&nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br><br>3-&nbsp;&nbsp;&nbsp; پدافند غیرعامل ما را با شیوه های دفاعی بدون استفاده از ابزار های نظامی آشنا میکند. در پدافند غیر عامل به حد اقل رساندن آسیب ها در سه حوزه تاسیسات، تجهیزات و نیروی انسانی مهم ترین هدف است.(ص52،خط2تا5)<br><br>&nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br><br>&nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br><br>4-&nbsp;&nbsp;&nbsp; مصادیق پدافند غیرعامل در سنت رسول گرامی اسلام (ص) : اقدامات پیامبر در هجرت از مکه به مدینه<br><br>فرستادن مسلمانان به مدینه قبل از رفتن شخص پیامبر<br><br>خوابیدن حضرت امام علی (ع) به جای پیامبر برای فریب دادن دشمنان<br><br>بر خلاف جهت مدینه که در شمال مکه قرار دارد ، به سمت جنوب شهر مکه حرکت کردند.<br><br>از بیراهه و راه های صعب العبور خود را به مدینه رساندند.<br><br>پیامبر گرامی اسلام برای جلوگیری از جنگ بین مسلمین و کفار و ادامه ی رسالت خود در هدایت مردم ، از روش هایی استفاده کردند که امروز جزء اصول پدافند غیر عامل محسوب میشود.<br><br>5-&nbsp;&nbsp;&nbsp; در آیه 60 از سوره انفال می فرمایند:(( هر چه در توان دارید آماده کنید، تا با آن خدا ودشمن خودتان را بترسانید.))<br><br>تفسیر این آیه :(پدافند غیرعامل در قرآن کریم)<br><br>-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; در ((واعدوا لهم ما استطعتم من قوه )) هر نوع امکانات نظامی و غیر نظامی را شامل میشود.<br><br>-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; افزایش توان روحی و معنوی نیروی انسانی یکی از مصادیق مهم ((قوه)) است.<br><br>-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; در ((ترهبون به عدوا...)) به این موضوع اشاره میکند که از این امکانات و توانمندی ها در جهت ترساندن دشمنان استفاده کنید.<br><br>6-&nbsp;&nbsp;&nbsp; یکی از مهم ترین عوامل بازدارندگی دشمن ، توان ایستادگی و مقاومت مردم یک کشور است.<br><br>7-&nbsp;&nbsp;&nbsp; درباره پدافند غیر عامل چه کارهایی می توان انجام داد؟(ص 54)<br><br>موارد زیر از جمله اقداماتی است که در کشور ما&nbsp; قابل اجرا هستند:<br><br>رعایت اصول و ضوابط پدافند غیر عامل از قبیل انتخاب مکان های ایمن ، پراکنده سازی ، مقاوم سازی و استحکامات،استتار ، اختفا، فریب دشمن و..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; دو یا چند منظوره کردن تاسیسات ، شبکه های ارتباطی و...برای بهره گیری پدافندی از آنها. برای نمونه میتوان از خطوط قطار زیر زمینی(مترو)، در شرایط اضطراری به عنوان پناهگاه هم استفاده کرد.<br><br>8-&nbsp;&nbsp;&nbsp; استفاده از انرژی الکترومغناطیسی با هدف تشخیص، بهره برداری و اختلال در طیف الکترومغناطیسی دشمن و جلو گیری از اقدامات مشابه آنها ، جنگ الکترونیک نامیده میشود.برای مثال ارسال ویروس استاکس نت در سیستم انرژی هسته ای که باعث اختلال کوتاه مدت در فعالیت مرکز شد یکی از نمونه های جنگ الکترونیک است.(ص55)<br><br>9-&nbsp;&nbsp;&nbsp; به مجموعه ای ازارتباطات که از طریق رایانه و وسایل مخابراتی و بدون در نظر گرفتن مکان جغرافیایی برقرار میشوند فضای سایبر گفته میشود. جنگ سایبری به معنای تهاجم عمومی به سیستم های فناوری اطلاعات یک کشور از طریق استفاده از روش های نفوذ به رایانه ها و همچنین محافظت از سیستم های فناوری خودی در برابر نفوذ بیگانگان است. (ص56)<br><br>10-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ویژگی های فضای سایبری:<br><br>بدون استفاده از ابزار جنگی به هدف می رسد.<br><br>قدرت غیر واقعی به بازیگران کوچک می دهد.<br><br>بدون وارد کردن آسیب های جسمی منافع تامین می شود.<br><br>مکان جغرافیایی طرف مقابل چندان روشن نیست.<br><br>11-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; وظیفه ما : (ص57)<br><br>وظیفه ما آن است که با استعانت از خداوند بزرگ و با استقامت و پایداری تلاش کنیم تا نمونه عینی این آیات قرآن کریم باشیم که می فرماید:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -کم من فئة قلیله غلبت فئة کثیره- آیه 249 سوره بقره ((چه بسا گروهی اندک که بر گروهی بسیار به اذن خدا پیروز شدند.))<br><br>ان تنصرو الله ینصرکم و یثبت اقدامکم-آیه7،سوره محمد (ص) برای تثبیت دین او تلاش کنیم ، قطعا خداوند کریم هم مارا یاری خواهد کرد.<br><br>درس هفتم: اسوه های صبر و مقاومت<br><br>1-آنچه که ما باید از زندگانی حضرت فاطمه(س) بیاموزیم نام ببرید. .(ص41،پاراگراف3)<br><br>آنچه که ما باید از زندگانی حضرت فاطمه(س) بدانیم، تقوا و پرهیزگاری، صبر و بردباری، فضایل اخلاقی، ایمان کامل به خدا و دیگر خصلت های عالی انسانی است که آن حضرت نمونه&nbsp; کامل همه&nbsp; این موارد است.<br><br>2-مشهورترین لقب حضرت فاطمه(س) چیست؟ معنای آن را بنویسید و بگویید چرا ایشان را به این لقب می نامیدند؟<br><br>مشهورترین لقب ایشان زهرا به معنای درخشنده و روشن می باشد، زیرا او چهره&nbsp; درخشان زن مسلمان، فروغ تابان معرفت و نمونه&nbsp; روشن خداپرستی و صبر و بردباری در راه خداست.<br><br>3-پیامبر گرامی اسلام، حضرت فاطمه(س) را چه خطاب می کردند؟ به فرموده ایشان چرا آن حضرت را فاطمه نامیدند؟<br><br>پیامبر گرامی اسلام، ایشان را ام ابیها به معنای مادر پدر خطاب می کردند. از پیامبر خدا نقل است:" او فاطمه نامیده شد، چون خود و شیعیان او از آتش دوزخ بریده اند".<br><br>4-بنابه فرموده پیامبر خاتم(ص):" کسی جز علی(ع) شایستگی همسری فاطمه(س) را نداشت".مهریه ایشان چقدر بود و چگونه تهیه شد؟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; زره حضرت علی(ع) که بنابر برخی روایات، در آن روزگار حدود 400 درهم ارزش داشت،به عنوان مهریه ی حضرت فاطمه(س) تعیین شد. زندگی مشترک زن و مرد اگر در مسیر بندگی خدا باشد عبادت محسوب می شود.<br><br>5- پیامبردربازگشت ازحجة الوداع به مردم چه فرمود؟(حدیث معروفی که دراین زمینه وجود دارد نام ببرید و محتوای آنرا بنویسید.) (ص42 پاراگراف6)<br><br>پیامبر خدا(ص) در بازگشت از حجة الوداع مردم را جمع کرد و به آن ها فرمود:" من دو چیز گرانبها را نزد شما می گذارم اگر این دو را از دست ندهید، هیچگاه گمراه نخواهید شد، این دو چیز کتاب خدا و اهل بیت من است".&nbsp; (حدیث ثقلین)<br><br>6-چند تن از زنان و دختران نمونه دوران جهاد و مقاومت میهنمان را نام ببرید.الگوی آنها چه کسی بوده است؟<br><br>زنان نمونه به نام هایی همچون مرضیه حدیدچی(دباغ)، سیده زهرا حسینی، شهیده مریم فرهانیان، شهیده نسرین افضل، آمنه وهاب زاده، مادران، خواهران دختران و همسران شهدا و جانبازان می توان اشاره کرد. دانش آموز شهید ناهید فاتحی کرجو معروف به سمیه کردستان.توسط نیرو های ضد انقلاب&nbsp; به عنوان جاسوس امام خمینی به شهادت رسید. آنها را می توان پیروان حقیقی حضرت فاطمه(س) معرفی کرد.<br><br>7-شهید مصطفی چمران از دانش آموزان ممتاز دبیرستان البرز بود و از پانزده سالگی در درس تفسیر قرآن مرحوم آیت ا...طالقانی و در درس فلسفه و منطق شهید مطهری شرکت می کرد. در سال 1336 با رتبه ممتاز از دانشگاه تهران در رشته مهندسی الکترونیک فارغ التحصیل شد. و با استفاد از بورس تحصیلی دانشجویان ممتاز به آمریکا اعزام شد. در آنجا انجمن اسلامی دانشجویان آمریکا را پایه گذاری کرد، به همین دلیل بورس تحصیلی وی قطع شد. سرانجام با درجه دکتری در رشته ی فیزیک پلاسما از دانشگاه برکلی آمریکا فارغ ااتحصیل شد. شهید چمران در سال 1336 بحرین شاگرد دوره های جنگ های چریکی در مصر شد. سپس به لبنان رفت و به کمک&nbsp; امام موسی صدر رهبر شیعیان لبنان شتافت و مدرسه ای برای فرزندان شیعه لبنان که پدرانشان به دست رژیم اشغالگر قدس شهید شده بودند تاسیس کرد.<br><br>8-دکتر چمران درباره علت سفرش به لبنان چه گفته است؟ب-مهریه همسر شهید چمران چه بود؟<br><br>من در آمریکا زندگی خوشی داشتم و از همه نوع امکانات برخوردار بودم، ولی از همه ی آنها گذشتم و به جنوب لبنان رفتم تا در میان محرومان زندگی کنم. میخواستم که اگر نمیتوانم به این مظلومان کمکی بکنم، لااقل در میانشان باشم، مثل آنها زندگی کنم و درد و غم آنان را در قلب خود بپذیرم.ب- قرآن کریم<br><br>9-شهید چمران چگونه فرق بین نور و ظلمت، و حق و باطل را نشان داد؟<br><br>من ممکن است نتوانم تاریکی را از بین ببرم، ولی با همین روشنایی کوچک فرق ظلمت و نور و حق و باطل را نشان می دهم، و کسی که به دنبال نور است، این نور هرچقدر کوچک باشد در قلب او بزرگ خواهد بود.<br><br>10-کدامیک از فرماندهان دفاع مقدس:( کارهای برجسته ای که شهیدچمران وشهیدخرازی درطی سالهای دفاع مقدس انجام دادند).(ص47)<br><br>-کردستان را از خطر حتمی نجات داد و شهر پاوه را آزاد کرد؟ ایشان در دولت وقت چه مسیولیتی داشتند؟<br><br>شهید مصطفی چمران،به فرمان امام خمینی به عنوان وزیر دفاع منصوب شدند.<br><br>- ستاد جنگ های نامنظم را تشکیل داد؟شهید چمران گروهی از جوانان داوطلب را جمع کرد و ستاد جنگ های نامنظم را تشکیل داد.<br><br>- به منظور جلوگیری از سقوط اهواز کانال آبی طراحی کرد و آب آن را به سمت تانک های دشمن فرستاد؟شهید چمران به منظور جلو گیری از سقوط شهر اهواز،احداث کانالی به طول 20 کیلو متر و عرض 100 متر را طراحی کرد و با استفاده از پمپ های آب از رود کارون کانال را پر آب&nbsp; و سپس آب را به سمت تانگ های دشمن روانه کرد.<br><br>- سوسنگرد را از محاصره و و اشغال متجاوزان نجات داد؟ شهید مصطفی چمران در نبردی حماسی سوسنگرد عزیز را از محاصره و اشغال متجاوزان نجات داد.در نبرد آزاد سازی شهر سوسنگرد، چمران به محاصره ی دشمن متجاوز درآمد ور با جابه جایی هایی متعدد از نقاط مختلف&nbsp; به سمت آنها شلیک میکرد تا دشمن متوجه تنها&nbsp; بودن او نشود.<br><br>- آزادسازی منطقه دهلاویه را طراحی کرد؟ شهید مصطفی چمران<br><br>11- فرمانده گردان ضربت کردستان بود؟چه کرد؟شهید حسین خرازی فرمانده گردان ضربت بود. در اوج در گیری های نیرو های ضد انقلاب به کردستان رفت و فرمانده گردان ضربت شد و در مبارزه با دشمنان مردم و پاکسازی شهر های دیوان دره،سقز ،بانه ،مریوان و سردشت نقش اساسی داشت.<br><br>سمت اولین فرمانده خط دفاعی در جاده اهواز- آبادان<br><br>شهید خرازی در عملیات شکستن محاصره&nbsp; آبادان، فرماندهی جبهه&nbsp; دارخوین را بر عهده داشت<br><br>در آزاد سازی&nbsp; شهر بستان بهترین تدبیر نظامی را دور زدن و محاصره کردن دشمن تشخیص داد<br><br>در عملیات بیت المقدس و عملیت خیبر با عنوان فرمانده لشکر امام حسین(ع) <br><br>در عملیات والفجر 8 لشکر گارد ارتش صدام را شکست داد.<br><br>&nbsp;در عملیات کربلای 5 با عبور از موانع بسیار سخت متجاوزان؛ شکست سنگین دیگری بر دشمن تحمیل کرد.<br><br>در روز هشتم اسفند 1356 در عملیات کربلای پنج در منطقه عملیاتی شلمچه با یک است از نردبان آسمان بالا رفت و به شهدای کربلا پیوست.<br><br>13-شهید چمران در چه تاریخی و&nbsp; در کدام منطقه عملیاتی به شهادت رسید؟<br><br>در روز 31 خرداد 1360، در منطقه "دهلاویه" به شهادت رسید. امام خمینی(ره) پس از شهادت&nbsp; این مرد بزرگ در پیامی میفرماید:<br><br>(( او در حیات ، با نور معرفت و پیوستگی با خدا قدم نهاد و در راه آن به جهاد برخاست و جان خود را نثار کرد. او با سرافرازی زیست، وبا سرافرازی شهید شد و به حق رسید.))<br><br>درس هشتم : اقتداردفاعی<br><br>1-&nbsp;&nbsp;&nbsp;&nbsp; درفرهنگ نامه های فارسی اقتدار به معنی قدرت به رسمیت شناخته شده است<br><br>&nbsp;و درفرهنگ انگلیسی اکسفورد اقتدار(اتوریته )به ((حق واداشتن دیگران به اطاعت))تعریف شده است<br><br>2-&nbsp;&nbsp;&nbsp;&nbsp; باارزش ترین نوع اقتدار اقتداردرحوزه&nbsp; فرهنگ است:زیرا از یک طرف اقتدار فرهنگی زمینه اقتدارسایر&nbsp; بخش&nbsp; ها را فراهم&nbsp; می کندواز طرف دیگرفرهنگی که مبتنی برارزش های الهی متکی بر تفکروتعقل وهمراه با اخلاق وعمل صالح باشد در مواجهه منطقی با سایرفرهنگ ها هیچگاه احساس ضعف و ناتوانی نمی کند<br><br>3-&nbsp;&nbsp;&nbsp;&nbsp; پس از آنکه صنایع نظامی وسیستم دفاعی وابسته ما درشرایط تحریم قرارگرفت امام خمینی (ره)راه نجات را درخود اتکایی وخود کفایی در عرصه نظامی ودفاعی دانستند وبه همین جهت توسعه این بخش در اولویت اقدامات کشور قرار گرفت<br><br>4-&nbsp;&nbsp;&nbsp;&nbsp; دوران دفاع مقدس در سال 1367 به پایان رسید ونیروهای مسلح ما باتجارب مفیدی که در جنگ تحمیلی هشت ساله اندوخته بودند به سازندگی میهن وافزایش توان دفاعی و نظامی میهن عزیزمان پرداختند<br><br>5-&nbsp;&nbsp;&nbsp;&nbsp; تولید تجهیزات دفاعی و تلاش فرزندان با ایمان وهوشمند این مرز و بوم چنان عظمت و ابهتی ایجاد کرده که موجب ترس دشمنان و بازدارندگی متجاوزان و توطئه گران ازهرگونه اقدام علیه تمامیت ارضی کشور ما گردیده است<br><br>6-&nbsp;&nbsp;&nbsp;&nbsp; شعاردفاعی این است که : ((ما قصد کشور گشایی وتجاوزبه حریم سایر کشورها را نداریم اما به هر تجاوزی قاطعانه پاسخ می دهیم))<br><br>7-&nbsp;&nbsp;&nbsp;&nbsp; نمونه هایی از تولیدات داخلی که مظهر اقتدار دفاعی میهن عزیز ما هستند&nbsp; عبارتند از:<br><br>1-تولید انواع موشک شهاب -سجیل-ثاقب-صیاد-فاتح و...<br><br>2-پرتاب ماهواره های امید-طلوع-فجر-ودر اینده نزدیک ظفرو...<br><br>3-تولید انواع زیردریایی و جهیزات دریایی&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4-ساخت ناوشکن ایرانی موسوم به ((جماران))<br><br>5-تولید انواع سلاح تانک زره پوش انواع خودرو های نظامی سایر ادوات زرهی<br><br>6-ساخت هواپیما های جنگنده صاعقه و هواپیما های بدون خلبان<br><br>7-تولیدات بخش الکترونیک :شامل انواع رادار اننوواه بی سیم و...<br><br>8-ساخت پروره های عمرانی شامل فرودگاه جاده&nbsp; راه اهن&nbsp; سد&nbsp; اسکله&nbsp; وسایرخدمات مهندسی ومخابراتی نیز در همین جهت است که در همین جهت است که در این عرصه قرارگاه سازندگی خاتم الانبیا (ص)وابسته به سپاه پاسداران انقلاب اسلامی باهمان انگیزه های دفاع مقدس درخط مقدم دارد<br><br>درس نهم :مهارتهای رزمی<br><br>این مهارت ها شامل :شناسایی عوارض زمین&nbsp; حفاظت انفرادی درمقابل خطر استتار اختفا اصول نگهبانی&nbsp; ایست وبازرسی&nbsp; جهت یابی&nbsp; کار با قطب نما&nbsp; تخمین مسافت و...است<br><br>به کلیه پستی وبلندی های سطح زمین عوارض زمین گفته می شود0 میزان پستی&nbsp; و بلندی های زمین یا ارتفاع تمام نقاط نسبت به سطح مبنا اندازه گیری می شود0 سطح مبنا سطح اب های ازاد بین المللی است که صفر در نظر گرفته می شود0<br><br>خاکریز:در مناطق باز ودشت ها&nbsp; جهت درامان ماندن نفرات از دید تیر دشمن&nbsp; به وسیله ی ماشین الات راه سازی&nbsp; خاک به ارتفاع حداقل2متردرجلوی نیرو های خودی جمع می کنند که به ان خاکریز می گویند<br><br>هور:ماندن اب روی زمین را هور یا ماند اب می گویندعلت ماندن اب در این محیط نفوذ ناپذیری لایه های زیرین خاک است0معمولا درهورعلف و نی می روید و اطراف ان زیستگاه برخی جانوران وپرندگان می باشد:مانند هورالعظیم در خوزستان 0<br><br>جهت یابی در روز&nbsp; 1-جهت یابی به کمک خورشید:خورشید هرروز صبح تقریبا ازسمت مشرق طلاع و در اخر روز از سمت مغرب غروب می کند وچون ایران در نیم کره شمالی زمین واقع شده است اغلب در هنگام ظهر خورشید در نیمه جنوبی اسمان است وسمت جنوب را نشان می دهد در روزهای اول فروردین و اول مهر ماه هر سال خورشید دقیقا از جهت شرق طلوع از جهت غرب هم غروب می کند ودر سایر ایام سال اول تابستان وزمستان این روش خیلی دقیق نیست<br><br>2-جهت یابی به کمک سایه شخص:شاخص&nbsp; میله&nbsp; چوب یا هر شی نسبتا&nbsp; صافو به طول تقریبی یک متر است که به صورت عمودی درزمینی مسطح نصب می شود در این روش پس از نصصب شاخص&nbsp; انتههای سایه ان را روی زمین با یک سنگ علامت گذاری می کنیم پس از حدود پانزده تا 20 دقیقه محل جدید سایه شاخص را دوباره علامت گذاری می کنیم حال اگر این دو نقطه را به هم وصل کنیم و طوری بایستیم که پای چپ روی نقطه اول و پای راست روی نقطه دوم باشد رو به روی ما شمال وپشت سرما جنوب&nbsp; خواهد بود<br><br>جهت یابی درشب به کمک ماه :در این روش ابتدا باید بدانیم در نیمه اول یا درنیمه دوم ماه قمری هستیم برای تشخیص این موضوع دو سر هلال ماه را با خط فرضی به یکدیگر وصل می کنیم و امتداد می دهیم اگر شکلی شبیه حرف لاتین&nbsp; p تشکیل دهد در نیمه اول ماه هستیم دراین حالت سمت بر جسته یا محدب ماه جهت مغرب را نشان می دهد اگر با اتصال دو سر هلال حرف لاتینq تشکیل شود در نیمه دوم ماه قرار داریم در این حالت قسمت برجستگی ماه جهت مشرق را نشان می دهد<br><br>روش تخمین مسافت با وسیله<br><br>ما در این روش به کمک نقشه توپوگرافی محل و یک خطکش در ابتدا دو نقطه مورد نظر را روی نقشه مشخص میکنیم و به وسیله خط کش فاصله مستقم ان دو نقطه را اندازه گیریمی کنم سپس عدد به دست امده را که به سانتی متراست در&nbsp; مخرخ مقیاس نقشه ضرب می کنیم تا فاصله حقیققی دو نقططه روی&nbsp; زمین به سانتی متر به دست اید پس ازان عدد مورد نظر را بر 100 تقسیم می کنیم تا فاصله به متر محاسبه گردد<br><br>فاصله ی دو نقطه روی نشه به سانتی متر×مخرج مقیاس=فاصله ی افقی همان دو نقطه روی زمین<br><br>مثال:اگر فاصله دو نقطه الف و ب روی نقشه توپوگرافی با مقیاس برابربا 8 سانتیمترباشدفاصله حقیقی دونقطه روی زمین این گونه به دست می اید :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>5000×8=40000سانتی متر<br><br>40000÷100=400 متر<br><br>درس دهم : آشنایی با حوادﺙ وکمک های اولیه<br><br>1-&nbsp;&nbsp;&nbsp; حوادث طبیعی چیست؟<br><br>حوادثی راکه انسان در بوجود آمدن آنها نقشی نداشته باشد حوادث طبیعی گویند.مانند:سیل زلزله طوفان بهمن سونامی صاعقه و.....<br><br>2-&nbsp;&nbsp;&nbsp; برای ایمنی مدرسه دربرابرحوادث،چه پیشنهادهایی مطرح میشود؟<br><br>١بررسی وضعیت ایمنی کلاسهاومدرسه وتلاش برای رفع نقاط ضعف آنها تا موجب افزایش آگاهی وبروز رفتارمناسب درهنگام حادثه شود.<br><br>٢برنامه ریزی برای آموزش کمکهای اولیه وامداد ونجات به دانش آموزان<br><br>٣مشخص کردن مکانهای امن درحیاط مدرسه،کلاس،راهروها،آزمایشگاهها وآموزش نحوهٔ پناهگیری مناسب درهنگام زلزله<br><br>٤مشخص ومعرفی کردن مسیرهای خروج اضطراری درکلاس،آزمایشگاه،حیاط مدرسه و آموزش نحوهٔ خروج حفظ خونسردی وهجوم نیاوردن به درهای خروجی<br><br>٥پاکسازی کلاس ومدرسه ازهرگونه عوامل آتشزا وخطرآفرین<br><br>٦تجهیزآزمایشگاه وسالن مدرسه به جعبهٔ کمکهای اولیه وکپسول آتشنشانی<br><br>٧انتقال لوازم سنگین وموادشیمیایی خطرناک،درآزمایشگاه وکارگاه،به طبقات پایین قفسه ها<br><br>٨اتصال قفسه های کتابخانه،کارگاه وآزمایشگاه به دیوارتوسط بستهای محکم<br><br>3-دانش آموزان قبل از وقوع حادثه مثلا زلزله&nbsp; چه چیزهایی رابدانند وانجام بدهند؟<br><br>1آموزش اقدامات قبل وبعد از وقوع زلزله به دانش آموزان<br><br>٢ازمحل قرارگیری جعبهٔ کمکهای اولیه وکپسول آتشنشانی وزنگهای خطرآگاهی داشته باشند تا درصورت لزوم ازآنها استفاده کنند وشناخت نقاط امن مدرسه<br><br>3ایمن سازی مدرسه<br><br>4تمرین واجرای مانور زلزله.<br><br>٥بیاموزندکه درهنگام ضرورت چگونه جریان برق راقطع کنند وشیرهای آب وگاز را (در صورت تخریب) ازمحل اصلی ببندند.<br><br>4-سه عامل مهم در بروز اتفاقات غیر طبیعی را شرح دهید؟<br><br>الف/عامل انسانی: مثل خستگی،عدم توجه به علائم راهنمایی ورانندگی،عدم مهارت کافی دررانندگی و…<br><br>ب/وسیله نقلیه: مث لمشکلات فنی،عدم رعایت استانداردها درساخت خودرو و…<br><br>پ/جاده: مثل طراحی وساخت غیراصولی جاده،کمبودعلایم ونشانه های راهنمایی و رانندگی،عدم نگهداری وتعمیرجاده و...<br><br>5-مهمترین اقداماتی که درهنگام بروزتصادف بایدانجام دادشرح دهید؟<br><br>١تماس بامراکزامدادی وامنیتی<br><br>:آتش نشانی ١٢٥ : درصورت وقوع یااحتمال آتش سوزی ویاگرفتارشدن افراد در وسیله ٔنقلیه حادثه دیده<br><br>/هلال احمر ١٤٧و<br><br>اورژانس:&nbsp; ١١٥: درصورت وجود مصدوم<br><br>نیروی انتظامی١١٠: علاوه برحضوردرصحنهٔ حادثه ومراقبت ازاموال میتواندهماهنگیهای لاز م رابا سایرنیروها ومراکز امدادی انجام دهد.<br><br>٢کمک به افراد حادثه دیده<br><br>نکته: قبل ازورود به صحنهٔ حادثه ازایمن بودن محل وقوع حادثه مطمئن شوید.<br><br>٣مراقب باشید که این حادثه منجربه تصادف دیگری نشود.<br><br>6-اقدامات پیشگیرانه ازآتش سوزی را شرح دهید؟<br><br>١ازنگهداری مواد آتش زا وتهیه وساخت وسایل آتش بازی خودداری کنید.<br><br>٢مواد آتش زا وانفجاری راحتی به مقداربسیارکم،درجیب لباس وکیف خودحمل نکنید.<br><br>٣هیچگاه ازالکل،بنزین وسایرمواد با درجهٔ اشتعالزایی بالا،برای روشن کردن آتش استفاده نکنید.<br><br>٥ازبرپایی آتش درمعابرباریک ودرنزدیکی پستهای برق یاایستگاههای کاهش فشارگاز وپارکینگهای عمومی پرهیزکنید.<br><br>دربارهٔ نکات ایمنی که درخانه باید رعایت شود،تحقیق کنید وازاعضای خانواده بخواهید که کارهای لازم رابرای پیشگیری ازآتش سوزی انجام دهند.<br><br>7- اقدامات پس از آتش سوزی را شرح دهید ؟<br><br>١آتش،خیلی سریع انتشارمی یابد،بنابراین بلافاصله آتش نشانی و درصورت وجود مصدوم اورژانس را خبرکنید.<br><br>٢ظرف مشتعل راحرکت ندهید. شعله را با شن،نمک،پتوی نمناک یا با پوششهای دیگر خفه کنید.<br><br>3 سعی کنید که افراد را ازساختمان بیرون ببرید.<br><br>4 به هیچوجه وارد ساختمان آتش گرفته نشوید.<br><br>5&nbsp; اگردرساختمان آتش گرفته گرفتارشده اید،فوراً به اتاقی که دارای پنجره است،بروید و درراببندید. سپس پتویا فرش را طوری زیر در قراردهید که دود وارد اتاق نشود وسپس از طریق پنجره تقاضای کمک کنید.<br><br>٦ در حالیکه آتش همراه دود باشد دستمالی را خیس کنید وآنراجلوی بینی ودهان خود بگیرید.<br><br>7اگرلباس شما آتش گرفت،توقف کنید و روی زمین غلط بخورید تا آتش خاموش شود<br><br>.8 – درفرونشاندن آتش سوزی باید با توجه به نوع ماده سوختنی از انواع کپسول آتش نشانی،آب ویاشن وماسه استفاده نمایید<br><br>مثل جدول زیر:<br><br>نام سری<br>&nbsp;&nbsp;&nbsp; <br><br>جنس ماده سوختنی<br>&nbsp;&nbsp;&nbsp; <br><br>محتوی خاموش کننده<br><br>A<br>&nbsp;&nbsp;&nbsp; <br><br>جامدات<br>&nbsp;&nbsp;&nbsp; <br><br>آب،کف و پودر<br><br>B<br>&nbsp;&nbsp;&nbsp; <br><br>مایعات<br>&nbsp;&nbsp;&nbsp; <br><br>کف و پودر<br><br>C<br>&nbsp;&nbsp;&nbsp; <br><br>گاز<br>&nbsp;&nbsp;&nbsp; <br><br>پودر<br><br>D<br>&nbsp;&nbsp;&nbsp; <br><br>فلزات<br>&nbsp;&nbsp;&nbsp; <br><br>پودر<br><br>E<br>&nbsp;&nbsp;&nbsp; <br><br>الکتریسیته<br>&nbsp;&nbsp;&nbsp; <br><br>گاز CO2 وپودر<br><br>9- کمکهای اولیه&nbsp; را شرح دهید؟<br><br>منظورازکمکهای اولیه،کلیۀ اقداماتی است که برای کمک به شخص آسیب دیده،<br><br>بلافاصله پس ازبروزحادثه وقبل ازرساندن اوبه مرکزدرمانی یا رسیدن تیم امدادی،توسط یک فردآموزش دیده،انجام میشود.<br><br>10 – علایم حیاتی چیست؟<br><br>علایم حیاتی شامل&nbsp; تنفس، نبض، فشارخون و درجه حرارت بدن میشود.<br><br>11 – خونریزی خارجی چیست وچگونه میتوان آنرا کنترل کرد؟<br><br>اگردرخونریزی،خون ازبدن خارج شود وبه بیرون بریزد،به آن خونریزی خارجی میگوییم. برای کنترل خونریزی خارجی،چند روش وجود داردکه مؤثرترین آنها فشارمستقیم و بالا نگهداشتن عضو(درصورت امکان)است.<br><br>برای اینکاربه روش زیرعمل کنید:<br><br>١چندگازاستریل (یاچندتکه ازیک پارچهٔ تمیز) را روی محل خونریزی بگذارید و بادست روی آن فشارآورید.<br><br>٢اگرخونریزی درقسمتی ازبدن است که امکان قراردادن آن درسطحی بالاترازسطح بدن وجوددارد( مثلاً خون ریزی درساعد دست)همزمان بافشار دادن محل خونریزی،عضوخونریزی کننده را بلند کنید و بالا نگهدارید.<br><br>٣ درحالی که خونریزی شدید دارد دورمحل خونریزی را ببندید( البته نه آنقدرمحکم که باعث قطع گردش خون شود(. و خون ریزی را با وارد کردن فشار با یک باند ( به روش گفته شده )کنترل کنید.<br><br>12 – چه نکات مهمی را درپانسمان وباندپیچی یک زخم بازباید رعایت کرد؟<br><br>نکات مهمی که درپانسمان وباندپیچی یک زخم باید رعایت کنید،به طورخلاصه عبارتنداز:<br><br>١ازپانسمان استریل یا بسیارتمیزاستفاده کنید.<br><br>٢سطح زخم رابه وسیلهٔ پانسمان،به طورکامل بپوشانید.<br><br>٣پانسمان را ازمحل اولیه جا به جا نکنید (چون جا به جا کردن آن ممکن است دوباره باعث خونریزی شود(. پانسمان به زخم چسبیده باشد.<br><br>٤باندپیچی را وقتی انجام دهیدکه خونریزی به وسیلهٔ پانسمان،قبلاًکنترل شده باشد.<br><br>٥باند را بیش ازحد سفت یا شل نبندید. باند مستقیماً روی زخم بسته نمی شود .<br><br>٦نوک انگشتا ن دستها و پاها را آزاد بگذارید. کبودی نوک انگشت دیده شود.<br><br>13 – درسوختگیهای سطحی،چه کمکهای اولیه ای را باید انجام داد؟<br><br>1بلافاصله پس ازحادثه،محل سوختگی را به مدت ده تا بیست دقیقه داخل ظرف آب سرد (آب باید روان باشد )<br><br>فروببرید و یا آن را زیرجریان ملایم آب سرد قراردهید.<br><br>2اگرپوست تاول زده است،به آنها دست نزنید وآنهارا نترکانید؛زیرا ترکاندن تاولها،خطرعفونت رابیشترمیکند. البته در سوختگی سطحی (درجه 1 ) تاول نداریم.<br><br>&nbsp;3ناحیه ٔسوخته شده را بایک پانسمان خشک واستریل بپوشانید. برای پانسمان موقت میتوان ازپوشش پلاستیکی تمیزاستفاده کرد, برای جلوگیری ازعفونت.<br><br>14 – درآسیبهای اسکلتی چه کمکهای اولیه ای را باید انجام داد؟<br><br>کمکهای اولیه برای تمام آسیبهای اسکلتی(شکستگی استخوانها،دررفتگی مفاصل وپیچ خوردگی رباط ها و تاندون ها)یکسان است:<br><br>١اگرآسیب یاعلامت واضحی وجود ندارد،ولی مصدوم ازدرد شکایت دارد،همیشه بنا را بر وجود شدیدترین آسیب اسکلتی یعنی شکستگی بگذارید واقدامات لازم را انجام دهید.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>٢هنگام شکستگی،درصورتی که عضوآسیب دیده خونریزی نداشت فقط آتل ببندید.<br><br>٣ازاقدام برای جاانداختن موارد شکستگی یا دررفتگی به شدت پرهیزکنید. به علاوه اگر سراستخوان شکسته از زخم بیرون زده است، سعی درفروبردن آن به درون زخم نداشته باشید ، بلکه درباره روشهای آتلبندی،تحقیق وآنها رابا یکی از دوستان خود تمرین کنید.<br><br>15 – حمل مصدوم چیست؟ حمل مصدوم عبارت است ازانتقال مصدوم به روش صحیح ازمحل حادثه به محلی امن( برای انجام کمکهای اولیه)و یا به مراکزدرمانی.<br><br>بسیارمهم است که به یاد داشته باشید نباید مصدومی راکه آسیب شدیدی دیده و بدحال است،<br><br>حرکت دهید مگرآنکه خطری فوری(مانند آتش سوزی،فروریختن آوار،گازسمی و …) جان او را تهدید کند.<br>&nbsp;
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../5.html" class=text4>پیشنهاد برنامه شهرستان كنگان</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                                <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../4776.html#commentlist">نظرات (<script>setCommentCnt(4776)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('4776','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div018><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width="20" height="3"></div>
+            <div class=div18><font class=text6><a href="../../../4101.html">نظام اجتماعی  (3-1) جامعه &quot;کنگان&quot; و کارکردی مطلوب </a></font></div>
+            <div class=div58><font class=text7>جمعه 17 بهمن 1393 :: نویسنده : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+<b><font size="1">عملکرد&nbsp; ما گواه&nbsp; تفکر ماست</font></b> ؛ آیا&nbsp; شخص مدعی روشنفکر ی، منصفی پیدا می شود که&nbsp; از دیگران اشکال وایرادی را بگیرد و خود عاری از آن عیب و نقص باشد....&nbsp; بارها شنیده ایم که&nbsp; بانگ و فریاد کرکننده ونوشته های حجیم&nbsp; زننده، به تشریح&nbsp; زشتی و پلشتی&nbsp; وسیاه نمایی&nbsp; صفتی در گروه یا فرد مقابل&nbsp; به میدان می آید&nbsp;&nbsp; تا بدینوسیله به توضیح وارائه میزان سطح بالای سواد وآگاهی ، پاکی ، ارزشمندی ، انسانیت، مردمداری &nbsp; و امروزی بودن ونهایتا توانمندی&nbsp; و حقیقت طلبی خودبپردازد&nbsp; ؟ براستی ماحصل آن در نظام اجتماعی چیست؟ وچه تبعاتی بدنبال داشته است؟<br><br>ودر این رابطه باید موارد زیر را تشریح می نمایم:<img src="http://8pic.ir/images/2j1ggety8bs6sxi5cr1r.jpg" alt="" align="left" border="0" hspace="0" vspace="0"><br><br><div class="MsoNormal" dir="rtl">واژه "System" که به نظام ترجمه شده است 
+به مجموعه­ای از واحدها یا عناصر مرتبط به هم اشاره دارد که به منظور تأمین
+ اهداف از پیش تعیین ­شده در ارتباط و تعامل با یکدیگر فعالیت می­کنند.[1]</div>
+<div class="MsoNormal" dir="rtl">واژه نظام برگرفته از ریشه نظم است. نظم 
+نتیجه نهایی انتظام و در نتیجه ذات زندگی است؛ از این­رو از دیرباز مفهوم 
+جامعه را با کلمه نظم اجتماعی به­ کار&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; می­برند. به همین دلیل پارتو (Pareto)
+ و پارسونز (Parsons) کلمه نظام را که به‌ معنی مجموعه­ای یگانه است از حوزه
+ علوم فیزیکی و زیستی اتخاذ و نظام اجتماعی را جایگزین نظم اجتماعی 
+کرده ­اند. جامعه به‌ دلیل مناسبات یا بستگی­ها و روابط متقابل اجتماعی بین 
+سازمان­ها و نهادهای اجتماعی است که نظام نام گرفته است.[2]</div>
+<div class="MsoNormal" dir="rtl">"نظام اجتماعی" عبارت است از مجموعه 
+نقش­های اجتماعی. سیستم اجتماعی کنش متقابل بین شخصیت­ها و افراد می­باشد. 
+سیستم اجتماعی دربردارنده نهادها و سازمان­های اجتماعی است که کارکردشان 
+تولید عدالت و مشروعیت اجتماعی است. هدف اصلی پارسونز در بحث سیستم اجتماعی
+ طرح سیستم واحدی است که ترجیحاً در آن کلیت عمل کنش­گر در سیستم تجلی 
+می­یابد. تحلیل پارسونز با این وجود متوجه این است که چگونه سیستم کنش­گر 
+را کنترل می­کند، نه اینکه چگونه سیستم کنش­گر را خلق یا ایجاد می­کند.[3] </div>
+<div class="MsoNormal" dir="rtl">پارسونز معانی مختلفی از نظام اجتماعی 
+دارد. در یک‌جا آن را شبکه روابطی می­داند که عاملین را دربر می­گیرد و در 
+جای دیگر آن را تجمع افراد در کنش متقابل می­داند.[4]</div><b>&nbsp;و در توضیح نکات فوق</b> : ما امروز وظیفه داریم که به جوانانمان&nbsp; مسیر کشف علم ، کسب ودرک معرفت&nbsp; بیاموزیم&nbsp; وقتی بتوانیم فساد وعوامل فساد را معرفی کنیم وخود از آن مبری باشیم هرجوان عاقلی باشد میداند راه و چاه کدام است . فاسد وتبهکار کیست&nbsp; ؟&nbsp; و او&nbsp; به خود به هم سن سالش زندگی&nbsp; پاک ونیازمندی های معرفتی را انتقال خواهد داد.<br><br>&nbsp;زندگی بکرنوجوان و جوان تحت تاثیرعملکرد فرهنگی،بزرگتران خود است&nbsp; وطبیعتاً اهتمامات ذهنی&nbsp; وبسط دیدگاه ذائقه ی فرهنگی اورا دستخوش تغییر وتحول می کند ودر این راه خواسته یا ناخواسته مسئولیم.<br>درواقع&nbsp; تنها مدرسه و دانشگاه برای تربیت فرزندان ما کافی نیستند، چون معارف بسیار بزرگتر و وسیعتر&nbsp; از آنست که در این دو ظرف ودر آن محدوده زمانی پرشتاب ونسبتاً معدود درذهن ما جای بگیرند. وضمن اینکه معارف فرعی در حال تغییر وارتقاء هستند، وهیچگاه بصورت آنی و لحظه ی در خلوص&nbsp; وتهذیب ما یکباره جلوه گر نخواهند شد، وبر همین اساس ما برای دستیابی به آن درطول مدت زندگی وطول عمر به آن نیازمندیم و رشد نظام اجتماعی&nbsp; اینگونه بهبود یافته وبه توسعه ی ذهنی آن دست می یابیم .<br><br>طول زندگی فردی محدوداست،حد وسطی خوشبینانه 70 سال،&nbsp; ولی زندگی نوع&nbsp; بشر طولانییست.&nbsp; وما وقتی مطالعه وتحصیل می کنیم ، در حقیقت زندگی نوع بشر را می خواهیم به&nbsp; زندگی فردی انتقال دهیم . وتجربه های هزاران ساله گذشته را در اختیار عمر شخصی کوتاه خود قرار دهیم&nbsp; یعنی اینکه وقتی تاریخ&nbsp; بشری و فرهنگ فعال در دوره حاضر را می خوانیم&nbsp; هدف از زندگی عمومی را به زندگی خصوصی تفسیر و تزریق کرده ایم . و یکی از اهداف نظام اجتماعی همین است راهنمائی به معانى زندگی شخصی مان .&nbsp; چون احساس ما بما راست می گوید&nbsp; ما انسانها زندگی متفاوتی از جانداران داریم .<br><br>آنچه ازمعارف و دانستینها در اختیار داریم&nbsp; برای كسب جنبه های مادی کافی بنظر می رسد، اما&nbsp; كسب جنبه ی روحی&nbsp; ومعنوی از ما می خواهد که بیش از این درهای&nbsp; منابع عظیم فرهنگی عمداً یا سهواً فراموش شده را بکوبیم تا به درك&nbsp; سلسله مفاهیم طولانی&nbsp; انسانی که ما می خواهیم&nbsp; نمایندگی اغراض واهدافش را داشته باشیم و به طعم وبوی&nbsp; خاص آن برسیم ، آنوقت می توان به سعادت حقیقی دست یافت.<br><br>&nbsp;نظام آموزش عمومی وآموزش عالی&nbsp; نظامی حرفه ایست نهایتا ما را تبدیل به متخصصی می کند که&nbsp; فن و حرفه ای را آموخته ایم . در این حوزه، دیدگاه محصور ومحدودی خواهیم داشت. مگر اینکه با توسعه افق دیدگاه ، خرد مان وقلب مان بزرگی کند،و تعصب شخصی&nbsp; وفردی را با هرنیتی درپیوند با&nbsp; قالب نظام&nbsp; اجتماعی&nbsp; کنار بگذاریم.<br>ما چراغی را به دست فکرمان می دهیم تا شخصیتی واضح تر وبزرگتر ازگذشته باشیم&nbsp; و با روشنی آن در واگذاری زندگی 70 ساله&nbsp; همان دانش آموخته مدرسه ودانشگاه در سن 25 سالگی نباشیم<br>وآگاهیها ومعارف امروزی&nbsp; هزارا ن رشته&nbsp; از علوم وفنون میراث بشر ی را دردسترس دارد&nbsp;&nbsp; هرفردی حق دارد، اگر از&nbsp; نظر مالی و وقت برخودار باشد در زمینه ی مورد علاقه به آن دست یابد.<br><br>&nbsp;<b>نتیجه گیری</b> : قوانین الكترونیک، فیزیک وشیمی&nbsp; و....&nbsp; آشنائی بازندگی بزرگان علم وفلسفه وشکافتن اتم وحتی جدیداً فرضیه کشف عنصر زمان در صورت شکافت&nbsp; واحدی که یک ملیارد بار از اتم کوچکتر است،&nbsp; برای هر انسان حقیست، که بخواهد آنرا بداند چون آینده جهان؛&nbsp; آینده اختصاصی&nbsp; ومتعلق به همه&nbsp; ی انسان ها است<br><br>&nbsp;فاصله&nbsp; گفتار تا عمل برای همه برابرنیست . ارزش تلاش ما&nbsp; در زدودن&nbsp; و کم کردن فاصله بین این دوعنصر است و روشنی فکر در کم کردن فاصله و عدم انحراف از موضوعات اصلی به فرعیست وهرگاه&nbsp; میان شخص ونفس، نبرد شروع شود و "خویش" را پیروز ببیند، این شخص شایسته ی&nbsp; یادآوری در نظام اجتماعی و&nbsp; تذكردادن به دیگران است.<br><br>وهمراهی دائم قول و عمل دردناک است اما با تمرین وممارست دلپذیر خواهد بود ؛نه اینکه بقول آن یکی بهترین خوش قولی اینست که قول ندهیم ونه بقول این یکی وقتی بمیدان بیائیم ببینیم که نمی توانیم سر قول و وعده مان بایستیم&nbsp; این یعنی غیر واقعی بودن&nbsp; و&nbsp; تفکر کدر ، و بهترین راه حل حداقلی اینست که بین بد قولی مان حتی بخودمان فاصله ی موجود زمانی را با پذیرش اشتباه و عذرخواهی ،ازبین نبریم<br><br>مرد بزرگ کسی است که&nbsp; مسئولیت نتائج عملش و بد قولی هایش را بپذیرد.وانسجام نظام اجتماعی وابسته به همین تفکرو حرف وعمل ماست که نیت ها را برجسته کرده و عیار وزن ما را مشخص می کند... <br>منابع:<br>&nbsp;---------------------------------------------------------------------------------------------------------------------<hr align="left" size="1" width="33%">
+<div id="ftn1">
+<div class="MsoFootnoteText" dir="rtl"><font size="1">[1]</font><font size="1">. توکلی، عبدالله؛ اصول و مبانی مدیریت، قم: انتشارات زمزم هدایت، 1383، ص48.</font></div></div>
+<div id="ftn2">
+<div class="MsoFootnoteText" dir="rtl"><font size="1">[2]</font><font size="1">. آگبرن، ویلیام و نیم‌کوف، مایر؛ زمینه جامعه­شناسی، امیرحسین آریان­پور، تهران، امیرکبیر، 1357، ص263.</font></div></div>
+<div id="ftn3">
+<div class="MsoFootnoteText" dir="rtl"><font size="1">[3]</font><font size="1">. ریتزر، جورج؛ نظریه جامعه­ شناسی در دوران معاصر، محسن ثلاثی، تهران، علمی، 1374، ص76.</font></div></div>
+<div id="ftn9">
+<div class="MsoFootnoteText" dir="rtl"><font size="1">[4]</font><font size="1">. ادیبی، حسین؛ جامعه­شناسی طبقات اجتماعی، تهران، دانشکده علوم اجتماعی و تعاون، 1354، ص138.</font></div></div>
+<div id="ftn10">
+<div class="MsoFootnoteText" dir="rtl"><font size="1"></font><br></div></div>
+
+
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#CC0000">نوع مطلب :</font>
+                <a href="../../3.html" class=text4>تحلیل مقاله</a>،&nbsp;<a href="../../2.html" class=text4>مقاله</a>،&nbsp;<a href="../../5.html" class=text4>پیشنهاد برنامه شهرستان كنگان</a>،&nbsp;                <br><font color="#CC0000">برچسب ها :</font>
+                                <br><font color="#CC0000">لینک های مرتبط :</font>
+                            </font><br>
+
+
+                <br>
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../../../4101.html#commentlist">نظرات (<script>setCommentCnt(4101)</script>)</a></font></div>
+            <div style="float: left; margin-left: 43px; margin-top: -2px;"><script>mihanblogPostLike('4101','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 0px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:480px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 15px; padding:0 0 10px 0;}
+            .com1{ width:462px; float:left; background:#940e0d; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:235px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:442px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:442px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:452px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text4>
+                <br><br>
+        ( کل صفحات : 2 )&nbsp;&nbsp;&nbsp;
+            <a href="1.html" class=text4><b>1</b></a>&nbsp;&nbsp;&nbsp;<a href="2.html" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;    </font>
+    </div>
+</div>
+
+<div class=div17>
+
+    <div class=div60>
+        <div class=div101>
+            <div class=div10><font class=title>نجوا کنگان</font></div></div>
+        <div class=div11>
+            <div class=div12><font class=des>دلگیرم   از    خود  با  تو نجوا  می کنم       دریا  این سفره ی دل پیش تو    وا می کنم  </font></div></div>
+    </div>
+
+    <form id="frm-16076950295fd37ab519709" method="get" action="http://najvaye-kangan.mihanblog.com/post/search/fid/16076950295fd37ab519709"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> <div class=div80>
+        <div class=div81></div>
+        <div class=div37>
+            <input type="text" name="search_text" size="25" style="border: 0px none; background: none; font-family:Tahoma; font-size:9pt; color:#FFFFFF"></div>
+        <div class=div38>
+            <input type="image" src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" width=67 height=28></div>
+    </div><input type="hidden" name="frm-id" value="16076950295fd37ab519709" id="frm-id" /></form>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div31><center><img src="../../../../../static.mihanblog.com/public/user_data/web_photo/334/999078.jpg@6119"  /></center><br>
+                <font class=text1><center> سلام علیكم اینجانب عبدالمجید اورا متولد1348/6/25- كنگان-محله خور چوری(خیابان استقلال)<br />
+</center><br>
+                    <img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10">مدیر وبلاگ : <a href="../../../author/849529.html">عبدالمجید اورا</a></font></div>
+        </div><div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>مطالب اخیر</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12634.html">                                  آینده کار: مهارت های مورد نیاز نوجوانان چیست؟</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12633.html">                                مرحله نهایی واکسن های کرونا  که از این تعداد 7 مورد به تولید رسیده اند!  </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12632.html">                                     بخشی از ویژگیهای یک  فعال رسانه ی موفق ؟  </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12631.html">                                 بازدید قطری ها از کنگان؛ انعقاد تفاهم نامه در اصفهان!</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12629.html">                           دانشگاه های صوری و گواهینامه های جعلی ... </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12628.html">                      اینترنت 5G: داستان علمی تخیلی که  رنگ واقعیت  می گیرد !</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12627.html">                                روشهائی که  به مطالعه موثر &quot;درس خواندن&quot; کمک می کنند!</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12626.html">                نحوه تحقیق در خصوص اخبارعلمی مرتبط با کرونا(  COVID-19)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12625.html">                 کدام یک را ترجیح می دهید: کتاب صوتی ( الکترونیکی) یا کتاب خواندنی( چاپی)؟</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../12624.html">                             واکسن فایزر علیه کرونا و پاسخ 11 سوال ؟</a></font></div>        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>موضوعات</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../9.html">سوالات امادگی دفاعی 2 (8)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../8.html">سخنان رهبری (9)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../6.html">تصاویر رهبری (17)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../7.html">شعر (304)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../4.html">خبر (651)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../3.html">تحلیل مقاله (2729)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../2.html">مقاله (201)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../5.html">پیشنهاد برنامه شهرستان كنگان (14)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../1.html">داستان های قدیمی كنگون (56)</a></font></div>        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/9.html"> آذر 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/8.html"> آبان 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/7.html"> مهر 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/6.html"> شهریور 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/5.html"> مرداد 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/4.html"> تیر 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/3.html"> خرداد 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/2.html"> اردیبهشت 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1399/1.html"> فروردین 1399</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive/1398/12.html"> اسفند 1398</a></font></div>            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../archive.html">آرشیو كل مطالب</a></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://www.moallemaniran.ir" title="" target="_blank">پایگاه خبری تحلیلی معلمان ایران</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://parlemanmelk.ir" title="سلام 
+فرهیخته گرامی لطفا ما را لینک کنید با تشکر" target="_blank">املاک منطقه 22</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.Hsbteam.com" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+گروه نرم افزاری HSB" target="_blank">گروه نرم افزاری HSB</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://shahre-music.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">تک آهنگ جدید</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://tnvj.ir/" title="باسلام و احترام
+وبلاگ بسیار مفید و کاربردی ایجاد کرده اید، بسیار خرسندم از بررسی وبلاگتان. در صورت تمایل حاضر به تبادل لینک هستیم. آدرس سایت ما http://tnvj.ir/ می باشد.
+در صورت تمایل به تبادل لینک ابتدا لینک ما را در قسمت پیوندهای وبلاگتان درج نمایید و سپس از طریق ایمیل به آدرس HAMID.AZADI74@GMAIL.COM اطلاع دهید.
+پیشاپیش از همکاری و مساعدت شما سپاسگزارم." target="_blank">تبادل لینک</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://botgram.mobi/" title="ربات اینستاگرام با عضویت رایگان و اکانت 7 روز تست" target="_blank">افزایش فالوور اینستاگرام</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="https://sainkala.com/news-technology" title="" target="_blank">اخبار تکنولوژی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../amin2002.mihanblog.com/index.html" title="" target="_blank">یک قدم تا قلم</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://dabiranfile.ir/" title="مرجع فایل فرهنگیان شامل:
+گزارش تخصصی- تجربیات مدون- درس پژوهی-اقدام پژوهی-برنامه سالانه-تقویم اجرایی-طرح تعالی مدیریت کیفیت مدار-طرح تدبیر-طراحی آموزشی-تحلیل محتوا-تولید محتوای الکترونیکی
+سایت:
+http://dabiranfile.ir
+کانال تلگرام:
+https://t.me/dabirfile
+ایمیل سایت:
+dabiranfile@gmail.com" target="_blank">دبیران فایل</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.senfit.ir" title="" target="_blank">اطلاعات اصناف ایران</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../rassam110.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+گروه نرم افزاری HSB" target="_blank">RASSAM MEDIA</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.parvaresheafkar.com/law-attraction" title="سلام سایت من درباره قانون جذب خوشحال میشم تایید کنید" target="_blank">قانون جذب </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.muslimpress.com" title="با سلام....
+ 
+اهداف اصلی این سایت اطلاع رسانی از آخرین وضعیت مسلمانان جهان، نشان دادن چهره حقیقی اسلام ، انعکاس فرمایشات پیامبر اسلام محمد مصطفی (ص)، شریعت و احکام اسلامی می باشد  که متاسفانه امروزه به چهره ای  سرشار از اکاذیب و ریای غرب و گاه ضد انسانی تبدیل شده است.
+
+ در این دنیای فریبنده،غرب، پیامبر رحمت را پیامبر خشونت و دین اسلام را دینی خشن و ضد اخلاقی معرفی می کند.شایان ذکر است این سایت، بیان نقطه نظرات مشترک اسلام را  با دیگر ادیان الهی بر عهده دارد که این مهم بی شک می تواند انسان های موحد را در سرتاسر جهان به یکدیگر نزدیک تر کند.
+
+سایت مسلم پرس پیام آور صلح و دوستی  به همه مردم جهان است. مودت و دوستی را ترویج ، و به مبارزه با  ظلم و استکبار می پردازد  همانگونه که برای هیچ فردی پذیرفتنی نیست ." target="_blank">news</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://eheyat.com" title="مداحان" target="_blank">مداحان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://melatblog.ir" title="سرویس وبلاگدهی ملت بلاگ برای ساخت وبلاگ رایگان فارسی برای حمایت از زبان شیرین پارسی در پهنای اینترنت پا به عرصه نهاد و امید بتوان گامی هر چند کوچک برای اثر بخشی زبان پارسی در جهانیان انجام داد." target="_blank">ملت بلاگ</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.iraniannurse.com" title="با سلام....
+ لطفا لینک ما را تایید کنید." target="_blank">وبسایت پرستاری ایرانیان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.amirreza256.ir/" title="با سلام....
+ به وب ما هم سر بزنید." target="_blank">سایت دانش آموزان قره چپق</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.veteranstoday.com" title="" target="_blank">پژوهش ها</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../rahbarshenasi.mihanblog.com/index.html" title="" target="_blank">رهبر شناسی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.daneshforum.ir" title="انجمن علمی دانش آموزان و دانشجویان" target="_blank">دانش فروم</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://ghazamag.ir/" title="اخبار صنایع غذایی ایران
+
+سلام دوست عزیز
+وبلاگ خوبی داری ما هم وب سایت خبری راه اندازی در حوزه صنایع غذایی و تغذیه و سلامت
+
+ممنون میشم لینک رو تایید کنید تا وب سایت ما هم از رتبه خوبی برخوردار بشه" target="_blank">اخبار صنایع غذایی ایران</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://Dnis.ir" title="با سلام.
+با توجه به مطالب مفید و خوب بلاگ شما، جهت فعالیت در سایت دنیس به عنوان مدیر دعوت می شوید.
+ارادتمند شما. Dnis.ir" target="_blank">شبکه هوشمند دنیس ...</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://kangannajva.blogfa.com/" title="به دو زبان عربی و لاتین" target="_blank">کنگان نجوا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../www.beheshtiyan.mihanblog.com/index.html" title="سلام دوست عزیز
+بلاگ زیبایی داری.اگه مایل به تبادل لینک هستی ابتدا منو با نام بهشتیان لینک کن بعد خبر بده تا من هم تو رو لینک کنم.
+با تشکر" target="_blank">بهشتیان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../imamreza88.mihanblog.com/index.html" title="با سلام ، گرچه وب سایت امام رضا (ع) تازه شروع به کار کرده ولی با حمایت شما به بالاتر ها  خواهد رفت
+...............................................................
+ و اصل مطلب :
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و حتما اطلاع بدید.
+
+باتشکر وب سایت بزرگ امام رضا(ع)" target="_blank">وب سایت امام رضا (ع)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.GuilanFX.com" title="آموزش رایگان فعالیت در بازار بورس ارز بین المللی هام و اوراق بهادار" target="_blank">آموزش فعالیت در بورس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.hormozban.ir" title="اخبار استان هرمزگان را در پایگاه خبری هرمزبان دنبال نمایید.
+با تشکر" target="_blank">پایگاه خبری هرمزبان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../khormabad.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">روستاها</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.2016rio.ir" title="المپیک 2016" target="_blank">المپیک 2016</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://WWW.FIREANGEL.IR" title="سلام دوست عزیز این یک پیام تبلیغاتی نیست وبنده به وبلاگ شما شخصن سر زدم
+دوست من گروه ماو نویسندگان ما برای افزایش امنیت در فضای مجازی به پا شده وداره تمام تجربیات واطلاعات خود را در اختیار کاربران میزاره 
+برای همین تیم ما نیاز به همایت داره بیشتر مارو به نام طرف داران امنیت میشناسند وتمام اطلاعات وتجربیاتمونو رایگان در اختیار کار برا میزاریم همچنینن اخبار هک و...
+دوست وبلاگ نویس من اگه لطف کنی واز ما همایت کنی وسایت مارو لینک کنی 
+وهمچنینن شما میتوانید از لینک زیر تبلیغ خود را در سایت ما نمایش بدهی
+http://fireangel.ir/?page_id=321
+
+باتشکر از شما  admin:fireangel
+
+ادرس سایت:www.fireangel.ir
+
+httP://fireangel.ir
+
+دوست داران امنیت" target="_blank">دوست داران امنیت</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../ershadgar20.mihanblog.com/index.html" title="خداوند به داوود وحی کرد: یا داوود من پنج چیز را در پنج چیز بنا نهاده ام ومردم آن ها را در جای دیگر می جویند و هرگز نمی یابند :
+
+دانش را در گرسنگی و کوشش گذاشته ام و آنان در سیری و تبلی می جویند و نمی یابند.
+
+عزّت را در فرمانبرداری خودم گذاشته ام و آنان در بارگاه شاهان می جویند و نمی یابند .
+
+بی نیازی را در قناعت گذاشته ام و آنان در ثروت می جویند و نمی یابند.
+
+رضای خودم را در نَفس ستیزی گذاشته ام و آنان در پیروی از نفس می جویند و نمی یابند.
+
+آسایش را در بهشت گذاشته ام و آنان در دنیا می جویند و نمی یابند .
+
+احادیث قدسی جلد 1 صفحة 178" target="_blank">طلبه ارشادگر</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.jobnetfa.com" title="&quot;JobNetFa&quot; اولین و جامع ترین پورتال مشاغل نوین به زبان فارسی میباشد.
+هدف از ایجاد این پورتال ایجاد فضایی امن برای فعالیت های نوین شما دوستان عزیز میباشد.
+در این پورتال تمامی روش های تایید شده,اموزش ها,خبر ها,تحلیل و بررسی و ... در اختیار شما قرار داده شده است.
+معرفی بیش از 10 روش تایید شده.
+معرفی بش از 1000 سایت کسب درامد.
+برگزاری قرعه کشی های هفتگی,ماهانه و سالانه بین اعضا
+ارائه طرح های تشویقی برای افراد.
+پشتیبانی اعضا تا رسیدن به درامد
+و...
+اگر به دنبال شروع کسب درامد هستید,به این پورتال مراجعه کنید.
+http://www.jobnetfa.com/" target="_blank">JobNetFa اولین و جامع ترین پورتال مشاغل نوین به زبان فارسی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://atrekhoda.com" title="آرامشــبخش ترین و عاشقانه ترین ها را اینجا بخوانید
+
+با عطر خدا همراه باشید" target="_blank">███ عطر خدا ، آرامش خدایی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://WWW.bia2apk.ir" title="فایل تی اس ,بزرگترین بانک مقالات داشجویی - مرجع مقالات
+دانلود مقاله|مقالات دانشجویی|دانلود پروژه|مرجع مقاله
+www.filets.fileina.com
+همراه با پرداخت انلاین وامن" target="_blank">فایل تی اس ,بزرگترین بانک مقالات داشجویی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://melatblog.ir/" title="سرویس وبلاگدهی ملت بلاگ برای ساخت وبلاگ رایگان فارسی برای حمایت از زبان شیرین پارسی در پهنای اینترنت پا به عرصه نهاد و امید بتوان گامی هر چند کوچک برای اثر بخشی زبان پارسی در جهانیان انجام داد." target="_blank">ملت بلاگ</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://arawebco.ir" title="طراحی سایت" target="_blank">طراحی سایت</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.galleypic.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">خبرخوان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../it71.mihanblog.com/index.html" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید." target="_blank">دنیای فناوری اطلاعات * طاها *</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://montasar.ir" title="وبسایت مهدویت" target="_blank">حضرت مهدی عج</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.daneshjooazad.ir" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+پایگاه اطلاع رسانی دانشجو آزاد" target="_blank">پایگاه اطلاع رسانی دانشجو آزاد</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.jonbeshnet.ir/news/33132" title="با سلام
+گروه اینترنتی رهروان ولایت 
+از تمامی فعالان فضای مجازی دعوت می کنیم 
+با قرار دادن «لوگوهایجنبش اینترنتی امر به معروف و نهی از منكر» در پایگاه های اینترنتی و وبلاگ های خود و همچنین با تولید، انتشار و... ما را در این امر خطیر یاری فرمایند.
+
+لطفا گروه اینترنتی رهروان ولایت را لینك كرده و به ما هم در سایت در بخش نظرات بفرمائید تا شمارو لینك كنیم .
+ منتظر لینكتون هستم .
+http://www.jonbeshnet.ir/news/33132" target="_blank">فیروزجائی </a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://farasokhan.blogfa.com" title="" target="_blank">فرا سخن</a></font></div>            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../linkdaily/index.html">همه پیوندهای روزانه</a></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>پیوندها</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.welayatnet.com/fa/news/91496" title="" target="_blank">پویش «من منتظرم»</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.jnarm.blogfa.com/" title="" target="_blank">جنگ نرم</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://kangannajva.blogfa.com/" title="به دو زبان عربی ولاتین" target="_blank">کنگان نجوا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://http://www.globalresearch.ca" title="ممممممم" target="_blank">تحقیقات جهانی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://http://jannaat.mihanblog.com/" title="" target="_blank">جنات اندیمشک</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://journal-neo.org/http://" title="" target="_blank">چشم انداز جنوب غرب آسیا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.manar.com" title="" target="_blank">صحیفة المنار</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.nakhelnews.com/" title="" target="_blank">النخیل</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://almasalah.com/" title="" target="_blank">المسلة</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.almuraqeb-aliraqi.org/" title="" target="_blank">صحیفة المراقب العراقی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://awraqpress.net/portal/" title="" target="_blank">موقع اوراق برس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.alahednews.com.lb/" title="" target="_blank">موقع العهد</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.addiyar.com/" title="" target="_blank">الدیار لبنان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://topnews-nasserkandil.com/final/HomePage.php" title="" target="_blank">سایت توب نیوز</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://assafir.com/" title="" target="_blank">سایت السفیر لبنان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://burathanews.com/index.html" title="" target="_blank">سایت براثا</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://basiratjooyan.ir/" title="" target="_blank">پایگاه تحلیلی- بصیرتی بصیرت جویان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://weblognevisan.ir/" title="" target="_blank">انجمن وبلاگ نویسان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../../sarbazgomnam08.mihanblog.com/index.html" title="" target="_blank">پایگاه اطلاع رسانی سربازان گمنام امام زمان(عج)</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.koogana.ir/" title="" target="_blank">سایت خبری کوگانا(سایت خبری کنگان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href=" http://www.rahbaram110.blogfa.com/" title="" target="_blank">رهبرم سید علی</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="http://www.banakvagoonagoon.blogfa.com/" title="" target="_blank">بنک و گوناگون</a></font></div>            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../../link/index.html">همه پیوندها</a></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>نویسندگان</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../author/849529.html">عبدالمجید اورا (6217)</a></font></div>        </div><div class=div30></div>
+    </div>
+    
+    
+		
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>برچسبها</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252F+خلاصه+ی+کتاب.html">نجوای کنگان/ نجوا کنگان/ خلاصه ی کتاب</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252F.html">نجوای کنگان/ نجوا کنگان/</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252Fsputnik.html">نجوای کنگان/sputnik</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252F+خبرگزاری+فارس.html">نجوای کنگان/ نجوا کنگان/ خبرگزاری فارس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252Fخبرگزاری+فارس.html">نجوای کنگان/ نجوا کنگان/خبرگزاری فارس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان.html">نجوای کنگان/ نجوا کنگان</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+خبرگزاری+فارس.html">نجوای کنگان/ خبرگزاری فارس</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+نجوا+کنگان%252Fhttp%253A%252F%252Fir_____%257C(dot)%257C_____sputniknews_____%257C(dot)%257C_____com.html">نجوای کنگان/ نجوا کنگان/http://ir.sputniknews.com</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F++_____%257C(dot)%257C_____sputniknews.html">نجوای کنگان/  .sputniknews</a></font></div><div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1><a href="../../../tag/نجوای+کنگان%252F+خلاصه+کتاب.html">نجوای کنگان/ خلاصه کتاب</a></font></div>        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+        <div class=div3></div>
+        <div class=div341>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>کل بازدید : <script>getStatVar('total_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید امروز :<script>getStatVar('today_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید دیروز : <script>getStatVar('yesterday_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید این ماه : <script>getStatVar('this_month_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>تعداد نویسندگان : <script>getStatVar('total_author');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>تعداد کل پست ها : <script>getStatVar('total_post');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>آخرین بازدید : <script>getStatVar('last_view_date');</script></font></div>
+            <div class=div32><img border="0" src="http://mihanblog.com/public/public/user_data/template/2099141/mytheme.ir_12.jpg" width="15" height="10"><font class=text1>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></font></div>
+        </div><div class=div30></div>
+    </div>
+    <div class=div24>
+        <style>
+            .mihan_logo {
+                background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+                height: 131px;
+                margin-top: 10px;
+                text-align: center;
+            }</style>
+        <div class="mihan_logo"></div>
+        <center><script language="javascript" src="http://news.parseek.com/Javascript/?items=20&type=ALL&bullet=true&source=false" ></script></center><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+</div>
+
+</div>
+</td>
+<td class=div01 valign=top><div class=div001></div></td>
+<td class=div02>&nbsp;</td>
+</tr>
+<tr>
+    <td class=div04>&nbsp;</td>
+    <td colspan="3" class=div4>
+        <div class=div6></div>
+        <div class=div7>
+            <a href="http://www.mytheme.ir" target="_blank">
+                <img src="http://mihanblog.com/public/public/user_data/template/2099141/blank.gif" border=0 width=189 height=35></a></div></td>
+    <td class=div04>&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 460px;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'najvaye-kangan.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

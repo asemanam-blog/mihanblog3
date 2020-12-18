@@ -1,0 +1,1402 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://marivanmodir.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 1399/09/22');
+		/*970171*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[443]='8';commentCnt[444]='10';commentCnt[446]='0';commentCnt[448]='5';commentCnt[449]='10';commentCnt[450]='125';commentCnt[451]='11';commentCnt[452]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[443]='0';
+mihanblogDisLikeArrCnt[443]='0';
+mihanblogLikeArrCnt[444]='0';
+mihanblogDisLikeArrCnt[444]='0';
+mihanblogLikeArrCnt[446]='0';
+mihanblogDisLikeArrCnt[446]='0';
+mihanblogLikeArrCnt[448]='0';
+mihanblogDisLikeArrCnt[448]='0';
+mihanblogLikeArrCnt[449]='0';
+mihanblogDisLikeArrCnt[449]='0';
+mihanblogLikeArrCnt[450]='0';
+mihanblogDisLikeArrCnt[450]='0';
+mihanblogLikeArrCnt[451]='0';
+mihanblogDisLikeArrCnt[451]='0';
+mihanblogLikeArrCnt[452]='0';
+mihanblogDisLikeArrCnt[452]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://marivanmodir.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://marivanmodir.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','318');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','چهارشنبه 1394/10/30');
+	
+	setStatVar('today_view','26');
+	setStatVar('yesterday_view','54');
+	
+	setStatVar('this_month_view','1204');
+	setStatVar('last_month_view','3114');
+
+	setStatVar('total_view','571398');
+	setStatVar('last_view_date','شنبه 1399/09/22 (15:00)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://marivanmodir.mihanblog.com/statupdate/?data[refereruri]=http://haneberchem.mihanblog.com/linkdaily/page/3&data[postid]=&data[requesturi]=/&data[sdate]=1607774639&data[hash]=b3cf825ffcc330f7d7ff23d4b646478a&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://marivanmodir.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://marivanmodir.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://marivanmodir.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html dir="rtl" lang="fa-IR" prefix="og: http://ogp.me/ns#"><!--<![endif]--><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مریوان مدیر</title>
+<link rel="stylesheet" href="http://up.pitac.ir/up/pitac/Skin/U4DL/font-awesome.min.css" type="text/css" media="screen">
+<link rel="stylesheet" href="http://up.pitac.ir/up/pitac/Skin/U4DL/style.css" type="text/css" media="screen">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<script type="text/javascript" src="http://up.pitac.ir/up/pitac/Skin/U4DL/jquery.min.js"></script>
+<script type="text/javascript" src="http://up.pitac.ir/up/pitac/Skin/U4DL/myscript.js"></script>
+<script type="text/javascript" src="http://up.pitac.ir/up/pitac/Skin/U4DL/java.js"></script>
+<link href="http://up.pitac.ir/up/pitac/Skin/U4DL/favicon.png" rel="shortcut icon">
+<link rel="stylesheet" id="edd-styles-css" href="http://up.pitac.ir/up/pitac/Skin/U4DL/eddpita.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wordpress-popular-posts-css" href="http://up.pitac.ir/up/pitac/Skin/U4DL/wpp.css" type="text/css" media="all">
+<script type="text/javascript" src="http://up.pitac.ir/up/pitac/Skin/U4DL/jquery.js"></script>
+<script type="text/javascript" src="http://up.pitac.ir/up/pitac/Skin/U4DL/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="http://up.pitac.ir/up/pitac/Skin/U4DL/edd-ajax.min.js"></script>
+<script type="text/javascript">var blogUrl = 'http://marivanmodir.mihanblog.com'</script>
+<link rel="stylesheet" href="http://up.pitac.ir/up/pitac/Skin/U4DL/wp-page-numbers.css" type="text/css" media="screen"><!-- wp thread comment 1.4.9.4.002 -->
+
+
+  <style type="text/css">
+.commenet{
+padding:4px;
+line-height:25px;
+-moz-border-radius:7px;-webkit-border-radius:7px;-khtml-border-radius:7px;border-radius:7px;
+direction:rtl;text-align:right;
+font-family:Tahoma;
+}
+.commenet input[type="text"]{
+font-family:Tahoma;
+direction:rtr;text-align:right;
+border:1px solid #000000;
+padding:4px;
+-moz-border-radius:7px;-webkit-border-radius:7px;-khtml-border-radius:7px;border-radius:7px;
+}
+.commenet input[type="text"]:hover{
+border:1px solid #000000;
+-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;
+}
+.commenet textarea{
+font-family:Tahoma;
+direction:rtr;text-align:right;
+border:1px solid #000000;
+padding:4px;
+-moz-border-radius:7px;-webkit-border-radius:7px;-khtml-border-radius:7px;border-radius:7px;
+width:281px;
+}
+.commenet textarea:hover{
+border:1px solid #000000;
+-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;
+}
+.comment_loop{
+background:#F4F4F4;
+border-right:5px solid #E5E5E5;
+border-left:1px solid #E5E5E5;
+border-top:1px solid #E5E5E5;
+border-bottom:1px solid #E5E5E5;
+margin-bottom:24px;
+padding:6px;
+-moz-border-radius:14px;-webkit-border-radius:14px;-khtml-border-radius:14px;border-radius:14px;
+font-size:12px;
+line-height:25px;
+}
+.comment_loop:hover{
+background:#FFF;
+}
+.comment_sender{
+padding:10px;
+color:#339900;
+font-weight:bold;font-size:13px;
+}
+.comment_sender a {
+color:#339900;
+text-decoration: none;
+font-size:13px;
+}
+.comment_sender a:visited {
+color:#339900;
+text-decoration: none;
+font-size:13px;
+}
+.comment_sender a:hover {
+color:#FF0000;
+text-decoration: none;
+}
+.comment_reply{
+margin-right:35px;margin-top:7px;margin-bottom:2px;margin-left:35px;
+color:#2D0016;
+padding:4px;
+border-top:1px solid #E5E5E5;
+-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;
+background:#EFEFEF;
+}
+.comment_reply:hover{
+padding:6px;
+ background:#FFFBFC;
+-moz-border-radius:7px;-webkit-border-radius:7px;-khtml-border-radius:7px;border-radius:7px;
+}
+.comment_sender_link{
+padding:10px;
+color:#FF0000;
+font-size:12px;
+text-align:left;direction:ltr;
+}
+.comment_sender_link a {
+color:#FF0000;
+text-decoration: none;
+font-size:12px;
+}
+.comment_sender_link a:visited {
+color:#FF0000;
+text-decoration: none;
+font-size:12px;
+}
+.comment_sender_link a:hover {
+color:#0033FF;
+text-decoration: none;
+}
+.comment_form {
+direction: rtl;
+padding: 20px;
+background:#fff;/* رنگ پس زمینه فرم ارسال نظر */
+-moz-border-radius:14px;-webkit-border-radius:14px;-khtml-border-radius:14px;border-radius:14px;
+border-right:5px solid #E5E5E5;
+border-left:1px solid #E5E5E5;
+border-top:1px solid #E5E5E5;
+border-bottom:1px solid #E5E5E5;
+margin-bottom:24px;
+}
+.comment_form label{
+text-align: left;
+font-size: 11px;
+padding-left: 10px;
+}
+.comment_form_row {
+margin:11px;/* فاصله بین فیلد ها */
+}
+</style>
+   
+
+
+</head>
+<body>
+<div class="header">
+<div class="nav">
+<div class="menu">
+<a title="مریوان مدیر" href="index.html"><i class="icon-large icon-home"></i> صفحه اصلی</a>
+<span></span>
+<a title="سفارش" href="index.html">سفارش</a>
+<span></span>
+<a title="تعرفه ها" href="index.html">تعرفه ها</a>
+<span></span>
+<a title="خبرنامه" href="http://marivanmodir.mihanblog.com/rss">خبرنامه</a>
+<span></span>
+<a title="نقشه سایت" href="http://marivanmodir.mihanblog.com/sitemap.xml">نقشه سایت</a>
+<span></span>
+<a title="پیتک دات آی آر" href="http://www.marivanmodir.mihanblog.com/"> درباره ما</a>
+<span></span>
+</div><form id="frm-16076229995fd26157b6a7c" method="get" action="http://marivanmodir.mihanblog.com/post/search/fid/16076229995fd26157b6a7c"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+<div id="search">
+<form method="get" id="searchform" action="index.html">
+<input type="hidden" name="blogs" value="1,5">
+<input type="text" value="كلمه مورد نظر را اینجا بنویسید" onfocus="if (this.value == 'كلمه مورد نظر را اینجا بنویسید') {this.value = '';}" onblur="if (this.value == '') {this.value = 'كلمه مورد نظر را اینجا بنویسید';}" name="search" id="s" class="searchtext">
+<input type="submit" id="searchsubmit" value="   " class="searchsubmit">
+</form>
+</div><input type="hidden" name="frm-id" value="16076229995fd26157b6a7c" id="frm-id" /></form></div>
+<div class="ads-banner">
+<a target="_blank" rel="nofollow" title="" href="http://zabaneramzi.com/"><img src="http://dl.konkur.in/image/ads/ZAban468-60.gif" alt="زبان رمزی" title="زبان رمزی" height="60" width="468"></a>
+</div>
+<div class="logo2"></div>
+<div class="header-logo">
+<h1 class="logo">مریوان مدیر</h1>
+<h2 class="desc">مریوان مدیر</h2>
+<p class="date">به مریوان مدیر خوش آمدید.</p>
+</div>
+</div>
+<div id="warpper">
+<p id="breadcrumbs"><i class="icon-large icon-double-angle-left"></i>	شما اینجا هستید :
+
+		<span prefix="v: http://rdf.data-vocabulary.org/#">
+			<span typeof="v:Breadcrumb"><span class="breadcrumb_last" property="v:title">مریوان مدیر</span></span>
+		</span></p>
+
+
+<a href="index.html"><img width="985" height="100" src="../file.mihanblog.com/public/user_data/user_files/324/970171/log.jpg"></a>
+
+
+
+
+<div class="socialsite">
+<div class="icon-socialsite"><a target="_blank" href="http://marivanmodir.mihanblog.com/rss" title="RSS"><span class="icon-rss"></span></a></div>
+<div class="icon-socialsite"><a target="_blank" href="index.html" title="google"><span class="icon-google-plus" style="margin-right: 4px;"></span></a></div>
+<div class="icon-socialsite"><a target="_blank" href="index.html" title="twitter"><span class="icon-twitter" style="margin-right: 5px;"></span></a></div>
+<div class="icon-socialsite"><a target="_blank" href="index.html" title="facebook"><span class="icon-facebook" style="margin-right: 10px;"></span></a></div>
+</div>
+<div class="mianbox">
+<div class="box-download">
+<div class="button">
+<ul>
+<li id="info" class=""><span>نویسندگان</span></li>
+<li id="screen" class="current"><span>صفحات اضافی</span></li>
+</ul>
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="custom-field"><div class="info" style="opacity: 0.1; display: none;">
+<ul><li><a href="http://marivanmodir.mihanblog.com/post/author/822761" title="صادق  مــــــرادی">صادق  مــــــرادی</a></li></ul>
+</div><div class="screen" style="opacity: 1; display: block;">
+<ul><li><a title="پاورپوینت های تجارت الکترونیک 2نیمسال دو93-94" href="http://marivanmodir.mihanblog.com/extrapage/tejart29394">پاورپوینت های تجارت الکترونیک 2نیمسال دو93-94</a></li><li><a title="تجارت الکترونیک 2" href="http://marivanmodir.mihanblog.com/extrapage/tejart2">تجارت الکترونیک 2</a></li><li><a title="موضوعات مدیریتی" href="http://marivanmodir.mihanblog.com/extrapage/modireat">موضوعات مدیریتی</a></li><li><a title="موضوعات مدیریت" href="http://marivanmodir.mihanblog.com/extrapage/modiret">موضوعات مدیریت</a></li><li><a title="نمونه سوالات رایگان تمامی رشته های پیام نور" href="http://marivanmodir.mihanblog.com/extrapage/soalat">نمونه سوالات رایگان تمامی رشته های پیام نور</a></li></ul>
+<div class="clear"></div>
+</div></div>
+<div class="clear"></div>
+</div>
+<div class="clr"></div></div>
+<div class="last-top">
+<div id="title"><h3><span class="icon-large icon-heart"></span>  آخرین مطالب</h3></div>
+<ul><li><a href="http://marivanmodir.mihanblog.com/post/452" title="پیام تسلیت">پیام تسلیت</a></li><li><a href="http://marivanmodir.mihanblog.com/post/451" title="گزارش فضای کسب و کار ۲۰۱۶ ایران">گزارش فضای کسب و کار ۲۰۱۶ ایران</a></li><li><a href="http://marivanmodir.mihanblog.com/post/450" title="استخدامی بانک ملت">استخدامی بانک ملت</a></li><li><a href="http://marivanmodir.mihanblog.com/post/449" title="نوبل شیمی 2015 به پروفسور کرد تعلق گرفت">نوبل شیمی 2015 به پروفسور کرد تعلق گرفت</a></li><li><a href="http://marivanmodir.mihanblog.com/post/448" title="درخواست نویسندگی در وبلاگ مریوان مدیر">درخواست نویسندگی در وبلاگ مریوان مدیر</a></li></ul></div><div class="content">
+<div id="page-content">
+<div class="two-box-warpper">
+<div id="page-body">
+<div class="page-body">
+				      
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<div class="post-title">
+<div class="icon sefid"><span class="icon-share" style="margin-right: 7px;"></span></div>
+<h3><a href="http://marivanmodir.mihanblog.com/post/452" rel="bookmark" title="پیام تسلیت">پیام تسلیت</a></h3>
+<div class="post-info">
+<ul>
+<li>
+<i class="icon-user"></i> <span>صادق  مــــــرادی</span><i class="icon-time"></i> <span>سه شنبه 1394/10/29</span>
+<i class="icon-comments"></i> <span>
+<i class="icon-time"></i> <span>سه شنبه 1394/10/29</span>
+<i class="icon-comments"></i> <span><a target="_self" href="http://marivanmodir.mihanblog.com/post/452#post_form" title="دیدگاه‌ها برای پیام تسلیت"><script>setCommentCnt(452)</script> نظر</a></span>
+
+</li>
+</ul>
+</div></div>
+<div class="content">
+      	<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+<div style="text-align: right;"><span style="color: rgb(51, 51, 51); font-family: f288, Tahoma, arial; font-size: 13px; line-height: 26px; text-align: justify;">دوست عزیز اقای احمد شریفی با نهایت تاثر و تاسف درگذشت برادر گرامیتان اقای عبدالله شریفی را تسلیت و تعزیت عرض نموده و از خداوند تبارک و تعالی برای آن مرحوم علو درجات و رحمت واسعه و برای شما و سایر بازماندگان صبر و بردباری مسئلت داریم.</span></div><div style="text-align: right;"><span style="color: rgb(51, 51, 51); font-family: f288, Tahoma, arial; font-size: 13px; line-height: 26px; text-align: justify;"><br></span></div><div style="text-align: center;"><img class="decoded" alt="http://file.mihanblog.com//public/user_data/user_files/324/970171//12.jpg" src="../file.mihanblog.com/public/user_data/user_files/324/970171/12.jpg"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		            	<br>
+			<cb:block_post_tag>
+			     <b>برچسب ها:</b>
+			     <cb:loop_post_tag>
+				 <a href="http://marivanmodir.mihanblog.com/[cb:post_tag_href]" >
+					[cb:post_tag_name]
+				 </a> ،
+
+  <script language="javascript" >
+</script>
+   
+			     </cb:loop_post_tag>
+			     
+<br><RB:Post_More_Block>
+<a href="http://marivanmodir.mihanblog.com/post/452" class="greenkey" title="پیام تسلیت"><span class="icon-arrow-left"></span> ادامه مطلب...</a></RB:Post_More_Block>
+</div>
+</div>
+<div class="post">
+<div class="post-title">
+<div class="icon sefid"><span class="icon-share" style="margin-right: 7px;"></span></div>
+<h3><a href="http://marivanmodir.mihanblog.com/post/451" rel="bookmark" title="گزارش فضای کسب و کار ۲۰۱۶ ایران">گزارش فضای کسب و کار ۲۰۱۶ ایران</a></h3>
+<div class="post-info">
+<ul>
+<li>
+<i class="icon-user"></i> <span>صادق  مــــــرادی</span><i class="icon-time"></i> <span>شنبه 1394/10/12</span>
+<i class="icon-comments"></i> <span>
+<i class="icon-time"></i> <span>شنبه 1394/10/12</span>
+<i class="icon-comments"></i> <span><a target="_self" href="http://marivanmodir.mihanblog.com/post/451#post_form" title="دیدگاه‌ها برای گزارش فضای کسب و کار ۲۰۱۶ ایران"><script>setCommentCnt(451)</script> نظر</a></span>
+
+</li>
+</ul>
+</div></div>
+<div class="content">
+      	
+
+
+<p align="right">
+
+
+</p><p align="right" class="itemIntroText" style="font: 13px/22px tahoma; list-style: none; margin: 0px 0px 20px; padding: 0px; border: 0px currentColor; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; box-sizing: border-box; widows: 1; font-size-adjust: none; font-stretch: normal; background-color: rgb(255, 255, 255); -webkit-text-stroke-width: 0px;">بانک جهانی در جدیدترین گزارش خود رتبه ایران به لحاظ سهولت فضای کسب و کار را ۱۲ پله تصحیح و در میان ۱۸۹ کشور ۱۱۸ اعلام کرد.بانک جهانی در جدیدترین گزارش خود موسوم به&nbsp; گزارش فضای کسب و کار ۲۰۱۶به بررسی سهولت فعالیت‌های اقتصادی و فضای کسب و کار ۱۸۹ کشور جهان پرداخته است.</p><div align="right" class="itemFullText" style="font: 13px/22px tahoma; list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; box-sizing: border-box; widows: 1; font-size-adjust: none; font-stretch: normal; background-color: rgb(255, 255, 255); -webkit-text-stroke-width: 0px;"></div><div align="right" class="itemFullText" style="font: 13px/22px tahoma; list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; box-sizing: border-box; widows: 1; font-size-adjust: none; font-stretch: normal; background-color: rgb(255, 255, 255); -webkit-text-stroke-width: 0px;"><figure class="wp-caption aligncenter" id="attachment_4519" style="list-style: none; margin: 0px auto 5px; padding: 0px; border: 0px currentColor; width: 300px; text-align: left; line-height: 18px; clear: both; font-style: italic; max-width: 100%; box-sizing: border-box;"><a style="list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; transition:0.2s ease-in-out; color: rgb(68, 68, 68); text-decoration: none; box-sizing: border-box;" href="http://modiriran.ir/wp-content/uploads/2015/10/Doing-Business-1.jpg"><img width="300" height="168" class="size-full wp-image-4519 tie-appear" style="list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; transition:0.4s ease-in-out; height: auto; vertical-align: middle; max-width: 100%; box-sizing: border-box; opacity: 1;" alt=" Doing Business " src="http://modiriran.ir/wp-content/uploads/2015/10/Doing-Business-1.jpg"></a><figcaption class="wp-caption-text" style="list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; box-sizing: border-box;">Doing Business</figcaption></figure></div><p align="right" class="itemFullText" style="font: 13px/22px tahoma; list-style: none; margin: 0px 0px 20px; padding: 0px; border: 0px currentColor; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; white-space: normal; box-sizing: border-box; widows: 1; font-size-adjust: none; font-stretch: normal; background-color: rgb(255, 255, 255); -webkit-text-stroke-width: 0px;">بر اساس این گزارش، ایران از نظر سهولت فعالیت‌های اقتصادی و فضای کسب و کار با یک پله صعود نسبت به سال گذشته رتبه ۱۱۸ در میان ۱۸۹ کشور جهان را کسبکرده است این نهاد بین‌المللی برآورد خود در مورد رتبه ایران در سال گذشته را نیز اصلاح کرده است...</p>
+
+
+
+
+
+		            	<br>
+			<cb:block_post_tag>
+			     <b>برچسب ها:</b>
+			     <cb:loop_post_tag>
+				 <a href="http://marivanmodir.mihanblog.com/[cb:post_tag_href]" >
+					[cb:post_tag_name]
+				 </a> ،
+
+  <script language="javascript" >
+</script>
+   
+			     </cb:loop_post_tag>
+			     
+<br><RB:Post_More_Block>
+<a href="http://marivanmodir.mihanblog.com/post/451" class="greenkey" title="گزارش فضای کسب و کار ۲۰۱۶ ایران"><span class="icon-arrow-left"></span> ادامه مطلب...</a></RB:Post_More_Block>
+</div>
+</div>
+<div class="post">
+<div class="post-title">
+<div class="icon sefid"><span class="icon-share" style="margin-right: 7px;"></span></div>
+<h3><a href="http://marivanmodir.mihanblog.com/post/450" rel="bookmark" title="استخدامی بانک ملت">استخدامی بانک ملت</a></h3>
+<div class="post-info">
+<ul>
+<li>
+<i class="icon-user"></i> <span>صادق  مــــــرادی</span><i class="icon-folder-open"></i> <span><a href="http://marivanmodir.mihanblog.com/post/category/95" rel="category tag">			اخبار استخدامی</a>,</span><i class="icon-time"></i> <span>جمعه 1394/08/15</span>
+<i class="icon-comments"></i> <span>
+<i class="icon-time"></i> <span>جمعه 1394/08/15</span>
+<i class="icon-comments"></i> <span><a target="_self" href="http://marivanmodir.mihanblog.com/post/450#post_form" title="دیدگاه‌ها برای استخدامی بانک ملت"><script>setCommentCnt(450)</script> نظر</a></span>
+
+</li>
+</ul>
+</div></div>
+<div class="content">
+      	
+<div class="prjTitle"><div align="center"><font size="2"><br></font></div><div align="center"><font size="2"><img src="http://sarmadnews.com/files/fa/news/1394/6/7/88651_418.jpg" title="اهدای جایزه ملی محیط بانان نمونه کشور با همکاری بانک ملت و سازمان حفاظت محیط زیست" alt="اهدای جایزه ملی محیط بانان نمونه کشور با همکاری بانک ملت و سازمان حفاظت محیط زیست" style="border: none;" align="middle" width="300"></font></div><div align="center"><font size="2"><span class="prjContent"><br></span></font></div><font size="2"><span class="prjContent">بانک ملت برای تامین نیروی انسانی مورد نیاز خود در استان کردستان و دیگر استان ها از بین واجدین شرایط نیرو استخدام می کند.</span></font><div style="text-align: justify;"><span class="prjTitle"></span><div align="justify"><span class="prjContent"><div style="text-align: right;"><div style=""><div style="direction: rtl;"><font size="2">به
+ گزارش روابط عمومی بانک ملت، با مصوبه هیأت مدیره، برگزاری آزمون استخدامی
+ برای جذب نیروهای واجد شرایط، در دستور کار اداره کل سرمایه انسانی این 
+بانک قرار گرفته است .<br>بر اساس این 
+گزارش، ثبت نام آزمون استخدامی بانک ملت صرفاً به صورت اینترنتی و از روز 
+پنج شنبه ۱۴آبان ماه&nbsp;سال جاری شروع خواهد شد و تا ۲۲ آبان ماه&nbsp;از طریق سایت
+ اینترنتی این بانک به نشانی www.bankmellat.ir&nbsp;ادامه خواهد&nbsp;داشت.<br></font><div align="center"><font size="2"><br>
+
+            </font><table style="font family: Tahoma; border collapse: collapse" align="center" border="1" cellpadding="3" cellspacing="0">
+                <tbody><tr bgcolor="#ccccff">
+                    <td align="Right"><font size="2">مرحله انجام کار
+ </font></td>
+                    <td align="Right"><font size="2">تاریخ
+ </font></td>
+
+                </tr>
+                <tr>
+                    <td align="Right"><font size="2">ثبت نام اینترنتی
+ </font></td>
+                    <td align="Right"><font size="2">از تاریخ <span dir="ltr">94/08/14</span> لغایت <span dir="ltr">94/08/22</span></font>
+ </td>
+
+                </tr>
+                <tr>
+                    <td align="Right"><font size="2">دریافت کارت ورود به جلسه آزمون
+ </font></td>
+                    <td align="Right"><font size="2">از تاریخ <span dir="ltr">94/09/10</span> لغایت <span dir="ltr">94/09/12</span></font>
+ </td>
+
+                </tr>
+                <tr>
+                    <td align="Right"><font size="2">آزمون کتبی
+ </font></td>
+                    <td align="Right"><font size="2"><span dir="ltr">94/09/13</span></font>
+ </td>
+
+                </tr>
+
+            </tbody></table><font size="2">
+
+            </font><br>
+            </div></div></div></div></span></div></div>
+
+<p style="text-align:justify"><font size="2"><span style="line-height:1.6em"><a href="http://mellat.iran-azmoon.ir/Conditions.aspx" target="_blank"><span style="color:#0000CD">برای مشاهده شرایط استخدام اینجا را کلیک کنید</span></a></span></font></p>
+
+
+
+<p style="text-align:justify"><font size="2"><a href="http://mellat.iran-azmoon.ir/Register.aspx" target="_blank"><span style="color:#0000CD">برای ثبت نام یا اصلاح اطلاعات اینجا را کلیک کنید</span></a></font></p></div><font size="2">
+
+
+</font>
+
+		            	<br>
+			<cb:block_post_tag>
+			     <b>برچسب ها:</b>
+			     <cb:loop_post_tag>
+				 <a href="http://marivanmodir.mihanblog.com/[cb:post_tag_href]" >
+					[cb:post_tag_name]
+				 </a> ،
+
+  <script language="javascript" >
+</script>
+   
+			     </cb:loop_post_tag>
+			     
+<br><RB:Post_More_Block>
+<a href="http://marivanmodir.mihanblog.com/post/450" class="greenkey" title="استخدامی بانک ملت"><span class="icon-arrow-left"></span> ادامه مطلب...</a></RB:Post_More_Block>
+</div>
+</div>
+<div class="post">
+<div class="post-title">
+<div class="icon sefid"><span class="icon-share" style="margin-right: 7px;"></span></div>
+<h3><a href="http://marivanmodir.mihanblog.com/post/449" rel="bookmark" title="نوبل شیمی 2015 به پروفسور کرد تعلق گرفت">نوبل شیمی 2015 به پروفسور کرد تعلق گرفت</a></h3>
+<div class="post-info">
+<ul>
+<li>
+<i class="icon-user"></i> <span>صادق  مــــــرادی</span><i class="icon-time"></i> <span>شنبه 1394/07/18</span>
+<i class="icon-comments"></i> <span>
+<i class="icon-time"></i> <span>شنبه 1394/07/18</span>
+<i class="icon-comments"></i> <span><a target="_self" href="http://marivanmodir.mihanblog.com/post/449#post_form" title="دیدگاه‌ها برای نوبل شیمی 2015 به پروفسور کرد تعلق گرفت"><script>setCommentCnt(449)</script> نظر</a></span>
+
+</li>
+</ul>
+</div></div>
+<div class="content">
+      	<h3 style="text-align: justify;" align="justify"><font face="Mihan-Nassim" size="3">یکصد و هفتادمین جایزه نوبل شیمی 2015 به پاس خدمات&nbsp; «توماس
+ لیندال» سوئدی از موسسه فرانسیس کریک و آزمایشگاه کلیر هال در انگلیس، «پل
+ مولدریچ» آمریکایی از موسسه پزشکی هاوارد هیوز و دانشکده پزشکی دانشگاه 
+دوک و «عزیز سانجار» کرد ترکیه‌ای از دانشگاه کارولینای شمالی برای مکانیزم
+ ترمیم دی‌ان‌ای اختصاص پیدا کرد.</font></h3><div align="center"><div><img src="http://static5.cloob.com//public/user_data/gen_thumb/n-15-10-8/3/354353b8ffeb2c416b6b9a072c1a3665-425" height="304" width="219"></div></div>
+
+<p style="text-align: justify;" align="justify"><font size="2">
+به گزارش پایگاه اینترنتی نوبل پرایز، جایزه نوبل شیمی 2015 به&nbsp; </font><font size="2"><font size="2">به پاس تلاش سه شیمیدان </font>و فعالیت
+ این محققان در حوزه مطالعات مکانیکی ترمیم دی.ان.ای اعطا شد.</font><br></p><div align="justify"><font size="2">
+
+</font></div><p style="text-align: justify;" align="justify"><font face="tahoma,arial,helvetica,sans-serif" size="2">علت این که جایزه نوبل در مواردی به صورت مشترک به چند نفر اهدا می شود، 
+اساسنامه بنیاد نوبل است که در آن آمده است: ممکن است مبلغ جایزه بین دو 
+کار تحقیقاتی که هر کدام به تنهایی مستحق دریافت جایزه هستند، به طور مساوی
+ تقسیم شود. اگر کار تحقیقاتی که جایزه را دریافت می کند، حاصل کار دو یا 
+سه نفر باشد، جایزه باید به طور مساوی بین آنها تقسیم شود. تحت هیچ شرایطی 
+جایزه نوبل بین گروهی که بیش از سه نفر باشند، تقسیم نخواهد شد.</font><br><font face="tahoma,arial,helvetica,sans-serif" size="2">
+جایزه نوبل شیمی هر سال توسط آکادمی سلطنتی علوم سوئد در استکهلم اهدا می 
+شود. این جایزه یکی از پنج جوایز نوبل است که طبق وصیتنامه آلفرد نوبل به 
+دستاوردهای چشمگیر در حوزه های پزشکی، فیزیک، شیمی، ادبیات و صلح اعطا می 
+شود. نوبل اقتصاد ابتدا در این وصیتنامه نبود، اما توسط بانک مرکزی سوئد به
+ این جوایز افزوده شد<br>
+شیمی یکی از مهمترین حوزه های فعالیت آلفرد نوبل بود و توسعه اختراعات وی 
+بر پایه علم شیمی قرار داشت. شیمی دومین حوزه ای است که در وصیت نامه نوبل 
+اشاره شده است. جایگاه اول به فیزیک تعلق دارد.<br>
+عزیر سنکار یا سنجار متولد سال 1946 در ماردین کردستان ترکیه ، مدرک 
+پی.اچ.دی خود را در سال 1977 از دانشگاه دالاس دریافت کرد. وی استاد 
+بیوشیمی و بیوفیزیک دانشکده پزشکی دانشگاه کارولینای شمالی است</font><font face="tahoma,arial,helvetica,sans-serif" size="2"><font size="2">وی اولین دانشمند کرد زبان 
+است که تاکنون موفق به دریافت جایزه نوبل شده است.</font> </font></p><div align="justify"><br></div>
+
+
+		            	<br>
+			<cb:block_post_tag>
+			     <b>برچسب ها:</b>
+			     <cb:loop_post_tag>
+				 <a href="http://marivanmodir.mihanblog.com/[cb:post_tag_href]" >
+					[cb:post_tag_name]
+				 </a> ،
+
+  <script language="javascript" >
+</script>
+   
+			     </cb:loop_post_tag>
+			     
+<br><RB:Post_More_Block>
+<a href="http://marivanmodir.mihanblog.com/post/449" class="greenkey" title="نوبل شیمی 2015 به پروفسور کرد تعلق گرفت"><span class="icon-arrow-left"></span> ادامه مطلب...</a></RB:Post_More_Block>
+</div>
+</div>
+<div class="post">
+<div class="post-title">
+<div class="icon sefid"><span class="icon-share" style="margin-right: 7px;"></span></div>
+<h3><a href="http://marivanmodir.mihanblog.com/post/448" rel="bookmark" title="درخواست نویسندگی در وبلاگ مریوان مدیر">درخواست نویسندگی در وبلاگ مریوان مدیر</a></h3>
+<div class="post-info">
+<ul>
+<li>
+<i class="icon-user"></i> <span>صادق  مــــــرادی</span><i class="icon-time"></i> <span>چهارشنبه 1394/04/3</span>
+<i class="icon-comments"></i> <span>
+<i class="icon-time"></i> <span>چهارشنبه 1394/04/3</span>
+<i class="icon-comments"></i> <span><a target="_self" href="http://marivanmodir.mihanblog.com/post/448#post_form" title="دیدگاه‌ها برای درخواست نویسندگی در وبلاگ مریوان مدیر"><script>setCommentCnt(448)</script> نظر</a></span>
+
+</li>
+</ul>
+</div></div>
+<div class="content">
+      	
+
+
+<div align="center"><font size="2">با توجه به تمام شدن دوره کارشناسی و خداحافظی با محیط دانشگاه از همه دوستان مدیریتی ( بازرگانی - دولتی ) و دانشجویان عزیز مدیریتی&nbsp; دانشگاه پیام نور مریوان خواهشمندیم اگر به نویسندگی و اداره کردن وبلاگ مریوان مدیر علاقمند می باشید می توانید در بخش نظرات اعلام کنید یا به شماره تماس زیر تماس حاصل فرمایید<br></font><font size="2"><img alt="http://shaskam.ir/wp-content/uploads/2015/05/thumb4736.jpg" src="http://shaskam.ir/wp-content/uploads/2015/05/thumb4736.jpg" height="19" width="21">&nbsp; ---------<br>تاریخ <font color="#3366FF">تاسیس</font> وبلاگ مریوان مدیر<br>--------<br><font color="#3366FF"><span class="date">1391/04/2</span></font><br><br></font><font size="2"><img src="http://s5.picofile.com/file/8140020184/logo.png" height="89" width="240"></font><br></div>
+
+
+
+
+
+		            	<br>
+			<cb:block_post_tag>
+			     <b>برچسب ها:</b>
+			     <cb:loop_post_tag>
+				 <a href="http://marivanmodir.mihanblog.com/[cb:post_tag_href]" >
+					[cb:post_tag_name]
+				 </a> ،
+
+  <script language="javascript" >
+</script>
+   
+			     </cb:loop_post_tag>
+			     
+<br><RB:Post_More_Block>
+<a href="http://marivanmodir.mihanblog.com/post/448" class="greenkey" title="درخواست نویسندگی در وبلاگ مریوان مدیر"><span class="icon-arrow-left"></span> ادامه مطلب...</a></RB:Post_More_Block>
+</div>
+</div>
+<div class="post">
+<div class="post-title">
+<div class="icon sefid"><span class="icon-share" style="margin-right: 7px;"></span></div>
+<h3><a href="http://marivanmodir.mihanblog.com/post/446" rel="bookmark" title="فرا رسیدن ماه مبارک رمضان گرامی باد">فرا رسیدن ماه مبارک رمضان گرامی باد</a></h3>
+<div class="post-info">
+<ul>
+<li>
+<i class="icon-user"></i> <span>صادق  مــــــرادی</span><i class="icon-time"></i> <span>پنجشنبه 1394/03/28</span>
+<i class="icon-comments"></i> <span>
+<i class="icon-time"></i> <span>پنجشنبه 1394/03/28</span>
+<i class="icon-comments"></i> <span><a target="_self" href="http://marivanmodir.mihanblog.com/post/446#post_form" title="دیدگاه‌ها برای فرا رسیدن ماه مبارک رمضان گرامی باد"><script>setCommentCnt(446)</script> نظر</a></span>
+
+</li>
+</ul>
+</div></div>
+<div class="content">
+      	
+
+<div align="center">فرا رسیدن ماه ضیافت الهی و استشمام بوی خوش رمضان گوارای وجودتان <br><br><br><img alt="http://up.magicwand.ir/view/278743/fu7177.jpg" src="http://up.magicwand.ir/view/278743/fu7177.jpg" height="302" width="347"><br></div>
+
+
+
+
+
+
+		            	<br>
+			<cb:block_post_tag>
+			     <b>برچسب ها:</b>
+			     <cb:loop_post_tag>
+				 <a href="http://marivanmodir.mihanblog.com/[cb:post_tag_href]" >
+					[cb:post_tag_name]
+				 </a> ،
+
+  <script language="javascript" >
+</script>
+   
+			     </cb:loop_post_tag>
+			     
+<br><RB:Post_More_Block>
+<a href="http://marivanmodir.mihanblog.com/post/446" class="greenkey" title="فرا رسیدن ماه مبارک رمضان گرامی باد"><span class="icon-arrow-left"></span> ادامه مطلب...</a></RB:Post_More_Block>
+</div>
+</div>
+<div class="post">
+<div class="post-title">
+<div class="icon sefid"><span class="icon-share" style="margin-right: 7px;"></span></div>
+<h3><a href="http://marivanmodir.mihanblog.com/post/444" rel="bookmark" title="پاورپوینت های تجارت الکترونیک 2نیمسال دو93-94">پاورپوینت های تجارت الکترونیک 2نیمسال دو93-94</a></h3>
+<div class="post-info">
+<ul>
+<li>
+<i class="icon-user"></i> <span>صادق  مــــــرادی</span><i class="icon-folder-open"></i> <span><a href="http://marivanmodir.mihanblog.com/post/category/94" rel="category tag">			تجارت الکترونیک 2</a>,</span><i class="icon-time"></i> <span>سه شنبه 1394/03/26</span>
+<i class="icon-comments"></i> <span>
+<i class="icon-time"></i> <span>سه شنبه 1394/03/26</span>
+<i class="icon-comments"></i> <span><a target="_self" href="http://marivanmodir.mihanblog.com/post/444#post_form" title="دیدگاه‌ها برای پاورپوینت های تجارت الکترونیک 2نیمسال دو93-94"><script>setCommentCnt(444)</script> نظر</a></span>
+
+</li>
+</ul>
+</div></div>
+<div class="content">
+      	
+<div><div style="text-align: center; color: rgb(68, 68, 68); font-family: Tahoma; font-size: 12px;"><font size="2">پاورپوینت های ارائه شده توسط دانشجویان کلاس تجارت الکترونیک</font><span style="font-size: small;">2</span><span style="font-size: small;">&nbsp;(اقای سامان کیانی) &nbsp;نیمسال دوم&nbsp; 94-93درباره موضوعات تجارت الکترونیک و شرکت های فعال ایرانی و خارجی در تجارت الکترونیک.....<br></span></div><div style="text-align: center; color: rgb(68, 68, 68); font-family: Tahoma; font-size: 12px;"><font size="2">برای ارسال پاورپوینت های خود می توانید از طریق ایمیل زیر اقدام فرمایید</font></div><div style="text-align: center; color: rgb(68, 68, 68); font-family: Tahoma; font-size: 12px;"><br></div><div style="text-align: center; color: rgb(68, 68, 68); font-family: Tahoma;"><font size="2">marivanmodir90@gmail.com</font></div><div style="text-align: center; color: rgb(68, 68, 68); font-family: Tahoma; font-size: 12px;"><span style="font-size: small; text-align: right;"><br></span></div><div style="text-align: center; color: rgb(68, 68, 68); font-family: Tahoma; font-size: 12px;"><span style="font-size: small; text-align: right;">برای دانلود پاورپوینت ها بر روی لینک زیر کلیک نمایید</span></div></div><div style="text-align: center;"><font size="2"><a href="http://marivanmodir.mihanblog.com/extrapage/tejart2" target="_blank" title="">تجارت الکترونیک2 نیمسال اول 94-</a><a href="http://marivanmodir.mihanblog.com/extrapage/tejart2" target="_blank" title="">93</a></font></div><div style="text-align: center;"><br><a href="http://marivanmodir.mihanblog.com/extrapage/tejart29394" target="" title="پاورپوینت های درس تجارت الکترونیک 2"><font size="2">تجارت الکترونیک 2 نیمسال دوم 94-93</font></a><br></div><div style="text-align: center;"><br><div style="text-align: center;"><img src="http://s5.picofile.com/file/8140020184/logo.png"></div><br></div>
+
+
+
+
+		            	<br>
+			<cb:block_post_tag>
+			     <b>برچسب ها:</b>
+			     <cb:loop_post_tag>
+				 <a href="http://marivanmodir.mihanblog.com/[cb:post_tag_href]" >
+					[cb:post_tag_name]
+				 </a> ،
+
+  <script language="javascript" >
+</script>
+   
+			     </cb:loop_post_tag>
+			     
+<br><RB:Post_More_Block>
+<a href="http://marivanmodir.mihanblog.com/post/444" class="greenkey" title="پاورپوینت های تجارت الکترونیک 2نیمسال دو93-94"><span class="icon-arrow-left"></span> ادامه مطلب...</a></RB:Post_More_Block>
+</div>
+</div>
+<div class="post">
+<div class="post-title">
+<div class="icon sefid"><span class="icon-share" style="margin-right: 7px;"></span></div>
+<h3><a href="http://marivanmodir.mihanblog.com/post/443" rel="bookmark" title="یادگار رستمی نابغه فوتبال ایران">یادگار رستمی نابغه فوتبال ایران</a></h3>
+<div class="post-info">
+<ul>
+<li>
+<i class="icon-user"></i> <span>صادق  مــــــرادی</span><i class="icon-time"></i> <span>دوشنبه 1394/03/4</span>
+<i class="icon-comments"></i> <span>
+<i class="icon-time"></i> <span>دوشنبه 1394/03/4</span>
+<i class="icon-comments"></i> <span><a target="_self" href="http://marivanmodir.mihanblog.com/post/443#post_form" title="دیدگاه‌ها برای یادگار رستمی نابغه فوتبال ایران"><script>setCommentCnt(443)</script> نظر</a></span>
+
+</li>
+</ul>
+</div></div>
+<div class="content">
+      	<div align="justify">
+
+یادگار رستمی بهترین بازیکن و اقای گل&nbsp;  تورنمنت Cordial Cup&nbsp; شد<br>&nbsp;یادگار رستمی مهاجم جوان مریوانی که در تیم 11 سال اکادمی کیا به سرمربی گری مهدی مهدوی کیا در تورنمنت دو روزه&nbsp; Cordial Cup حضور داشت توانست با 14گل به عنوان بهترین بازیکن و اقای گل این مسابقات نایل گردد گفتنی است که از یادگار رستمی به عنوان نابغه فوتبال ایران&nbsp; ذکر می شود<br>تیم اکادمی کیا در روز دوم و پایانی جام در بازی نهایی&nbsp; در ضربات پنالتی با نتیجه 6 - 7 مغلوم تیم بایرن مونیخ 1860 شد و رتبه دوم&nbsp; مسابقات راکسب نمود این مسابقات با حضور بیش از 3.000بازیکن در قالب 164 تیم و در ردهای 11 - 13 - 15 سال در کشور اتریش برگزار گرید<br>ما نیز این موفقیت بزرگ را به تیم ایران و&nbsp; اقای یادگار رستمی و خانواده ایشان تبریک&nbsp; می گویم و امیدواریم شاهد افتخار افرینی های دیگر از این بازیکن جوان باشیم<br></div><div align="center"><br><img alt="http://www.tehrantimes.com/News/12278/9-2.jpg" src="http://www.tehrantimes.com/News/12278/9-2.jpg" height="272" width="408"><br><br><img class="team" src="http://www.cordialcup.com/media/teamfotos/kia-football-academy-2015-U11.jpg" alt="KIA Football Academy" height="243" width="410"><br><br>منبع : وبلاگ مریوان مدیر<br></div>
+
+
+
+		            	<br>
+			<cb:block_post_tag>
+			     <b>برچسب ها:</b>
+			     <cb:loop_post_tag>
+				 <a href="http://marivanmodir.mihanblog.com/[cb:post_tag_href]" >
+					[cb:post_tag_name]
+				 </a> ،
+
+  <script language="javascript" >
+</script>
+   
+			     </cb:loop_post_tag>
+			     
+<br><RB:Post_More_Block>
+<a href="http://marivanmodir.mihanblog.com/post/443" class="greenkey" title="یادگار رستمی نابغه فوتبال ایران"><span class="icon-arrow-left"></span> ادامه مطلب...</a></RB:Post_More_Block>
+</div>
+</div>
+					 
+
+		<div class="entrypiti">
+<div class="wp-pagenavi">
+<div class="wp-pagenavi">
+<span class="pages">صفحات: 40  </span>			  <a href="http://marivanmodir.mihanblog.com/page/1"> <b>1</b></a>  
+		    			  <a href="http://marivanmodir.mihanblog.com/page/2"> <span>2</span></a>  
+		    			  <a href="http://marivanmodir.mihanblog.com/page/3"> <span>3</span></a>  
+		    			  <a href="http://marivanmodir.mihanblog.com/page/4"> <span>4</span></a>  
+		    			  <a href="http://marivanmodir.mihanblog.com/page/5"> <span>5</span></a>  
+		    			  <a href="http://marivanmodir.mihanblog.com/page/6"> <span>6</span></a>  
+		    			  <a href="http://marivanmodir.mihanblog.com/page/7"> <span>7</span></a>  
+		    			  <a href="http://marivanmodir.mihanblog.com/page/8"> <i>...</i></a>  
+		    
+</div></div>
+<div class="clear"></div>
+</div>
+		
+
+<div class="entry">
+</div>
+</div>
+</div>
+﻿<div id="sidebar-right">
+<div class="sidebar-right">
+<div class="sidebar-box mo">
+<div class="iconbl-arch sefidb">
+<span class="icon-user-md" style="margin-right: 7.5px;"></span>
+</div>
+<h4>تبلیغات راست</h4>
+<div class="sidebar-box-content-right">
+<div class="post-wrap">
+<p style="text-align: center;"><a target="_blank" rel="nofollow" title="ads" href="http://www.mahak-charity.org/main/"><img src="http://s5.picofile.com/file/8170506550/Mahak_120_x_240_4.gif" alt="ads" title="ads" height="240" width="120"></a></p>
+</div></div></div>
+
+<div class="sidebar-box catl">
+<div class="iconbl-cat sefidb">
+<span class="icon-list-ul"></span>
+</div>
+<h4>آرشیو موضوعات</h4>
+<div class="sidebar-box-content-right-cat">
+<div class="categories">
+<ul>
+	<cb:loop_blog_category>
+	<li class="cat-item cat-item-1"><a href="http://marivanmodir.mihanblog.com/post/category/92">انجمن علمی مدیریت پیام نور مریوان</a>
+</li><cb:loop_blog_category>
+</ul>
+</div>
+</div></div>
+<div class="sidebar-box mo">
+<div class="iconbl-arch sefidb">
+<span class="icon-archive"></span>
+</div>
+<h4>آرشیو ماهانه</h4>
+<div class="sidebar-box-content-right">
+<div class="post-wrap">
+<ul>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1394/10"> دی 1394</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1394/8"> آبان 1394</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1394/7"> مهر 1394</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1394/3"> خرداد 1394</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1394/2"> اردیبهشت 1394</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1393/12"> اسفند 1393</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1393/10"> دی 1393</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1393/9"> آذر 1393</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1393/8"> آبان 1393</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1393/1"> فروردین 1393</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1392/12"> اسفند 1392</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1392/8"> آبان 1392</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1392/5"> مرداد 1392</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1392/4"> تیر 1392</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1392/3"> خرداد 1392</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1392/2"> اردیبهشت 1392</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1392/1"> فروردین 1392</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1391/12"> اسفند 1391</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1391/11"> بهمن 1391</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1391/10"> دی 1391</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1391/9"> آذر 1391</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1391/8"> آبان 1391</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1391/7"> مهر 1391</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1391/6"> شهریور 1391</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1391/5"> مرداد 1391</a></li>	<li><a href="http://marivanmodir.mihanblog.com/post/archive/1391/4"> تیر 1391</a></li></ul>
+</div></div></div>
+<div class="sidebar-box mo">
+<div class="iconbl-stat sefidb">
+<span class="icon-globe"></span>
+</div>
+<h4>آمار سایت</h4>
+<div class="sidebar-box-content-right">
+<div class="post-wrap">
+<ul>
+<!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=2791412&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=2791412" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+<!-- Google Page Rank by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzar.ir/abzar/tools/page-rank/?url=marivanmodir.ir&mod=5"></script><div style="display:none"><h2><a href="http://www.1abzar.com">&#1662;&#1740;&#1580; &#1585;&#1606;&#1705;</a></h2></div>
+<!-- Google Page Rank by www.1abzar.com --->
+
+
+
+</div></div></div>
+
+<div class="sidebar-box mo">
+<div class="iconbl-arch sefidb">
+<span class="icon-group"></span>
+</div>
+<h4>لینک دوستان</h4>
+<div class="sidebar-box-content-right">
+<div class="post-wrap">
+<ul><li><span class="icon-music"></span> <a title="" target="_blank" href="http://www.dehkadeh2012.blogfa.com/">دهــکـــــده آرامـــــــش</a></li><li><span class="icon-music"></span> <a title="" target="_blank" href="../payamrashidi.mihanblog.com/index.html">وبلاگ پیام رشیدی</a></li><li><span class="icon-music"></span> <a title="" target="_blank" href="http://marivantheater.blogfa.com">مــــریــــــوان تئاتــر</a></li><li><span class="icon-music"></span> <a title="" target="_blank" href="http://sarvabadi.ir/">سایت ســــــــرواباد</a></li><li><span class="icon-music"></span> <a title="با سلام خدمت شما دانشجویان ودوستان عزیزم از این که از این وبلاگ دیدن می کنید متشکرم و امیدوارم که بتوانم در خدمت شما دوستان عزیز باشم.با ابراز نظر خود ما را در ارائه مطالب مفیدتر یاری نمائید." target="_blank" href="http://r90manage.blogfa.com/">مــدیریت بازرگانــــی</a></li><li><span class="icon-music"></span> <a title="" target="_blank" href="http://www.sabaaa.com/">رایان صبـــای مریوان</a></li><li><span class="icon-music"></span> <a title="" target="_blank" href="../www.haneberchem.mihanblog.com/index.html">هورامان هانه به رچه م</a></li><li><span class="icon-music"></span> <a title="" target="_blank" href="http://hesabdarimarivan.blogfa.com/">حسابداری مریوان</a></li><li><span class="icon-music"></span> <a title="عاشق درس فیزیكم" target="_blank" href="http://www.anjomanfizik2012.blogfa.com/">صدای دانش اموزان فیزیك</a></li><li><span class="icon-music"></span> <a title="" target="_blank" href="http://www.modiranemarivan.blogfa.com">مدیران مریوان</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+﻿<div id="sidebar-left">
+<div class="sidebar-left">
+<a href="index.html" title="درخواست نمونه سوال" class="request-box">
+<span class="title">درخواست نمونه سوال</span>
+<span class="desc"> درخواست نونه سوال - کتاب - جزوء و ... </span>
+<span class="icons"><span class="icon-large icon-user"></span></span>
+</a>	
+<a href="index.html" title="معرفی  کارافرینان برتر " class="request-box">
+<span class="title">معرفی کارافرینان </span>
+<span class="desc"> معرفی کارافرینان برتر ایرانی و خارجی...</span>
+<span class="icons"><span class="icon-large icon-music"></span></span>
+</a>
+
+<div class="most-postsview">
+<div class="iconb sefidb">
+<span class="icon-user-md" style="margin-right: 7.5px;"></span>
+</div>
+<h5>تبلیغات چپ</h5>
+<div class="post-wrap3">
+<p style="text-align: center;"><a target="_blank" rel="nofollow" title="ads" href="index.html"><img src="http://up.pitac.ir/up/pitac/Skin/U4DL/images/ads-120%C3%97240-pitac-6.png" alt="ads" title="ads" height="240" width="120"></a>
+
+<a target="_blank" rel="nofollow" title="ads" href="index.html"><img src="http://up.pitac.ir/up/pitac/Skin/U4DL/images/ads-120%C3%97240-pitac-6.png" alt="ads" title="ads" height="240" width="120"></a>
+</p>
+<div class="clear"></div>
+</div></div>
+
+
+<div class="most-postsview2">
+<div class="iconb sefidb">
+<span class="icon-download"></span>
+</div>
+<h5>آخرین ورژن نرم افزار ها</h5>
+<div class="post-wrap3 require">
+<ul>
+<li>
+<div class="thumb">
+<img height="45" width="45" src="http://up.pitac.ir/up/pitac/Skin/U4DL/images/1437019196_Firefox.png" alt="مرورگر فایرفاکس موزیلا" title="مرورگر فایرفاکس موزیلا">
+</div>
+<div class="name">
+<h4><a target="_blank" rel="nofollow" href="http://www.mozilla.org/en-US/products/download.html">مرورگر فایرفاکس موزیلا</a></h4>
+<p><a target="_blank" rel="nofollow" href="http://www.mozilla.org/en-US/products/download.html" class="download">دانلود نرم افزار</a></p>
+</div>
+<div class="clear"></div></li>
+<li>
+<div class="thumb">
+<img height="45" width="45" src="http://up.pitac.ir/up/pitac/Skin/U4DL/images/1437019260_Download.png" alt="دانلود منیجر IDM" title="دانلود منیجر IDM">
+</div>
+<div class="name">
+<h4><a target="_blank" rel="nofollow" href="http://www.internetdownloadmanager.com/download.html">دانلود منیجر IDM</a></h4>
+<p><a target="_blank" rel="nofollow" href="http://www.internetdownloadmanager.com/download.html" class="download">دانلود نرم افزار</a></p>
+</div>
+<div class="clear"></div></li>
+<li>
+<div class="thumb">
+<img height="45" width="45" src="http://up.pitac.ir/up/pitac/Skin/U4DL/images/1437019280_KMPlayer.png" alt="دانلود پلیر KMPlayer" title="دانلود پلیر KMPlayer">
+</div>
+<div class="name">
+<h4><a target="_blank" rel="nofollow" href="http://update.kmpmedia.net/player/download/32">دانلود پلیر KMPlayer</a></h4>
+<p><a target="_blank" rel="nofollow" href="http://update.kmpmedia.net/player/download/32" class="download">دانلود نرم افزار</a></p>
+</div>
+<div class="clear"></div></li>
+
+</ul>
+</div></div>
+
+<div class="text-ads">
+<a class="abi" title="Pitac.ir" target="_blank" href="http://www.pitac.ir/">پیتک دات آی آر</a>
+<!-- پایان تبلیغات متنی تبلیغات متنی در تاریخ  می باشد -->
+<a class="sabz" title="تبلیغات متنی" target="_blank" href="index.html">تبلیغات متنی</a>
+<!-- پایان تبلیغات متنی تبلیغات متنی در تاریخ  می باشد -->
+<a class="narenji" title="قالب وردپرس" target="_blank" href="index.html">قالب وردپرس</a>
+<!-- پایان تبلیغات متنی قالب وردپرس در تاریخ  می باشد -->
+<a class="zard" title="تبلیغات متنی" target="_blank" href="index.html">تبلیغات متنی</a>
+<!-- پایان تبلیغات متنی تبلیغات متنی در تاریخ  می باشد -->
+</div>
+</div>
+</div>
+</div><div class="clear"></div></div>
+</div>
+<div class="footers">
+<section class="tag">
+<span class="icon-tag" style="font-size:30px"></span><span style="font:16px Yekan,tahoma;">برچسب ها : </span><br><a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87+%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1+%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86" style="font-size: 8pt;">دانشگاه پیام نور مریوان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%86%D9%85%D9%88%D9%86%D9%87+%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA+%D8%B2%D9%85%DB%8C%D9%86+%D8%B4%D9%86%D8%A7%D8%B3%DB%8C+%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87+%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1+%D8%A8%D8%A7+%D9%BE%D8%A7%D8%B3%D8%AE%D9%86%D8%A7%D9%85%D9%87" style="font-size: 8pt;">نمونه سوالات زمین شناسی دانشگاه پیام نور با پاسخنامه</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%86%D8%B8%D8%B1%DB%8C%D9%87+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%DA%98%D8%A7%D9%BE%D9%86%DB%8C" style="font-size: 8pt;">نظریه مدیریت ژاپنی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85%DB%8C" style="font-size: 8pt;">استخدامی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86++%D9%86%D9%85%D9%88%D9%86%D9%87+%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA+%D8%B1%D8%B4%D8%AA%D9%87+%D8%B1%D9%88%D8%A7%D9%86+%D8%B4%D9%86%D8%A7%D8%B3%DB%8C++%D9%86%DB%8C%D9%85%D8%B3%D8%A7%D9%84+%D8%AF%D9%88%D9%85+90-91+%D8%AF%D8%A7" style="font-size: 8pt;">دانلود رایگان  نمونه سوالات رشته روان شناسی  نیمسال دوم 90-91 دا</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF++%D9%86%D9%85%D9%88%D9%86%D9%87+%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA+%D8%B1%D8%B4%D8%AA%D9%87+%D8%B9%D9%84%D9%88%D9%85+%D8%AA%D8%B1%D8%A8%DB%8C%D8%AA%DB%8C++%D9%86%DB%8C%D9%85%D8%B3%D8%A7%D9%84+%D8%AF%D9%88%D9%85+90-91+%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87+" style="font-size: 8pt;">دانلود  نمونه سوالات رشته علوم تربیتی  نیمسال دوم 90-91 دانشگاه </a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF+%D8%B3%D8%A7%D9%85%D8%A7%D9%86+%DA%A9%DB%8C%D8%A7%D9%86%DB%8C" style="font-size: 8pt;">استاد سامان کیانی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%A7%D9%81%D8%AA%D8%AE%D8%A7%D8%B1%DB%8C+%D8%AF%DB%8C%DA%AF%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86" style="font-size: 8pt;">افتخاری دیگر برای مریوان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%BE%D8%A7%D9%88%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA+%D9%87%D8%A7%DB%8C+%D8%AF%D8%B1%D8%B3+%D8%AA%D8%AC%D8%A7%D8%B1%D8%AA+%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A92+%DA%A9%D9%84%D8%A7%D8%B3+%D8%A7%D9%82%D8%A7%DB%8C+%D8%B3%D8%A7%D9%85%D8%A7%D9%86+%DA%A9%DB%8C%D8%A7%D9%86%DB%8C" style="font-size: 8pt;">پاورپوینت های درس تجارت الترونیک2 کلاس اقای سامان کیانی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%DA%98%D8%A7%D9%BE%D9%86%DB%8C" style="font-size: 8pt;">مدیریت ژاپنی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%DA%A9%D8%B1%D8%AF%D8%B3%D8%AA%D8%A7%D9%86" style="font-size: 8pt;">کردستان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%D9%86%D9%85%D9%88%D9%86%D9%87+%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA+%D9%86%DB%8C%D9%85%D8%B3%D8%A7%D9%84+%D8%AF%D9%88%D9%85+90-91+%DA%AF%D8%B1%D8%A7%DB%8C%D8%B4+%D8%AD%D8%B3%D8%A7%D8%A8%D8%AF%D8%A7%D8%B1%DB%8C+%D9%85%D9%82%D8%B7%D8%B9+" style="font-size: 8pt;">دانلود رایگان نمونه سوالات نیمسال دوم 90-91 گرایش حسابداری مقطع </a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%D9%85%D8%A7%D9%84%DB%8C" style="font-size: 8pt;">مدیریت مالی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D9%BE%D8%A7%D9%88%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA+%D9%87%D8%A7%DB%8C+%D8%AF%D8%B1%D8%B3+%D8%AA%D8%AC%D8%A7%D8%B1%D8%AA+%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9" style="font-size: 8pt;">دانلود پاورپوینت های درس تجارت الکترونیک</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%A7%D9%85%DB%8C%D9%86+%D8%A7%D8%AD%D9%85%D8%AF%DB%8C" style="font-size: 8pt;">امین احمدی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%DA%A9%D8%AA%D8%A7%D8%A8+%D9%88+%D8%AC%D8%B2%D9%88%D8%A7%D8%AA+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA" style="font-size: 8pt;">کتاب و جزوات مدیریت</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%D9%85%D9%86%D8%A7%D8%A8%D8%B9+%D8%A7%D9%86%D8%B3%D8%A7%D9%86%DB%8C" style="font-size: 8pt;">مدیریت منابع انسانی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%B1%DB%8C%D8%A7%DA%86%D9%87+%D8%B2%D8%B1%DB%8C%D8%A8%D8%A7%D8%B1" style="font-size: 8pt;">دریاچه زریبار</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AA%D8%AC%D8%A7%D8%B1%D8%AA+%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9+2" style="font-size: 8pt;">تجارت الکترونیک 2</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AC%D8%B2%D9%88%D9%87+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%D9%85%D8%A7%D9%84%DB%8C1" style="font-size: 8pt;">جزوه مدیریت مالی1</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AD%DA%A9%D8%A7%DB%8C%D8%A7%D8%AA+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA%DB%8C" style="font-size: 8pt;">حکایات مدیریتی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%A7%D9%81%D8%AA%D8%AE%D8%A7%D8%B1%DB%8C+%D8%AF%DB%8C%DA%AF%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AC%D8%A7%D9%85%D8%B9%D9%87+%D8%B9%D9%84%D9%85%DB%8C+%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86" style="font-size: 8pt;">افتخاری دیگر برای جامعه علمی مریوان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3+%D9%87%D8%A7%DB%8C+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA%DB%8C" style="font-size: 8pt;">عکس های مدیریتی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%D8%A8%D8%A7%D8%B2%D8%B1%DA%AF%D8%A7%D9%86%DB%8C+%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1+%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86" style="font-size: 8pt;">مدیریت بازرگانی پیام نور مریوان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%DB%8C%D8%AC%DB%8C+%DA%A9%D8%A7%D9%84%D8%A7" style="font-size: 8pt;">دیجی کالا</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86+%DA%A9%D8%B1%D8%AF%D8%B3%D8%AA%D8%A7%D9%86" style="font-size: 8pt;">استان کردستان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D9%82%D8%A7%D9%84%D9%87+%D9%87%D8%A7%DB%8C+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA%DB%8C" style="font-size: 8pt;">مقاله های مدیریتی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%B7%D8%A7%D9%84%D8%A8+%D8%AC%D8%A7%D9%84%D8%A8" style="font-size: 8pt;">مطالب جالب</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%D9%86%D9%85%D9%88%D9%86%D9%87+%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA+%D8%B2%D9%85%DB%8C%D9%86+%D8%B4%D9%86%D8%A7%D8%B3%DB%8C+%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87+%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1+%D8%A8%D8%A7+%D9%BE%D8%A7%D8%B3%D8%AE%D9%86%D8%A7" style="font-size: 8pt;">دانلود رایگان نمونه سوالات زمین شناسی دانشگاه پیام نور با پاسخنا</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%D9%86%D9%85%D9%88%D9%86%D9%87+%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA+%D9%86%DB%8C%D9%85%D8%B3%D8%A7%D9%84+%D8%A7%D9%88%D9%84+90-91+%D8%B1%D8%B4%D8%AA%D9%87+%D8%B2%D9%85%DB%8C%D9%86+%D8%B4%D9%86%D8%A7%D8%B3%DB%8C+%D9%85%D9%82%D8%B7%D8%B9" style="font-size: 8pt;">دانلود رایگان نمونه سوالات نیمسال اول 90-91 رشته زمین شناسی مقطع</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%DA%A9%D8%B1%D8%AF%D8%B3%D8%AA%D8%A7%D9%86+%D8%B4%D9%86%D8%A7%D8%B3%DB%8C" style="font-size: 8pt;">کردستان شناسی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%B9%D8%B1%D9%81%DB%8C+%D8%B3%D9%82%D8%B2" style="font-size: 8pt;">معرفی سقز</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D8%B3%D8%AA%D8%A7%D9%86+%D9%87%D8%A7%DB%8C+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA%DB%8C" style="font-size: 8pt;">داستان های مدیریتی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%D8%A8%D8%A7%D8%B2%D8%B1%DA%AF%D8%A7%D9%86%DB%8C+%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86" style="font-size: 8pt;">مدیریت بازرگانی مریوان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86" style="font-size: 8pt;">مریوان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%D8%A8%D8%A7%D8%B2%D8%B1%DA%AF%D8%A7%D9%86%DB%8C" style="font-size: 8pt;">مدیریت بازرگانی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D9%86%D9%85%D9%88%D9%86%D9%87+%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA+%D8%B1%D8%B4%D8%AA%D9%87+%DA%A9%D8%B4%D8%A7%D9%88%D8%B1%D8%B2%DB%8C++%D9%86%DB%8C%D9%85%D8%B3%D8%A7%D9%84+%D8%AF%D9%88%D9%85+90-91+%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87+%D9%BE%DB%8C%D8%A7%D9%85+" style="font-size: 8pt;">دانلود نمونه سوالات رشته کشاورزی  نیمسال دوم 90-91 دانشگاه پیام </a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1+%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86" style="font-size: 8pt;">پیام نور مریوان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%B2%D9%85%DB%8C%D9%86+%D8%B4%D9%86%D8%A7%D8%B3%DB%8C+%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1" style="font-size: 8pt;">زمین شناسی پیام نور</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%DA%98%D8%A7%D9%BE%D9%86+%D9%88+%D9%86%D8%B8%D8%B1%DB%8C%D9%87+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA%D8%B4" style="font-size: 8pt;">ژاپن و نظریه مدیریتش</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86+%D9%85%D8%AF%DB%8C%D8%B1" style="font-size: 8pt;">مریوان مدیر</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AA%D8%AC%D8%A7%D8%B1%D8%AA+%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9+%D9%88%D8%A8%D9%84%D8%A7%DA%AF+%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86+%D9%85%D8%AF%DB%8C%D8%B1" style="font-size: 8pt;">تجارت الکترونیک وبلاگ مریوان مدیر</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%AF%DB%8C%D8%B1%D8%A7%D9%86+%D8%A8%D8%B1%D8%AA%D8%B1" style="font-size: 8pt;">مدیران برتر</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%85%D8%B7%D8%A7%D9%84%D8%A8+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA%DB%8C" style="font-size: 8pt;">مطالب مدیریتی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%D8%AA%D9%85%D8%A7%D9%85%DB%8C+%D9%86%D9%85%D9%88%D9%86%D9%87+%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA+%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1+%D8%A8%D8%A7+%D9%BE%D8%A7%D8%B3%D8%AE%D9%86%D8%A7%D9%85%D9%87" style="font-size: 8pt;">دانلود رایگان تمامی نمونه سوالات پیام نور با پاسخنامه</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%86%DA%A9%D8%A7%D8%AA%DB%8C+%D8%AF%D8%B1+%D9%85%D9%88%D8%B1%D8%AF+%D9%85%D8%B5%D8%A7%D8%AD%D8%A8%D9%87+%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85%DB%8C" style="font-size: 8pt;">نکاتی در مورد مصاحبه استخدامی</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D9%82%D8%B1%D9%88%D9%87" style="font-size: 8pt;">قروه</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AC%D9%85%D9%86+%D8%B9%D9%84%D9%85%DB%8C+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87+%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1+%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86" style="font-size: 8pt;">انجمن علمی مدیریت دانشگاه پیام نور مریوان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AC%D9%85%D9%86+%D8%B9%D9%84%D9%85%DB%8C+%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1+%D9%85%D8%B1%DB%8C%D9%88%D8%A7%D9%86" style="font-size: 8pt;">انجمن علمی مدیریت پیام نور مریوان</a> <a href="http://marivanmodir.mihanblog.com/post/tag/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%D9%86%D9%85%D9%88%D9%86%D9%87+%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA+%D9%BE%DB%8C%D8%A7%D9%85+%D9%86%D9%88%D8%B1+%D8%A8%D8%A7+%D9%BE%D8%A7%D8%B3%D8%AE%D9%86%D8%A7%D9%85%D9%87" style="font-size: 8pt;">دانلود رایگان نمونه سوالات پیام نور با پاسخنامه</a> </section><div class="footers-bottom">
+<footer>
+<p>تمامی حقوق مطالب و آهنگ ها و قالب برای <a title="مریوان مدیر" href="index.html" target="_blank">مریوان مدیر</a> محفوظ است و هرگونه کپی برداری بدون ذکر منبع ممنوع می باشد.
+</p>
+<a target="_blank" href="http://www.google.com" rel="nofollow" title="گوگل"><i class="icon-google-plus-sign" style="font-size:16px;padding:0px 3px"></i></a>
+<a target="_blank" href="http://marivanmodir.mihanblog.com/%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D8%A7%D8%B1%DA%AF%DB%8C%D8%B1" rel="nofollow" title="وبگذار"><i class="icon-globe" style="font-size:16px;padding:0px 3px"></i></a>
+<a target="_blank" href="http://marivanmodir.mihanblog.com/sitemap.xml" title="Sitemap"><i class="icon-sitemap" style="font-size:16px;padding:0px 3px"></i></a>
+<a target="_blank" href="http://marivanmodir.mihanblog.com/rss" title="RSS"><i class="icon-rss" style="font-size:16px;padding:0px 3px"></i></a>
+<a target="_blank" href="http://marivanmodir.mihanblog.com/atom" title="Atom"><i class="icon-rss-sign" style="font-size:16px;padding:0px 3px"></i></a>
+<a id="Pitacir" title="دانلود قالب وبلاگ" href="http://www.pitac.ir" target="_blank">مترجم :پیتک دات آی آر </a>
+</footer>
+</div>
+</div>
+
+</body></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'marivanmodir.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

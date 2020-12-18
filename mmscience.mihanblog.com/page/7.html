@@ -1,0 +1,1164 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1593065*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[1655]='0';commentCnt[1656]='0';commentCnt[1657]='0';commentCnt[1658]='0';commentCnt[1659]='0';commentCnt[1660]='0';commentCnt[1661]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[1655]='8';
+mihanblogDisLikeArrCnt[1655]='4';
+mihanblogLikeArrCnt[1656]='12';
+mihanblogDisLikeArrCnt[1656]='4';
+mihanblogLikeArrCnt[1657]='8';
+mihanblogDisLikeArrCnt[1657]='0';
+mihanblogLikeArrCnt[1658]='13';
+mihanblogDisLikeArrCnt[1658]='1';
+mihanblogLikeArrCnt[1659]='8';
+mihanblogDisLikeArrCnt[1659]='1';
+mihanblogLikeArrCnt[1660]='7';
+mihanblogDisLikeArrCnt[1660]='0';
+mihanblogLikeArrCnt[1661]='9';
+mihanblogDisLikeArrCnt[1661]='3';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://mmscience.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://mmscience.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1455');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','چهارشنبه 23 مرداد 1398');
+	
+	setStatVar('today_view','301');
+	setStatVar('yesterday_view','1242');
+	
+	setStatVar('this_month_view','40906');
+	setStatVar('last_month_view','70597');
+
+	setStatVar('total_view','3639795');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (07:46)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://mmscience.mihanblog.com/statupdate/?data[refereruri]=http://mmscience.mihanblog.com/&data[postid]=&data[requesturi]=/page/7&data[sdate]=1607833154&data[hash]=2b48b2b2254dfba9af6b5ad5fd79561b&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://mmscience.mihanblog.com/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://mmscience.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://mmscience.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+<head>
+<meta name="google-site-verification" content="N9hQi1MPFgs_1mx9f-7SQd0egWDxtpPDEH29CqjsMgI" />
+</head>
+<style type="text/css">
+body {
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:12px;
+    direction:rtl;
+    line-height:20px;
+}
+a {
+    text-decoration:none;
+    color:#03C;
+}
+a:hover {
+    color:#CCC;
+}
+#main-menu {
+    position: fixed;
+    line-height:16px;
+}
+#main-menu a {
+    display:block;
+    width:115px;
+    padding:8px;
+    border:#666 solid 5px;
+    background-color:#c6c2c2; 
+    color:#000;           
+}
+#main-menu a:hover {
+    background-color:#ffee00;        
+}
+#main-menu ul {
+    list-style-type:none;
+    padding-top:0px;    
+}
+#main-menu li {
+    float:right;
+    position:relative;
+    text-align:center;
+}
+#main-menu li ul a{
+    text-align:center;
+    border:0px;
+    border-bottom:#666 1px solid;
+}
+#main-menu li:hover ul ul{
+    display:none;
+}
+#main-menu li li:hover ul{
+    display:block;
+    position:absolute;
+    top:10px;
+    right:125px;
+    z-index:1000;
+}
+#main-menu ul.sub-menu {
+    display:none;
+    position:absolute;
+    top:40px;
+    margin-right:0px;
+    padding:0px;
+    z-index:999;
+}
+#main-menu ul.sub-menu li {
+    text-align:center;
+}
+#main-menu li:hover ul.sub-menu {
+    display: block;
+    border: 1px solid #666;
+}
+.clear{
+    clear:both;
+}
+</style>
+<!--IE 7-->
+<!--[if IE 7]>
+<style type="text/css">
+#main-menu ul.sub-menu {
+    left:0px;
+}
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+</style>
+<![endif]-->
+</head>
+
+<meta name="google-site-verification" content="N9hQi1MPFgs_1mx9f-7SQd0egWDxtpPDEH29CqjsMgI" />
+<meta name="google-site-verification" content="N9hQi1MPFgs_1mx9f-7SQd0egWDxtpPDEH29CqjsMgI" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<link rel="shortcut icon" href="http://s8.picofile.com/file/8293976634/004.png"/>
+<meta name="robots" content="index,follow,all"/>
+<link rel="alternate" type="application/rss+xml" title="آموزش علوم متوسطه" href="../post/rss/index.html"/>
+<meta name="keywords" content="علوم نهم,آموزش علوم متوسطه,آموزش علوم متوسطه"/>
+<meta name="description" content="دارای کامل ترین مطالب، جزوات، پاورپوینت، نمونه سوالات، ویدئو های درسی و علمی و..."/>
+<title>آموزش علوم متوسطه</title>
+<link rel="stylesheet" type="text/css" href="http://up.ghalebgraph.ir/up/galebgraph/posts/theme/web/1394/download/gg/style.css"/>
+<style>
+body{background:url(http://up.ghalebgraph.ir/up/galebgraph/posts/theme/web/1394/download/gg/images/bg.png);}
+</div>
+</style>
+</head>
+<body>
+
+
+<div class="GGseo">
+<h1>آموزش علوم متوسطه</h1>
+<h2>دارای کامل ترین مطالب، جزوات، پاورپوینت، نمونه سوالات، ویدئو های درسی و علمی و...</h5>
+<h3>علوم نهم</h6>
+</div>
+
+<div class="middle">
+
+
+<body>
+<div id="main-menu">
+<ul>
+<li><a href="http://mmscience.ir/">صفحه نخست &#8618;</a>
+<li><a href="http://mmscience.ir/post/category/31">پایه دهم &#x277F;</a>
+    <ul class="sub-menu">
+        <li><a href="http://mmscience.ir/post/category/37">زیست شناسی دهم</a> 
+        <li><a href="http://mmscience.ir/post/category/39">شیمی دهم</a>
+        <li><a href="http://mmscience.ir/post/category/38">فیزیک دهم</a>  
+        <li><a href="http://mmscience.ir/post/category/34">بانک سوالات »</a> 
+            <ul>
+                <li><a href="http://mmscience.ir/post/category/34">تمام نمونه سوالات</a></li>
+                <li><a href="http://mmscience.ir/post/1109">نمونه سوالات فیزیک دهم</a></li>
+                
+           </ul>
+        </li>
+      <li><a href="http://mmscience.ir/post/category/35">درسنامه و جزوات »</a> 
+            <ul>
+                <li><a href="http://mmscience.ir/post/1092">اپلیکیشن فیزیک دهم</a></li>
+                <li><a href="http://mmscience.ir/post/category/35">تمام جزوات</a></li>
+                
+           </ul>
+        </li>
+        <li><a href="http://mmscience.ir/post/1123">کتاب کار کمک درسی</a></li>
+                
+    </ul>
+</li>
+<li><a href="http://mmscience.ir/post/category/22">پایه نهم &#x277E;</a>
+    <ul class="sub-menu">
+        <li><a href="http://mmscience.ir/post/category/24">بانک سوالات »</a> 
+            <ul>
+                <li><a href="http://mmscience.ir/post/category/24">تمام نمونه سوالات</a></li>
+                <li><a href="http://mmscience.ir/post/1116">نمونه سوالات تیزهوشانی</a></li>
+                <li><a href="http://mmscience.ir/post/1138">نمونه سوالات جواب دار</a></li>
+           </ul>
+        </li>
+      <li><a href="http://mmscience.ir/post/category/26">درسنامه و جزوات »</a> 
+            <ul>
+                <li><a href="http://mmscience.ir/post/874">درسنامه تیزهوشانی</a></li>
+                <li><a href="http://mmscience.ir/post/category/26">تمام جزوات</a></li>
+           </ul>
+        </li>
+        <li><a href="http://mmscience.ir/post/905">گزارش کار آزمایشگاه</a></li>
+        <li><a href="http://mmscience.ir/post/1173">گام به گام و پاسخ پرسش ها</a></li>          
+        <li><a href="http://mmscience.ir/post/1006">پاورپوینت قابل ویرایش</a></li>  
+    </ul>
+</li>
+<li><a href="http://mmscience.ir/post/category/15">پایه هشتم &#x277D;</a>
+    <ul class="sub-menu">
+        <li><a href="http://mmscience.ir/post/category/5">بانک سوالات</a></li>         
+        <li><a href="http://mmscience.ir/post/category/7">درسنامه و جزوات</a></li>
+        <li><a href="http://mmscience.ir/post/982">پاورپوینت قابل ویرایش</a>
+        <li><a href="http://mmscience.ir/post/1205">گزارش کار آزمایشگاه </a>       
+        <li><a href="http://mmscience.ir/post/1651">گام به گام و پاسخ پرسش ها </a> 
+    </ul>
+</li>
+<li><a href="http://mmscience.ir/post/category/14">پایه هفتم &#x277C;</a>
+    <ul class="sub-menu">
+        <li><a href="http://mmscience.ir/post/category/4">بانک سوالات</a></li>
+        <li><a href="7.html#">پاورپوینت قابل ویرایش</a>          
+        <li><a href="http://mmscience.ir/post/875">گزارش کار آزمایشگاه</a></li>
+        <li><a href="http://mmscience.ir/post/1103">گام به گام و پاسخ سوالات کتاب </a>
+    </ul>
+</li>
+<li><a href="http://mmscience.ir/post/category/3">مطالب علمی&#9733; &#x2600;</a>
+    <ul class="sub-menu">
+        <li><a href="http://mmscience.ir/post/category/8">فیزیک</a></li>
+        <li><a href="http://mmscience.ir/post/category/9">شیمی </a>         
+        <li><a href="http://mmscience.ir/post/category/11">زیست شناسی</a></li>
+        <li><a href="http://mmscience.ir/post/category/10">زمین شناسی </a>
+        <li><a href="http://mmscience.ir/post/category/21">نجوم </a>
+        <li><a href="http://mmscience.ir/post/category/18">ویدئو ها و آزمایش های علمی</a>
+        <li><a href="http://mmscience.ir/post/category/36">مشاوره درسی </a>
+    </ul>
+</li>
+<li><a href="http://mmscience.ir/message/">راه های ارتباطی &#9993;</a>
+    <ul class="sub-menu">
+        <li><a href="http://mmscience.ir/post/880">درباره مدیر سایت</a></li>
+        <li><a href="http://www.aparat.com/mmscience">کانال آپارات ما</a>        
+        <li><a href="mailto:mmscience.m@gmail.com">ایمیل</a></li>
+        <li><a href="http://mmscience.ir/message">ارسال پیام</a></li>
+        </li>        
+    </ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div>
+</body>
+
+
+
+<div class="header"><a href="http://mmscience.ir" target="_blank" ><img alt="آموزش علوم متوسطه" title="آموزش علوم متوسطه" src=" http://s9.picofile.com/file/8337950618/%D9%84%D9%88%DA%AF%D9%88_%D8%A2%D9%85%D9%88%D8%B2%D8%B4_%D8%B9%D9%84%D9%88%D9%85_%D9%85%D8%AA%D9%88%D8%B3%D8%B7%D9%87.jpg"/></a></div>
+
+
+
+
+
+<style>body{background: #ededed;margin:0;padding:0;}#menu_wrap{position:relative;margin-top:20px;margin-left:auto;margin-right:auto;padding:0; padding-right:0px;width:985px;height:70px;list-style-type:none;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.2);-moz-box-shadow:0 1px 3px rgba(0,0,0,.2);box-shadow:0 1px 3px rgba(0,0,0,.2)}.button a{cursor:pointer;text-align:center;font:21px/100% Arial, Helvetica, sans-serif;font-weight:bold;position:relative;min-width:50px;height:20px;float:left;padding:10px;padding-top:25px;padding-bottom:25px;text-decoration:none;text-shadow:0 1px 1px rgba(0,0,0,.3)}.button:first-child a{-webkit-border-top-left-radius:10px;-webkit-border-bottom-left-radius:10px;-moz-border-topleft-radius:10px;-moz-border-bottomleft-radius:10px;border-top-left-radius:10;border-bottom-left-radius:10px}.Orange,.Orange .button a{color:#fef4e9;background:#f78d1d;background:-webkit-gradient(linear,left top,left bottom,from(#faa51a),to(#f47a20));background:-moz-linear-gradient(top,#faa51a,#f47a20);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a',endColorstr='#f47a20')}.Orange .button a:hover,.Orange .button a:focus{background:#f47c20;background:-webkit-gradient(linear,left top,left bottom,from(#f88e11),to(#f06015));background:-moz-linear-gradient(top,#f88e11,#f06015);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11',endColorstr='#f06015')}.Orange .button a{border-right:solid 1px #da7c0c}.Orange .button a:active{color:#fcd3a5;background:-webkit-gradient(linear,left top,left bottom,from(#f47a20),to(#faa51a));background:-moz-linear-gradient(top,#f47a20,#faa51a);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20',endColorstr='#faa51a')}.button:last-child a{float:left;border:none; -webkit-border-top-right-radius:10px;-webkit-border-bottom-right-radius:10px;-moz-border-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px}</style>
+
+
+</div>
+<div class="middle">
+
+<div class="GGm1">
+<div class="menu"><div class="title"><div class="icon"><p>درباره آموزش علوم متوسطه</p></div></div><div class="clear"></div><div class="content">
+<center><img src="../../static.mihanblog.com/public/user_data/web_photo/532/1593065.jpg@6102"  /></center><br/>وبسایت آموزش علوم متوسطه با هدف اشتراک گذاری مطالب علمی و درسی مختلف و مرتبط به دروس علوم تجربی (متوسطه اول و دوم ) با دانش آموزان و دبیران عزیز راه اندازی شده است.<br />
+بدین منظور سعی گردیده تا کلیه مطالب به صورت جامع، اما خلاصه و کاربردی در قالب مقالات علمی، جزوات درسی، آزمون ها، گزارش کار آزمایشگاهی و... به ساده ترین وجه، در اختیار شما قرار گیرد.<br />
+<br />
+لطفا هرگونه نظر، انتقاد، پیشنهاد و سوال درسی یا علمی خود را با ما در میان بگذارید.<br />
+ایمیل: mmscience.m@gmail.com<br />
+آی دی تلگرام: mammoh@<br/>
+
+</div></div>
+
+
+
+<cb:block><div class="menu"><div class="title"><div class="icon"><p>مجموعه‌های تیزهوشانی نهم</p></div></div><div class="clear"></div><div class="content">
+
+
+<right><a target="" href="http://mmscience.ir/post/874" target="_blank"><img alt="درسنامه تیزهوشانی علوم نهم"  target="_blank" title=" پکیج جزوات تیزهوشانی علوم نهم" src="http://s8.picofile.com/file/8296156168/16.jpg"/></a></right>
+
+<right><a target="" href="http://mmscience.ir/post/1116" target="_blank"><img alt="نمونه سوالات تیزهوشانی ریاضی نهم"  target="_blank" title=" پکیج تست تیزهوشانی ریاضی نهم" src="http://s8.picofile.com/file/8303480468/%D9%BE%DA%A9%DB%8C%D8%AC_%D8%AA%D8%B3%D8%AA_%D8%AA%DB%8C%D8%B2%D9%87%D9%88%D8%B4%D8%A7%D9%86%DB%8C.jpg"/></a></right>
+
+
+<right><a target="" href="http://mmscience.ir/post/1197" target="_blank"><img alt="جزوه تیزهوشانی زیست شناسی علوم نهم"  target="_blank" title=" جزوه زیست علوم نهم" src="http://s9.picofile.com/file/8306479918/%D8%AC%D8%B2%D9%88%D9%87_%D8%AA%DB%8C%D8%B2%D9%87%D9%88%D8%B4%D8%A7%D9%86_%D8%B2%DB%8C%D8%B3%D8%AA_%D8%B9%D9%84%D9%88%D9%85_%D9%86%D9%87%D9%85.jpg"/></a></right>
+
+ 
+</div></div></cb:block>
+
+
+
+<cb:block><div class="menu"><div class="title"><div class="icon"><p>نظر سنجی سایت</p></div></div><div class="clear"></div><div class="content">
+
+		<form id="frm-16077748485fd4b2808e9d7" method="post" action="http://www.mmscience.ir/poll/new/fid/16077748485fd4b2808e9d7/atrty/1607774848/avrvy/0/key/d2d5b49d7d085d9f06e0b5c218582cce/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="372729" id="data[pollid]" />		<div class=div24>
+        <div class=div35-5>
+            <div class=div25><font class=text5></font></div></div>
+        <div class=div341>
+            <div class=sm></div>
+            <div class=div32><font class=text1>
+                اکثر مطالب سایت از چه نوعی باشند؟<br>
+                <label><input type="radio" name="data[answer]" value="v1">نمونه سوال و آزمون</label><br><label><input type="radio" name="data[answer]" value="v2">جزوه و درسنامه</label><br><label><input type="radio" name="data[answer]" value="v3">مشاوره درسی</label><br><label><input type="radio" name="data[answer]" value="v4">دیگر فایل های درسی</label><br><label><input type="radio" name="data[answer]" value="v5">علمی  و اطلاعات عمومی</label><br><label><input type="radio" name="data[answer]" value="v6">متفرقه</label><br>                <div align="center"><br><input type="submit" value="ثبت نظر" style="font-family: Tahoma; font-size: 9pt"></div>
+            </font></div></div><div class=div30></div>
+    </div>
+		<input type="hidden" name="frm-id" value="16077748485fd4b2808e9d7" id="frm-id" /></form></div></div></cb:block>
+
+
+<div class="menu"><div class="title"><div class="icon"><p>تاریخ </p></div></div><div class="clear"></div><div class="content">
+
+<script>setTodayDate()</script>
+</div></div>
+<div class="menu"><div class="title"><div class="icon"><p>تماس با ما</p></div></div><div class="clear"></div><div class="content">
+
+<center>
+<a href="http://mmscience.ir/message/" target="_blank" title=""><img src="http://s9.picofile.com/file/8334783534/%D8%A7%D8%B1%D8%B3%D8%A7%D9%84_%D9%BE%DB%8C%D8%A7%D9%85.jpg" title="ارسال پیام به مدیر وبلاگ" alt="تماس با مدیر وبسایت آموزش علوم متوسطه محمد محسنی"/></a>
+<center/>
+
+</div></div></cb:block>
+
+
+
+
+
+
+
+
+</div>
+<div class="GGp">
+
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="menu">
+<div class="title"><div class="icon"><div class="tset"><h2><a href="http://mmscience.mihanblog.com/post/1661" title="نمونه سوال تستی فصل 3 علوم هشتم -  از درون اتم چه خبر">نمونه سوال تستی فصل 3 علوم هشتم -  از درون اتم چه خبر</a></h2></div></div></div><div class="clear"></div>
+<div class="content"><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><div><font size="2" face="Mihan-Koodak">سلام دوستان عزیز!</font></div><div><font size="2" face="Mihan-Koodak">امروز در ادامه سری نمونه سوالات تستی علوم هشتم ، با نمونه سوال تستی فصل 3 علوم هشتم ( یعنی فصل از درون اتم چه خبر ) همراهتان هستیم.</font></div><div><font size="2" face="Mihan-Koodak">این نمونه سوالات می توانند برای تمام دانش آموزان عزیز پایه هشتم ، به خصوص دوستانی که قصد آموختن مطالب را در سطحی بالا تر از کتاب درسی دارند، بسیار مفید واقع شوند.</font></div><div><font size="2" face="Mihan-Koodak">همچنین دبیران گرامی نیز می توانند از این سوالات برای طراحی آزمون های کلاسی خود استفاده کنند.</font></div><div><font size="2" face="Mihan-Koodak">درضمن سوالات این آزمون به شکل رایگان در اختیارتان قرار گرفته است.</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div align="center"><font size="2" face="Mihan-Koodak"><img src="http://s8.picofile.com/file/8345730300/%D9%86%D9%85%D9%88%D9%86%D9%87_%D8%B3%D9%88%D8%A7%D9%84_%D8%AA%D8%B3%D8%AA%DB%8C_%D9%81%D8%B5%D9%84_3_%D8%B9%D9%84%D9%88%D9%85_%D9%87%D8%B4%D8%AA%D9%85.jpg" alt="نمونه سوال تستی فصل 3 علوم هشتم" vspace="0" hspace="0" border="0" align="bottom"></font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div><font size="2" face="Mihan-Koodak"><font size="3" color="#FF0000">نمونه سوال تستی فصل 3 علوم هشتم.....</font><br></font></div><br/>مطالب مرتبط
+<ul><li><a href="http://mmscience.ir/post/1588" >نمونه سوال فصل 2 و 3 علوم هشتم</a></li><li><a href="http://mmscience.ir/post/1550" >نمونه سوال فصل 3 علوم هشتم</a></li><li><a href="http://mmscience.ir/post/1353" >آزمون فصل 1 تا 3 علوم هشتم</a></li></ul>
+</div>
+
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div id="post-abi-icon" class="changecolor"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="../post/tag/علوم&#32;هشتم.html">
+علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%86%D9%85%D9%88%D9%86%D9%87%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%B9%D9%84%D9%88%D9%85%20%D9%87%D8%B4%D8%AA%D9%85">
+نمونه سوال علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%AA%D8%B3%D8%AA%20%D8%B9%D9%84%D9%88%D9%85%20%D9%87%D8%B4%D8%AA%D9%85">
+تست علوم هشتم</a> , <a href="../post/tag/نمونه&#32;سوال&#32;تستی&#32;علوم&#32;هشتم.html">
+نمونه سوال تستی علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%81%D8%B5%D9%84%203%20%D8%B9%D9%84%D9%88%D9%85%20%D9%87%D8%B4%D8%AA%D9%85">
+فصل 3 علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%81%D8%B5%D9%84%20%D8%A7%D8%B2%20%D8%AF%D8%B1%D9%88%D9%86%20%D8%A7%D8%AA%D9%85%20%DA%86%D9%87%20%D8%AE%D8%A8%D8%B1%20%D8%B9%D9%84%D9%88%D9%85%20%D9%87%D8%B4%D8%AA%D9%85">
+فصل از درون اتم چه خبر علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%A7%D8%AA%D9%85%20%D8%B9%D9%84%D9%88%D9%85%20%D9%87%D8%B4%D8%AA%D9%85">
+اتم علوم هشتم</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div><br>
+
+<div class="details">
+<div class="author">نویسنده : <a rel="author" href="../post/author/1328259.html">محمد محسنی</a></div>
+<div class="date">تاریخ : شنبه 24 آذر 1397 ساعت: 04:02</div>
+<div class="comment"><a target="_self" href="http://mmscience.mihanblog.com/post/1661#commentlist">نظرات (<script>setCommentCnt(1661)</script>)</a></div>
+<div class="like"><script>mihanblogPostLike('1661','like')</script></div>
+<BlogExtendedPost><a href="http://mmscience.mihanblog.com/post/1661"><div class="more">ادامه مطلب</div></a></BlogExtendedPost>
+<div class="clear"></div>
+</div>
+</div>
+<div class="menu">
+<div class="title"><div class="icon"><div class="tset"><h2><a href="http://mmscience.mihanblog.com/post/1660" title="ویدئوی مشاهده تراکم ناپذیری جامدات">ویدئوی مشاهده تراکم ناپذیری جامدات</a></h2></div></div></div><div class="clear"></div>
+<div class="content">
+<div><font size="2" face="Mihan-Koodak">سلام دوستان عزیزم.</font></div><div><font size="2" face="Mihan-Koodak">در پست امروز با ویدئوی بسیار جالب همراهتان هستیم که در آن با آزمایشی، مشاهده می کنیم که جامدات تراکم ناپذیر هستند و حجم آنها بر اثر فشار ، کاهش نمیابد.</font></div><div><font size="2" face="Mihan-Koodak">در این آزمایش، چند بسته شمع پارافینی رنگی را تحت فشار بسیار بالایی که به وسیله دستگاه فشار هیدورلیکی به وجود آمده است، قرار می گیرند و می بینیم که در مقابل فشار و فشرده شدن مقاومت کرده و ناگهان از اطراف پیستون ها، خارج می شوند.</font></div><div><font size="2" face="Mihan-Koodak">بسیار جالب است. پیشنهاد می کنم حتما آزمایش را مشاهده کنید و آن را در خانه و به کمک وسایل ساده تری، تکرار کنید.</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div align="center"><font size="2" face="Mihan-Koodak">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/OcCNo]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/OcCNo/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div><font size="2" face="Mihan-Koodak">منبع ویدئو و ویدئو های مشابه بیشتر: کانال آپارات علم زیبا : mmscience.ir</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div><font size="2" face="Mihan-Koodak">پیشنهاد می کنم اگر به دنبال ویدئو های علمی و آزمایش های جالب بیش تر هستید، از طریق منوی بالای سایت و یا قسمت فهرست مطالب، به قسمت دسته مورد نظر خود مراجعه کنید.</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div><font size="2" face="Mihan-Koodak">منتظر شنیدن نظرات های خوب شما هستم.<br></font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><br>
+
+</div>
+
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div id="post-abi-icon" class="changecolor"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://mmscience.mihanblog.com/post/tag/%D8%AA%D8%B1%D8%A7%DA%A9%D9%85%20%D9%86%D8%A7%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C">
+تراکم ناپذیری</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%AA%D8%B1%D8%A7%DA%A9%D9%85%20%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C%20%D8%AC%D8%A7%D9%85%D8%AF%D8%A7%D8%AA">
+تراکم پذیری جامدات</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%AA%D8%B1%D8%A7%DA%A9%D9%85%20%D9%86%D8%A7%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C%20%D8%AC%D8%A7%D9%85%D8%AF%D8%A7%D8%AA">
+تراکم ناپذیری جامدات</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%88%DB%8C%D8%AF%D8%A6%D9%88%DB%8C%20%D8%A2%D8%B2%D9%85%D8%A7%DB%8C%D8%B4%20%D8%AA%D8%B1%D8%A7%DA%A9%D9%85%20%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C%20%D8%AC%D8%A7%D9%85%D8%AF%D8%A7%D8%AA">
+ویدئوی آزمایش تراکم پذیری جامدات</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div><br>
+
+<div class="details">
+<div class="author">نویسنده : <a rel="author" href="../post/author/1328259.html">محمد محسنی</a></div>
+<div class="date">تاریخ : جمعه 23 آذر 1397 ساعت: 18:44</div>
+<div class="comment"><a target="_self" href="http://mmscience.mihanblog.com/post/1660#commentlist">نظرات (<script>setCommentCnt(1660)</script>)</a></div>
+<div class="like"><script>mihanblogPostLike('1660','like')</script></div>
+<BlogExtendedPost><a href="http://mmscience.mihanblog.com/post/1660"><div class="more">ادامه مطلب</div></a></BlogExtendedPost>
+<div class="clear"></div>
+</div>
+</div>
+<div class="menu">
+<div class="title"><div class="icon"><div class="tset"><h2><a href="http://mmscience.mihanblog.com/post/1659" title="نمونه سوال مفهومی فصل 1 زیست شناسی دهم">نمونه سوال مفهومی فصل 1 زیست شناسی دهم</a></h2></div></div></div><div class="clear"></div>
+<div class="content"><div><font size="2" face="Mihan-Koodak">سلام دوستان عزیزم.</font></div><div><font size="2" face="Mihan-Koodak">امروز به درخواست یکی از کلاس دهمی های عزیز رشته تجربی ، با&nbsp; 20 نمونه سوال مفهومی از فصل 1&nbsp; زیست شناسی دهم ( فصل زیست شناسی امروز دیروز و فردا ) همراهتان هستیم.</font></div><div><font size="2" face="Mihan-Koodak">این سوالات به شکل صحیح و غلط مطرح شده اند و به همین دلیل می توانند میزان یادگیری و تسلط شما را بر این فصل از زیست دهم ، به خوبی بسنجند.</font></div><div><font size="2" face="Mihan-Koodak">درضمن نمونه سوالات برای هر 3 گفتار فصل 1 ( کل فصل ) و در سطحی متوسط طراحی شده اند.</font></div><div><font size="2" face="Mihan-Koodak">دبیران گرامی نیز می توانند از این سوالات برای طراحی آزمون های کلاسی خود استفاده کنند.</font></div><div><font size="2" face="Mihan-Koodak">پس به تمام دانش آموزان عزیز پایه دهم ترشته تجربی پیشنهاد می کنم با صرف چند دقیقه ای وقت، این سوالات عالی را حل کنند.</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div><font size="3" face="Mihan-Koodak" color="#FF0000"><br></font></div><div><font size="3" face="Mihan-Koodak" color="#FF0000">نمونه سوال مفهومی صحیح و غلط فصل 1 زیست دهم در ادامه مطلب......</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div><font size="2" face="Mihan-Koodak">
+
+
+1</font></div><br/>مطالب مرتبط
+<ul><li><a href="http://mmscience.ir/post/1549" >نمونه سوال فصل 1 زیست دهم</a></li><li><a href="http://mmscience.ir/post/1546" >جزوه کامل فصل 1 زیست دهم</a></li><li><a href="http://mmscience.ir/post/1379" >جزوه خلاصه فصل 1 زیست دهم</a></li></ul>
+</div>
+
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div id="post-abi-icon" class="changecolor"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="../post/tag/نمونه&#32;سوال.html">
+نمونه سوال</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B3%D8%AA%20%D8%AF%D9%87%D9%85">
+زیست دهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B3%D8%AA%20%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%AF%D9%87%D9%85">
+زیست شناسی دهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%81%D8%B5%D9%84%201%20%D8%B2%DB%8C%D8%B3%D8%AA%20%D8%AF%D9%87%D9%85">
+فصل 1 زیست دهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%86%D9%85%D9%88%D9%86%D9%87%20%D8%B3%D9%88%D8%A7%D9%84%20%D9%81%D8%B5%D9%84%201%20%D8%B2%DB%8C%D8%B3%D8%AA%20%D8%AF%D9%87%D9%85">
+نمونه سوال فصل 1 زیست دهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%81%D8%B5%D9%84%201%20%D8%B2%DB%8C%D8%B3%D8%AA%20%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%AF%D9%87%D9%85">
+فصل 1 زیست شناسی دهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%B3%D8%AA%20%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%D8%AF%DB%8C%D8%B1%D9%88%D8%B2%20%D8%A7%D9%85%D8%B1%D9%88%D8%B2%20%D9%88%20%D9%81%D8%B1%D8%AF%D8%A7">
+زیست شناسی دیروز امروز و فردا</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div><br>
+
+<div class="details">
+<div class="author">نویسنده : <a rel="author" href="../post/author/1328259.html">محمد محسنی</a></div>
+<div class="date">تاریخ : سه شنبه 20 آذر 1397 ساعت: 03:32</div>
+<div class="comment"><a target="_self" href="http://mmscience.mihanblog.com/post/1659#commentlist">نظرات (<script>setCommentCnt(1659)</script>)</a></div>
+<div class="like"><script>mihanblogPostLike('1659','like')</script></div>
+<BlogExtendedPost><a href="http://mmscience.mihanblog.com/post/1659"><div class="more">ادامه مطلب</div></a></BlogExtendedPost>
+<div class="clear"></div>
+</div>
+</div>
+<div class="menu">
+<div class="title"><div class="icon"><div class="tset"><h2><a href="http://mmscience.mihanblog.com/post/1658" title="نمونه سوال تستی فصل 2 علوم هشتم  - تغییرات شیمیایی در خدمت زندگی">نمونه سوال تستی فصل 2 علوم هشتم  - تغییرات شیمیایی در خدمت زندگی</a></h2></div></div></div><div class="clear"></div>
+<div class="content"><div><font size="2" face="Mihan-Koodak">سلام دوستان عزیز.</font></div><div><font size="2" face="Mihan-Koodak">امروز در ادامه سری پست های سوالات 4 گزینه ای علوم هشتم ، با نمونه سوال تستی فصل 2 علوم هشتم ( یعنی فصل تغییرات شیمیایی ) همراهتان هستیم.</font></div><div><font size="2" face="Mihan-Koodak">فصل 2 علوم هشتم، دارای مطالب پایه ای برای سال های آینده و خصوصا شیمی دبیرستان است و به همین دلیل اگر دانش آموزان بتوانند تسلط خود را بر مطالب آن افزایش دهند، نتیجه خوبی بدست می آورند. پس حل کردن این چند سوال تستی چهار گزینه ای از فصل 2 علوم هشتم ، می تواند به دانش آموزان سخت کوش پایه هشتمی کمک بسزایی کند.</font></div><div><font size="2" face="Mihan-Koodak">همچنین دبیران گرامی نیز می توانند از این سوالات برای طراحی آزمون های کلاسی خود استفاده کنند.</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div align="center"><font size="2" face="Mihan-Koodak"><img src="http://s8.picofile.com/file/8345138368/%D9%86%D9%85%D9%88%D9%86%D9%87_%D8%B3%D9%88%D8%A7%D9%84_%D8%AA%D8%B3%D8%AA%DB%8C_%D9%81%D8%B5%D9%84_2_%D8%B9%D9%84%D9%88%D9%85_%D9%87%D8%B4%D8%AA%D9%85_%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1%D8%A7%D8%AA_%D8%B4%DB%8C%D9%85%DB%8C%D8%A7%DB%8C%DB%8C.jpg" alt="گام به گام علوم هشتم" width="457" vspace="0" hspace="0" height="390" border="0" align="bottom"></font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div><font size="2" face="Mihan-Koodak"><font size="3" color="#FF0000">نمونه سوال تستی فصل 2 علوم هشتم در ادامه مطلب.....</font><br></font></div><br/>مطالب مرتبط
+<ul><li><a href="http://mmscience.ir/post/1654" >نمونه سوال تستی فصل 1 علوم  هشتم</a></li></ul>
+</div>
+
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div id="post-abi-icon" class="changecolor"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="../post/tag/علوم&#32;هشتم.html">
+علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%86%D9%85%D9%88%D9%86%D9%87%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%B9%D9%84%D9%88%D9%85%20%D9%87%D8%B4%D8%AA%D9%85">
+نمونه سوال علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%AA%D8%B3%D8%AA%20%D8%B9%D9%84%D9%88%D9%85%20%D9%87%D8%B4%D8%AA%D9%85">
+تست علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%B3%D9%88%D8%A7%D9%84%20%D8%AA%D8%B3%D8%AA%DB%8C%20%D8%B9%D9%84%D9%88%D9%85%20%D9%87%D8%B4%D8%AA%D9%85">
+سوال تستی علوم هشتم</a> , <a href="../post/tag/نمونه&#32;سوال&#32;تستی&#32;علوم&#32;هشتم.html">
+نمونه سوال تستی علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%81%D8%B5%D9%84%202%20%D8%B9%D9%84%D9%88%D9%85%20%D9%87%D8%B4%D8%AA%D9%85">
+فصل 2 علوم هشتم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%AA%D8%BA%DB%8C%D8%B1%D8%A7%D8%AA%20%D8%B4%DB%8C%D9%85%DB%8C%D8%A7%DB%8C%DB%8C">
+تغیرات شیمیایی</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div><br>
+
+<div class="details">
+<div class="author">نویسنده : <a rel="author" href="../post/author/1328259.html">محمد محسنی</a></div>
+<div class="date">تاریخ : یکشنبه 18 آذر 1397 ساعت: 04:27</div>
+<div class="comment"><a target="_self" href="http://mmscience.mihanblog.com/post/1658#commentlist">نظرات (<script>setCommentCnt(1658)</script>)</a></div>
+<div class="like"><script>mihanblogPostLike('1658','like')</script></div>
+<BlogExtendedPost><a href="http://mmscience.mihanblog.com/post/1658"><div class="more">ادامه مطلب</div></a></BlogExtendedPost>
+<div class="clear"></div>
+</div>
+</div>
+<div class="menu">
+<div class="title"><div class="icon"><div class="tset"><h2><a href="http://mmscience.mihanblog.com/post/1657" title="چگونه هنگام درس خواندن حواسمان پرت نشود ؟">چگونه هنگام درس خواندن حواسمان پرت نشود ؟</a></h2></div></div></div><div class="clear"></div>
+<div class="content"><div><font size="2" face="Mihan-Koodak">سلام دوستان سخت کوش.</font></div><div><font size="2" face="Mihan-Koodak">امروز با مقاله مشاوره ای بسیار عالی همراهتان هستیم که در آن به بررسی یکی از مهم ترین مشکلات دانش آموزان می پردازیم.</font></div><div><font size="2" face="Mihan-Koodak">بسیاری از محصلان ، با مشکل حواسپرتی به شدت مواجه هستند و تصور می کنند حواسپرتی در هنگام مطالعه، دلیل عدم موفقیت آنان و نتیجه نگرفتن است.</font></div><div><font size="2" face="Mihan-Koodak">در این مقاله مشاوره ای که توسط استاد گرامی، جناب آقای منصوری نوشته شده، به بررسی اهمیت این مشکل و معرفی راهکار های خوب و کاربردی برای رفع حواسپرتی در هنگام درس خواندن می پردازیم.</font></div><div><font size="2" face="Mihan-Koodak">به تمام دانش آموزان ( به خصوص کلاس نهمی ها و دانش آموزان دوره متوسطه دوم ) پیشنهاد می کنم این مقاله را به خوبی مطالعه کرده و به توصیه های آن به طور کامل عمل کنند.</font></div><div><font size="2" face="Mihan-Koodak">قطعا بعد از گذشت چند روز، تاثیر مثبت آن را خواهید دید.</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div align="center"><font size="2" face="Mihan-Koodak"><img src="http://s8.picofile.com/file/8345030126/%D8%AC%D9%84%D9%88%DA%AF%DB%8C%D8%B1%DB%8C_%D8%A7%D8%B2_%D8%AD%D9%88%D8%A7%D8%B3_%D9%BE%D8%B1%D8%AA%DB%8C_%D9%87%D9%86%DA%AF%D8%A7%D9%85_%D8%AF%D8%B1%D8%B3_%D8%AE%D9%88%D8%A7%D9%86%D8%AF%D9%86.jpg" alt="جلوگیری از حواسپرتی هنگام درس خواندن" width="499" vspace="0" hspace="0" height="427" border="0" align="bottom"></font></div><div><font size="3" face="Mihan-Koodak" color="#FF0000"><br></font></div><div><font size="2" face="Mihan-Koodak"><font size="3" color="#FF0000">مقاله « روش های مقابله با حواس پرتی هنگام درس خواندن » در ادامه مطلب.....</font><br></font></div></div>
+
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div id="post-abi-icon" class="changecolor"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://mmscience.mihanblog.com/post/tag/%D8%AD%D9%88%D8%A7%D8%B3%20%D9%BE%D8%B1%D8%AA%DB%8C">
+حواس پرتی</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%AD%D9%88%D8%A7%D8%B3%D9%BE%D8%B1%D8%AA%DB%8C">
+حواسپرتی</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%AD%D9%88%D8%A7%D8%B3%D9%BE%D8%B1%D8%AA%DB%8C%20%D9%87%D9%86%DA%AF%D8%A7%D9%85%20%D8%AF%D8%B1%D8%B3%20%D8%AE%D9%88%D8%A7%D9%86%D8%AF%D9%86">
+حواسپرتی هنگام درس خواندن</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%AC%D9%84%D9%88%DA%AF%DB%8C%D8%B1%DB%8C%20%D8%A7%D8%B2%20%D8%AD%D9%88%D8%A7%D8%B3%D9%BE%D8%B1%D8%AA%DB%8C">
+جلوگیری از حواسپرتی</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%85%D8%B7%D8%A7%D9%84%D8%B9%D9%87">
+مطالعه</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D8%AF%D8%B1%D8%B3%DB%8C">
+مشاوره درسی</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%85%D9%82%D8%A7%D8%A8%D9%84%D9%87%20%D8%A8%D8%A7%20%D8%AD%D9%88%D8%A7%D8%B3%20%D9%BE%D8%B1%D8%AA%DB%8C">
+مقابله با حواس پرتی</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div><br>
+
+<div class="details">
+<div class="author">نویسنده : <a rel="author" href="../post/author/1328259.html">محمد محسنی</a></div>
+<div class="date">تاریخ : شنبه 17 آذر 1397 ساعت: 03:28</div>
+<div class="comment"><a target="_self" href="http://mmscience.mihanblog.com/post/1657#commentlist">نظرات (<script>setCommentCnt(1657)</script>)</a></div>
+<div class="like"><script>mihanblogPostLike('1657','like')</script></div>
+<BlogExtendedPost><a href="http://mmscience.mihanblog.com/post/1657"><div class="more">ادامه مطلب</div></a></BlogExtendedPost>
+<div class="clear"></div>
+</div>
+</div>
+<div class="menu">
+<div class="title"><div class="icon"><div class="tset"><h2><a href="http://mmscience.mihanblog.com/post/1656" title="نمونه سوال امتحانی فصل 5 علوم نهم - نیرو">نمونه سوال امتحانی فصل 5 علوم نهم - نیرو</a></h2></div></div></div><div class="clear"></div>
+<div class="content"><div><font size="2" face="Mihan-Koodak">سلام دوستان عزیزم.</font></div><div><font size="2" face="Mihan-Koodak">امروز به درخواست یکی از دبیران عزیز، با نمونه سوال امتحانی از فصل 5 علوم نهم ( فصل نیرو ) همراهتان هستیم.</font></div><div><font size="2" face="Mihan-Koodak">این فصل از علوم نهم دارای مطالب بسیار مهمی است و به همین دلیل در آزمون های مختلف کلاسی و پایان ترم و یا آزمون های تستی ورودی مدارس خاص، مورد توجه بسیاری قرار می گیرد.</font></div><div><font size="2" face="Mihan-Koodak">بنابراین دانش آموزان باید به خوبی بر مطالب این فصل تسلط داشته باشند و لازمه تسلط یافتن بر مطالب این فصل، درک مفهومی و کامل مباحث آن است. یکی از بهترین روش های برای درک کامل و مفهومی مطالب فیزیک، حل نمونه سوالات متعدد و خوب است.</font></div><div><font size="2" face="Mihan-Koodak">به همین دلیل به تمام دانش آموزان عزیز پیشنهاد می کنم پس از مطالعه کتاب درسی و درسنامه خود، این سوالات امتحانی را حل کنند تا تسلط بیش تری بر مطالب این فصل مهم از علوم نهم پیدا کنند.</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div align="center"><font size="3" face="Mihan-Koodak" color="#FF0000"><img src="http://s8.picofile.com/file/8345008400/%D9%86%D9%85%D9%88%D9%86%D9%87_%D8%B3%D9%88%D8%A7%D9%84_%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%DB%8C_%D9%81%D8%B5%D9%84_%DB%B5_%D8%B9%D9%84%D9%88%D9%85_%D9%86%D9%87%D9%85.jpg" alt="نمونه سوال امتحانی فصل 5 علوم نهم نیرو" width="496" vspace="0" hspace="0" height="352" border="0" align="bottom"></font></div><div><font size="3" face="Mihan-Koodak" color="#FF0000"><br></font></div><div><font size="2" face="Mihan-Koodak"><font size="3" color="#FF0000">نمونه سوال امتحانی فصل 5 علوم نهم در ادامه مطلب......</font><br></font></div></div>
+
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div id="post-abi-icon" class="changecolor"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://mmscience.mihanblog.com/post/tag/%D9%81%D8%B5%D9%84%205%20%D8%B9%D9%84%D9%88%D9%85%20%D9%86%D9%87%D9%85">
+فصل 5 علوم نهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%B9%D9%84%D9%88%D9%85%20%D9%86%D9%87%D9%85">
+علوم نهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%B3%D9%88%D8%A7%D9%84%20%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%20%D8%B9%D9%84%D9%88%D9%85%20%D9%86%D9%87%D9%85">
+سوال امتحان علوم نهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%86%DB%8C%D8%B1%D9%88%20%D8%B9%D9%84%D9%88%D9%85%20%D9%86%D9%87%D9%85">
+نیرو علوم نهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%86%DB%8C%D8%B1%D9%88%20%DA%86%DB%8C%D8%B3%D8%AA">
+نیرو چیست</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D8%B3%D9%88%D8%A7%D9%84%20%D9%86%DB%8C%D8%B1%D9%88%20%DA%86%DB%8C%D8%B3%D8%AA">
+سوال نیرو چیست</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%86%D9%85%D9%88%D9%86%D9%87%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%DB%8C%20%D8%B9%D9%84%D9%88%D9%85%20%D9%86%D9%87%D9%85">
+نمونه سوال امتحانی علوم نهم</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div><br>
+
+<div class="details">
+<div class="author">نویسنده : <a rel="author" href="../post/author/1328259.html">محمد محسنی</a></div>
+<div class="date">تاریخ : جمعه 16 آذر 1397 ساعت: 16:59</div>
+<div class="comment"><a target="_self" href="http://mmscience.mihanblog.com/post/1656#commentlist">نظرات (<script>setCommentCnt(1656)</script>)</a></div>
+<div class="like"><script>mihanblogPostLike('1656','like')</script></div>
+<BlogExtendedPost><a href="http://mmscience.mihanblog.com/post/1656"><div class="more">ادامه مطلب</div></a></BlogExtendedPost>
+<div class="clear"></div>
+</div>
+</div>
+<div class="menu">
+<div class="title"><div class="icon"><div class="tset"><h2><a href="http://mmscience.mihanblog.com/post/1655" title="ویدئوی ماشین مرکب جالبی که حباب می سازد!">ویدئوی ماشین مرکب جالبی که حباب می سازد!</a></h2></div></div></div><div class="clear"></div>
+<div class="content"><div><font size="2" face="Mihan-Koodak">سلام دوستان جویای علم!</font></div><div><font size="2" face="Mihan-Koodak">امروز با ویدئویی از ماشین مرکب بسیار جالبی همراهتان هستیم که حباب می سازد. این مقاله با فصل 9 علوم نهم ( فصل ماشین ها ) نیز مرتبط است.<br></font></div><div><font size="2" face="Mihan-Koodak">ماشین مرکب ، یکی از انواع وسایل است که با ابتکار بالا، از به هم پیوستن چند ماشین ساده تشکیل می شود و کار ساده ای را انجام می دهد.<br></font></div><div><font size="2" face="Mihan-Koodak">پیشنهاد می کنم حتما ویدئو را مشاهده کنید (توضیح نحوه کار ماشین در ادامه همین مقاله ):</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div align="center"><font size="2" face="Mihan-Koodak">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/yGLuF]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/yGLuF/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				</font></div><div><font size="2" face="Mihan-Koodak"><br></font></div><div><font size="2" face="Mihan-Koodak"><font size="3" color="#FF0000">توضیحات نحوه کار کردن این ماشین مرکب، در ادامه مقاله....</font><br></font></div></div>
+
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div id="post-abi-icon" class="changecolor"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="http://mmscience.mihanblog.com/post/tag/%D8%B9%D9%84%D9%88%D9%85%20%D9%86%D9%87%D9%85">
+علوم نهم</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%85%D8%A7%D8%B4%DB%8C%D9%86%20%D9%85%D8%B1%DA%A9%D8%A8">
+ماشین مرکب</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%85%D8%A7%D8%B4%DB%8C%D9%86%20%D9%85%D8%B1%DA%A9%D8%A8%20%D8%AC%D8%A7%D9%84%D8%A8">
+ماشین مرکب جالب</a> , <a href="http://mmscience.mihanblog.com/post/tag/%D9%81%D8%B5%D9%84%209%20%D8%B9%D9%84%D9%88%D9%85%20%D9%86%D9%87%D9%85">
+فصل 9 علوم نهم</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div><br>
+
+<div class="details">
+<div class="author">نویسنده : <a rel="author" href="../post/author/1328259.html">محمد محسنی</a></div>
+<div class="date">تاریخ : چهارشنبه 14 آذر 1397 ساعت: 05:57</div>
+<div class="comment"><a target="_self" href="http://mmscience.mihanblog.com/post/1655#commentlist">نظرات (<script>setCommentCnt(1655)</script>)</a></div>
+<div class="like"><script>mihanblogPostLike('1655','like')</script></div>
+<BlogExtendedPost><a href="http://mmscience.mihanblog.com/post/1655"><div class="more">ادامه مطلب</div></a></BlogExtendedPost>
+<div class="clear"></div>
+</div>
+</div>
+
+
+
+<div class="menu"><div class="title"><div class="icon"><p>از سایر صفحات سایت هم دیدن کنید</p></div></div><div class="clear"></div><div class="content">
+تعداد کل صفحات : <b>208</b><br/>
+<div class="pagination"><a href="http://mmscience.mihanblog.com/page/3?/page/telegram.me/telegram.me/telegram.me/"><i>...</i></a><a href="http://mmscience.mihanblog.com/page/4?/page/telegram.me/telegram.me/telegram.me/"><span>4</span></a><a href="http://mmscience.mihanblog.com/page/5?/page/telegram.me/telegram.me/telegram.me/"><span>5</span></a><a href="http://mmscience.mihanblog.com/page/6?/page/telegram.me/telegram.me/telegram.me/"><span>6</span></a><a href="http://mmscience.mihanblog.com/page/7?/page/telegram.me/telegram.me/telegram.me/"><b>7</b></a><a href="http://mmscience.mihanblog.com/page/8?/page/telegram.me/telegram.me/telegram.me/"><span>8</span></a><a href="http://mmscience.mihanblog.com/page/9?/page/telegram.me/telegram.me/telegram.me/"><span>9</span></a><a href="http://mmscience.mihanblog.com/page/10?/page/telegram.me/telegram.me/telegram.me/"><span>10</span></a><a href="http://mmscience.mihanblog.com/page/11?/page/telegram.me/telegram.me/telegram.me/"><i>...</i></a></div>
+</div></div>
+
+
+</div>
+<div class="GGm2">
+
+<form id="frm-16077748485fd4b2808f593" method="get" action="http://www.mmscience.ir/post/search/fid/16077748485fd4b2808f593"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> <div class="menu"><div class="title"><div class="icon"><p> جستجو در مطالب سایت </p></div></div><div class="clear"></div><div class="content">
+<div align="center"><input type="text" placeholder="جست و جو در سایت ...." name="search_text"></div>
+<div align="center"><input type="submit" value="جست‌وجو کن" style="font-family: Tahoma; font-size: 9pt"></div>
+</div></div><input type="hidden" name="frm-id" value="16077748485fd4b2808f593" id="frm-id" /></form>
+
+
+
+<cb:block_stat><div class="menu"><div class="title"><div class="icon"><p>کانال آپارات سایت</p></div></div><div class="clear"></div><div class="content">
+
+</div><div class="clear"></div><div class="content">
+<center>
+<a href="https://aparat.com/mmscience" target="_blank" title=""><img src="http://s8.picofile.com/file/8350864384/%DA%A9%D8%A7%D9%86%D8%A7%D9%84_%D8%A2%D9%BE%D8%A7%D8%B1%D8%A7%D8%AA_%D8%B9%D9%84%D9%85_%D8%B2%DB%8C%D8%A8%D8%A7.png" title=" به کانال آپارات سایت ما بپیوندید" alt="کانال آپارات علم زیبا"/></a>
+<center/>
+
+</div></div></cb:block>
+
+<div class="menu"><div class="title"><div class="icon"><p>موضوعات</p></div></div><div class="clear"></div><div class="content">
+<ul><li><h3><a href="../post/category/40.html">پایه یازدهم (10)</a></h3></li><li><h3><a href="../post/category/31.html">پایه دهم (105)</a></h3></li><li><h3><a href="../post/category/22.html">علوم نهم (468)</a></h3></li><li><h3><a href="../post/category/15.html">علوم هشتم (347)</a></h3></li><li><h3><a href="../post/category/14.html">علوم هفتم (278)</a></h3></li><li><h3><a href="../post/category/37.html">زیست دهم (49)</a></h3></li><li><h3><a href="../post/category/39.html">شیمی دهم (21)</a></h3></li><li><h3><a href="../post/category/38.html">فیزیک دهم (26)</a></h3></li><li><h3><a href="../post/category/32.html">پاورپوینت دهم (1)</a></h3></li><li><h3><a href="../post/category/23.html">پاورپوینت نهم (25)</a></h3></li><li><h3><a href="../post/category/17.html">پاورپوینت هشتم (9)</a></h3></li><li><h3><a href="../post/category/16.html">پاورپوینت هفتم (8)</a></h3></li><li><h3><a href="../post/category/25.html">گزارش کار آزمایشگاه نهم (27)</a></h3></li><li><h3><a href="../post/category/13.html">گزارش کار آزمایشگاه هشتم (19)</a></h3></li><li><h3><a href="../post/category/12.html">گزارش کار آزمایشگاه هفتم (28)</a></h3></li><li><h3><a href="../post/category/42.html">جزوات پایه یازدهم (4)</a></h3></li><li><h3><a href="../post/category/35.html">جزوات پایه دهم (50)</a></h3></li><li><h3><a href="../post/category/26.html">جزوات علوم نهم (273)</a></h3></li><li><h3><a href="../post/category/7.html">جزوات علوم هشتم (241)</a></h3></li><li><h3><a href="../post/category/6.html">جزوات علوم هفتم (151)</a></h3></li><li><h3><a href="../post/category/41.html">نمونه سوال یازدهم (1)</a></h3></li><li><h3><a href="../post/category/34.html">نمونه سوال دهم (33)</a></h3></li><li><h3><a href="../post/category/24.html">نمونه سوال نهم (137)</a></h3></li><li><h3><a href="../post/category/5.html">نمونه سوال هشتم (74)</a></h3></li><li><h3><a href="../post/category/4.html">نمونه سوال هفتم (94)</a></h3></li><li><h3><a href="../post/category/28.html">گام به گام علوم نهم (10)</a></h3></li><li><h3><a href="../post/category/29.html">گام به گام علوم هشتم (3)</a></h3></li><li><h3><a href="../post/category/30.html">گام به گام علوم هفتم (2)</a></h3></li><li><h3><a href="../post/category/3.html">مطالب علمی (612)</a></h3></li><li><h3><a href="../post/category/11.html">زیست شناسی (206)</a></h3></li><li><h3><a href="../post/category/10.html">زمین شناسی (90)</a></h3></li><li><h3><a href="../post/category/9.html">شیمی (170)</a></h3></li><li><h3><a href="../post/category/8.html">فیزیک (266)</a></h3></li><li><h3><a href="../post/category/21.html">نجوم (65)</a></h3></li><li><h3><a href="../post/category/18.html">آزمایش ها و ویدئو های علمی (111)</a></h3></li><li><h3><a href="../post/category/36.html">مشاوره درسی (39)</a></h3></li></ul>
+</div></div>
+
+
+<cb:block_stat><div class="menu"><div class="title"><div class="icon"><p>مجموعه های آموزشی پایه دهم </p></div></div><div class="clear"></div><div class="content">
+
+<a href="http://mmscience.ir/post/1092" target="_blank"><img src="http://s9.picofile.com/file/8334813300/%D8%A7%D9%BE%D9%84%DB%8C%DA%A9%DB%8C%D8%B4%D9%86_%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF%DB%8C.jpg"  target="_blank" title=" اپلیکیشن فیزیک دهم" alt="اپلیکیشن آموزشی فیزیک دهم"/></a>
+
+<a href="http://mmscience.ir/post/1109" target="_blank"><img src="http://s8.picofile.com/file/8334815818/%D9%BE%DA%A9%DB%8C%D8%AC_%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA_%D9%81%DB%8C%D8%B2%DB%8C%DA%A9_%D8%AF%D9%87%D9%85.png"  target="_blank" title="نمونه سوال فیزیک دهم" alt="سوال کنکوری فیزیک دهم "/></a>
+
+
+</div></div></cb:block>
+
+
+<cb:block_stat><div class="menu"><div class="title"><div class="icon"><p>گام به گام (جواب فعالیت‌ها و..) علوم هفتم،هشتم،نهم</p></div></div><div class="clear"></div><div class="content">
+<a href="http://mmscience.ir/post/1172" title="" target="_blank"><img src="http://s9.picofile.com/file/8345031876/%DA%AF%D8%A7%D9%85_%D8%A8%D9%87_%DA%AF%D8%A7%D9%85_%D8%B9%D9%84%D9%88%D9%85_%D9%87%D9%81%D8%AA%D9%85_%D9%87%D8%B4%D8%AA%D9%85_%D9%86%D9%87%D9%85.jpg"  target="_blank" title="گام به گام" alt="گام به گام علوم"/></a>
+</div></div></cb:block>
+
+
+
+<cb:block_stat><div class="menu"><div class="title"><div class="icon"><p>گزارش‌کار (جواب آزمایش‌ها) علوم هفتم،‌هشتم،‌نهم</p></div></div><div class="clear"></div><div class="content">
+<a href="http://mmscience.ir/post/1133" title="" target="_blank"><img src="http://s8.picofile.com/file/8303415400/%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4_%DA%A9%D8%A7%D8%B1_%D8%B9%D9%84%D9%88%D9%85.jpg"  target="_blank" title="گزارش کار" alt="گزارش کار آزمایشگاه علوم"/></a>
+</div></div></cb:block>
+
+
+</div>
+<div class="clear"></div>
+
+
+
+    
+
+
+<div class="footer">
+<div class="footer-block">
+<div class="footer-title"><i class="fa fa-info-circle"></i><h6>راه های ارتباطی و شبکه های اجتماعی آموزش علوم متوسطه</h6></div><div class="clear"></div>
+<div class="social">
+<left>
+
+<a href="http://aparat.com/mmscience"  target="_blank"  title=""><img src="http://s9.picofile.com/file/8334944676/mmscience_ir_aparat.png" title="در آپارات " alt="کانال آپارات آموزش علوم متوسطه (علم زیبا)"/></a>
+<a href="http://mmscience.ir/post/rss/"  target="_blank"  title=""><img src="http://s8.picofile.com/file/8334944650/mmsience_ir_feed_rss.png"  target="_blank" title="در خوراک سایت" alt="فید آر اس اس آموزش علوم متوسطه"/></a>
+<a href="mailto:mmscience.m@gmail.com"  target="_blank"  title=""><img src="http://s9.picofile.com/file/8334943134/mmscience_ir_gmail.png" title="با ایمیل" alt="ایمیل آموزش علوم متوسطه"/></a>
+<a href="http://mmscience.mihanblog.com/page/telegram.me/mammoh"  target="_blank" title=""><img src="http://s8.picofile.com/file/8334944692/mmscience_ir_telegram.png" title="در تلگرام" alt="تلگرام آموزش علوم متوسطه"/></a>
+
+
+<div class="footer-title"><i class="fa fa-copyright"></i><h6>آمار بازدید</h6></div><div class="clear"></div>
+<cb:block_stat>
+کل بازدید : <script>getStatVar('total_view');</script><br/>
+بازدید امروز :<script>getStatVar('today_view');</script><br/>
+بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/>
+بازدید این ماه : <script>getStatVar('this_month_view');</script><br/>
+بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br/>
+آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br/>
+
+</div>
+
+</body>
+</html>
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'mmscience.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

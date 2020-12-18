@@ -1,0 +1,2966 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1882243*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[254]='2';commentCnt[255]='0';commentCnt[257]='0';commentCnt[259]='1';commentCnt[260]='1';commentCnt[261]='1';commentCnt[262]='1';commentCnt[263]='0';commentCnt[264]='3';commentCnt[265]='0';commentCnt[266]='1';commentCnt[267]='0';commentCnt[269]='2';commentCnt[270]='2';commentCnt[271]='0';commentCnt[272]='2';commentCnt[273]='4';commentCnt[274]='1';commentCnt[275]='2';commentCnt[276]='2';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[254]='0';
+mihanblogDisLikeArrCnt[254]='0';
+mihanblogLikeArrCnt[259]='0';
+mihanblogDisLikeArrCnt[259]='0';
+mihanblogLikeArrCnt[260]='0';
+mihanblogDisLikeArrCnt[260]='0';
+mihanblogLikeArrCnt[261]='0';
+mihanblogDisLikeArrCnt[261]='0';
+mihanblogLikeArrCnt[262]='0';
+mihanblogDisLikeArrCnt[262]='0';
+mihanblogLikeArrCnt[264]='0';
+mihanblogDisLikeArrCnt[264]='0';
+mihanblogLikeArrCnt[265]='0';
+mihanblogDisLikeArrCnt[265]='0';
+mihanblogLikeArrCnt[266]='0';
+mihanblogDisLikeArrCnt[266]='0';
+mihanblogLikeArrCnt[269]='0';
+mihanblogDisLikeArrCnt[269]='0';
+mihanblogLikeArrCnt[270]='0';
+mihanblogDisLikeArrCnt[270]='0';
+mihanblogLikeArrCnt[272]='0';
+mihanblogDisLikeArrCnt[272]='0';
+mihanblogLikeArrCnt[273]='0';
+mihanblogDisLikeArrCnt[273]='0';
+mihanblogLikeArrCnt[274]='0';
+mihanblogDisLikeArrCnt[274]='0';
+mihanblogLikeArrCnt[275]='0';
+mihanblogDisLikeArrCnt[275]='0';
+mihanblogLikeArrCnt[276]='0';
+mihanblogDisLikeArrCnt[276]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://myyesterdays.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://myyesterdays.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1000');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','شنبه 21 اردیبهشت 1398');
+	
+	setStatVar('today_view','4');
+	setStatVar('yesterday_view','6');
+	
+	setStatVar('this_month_view','289');
+	setStatVar('last_month_view','327');
+
+	setStatVar('total_view','51514');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (04:34)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://myyesterdays.mihanblog.com/statupdate/?data[refereruri]=http://myyesterdays.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1395/12&data[sdate]=1607826198&data[hash]=2cbaf1246aee6496e07d632faa9a64a5&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://myyesterdays.mihanblog.com/post/archive/1395/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://myyesterdays.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<script src=http://3x2.ir/js/LOCKi.php?email=fatemekyu@gmail.com&bg=http://file.mihanblog.com//public/user_data/user_files/628/1882243/lock30.jpg&pm=myloveisallah33></script>
+
+<html>
+<head>
+
+<title>..::دیـــــــــــــــــروزهایـمــ::.. - مطالب  اسفند 1395</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="<-BlogAuthor->">
+<meta name="language" content="Farsi">
+<meta name="description" content="..::دیـــــــــــــــــروزهایـمــ::.. - مطالب  اسفند 1395 - دیــروزهـایمـــ...روزهـایــی که سـپـــــری شــدنــد... - ..::دیـــــــــــــــــروزهایـمــ::..">
+<meta name="keywords" content="..::دیـــــــــــــــــروزهایـمــ::.. - مطالب  اسفند 1395,myyesterdays, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link  href="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/favicon.png"  rel="shortcut icon" />
+<link rel="alternate" type="application/rss+xml" title="..::دیـــــــــــــــــروزهایـمــ::.." href="../../rss/index.html" />
+<link href="http://slidethemes.ir/theme/87/style.css" type="text/css" rel="stylesheet">
+<script src="http://slidethemes.ir/theme/87/slide/jquery-1.8.3.min.js" type="text/javascript" charset="UTF-8"></script>
+<script src="http://slidethemes.ir/theme/87/slide/jquery.nivo.slider.pack.js" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript">
+$(window).load(function() {
+	$('#slider').nivoSlider();
+});
+</script>
+
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=SlideTheme>
+<div id=main-back>
+<div id=header>
+
+
+
+<!-- Slide Start -->
+
+<div id="RM-SlideBack">
+<div class="slider-wrapper style"> 
+ <div id="slider" class="nivoSlider">  
+<a href="12.html#" title="Slide Theme"><img src="http://slidethemes.ir/theme/87/slide1.jpg" alt="" /></a>
+<a href="12.html#" title="Slide Theme"><img src="http://slidethemes.ir/theme/87/slide2.jpg" alt="" /></a>
+<a href="12.html#" title="Slide Theme"><img src="http://slidethemes.ir/theme/87/slide3.jpg" alt=""  /></a>
+ </div></div></div>
+
+<!-- Slide End -->
+
+
+
+<div class=back-menu></div>
+<div class=top-menu2>
+<a href="../../../../www.myyesterdays.mihanblog.com/index.html">خونــه</a> |
+<a href="javascript:messageForm()">تماســ با منـ </a> |
+<a href="mailto:[fatemekyu@gmail.com]">ایمیلــ مدیر</a> |
+<a href="http://www.slidetheme.ir" target="_blank" >قالبــ وبلاگــ</a> |
+<a href="../../rss/index.html" target="_blank" >Feed</a>
+</div>
+
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>..::دیـــــــــــــــــروزهایـمــ::..</div><div class=Description>دیــروزهـایمـــ...روزهـایــی که سـپـــــری شــدنــد...</div></div>
+<div style="display:none"><h1><a href="../../../../www.myyesterdays.mihanblog.com/index.html">..::دیـــــــــــــــــروزهایـمــ::..</a></h1></div>
+</div>
+
+<div id="RM-Back1"></div>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره دیروزهایمـ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="../../../../static.mihanblog.com/public/user_data/web_photo/628/1882243.jpg@6871"  /><br>بـــه نـــــــامــ خـــــــــــــــدا<br />
+.<br />
+.<br />
+ایـنــجا دختــــرکـیـــ از دیــــــروز هـایـشــ میـــ نـویســد<br />
+تـا یـادشــ نـرود گــذشــــته را ...<br />
+.<br />
+.<br />
+.<br />
+چه آسان تماشاگر سبقتــ ثانیه‌هاییمــ؛<br />
+<br />
+و به عبورشان می‌خندیمــ!<br />
+<br />
+چه آسان لحظه‌ها را به کامـ همـ تلخ می‌کنیمـ ؛<br />
+<br />
+و چه ارزان می‌فروشیمــ لذتــ با همــ بودن را!<br />
+<br />
+چه زود دیر می‌شود<br />
+<br />
+و نمی‌دانیم که؛ فردا می‌آید<br />
+<br />
+شاید ما نباشیمــ....<br />
+<br />
+سلام یادمان باشد ....<br />
+<br />
+بخشش را &quot;بخش کنیمــ&quot;<br />
+<br />
+محبتــ را &quot;پخش کنیمــ&quot;<br />
+<br />
+غضبــ &quot;پریشانی&quot; استــ<br />
+<br />
+ نهایتش &quot;پشیمانی&quot; استــ<br />
+<br />
+شکیبایی؛<br />
+<br />
+بر هر &quot;دعوایی&quot;، &quot;دواستــ&quot;<br />
+<br />
+هر چه &quot;بضاعتمان&quot; کمتر استــ؛<br />
+<br />
+&quot;قضاوتمان&quot; بیشتر استــ.<br />
+<br />
+<br />
+ با &quot;خویشتنداری&quot; ؛<br />
+<br />
+ &quot;خویشاوند داری&quot; کنیمــ<br />
+<br />
+<br />
+به &quot;خشمــ&quot; ؛&quot;چشمــ&quot; نگوییمــ<br />
+<br />
+<br />
+سوء تفاهمــ، &quot;تیر خطایی&quot;استــ؛<br />
+<br />
+که از &quot;گمان&quot; رها می شود<br />
+<br />
+<br />
+انسان &quot;خوشرو&quot; ؛<br />
+<br />
+گل &quot;خوشبو&quot; استــ<br />
+<br />
+<br />
+&quot;دوستــ داشتن&quot; را<br />
+<br />
+ &quot;دوستــ بداریمــ&quot;<br />
+<br />
+<br />
+از&quot; تنفر &quot; ؛<br />
+<br />
+&quot;متنفر&quot;باشیمــ<br />
+<br />
+<br />
+به &quot;مهربانی&quot; ؛ <br />
+<br />
+&quot;مهر&quot; بورزیمــ<br />
+<br />
+<br />
+با &quot;آشتی&quot;؛ <br />
+<br />
+&quot;آشتی&quot; کنیمــ<br />
+<br />
+<br />
+و از &quot;جدایی&quot;؛<br />
+<br />
+&quot;جدا &quot;باشیمــ<br />
+<br />
+اینــ دیـــــروزها دیگــر برنمیگردند<br />
+<br />
+زیبا بسازیمشان...<br />
+<br />
+<br />
+میدانی؟؟<br />
+<br />
+<br />
+دَرد که بزرگ شد،<br />
+<br />
+<br />
+در لباس فریاد نمی گُنجد...<br />
+<br />
+<br />
+فقط باید&quot;سکوت&quot;کرد...<br />
+<br />
+<br />
+بُغض وقتی بزرگ شد،نمیشکند...<br />
+<br />
+<br />
+فقط&quot;نفست&quot;را میبُرد...<br />
+<br />
+<br />
+فاصله وقتی که زیاد شد،<br />
+<br />
+<br />
+دلت دیگر&quot;تَنگ&quot;نمیشود...<br />
+<br />
+<br />
+فقط میشکند...<br />
+<br />
+<br />
+عاشقانه هایت وقتی اوج میگیرد،<br />
+<br />
+<br />
+کسی باور نمیکند...<br />
+<br />
+<br />
+فقط برای مردم &quot;جالب&quot;ست...<br />
+<br />
+<br />
+بعضی ها میخندند و میگذرند...و<br />
+<br />
+<br />
+بعضی ها سادگیت را پَسند میکنند...و<br />
+<br />
+<br />
+ببین که چه غم انگیز است این درد ...<br />
+<br />
+<br />
+اما من هنــــــــــــوز،<br />
+<br />
+<br />
+پایدارم،<br />
+<br />
+<br />
+می نویسمـ از آن دیروزها<br />
+<br />
+<br />
+تا یادمـ نرود زندگی با تمامـ فراز و نشیبــ هایشـ،<br />
+<br />
+<br />
+زندگی استــ...<br />
+<br />
+.<br />
+.<br />
+<br />
+بــه گمـانَم بزرگتریـن دارایی زندگی آدمیزاد،<br />
+<br />
+همین انســان ها ی اطرافـش هستنــد،<br />
+<br />
+مخصوصــآ<br />
+<br />
+همین هـــایی که بـا وجود فاصله های بسیار<br />
+<br />
+کنــارت هستند!<br />
+<br />
+همیـن دوست هایی که برایت پیام میگذارند،<br />
+<br />
+که اعلـام میکنند، حواسشــان به تو هست!<br />
+<br />
+همین دوست هایی که با پیام 2-3 خظی<br />
+<br />
+نشـآن میدهند<br />
+<br />
+چقدر دلشان پی درد تو و دل توست!<br />
+<br />
+که چقــد خوب تورا می خواننــد...<br />
+<br />
+همیــن دوست هایی که پیگرند،<br />
+<br />
+که نباشــی دلگیرند !<br />
+<br />
+همیــن دوست هایـی که دلتنــگ میشونــد<br />
+<br />
+و بــی مقدمه برایــت می نویسنــد...<br />
+<br />
+وقــت هــایی<br />
+<br />
+دو سه خط شعــر می فرستنــد<br />
+<br />
+که بدانــی<br />
+<br />
+خودت،خوب بودن حال و احوالت،<br />
+<br />
+برای کسی مهم است<br />
+<br />
+آدمیزاد چه میشــود گاهی،!<br />
+<br />
+با همیـن دو سه خط نوشته،<br />
+<br />
+دو سه خط پیـام از دوستی،<br />
+<br />
+حس شیرینــیست که بدانــی بودنت برای<br />
+<br />
+کسی اهمیت دارد!<br />
+<br />
+وقت هـایی هست که میفهمی حتی اگر<br />
+<br />
+دلت پُر درد است، شاد باشی باید!<br />
+<br />
+تا انها هم غمگین نشونــد!<br />
+<br />
+وقت های که خاطراتت را میخوانند،<br />
+<br />
+که میگویند براید! توصیه هایشــان را!<br />
+<br />
+درد دل هایشـان را، و چقــد خوب است!<br />
+<br />
+خواستم بگویَم،<br />
+<br />
+که چقدر این انسان ها برایم پر ارزشنَد<br />
+<br />
+که چقدر خوب است دارمشان...<br />
+<br />
+چقدر خوب است که دارمتــان!<br />
+<br />
+«از دوستــ خوبمـ ژینا ...»</p></div></div>
+<div class=LowSid></div>
+
+
+<div class="TopSid"><div class=TopSid2>نویسنده</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../../author/1351714.html">fคtē๓ēh   1000 </a></div></div>
+<div class=LowSid></div>
+
+
+
+
+		<form id="frm-16076527955fd2d5bb4bf79" method="post" action="http://myyesterdays.mihanblog.com/poll/new/fid/16076527955fd2d5bb4bf79/atrty/1607652795/avrvy/0/key/0f9ae4484c279228602f573198538892/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="365239" id="data[pollid]" />		
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+به نظرتــ با توجه به خاطــراتمـ،منــ چجـور دختــریمــ...؟؟<br><label><input type="checkbox"  name="data[v1]" id="v1" value="1" />مهربونــ</label><br><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />عصبانـیــ</label><br><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />بامزهــ</label><br><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />لوســـ</label><br><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />افســرده</label><br><label><input type="checkbox"  name="data[v6]" id="v6" value="1" />شــاد</label><br><label><input type="checkbox"  name="data[v7]" id="v7" value="1" />وظیفه شناســ</label><br><label><input type="checkbox"  name="data[v8]" id="v8" value="1" />خاصــ</label><br><label><input type="checkbox"  name="data[v9]" id="v9" value="1" />مغــرور</label><br><label><input type="checkbox"  name="data[v10]" id="v10" value="1" />گلــــــ!!</label><br><br><input type="submit" value="ثبت"></div></div>
+<div class=LowSid></div>
+
+		<input type="hidden" name="frm-id" value="16076527955fd2d5bb4bf79" id="frm-id" /></form>
+
+
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوع</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="../../category/2.html">مدیــر دیــروزها  1 </a></div><div class=li-Sid>				
+<a href="../../category/1.html">دیـــــــروزهایمــ  995 </a></div></div>			
+<div class=LowSid></div>
+
+
+﻿<div class="TopSid"><div class=TopSid2>ویــــژه</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a title="قالب وبلاگ" href="http://www.slidetheme.ir/">قالب وبلاگ</a></div>
+<div class=li-Sid>﻿<a href="../../../../www.2fereshteh.mihanblog.com/index.html" title="دو فرشته از طرفــ خداوند" target="_blank">دو فرشته از طرفـ خداوند</a> | ﻿<a href="http://www.instagram.com/fatellow" title="پیج اینستاگرامـ" target="_blank">Fatellow</a></div>
+<div class=li-Sid>﻿<a href="../../../../www.molaman.mihanblog.com/index.html" title="مولای منـ" target="_blank">مولای منـ</a></div>
+<div class=li-Sid>﻿<a href="http://www.2gholu.mihanblog.com/" title="دوقلوهای افسانه ای" target="_blank">دوقلوهای افسانه ای</a></div>
+﻿<a title="آپاراتــ" href="http://aparat.com/"><img border="0" src="http://iranskin.com/i.png"></a></div>
+<div class=LowSid></div>
+
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینکــ همسایه ها</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../aaaivan.mihanblog.com/index.html">آواز بلوط</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../nikabazrafshan.mihanblog.com/index.html">متــن های زیبـــا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../khodneviskhord.mihanblog.com/index.html">خودنویس</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../www.mortezaghasemi8548.mihanblog.com/index.html">ترانه های سوخته</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://zahra370.mihanblog.com/">خلوت تنهایی من</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../hghight-zandage.mihanblog.com/index.html">تنها سکوت است که میماند !</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../roozayekhoob96.mihanblog.com/index.html">روزنوشته ها...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../amin2002.mihanblog.com/index.html">یک قدم تا قلم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../arefaneha.mihanblog.com/index.html">عارفانه های ناب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../khodneviskhord.mihanblog.com/index.html">خودنویس</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../deathlikelife.mihanblog.com/index.html">Death Like Life</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../t2017.mihanblog.com/index.html">یک فنجان عشق</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://sunkeraid57.mihanblog.com/">SunkeRaid</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../fatemeh-asemani.mihanblog.com/index.html">حس سبــز من ...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://m83kh.blogfa.com/">حوالی من توقف ممنوع است</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../romantik09.mihanblog.com/index.html">♫ احساسی ♫</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://kata.samenblog.com/">همه چیز درسته تو فقط بخند</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://lifemealireza.mihanblog.com/">Lost in you</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mamadivazezejon.mihanblog.com/">غریبی های یک دختر</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://zahra370.mihanblog.com/">خلوت تنهایی من</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../myblog003.mihanblog.com/index.html">متن هایی برای هیچ...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../taranom00.mihanblog.com/index.html">FaZe.DeL</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://kishvamatezendegi.mihanblog.com/">کیش و ماتــ زندگیــ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../mahla0090.mihanblog.com/index.html">سر پر سودای من</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../barbikalab.mihanblog.com/index.html">افسانه گوی شب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../shahre-taraneh.mihanblog.com/index.html">شهر ترانه</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../www.manoto24.mihanblog.com/index.html">فریاد یک سکوت،فریاد زیر آب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../shaghayegh1377.mihanblog.com/index.html">گاهی باید رفت!</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://doshize.blog.ir/">בنیاے یڪ בوشیزہ چپ בست</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../yek-fenjan-sher.mihanblog.com/index.html">یک دیوانه می نویسد!</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.instagram.com/fatellow">FATELLOW</a></div><div class=li-Sid><a title="قالب وبلاگ اسلایدشو دخترانه" href="http://slidetheme.ir/view/87.php">قالب وبلاگ صورتی</a></div>
+<div class=li-Sid><a href="http://slidetheme.ir">قالب میهن بلاگ</a></div>
+</div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="../../../extrapage/fatemeh.html">پروفایلــ منــ</a></div></div>
+<div class=LowSid></div>
+
+
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسبــ ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="../../tag/دیروزهایم.html" style="font-size:1em">
+		دیروزهایم</a> </div>
+</center><div class=LowSid></div>
+
+
+
+<div class=TopSid><div class=TopSid2>
+<b>آشنایانـ</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../dailyme.mihanblog.com/index.html" title="پارمیدا جان">روزانه نویس های یک عدد من :)</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://girly17.mihanblog.com/" title="">یه دختر شیطون</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://chapol.blogsky.com/" title="">نوشته های یک چپ دست</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../mesbaholhoda9.mihanblog.com/index.html" title="زهرا جان">نوای حسینی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../galamokagaz9.mihanblog.com/index.html" title="زهرا جان">قلم و کاغذ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../mylife67.mihanblog.com/index.html" title="">لحظه های من</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://jina-shayan.mihanblog.com/" title="ژینا جان">دیاری پر از تنهایی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../bbb-af.mihanblog.com/index.html" title="بشرا جان">همه چی!</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://axtext.com" title="سلام ، خسته نباشید
+وبلاگ بسیار خوب و زیبایی دارید .
+پیشنهاد میکنم از سایت ما هم بازدید کنید. و با تایید لینک از ما حمایت کنید. 
+خیلی ممنون
+خدانگهدار">عکس نوشته پروفایل</a></div><div class=li-Sid><a href="http://slidetheme.ir">قالبــ وبلاگــ</a></div>
+</div>
+<div class=LowSid></div>
+
+<script src="http://slidetheme.ir/img/fall.php" type="text/javascript" charset="UTF-8"></script>
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+<div id="RM-Back2"></div>
+
+
+<div id="aj"><h2>﻿<a href="http://minitools.ir/" title="وب مینی تولز" target="_blank">وب مینی تولز</a></h2> - ﻿<a href="http://panjeh.ir/" title="وب پنجه" target="_blank">وب پنجه</a></div>
+<script type="text/javascript">document.getElementById('a'+'j').style.display='none';</script>
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/276">دیـــروز دویستـ و پنجاه و یکمـ251</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/276">دیـــروز دویستـ و پنجاه و یکمـ251</a></h2></div>
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+<font size="3"><font face="georgia,times new roman,times,serif"><b>زن داداشمـ میگه اطرافـ ظهر همش از خونمونـ بوی کیکـ و شیرینی میومد!<br>خبـ البته حق داره،<br>از ساعتــ 12 تا 19 تو آشپزخونه درحال پختنـ کیکــ و شیرینی بودیمـ.<br>کیکــ به مناسبتـ روز مادر،دو نوع شیرینی به مناسبتـ عیــد.<br>قرار بود مهمونـ بیاد،اما انقـــــدر دیـر اومدنـ که شکــ کردیمـ،آیا میخوانـ بیانـ؟!<br>ساعتـ نه اومدنـ و سه تا جشنـ با همـدیگه گرفتیمـ:<br>روز مادر ، عید نوروز پیشاپیش ، تولد هشتـ سالگی برادرزاده امـ حسینـ .<br>خوشمـ میاد که برادرزادمـ یه رفتار مودبانه بامنـ داره.<br>بهمـ گفتـ منـ بشینمـ کنارش پشتـ میز،تا کادوهاشو باز کنه.<br>منـ و خواهر دوقلومـ واسش کره زمینـ خریده بودیمـ،کلاس سومـ به دردش میخوره.<br>کیکمونمـ خوبـ بود خــداروشکر...<br></b></font></font><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>کیکمـ قشنگـــه؟؟!!!<br>اونا همـ شیرینیای مامانمه،قلبا وسط بودنـ یه کوچولو سوختن!<br><img src="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/3.jpg" alt="http://file.mihanblog.com//public/user_data/user_files/628/1882243/3.jpg" vspace="0" align="bottom" hspace="0" height="190" border="2" width="190"></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font><br><font color="#339999"><b><font class="text4" size="3" face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><font size="3"><font face="georgia,times new roman,times,serif"><b><font class="text4"><b><font size="3"><font face="georgia,times new roman,times,serif"><font color="#339999"><font color="#CC33CC">دیــــروز نوشـــتــ2:<br>پیر ما گـفتـ:<br>کہ ایرانـ حَرَم فـاطمہ استـ<br>بےجہتـ نـیستـ<br>کہ در قـلــبـ جهان جا داریـمـ<br>این هم از دولتـ زهـراستـ<br>کہ ما برسرمانـ<br>سایہ رهبرے حضرتـ آقا داریـمـ...<br></font></font></font></font></b></font></b></font></font></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></b></font>
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 30 اسفند 1395  | 03:37 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(276)">نظرات  <script>setCommentCnt(276)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/275">دیـــروز دویستـ و پنجاهمـ250</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/275">دیـــروز دویستـ و پنجاهمـ250</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<font size="3"><font face="georgia,times new roman,times,serif"><b>بالاخــره بافتــ کاور لبـ تابـ تمومـ شد.<br>خیلی خوشگلـ شد،فقط امیــدوارمـ تو سوراخـ سنبه هاش پرز نره.<br>اینـ روزا همه درگیـــر کارای خودشوننـ.<br>خواهر بزرگمـ واسه خونه ی جدیــد مدامـ میره بازار و بچه هاشو میذاره پیش ما،<br>خواهرمـ چند روز یه بار باید بره درمانگاه،درگیر آزمایشاتشه،<br>مادرمـ اینـ آخر سالیه جوگیــر شده فقط یه سره داره شیرینی درستـ میکنه،وقتی شیرینی درستـ میکنه،احساس میکنه خیلی کار داره و از ما کمکـ میگیــره،اما بازمـ اضطرابــ داره و سرمونـ عصبانی میشه.<br>منمـ که اینـ وسط بیکــار علافــ!<br>البته نه دقیقا بیکــار علافــ ، واسه خودمـ سه تا برنامه نوروزی ترتیبـ دادمـ:<br>1-حفظ &nbsp; 2-درس &nbsp; 3-اوقاتــ فراغتــ(شاملـ: حفظ شعر،چرمـ دوزیـ،نقاشی).<br>چنــد وقتی بود دلمـ میخواستـ واسه خودمـ یه کیفـ دوشی مدرسه بدوزمـ،<br>و حالا موقعیتش پیش اومده بود،دستـ به کار شدمـ.<br>وقتی با اعــداد کلنجــار میرفتمـ،حس کردمـ چقدر دلمـ برای ریاضی تنگــ شده.<br>یعنی واقعا حقمـ نبود که برمـ رشته ریاضی؟!!<br></b></font></font><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>کاور لبـ تابمـ قشنگــه؟؟!!<br><img src="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/Picture2.jpg" alt="http://file.mihanblog.com//public/user_data/user_files/628/1882243/Picture2.jpg" vspace="0" align="bottom" hspace="0" height="202" border="2" width="206"><br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 29 اسفند 1395  | 01:50 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(275)">نظرات  <script>setCommentCnt(275)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/274">دیـــروز دویستـ و چهلـ و نهمـ249</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/274">دیـــروز دویستـ و چهلـ و نهمـ249</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<b><font size="3"><font face="georgia,times new roman,times,serif">اگه بفهمی قراره چهار روز دیگه امام زمانتو ببینی،چه حسی بهتـ دستـ میده؟<br>یا واضحتر بپرسمـ،سعی میکنی چه کارایی انجامـ بدی؟<br>دلمـ روشنـ بود،میدونستمـ اینـ قراره عیــدی خدا به منـ باشه،عیدی امسالمـ چقد با سالای دیگه فرق میکرد!<br>اعتکافــ ثبتـ نامـ کردمـ،امیدوارمـ منو تو اعتکافـ دانش آموزیـ راه بدنـ.<br>طبق معمولـ جمعــه ها خونه داداشمـ اومدنـ ناهار،و طبق معمولـ خونه پر از هیاهوهای بچه ها شد.<br>دلمـ نمیخواد دیگه هر جمعه در اینـ باره بنویسمـ،<br>بیشتر از هر روز هفته،جمعه هاستـ که تکراریـ شده واسمـ.<br>فقط یه چیـــــــز میتونه درستش کنه،<br>فقط یه چیــــــز میتونه منو به جمعه ی ایده آلمـ برسونه.<br>ظهـــور حجــــــــــــــه(عج)...<br>اللهمـ عجل لولیکـ الفرجـ<br></font></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font><font face="georgia,times new roman,times,serif" color="#339999"><b>خدایا! <br>این قامتـ خمیده جز به شوق دیدار تو راستـ نمیشود و این تنهای غریبـ جز در خانه ی تو هر آنچه خواستـ نمیشود! <br>خدای منـ! <br>اگر
+ چه دستمـ از آنچه کرده می لرزد و اگر چه موریانه های بیمـ،استواری پاهایمـ را
+ سستـ کرده استـ،دلم امیدوار رحمتـ توستـ و خاطرمـ جمع لطفـ توستـ. <br>خدایا!کوله بارمـ از توشه ی راه تهی استـ،انباشته از توکل که هستـ؟؟ <br>خدایا!در زیر سنگینی گناه،دلخوشیمـ به دستهای مهربان توستـ...<br>بگذار یکـــبار در عمرمـ رخـ دلربای مهــدی را ببینمـ،اینـ اشرفــ مخلوقاتــ را ببینمـ...<br>نگذار ندیده از اینـ دنیــا برومـ...<br></b></font></font>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 28 اسفند 1395  | 11:40 ق.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(274)">نظرات  <script>setCommentCnt(274)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/273">دیـــروز دویستـ و چهلـ و هشتمـ248</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/273">دیـــروز دویستـ و چهلـ و هشتمـ248</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>پنجشنبه آخر سالـ بود و زیارتـ اهل قبــور جای خود ...<br>ولی چقــدر غمـ انگیــزه اینکــه همه با خونواده خودشونـ میگردنـ و یادی از مادر پیرشونـ و خواهرای یتیمشونـ نمیکننـ.<br>چقـــدر غمـ نگیـــزه اینکه فقط به حرفــ همسراشونـ گوش میدنـ،فقط اونا رو خونواده خودشونـ حسابـ میکننـ،<br>و فراموششونـ میشه اینکه مادریــ داشتنـ که به خاطر اونا چند سالـ پیشـ، پا رو علایقش گذاشته.<br>دیــــروز ، پر از خاطراتــ نگفتنی بود...<br>از همنشینی های دوستانه مونـ گرفتـــه ،<br>تا قدمـ زدنـ تو صحنـ زیبای حرمـ حضرتـ معصومه (س) زیر بارونـ...<br>صبحــ، هوا شیش نفره بود...<br>فاطمه سادات و فاطمه زهرا و فاطمه و فاطمه ساداتـ و خواهرمـ و خودمـ؛<br>همه فاطمه بودیمـ غیــر از خواهر دوقلوی منـ که مریمـ بود!!<br>بعد از ظهــر ، داداشمـ پسر شیطونشو گذاشتـ پیش ما و رفتـ با همسرش بازار...<br>مادرمـ دلش گرفتــ: امروز آخرینـ پنجشنبه سالـ بود و مثل همیشه پسرمـ بهمـ نگفتـ بیاید ببرمتونـ سر خاکــ بابا...<br>دلمـ گرفتــ... خـــدایا ! محتاج کسی جز تو نیستیمـ،فقط یه اشاره کنـ،حالا که نشد برمـ به بابامـ سر بزنمـ،دلمـ هوای حرمـ حضرتـ معصومه(س) کرده.<br>و خــدا اشاره کرد.خواهرمـ و شوهرش اومدنـ دنبالمونـ و بردن حرمـ.<br>یکــ ساعتـ بعد...<br>منـ،با قدمـهای آهسته و عقبــ افتاده از بقیه، زیر آسمونی پر از بارونـ الهـی، دعای آل یاسینـ میخوندمـ...<br>چنــد روزه حس میکنمـ خیییییییییییییلی به خدا نزدیکــتر شدمـ...<br></b></font></font><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>باز بارانـ،بی طراوتـ،کو ترانه؟!<br>سوگــواری ستــ،رنگــ غصــه،خیسی غمـ ،<br>میخورد بر بامـ خانه ، طعمـ ماتمـ.<br>یاد می آدمـ که غصه،قصه را می کرد کابوسـ،<br>بوسه می زد بر دو چشممـ، گریه با لبهـــای خیســ...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font><font color="#339999"><b><font class="text4" size="3" face="georgia,times new roman,times,serif"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><font size="3"><font face="georgia,times new roman,times,serif"><b><font class="text4"><b><font size="3"><font face="georgia,times new roman,times,serif"><font color="#339999"><font color="#CC33CC">دیــــروز نوشـــتــ2:<br><img src="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/2.jpg" alt="http://file.mihanblog.com//public/user_data/user_files/628/1882243/2.jpg" vspace="0" align="bottom" hspace="0" height="193" border="2" width="221"></font></font></font></font></b></font></b></font></font></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></b></font><br>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 27 اسفند 1395  | 02:26 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(273)">نظرات  <script>setCommentCnt(273)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/272">دیـــروز دویستـ و چهلـ و هفتمـ247</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/272">دیـــروز دویستـ و چهلـ و هفتمـ247</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<b><font size="3"><font face="georgia,times new roman,times,serif">صد و یازدهمینـ روز مدارسـ...<br>کلاس ما از اولشمـ استعداد متحـد شدنـ نداشتـ!<br>همه کلاسا سه نفره بودنـ،اما کلاس ما ده نفره...<br>دو تا معلمـ درس دادنـ؛خبـ خداییش اونا عقبمـ بودنـ،باید درس میدادنـ!<br>قرار بود ببرنمونـ بوستانـ نرگس،اما انگار گول خورده بودیمـ،اینطوری گفته بودنـ که بیایمـ!<br>دو تا فیلمـ سینمایی گذاشتنـ: روباه و بادیگارد ...<br>ما بادیگارد رو قبلا دیده بودیمـ،فقط روباه رو دیدیمـ که اونمـ خیلی بد نبود،قشنگـ بود.<br>برگشتیمـ خونه ؛ انقـــــــــــــــدر خسته بودمـ که درجا خوابمـ برد.<br>تا ساعتـ پنجـ خوابیــدمـ و بعدشمـ با زن داداشمـ و خواهرامـ و مادرمـ دور همـ ختمـ انعامـ گرفتیمـ!<br>ظاهرا نذر مادرمـ بود برای شفای داداشمـ.<br>شبـ،قمـ زمینـ لرزه 3.8 ریشتری اومد.<br>خیلی ترسیده بودیمـ،میگفتنـ اینـ پیش لرزه بوده،اصلیش هنوز نیومده!<br>دیگه همه دستـ به دعا برداشتیمـ و سوره زلزال خوندیمـ و خوابیــدیمـ به امید فردا...<br></font></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>در انتهای شبـ نگرانی هایتـ را به خدا بسپار و آسوده بخوابـ،<br>خـــدا بیدار استـ...<br>بر خــدا توکل کنـ،<br>و همینـ بس که خــدا مدافع و حافظ انسانـ باشد...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 26 اسفند 1395  | 04:08 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(272)">نظرات  <script>setCommentCnt(272)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/271">دیـــروز دویستـ و چهلـ و ششمـ246</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/271">دیـــروز دویستـ و چهلـ و ششمـ246</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<b><font size="3"><font face="georgia,times new roman,times,serif">صد و دهمینـ روز مدارسـ...<br>چقــد به دانش آموزا روحیه میداد اینـ روز شمار نوروز بالای تخته!!<br>از «فقط 40 روز مانده به تعطیلاتــ عید» شروعـ کردیمـ،تا حالا که نوشته بود:« 1 » !!<br>عروسی همکلاسیمـ زینبــ.حـ بود...<br>تا رسیدیمـ خونه،دستـ به کار شدیمـ.خواهر بزرگممـ اومد کمکمونـ.<br>موهامونو یه مدلی پیچیدیمـ و لباس انتخابـ کردیمـ پوشیدیمـ و یه آرایش خیییییییلی ملایمـ...<br>داداشمـ که فهمید میخوایمـ بریمـ،مخالفتــ کرد و گفتـ: واسه چی تو اینـ شبـ چهارشنبه سوری میخواید برید بیرونـ؟!<br>اگه آماده ی آماده نبودیمـ،کنسل میشد!<br>آخرش راضی شد فقط خودش مارو ببره تا خیالش راحتـ باشه،مارو از داخل شهر نبرد،از جایی برد که خیلی همـ دور شد.<br>با عروس و دوماد رسیدیمـ.همه چی خوبـ پیش رفتــ،دوستـ صمیمی شمـ اومده بود.<br>زینبــ(عروس) همش اشاره میکرد که میخواد دوستاش کنارش بشینن.<br>منـ و خواهرمـ خجالتی بودیمـ و فقط جلو ایستادیمـ و دستـ زدیمـ،اما دوستـ صمیمی شو مجبور کردیمـ بره بشینه!<br>اونـ آخرای عروسی هستـ که عروس و دوماد میرنـ تو یه اتاق یا یه گوشه غذا میخورنـ؟!<br>اونا جایی رفتنـ که فقط یه پرده جلوشونـ بود و گاه و ناگاه پیدا میشدنـ!<br>چقد دوماده لوس بود!!<br>هر چند دقیقه یه بار عروسو میبوسید!<br>مادرممـ اعصابش خرد بود که: بچه ها انقدر نگاه نکنید،غذاتونو بخورید!!<br>با استرس و ترس از ترقه ها رفتیمـ و برگشتیمـ،اما خداروشکر که اتفاقی نیفتاد!<br></font></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br><img src="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/IMG_3319.jpg" alt="http://file.mihanblog.com//public/user_data/user_files/628/1882243/IMG_3319.jpg" hspace="0" height="147" border="2" align="bottom" width="195" vspace="0"><br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 25 اسفند 1395  | 07:41 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(271)">نظرات  <script>setCommentCnt(271)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/270">دیـــروز دویستـ و چهلـ و پنجمـ245</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/270">دیـــروز دویستـ و چهلـ و پنجمـ245</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>صد و نهمینـ روز مدارسـ...<br>کشتی پهلو گرفته به اندازه بقیه کتابا قشنگــ نبود،یعنی منـ خوشمـ نیومد.<br>متنـ سنگینی داشتــ...<br>عوضش کردمـ، «ضــد» ، کتابـ شعرهای فاضل نظریـ،اونو گرفتمـ!<br>شعرای قشنگی داشتـ.<br>دوستـ داشتمـ بخرمش،اما اونقدری پول نداشتمـ که صرفــ خرید کتابـ کنمـ!<br>چونـ اگه میخواستمـ اونو بخرمـ،باید دو کتابی که چند ماهه میخوامـ بخرمو همـ میخریدمـ:پنجشنبه فیروزه ای،رنج مقدس...<br>همکلاسیامـ خیلی سعی کردنـ یه جوری با همـ متحد شن که سه شنبه و چهارشنبه کسی نیاد مدرسه،<br>تا معلما همـ چیزی درس ندنـ.<br>اما به خاطر مخالفتـ بعضی از بچه ها،نقشه خرابـ شد...<br></b></font></font><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>قسمتی از کتابـ ضد:<br>«برکه ای گفتـ به خود،ماه به منـ خیره شده استـ<br>ماه خندید که منـ چشمـ به خــود دوخته امـ»<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 24 اسفند 1395  | 07:01 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(270)">نظرات  <script>setCommentCnt(270)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/269">دیـــروز دویستـ و چهلـ و چهارمـ244</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/269">دیـــروز دویستـ و چهلـ و چهارمـ244</a></h2></div>
+<div class=C-post><div class=CenterPost>
+
+<b><font size="3"><font face="georgia,times new roman,times,serif">صد و هشتمینـ روز مدارسـ...<br>یادواره شهدا تو مدرسه به طرز با شکوهی برگزار شد.<br>با خودمـ گفتمـ: اینـ مدرسه کجا،اونـ مدرسه کجا؟!<br>البته نمی شد ازش انتظاریـ داشتـ،اینـ مدرسه مذهبی تر بود و پایبندتر به دینـ...<br>خیلیارو دعوتـ کرده بودنـ، همسر شهید مالامیری،همسر شهید حقانی،دخترای شهید شیخ شعاعی...<br>زینبــ.حـ برامونـ کارتــ دعوتـ عروسیشو اورده بود!<br>همونـ موقعـ مادرمـ و خالمـ شروعـ کردنـ به حرفـ زدنـ:<br>-چه جالبـ،عروس کارتـ عروسیشو میاره!<br>-واااای آخه چرا انقدر زود دادنش؟ اندازه دخترای خودمونه، 16 سالشه!<br>یعنی کااااملا مشخص بود مادرمـ داره به صورتـ غیر مستقیمـ بهمـ میگه که منـ نمیدمتونـ ها ؛ گفته باشمـ!<br>بعد از ظهــر رفتیمـ درمانگاه بقیه الله(عج) ، برای جرمـ گیری و شستشوی گوش.<br>گوشمـ بعدِ یه ماه باز شد! قبلش اصلا نمیشنیدمـ،همه از دستمـ کلافه شده بودنـ که باید هر حرفی رو 6 بار تکرار میکردنـ!<br>صداها با کیفیتـ HD شنیده می شدنـ،حتی صدای تکونـ دادنـ پای پسر بچه ای که اونور سالنـ روی صندلی نشسته بودو میشنیدمـ!<br>چقد خوبه سلامتی...<br>چقد قبلا نسبتــ به سلامتیمـ بی اهمیتـ بودمـ،اما الانـ از اینکه دوباره خوبـ میشنومـ،خوشحالمـ...<br></font></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br><img src="http://s9.picofile.com/file/8289372868/1.jpg" alt="دبیرستان هدی" hspace="0" height="166" border="2" align="bottom" width="240" vspace="0"><br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font><font color="#339999"><b><font class="text4" face="georgia,times new roman,times,serif" size="3"><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><font size="3"><font face="georgia,times new roman,times,serif"><b><font class="text4"><b><font size="3"><font face="georgia,times new roman,times,serif"><font color="#339999"><font color="#CC33CC">دیــــروز نوشـــتــ2:<br>هدیه ی شهیدانـ برای منـ:<br>هر کاری میکنید فقط برای خــدا باشد؛<br>حتی راه رفتنـ،غذا خوردنـ،<br>سعی کنیــد خدایی نکرده عملی از شما سر نزند که خونـ شهدای عزیز پایمالـ شود...<br></font></font></font></font></b></font></b></font></font></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font></font></b></font>
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 23 اسفند 1395  | 03:42 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(269)">نظرات  <script>setCommentCnt(269)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/267">دیـــروز دویستـ و چهلـ و سومـ243</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/267">دیـــروز دویستـ و چهلـ و سومـ243</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3"><font face="georgia,times new roman,times,serif">صد و هفتمینـ روز مدارسـ...<br>آخرینـ روز مهلتــ کتابــ آفتابـ در حجابـ بود،از طرفی عجله داشتمـ تا هنوز نوروز نیومده،کتابـ بعدی رو بگیرمـ بخونمـ.<br>تو برنامه صبحگاه نشستمـ یه کنار حسااااابی خوندمـ و خوندمـ تا تمومـ شد.<br>بعدشمـ رفتمـ یه کتابـ دیگه به نامـ «کشتی پهلو گرفته» گرفتمـ.<br>به اندازه آفتابـ در حجابـ قشنگـ نبود ، اما چونـ درباره حضرتـ فاطمه(س) بود،شروعـ کردمـ به خوندنـ.<br>به نظر منـ نباید خوندن اینجور کتابا رو متوقفـ میکردمـ،باید تا میتونمـ کتابـ بخونمـ تا بیشتر چهارده معصومـ رو بشناسمـ،چونـ منـ یه شیعه امـ،زشته ندونمـ!<br>عصــر مادر و خواهربزرگمـ رفتنـ فروشگاه و منـ و خواهرمـ و دوقلوها تنهــا موندیمـ خونه.<br>خواهرمـ پیشنهاد داد: نظرتـ چیه دوقلوهارو بخوابونیمـ و خودمونـ بشینیمـ فیلمـ ببینیمـ؟<br>و اینـ شد که یه نقشه خبیثانه دیگه از خواهرمـ صادر شد!<br>میدونستمـ مادرشونـ دوستـ نداره&nbsp; اینا بعد از ظهر بخوابنـ،آخه دیگه شبـ نمی خوابیدنـ،اما نمیتونستمـ به خواهرمـ نه بگمـ!<br>خلاصه...بعد فیلم دیدنمونـ،یهو زنگـ خونه خورد.<br>یهــو یکی از دوقلوها (اسرا) تو خوابــ شروعـ کرد به خندیدنـ!<br>اعتنا نکردیمـ،تو آیفونـ که پرسیدیمـ کیه،فهمیدیمـ فقیــــره؛ و ما اجازه نداشتیمـ وقتی مادرمـ نیستـ درو باز کنیمـ.<br>بیخیالش شدیمـ؛دوباره زنگو زد.دوباره اسرا تو خوابـ خندید.اما اینبار تو خوابـ گفتـ:«باز کنـ!»<br>بهش گفتیمـ:«آقاستــ!»<br>تو خوابـ گفتـ: «آقاستـ،باز کنـ!»<br>منـ و خواهرمـ با تعجبـ بالا سر خواهرزادمـ نشسته بودیمـ و با نگرانی بهش نگاه میکردیمـ.به خواهرمـ گفتمـ:«نکنه داره خوابـ میبینه خواستگار اومده براش؟!»<br>دیگه نفهمیدمـ چی شد،فقط بعد از چند دقیقه -وقتی خنده کمی مهلتمـ داد- چشامو باز کردمـ دیدمـ منـ و خواهرمـ از خنده پخش زمینـ شدیمـ!<br>دیــــروز اولینـ عیــدی مونو گرفتیمـ!<br>شوهر خواهرمـ بهمونـ یه قلمـ قاریــ قرآنـ خوشگل فرستاد و قبول نکرد پولشو بگیره.<br>گفتــ:اشکال نداره،اولینـ عیدی تونـ! عوضش هر وقتـ باهاش قرآنـ حفظ کردید منو همـ یاد کنید...<br></font></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>پیامبر اکرمـ(صلی الله علیه و آله و سلمـ):<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font><p align="justify"><font color="#339999" face="georgia,times new roman,times,serif" size="3"><b>اِنَّ اَسْرَعَ الْخَیْرِ ثَوابا البِرُّ ؛</b></font><font color="#339999" face="georgia,times new roman,times,serif" size="3"><b><br></b></font></p><p align="justify"><font color="#339999" face="georgia,times new roman,times,serif" size="3"><b>پاداش نیكوكارى زودتر از هر كار خوب دیگرى مى رسد .</b></font><br>
+
+
+</p><br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 22 اسفند 1395  | 03:52 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(267)">نظرات  <script>setCommentCnt(267)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/266">دیـــروز دویستـ و چهلـ و دومـ242</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/266">دیـــروز دویستـ و چهلـ و دومـ242</a></h2></div>
+<div class=C-post><div class=CenterPost>
+
+<b><font face="georgia,times new roman,times,serif" size="3">چه پنجشنبه جمعه ای !!<br>هر روزش اینطوریــ شد که بیشتر از چهار ساعتـ بریمـ بیرونـ از خونه ، و منـ نتونمـ کارایی که تو طول هفته به آخر هفته موکول کردمو انجامـ بدمـ.<br>البته اشکال نداره،چون از خدامه بریمـ از خونه بیرونـ،گندیدیمـ بابا !!<br>ـ دیـــــروز یهو داداش محمدمـ زنگــ زد گفتــ برنج بپزید و آماده شید ساعتـ دو میامـ دنبالتونـ بریمـ پارکـ جوجه ، کبابــ میکنمـ.<br>ما همـ با کله پا شدیمـ تمیزکاریای خونه رو انجامـ دادیمـ و پوشیدیمـ و شیش نفره رفتیمـ بوستانـ علویـ.<br>آخ که چقدر جوجه اش خوشمزه شد؛نمیدونستمـ داداشمـ انقدر مهارتـ داره،فکر میکردمـ فقط بلده پشتـ کامپیوتر بشینه، یا بازیـ کنه یا از یوتیوبـ کلیپـ دانلود کنه!<br>چونـ توی سایه نشسته بودیم، آخراش خیلی سردمونـ شد.پا شدیمـ رفتیمـ طرفــ سورتمه ریلی.<br>سورتمه همـ سوار شدیمـ و رفتیمـ طرفـ ماشینـ؛راستی خواهر بزرگممـ که با خونواده برادرشوهرش اومده بودنـ تو راه دیدیمـ!<br>رفتیمـ بازار گل و گیاه،کلیییییییی خرید کردیمـ اما چونـ دوستـ داداشمـ اونجا کار میکرد، 100 هزار تومنـ بهمونـ تخفیفــ داد.یه آقای جوونـ بود که مامانمـ میگه همکلاسیِ داداشمـ بوده.<br>یه چیز جالبــ: خبـ منـ چونـ خجالتی امـ و از طرفی خیلی با پسرا و مردا رفتـ و آمد ندارمـ،یکمـ تو آدابـ معاشرتــ خنگمـ! موقع در اومدنـ از گلخونه،همه داشتنـ از دوستـ داداشمـ تشکر و خداحافظی میکردنـ،یهو آقاهه برگشتــ طرفـ منـ،واااااای دلمـ هری ریختـ! سرشو تکونـ داد یعنی خداحافظ،منمـ با صدایی ضعیفـ و عینـ خنگا گفتمـ خدافظ. بعد بهمـ گفتـ:بازمـ تشریفـ بیارید خوشحال میشیمـ! خیلی سعی کردمـ نیشمـ تا بناگوش باز نشه،آخه اینـ حرفو که نباید به منـ بگه، باید به داداشمـ و مامانمـ میگفتـ،منـِ خنگـ همـ انگار نه انگار،بدونـ اینکه جوابـ بیچاره رو بدمـ منتظر بود، سرمو انداختمـ پایینـ و سوار ماشینـ شدمـ!</font></b><br><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>گاهی زندگی یعنــی سختـــ کوشی،<br>برای رویایی که هیچکس جز شما قادر به دیدنش نیستــ...<br>سختــ استــ...<br>ولی شاد بودنـ تنهــا انتقامی استــ که یکــ انسانـ میتواند از زندگی بگیرد...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 21 اسفند 1395  | 03:25 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(266)">نظرات  <script>setCommentCnt(266)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/265">دیـــروز دویستـ و چهلـ و یکمـ241</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/265">دیـــروز دویستـ و چهلـ و یکمـ241</a></h2></div>
+<div class=C-post><div class=CenterPost>
+
+
+
+<b><font size="3"><font face="georgia,times new roman,times,serif">بلافاصله بعد از اینکه از جلسه قرآنـ برگشتیمـ،با خواهرامـ از خونه زدیمـ بیرونـ...<br>اولـ رفتیمـ درمانگاه واسه گوش دردمـ،تو نوبتـ که بودیمـ نشستمـ حسابی کتابمو خوندمـ(آفتابـ در حجابـ).<br>خواهر بزرگمـ گفتـ: بسه جمعش کنـ،هر کی ببینه فکر میکنه چقدر تو کتابخونی!<br>گفتمـ: مگه نیستمـ؟!<br>بعد درمانگاه رفتیمـ بستنی فروشی بستنی خوردیمـ؛بعدشمـ سوار تاکسی شدیمـ و رفتیمـ پاساژ موسی بنـ جعفر(ع).<br>میخواستیمـ پارچه بخریمـ،چند وقتی بود دلمـ میخواستـ همرنگــ جماعتــ شمـ.تمامـ همکلاسیامونـ چادر ساده ایرانی میپوشنـ غیر از منـ و خواهرمـ که چادر لبنانی...<br>خیلی قرار نبود چیزی بخریمـ،قرار بود بعد خریدنـ چادر برگردیمـ خونه،اما مگه خواهر بزرگمـ برمیگشتـ خونه؟<br>رفتیمـ پاساژ غدیر و مانتو خردیدمـ؛راستش اولینـ باری بود که منـ و خواهر دوقلومـ دو تا مانتو متفاوتـ می خریدیمـ.خواهر بزرگمـ اصرار کرد،گفتـ:تا کی میخواید عینـ همـ بپوشید؟!<br>بازمـ برنگشتیمـ خونه،هندزفری خریدیمـ،لاکـ خریدیمـ،برای روز مادر پیشاپیش قابـ موبایلـ خریدیمـ.<br>تو اتوبوس کلییییییییی سه تایی مسخره بازی در اوردیمـ!<br>چونـ اتوبوس خلوتـ بود،هر چی باشه ساعتـ 4 بعد از ظهر بود!<br>رسیدیمـ خونه،مادرمـ گفتـ: چه عجبـ خواهرا بد 4-5 ساعتــ برگشتنـ!<br>اما وقتی خریدای قشنگمونو دید،حرفشو پس گرفتـ!<br></font></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>قابــ موبایلـ مامانمـ ، قشنگـــــه؟؟!!!<br><img src="http://s9.picofile.com/file/8289255868/IMG_33151.jpg" alt="79" width="209" vspace="0" hspace="0" height="212" border="2" align="bottom"><br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>KO</w:LidThemeAsian>
+  <w:LidThemeComplexScript>FA</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]-->
+
+
+
+
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 20 اسفند 1395  | 06:24 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(265)">نظرات  <script>setCommentCnt(265)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/264">دیـــروز دویستـ و چهلمـ240</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/264">دیـــروز دویستـ و چهلمـ240</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<b><font size="3"><font face="georgia,times new roman,times,serif">صد و ششمینـ روز مدارسـ...<br>اییییینـ همه شبـ بیدار موندمـ جامعه شناسی خوندمـ،آخرشمـ ازمـ نپرسید!<br>میخواستمـ خودکشی کنمـ!<br>به کتابــ آفتابـ در حجابـ پناه بردمـ!<br>وقتی سرگرمـ اونـ میشمـ،دیگه کمتر به چیزی فکر میکنمـ.<br>داستانـ داشتـ به جاهای زیبایی می رسید...<br>تکـ نوشتـ:<br>چنــد روزه رویاهامـ رهامـ نمیکننـ.<br>همونـ رویاهایی که از حدود چهارده سالگیمـ همرامـ هستنـ.<br>همونایی که شبا میانـ سراغ آدمـ و نمیذارنـ بخوابه!<br>همونایی که هر هفته از یه داستانـ حکایتـ میکننـ.<br>خبـ چکارشونـ میشه کرد؟ مجبورمـ باهاشونـ بسازمـ؛<br>چونـ تمــامـ زندگیِ منـ اونانـ.منـ بدونـ اونا شبا از ترس بنی آدمـ و اجنه خوابمـ نمیبره!<br>از ترس فکرای ترسناکــ و خشنـ همـ...<br>یه بار پارسالـ یکی از رویاها رو به صورتـ یه رمانـ نوشتمـ و وارد یه وبلاگـ کردمـ.<br>اما رمزدار !!...تا فقط خودمـو کسایی که دوستـ دارمـ بخوننش...<br></font></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>قسمتـ دیگریـ از کتابــ آفتابـ در حجابـ:<br>«آهای سوار سنگدلـ بی مقدار!<br>چه نیازی استـ که اینـ دخترکـ را به ضربـ تازیانه بر زمینـ بیندازیـ و خلخالـ او را از پایش بکشی؟<br>بی اینـ همه جنایتـ همـ میتوانـ خلخالـ را از او گرفتـ.تو بگو،بخواه، اگر نشد به زور متوسل شو!<br>چه ارزشی دارد اینـ تکه طلای گوشواره که تو گوش دختر آل الله را بشکافی؟<br>نکن! تو را به هرچه برایتـ مقدس استـ،دنبال فاطمه نکن! این دختر زهره اش آبـ می شود و دل کوچکش می ترکد.<br>بگو که از او چه میخواهی و به زبانـ خوش از او بگیر.<br>همینـ را میخواستی؟با صورتـ به زمینـ بیفتد و از هوش برود؟ و تو روسری اش را به غنیمتـ بگیری؟<br>آهای نامرد بی همه چیز که بر اسبـ نشسته ای و به یکـ خیز بر النگو و دستـ اینـ دخترکـ،چنگـ انداخته ای.<br>بایستـ! پیاده شو! و النگو را دربیار و ببر!»<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>											دنبالکــ ها:
+													<a href="http://www.changwei.blogsky.com"  target="_blank">
+						تپشـ قلبـ یکـ قهرمانـ</a>،			
+												 
+	<br><br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 19 اسفند 1395  | 07:55 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(264)">نظرات  <script>setCommentCnt(264)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/263">دیـــروز دویستـ و سی و نهمـ239</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/263">دیـــروز دویستـ و سی و نهمـ239</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3"><font face="georgia,times new roman,times,serif">صد و پنجمینـ روز مدارسـ...<br>یه کتابــ جدید گرفته بودمـ: «آفتابـ در حجابـ»...<br>تمامـ فکر و ذکر و عملمـ شده بود خوندنـ اونـ کتابــ!<br>همکلاسیامـ از دستمـ کلافه شده بودنـ: وااااای اینـ دوباره کتابـ پیدا کرد،حالا چطوریـ جداش کنیمـ؟!<br>سر هر زنگی یواشکی کتابـ رو در دستـ میگرفتمـ و میخوندمـ،خیلی سوزناکــ بود.<br>اینـ بار درباره حضرتــ زینبــ(س)...<br>دیـــروز بچــه ها یه سوژه دیگه پیدا کردنـ، محدثه.حــ زنگـ دومـ رسید مدرسه.<br>بچه ها پرسیدنـ کجا بودی؟ گفتــ آزمایشگاه!<br>کلاس رفتـ رو هواااااا ... -مبارکــ باشهههه! -جوابش کی میاد؟&nbsp; -آزمایش ازدواجـ یا آزمایش حاملگی؟!<br>بیچاره تا اومد توضیحـ بده که کمـ خونه و باید دو ماه یه بار آزمایش بده،خبر به همه جای مدرسه پیچیده بود!<br>دیـــروز یکی دیگه از دوستای پیش دبستانیمو تو مدرسه خودمونـ پیدا کردمـ.<br>عکسای اونـ زمانـ رو که از کشومـ در اوردمـ،متوجه شدمـ:اینو منـ تو مدرسه ندیدمـ؟!<br>رفتمـ بهش نشونـ دادمـ،گفتــ تازه فهمیدی؟ ما دوستـ صمیمی بودیمـ،چطور یادتـ نیستـ؟<br>منـمـ گفتمـ: شما چطور یادتونـ میمونه؟ منـ از تمامـ همکلاسیای پیش دبستانیمـ،فقط خواهرمو یادمـه!!<br></font></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>قسمتی از کتابـ آفتابـ در حجابــ:<br>«دستی به زیر سر و گردنـ و دستی به زیر دوپای سجاد می بری،<br>از زمینـ بلندش میکنی و چونـ جانـ شیرینـ،در آغوشش میفشاری،<br>و با خودتـ فکر میکنی؛هیچـ بیماریـ تا کنونـ با هجومـ و آتش و غارتـ،تیمار نشده استـ و سر به بالینـ بیابانـ نگذاشته استـ.<br>وقتی پیشانی اش را میبوسی،لبهــایتـ از داغی پیشانی اش،میسوزد.<br>جزای بوسه اتـ تبسمـ دردآلودی استـ که بر لبهای داغمه بسته اش مینشیند.<br>همچنانکه اورا در بغل داری و چشمـ از او برنمیداری،به سمتـ تنها خیمه سلامتـ مانده حرکتـ میکنی.<br>یال خیمه را به زحمتـ کنار میزنی و اورا در کنار خیمه ی بی اثاثـ میخوابانی...»<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 18 اسفند 1395  | 07:43 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(263)">نظرات  <script>setCommentCnt(263)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/262">دیـــروز دویستـ و سی و هشتمـ238</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/262">دیـــروز دویستـ و سی و هشتمـ238</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>صد و چهارمینـ روز مدارسـ...<br>هیییییییییی ، دقیقه به دقیقه با همـ میگفتیمـ:<br>-اگه اردو کنسل نشده بود،الانـ کاخ گلستانـ بودیمـ...<br>-اگه اردو کنسل نشده بود،الان داشتیمـ شویدپلو باقالی با مرغـ با دلستر و سالاد و سوپـ میخوردیمـ...<br>سر زنگــ احکامـ بود که ناظمـ اومد تو کلاس،گفتـ :دوقلوها بیانـ بیرونـ مامانشونـ اومده دنبالشونـ،باید برنـ جایی.<br>منـ یه لحظه تو شوکـ گیــر کردمـ،منـ؟ مامانمـ؟ الانـ؟ کجــا؟!!<br>هیچی دیگه،رفتیمـ محضــر... باید دوباره همگی یه چیزی رو امضا میکردیمـ.<br>بارونـ قشنگی میبارید،منـ و مادرمـ یه گلدونـ گل قرمز از گلخونه دمـ مدرسه خریدیمـ.<br>وقتی بعد 2 ساعتـ برگشتیمـ مدرسه،بچه ها ریخـــتنـ سرمونـ؛واااااای چشتونـ روزی بد نبینه!<br>یکی از بچه ها گفتـ:وقتی شما هنوز از کلاس در نیومده بودید،منـ بیرونـ بودمـ دیدمـ مادرتونـ داشتـ با ناظمـ حرفـ میزد.شنیدمـ بهش گفتـ: ولی چیزی بهشونـ نگید!!...کسی فوتـ کرده؟<br>گفتیمـ:نههههه ، خواهرمـ حواسش نبود گفتـ: شاید گفته به همکلاسیاشونـ چیزی نگید!<br>واااای ، همه داد زدنـ: پس ازدواج کردیییییییییییییید؟!!!!(کلا کلاس ما اینطوریه،همه به هم شکـ داریمـ،فقط کافیه اتفاق کوچولویی بیفته!)<br>منـ از دهنمـ پرید: نه باباااا ، ازدواج چیه؟ محضر بودیمـ!<br>همه داد زدنـ: دیگـــه بدتررررررررر !! عقــد کردینـ رفتــ؟! آقا دومادا دوقلون؟؟<br>به زور وضعو آرومش کردیمـ،ولی خبــ هنوزمـ بهمونـ چشمـ غره میرنـ میگنـ: شما دوتا خیلی مشکوکید!<br>اینـ فاجعه دیگه درستــ نمیشه...<br>از مدرسه که برگشتیمـ،مادرمـ خونه خواهرمـ بود.غذا گرمـ کردیمـ و خوردیمـ و رفتیمـ ختمـ بابای دوستمونـ(عارفه.حــ).<br>حدود بیستــ نفری میشدیمـ دوستای عارفه ؛ انقدر که جا کمـ اومد و فرستادنمونـ تو اتاقش.همه اومده بودنـ ولی جای دو نفر مثل همیشه خالی بود: فاطمه ساداتـ و فاطمه زهرا... عارفه آرومـ بود اما بچه ها سعی کردنـ گریه اش بندازنـ.<br>باید گریه میکرد... نباید انقدر خونسرد میبود...مگرنه اینـ بغضا تا آخر عمرش تو گلوش جا خشکـ میکردنـ...مثلـ منـ...<br></b></font></font><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+                
+                <font color="#339999"><b><font class="text4" face="georgia,times new roman,times,serif" size="3">صبح یعنى&nbsp;
+
+
+<div>همه ى شهر پراز بوى خداستـ</div><div>عابرى گفتـ:<br></div><div>که اینـ مطلق نادیده کجاستـ؟؟</div><div>شاپرکـ پرزد و با رقص خود آهسته سرود</div><div>چشمـ دل بازکنـ،<br></div><div>این بسته به افکار شماستـ<br><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><font size="3"><font face="georgia,times new roman,times,serif"><b><font class="text4"><b><font size="3"><font face="georgia,times new roman,times,serif"><font color="#339999"><font color="#CC33CC">دیــــروز نوشـــتــ2:<br>ز بازار محبتـ غمـ خریدمـ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; خریدمـ غمـ ولیکنـ کمـ خریدمـ<br>همینـ داغی که حالا بر دلـ ماستـ&nbsp;&nbsp;&nbsp; ندانمـ از کدامـ عالمـ خریدمـ</font></font></font></font></b></font></b></font></font></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font><span dir="RTL" style="font-size: 12pt; line-height: 115%;" lang="FA"></span></font><br>
+
+
+</div></font></b></font><br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 17 اسفند 1395  | 07:14 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(262)">نظرات  <script>setCommentCnt(262)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/261">دیـــروز دویستـ و سی و هفتمـ237</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/261">دیـــروز دویستـ و سی و هفتمـ237</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<b><font size="3"><font face="georgia,times new roman,times,serif">صد و سومینـ روز مدارسـ...<br>زنگـ آخر بود،رضایتنامه های اردو بینـ بچه ها پخش شده بودنـ...<br>نکته ها تذکر داده شده بود...<br>تکلیفــ موبایلـ و دوربینـ اوردنـ مشخص شده بود...<br>مربی پرورشی وارد کلاس شد: بچه های خوبـ دهمـ،میدونمـ خیلی واسه اردوی فردا روزشماریـ کردید،میدونمـ حتما کلی برنامه ریزی کردید، چیپس و پفکاتونو خریدید،اما... اما اردوی فردا به دلیل طرح ترافیکــ تهرانـ که با پلاکـ اتوبوسامونـ همخونی نداره،کنسل شد!<br>کلاس چنـد دقیقه ای در سکوتـی مرگبار فرو رفتـ،همه ی چشمها به لبهای مربی پرورشی دوخته شده بود.<br>ناگهــانـ بعد از چند دقیقه کلاس حیاتی دوباره گرفتـ و کسی از ته کلاس داد زد: نههههههههههههههه!<br>و اینـ شد که اردوی ما برای چهارمینـ بار کنسلـ شد...<br>از مدرسه که برگشتیمـ،خواهر بزرگمـ اومده بود.<br>گفتنـ باید بریمـ یه جایی ، یه چیــزی رو هممونـ امضا کنیمـ.<br>بابتش چند سال پیش واسمونـ حکمـ رشد گرفته بودنـ.<br>منـ و خواهر برادرامـ و مادرمـ و دومادمونـ رفتیمـ و امضا کردیمـ.<br>برگشتنی خواهرمـ اصرار کرد که نریمـ خونه،حوصله ی خونه رو نداره،اونـ همیشه اینطوریه.وقتی از خونه درمیاد،دیگه برنمیگرده!<br>کلی پیشنهاد داد و ما رد کردیمـ!<br>آخرشمـ فقط رفتیمـ خونه داداشمـ یکمـ نشستیمـ و برگشتیمـ خونه.<br>به مادرمـ گفتمـ تشکی که برامـ خریده رو نمیخوامـ،عمدا میخواستمـ بهش بدمـ بذاره واسه خودش؛چونـ تشکـ اونـ از شدتـ کهنگی رفته بود پایینـ!<br>اما قبول نکرد،قسممـ داد که نمیخوامـ!<br>منمـ اصلـ قضیه رو بهش گفتمـ،گفتمـ که معذبمـ منـ بالاتر از مادرمـ باشمـ...<br></font></font></b><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>منـ عشق در نگاه اولـ را باور دارمـ!<br>زیرا از لحظه ای که چشمـ باز کردمـ،<br>عاشق مادرمـ شدمـ...<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 16 اسفند 1395  | 03:17 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(261)">نظرات  <script>setCommentCnt(261)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/260">دیـــروز دویستـ و سی و ششمـ236</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/260">دیـــروز دویستـ و سی و ششمـ236</a></h2></div>
+<div class=C-post><div class=CenterPost><font size="3"><font face="georgia,times new roman,times,serif"><b>صد و دومینـ روز مدارسـ...<br>امتحانـ ادبیاتـ داشتمـ،هییییییییچی نخونده بودمـ،میفهمی؟ هییییییچی!!<br>از اولی که پامونو گذاشتیمـ مدرسه،تا زنگــ آخر سرمـ تو کتابــ بود.<br>کلی خوندمـ،اما باز به واژگانـ نرسیدمـ.یه کوچولو از امتحانی که دادمـ راضی نبودمـ.<br>حالا شروعـ کردمـ به خوندنـ «وَ جَعَلنا ...» !!<br>تا خانمـ غلطامو نبینــه.<br>حالا بگو قضیه جشنواره غـــذای ورزشی،که انقدر بابتش زحمتـ کشیده بودمـ چی شد؟!<br>دومـ شدیمـ!<br>انتظار داشتمـ اولـ شیمـ،ولی خبـ همینمـ جای شکرش باقیه.<br>نفر اولـ&nbsp;&nbsp; زد.الفــ&nbsp;&nbsp; بود ، رنگینکـ درستـ کرده بود.<br>نمیدونمـ دیـــروزمـ چطور گذشتـ.بیشترشو خوابــ بودمـ و اینـ خیلی برای منـ خوشایند نیستـ.<br>منـ همیشه عادتـ داشتمـ عصر نخوابمـ اما چونـ مادرمـ واسه تختمـ یه تشکــ جدید خریده بود،میخواستمـ امتحانش کنمـ و از شانس بدمـ همونجا خوابمـ برد!!</b></font></font><br><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>میدونمـ...<br>واسه منـ دیگه توی قلبـ تو جا نیستــ...<br>بیستــ...!!<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font><br><font size="3"><font face="georgia,times new roman,times,serif"><b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><font size="3"><font face="georgia,times new roman,times,serif"><b><font class="text4"><b><font size="3"><font face="georgia,times new roman,times,serif"><font color="#339999"><font color="#CC33CC">دیــــروز نوشـــتــ2:<br><img src="http://s3.picofile.com/file/8288556200/2.jpg" alt="غذای ورزشی" hspace="0" height="254" border="3" align="bottom" width="135" vspace="0"><br></font></font></font></font></b></font></b></font></font></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b></b></font></font>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 15 اسفند 1395  | 08:34 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(260)">نظرات  <script>setCommentCnt(260)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/259">دیـــروز دویستـ و سی و پنجمـ235</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/259">دیـــروز دویستـ و سی و پنجمـ235</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<b><font size="3"><font face="georgia,times new roman,times,serif">از دعا ندبه اینـ هفته جا موندمـ.<br>همشمـ به خاطر اینـ بود که عمه امـ اینا قرار بود صبحـ زود به کویتـ برگردنـ.<br>باید خداحافظی میکردیمـ...<br>با رفتنشونـ خونه مونـ دوباره خاموش شد،حالا می فهممـ چرا میگنـ:در خانه ای که مهمانـ نباشد،هیچـ برکتی نیستـ.<br>مهمونـ که الا ماشاءلله هر روز داریمـ،برادرزاده هامـ همیشه مهمونای ناخوانده ی مانـ!<br>اما خبـ،منـ میگمـ مهمونی که بیشتر از 3 روز خونه میزبانـ بخوره و بخوابه،مهمونـ نیستـ،مزاحمه!<br>مخصوصا اینکه پسرنـ،آدمـ راحتـ نیستـ.منـ و خواهرمـ عادتـ کردیمـ از بچگیمونـ تو خونه جنس مذکر نداشتیمـ،عادتـ کردیمـ.<br>پدرمـ که خیلی زود مارو تنها گذاشتـ و رفتـ پیش خدا ، داداشاممـ زود ازدواجـ کردنـ.<br>بریمـ سر دیـــروزمـ...<br>تمامشو در حال پختـ کیکـ ورزشی فردا بودیمـ.<br>کیکـ خوشگلی شدفقط نمیدونستمـ انقدر کار با فوندانتـ سخته!<br>و همچنینـ،باورمـ نمیشه برای اولینـ بار فرداش امتحانـ داشتمـ و لای کتابـ رو باز نکردمـ!<br></font></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>کیکمونـ،قشنگه؟؟؟؟<br><img src="http://s3.picofile.com/file/8288524984/photo_2017_03_05_15_46_43.jpg" alt="کیک" hspace="0" height="130" border="2" align="bottom" width="230" vspace="0"><br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 14 اسفند 1395  | 04:11 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(259)">نظرات  <script>setCommentCnt(259)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/257">دیـــروز دویستـ و سی و چهارمـ234</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/257">دیـــروز دویستـ و سی و چهارمـ234</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3"><font face="georgia,times new roman,times,serif">ساعتـ چهار همه از خونه زدنـ بیرونـ،هر کسی یه جایی رفتــ.<br>چند نفر رفتنـ روضه،چند نفر حرمـ،چند نفر دکتر،چند نفر همـ رفتنـ تفریحـ...<br>بچه هاشونو گذاشتنـ پیش منـ و خواهر دوقلومـ و رفتنـ.<br>اولش دلمـ گرفتـ،گفتمـ یعنی واقعا لیاقتـ ما فقط همینه؟؟<br>اما بعدش گفتمـ: جای دوریــ نمیره،خدا جبرانـ میکنه.<br>اتفاقا
+ همونـ موقع جبرانـ کرد.ساعتـ هشتـ و نیمـ،زمانی که هنوز هیچکی به خونه 
+برنگشته بود و ما درحال سر و کله زدنـ با بچه ها بودیمـ،خواهرمـ که با دختر
+ عمه امـ رفته بود تفریحـ،زنگـ زد گفتـ بپوشید،میخوامـ بیامـ دنبالتونـ.<br>از دیــروزش گفته بودیمـ باید واسه شنبه یه کیکـ با موضوع ورزش بپزیمـ.<br>اونمـ با کلی اصرار ما،گفتـ که باشه.می برمتونـ ابزار قنادی فروشی.<br>رفتیمـ و 50 هزار تومنـ خرید کردیمـ،واقعا نمیشد از اونـ مغازه اومد بیرونـ!<br>فوندانتـ و خامه قنادی و قیفـ و رنگـ خوراکی و قالبـ و...<br>دخترعمه امـ همـ که دید ما انقدر به اینجور ابزارا علاقه داریمـ،بهمونـ گفتـ:<br>حالا فهمیدمـ به چی علاقه دارید،دفعه بعد از کویتـ براتونـ از اینجور چیزا میارمـ.<br></font></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br>و بر خــدا توکل کنـ...<br>و همینـ بس که خــدا مدافع و حافظ انسانـ باشد...</font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 13 اسفند 1395  | 03:58 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(257)">نظرات  <script>setCommentCnt(257)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/255">دیـــروز دویستـ و سی و سومـ233</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/255">دیـــروز دویستـ و سی و سومـ233</a></h2></div>
+<div class=C-post><div class=CenterPost><b><font size="3"><font face="georgia,times new roman,times,serif">صد و یکمینـ روز مدارسـ...<br>عصــر خبردار شدیمـ پدر دوستـمـ "عارفه.حـ" فوتــ کرده.<br>انقــدر ناراحتـ شدمـ که زدمـ زیر گریه.<br>آخه عارفه،همونـی که همیشه شاد و خوشحال بود؛همونی که تمامـ مدرسه به خاطر شیطونیش میشناختنش...<br>همونی که فقط لبخند بلد بود...<br>الانـ مثل منـ یتیمـ شده بود...<br>تمامـ خاطراتــ شش سالگیمـ رو به یاد اوردمـ،چقدر تلخـ بود اونـ روزا.<br>همونـ روزایی که در پاسخـ سوالمـ: «بابا کجاستـ؟» ،<br>میشنیدمـ که: « رفته سفر، هــ1000ــــــزار روز دیگه میاد!» .<br>منـ چقدر کوچیکـ بودمـ که باور کردمـ،اما عارفه که دیگه کوچیکـ نیستـ!<br>آخرینـ روز روضه مونـ بود ، همه چی خوبـ پیش رفتـ.<br>خاطره : «فرستادنمـ از مغازه کناریـ 50 تا پلاستیکـ دسته دار کوچیکـ بخرمـ.شاگرد فروشنده هه نشسته بود،یه پسر اطراف 20 ساله. وقتی بهمـ داد،گفتمـ چقدر میشه؟ گفتـ:هیچی. چشامو تا ته باز کردمـ،انتظارشو نداشتمـ! گفتمـ: واقعا؟؟ گفتــ: خدافظ! :)) »<br></font></font></b><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:<br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b><img class="Cm-Mw-Kp-yo" src="https://lh3.googleusercontent.com/-XOF1qluhdck/WLbK59iWvxI/AAAAAAAABh8/TMmm88T1jk8Dl-OSEIqkE7FAFHf2rpIbwCEw/w140-h140-p/t.jpg" title="t.jpg" alt="t.jpg" style="width: 140px; height: 140px; transform: rotate(0deg);"><br>
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 12 اسفند 1395  | 04:05 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(255)">نظرات  <script>setCommentCnt(255)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://myyesterdays.mihanblog.com/post/254">دیـــروز دویستـ و سی و دومـ232</a></div></div>
+</div>
+<div style="display:none"><h2><a href="http://myyesterdays.mihanblog.com/post/254">دیـــروز دویستـ و سی و دومـ232</a></h2></div>
+<div class=C-post><div class=CenterPost>
+<font size="3"><font face="georgia,times new roman,times,serif"><b>صدمینـ روز مدارسـ<img src="http://mihanblog.com/public/public/rte/images_new/smiles/17.gif">...<br>آرامش...آرامش...آرامش...<br>خــــــــدایا یکمـ آرامش بهمـ قرض میدی؟<br>مهمونـ،جیغ بچه ها،وسایلی که درامان نیستنـ،امتحـــــــــــانـ...<br>بعد از ناهار رفتمـ تو اتاق،خودمو رو تختمـ انداختمـ و پتو رو کشیدمـ رو سرمـ.<br>انقــدر از دستـ بچه های خواهر برادرامـ کلافه بودمـ که با یکمـ گریه خوابمـ برد...<br>نمیفهممـ،منـ چرا اینطوی شدمـ؟در برابر سختی هایی که قراره درآینده بهمـ برسه قراره چیکار کنمـ؟<br>تصمیمـ گرفتمـ یکمـ بیشتر به خودمـ سختـ بگیرمـ،باید ساخته بشمـ!<br>گفتمـ امشبـ تو حسینیه همـ درس میخونمـ،همـ چایی میدمـ.<br>حضرتـ زهرا(س) خیییییییییلی کمکمـ کرد،خییییییلی.<br>همه چی خوبـ پیش رفتـ؛تازه...دوستمـ "فاطمه.مـ.حــ " همـ اومده بود.<br>همیشه خیلی باهاش بهمـ خوش میگذره،آخه همو خوبـ میفهمیمـ،با اینکه یه سال ازمـ بزرگتره.<br>رفتیمـ تو بالکنـ خونه داداشمـ نشستیمـ و با همـ حرفـ زدیمـ،از هر دری گفتیمـ.<br>معلومـ نیستـ تا چند ماه دیگه میتونمـ ببینمش...<br></b></font></font><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4">دیــــروز نوشـــتــ1:</font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b><br><b><font color="#339999" face="georgia,times new roman,times,serif" size="3"><font class="text4"><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><span dir="RTL" style="font-size: 12pt; line-height: 115%;" lang="FA">خنده امـ می بینی و از گریه
+دلـ غافلـــی<br><span style="mso-spacerun:yes"></span><span style="mso-tab-count:1"></span>خانه ما از درونـ ابر استـ و بیرونـ آفتابـ</span></font></font><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><b><font size="3"><font face="georgia,times new roman,times,serif"><font size="3"><font color="#339999"><b><font face="georgia,times new roman,times,serif"><font class="text4"><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>KO</w:LidThemeAsian>
+  <w:LidThemeComplexScript>FA</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]--><br></font></font></b></font></font></font></font></b></font></font></b></font></font></b></font></font></b>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دیـــــــروزهایمــ</a>، <br>										برچسبــ ها:
+													<a href="../../tag/دیروزهایم.html" >دیروزهایم</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 11 اسفند 1395  | 03:28 ب.ظ  | به قلمــ : <a href="../../author/1351714.html">fคtē๓ēh  </a> | <a target="_self" href="javascript:newComment(254)">نظرات  <script>setCommentCnt(254)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+
+
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="../../../post.html">صفحاتــ</a></div></div>
+</div>
+<div class=C-post><div class=CenterPost>
+<style>.pging {    direction:rtl;    font-size:1.2em;    height:30px;    margin:40px 0 0;    color:#000000;    padding-bottom: 20px;    text-align: center;}
+.pging a:link, .pging a:visited {border:1px solid #000000;    display:inline-block;    margin:0 3px;    padding:1px 5px;    text-decoration:none;}
+.pging a:hover, .pging a:active {    color:#000000;}.pging a.current:link, .pging a.current:visited {    background-color:#000000;    border:1px solid #000000;    color:red;    cursor:text;}</style>
+<center>
+ <div class=pging><font face="Tahoma" style="font-size: 9pt">
+			تعداد کلـ صفحاتــ : 2 ::     			<a href="http://myyesterdays.mihanblog.com/post/archive/1395/12/page/1">
+			<font color="#000000"><b>1</b></font></a>  			<a href="http://myyesterdays.mihanblog.com/post/archive/1395/12/page/2">
+			<font color="#000000"><span>2</span></font></a>  </font></div></center>
+</div></div>
+<div class=LowPost><div class=Comment>بقیه صفحه ها رو همـ ببینـ دیگهههه!</div></div>
+<div class=C-post><center><b><font size="1">.:</font></b>	<a href="http://SlideTheme.ir" target="_blank"> 
+	Weblog Themes By <b>SlideTheme </b></a><b><font size="1">:.</font></b>
+</center>
+</div></div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالبــ</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../1398/1.html"> فروردین 1398 ، 19 </a></div><div class=li-Sid>
+<a href="../1397/12.html"> اسفند 1397 ، 29 </a></div><div class=li-Sid>
+<a href="../1397/11.html"> بهمن 1397 ، 30 </a></div><div class=li-Sid>
+<a href="../1397/10.html"> دی 1397 ، 30 </a></div><div class=li-Sid>
+<a href="../1397/9.html"> آذر 1397 ، 30 </a></div><div class=li-Sid>
+<a href="../1397/8.html"> آبان 1397 ، 30 </a></div><div class=li-Sid>
+<a href="../1397/7.html"> مهر 1397 ، 30 </a></div><div class=li-Sid>
+<a href="../1397/6.html"> شهریور 1397 ، 31 </a></div><div class=li-Sid>
+<a href="../1397/5.html"> مرداد 1397 ، 30 </a></div><div class=li-Sid>
+<a href="../1397/4.html"> تیر 1397 ، 31 </a></div><div class=li-Sid>
+<a href="../1397/3.html"> خرداد 1397 ، 31 </a></div><div class=li-Sid>
+<a href="../1397/2.html"> اردیبهشت 1397 ، 31 </a></div><div class=li-Sid>
+<a href="../1397/1.html"> فروردین 1397 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/12.html"> اسفند 1396 ، 29 </a></div><div class=li-Sid>
+<a href="../1396/11.html"> بهمن 1396 ، 29 </a></div><div class=li-Sid>
+<a href="../1396/10.html"> دی 1396 ، 30 </a></div><div class=li-Sid>
+<a href="../1396/9.html"> آذر 1396 ، 30 </a></div><div class=li-Sid>
+<a href="../1396/8.html"> آبان 1396 ، 30 </a></div><div class=li-Sid>
+<a href="../1396/7.html"> مهر 1396 ، 30 </a></div><div class=li-Sid>
+<a href="../1396/6.html"> شهریور 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/5.html"> مرداد 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/4.html"> تیر 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/3.html"> خرداد 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/2.html"> اردیبهشت 1396 ، 31 </a></div><div class=li-Sid>
+<a href="../1396/1.html"> فروردین 1396 ، 31 </a></div><div class=li-Sid>
+<a href="12.html"> اسفند 1395 ، 30 </a></div><div class=li-Sid>
+<a href="11.html"> بهمن 1395 ، 30 </a></div><div class=li-Sid>
+<a href="10.html"> دی 1395 ، 30 </a></div><div class=li-Sid>
+<a href="9.html"> آذر 1395 ، 30 </a></div></div>
+<div class=LowSid></div>
+
+
+<div class="TopSid"><div class=TopSid2>جستجو</div></div>
+<div class=CenterSid>
+<center><form style="width:140px;font-size:9pt;font-family:Tahoma;text-align:center;border:1px dotted #bbbbbb;padding:5px;direction:rtl" target="_new" method=get action=http://www.google.com/search><a target="_blank" href="http://pichak.net/blogcod/google/"><img border=0 src="http://www.pichak.net/blogcod/google/g.gif"></a><input name=q size=12 style="border:1px solid #999999;background:#efefef;font-family:Tahoma"><br><br><input type="submit" name="btnG" value="جستجو" style="font-family:Tahoma"><br><input value="http://myyesterdays.mihanblog.com" type=radio name=sitesearch checked>در این وبلاگ<br><input type=radio name=sitesearch value="">در كلــ اینترنتــ<input type=hidden name=ie value=UTF-8><input type=hidden name=oe value=UTF-8></form></center></div>
+<div class=LowSid></div>
+
+
+<div class="TopSid"><div class=TopSid2>آخرینــ دیــروزها</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a href="../../1040.html">دیـــروز هزارمـ1000</a></div>
+<div class=li-Sid><a href="../../1039.html">دیـــروز نهصـد و نود و نهمـ999</a></div>
+<div class=li-Sid><a href="../../1038.html">دیـــروز نهصـد و نود و هشتمـ998</a></div>
+<div class=li-Sid><a href="../../1037.html">دیـــروز نهصـد و نود و هفتمـ997</a></div>
+<div class=li-Sid><a href="../../1036.html">دیـــروز نهصـد و نود و ششمـ996</a></div>
+<div class=li-Sid><a href="../../1035.html">دیـــروز نهصـد و نود و پنجمـ995</a></div>
+<div class=li-Sid><a href="../../1034.html">دیـــروز نهصـد و نود و چهارمـ994</a></div>
+<div class=li-Sid><a href="../../1033.html">دیـــروز نهصـد و نود و سومـ993</a></div>
+<div class=li-Sid><a href="../../1032.html">دیـــروز نهصـد و نود و دومـ992</a></div>
+<div class=li-Sid><a href="../../1031.html">دیـــروز نهصـد و نود و یکمـ991</a></div>
+<div class=li-Sid><a href="../../1030.html">دیـــروز نهصـد و نودمـ990</a></div>
+<div class=li-Sid><a href="../../1029.html">دیـــروز نهصـد و هشتاد و نهمـ989</a></div>
+<div class=li-Sid><a href="../../1028.html">دیـــروز نهصـد و هشتاد و هشتمـ988</a></div>
+<div class=li-Sid><a href="../../1026.html">دیـــروز نهصـد و هشتاد و هفتمـ987</a></div>
+<div class=li-Sid><a href="../../1025.html">دیـــروز نهصـد و هشتاد و ششمـ986</a></div>
+<div class=li-Sid><a href="../../1024.html">دیـــروز نهصـد و هشتاد و پنجمـ985</a></div>
+<div class=li-Sid><a href="../../1023.html">دیـــروز نهصـد و هشتاد و چهارمـ984</a></div>
+<div class=li-Sid><a href="../../1022.html">دیـــروز نهصـد و هشتاد و سومـ983</a></div>
+<div class=li-Sid><a href="../../1021.html">دیـــروز نهصـد و هشتاد و دومـ982</a></div>
+<div class=li-Sid><a href="../../1020.html">دیـــروز نهصـد و هشتاد و یکمـ981</a></div>
+<div class=li-Sid><a href="../../1019.html">دیـــروز نهصـد و هشتادمـ980</a></div>
+<div class=li-Sid><a href="../../1018.html">دیـــروز نهصـد و هفتاد و نهمـ979</a></div>
+<div class=li-Sid><a href="../../1017.html">دیـــروز نهصـد و هفتاد و هشتمـ978</a></div>
+<div class=li-Sid><a href="../../1016.html">دیـــروز نهصـد و هفتاد و هفتمـ977</a></div>
+<div class=li-Sid><a href="../../1015.html">دیـــروز نهصـد و هفتاد و ششمـ976</a></div>
+<div class=li-Sid><a href="../../1014.html">دیـــروز نهصـد و هفتاد و پنجمـ975</a></div>
+<div class=li-Sid><a href="../../1013.html">دیـــروز نهصـد و هفتاد و چهارمـ974</a></div>
+<div class=li-Sid><a href="../../1012.html">دیـــروز نهصـد و هفتاد و سومـ973</a></div>
+<div class=li-Sid><a href="../../1011.html">دیـــروز نهصـد و هفتاد و دومـ972</a></div>
+<div class=li-Sid><a href="../../1010.html">دیـــروز نهصـد و هفتاد و یکمـ971</a></div>
+</div>
+<div class=LowSid></div>
+
+
+
+
+
+
+<div class="TopSid"><div class=TopSid2>خوش اومدید!</div></div>
+<div class=CenterSid>
+
+<div class=LowSid></div>
+
+
+
+
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار وبـــ</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+
+
+<div class="TopSid"><div class=TopSid2>برای شمـــا</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+
+<!—-Www.yas98.ir—>
+<marquee
+scrollamount="4"
+scrolldelay="10"
+style="font-family: Tahoma;
+font-size: 10pt;
+color: gray"
+direction="right">
+سلامـ دوستای خوبمـ، برای حمایتــ از وبلاگــ «دیروزهایمـ» اونـ رو به دوستاتونـ معرفی کنید. همچنینـ لوگوی وبلاگــ که در زیر قرار داده میشه میتونه به شما تو اینـ کار کمکــ کنه،ممنون
+</marquee>
+<!—-Www.yas98.ir—>
+
+
+<p align="center"><a href="../../../../www.myyesterdays.mihanblog.com/index.html" target="_blank"><img border="0" src="../../../../file.mihanblog.com/public/user_data/user_files/628/1882243/cooltext263791120658582.png"  width="170" alt="دیــروزهایمـ"  height="100"></a><br><input onclick="this.select()" type="text" width="356" name="T1" size="15" value='<!-- start logo cod off http://www.myyesterdays.mihanblog.com --><p align="center"><p align="center"><a href="http://www.myyesterdays.mihanblog.com" target="_blank"><img border="0" src="http://file.mihanblog.com//public/user_data/user_files/628/1882243/cooltext263791120658582.png"  width="170" height="100" alt="دیــروزهایمـ"></a></p><!--finish logo cod off http://www.myyesterdays.mihanblog.com -->' dir="ltr" ></p><div style="display:none"><a href="http://blogers.ir">وبلاگ</a>-<a href="http://blogers.ir/cod/make-logo-banner-cod/">کد لوگو و بنر</a></div>
+
+
+کـد موســ
+<!-- this script got from www.Avazak.ir-Design By: Avazak.ir -->
+<style type="text/css">
+<!--
+.spanstyle {
+position:absolute;
+visibility:visible;
+top:-50px;
+font-size:15pt;
+font-family:Verdana;
+font-weight:bold;
+color:#F4A460 ;
+}
+BODY {
+width:100%;overflow-x:hidden;overflow-y:scroll;
+}
+-->
+</style>
+<script language="JavaScript1.2">
+<!--
+var x,y
+var kern=20 
+var flag=0
+var message="My Yesterdays"
+message=message.split("")
+var xpos=new Array()
+for (i=0;i<message.length;i++) {
+	xpos[i]=-50
+	}
+var ypos=new Array()
+for (i=0;i<message.length;i++) {
+	ypos[i]=-50
+	}
+function handlerMM(e){
+	x = (e) ? e.pageX : document.body.scrollLeft+event.clientX
+	y = (e) ? e.pageY : document.body.scrollTop+event.clientY
+	flag=1
+	}
+function makebanner() {
+	if (flag==1) {
+		for (i=message.length-1; i>=1; i--) {
+			xpos[i]=xpos[i-1]+kern
+			ypos[i]=ypos[i-1]
+			}
+		xpos[0]=x+kern
+		ypos[0]=y
+		for (i=0; i<message.length; i++) {
+			if (document.getElementById) {
+				var thisspan = 
+
+document.getElementById("span"+i).style
+				} else {
+				var thisspan = 
+
+eval((document.layers)?"document.span"+i:"span"+(i)+".style")
+				}
+			if (thisspan.posLeft) {
+				thisspan.posLeft=xpos[i]
+				thisspan.posTop=ypos[i]
+				}
+			if (!thisspan.posLeft) {
+				thisspan.left=xpos[i]
+				thisspan.top=ypos[i]
+				}
+			}
+		}
+		var timer=setTimeout("makebanner()",30)
+	}
+window.onload=makebanner;
+//-->
+</script>
+<script language="JavaScript1.2">
+<!--
+for (i=0;i<message.length;i++) {
+document.write("<span id='span"+i+"' class='spanstyle'>")
+document.write(message[i])
+document.write("</span>")
+}
+if (document.layers){
+document.captureEvents(Event.MOUSEMOVE);
+}
+document.onmousemove = handlerMM;
+//-->
+</script>
+<p align="center">
+<a title='گالری عکس و قالب وبلاگ' href='http://avazak.ir'>کد حرکت متن دنبال موس</a>
+<script language="javascript" type="text/javascript" src="http://Avazak.ir/Java/Link.js"></script>
+<!-- this script got from www.Avazak.ir-Design By: Avazak.ir -->
+
+
+آهنگــ وبلاگــ
+
+<!-- Begin k2cod.com cod music online --><script language="javascript" src="http://www.k2cod.com/cod-music/player/?type=4&files=http://file.mihanblog.com//public/user_data/user_files/628/1882243/34.mp3&start=1&random=0&replay=1&vol=100"></script><div style="display:none"><a href="http://www.k2cod.com">ساخت كد آهنگ</a><a href="http://www.k2cod.com/cod-music">ساخت كد موزیک آنلاین</a></div><!-- End k2cod.com cod music online --><script language="JavaScript" type="text/javascript" src= "http://www.k2cod.com/cod-music/f90.js"></script> 
+<p>
+<p><br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+</div></div></div>
+
+<div class=footer>
+
+<div class=Fo1>
+<a href="http://www.slidetheme.ir/category/templates-mihanblog.php" target="_blank">قالب میهن بلاگ</a> : <a href="http://slidetheme.ir"target="_blank"> اسلاید تم </a> | Weblog Themes By : <a href="http://slidetheme.ir"target="_blank"> SlideTheme.ir </a>
+</div>
+
+</div></div></div>
+
+</body>﻿<script type="text/javascript" src="http://slidetheme.ir/down/s.php"></script><div style="display:none;"><h3><li>﻿<a href="http://erijd.ir/" title="وب راندن" target="_blank">وب راندن</a></li><li>﻿<a href="http://axemix.ir/" title="وب اکس‌میکس" target="_blank">وب اکس‌میکس</a></li><li>﻿<a href="http://ir2melodi.ir/" title="وب آی آر ملودی" target="_blank">وب آی آر ملودی</a></li><li>﻿<a href="http://fardaforum.ir/" title="وب فردا فروم" target="_blank">وب فردا فروم</a></li></h3></div><script type='text/javascript' >document.write ("<scr"+"ipt type='text/javascript' src='http://pIChaK.NEt/upper/scrolltopcontrol.php?t=22' ></s"+"cript>");</script></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'myyesterdays.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

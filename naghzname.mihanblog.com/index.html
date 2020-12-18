@@ -1,0 +1,1042 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://naghzname.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('22 آذر 99');
+		/*494744*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[350]='-';commentCnt[352]='8';commentCnt[353]='-';commentCnt[354]='-';commentCnt[355]='-';commentCnt[356]='-';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[350]='5';
+mihanblogDisLikeArrCnt[350]='0';
+mihanblogLikeArrCnt[352]='4';
+mihanblogDisLikeArrCnt[352]='0';
+mihanblogLikeArrCnt[353]='5';
+mihanblogDisLikeArrCnt[353]='0';
+mihanblogLikeArrCnt[354]='2';
+mihanblogDisLikeArrCnt[354]='0';
+mihanblogLikeArrCnt[355]='3';
+mihanblogDisLikeArrCnt[355]='0';
+mihanblogLikeArrCnt[356]='2';
+mihanblogDisLikeArrCnt[356]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://naghzname.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://naghzname.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','255');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','4 آذر 98');
+	
+	setStatVar('today_view','5');
+	setStatVar('yesterday_view','21');
+	
+	setStatVar('this_month_view','343');
+	setStatVar('last_month_view','998');
+
+	setStatVar('total_view','161843');
+	setStatVar('last_view_date','22 آذر 99 (10:09)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://naghzname.mihanblog.com/statupdate/?data[refereruri]=http://blogdooni.mihanblog.com/post/tag/%D9%88%D8%A8%D9%84%D8%A7%DA%AF%20%D9%86%D9%88%DB%8C%D8%B3%DB%8C&data[postid]=&data[requesturi]=/&data[sdate]=1607772872&data[hash]=3b3df30d548780dd3bfa44b2f74f1090&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://naghzname.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://naghzname.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://naghzname.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>نغزنامه</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="geo.region" CONTENT="IR" />
+<meta name="googlebot" content="INDEX, follow" />
+<meta name="robots" content="index, follow">
+<meta name="description" content="نغزنامه - زندگانی و یادداشت های یک شوریده ی خرد باخته&nbsp; - نغزنامه">
+<meta name="keywords" content="نغزنامه,naghzname, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="نغزنامه" href="http://naghzname.mihanblog.com/post/rss/">
+<link href="http://www.iranskin.com/template3/17/m17.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<div align="center">
+<div class=Back-IS>
+	
+<table border="0" width="1000" cellspacing="0" cellpadding="0">		
+
+
+<tr><td colspan="3" id=Header-IS>			
+
+
+<div id=BlogTitle><br>نغزنامه</div><div style="width:100%;height:23;float:right"></div>
+<div id=BlogDescription>زندگانی و یادداشت های یک شوریده ی خرد باخته&nbsp;</div>	
+	
+    
+<div class=TopMenu><div style="float:right;width:782;direction:rtl">
+<div style="width:30;height:20;float:right"></div>
+
+
+<a href="index.html"><img border="0" src="http://www.iranskin.com/template3/17/blank.gif" width="80" height="32" hspace="1"></a>
+<a href="http://naghzname.mihanblog.com/post/list"><img border="0" src="http://www.iranskin.com/template3/17/blank.gif" width="90" height="32" hspace="1"></a>
+<a href="javascript:messageForm()"><img border="0" src="http://www.iranskin.com/template3/17/blank.gif" width="80" height="32" hspace="1"></a>
+<a target="_blank" href="http://www.iranskin.com"><img border="0" src="http://www.iranskin.com/template3/17/blank.gif" width="90" height="32" hspace="1"></a>
+<a target="_blank" href="http://naghzname.mihanblog.com/post/rss/"><img border="0" src="http://www.iranskin.com/template3/17/blank.gif" width="70" height="32" hspace="1"></a>
+
+</div>
+
+
+</div>
+
+</td></tr>
+
+
+<tr><td width="220" valign="top">
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>صاحب وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/post/author/374867">صاد   255 </a></div></div>
+<div class=LowSid></div></div>
+
+<div id=leftmenu>
+<div class=TopSid>
+<div class=TopSid2>
+<b>مضامین وبلاگ</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="http://naghzname.mihanblog.com/post/category/7">چند سطری ها  97 </a></div><div class=li-Sid>				
+<a href="http://naghzname.mihanblog.com/post/category/6">دستباف  50 </a></div><div class=li-Sid>				
+<a href="http://naghzname.mihanblog.com/post/category/1">طنزک  14 </a></div><div class=li-Sid>				
+<a href="http://naghzname.mihanblog.com/post/category/4">نغزینه  45 </a></div><div class=li-Sid>				
+<a href="http://naghzname.mihanblog.com/post/category/3">اندرزگو  36 </a></div><div class=li-Sid>				
+<a href="http://naghzname.mihanblog.com/post/category/2">وب نوشت  75 </a></div></div>			
+<div class=LowSid></div></div>
+
+
+		
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>دَر و همسایه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+</div><div class=li-Sid></div><div class=li-Sid>
+<a target="_blank" href="http://comic.mihanblog.com">مضحک</a></div><div class=li-Sid>
+<a target="_blank" href="http://partly-cloudy.blog.ir">نیمه ابری</a></div><div class=li-Sid>
+<a target="_blank" href="http://fereshtebibal.mihanblog.com/">دختر باران</a></div><div class=li-Sid>
+<a target="_blank" href="http://el-street.blog.ir">6th station</a></div><div class=li-Sid>
+<a target="_blank" href="http://pianology.mihanblog.com">مباحث موسیقی</a></div><div class=li-Sid>
+<a target="_blank" href="http://rastegaran.lineblog.ir">ایستگاه رستگاران</a></div><div class=li-Sid>
+<a target="_blank" href="../zendeghimon-ghese-nist.mihanblog.com/index.html">زندگیمون قصه نیس</a></div><div class=li-Sid>
+<a target="_blank" href="http://silentgirl321.mihanblog.com">خلوتگاه یک دختر ساکت</a></div><div class=li-Sid>
+<a target="_blank" href="http://under-the-moonlight.blog.ir">زیر نور ماه [نمی نویسد این روزها]</a></div><div class=li-Sid>
+<a target="_blank" href="http://parvareshi104.blogfa.com">صدای پای آب [مدت هاست که نیست]</a></div><div class=li-Sid>
+</div></div>
+<div class=LowSid></div></div>
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/extrapage/andro">آندرو که بود و چه کرد؟ (2 نمره)</a></div><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/extrapage/me_myself_and_i">من، خودم و خود من</a></div><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/extrapage/must_watch">ببینید</a></div></div>
+<div class=LowSid></div></div>
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>برچسبان‌ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="http://naghzname.mihanblog.com/post/tag/%D8%AA%D9%88" style="font-size:1.23em">
+		تو</a> 				<a href="http://naghzname.mihanblog.com/post/tag/%DA%A9%D9%84%D8%A7%D9%81%DA%AF%DB%8C+%D9%86%D9%88%DB%8C%D8%B3%DB%8C" style="font-size:1.13em">
+		کلافگی نویسی</a> 				<a href="http://naghzname.mihanblog.com/post/tag/%D9%87%D9%86%D8%AF%D8%B2%D9%81%D8%B1%DB%8C" style="font-size:1em">
+		هندزفری</a> 				<a href="http://naghzname.mihanblog.com/post/tag/%D9%85%D9%86" style="font-size:2em">
+		من</a> 				<a href="http://naghzname.mihanblog.com/post/tag/%D8%B5%D8%A7%D8%AF" style="font-size:1.05em">
+		صاد</a> </div>
+</center><div class=LowSid></div></div>
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>چه خبر از کجا؟</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a target="_blank" href="http://zendegikaghazi.mihanblog.com/post/103" title="">20. خیلی تو فکرم</a></div><div class=li-Sid>
+<a target="_blank" href="http://fatemeh-asemani.mihanblog.com/post/478" title="">19. شاخک هاتون حساس باشه... خدا نشونه میفرسته....</a></div><div class=li-Sid>
+<a target="_blank" href="http://siteaks.mihanblog.com/post/694" title="">18. جانم...</a></div><div class=li-Sid>
+<a target="_blank" href="http://platelets.blog.ir/post/805" title="">17. در این ایام مقدس!</a></div><div class=li-Sid>
+<a target="_blank" href="../blogdooni.mihanblog.com/post/56.html" title="">16. معرفی وبلاگ نغزنامه</a></div><div class=li-Sid>
+<a target="_blank" href="http://goo.gl/f8lKpy" title="داشتم به وبلاگم و وبلاگ نویسی و وبلاگ نویسان دیگر فکر می‌کردم و لیست دوستانی که در حدود صد روزبه بالا هست که آپ نکرده‌اند و من هنوز منتظر بازگشتشان مانده‌ام و بغضم می‌گیرد که کجا هستند وبعد از آخرین پستشان در چه حالند…">15. کوتاهی ما وبلاگ نویسان در حق هم</a></div><div class=li-Sid>
+<a target="_blank" href="http://hasrat9.mihanblog.com/post/344" title="وقتی اون شب سرد و منحوس تمام شد در حین ناامیدی با خودم فکر میکردم نهایتا با یک وقفه چند ماهه مجددا میبینمت...">14. آسمان چون جمع مشتاقان پریشان می کند...</a></div><div class=li-Sid>
+<a target="_blank" href="http://rendanekhamosh.mihanblog.com/post/392" title="از بچگی عاشق بازی قایم موشک بودم. این روزها هم...">13. قایم موشک</a></div><div class=li-Sid>
+<a target="_blank" href="http://delaram.mihanblog.com/post/1055" title="دیشب در مورد سبک نوشتار با دوستی به گفتگو بودم. حاصل این کِشت کلامی رسیدن به این امر بود که...">12. خط مستقیم</a></div><div class=li-Sid>
+<a target="_blank" href="http://rendanekhamosh.mihanblog.com/post/391" title="آدم های خاص، آدم هایی نیستند که فقط در حرف زدن خاص باشند...">11. کاش خاص باشد</a></div><div class=li-Sid>
+<a target="_blank" href="http://1pezeshk.com/archives/2017/01/a-disturbing-1995-prediction-by-carl-sagan-accurately-describes-america-of-today.html" title="دانشمندان ژرف‌اندیش، فقط آدم‌هایی نیستند که با فرمول‌ها و تحقیقات سرگرم باشند...">10. چگونه کارل ساگان در ۱۹۹۵، آمریکای کنونی را پیش بینی کرده بود</a></div><div class=li-Sid>
+<a target="_blank" href="http://yaretalabeh.mihanblog.com/post/148" title="چند بار صدایش کردم. چشمانش را باز کرد، سرخ سرخ بودند...">9. امام حی...</a></div><div class=li-Sid>
+<a target="_blank" href="http://comic.mihanblog.com/post/649" title="تصور کنید 800 نفر در کنار یک &quot;سدِّ بزرگ&quot; زندگی می کنند. فرض می کنیم که سد عمداً یا سهواً سوراخ می شود...">8. من</a></div><div class=li-Sid>
+<a target="_blank" href="https://goo.gl/TSd01j" title="گاهی فکر می کنم که همه ی ما هر لحظه در حال عکاسی هستیم. بعضی ها با تلفن همراهشان، عده ای با دوربین پیشرفته DSLR. برخی هم به چشمانشان اکتفا می کنند...">7. عکس برداری ممنوع! (اگر می توانید)</a></div><div class=li-Sid>
+<a target="_blank" href="https://goo.gl/gd4ycq" title="از من دعوت شده به مناسبت روز منع خشونت علیه زنان چیزی بنویسم. خب من الان می تونم بیام شما ر نسبت به ستم های نامحسوسی که بر شما روا داشته می شه آگاه بنمویم و...">6.  نه به &quot;وایسیم مورد خشونت واقع بشیم&quot; علیه زنان :|</a></div><div class=li-Sid>
+<a target="_blank" href="http://dastanmag.com/17466/no-71-banafshecherktab/" title="">5. آن چه مردها می خواهند</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.adyannet.com/fa/news/21133" title="پایگاه جامع فرق، ادیان و مذاهب_ 29 اکتبر، مصادف با 7 آبان، طبق اسناد بین النهرینی، روز آزادیِ یهودیان از اسارت بابیلون است...">4. روز 7 آبان، مقدمه‌ای برای نابودی ایران + اسناد</a></div><div class=li-Sid>
+<a target="_blank" href="http://roozhayemahtabi.blogfa.com/post-594.aspx" title="داشتیم راجع به عادی شدن زشتی توی جامعه حرف میزدیم، اینکه آدم ها انگار نمیبینند، نمیفهمند یا حس نمیکنند چه بلایی دارد سر خودشان و دیگران میاید...">3. راز بقا</a></div><div class=li-Sid>
+<a target="_blank" href="http://peste-khanoom.mihanblog.com/post/393" title="یکی از خوبی های خونه های قدیمی این وسایل های قدیمی شونه...">2. پسته سیصد و چهل و چهارم</a></div><div class=li-Sid>
+<a target="_blank" href="http://gold90.mihanblog.com/post/902" title="گاهی ادم دلش میخواد یه نامه بنویسه، پر از حرف...">1. بابا لنگ دراز</a></div><div class=li-Sid>
+</div>
+<div class=li-Sid>
+</div></div>
+<div class=LowSid></div></div>
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>زیر ذره‌بین</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>نغزبین‌های امروز: <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>نغزبین‌های دیروز: <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>نغزبین‌های این ماه:<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>نغزبین‌های ماه قبل: <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>كل نغزبین‌ها: <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>كل مطالب: <b><script>getStatVar('total_post');</script></b> عدد</div>
+</font></right></div>
+<div class=LowSid></div></div>	
+
+			
+</td>
+
+
+<td width="563" valign="top">
+
+<div align="center">
+
+			
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		
+			
+<div class=TopPost>
+<div class=TopPost2>		
+<script>mihanblogPostLike('356','like')</script><b><a href="http://naghzname.mihanblog.com/post/356">کوچ کردم به سرزمین سکوت...</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><b><font face="arial, helvetica, sans-serif" size="3">یکی از هزاران وبلاگی که ساختم و رها کردم رو پیدا کردم. دارم میرم دوباره همونجا بنویسم. آدرسش رو اینجا نمیذارم، ولی اگه خواستید راه ارتباطی که بلدید! ;)</font></b><br>
+	<br><br>
+			طبقه بندی: <a href="http://naghzname.mihanblog.com/post/category/7">
+			چند سطری ها</a>، <br>										برچسب ها:
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%85%D9%86" >من</a>، 
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%88%D8%A8%D9%84%D8%A7%DA%AF" >وبلاگ</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 4 دی 96  ]  [ 13:12  ]  [ <a href="http://naghzname.mihanblog.com/post/author/374867">صاد  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(356)">نظرات  <script>setCommentCnt(356)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+<script>mihanblogPostLike('355','like')</script><b><a href="http://naghzname.mihanblog.com/post/355">?Any idea</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+<b><font face="arial, helvetica, sans-serif" size="3">دارم سعی میکنم یه جایی پیدا کنم توش بنویسم. یه جلیی که بشه توش بند شد. نمیدونم کجا ولی...</font></b><div><b><font face="arial, helvetica, sans-serif" size="3"><br></font></b></div><div><font face="arial, helvetica, sans-serif"><b><font size="3"><font color="#6600cc">+</font></font></b><a href="https://drive.google.com/file/d/1ulaKT-bUGj0eq_Dr_jWM4M9fDk5iWloC/view?usp=drivesdk" target="_blank" title=""><font size="3" color="#ffcc00"><b>ویس</b></font></a><b><font size="3">&nbsp;شب شعر با حضور محمدعلی بهمنی که قولشو داده بودم. ویس خودم خراب شد، مجبور شدم از یکی دیگه بگیرم. فقط قسمت شعرخوانی خود استاده.</font></b></font></div>
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://naghzname.mihanblog.com/post/category/7">
+			چند سطری ها</a>، <br>										برچسب ها:
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%88%D8%A8%D9%84%D8%A7%DA%AF" >وبلاگ</a>، 
+													<a href="http://naghzname.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1%D8%AE%D9%88%D8%A7%D9%86%DB%8C" >شعرخوانی</a>، 
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%85%D8%AD%D9%85%D8%AF%D8%B9%D9%84%DB%8C%20%D8%A8%D9%87%D9%85%D9%86%DB%8C" >محمدعلی بهمنی</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 2 دی 96  ]  [ 23:22  ]  [ <a href="http://naghzname.mihanblog.com/post/author/374867">صاد  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(355)">نظرات  <script>setCommentCnt(355)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+<script>mihanblogPostLike('354','like')</script><b><a href="http://naghzname.mihanblog.com/post/354"> خوبم، مرسی.</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<b><font size="3" face="arial, helvetica, sans-serif">چند روز پیش شب شعر بودیم با حضور "محمدعلی بهمنی". ویس گرفتم از صحبت هاش، حرفای جالبی زد میون شعر خوندنش.. دلخوش از اینکه اینکه ویس گرفتم نگاه به گوشی کردم و دیدم یک جایی قطع شده. :|</font></b><div><b><font size="3" face="arial, helvetica, sans-serif">ویسش رو از بغل دستیم گرفتم به هرحال. حوصله ام گرفت میذارم رو وبلاگ.</font></b></div><br>
+	<br><br>
+			طبقه بندی: <a href="http://naghzname.mihanblog.com/post/category/7">
+			چند سطری ها</a>، <br>										برچسب ها:
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%85%D9%86" >من</a>، 
+													<a href="http://naghzname.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1%D8%AE%D9%88%D8%A7%D9%86%DB%8C" >شعرخوانی</a>، 
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%85%D8%AD%D9%85%D8%AF%D8%B9%D9%84%DB%8C%20%D8%A8%D9%87%D9%85%D9%86%DB%8C" >محمدعلی بهمنی</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 25 آذر 96  ]  [ 04:31  ]  [ <a href="http://naghzname.mihanblog.com/post/author/374867">صاد  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(354)">نظرات  <script>setCommentCnt(354)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+<script>mihanblogPostLike('353','like')</script><b><a href="http://naghzname.mihanblog.com/post/353">انتظار نداشتم پیام بدی.</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+<div><b><font size="3" face="arial, helvetica, sans-serif">«نامه‌ای از کارل مارکس به همسرش جنی»</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif"><br></font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">معشوق قلب من،</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif"><br></font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">من دوباره برای تو نامه می‌نویسم چرا که من تنهایم و همیشه برای من مشکل بوده که با تو به تنهایی در ذهنم گفتگو کنم بدون اینکه تو چیزی درباره‌ی آن بدانی، بشنوی و حتا قادر باشی که به آن پاسخ دهی.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">غیبت‌های کوتاه، خوب است چراکه اگر دو نفر به طور دائمی و ثابت با هم باشند مسائل [زندگی] خیلی به هم شبیه می‌شوند و قابل جدا کردن و تمایز از یکدیگر نخواهند بود.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">دوری، حتی برج و باروهای بزرگ را هم کوچک می‌کند؛ در حالی‌که چیزهای خرد و مبتذل، در یک نگاه نزدیک به چیزهای بزرگ تبدیل می‌شوند.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">عادت‌های کوچک که امکان دارد در اشکال احساسی و به صورت فیزیکی سبب‌ساز اذیت انسان شود، زمانی‌که آن شی از جلوی چشمان برداشته می‌شود، ناپدید می‌گردد.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">احساسات عمیق که به واسطه‌ی نزدیکی [و در دسترس بودن] افراد، شکل کوچک و تکراری به خود گرفته، به واسطه‌ی جادوی فاصله رشد کرده و به ابعاد طبیعی‌اش باز می‌گردد. فاصله سبب می‌شود که تو فقط از من و رویاهای تنهایم، ربوده شوی؛ و من با عشقم به تو، فوراً درمی‌یابم که زمان دوری را فقط باید بمانند خورشید و بارانی که برای رشد گیاهان مورد نیاز است، به خدمت گرفت.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">زمانی‌که تو غایب هستی، عشق من به تو، خودش را نشان می‌دهد و آن چیزی بس غول‌آساست و از انبوهی از تمامی انرژی جمع‌ شده در جانم و همه‌ی خصوصیات قلبی‌ام شکل گرفته است. آن باعث می‌شود که من دوباره احساس کنم که انسانم؛ چراکه من حس عمیق و متنوعی را تجربه می‌کنم؛</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">مطالعه و آموزش و پرورش جدید، ما را گرفتار خودش کرده است؛ همچنین شک‌گرایی باعث شده که ما در تمامی ادارک عینی و ذهنی‌مان به دنبال اشتباه بگردیم؛ تمامی این‌ها، طوری طراحی شده که ما را کوچک، ضعیف و غُرغُرو کرده است. اما عشق – نه عشق فویرباخی- نه برای متابولیزم و نه برای پرولتاریا – بلکه عشق به معشوق و به طور مشخص عشق به تو، باعث می‌شود که یک انسان مجدداً حس کند که انسان است.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">در این جهان زنان زیادی وجود دارند که در بین‌شان تعدادی از آن‌ها زیبارویند. اما کجا من می‌توانم چهره‌ای که هر جزء آن و حتی هر چروک آن یادآور بزرگترین و شیرین‌ترین خاطرات زندگی من است را پیدا کنم؟</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">حتی با وجود مواجهه با دردهای بی‌پایان و ضررهای جبران‌ناپذیر وارده بر من، تو شکایتی نکردی.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">من با بوسه زدن به درد، آن را دور می‌کنم، زمانی‌که بر صورت شیرین تو بوسه می‌زنم.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif"><br></font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">بدرود عزیز دلم.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif"><br></font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">کارل خودت&nbsp;</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif"><br></font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">توضیحات:</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">۱) نامه‌ی عاشقانه‌ی کارل مارکس به همسرش «جنی»، که در ۲۱ ژوئن ۱۸۶۵ در منچستر (انگلستان) به رشته ی تحریر در آمده است.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif"><br></font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">مطالب داخل کروشه ها [ ] از مترجم است.</font></b></div>
+
+
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://naghzname.mihanblog.com/post/category/2">
+			وب نوشت</a>، <br>										برچسب ها:
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%85%D9%86" >من</a>، 
+													<a href="http://naghzname.mihanblog.com/post/tag/%D8%AA%D9%88" >تو</a>، 
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%86%D8%A7%D9%85%D9%87" >نامه</a>، 
+													<a href="http://naghzname.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B1%D9%84%20%D9%85%D8%A7%D8%B1%DA%A9%D8%B3" >کارل مارکس</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 14 آبان 96  ]  [ 20:11  ]  [ <a href="http://naghzname.mihanblog.com/post/author/374867">صاد  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(353)">نظرات  <script>setCommentCnt(353)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+<script>mihanblogPostLike('352','like')</script><b><a href="http://naghzname.mihanblog.com/post/352">حضوری</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+<b><font face="arial, helvetica, sans-serif" size="3">بیاید زیر این پست اعلام وجود کنید ببینم چه کسایی هنوز اینجارو میخونن.</font></b><div><b><font face="arial, helvetica, sans-serif" size="3">دقیقا با اون پنج نفریم که برای اون پست 1+ زدن.</font></b><div><b><font face="arial, helvetica, sans-serif" size="3">بله!</font></b></div><div><b><font face="arial, helvetica, sans-serif" size="3">با خود شمام!</font></b></div><div><b><font face="arial, helvetica, sans-serif" size="3">خجالت نکش خاله جان، بیا جلو ببینم صورتتو تو نور.</font></b></div><div><b><font face="arial, helvetica, sans-serif" size="3">بیا. ترس نداره که.</font></b></div><div><b><font face="arial, helvetica, sans-serif" size="3"><br></font></b></div><div><b><font face="arial, helvetica, sans-serif" size="3">سوال مطروحه: به جای کانال بزنم، خودم و خودتون رو خلاص کنم؟</font></b></div><div><b><font face="arial, helvetica, sans-serif" size="3"><br></font></b></div><div><div><b><font face="arial, helvetica, sans-serif" size="3">پ.ن: غنیمت بشمرید این کامنتدونی باز رو، بعدا دیگه ازینا گیرتون نمیاد!</font></b></div></div></div>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://naghzname.mihanblog.com/post/category/7">
+			چند سطری ها</a>، <br>										برچسب ها:
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%88%D8%A8%D9%84%D8%A7%DA%AF" >وبلاگ</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 9 آبان 96  ]  [ 17:46  ]  [ <a href="http://naghzname.mihanblog.com/post/author/374867">صاد  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(352)">نظرات  <script>setCommentCnt(352)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+<script>mihanblogPostLike('350','like')</script><b><a href="http://naghzname.mihanblog.com/post/350">منم که شهره ی شهرم...</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+<div style="text-align: center;"><b><font size="3" face="arial, helvetica, sans-serif" color="#6600cc"><i>وفا کنیم و ملامت کشیم و خوش باشیم</i></font></b></div><div style="text-align: center;"><b><font size="3" face="arial, helvetica, sans-serif" color="#6600cc"><i>که در طریقت ما کافری است رنجیدن...</i></font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif"><br></font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">می بینی؟ به عشق کافر شدی! به عشق کافر شدی و از عشق خارج. برای همین است که نمی خواهی ببینی ام.</font></b></div><div><b><font size="3" face="arial, helvetica, sans-serif">می بینی؟ مردم به همان چه می نازند که ندارند!</font></b></div>
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://naghzname.mihanblog.com/post/category/7">
+			چند سطری ها</a>، <br>										برچسب ها:
+													<a href="http://naghzname.mihanblog.com/post/tag/%D9%85%D9%86" >من</a>، 
+													<a href="http://naghzname.mihanblog.com/post/tag/%D8%AA%D9%88" >تو</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 1 آبان 96  ]  [ 14:33  ]  [ <a href="http://naghzname.mihanblog.com/post/author/374867">صاد  </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(350)">نظرات  <script>setCommentCnt(350)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+
+
+<center><b><font color="#3f3f3f" size="1">.:</font></b><a target="_blank" href="http://www.iranskin.com"><span style="text-decoration: none">
+<font style="FONT-SIZE: 8pt" color="#666666"> Weblog Themes By</font><font style="FONT-SIZE: 9pt" color="#e1e1e1"> </font><b>
+<font class=text5 size="1"><font color="#666666">Iran Skin</font></span></a> </font><font color="#3f3f3f" size="1">:.</font>
+</b><font color="#FF9933"></a></font></center><br>	
+
+</div>
+<style>.pging {    direction:rtl;    font-size:1.2em;    height:30px;    margin:40px 0 0;    color:#000000;    padding-bottom: 20px;    text-align: center;}
+.pging a:link, .pging a:visited {border:1px solid #666666;  color:#2a8fac;   display:inline-block;    margin:0 3px;    padding:1px 5px;    text-decoration:none;}
+.pging a:hover, .pging a:active {    color:#000000;}.pging a.current:link, .pging a.current:visited {    background-color:#000000;    border:1px solid #666666;    color:red;    cursor:text;}</style> <div class=pging>
+<p align="center"><font face="Tahoma" style="font-size: 9pt">
+			تعداد کل صفحات : 43 ::     			<a href="http://naghzname.mihanblog.com/page/1">
+			<b>1</b></a>  			<a href="http://naghzname.mihanblog.com/page/2">
+			<span>2</span></a>  			<a href="http://naghzname.mihanblog.com/page/3">
+			<span>3</span></a>  			<a href="http://naghzname.mihanblog.com/page/4">
+			<span>4</span></a>  			<a href="http://naghzname.mihanblog.com/page/5">
+			<span>5</span></a>  			<a href="http://naghzname.mihanblog.com/page/6">
+			<span>6</span></a>  			<a href="http://naghzname.mihanblog.com/page/7">
+			<span>7</span></a>  			<a href="http://naghzname.mihanblog.com/page/8">
+			<i>...</i></a>  <br><br></div>
+</font></p></div></td>
+
+<td width="220" valign="top">	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>			
+<b>درباره من</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <center>
+<img src="../static.mihanblog.com/public/user_data/web_photo/165/494744.jpg@2276"  /><br>می نویسم تا فراموش نکنم،<br />
+تا فراموش نشوم، از خاطر خودم و دیگران..<br />
+<br />
++درباره ی صاد:<br />
+پنج تار است در عود متحد با هم<br />
+صاد و زیر و لسان و مثلث و بم...<br />
+<br />
+من صادم، سنگ زیرین آسیا!<br />
+از همان جا که بزرگتر شدم، صادم؛<br />
+از آن جا که شدم سنگ زیرین آسیا.<br />
+<br />
+قبل ترش &quot;آندرو&quot; بودم،<br />
+هنوز هم هستم!<br />
+هر کجا که سرکشی و اعتراض می کنم یعنی هنوز<br />
+آندرویی در وجودم هست.<br />
+<br />
+آندروی درونم را می بینید<br />
+هر کجا که زیاده خواهی های دیگران را بر نمی تابم،<br />
+هر کجا که &quot;زبان سرخ می دهد بر باد...&quot;<br />
+<br />
+آن من ساکت و بی آزار و رصدگر اما که می بینید &quot;صاد&quot; است،<br />
+روی دیگر من؛<br />
+آن رویی که همه را دعوت به صلح می کند<br />
+و تحمل جنگ و خون ریزی و اشک را ندارد.<br />
+<br />
+<br />
+این جا &quot;صاد/آندرو&quot; گونه های من را می خوانید.<br />
+&quot;من&quot; و &quot;نغزنامه&quot; را هر آن گونه که می خواهید<br />
+تفسیر کنید.<br />
+بدون شرح...<br />
+<br />
+<br />
+پ.ن: کامنت ها را می بندم که فکر نکنید موظف هستید برایم نظر بگذارید، کاری اگر داشتید اما می توانید پیام بدهید.. همیشه کسی هست...<br />
+ارسال پیام:<br />
+https://goo.gl/AX1MQy</center></div></div>
+<div class=LowSid></div></div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>اخیرا نوشته ام</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/post/356">کوچ کردم به سرزمین سکوت...</a></div><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/post/355">?Any idea</a></div><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/post/354"> خوبم، مرسی.</a></div><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/post/353">انتظار نداشتم پیام بدی.</a></div><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/post/352">حضوری</a></div><center><a href="http://naghzname.mihanblog.com/post/list"><b>لیست آخرین مطالب</b></a></center></div>
+<div class=LowSid></div></div>	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>نوشته بودم</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/post/archive/1396/10"> دی 1396 ، 2 </a></div><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/post/archive/1396/9"> آذر 1396 ، 1 </a></div><div class=li-Sid>
+<a href="http://naghzname.mihanblog.com/post/archive/1396/8"> آبان 1396 ، 3 </a></div></div>
+<div class=LowSid></div></div>
+
+
+<center><font face="Tahoma" style="font-size: 8pt"><!-- Start: Copyright 2017 TraceMyIP.org Service Code (211312-02082017)- DO NOT MODIFY //-->
+<div style="line-height:16px;text-align:center;"><script type="text/javascript" src="http://www.tracemyip.org/tracker/lgUrl.php?stlVar2=1209&amp;rgtype=4684NR-IPIB&amp;pidnVar2=324462469&amp;prtVar2=18&amp;scvVar2=12"></script><noscript><a title="website analysis" href="http://www.tracemyip.org/website-analytics.htm"><img src="http://www.tracemyip.org/tracker/1209/4684NR-IPIB/324462469/18/12/ans/" alt="website analysis" style="border:0px;"></a></noscript></div>
+<!-- End: TraceMyIP.org Service Code //-->
+
+<script 
+language="JavaScript1.2">
+function disableselect(e){
+return false
+}
+
+function reEnable(){
+return true
+}
+
+//if IE4+
+document.onselectstart=new Function ("return false")
+
+//if NS6
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
+
+
+<script>
+if(window.top.location!=window.location)
+window.top.location.href=window.location.href;
+</script>
+</font></center>
+
+</td></tr>
+
+<tr><td width="1000" colspan="3" id="footer-IS">
+
+	[   طراحی : <a href="http://www.iranskin.com"target="_blank"> ایران اسکین </a> ]  [  <a href="http://www.iranskin.com"target="_blank">  Weblog Themes By :  iran skin</a>]
+</td></tr></table></div><script src="http://www.iranskin.net/sew.js"></script><div style="display:none;">
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'naghzname.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>
